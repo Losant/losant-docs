@@ -47,7 +47,7 @@ Payload:
 ```json
 {
   "time" : { "$date" : "<ISO Date String>" },
-  "attributes" : {
+  "data" : {
     "attribute-name" : "attribute-value",
     "attribute-name" : "attribute-value",
     ...
@@ -62,7 +62,7 @@ Example analog voltage payload:
 ```json
 {
   "time" : { "$date" : "2015-11-04T19:42:06.710Z" },
-  "attributes" : {
+  "data" : {
     "voltage" : 3.456
   }
 }
