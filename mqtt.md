@@ -48,9 +48,8 @@ Payload:
 {
   "time" : { "$date" : "<ISO Date String>" },
   "data" : {
-    "name" : "value",
-    "name" : "value",
-    ...
+    "attribute-name" : "attribute-value",
+    "attribute-name" : "attribute-value"
   }
 }
 ```
