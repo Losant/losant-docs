@@ -14,10 +14,6 @@ The Structure SDK requires two libraries to be installed: [PubSubClient](https:/
 
 ![Manage Libaries](http://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/manage-libraries.png?noresize=true "Manage Libaries")
 
-![Install PubSubClient](http://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/install-pubsubclient.png?noresize "Install PubSubClient")
-
-![Install ArduinoJson](http://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/install-arduinojson.png?noresize=true "Install ArduinoJson")
-
 ## Install Structure Arduino SDK
 The [Structure Arduino SDK](https://github.com/GetStructure/structure-sdk-arduino) makes it easy to connect your Arduino-based devices to the Structure platform.
 
