@@ -39,3 +39,27 @@ Refer the [device state](#) documentation for further details about state.
 ## Device Management
 
 Once the device is added and successfully connected to Structure, there are several useful pieces of information available on the device page.
+
+### Connection Status
+
+The current connection status of your device is always available at the top of the device page.
+
+![Connection Status](/images/devices/connection-status.png "Connection Status")
+
+You can also view a log off recent device connection events in the `Device Connection Log` section of the device page.
+
+![Connection Log](/images/devices/connection-log.png "Connection Log")
+
+Whenever a device is disconnected the log will contain the reason and the number of messages sent and received during the connected period. Typically messages sent correspond to state updates and message received correspond to commands.
+
+### Debugging
+
+Structure provides several tools on the device page to help debug communication between your device and the Structure platform.
+
+#### Recent Device States
+
+To debug whether or not your device is sending state to Structure, you can use the `Recent Device States` section of the device page.
+
+![Recent Device States](/images/devices/state-log.png "Recent Device States")
+
+This list will display the most recent 10 states published to Structure by this device. It displays the raw JSON data that represents a state request. This list will automatically update once a minute, but you can force a refresh at any time by clicking the `Refresh` button on the bottom right.
