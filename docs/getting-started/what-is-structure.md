@@ -1,5 +1,4 @@
-What is Structure?
-============
+# What is Structure?
 
 Structure is an easy-to-use and powerful developer platform designed to help you quickly and securely build complex connected solutions. Structure uses open communication standards like REST and MQTT to provide connectivity from one to millions of devices. Structure provides powerful data collection, aggregation, and visualization features to help understand and quantify vast amounts of sensor data. Structure's drag-and-drop workflow editor allows you to trigger actions, notifications, and machine-to-machine communication without programming.
 

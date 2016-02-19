@@ -1,5 +1,4 @@
-Getting Started with the Arduino WiFi 101 Shield
-============
+# Getting Started with the Arduino WiFi 101 Shield
 
 This guide demonstrates how to connect to the [Structure IoT developer platform](https://getstructure.io) using the [Arduino WiFi 101 Shield](https://www.arduino.cc/en/Main/ArduinoWiFiShield101).
 
