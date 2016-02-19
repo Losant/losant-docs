@@ -8,7 +8,7 @@
   {% if page_description %}<meta name="description" content="{{ page_description }}">{% endif %}
   {% if site_author %}<meta name="author" content="{{ site_author }}">{% endif %}
   {% block htmltitle %}
-  <title>{% if current_page %}{% for doc in current_page.ancestors %}{{ doc.title }} | {% endfor %}{% endif %}{% if current_page %}{{ current_page.title }} | {% endif %}{{ config.extra.site_title }}</title>
+<title>{% if page_title %}{{ page_title }} | {% endif %}{{ config.extra.site_title }}</title>
   {% endblock %}
 
   {% if favicon %}<link rel="shortcut icon" href="{{ favicon }}">
