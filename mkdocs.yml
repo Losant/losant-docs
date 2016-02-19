@@ -37,5 +37,5 @@ pages:
     - Triggers:
         - Overview: mqtt.md
         - Device: workflows/triggers/device.md
-        - Event: mqtt.md
+        - Event: workflows/triggers/event.md
 theme_dir: 'structure'
