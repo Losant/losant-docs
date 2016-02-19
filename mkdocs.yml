@@ -1,0 +1,43 @@
+site_name: MkLorum
+pages:
+site_name: MkLorum
+pages:
+- Getting Started:
+    - What is Structure: getting-started/what-is-structure.md
+    - Getting Started with the Intel Edison: mqtt.md
+    - Getting Started with the Raspberry PI: mqtt.md
+    - Getting Started with the Arduino 101: getting-started/getting-started-with-arduino-wifi-101.md
+    - Getting Started with the AdaFruit Feather Huzzah: mqtt.md
+- Security:
+    - Overview: mqtt.md
+    - Access Keys: mqtt.md
+- Applications:
+    - Overview: mqtt.md 
+    - Access Keys: mqtt.md 
+    - Webhooks: mqtt.md 
+- Device Management:
+    - Overview: device-management/overview.md 
+    - State Attributes: mqtt.md 
+    - Commands: mqtt.md 
+    - Tags: mqtt.md 
+- Dashboards: 
+    - Overview: mqtt.md 
+    - Time Series Graph: mqtt.md 
+    - GPS Heatmap: mqtt.md 
+    - GPS History: mqtt.md 
+    - Gauge: mqtt.md 
+    - Pie Chart: mqtt.md 
+    - Data Table: mqtt.md 
+    - Device Connection Log: mqtt.md 
+    - Event List: mqtt.md 
+    - External Website: mqtt.md 
+    - Device List: mqtt.md 
+    - Workflow List: mqtt.md 
+    - Application List: mqtt.md 
+- Workflows:
+    - Overview: mqtt.md
+    - Triggers:
+        - Overview: mqtt.md
+        - Device(s): mqtt.md
+        - Event: mqtt.md
+theme_dir: 'structure'
