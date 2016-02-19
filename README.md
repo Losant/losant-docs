@@ -3,7 +3,7 @@ Structure documentation can be downloaded and ran locally.  To build the structu
 
 **Prerequisites**
 
-1. Install Mkdocs. [See Instructions](http://www.mkdocs.org/)
+1. Install Mkdocs. [See Instructions](http://www.mkdocs.org/#installation).
 
 **To use built in mkdocs built-in webserver:**
 
