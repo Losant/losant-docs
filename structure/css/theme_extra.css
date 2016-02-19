@@ -363,6 +363,14 @@ nav.stickynav {
   margin-top: 80px;
 }
 
+.rst-content img {
+  border: 20px solid #f5f4f3;
+}
+
+.wy-side-nav-search input[type=text] {
+  border-radius: 0;
+}
+
 @media (max-width: 992px) {
   .wy-nav-top {
     background-color: #111a2b;
