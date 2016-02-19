@@ -7,7 +7,7 @@ pages:
     - Getting Started with the Arduino 101: getting-started/getting-started-with-arduino-wifi-101.md
     - Getting Started with the AdaFruit Feather Huzzah: mqtt.md
 - Security:
-    - Overview: mqtt.md
+    - Overview: security.md
     - Access Keys: mqtt.md
 - Applications:
     - Overview: mqtt.md
