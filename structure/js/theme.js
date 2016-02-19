@@ -22,6 +22,13 @@ $( document ).ready(function() {
     hljs.initHighlightingOnLoad();
 
     $('table').addClass('docutils');
+
+    var container = $('.stickynav'),
+    scrollTo = $("a.current");
+
+    container.scrollTop(
+        scrollTo.offset().top - container.offset().top + container.scrollTop()
+    );
 });
 
 window.SphinxRtdTheme = (function (jquery) {

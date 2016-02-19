@@ -39,3 +39,5 @@ pages:
         - Device: workflows/triggers/device.md
         - Event: workflows/triggers/event.md
 theme_dir: 'structure'
+extra:
+    site_title: 'Structure Documentation'
