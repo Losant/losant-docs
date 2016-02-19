@@ -1,6 +1,4 @@
-site_name: MkLorum
-pages:
-site_name: MkLorum
+site_name: Documentation
 pages:
 - Getting Started:
     - What is Structure: getting-started/what-is-structure.md

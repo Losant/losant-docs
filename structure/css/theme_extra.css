@@ -88,11 +88,48 @@ html {
 body {
   font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+  color: #111a2b;
 }
 
-h3, h4, h5, h6 {
-    color: #2980b9;
-    font-weight: 300
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Knockout-30', 'helvetica', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #284fff;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 250%;
+}
+
+h2 {
+    color: #111a2b;
+}
+
+h3, h4 {
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 100%;
+    color: #111a2b;
+}
+
+a {
+  color: #ff495c;
+}
+
+
+a:hover {
+  color: #284fff;
+}
+
+.hs-menu-flow-horizontal a:hover,
+.hs-menu-flow-horizontal a:focus {
+  border-bottom: 2px solid #FF495C;
+  color: #F5F4F3;
+  text-decoration: none;
 }
 
 /*
@@ -101,19 +138,37 @@ h3, h4, h5, h6 {
  *
  * https://github.com/mkdocs/mkdocs/issues/175
  */
+
+.wy-breadcrumbs li {
+    font-family: 'Knockout-30', 'helvetica', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+}
+
+.wy-breadcrumbs li a:visited {
+    color: #a0a3aa;
+}
+
 .wy-menu-vertical span {
     line-height: 18px;
     padding: 0.4045em 1.618em;
     display: block;
     position: relative;
     font-size: 90%;
-    color: #838383;
+    color: #fafbfb;
+    text-transform: uppercase;
+    font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 .wy-menu-vertical .subnav a {
     padding: 0.4045em 2.427em;
+    color: #a9b9ff;
 }
 
+.wy-menu-vertical .subnav a:hover {
+    background-color: #111a2b;
+}
 /*
  * Long navigations run off the bottom of the screen as the nav
  * area doesn't scroll.
@@ -123,6 +178,7 @@ h3, h4, h5, h6 {
 .wy-nav-side {
     height: 100%;
     overflow-y: auto;
+    background-color: #284fff;
 }
 
 /*
@@ -133,6 +189,38 @@ h3, h4, h5, h6 {
  */
 .wy-menu-vertical ul {
   margin-bottom: 2em;
+}
+
+.wy-side-nav-search {
+  color: black;
+  background-color: #111a2b;
+}
+
+.wy-side-nav-search>a,
+.wy-side-nav-search .wy-dropdown>a {
+  color: #ff495c;
+}
+
+
+
+.wy-menu-vertical li.on a,
+.wy-menu-vertical li.current>a {
+  background-color: #dcdcdc;
+  border-bottom: none;
+}
+
+.wy-menu-vertical li.current ul li a {
+  background-color: #f4f4f4;
+  color: #414855;
+  border-right: none;
+}
+
+.rst-versions {
+  border-top: solid 10px #ff495c;
+}
+
+.rst-versions .rst-current-version {
+  background-color: #111a2b;
 }
 
 /*
@@ -223,11 +311,15 @@ code.cs, code.c {
 }
 
 nav.stickynav {
-  position: absolute;
+  top: 60px;
+}
+
+.wy-menu-vertical ul {
+  margin-bottom: 90px;
 }
 
 .header {
-  height: 75px;
+  height: 60px;
   padding: 15px 0 0;
   background-color: #284fff;
   position: fixed;
@@ -264,7 +356,7 @@ nav.stickynav {
 }
 
 .wy-grid-for-nav {
-  margin-top: 75px;
+  margin-top: 60px;
 }
 
 @media (max-width: 992px) {
