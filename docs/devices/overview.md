@@ -63,3 +63,15 @@ To debug whether or not your device is sending state to Structure, you can use t
 ![Recent Device States](/images/devices/state-log.png "Recent Device States")
 
 This list will display the most recent 10 states published to Structure by this device. It displays the raw JSON data that represents a state request. This list will automatically update once a minute, but you can force a refresh at any time by clicking the `Refresh` button on the bottom right.
+
+#### Force State
+
+The `Force State in Structure` section of the device page allows you to report state on behalf of your device. This is useful if you're debugging workflows or other actions that are triggered based on device state.
+
+![Force State](/images/devices/force-state.png "Force State")
+
+#### Send Command
+
+The `Send Device Command` section of the device page allows you to send commands to your devices. This is useful if your debugging and during initial implementation of command support for your devices.
+
+![Send Command](/images/devices/send-command.png "Send Command")
