@@ -371,6 +371,10 @@ nav.stickynav {
   border-radius: 0;
 }
 
+code {
+  font-size: 95%;
+}
+
 @media (max-width: 992px) {
   .wy-nav-top {
     background-color: #111a2b;
