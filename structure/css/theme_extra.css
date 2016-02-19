@@ -311,7 +311,11 @@ code.cs, code.c {
 }
 
 nav.stickynav {
-  position: absolute;
+  top: 60px;
+}
+
+.wy-menu-vertical ul {
+  margin-bottom: 90px;
 }
 
 .header {
