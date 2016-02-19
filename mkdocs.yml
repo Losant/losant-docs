@@ -14,10 +14,9 @@ pages:
     - Access Keys: mqtt.md
     - Webhooks: mqtt.md
 - Devices:
-    - Overview: devices/overview.md
-    - State Attributes: mqtt.md
-    - Commands: mqtt.md
-    - Tags: mqtt.md
+    - Device Overview: devices/overview.md
+    - Device State: devices/state.md
+    - Device Commands: devices/commands.md
 - Dashboards:
     - Overview: mqtt.md
     - Time Series Graph: mqtt.md
