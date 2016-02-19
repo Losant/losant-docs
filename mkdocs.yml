@@ -12,28 +12,28 @@ pages:
     - Overview: mqtt.md
     - Access Keys: mqtt.md
 - Applications:
-    - Overview: mqtt.md 
-    - Access Keys: mqtt.md 
+    - Overview: mqtt.md
+    - Access Keys: mqtt.md
     - Webhooks: mqtt.md 
-- Device Management:
-    - Overview: device-management/overview.md 
-    - State Attributes: mqtt.md 
-    - Commands: mqtt.md 
-    - Tags: mqtt.md 
-- Dashboards: 
-    - Overview: mqtt.md 
-    - Time Series Graph: mqtt.md 
-    - GPS Heatmap: mqtt.md 
-    - GPS History: mqtt.md 
-    - Gauge: mqtt.md 
-    - Pie Chart: mqtt.md 
-    - Data Table: mqtt.md 
-    - Device Connection Log: mqtt.md 
-    - Event List: mqtt.md 
-    - External Website: mqtt.md 
-    - Device List: mqtt.md 
-    - Workflow List: mqtt.md 
-    - Application List: mqtt.md 
+- Devices:
+    - Overview: devices/overview.md
+    - State Attributes: mqtt.md
+    - Commands: mqtt.md
+    - Tags: mqtt.md
+- Dashboards:
+    - Overview: mqtt.md
+    - Time Series Graph: mqtt.md
+    - GPS Heatmap: mqtt.md
+    - GPS History: mqtt.md
+    - Gauge: mqtt.md
+    - Pie Chart: mqtt.md
+    - Data Table: mqtt.md
+    - Device Connection Log: mqtt.md
+    - Event List: mqtt.md
+    - External Website: mqtt.md
+    - Device List: mqtt.md
+    - Workflow List: mqtt.md
+    - Application List: mqtt.md
 - Workflows:
     - Overview: mqtt.md
     - Triggers:
