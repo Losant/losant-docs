@@ -311,7 +311,11 @@ code.cs, code.c {
 }
 
 nav.stickynav {
-  position: absolute;
+  top: 60px;
+}
+
+.wy-menu-vertical ul {
+  margin-bottom: 90px;
 }
 
 .header {
@@ -356,10 +360,18 @@ nav.stickynav {
 }
 
 @media (max-width: 992px) {
-.wy-grid-for-nav {
-  margin-top: 50px;
-}
+  .wy-nav-top {
+    background-color: #111a2b;
+  }
   
+  section.shift .wy-nav-top {
+    top: 60px;
+  }
+
+  .wy-nav-top a {
+    color: #ff495c;
+  }
+
   .header { 
     position: fixed;
     left: 0;
