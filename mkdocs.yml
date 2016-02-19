@@ -1,5 +1,4 @@
 site_name: Documentation
-site_title_name: Structure Documentation
 pages:
 - Getting Started:
     - What is Structure: getting-started/what-is-structure.md
