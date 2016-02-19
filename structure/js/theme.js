@@ -54,12 +54,12 @@ window.SphinxRtdTheme = (function (jquery) {
     };
 }($));
 
-$(window).scroll(function(e) {
-if($(this).scrollTop() > 75) {
-  $('.header').addClass('sticky');
-  $('.body-container-wrapper').addClass('sticky');
-} else {
-  $('.header').removeClass('sticky');
-  $( '.body-container-wrapper').removeClass('sticky');
-}
-});
+// $(window).scroll(function(e) {
+// if($(this).scrollTop() > 75) {
+//   $('.header').addClass('sticky');
+//   $('.body-container-wrapper').addClass('sticky');
+// } else {
+//   $('.header').removeClass('sticky');
+//   $( '.body-container-wrapper').removeClass('sticky');
+// }
+// });
