@@ -17,6 +17,7 @@ pages:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
     - Device Commands: devices/commands.md
+    - Device Queries: devices/device-queries.md
 - Dashboards:
     - Overview: mqtt.md
     - Time Series Graph: dashboards/time-series-graph.md

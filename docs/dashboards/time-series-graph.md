@@ -18,18 +18,14 @@ The resolution and the aggregator specified in the block data section work toget
 
 ### Block Data
 
-The time series graph is configured as individual series. Each series will be displayed as a separate line on the graph. The example above is displaying the temperature of two different devices. Since they are specified as two different series, the graph is representing them as two different lines.
+The time series graph is configured as individual series. Each series is displayed as a separate line on the graph. The example above is displaying the temperature of two different devices. Since they are specified as two different series, the graph is representing them as two different lines.
 
-Each series can graph a single [device state](/devices/state.md) attribute. The data type of the state attribute must be set to Number to be properly visualized. The aggregator applied to the series defines how the data is combined based on the chosen resolution. The above example has the resolution set to 10 seconds. This means if my devices are reporting temperature once per second, each data point on the graph will be the average of 10 temperature readings.
+Each series can graph a single [device state](/devices/state.md) attribute. **The data type of the state attribute must be set to Number to be properly visualized.**
 
-Each series can also aggregate the same attribute across multiple devices. So for example if you wanted to graph the average temperature across both devices, you would specify the device ID field as a comma-separated list containing both devices.
+The aggregator applied to the series defines how the data is combined based on the chosen resolution. The above example has the resolution set to 10 seconds. This means if your devices are reporting temperature once per second, each data point on the graph will be the average of 10 temperature readings.
+
+Each series can also aggregate the same attribute across multiple devices; therefore, **Device IDs / Tags** should be populated with a [device query](/devices/device-queries.md) to aggregate data for one or more devices per series.
 
 ![Time Series Settings Device Aggregate](/images/dashboards/time-series-combined.png "Time Series Settings Device Aggregate")
 
 When this is graphed, it is now a single series that contains the average temperature of both devices.
-
-![Time Series Graph Device Aggregate](/images/dashboards/time-series-multiple-devices-one-series.png "Time Series Graph Device Aggregate")
-
-Devices can also be specified by using device tags. Instead of directly entering an ID, you could specify a `key=value` tag to graph all devices that match that specific tag. So for example if the above devices where both tagged with the `type` key set to `temp` the below configuration would result in the same graph.
-
-![Time Series Settings Tags](/images/dashboards/time-series-settings-tags.png "Time Series Settings Tags")
