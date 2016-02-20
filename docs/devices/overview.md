@@ -24,7 +24,7 @@ Device tags allow you to group and organize your devices. Tags are defined as ke
 
 ![Device Tags](/images/devices/device-tags.png "Device Tags")
 
-In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` and `color=red` to find the specific devices.
+In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` or `color=red` to find the specific devices.
 
 ### Device Attributes
 
