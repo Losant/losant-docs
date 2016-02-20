@@ -23,7 +23,7 @@ pages:
     - Time Series Graph: dashboards/time-series-graph.md
     - GPS Heatmap: dashboards/gps-heatmap.md
     - GPS History: mqtt.md
-    - Gauge: mqtt.md
+    - Gauge: dashboards/gauge.md
     - Pie Chart: mqtt.md
     - Data Table: mqtt.md
     - Device Connection Log: mqtt.md
