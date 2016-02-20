@@ -369,6 +369,9 @@ nav.stickynav {
 
 .wy-side-nav-search input[type=text] {
   border-radius: 0;
+  outline: none;
+  border: none;
+  border-color: transparent;
 }
 
 code {
