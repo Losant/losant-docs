@@ -19,7 +19,7 @@ pages:
     - Device Commands: devices/commands.md
 - Dashboards:
     - Overview: mqtt.md
-    - Time Series Graph: mqtt.md
+    - Time Series Graph: dashboards/time-series-graph.md
     - GPS Heatmap: mqtt.md
     - GPS History: mqtt.md
     - Gauge: mqtt.md
