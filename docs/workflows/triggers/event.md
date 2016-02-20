@@ -18,7 +18,7 @@ The payload will include information about the event on the `data` field, as wel
 
 ```json
 {
-  "time": <time of the event>,
+  "time": <time of the event>
   "data": {
     "sourceType": <"flow" or "user" or "device">,
     "sourceId":   <id of the source>,
