@@ -39,6 +39,7 @@ pages:
         - Event: workflows/triggers/event.md
         - MQTT: workflows/triggers/mqtt.md
         - Timer: workflows/triggers/timer.md
+        - Virtual Button: workflows/triggers/virtual-button.md
 - MQTT: mqtt.md
 theme_dir: 'structure'
 extra:
