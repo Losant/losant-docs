@@ -18,10 +18,10 @@ The payload will include the payload of the MQTT message on the `data` field, as
 
 ```json
 {
-  "time": <time of the event>,
+  "time": <time of the message>,
   "data": <the mqtt message payload, as a string>,
   "applicationId": <id of the current application>,
-  "triggerId": <id of the workflow trigger>,
+  "triggerId": <id of the mqtt trigger>,
   "triggerType": "mqttTopic",
   "flowId": <id of the current workflow>
 }

@@ -18,10 +18,10 @@ Unlike most other triggers, there is no special data included in the payload for
 
 ```json
 {
-  "time": <time of the event>,
+  "time": <time of the trigger>,
   "data": <the mqtt message payload, as a string>,
   "applicationId": <id of the current application>,
-  "triggerId": <id of the workflow trigger>,
+  "triggerId": <id of the timer trigger>,
   "triggerType": "timer",
   "flowId": <id of the current workflow>
 }
