@@ -37,6 +37,7 @@ pages:
         - Overview: mqtt.md
         - Device: workflows/triggers/device.md
         - Event: workflows/triggers/event.md
+        - MQTT: workflows/triggers/mqtt.md
 theme_dir: 'structure'
 extra:
     site_title: 'Structure Documentation'
