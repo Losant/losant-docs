@@ -12,8 +12,8 @@ Gauge blocks currently support two types. Additional types will be added in futu
 
 ![Gauge Type](/images/dashboards/gauge-block-type.png "Gauge Type")
 
-* **Number Gauge** displays a value as a single number. Note that, though gauge is almost always used to display a number, it is possible to display an attribute of a different type. For example, you may choose to display an "ON" or "OFF" state here as reported by a device.
-* **Dial Gauge** displays the value as a number, but also provides a gauge representation to show where that number stands against a minimum and maximum value provided by you. When "Dial Gauge" is selected, the "Min" and "Max" values are required, and each must be a number. Also, the attribute displayed in the gauge must be of the type `Number`.
+* **Number Gauge** displays a value as a single number.
+* **Dial Gauge** displays the value as a number, but also provides a gauge representation to show where that number stands against a minimum and maximum value provided by you. When "Dial Gauge" is selected, the "Min" and "Max" values are required, and each must be a number.
 
 ### Duration
 
@@ -25,14 +25,11 @@ Note that, when choosing a value other than "Last received data point", it is ne
 
 ### Block Data
 
-![Gauge Block Data](/images/dashboards/gauge-block-data.png "Gauge Block Data")
-
 The block data takes four arguments, three of which are required:
 
-![GPS Heatmap Device Query](/images/dashboards/heatmap-device-query.png "GPS Heatmap Device Query")
+![Gauge Block Data](/images/dashboards/gauge-block-data.png "Gauge Block Data")
 
-The physical location of one or multiple devices can be viewed on the GPS Heatmap. At least one device ID or device tag is required to create the map, and devices are chosen in the form of a [device query](/devices/device-queries.md).
-
-![GPS Heatmap Attribute](/images/dashboards/heatmap-attribute.png "GPS Heatmap Attribute")
-
-The selected device(s) must return an attribute of the type `GPS (NMEA Format)`. In the **Attribute** input, enter the attribute's name to display on the graph. Note that, when displaying multiple devices on the heatmap, each device must return data under the same attribute name.
+* **Label** is the text displayed beneath number / dial representation of your device(s) state. This can be any value, but you will want it to properly represent the data displayed along with it.
+* **Device IDS / Tags** is a [device query](/devices/device-queries.md) for choosing which devices are displayed within the gauge.
+* **Attribute** is the device attribute whose value will be displayed in the gauge. This attribute must be of the type `Number`. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
+* **Aggregation Type** is only visible when Duration is set to anything other than "Last received data point", OR when a device tag is supplied in the device query, OR if more than one device ID is supplied within the device query. This determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "MEAN" will average all data points together before displaying within the gauge.
