@@ -25,7 +25,7 @@ Note that, when choosing a value other than "Last received data point", it is ne
 
 ### Block Data
 
-The block data takes four arguments, three of which are required:
+The block data takes four parameters, three of which are required:
 
 ![Gauge Block Data](/images/dashboards/gauge-block-data.png "Gauge Block Data")
 
