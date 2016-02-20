@@ -42,6 +42,8 @@ pages:
         - Timer: workflows/triggers/timer.md
         - Virtual Button: workflows/triggers/virtual-button.md
         - Webhook: workflows/triggers/webhook.md
+    - Logic:
+        - Conditional: workflows/logic/conditional.md
 - MQTT: mqtt.md
 theme_dir: 'structure'
 extra:
