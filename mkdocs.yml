@@ -38,6 +38,7 @@ pages:
         - Device: workflows/triggers/device.md
         - Event: workflows/triggers/event.md
         - MQTT: workflows/triggers/mqtt.md
+        - Timer: workflows/triggers/timer.md
 theme_dir: 'structure'
 extra:
     site_title: 'Structure Documentation'
