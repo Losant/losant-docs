@@ -20,11 +20,15 @@ A virtual device acts just like a physical device in most cases. The major diffe
 
 ### Device Tags
 
-Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Structure platform including choosing devices for visualizations, access keys, and workflow triggers.
+Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Structure platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries) for targeting devices by tag within the platform.
 
 ![Device Tags](/images/devices/device-tags.png "Device Tags")
 
-In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` and `color=red` to find the specific devices.
+<<<<<<< HEAD
+In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` and all devices where `color=red` and combine or cross-reference the two.
+=======
+In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` or `color=red` to find the specific devices.
+>>>>>>> c9ab6c53cae458f3b71a3eb849a0a5a2c56f84fe
 
 ### Device Attributes
 

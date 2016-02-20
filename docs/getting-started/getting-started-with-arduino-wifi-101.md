@@ -3,7 +3,7 @@
 This guide demonstrates how to connect to the [Structure IoT developer platform](https://getstructure.io) using the [Arduino WiFi 101 Shield](https://www.arduino.cc/en/Main/ArduinoWiFiShield101).
 
 ## Supported Boards
-The Structure library and dependencies are supported on a wide variety of Arduino boards, including the [Arduino Zero](https://www.arduino.cc/en/Main/ArduinoBoardZero) and [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101). Currently the [Arduino Uno](https://www.arduino.cc/en/Main/ArduinoBoardUno) does not have enough memory to support both the WiFi 101 Shield and Structure libraries.
+The [Structure library](https://github.com/GetStructure/structure-sdk-arduino) and dependencies are supported on a wide variety of Arduino boards, including the [Arduino Zero](https://www.arduino.cc/en/Main/ArduinoBoardZero) and [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101). Currently the [Arduino Uno](https://www.arduino.cc/en/Main/ArduinoBoardUno) does not have enough memory to support both the WiFi 101 Shield and Structure libraries.
 
 ## Arduino IDE
 Follow the specific instructions for your Arduino board to properly configure the Arduino IDE. Adding the WiFi 101 library to the IDE can be done using the Arduino Library Manager.
@@ -18,7 +18,7 @@ The [Structure Arduino SDK](https://github.com/GetStructure/structure-sdk-arduin
 
 Download a zip of the library from the following URL:
 
-https://github.com/GetStructure/structure-sdk-arduino/archive/master.zip
+[https://github.com/GetStructure/structure-sdk-arduino/archive/master.zip](https://github.com/GetStructure/structure-sdk-arduino/archive/master.zip)
 
 Once downloaded, add the library to your Arduino installation by using the Sketch -> Include Library -> Add .ZIP Library menu.
 
@@ -132,7 +132,7 @@ device.loop()
 This loops the underlying WiFiClientSecure instance and performs the necessary communication between the device and Structure. This loop call must be invoked periodically, no less often than once a second.
 
 ## Sending State
-State represents a snapshot of the device at a point in time. This example will use a temperature probe connected to the analog input, A0. The state of a device is defined using one or more attributes. A device's state attributes are defined when the device is registered using Structure's web portal. This example will send a state update to Structure every 15 seconds with the "temperature" attribute.
+[State](/devices/state) represents a snapshot of the device at a point in time. This example will use a temperature probe connected to the analog input, A0. The state of a device is defined using one or more attributes. A device's state attributes are defined when the device is registered using Structure's web portal. This example will send a state update to Structure every 15 seconds with the "temperature" attribute.
 
 ```arduino
 
@@ -165,7 +165,7 @@ void loop() {
 Structure uses JSON payloads when reporting state. The above example maps to the JSON object `{ "temperature": value }`. Structure uses the [ArduinoJson](https://github.com/bblanchon/ArduinoJson) library to efficiently build JSON state payloads. The Structure header file automatically includes the ArduinoJson header file, so there's no need to explicitly include it in your sketch.
 
 ## Receiving Commands
-Commands are sent from Structure to your device and act as a way to instruct the device to take some kind of action. Commands include a name and an optional JSON payload. An example command could be "start recording" with a payload of `{ "resolution": 1080 }`.
+[Commands](/devices/commands) are sent from Structure to your device and act as a way to instruct the device to take some kind of action. Commands include a name and an optional JSON payload. An example command could be "start recording" with a payload of `{ "resolution": 1080 }`.
 
 ```arduino
 // Command callback function. Invoked whenever this device receives
@@ -197,5 +197,3 @@ What command names are supported and what the payloads include is entirely up to
 
 ## Additional Examples
 For additional Arduino examples, please refer to the [examples](https://github.com/GetStructure/structure-sdk-arduino/tree/master/examples) folder of the [Structure Arduino SDK](https://github.com/GetStructure/structure-sdk-arduino) repository.
-
-Copyright (c) 2016 Structure. All rights reserved.
