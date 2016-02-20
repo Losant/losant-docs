@@ -97,6 +97,8 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-font-smoothing: antialiased;
     color: #284fff;
     letter-spacing: 2px;
+    padding-top: 70px;
+    margin-top: -70px;
 }
 
 h1 {
