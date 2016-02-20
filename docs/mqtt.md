@@ -92,4 +92,4 @@ The payload can be any arbitrary JSON object that provides necessary arguments t
 }
 ```
 
-Copyright (c) 2016 Structure. All rights reserved.
+TODO: mention mqtt version and our implementation limitations
