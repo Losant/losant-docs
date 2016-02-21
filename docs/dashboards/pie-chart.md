@@ -8,13 +8,13 @@ The Pie Chart block displays proportional data across one or more devices. In th
 
 ### Duration
 
-To view current state of your device(s), select "Last received data point". To view an aggregation of your data over a given time period, choose any other value.
+To view the current state of your device(s), select "Last received data point". To view an aggregation of your data over a given time period, choose any other value.
 
 ![Gauge Duration](/images/dashboards/gauge-duration.png "Gauge Duration")
 
 ### Block Data
 
-The block data an array of segments, and each segment represents a region on the pie chart. While it is possible to create a chart within only one segment, the visualization would be meaningless as the segment has nothing against which to compare itself.
+The block data is an array of segments, and each segment represents a region on the pie chart. While it is possible to create a chart within only one segment, the visualization would be meaningless as the segment has nothing against which to compare itself.
 
 ![Pie Block Data](/images/dashboards/pie-block-data.png "Pie Block Data")
 
