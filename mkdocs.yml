@@ -28,7 +28,7 @@ pages:
     - Data Table: dashboards/data-table.md
     - Device Connection Log: mqtt.md
     - Event List: mqtt.md
-    - External Website: mqtt.md
+    - External Website: dashboards/external-website.md
     - Device List: mqtt.md
     - Workflow List: mqtt.md
     - Application List: mqtt.md
