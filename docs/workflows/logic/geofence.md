@@ -36,7 +36,7 @@ The radius of the center point is defined in meters, and must be greater than 0.
 
 ![Geofence Node Distance Value](/images/workflows/logic/geofence-node-distance-value.png "Geofence Node Distance Value")
 
-The geofence node has the ability to optionally add the calculated distance between the input and center point to the payload at an arbitrary JSON path. If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the geofence node is taken.  If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the `distance` path.  In the above example, the distance between the input and center coordinates will be places at the `data.distance.work` path.  So, for example, given the following payload:
+The geofence node has the ability to optionally add the calculated distance between the input and center point to the payload at an arbitrary JSON path. If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the geofence node is taken.  If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the `distance` path.  In the above example, the distance between the input and center coordinates will be placed at the `data.distance.work` path.  So, for example, given the following payload:
 
 ```JSON
 {

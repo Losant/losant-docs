@@ -51,6 +51,7 @@ pages:
         - JSON Decode: workflows/logic/json-decode.md
         - Math: workflows/logic/math.md
         - Mutate: workflows/logic/mutate.md
+        - On Change: workflows/logic/on-change.md
 - MQTT: mqtt.md
 theme_dir: 'structure'
 extra:
