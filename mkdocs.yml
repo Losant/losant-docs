@@ -44,6 +44,7 @@ pages:
         - Webhook: workflows/triggers/webhook.md
     - Logic:
         - Conditional: workflows/logic/conditional.md
+        - Delay: workflows/logic/delay.md
 - MQTT: mqtt.md
 theme_dir: 'structure'
 extra:
