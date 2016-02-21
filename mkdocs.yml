@@ -25,7 +25,7 @@ pages:
     - GPS History: dashboards/gps-history.md
     - Gauge: dashboards/gauge.md
     - Pie Chart: dashboards/pie-chart.md
-    - Data Table: mqtt.md
+    - Data Table: dashboards/data-table.md
     - Device Connection Log: mqtt.md
     - Event List: mqtt.md
     - External Website: mqtt.md
