@@ -33,7 +33,7 @@ pages:
     - Workflow List: mqtt.md
     - Application List: mqtt.md
 - Workflows:
-    - Overview: mqtt.md
+    - Overview: workflows/overview.md
     - Triggers:
         - Overview: mqtt.md
         - Device: workflows/triggers/device.md
