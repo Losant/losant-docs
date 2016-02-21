@@ -45,6 +45,7 @@ pages:
     - Logic:
         - Conditional: workflows/logic/conditional.md
         - Delay: workflows/logic/delay.md
+        - Function: workflows/logic/function.md
 - MQTT: mqtt.md
 theme_dir: 'structure'
 extra:
