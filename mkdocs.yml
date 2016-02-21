@@ -22,13 +22,13 @@ pages:
     - Overview: mqtt.md
     - Time Series Graph: dashboards/time-series-graph.md
     - GPS Heatmap: dashboards/gps-heatmap.md
-    - GPS History: mqtt.md
-    - Gauge: mqtt.md
-    - Pie Chart: mqtt.md
-    - Data Table: mqtt.md
+    - GPS History: dashboards/gps-history.md
+    - Gauge: dashboards/gauge.md
+    - Pie Chart: dashboards/pie-chart.md
+    - Data Table: dashboards/data-table.md
     - Device Connection Log: mqtt.md
     - Event List: mqtt.md
-    - External Website: mqtt.md
+    - External Website: dashboards/external-website.md
     - Device List: mqtt.md
     - Workflow List: mqtt.md
     - Application List: mqtt.md
@@ -44,6 +44,10 @@ pages:
         - Webhook: workflows/triggers/webhook.md
     - Logic:
         - Conditional: workflows/logic/conditional.md
+        - Delay: workflows/logic/delay.md
+        - Function: workflows/logic/function.md
+        - Geofence: workflows/logic/geofence.md
+        - JSON Encode: workflows/logic/json-encode.md
 - MQTT: mqtt.md
 theme_dir: 'structure'
 extra:

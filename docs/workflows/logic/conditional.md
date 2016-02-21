@@ -1,12 +1,12 @@
 # Conditional Node
 
-The conditional node allows a flow to branch based upon a conditional expression.
+The conditional node allows a workflow to branch based upon a conditional expression.
 
 ![Conditional Node](/images/workflows/logic/conditional-node.png "Conditional Node")
 
 ## Configuration
 
-Configuring a conditional node involves writing an expression that will evaluate to a true or false value.  When the expression evaluates to false for a given workflow payload, the left route out of the conditional node is taken.  When the expression evaluates to true, the right route out of the
+Configuring a conditional node involves writing an expression that will evaluate to a true or false value.  When the expression evaluates to false for a given workflow payload, the route on the left out of the conditional node is taken.  When the expression evaluates to true, the route on the right out of the conditional node is taken.
 
 ![Conditional Node Config](/images/workflows/logic/conditional-node-config.png "Conditional Node Config")
 
