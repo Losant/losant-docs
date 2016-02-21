@@ -24,7 +24,7 @@ pages:
     - GPS Heatmap: dashboards/gps-heatmap.md
     - GPS History: dashboards/gps-history.md
     - Gauge: dashboards/gauge.md
-    - Pie Chart: mqtt.md
+    - Pie Chart: dashboards/pie-chart.md
     - Data Table: mqtt.md
     - Device Connection Log: mqtt.md
     - Event List: mqtt.md
