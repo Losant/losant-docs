@@ -47,6 +47,7 @@ pages:
         - Delay: workflows/logic/delay.md
         - Function: workflows/logic/function.md
         - Geofence: workflows/logic/geofence.md
+        - JSON Encode: workflows/logic/json-encode.md
 - MQTT: mqtt.md
 theme_dir: 'structure'
 extra:
