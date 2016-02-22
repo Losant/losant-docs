@@ -2,6 +2,8 @@
 
 Structure's platform ensures the highest degree of security possible for a customer's connected solution. Structure makes use of industry-standard encryption mechanisms to fully encrypt all data during transit and while at rest. This document provides a detailed overview of the practices used to provide a completely secure environment for users and applications.
 
+![Security](/images/security-diagram.png "Security")
+
 ## Transport Security
 
 All communication between devices and Structure is fully encrypted using TLS. TLS is widely adopted and available on most embedded devices, languages, and operating systems. TLS is an industry-standard encryption scheme and most commonly used by browsers to encrypt https data.
