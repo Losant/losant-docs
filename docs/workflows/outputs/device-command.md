@@ -1,4 +1,4 @@
-# Device Command
+# Device Command Node
 
 The device command node allows a workflow to send a [command](/devices/commands/) to one or more devices.
 

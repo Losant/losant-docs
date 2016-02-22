@@ -1,4 +1,4 @@
-# Record Event
+# Record Event Node
 
 The record event node allows a workflow to record an [event](/events/) for the current application.
 

@@ -1,4 +1,4 @@
-# HTTP
+# HTTP Node
 
 The HTTP node allows a workflow to make an arbitrary HTTP request and optionally place the response on the current payload.
 
