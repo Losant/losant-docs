@@ -59,6 +59,7 @@ pages:
     - Data:
         - Get Value: workflows/data/get-value.md
         - HTTP: workflows/data/http.md
+        - Store Value: workflows/data/store-value.md
 - MQTT: mqtt.md
 - Limits: limits.md
 theme_dir: 'structure'
