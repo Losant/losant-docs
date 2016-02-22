@@ -90,4 +90,4 @@ device.on('command', function(command) {
 });
 ```
 
-The full source for this examples can be found on the Structure <a href="https://github.com/GetStructure/structure-api-js" target="_blank">JavaScript SDK</a> GitHub repository.
+The full source for this examples can be found on the Structure <a href="https://github.com/GetStructure/structure-sdk-js" target="_blank">JavaScript SDK</a> GitHub repository.
