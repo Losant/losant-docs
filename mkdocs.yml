@@ -33,7 +33,7 @@ pages:
     - External Website: dashboards/external-website.md
     - Device List: mqtt.md
     - Workflow List: mqtt.md
-    - Application List: mqtt.md
+    - Application List: dashboards/application-list.md
 - Workflows:
     - Overview: workflows/overview.md
     - Triggers:
