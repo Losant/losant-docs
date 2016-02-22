@@ -27,7 +27,7 @@ For example, the following workflow payload would take the `true` path:
 
 ## Expression Variable Replacement
 
-Values in the expression that are surrounded by double curly braces (`{{ value }}`) are treated as JSON paths and are evaluated against the payload to find the actual value for the evaluation of the expression.  See the workflow JSON Path documentation for more details.
+Values in the expression that are surrounded by double curly braces (`{{ value }}`) are treated as JSON paths and are evaluated against the payload to find the actual value for the evaluation of the expression.  See the workflow [JSON Path documentation](/workflows/overview/#template-fields-and-payload-paths) for more details.
 
 ## Expression Details
 
