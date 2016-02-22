@@ -58,6 +58,7 @@ pages:
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
         - Get Value: workflows/data/get-value.md
+        - HTTP: workflows/data/http.md
 - MQTT: mqtt.md
 - Limits: limits.md
 theme_dir: 'structure'
