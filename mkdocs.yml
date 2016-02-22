@@ -8,7 +8,6 @@ pages:
         - Getting Started with Arduino: getting-started/boards/getting-started-with-arduino-wifi-101.md
 - Security:
     - Overview: security.md
-    - Access Keys: mqtt.md
 - Applications:
     - Overview: applications/overview.md
     - Access Keys: applications/access-keys.md
@@ -35,7 +34,6 @@ pages:
 - Workflows:
     - Overview: workflows/overview.md
     - Triggers:
-        - Overview: mqtt.md
         - Device: workflows/triggers/device.md
         - Event: workflows/triggers/event.md
         - MQTT: workflows/triggers/mqtt.md
@@ -60,6 +58,7 @@ pages:
         - Store Value: workflows/data/store-value.md
     - Outputs:
         - Debug: workflows/outputs/debug.md
+        - Device Command: workflows/outputs/device-command.md
 
 - MQTT: mqtt.md
 - Limits: limits.md
