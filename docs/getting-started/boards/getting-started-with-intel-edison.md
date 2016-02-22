@@ -51,7 +51,7 @@ var device = new Device({
 device.connect();
 ```
 
-The device ID is obtained by first adding your [device](/device/overview) to your Structure application. [Access keys](/applications/access-keys) allow you to grant access on a per-device or per-application basis.
+The device ID is obtained by first adding your [device](/devices/overview) to your Structure application. [Access keys](/applications/access-keys) allow you to grant access on a per-device or per-application basis.
 
 ## Sending State
 
