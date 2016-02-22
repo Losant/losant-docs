@@ -56,6 +56,7 @@ pages:
         - On Change: workflows/logic/on-change.md
         - Throttle: workflows/logic/throttle.md
 - MQTT: mqtt.md
+- Limits: limits.md
 theme_dir: 'structure'
 extra:
     site_title: 'Structure Documentation'
