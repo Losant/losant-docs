@@ -1,6 +1,6 @@
 # Event Trigger
 
-The event trigger will trigger a workflow whenever an event matches the criteria defined in its configuration.
+The event trigger will trigger a workflow whenever a newly created event matches the criteria defined in its configuration.
 
 ![Event Trigger](/images/workflows/triggers/event-trigger.png "Event Trigger")
 
