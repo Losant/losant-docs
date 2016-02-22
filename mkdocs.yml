@@ -4,7 +4,7 @@ pages:
     - What is Structure: getting-started/what-is-structure.md
     - Structure Walkthrough: getting-started/walkthrough.md
     - Boards:
-        - Getting Started with the Intel Edison: mqtt.md
+        - Getting Started with the Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
         - Getting Started with the Raspberry PI: mqtt.md
         - Getting Started with the Arduino 101: getting-started/boards/getting-started-with-arduino-wifi-101.md
         - Getting Started with the AdaFruit Feather Huzzah: mqtt.md
