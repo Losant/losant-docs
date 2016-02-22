@@ -6,6 +6,11 @@ The Application List block allows you to display a list of your applications on 
 
 ## Configuration
 
-The block takes one optional parameter: a filter to reduce the list of applications by name. The filter only checks against the beginning of the application name (e.g. filtering with "Th" will display an application called "Thermostat" but hide one called "Monolith"). To display all of your applications, do not provide an application filter.
+The block takes one optional parameter: a filter to reduce the list of applications by name. The filter accepts an asterisk `*` to search for any occurrence of the given characters in the application name. For example:
+
+* Filtering with "th" will display an application called "Thermostat" but hide one called "Monolith"
+* Filtering with "\*th", will show both the "Thermostat" and "Monolith" applications
+
+To display all of your applications, do not provide a filter.
 
 ![Application List Config](/images/dashboards/applications-filter.png "Application List Config")
