@@ -6,7 +6,7 @@ The Device List block displays a list of devices for a given application. The li
 
 ## Configuration
 
-The block takes one optional parameter: a filter to reduce the list of devices by name. The filter accepts an asterisk `*` to search for any occurrence of the given characters in the application name. For example:
+The block takes one optional parameter: a filter to reduce the list of devices by name. The filter accepts an asterisk `*` to search for any occurrence of the given characters in the device name. For example:
 
 * Filtering with "dev" will display a device called "Device A" but hide one called "Second Device"
 * Filtering with "\*dev", will show both the "Device A" and "Second Device" devices
