@@ -31,7 +31,7 @@ pages:
     - Device Connection Log: dashboards/device-connection-log.md
     - Event List: mqtt.md
     - External Website: dashboards/external-website.md
-    - Device List: mqtt.md
+    - Device List: dashboards/device-list.md
     - Workflow List: mqtt.md
     - Application List: dashboards/application-list.md
 - Workflows:
