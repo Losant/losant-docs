@@ -26,7 +26,7 @@ pages:
     - Gauge: dashboards/gauge.md
     - Pie Chart: dashboards/pie-chart.md
     - Data Table: dashboards/data-table.md
-    - Device Connection Log: mqtt.md
+    - Device Connection Log: dashboards/device-connection-log.md
     - Event List: mqtt.md
     - External Website: dashboards/external-website.md
     - Device List: mqtt.md
