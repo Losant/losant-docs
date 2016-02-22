@@ -11,7 +11,7 @@ pages:
 - Applications:
     - Overview: applications/overview.md
     - Access Keys: applications/access-keys.md
-    - Webhooks: mqtt.md
+    - Webhooks: applications/webhooks.md
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
