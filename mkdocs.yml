@@ -10,7 +10,7 @@ pages:
     - Overview: security.md
     - Access Keys: mqtt.md
 - Applications:
-    - Overview: mqtt.md
+    - Overview: applications/overview.md
     - Access Keys: applications/access-keys.md
     - Webhooks: mqtt.md
 - Devices:

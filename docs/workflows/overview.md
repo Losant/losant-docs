@@ -90,3 +90,5 @@ For this example, the user wanted to send an SMS alert with the temperature in c
 ## Template Fields and Payload Paths
 
 ## Saving and Deploying
+
+## Common Payload Fields
