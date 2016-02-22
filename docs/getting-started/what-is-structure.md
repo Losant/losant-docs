@@ -10,7 +10,7 @@ If you don't have a device, but still want to experience many of the features St
 
 Structure provides device connectivity using open and industry standards like [MQTT](/mqtt) and [REST](#). This allows any custom device to connect to the Structure platform using tools and libraries available for almost any environment.
 
-// TODO graphic of connectivity
+![Communication Diagram](/images/getting-started/communication-diagram.png "Communication Diagram")
 
 Structure provides open source SDKs for <a href="https://github.com/GetStructure/structure-sdk-arduino" target="_blank">Arduino</a> and <a href="https://github.com/GetStructure/structure-sdk-js" target="_blank">Node.js</a>. This allows devices based on these technologies to quickly connect without requiring any additional implementation for the communication.
 
