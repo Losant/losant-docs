@@ -32,7 +32,7 @@ pages:
     - Event List: mqtt.md
     - External Website: dashboards/external-website.md
     - Device List: dashboards/device-list.md
-    - Workflow List: mqtt.md
+    - Workflow List: dashboards/workflow-list.md
     - Application List: dashboards/application-list.md
 - Workflows:
     - Overview: workflows/overview.md
