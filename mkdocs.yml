@@ -60,6 +60,7 @@ pages:
         - Debug: workflows/outputs/debug.md
         - Device Command: workflows/outputs/device-command.md
         - Record Event: workflows/outputs/record-event.md
+        - HTTP: workflows/outputs/http.md
 
 - MQTT: mqtt.md
 - Limits: limits.md
