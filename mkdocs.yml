@@ -11,7 +11,7 @@ pages:
     - Access Keys: mqtt.md
 - Applications:
     - Overview: mqtt.md
-    - Access Keys: mqtt.md
+    - Access Keys: applications/access-keys.md
     - Webhooks: mqtt.md
 - Devices:
     - Device Overview: devices/overview.md
