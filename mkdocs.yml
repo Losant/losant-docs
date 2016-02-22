@@ -21,7 +21,7 @@ pages:
     - Device Commands: devices/commands.md
     - Device Queries: devices/device-queries.md
 - Dashboards:
-    - Overview: mqtt.md
+    - Overview: dashboards/overview.md
     - Time Series Graph: dashboards/time-series-graph.md
     - GPS Heatmap: dashboards/gps-heatmap.md
     - GPS History: dashboards/gps-history.md

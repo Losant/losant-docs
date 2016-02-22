@@ -1,16 +1,18 @@
 # Structure Walkthrough
 
-Don't have a device? No problem! This walkthrough will allow you to experience all the features Structure provides while building a virtual weather station powered by the [Forecast.io API](https://developer.forecast.io).
+Don't have a device? No problem! This walkthrough will allow you to experience many of the features Structure provides while building a virtual weather station powered by the [Forecast.io API](https://developer.forecast.io).
 
-TODO: screenshot of finished product
+![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
 
-Since all data doesn't come from physical things, Structure provides the concept of [virtual devices](/devices/overview/#device-configuration), which get their state information from sources other than real objects. We're going to use a virtual device in this walkthrough to store, visualize, and trigger events off of real weather data.
+Since all data doesn't come from physical things, Structure provides the concept of [virtual devices](/devices/overview/#device-configuration), which get their state information from sources other than real objects. We're going to use a virtual device in this walkthrough to store and visualize real weather data.
 
 ## Step 1: Sign up for Forecast.io API
 
 [Signing up](https://developer.forecast.io/register) for the Forecast.io API is extremely simple and only requires an email address. Once you sign up you'll be provided an API key. Keep this handy for future steps. This API key gives you 1,000 requests free each day, which is more than enough for this application.
 
 ![Forecast.io API Key](/images/getting-started/walkthrough/forecast-api-key.png "Forecast.io API Key")
+
+No, sorry, the API key in the above screenshot won't work.
 
 ## Step 2: Create Structure Application
 
@@ -28,7 +30,7 @@ The [Forecast.io API](https://developer.forecast.io/docs/v2) provides a lot of i
 
 ![Device Settings](/images/getting-started/walkthrough/device-settings.png "Device Settings")
 
-When creating the device, make sure `Virtual Device` is checked. Device tags won't really be needed since we only have a single device. Tags become useful when you start organizing hundreds or thousands of devices.
+When creating the device, make sure `Virtual Device` is checked. Device tags won't be needed since we only have a single device. Tags become useful when you start organizing hundreds or thousands of devices.
 
 The `Device Attributes` are important. These are what tell Structure what data this device will be reporting and what Structure will be storing. For the weather device, we'll be storing the following attributes:
 
@@ -62,25 +64,25 @@ Name the workflow anything you like and provide an optional description.
 
 ### Timer Trigger
 
-All workflows start with a trigger. For this one, we simply want this workflow to run every once and a while to grab weather data. Drag a [timer trigger](/workflows/triggers/timer) onto the workflow canvas.
+All workflows start with a trigger. For this example, we simply want this workflow to run every couple of minutes and grab weather data. Drag a [timer trigger](/workflows/triggers/timer) onto the workflow canvas.
 
 ![Timer Trigger](/images/getting-started/walkthrough/timer-trigger.png "Timer Trigger")
 
-Once it's added to the canvas, set the interval to every 2 minutes. Forecast.io provides us with 1,000 API requests per day. Requesting every 2 minutes will use 720 per day.
+Once it's added to the canvas, set the interval to every 2 minutes. Forecast.io provides us with 1,000 API requests per day. Requesting every 2 minutes will use 720 of those.
 
 ### Requesting Data
 
-You'll see a few extra nodes on the below workflow. The `Virtual Button` node was added so you can easily trigger this workflow without having to wait for the timer. The `Debug` node prints out the payload that was received from the `HTTP` node. We'll use these so we can test this workflow to ensure it's working correctly.
+You'll see a few extra nodes on the below workflow. The `Virtual Button` node was added so you can easily trigger this workflow without having to wait for the timer. The `Debug` node prints out the payload that was received from the `HTTP` node. We'll use these so we can test this workflow to ensure it's working correctly. Drag all of these nodes onto the canvas and connect them as shown below.
 
 ![HTTP Node](/images/getting-started/walkthrough/http-node.png "HTTP Node")
 
-There are two important configuration options for the HTTP node. The first is the URL and the second is where to store the result. The URL will be Forecast.io's API endpoint:
+Click the HTTP node to configure it. There are two important configuration options for the HTTP node. The first is the URL and the second is where to store the result. The URL will be Forecast.io's API endpoint:
 
 ```
 https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
 ```
 
-The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request weather for. [MyGeoPosition.com](http://mygeoposition.com) is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Structure's headquarters if you'd like to use those:
+The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request weather for. [MyGeoPosition.com](http://mygeoposition.com) is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Structure's headquarters if you'd like to use these:
 
 ```
 https://api.forecast.io/forecast/APIKEY/39.1119359,-84.51254
@@ -106,7 +108,7 @@ Now that we've got weather data being queried every 2 minutes, it's time to star
 
 ![Virtual Device](/images/getting-started/walkthrough/virtual-device.png "Virtual Device")
 
-The virtual device node requires the device ID you obtained earlier when you added the device to the Structure application. When then set the devices state by publishing values for all of the attributes we defined for the device earlier. The values support what Structure calls templates, which means we can reference data stored on the payload. As you saw from the debug output earlier, the payload currently looks something like this:
+The virtual device node requires the device ID you obtained earlier when you added the device to the Structure application. We then set the devices state by publishing values for all of the attributes we defined for the device earlier. The values support what Structure calls templates, which means we can reference data stored on the payload. As you saw from the debug output earlier, the payload currently looks something like this:
 
 ```json
 {
@@ -155,25 +157,25 @@ To pull the value of the temperature out of this payload, we would use the follo
 
 We can then assign values to our various attributes by using the following templates:
 
-* `temp` : `{{ weather.body.currently.temperature }}`
-* `feels-like` : `{{ weather.body.currently.apparentTemperature }}`
-* `dew-point` : `{{ weather.body.currently.dewPoint }}`
-* `humidity` : `{{ weather.body.currently.humidity }}`
-* `wind-speed` : `{{ weather.body.currently.windSpeed }}`
-* `visibility` : `{{ weather.body.currently.visibility }}`
-* `pressure` : `{{ weather.body.currently.pressure }}`
+* temp : `{{ weather.body.currently.temperature }}`
+* feels-like : `{{ weather.body.currently.apparentTemperature }}`
+* dew-point : `{{ weather.body.currently.dewPoint }}`
+* humidity : `{{ weather.body.currently.humidity }}`
+* wind-speed : `{{ weather.body.currently.windSpeed }}`
+* visibility : `{{ weather.body.currently.visibility }}`
+* pressure : `{{ weather.body.currently.pressure }}`
 
 You can now deploy this workflow and every time the timer triggers, the virtual device will publish those state attributes to Structure.
 
 ![Deploy Workflow](/images/getting-started/walkthrough/deploy-workflow.png "Deploy Workflow")
 
-You can verify the device is properly reporting state by inspecting the recent device states section on your device page.
+You can verify the device is properly reporting state by inspecting the recent device states section on your device page. Your device page will be available on the `Devices` menu. Your device will be listed under the `Recent Devices` section.
 
 ![Recent States](/images/getting-started/walkthrough/recent-states.png "Recent States")
 
 ## Step 6: Create a Dashboard
 
-Now that we've got weather data being stored, we can start to visualize it using Structure's dashboarding tools. Create a new dashboard using the `Dashboard` main menu. You can name it whatever you like.
+Now that we've got weather data being stored, we can start to visualize it using Structure's [dashboarding tools](/dashboards/overview). Create a new dashboard using the `Dashboard` main menu. You can name it whatever you like.
 
 ![Create Dashboard](/images/getting-started/walkthrough/create-dashboard.png "Create Dashboard")
 
@@ -183,11 +185,11 @@ The first block to add is a simple gauge to show the current temperature.
 
 ![Gauge Settings](/images/getting-started/walkthrough/gauge-settings.png "Gauge Settings")
 
-Set the block title to "Temperature" and select your application from the application dropdown. The gauge has two ways to display itself. One is a simple number, which is what you'll want for this, and the other is a dial.
+Set the block title to "Temperature" and select your application from the application dropdown. The gauge has two ways to display itself. One is a simple number, which is what you'll want for this, and the other is a dial. Select `Number Gauge`.
 
 Set the duration to `Last received data point`. Gauges can also display aggregates over time. So if you were to select a time range, a new field would appear in the block data section where you could specify how to aggregate the data. For example, you could display the average temperature over the last 24 hours.
 
-For the block data, set the label to ˚F, which is an arbitrary string that will appear under the number. Set the device ID to the ID of your device and set the attribute to "temp".
+For the block data, set the label to ˚F, which is an arbitrary string that will appear under the number. Typically this would be the units for the data being displayed. Set the device ID to the ID of your device and set the attribute to `temp`. The attributes correspond to the attributes we defined for our device and the attributes that the workflow is currently populating with weather data.
 
 What this does is pull the most recently received value for the temp attribute from the device ID and displays it on the dashboard. Click `Add Block` to view it on your new dashboard.
 
@@ -205,7 +207,7 @@ Humidity is returned from Forecast.io as a number between 0 and 1, so we need to
 
 ![Humidity Gauge](/images/getting-started/walkthrough/dashboard-with-humidity.png "Humidity Gauge")
 
-Now let's make some space for a nice big linear graph. Drag the humidity gauge underneath the temperature gauge.
+Now let's make some space for a nice big linear graph that we'll add next. Drag the humidity gauge underneath the temperature gauge.
 
 ![Dashboard Drag](/images/getting-started/walkthrough/dashboard-drag.gif "Dashboard Drag")
 
@@ -213,7 +215,7 @@ Next, let's add a graph that displays temperature vs. humidity over time. Click 
 
 ![Time Series Settings](/images/getting-started/walkthrough/time-series-settings.png "Time Series Settings")
 
-Time series graph requires you to select a duration and a resolution. The duration is how far back in time you'd like to view. Since you don't have much data yet, select 60 minutes. As your device continues to collect weather data, you can increase this to view longer time periods if needed.
+The [time series graph](/dashboards/time-series-graph) requires you to select a duration and a resolution. The duration is how far back in time you'd like to view. Since you don't have much data yet, select 60 minutes. As your device continues to collect weather data, you can increase this to view longer time periods if needed.
 
 The resolution is how far apart individual data points are. Select one minute for this example, which means you'll see a data point for every minute. Resolution works closely with the aggregator in the block data section. If you're collecting data more often than the resolution, it will be aggregated by the method you specify. This example will take the average of all data points each minute and graph the result.
 
@@ -224,3 +226,19 @@ Unlike the gauge, which can only display a single value, time series graphs can 
 Resize the graph to fill the available dashboard space.
 
 ![Dashboard Resize](/images/getting-started/walkthrough/dashboard-resize.gif "Dashboard Resize")
+
+The remainder of the dashboard is left as a challenge for you.
+
+![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
+
+The above dashboard adds the following blocks:
+
+1. Pressure number gauge using the `pressure` attribute.
+1. Wind Speed number gauge using the `wind-speed` attribute.
+1. Pressure graph showing the `pressure` attribute over the last 60 minutes.
+1. Visibility number gauge using the `visibility` attribute.
+1. Dew point number gauge using the `dew-point` attribute.
+
+All of these blocks can be added using the same steps as above but with different attributes for the data source.
+
+Once complete, you now have a pretty capable local weather dashboard for viewing the current and historical weather data. As an additional challenge, see if you can use another workflow to setup SMS notifications when the temperature goes above or below certain values.
