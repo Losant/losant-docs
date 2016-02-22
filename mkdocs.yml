@@ -29,7 +29,7 @@ pages:
     - Pie Chart: dashboards/pie-chart.md
     - Data Table: dashboards/data-table.md
     - Device Connection Log: dashboards/device-connection-log.md
-    - Event List: mqtt.md
+    - Event List: dashboards/event-list.md
     - External Website: dashboards/external-website.md
     - Device List: dashboards/device-list.md
     - Workflow List: dashboards/workflow-list.md
@@ -57,6 +57,7 @@ pages:
         - Throttle: workflows/logic/throttle.md
         - Validate Payload: workflows/logic/validate-payload.md
 - MQTT: mqtt.md
+- Limits: limits.md
 theme_dir: 'structure'
 extra:
     site_title: 'Structure Documentation'

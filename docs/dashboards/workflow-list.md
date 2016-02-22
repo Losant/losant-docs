@@ -1,6 +1,6 @@
 # Workflow List
 
-The Workflow List block displays a list workflows within a given application. The list links to each workflow and displays each one's name, enabled / disabled status and a count of runs and errors in the last 24 hours.
+The Workflow List block displays a list of workflows within a given application. The list links to each workflow and displays each one's name, enabled / disabled status and a count of runs and errors in the last 24 hours.
 
 ![Workflows List](/images/dashboards/workflows-example.png "Workflows List")
 
