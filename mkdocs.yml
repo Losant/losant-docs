@@ -54,6 +54,7 @@ pages:
         - Math: workflows/logic/math.md
         - Mutate: workflows/logic/mutate.md
         - On Change: workflows/logic/on-change.md
+        - Throttle: workflows/logic/throttle.md
 - MQTT: mqtt.md
 theme_dir: 'structure'
 extra:

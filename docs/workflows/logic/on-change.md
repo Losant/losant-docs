@@ -6,7 +6,7 @@ The on change node allows a workflow to branch based upon if a value has changed
 
 ## Configuration
 
-There are three configuration parts for the on change node for the JSON decode node - defining what payload field to monitor for changes, defining what constitutes a change, and optionally defining where to store the value compared against.
+There are three configuration parts for the on change node - defining what payload field to monitor for changes, defining what constitutes a change, and optionally defining where to store the value compared against.
 
 ![On Change Node Example](/images/workflows/logic/on-change-node-example.png "On Change Node Example")
 
