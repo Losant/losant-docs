@@ -1,6 +1,6 @@
 # Structure Walkthrough
 
-Don't have a device? No problem! This walkthrough will allow you to experience many of the features Structure provides while building a virtual weather station powered by the [Forecast.io API](https://developer.forecast.io).
+Don't have a device? No problem! This walkthrough will allow you to experience many of the features Structure provides while building a virtual weather station powered by the <a href="https://developer.forecast.io" target="_blank">Forecast.io API</a>.
 
 ![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
 
@@ -8,7 +8,7 @@ Since all data doesn't come from physical things, Structure provides the concept
 
 ## Step 1: Sign up for Forecast.io API
 
-[Signing up](https://developer.forecast.io/register) for the Forecast.io API is extremely simple and only requires an email address. Once you sign up you'll be provided an API key. Keep this handy for future steps. This API key gives you 1,000 requests free each day, which is more than enough for this application.
+<a href="https://developer.forecast.io/register" target="_blank">Signing up</a> for the Forecast.io API is extremely simple and only requires an email address. Once you sign up you'll be provided an API key. Keep this handy for future steps. This API key gives you 1,000 requests free each day, which is more than enough for this application.
 
 ![Forecast.io API Key](/images/getting-started/walkthrough/forecast-api-key.png "Forecast.io API Key")
 
