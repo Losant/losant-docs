@@ -66,13 +66,13 @@ pages:
         - Record Event: workflows/outputs/record-event.md
         - HTTP: workflows/outputs/http.md
         - MQTT: workflows/outputs/mqtt.md
-        #- SendGrid: workflows/outputs/sendgrid.md
+        - SendGrid: workflows/outputs/sendgrid.md
         #- Slack: workflows/outputs/slack.md
-        #- Email: workflows/outputs/email.md
+        - Email: workflows/outputs/email.md
         #- SMS: workflows/outputs/sms.md
         #- Tweet: workflows/outputs/tweet.md
         #- Twilio: workflows/outputs/twilio.md
-        #- Virtual Device: workflows/outputs/virtual-device.md
+        - Virtual Device: workflows/outputs/virtual-device.md
 - Structure SDKs:
     - JavaScript: structure-sdks/javascript.md
     - Arduino: structure-sdks/arduino.md

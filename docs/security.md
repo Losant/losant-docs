@@ -23,3 +23,5 @@ Devices that communicate using MQTT make use of application secrets and keys. Th
 Structure uses [Google Compute](https://cloud.google.com) as the underlying infrastructure provider. All data is stored using Google Compute Engine's [persistent disk](https://cloud.google.com/compute/docs/disks/#pd_encryption) functionality, which encrypts all data in transit and at rest. Google complies to the strictest of information and physical security requirements. Please refer to their [security documentation](https://cloud.google.com/security) for full details.
 
 ## 2-Factor Authentication
+
+Structure has implemented a 2-Factor Authentication scheme based on the [Internet Engineering Task Force](http://ietf.org/) standard [RFC 6238](https://tools.ietf.org/html/rfc6238). The same time-variant based one-time password algorithm used by Google and Amazon also protects a Structure user's account against unauthorized access even if their password has been compromised.
