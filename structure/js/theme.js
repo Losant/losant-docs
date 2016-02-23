@@ -1,4 +1,14 @@
 $( document ).ready(function() {
+    $('#nav-expander').on('click', function(evt) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        $('body').toggleClass('nav-open');
+    });
+    $(document).on('click', function() {
+        if ($('body').hasClass('nav-open')) {
+          $('body').removeClass('nav-open');
+        }
+    });
 
     // Shift nav in mobile when clicking the menu.
     $(document).on('click', "[data-toggle='wy-nav-top']", function() {
