@@ -58,6 +58,22 @@ pages:
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
         - Get Value: workflows/data/get-value.md
+        #- HTTP: workflows/data/http.md
+        #- Store Value: workflows/data/store-value.md
+    #- Outputs:
+        #- Debug: workflows/outputs/debug.md
+        #- Device Command: workflows/outputs/device-command.md
+        #- Record Event: workflows/outputs/record-event.md
+        #- HTTP: workflows/outputs/http.md
+        #- MQTT: workflows/outputs/mqtt.md
+        #- SendGrid: workflows/outputs/sendgrid.md
+        #- Slack: workflows/outputs/slack.md
+        #- Email: workflows/outputs/email.md
+        #- SMS: workflows/outputs/sms.md
+        #- Tweet: workflows/outputs/tweet.md
+        #- Twilio: workflows/outputs/twilio.md
+        #- Virtual Device: workflows/outputs/virtual-device.md
+
 - MQTT: mqtt.md
 - Limits: limits.md
 theme_dir: 'structure'
