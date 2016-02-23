@@ -66,6 +66,7 @@ pages:
         - Record Event: workflows/outputs/record-event.md
         - HTTP: workflows/outputs/http.md
         - MQTT: workflows/outputs/mqtt.md
+        - SendGrid: workflows/outputs/sendgrid.md
 
 - MQTT: mqtt.md
 - Limits: limits.md
