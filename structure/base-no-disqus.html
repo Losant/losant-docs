@@ -12,7 +12,7 @@
   {% endblock %}
 
   {% if favicon %}<link rel="shortcut icon" href="{{ favicon }}">
-  {% else %}<link rel="shortcut icon" href="{{ base_url }}/img/favicon.ico">{% endif %}
+  {% else %}<link rel="shortcut icon" href="/img/favicon.ico">{% endif %}
 
   {# CSS #}
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -21,9 +21,9 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="{{ base_url }}/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="{{ base_url }}/css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="{{ base_url }}/css/highlight.css">
+  <link rel="stylesheet" href="/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="/css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="/css/highlight.css">
   {%- for path in extra_css %}
   <link href="{{ path }}" rel="stylesheet">
   {%- endfor %}
@@ -36,10 +36,10 @@
     var mkdocs_page_url = "{{ current_page.abs_url }}";
   </script>
   {% endif %}
-  <script src="{{ base_url }}/js/jquery-2.1.1.min.js"></script>
-  <script src="{{ base_url }}/js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="{{ base_url }}/js/highlight.pack.js"></script>
-  <script src="{{ base_url }}/js/theme.js"></script>
+  <script src="/js/jquery-2.1.1.min.js"></script>
+  <script src="/js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="/js/highlight.pack.js"></script>
+  <script src="/js/theme.js"></script>
 
   {%- block extrahead %} {% endblock %}
 
