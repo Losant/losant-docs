@@ -82,7 +82,7 @@ Click the HTTP node to configure it. There are two important configuration optio
 https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
 ```
 
-The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. [MyGeoPosition.com](http://mygeoposition.com) is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Structure's headquarters if you'd like to use these:
+The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. <a href="http://mygeoposition.com" target="_blank">MyGeoPosition.com</a> is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Structure's headquarters if you'd like to use these:
 
 ```
 https://api.forecast.io/forecast/APIKEY/39.1119359,-84.51254
