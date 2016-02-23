@@ -73,8 +73,10 @@ pages:
         #- Tweet: workflows/outputs/tweet.md
         #- Twilio: workflows/outputs/twilio.md
         #- Virtual Device: workflows/outputs/virtual-device.md
-- MQTT: mqtt.md
-- Limits: limits.md
+- MQTT:
+    - Overview: /mqtt/overview.md
+- Limits:
+    - Limits: /limits/overview.md
 theme_dir: 'structure'
 extra:
     site_title: 'Structure Documentation'
