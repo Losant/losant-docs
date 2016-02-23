@@ -63,7 +63,7 @@ The payload optionally includes the time, in <a href="https://docs.mongodb.org/m
 }
 ```
 
-When publishing data in this format, Structure will automatically store the data and make it available in our [visualization tools](/dashboards/overview) as well as exposing it through [workflows](workflows/overview). The attributes you send must first be configured on the device before Structure will accept the data.
+When publishing data in this format, Structure will automatically store the data and make it available in our [visualization tools](/dashboards/overview) as well as exposing it through [workflows](/workflows/overview). The attributes you send must first be configured on the device before Structure will accept the data.
 
 #### Subscribing to Commands
 

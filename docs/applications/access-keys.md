@@ -34,4 +34,4 @@ If you think an access key has been compromised or is no longer needed, you may 
 
 To find out more on using access keys with our SDKs, checkout the [Structure JS SDK](https://github.com/GetStructure/structure-sdk-js) or the [Structure Arduino SDK](https://github.com/GetStructure/structure-sdk-arduino).
 
-For information on connecting to the Structure Platform via MQTT take a look at the [Structure MQTT Documentation](/mqtt/).
+For information on connecting to the Structure Platform via MQTT take a look at the [Structure MQTT Documentation](/mqtt/overview).
