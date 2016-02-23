@@ -87,8 +87,46 @@ Temperature warning. Temperature now at {{ degreesCelsius }} deg C!
 
 For this example, the user wanted to send an SMS alert with the temperature in celsius, but our temperature sensor reported the value in Fahrenheit. This is why we used the math node to convert the temperature before being sent.
 
-## Template Fields and Payload Paths
+## Common Payload Fields
+
+The payloads described above only include what was added by the trigger. All payloads include a common set of other, potentially useful, fields:
+
+```json
+{
+  "time": <time of the event>,
+  "data": { ... },
+  "applicationId": <id of the current application>,
+  "triggerId": <id of the workflow trigger>,
+  "triggerType": <name of the trigger>,
+  "flowId": <id of the current workflow>
+}
+```
+
+For example, a timer trigger will start a payload with the following payload:
+
+```json
+{
+  "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
+  "data": {},
+  "applicationId": "56311a8e51645b2054eb258b",
+  "triggerId": "78fbb050d7f811e5b995b3a5b31df7d8",
+  "triggerType": "timer",
+  "flowId": "56c8967bb8df0f0100d62912"
+}
+```
 
 ## Saving and Deploying
 
-## Common Payload Fields
+Workflows are saved and deployed using the `Deploy Workflow` button.
+
+![Deploy Workflow](/images/workflows/overview-deploy.png "Deploy Workflow")
+
+The button will be green whenever there are changes that can be deployed. It will be gray when there are no changes.
+
+Workflows can be enabled and disabled by clicking the `Enabled` checkbox on the workflow settings panel. The workflow settings panel can be displayed by clicking anywhere in the workflow canvas area.
+
+![Enable Workflow](/images/workflows/overview-enable.png "Enable Workflow")
+
+Once a workflow has been deployed, it will take effect immediately.
+
+## Template Fields and Payload Paths

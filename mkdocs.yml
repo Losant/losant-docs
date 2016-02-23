@@ -67,9 +67,16 @@ pages:
         - HTTP: workflows/outputs/http.md
         - MQTT: workflows/outputs/mqtt.md
         - SendGrid: workflows/outputs/sendgrid.md
-
-- MQTT: mqtt.md
-- Limits: limits.md
+        #- Slack: workflows/outputs/slack.md
+        #- Email: workflows/outputs/email.md
+        #- SMS: workflows/outputs/sms.md
+        #- Tweet: workflows/outputs/tweet.md
+        #- Twilio: workflows/outputs/twilio.md
+        #- Virtual Device: workflows/outputs/virtual-device.md
+- MQTT:
+    - Overview: mqtt/overview.md
+- Limits:
+    - Overview: limits/overview.md
 theme_dir: 'structure'
 extra:
     site_title: 'Structure Documentation'

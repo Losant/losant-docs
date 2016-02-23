@@ -19,7 +19,7 @@ Command names and payloads can be anything. It's entirely up the device and its 
 
 ## Handling Commands
 
-Commands can currently only be received over an [MQTT connection](/mqtt.md) to Structure. The Structure SDKs make connecting and receiving commands very easy for custom devices. All commands contain a name and an optional payload. All payloads are JSON objects.
+Commands can currently only be received over an [MQTT connection](/mqtt/overview) to Structure. The Structure SDKs make connecting and receiving commands very easy for custom devices. All commands contain a name and an optional payload. All payloads are JSON objects.
 
 Below is an example of using the Structure Arduino SDK to handle a command and turn on an LED.
 
