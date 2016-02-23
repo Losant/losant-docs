@@ -28,6 +28,34 @@ Open the 2-factor authentication app used in the verification process and select
 
 ### Disabling 2-Factor Authentication
 
-To disable 2-factor authentication, navigate to the `Two Factor Auth` tab under `Account Settings` and authenticate yourself using your password and 2-factor code, then click `Diable Two Factor Auth`.
+To disable 2-factor authentication, navigate to the `Two Factor Auth` tab under `Account Settings` and authenticate yourself using your password and 2-factor code, then click `Disable Two Factor Auth`.
 
 ![Disable 2-Factor Auth](/images/user-accounts/disable-2fa.png "Disable 2-Factor Auth")
+
+## Linked Accounts
+
+Structure allows users to connect third-party accounts for use within the Structure Platform. For example to send a tweet from a workflow, you must first have a connected Twitter account.
+
+For an example on how linked accounts can be used, check out the [Tweet Workflow Node](/workflows/outputs/tweet/) documentation.
+
+### View Linked Accounts
+
+Currently linked accounts are available by clicking your name in the top right of the Structure application and selecting `Account Settings` in the dropdown. Then select the `Account Links` tab.
+
+![View Linked Accounts](/images/user-accounts/view-linked-accounts.png "View Linked Accounts")
+
+### Linking an Account
+
+To link a third-party account, click the `connect` button next to the service you would like to connect.
+
+![Connect Linked Account](/images/user-accounts/connect-linked-accounts.png "Connect Linked Account")
+
+Complete any authorization or approval needed by the third-party.
+
+![Authorize Linked Account](/images/user-accounts/authorize-linked-accounts.png "Authorize Linked Account")
+
+### Disconnecting a Linked Account
+
+Simply click the `disconnect` link next to your linked account.
+
+![Disconnect Linked Account](/images/user-accounts/disconnect-linked-accounts.png "Disconnect Linked Account")
