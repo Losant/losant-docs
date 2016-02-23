@@ -4,17 +4,18 @@ pages:
     - What is Structure: getting-started/what-is-structure.md
     - Structure Walkthrough: getting-started/walkthrough.md
     - Boards:
-        - Getting Started with the Intel Edison: mqtt.md
-        - Getting Started with the Raspberry PI: mqtt.md
-        - Getting Started with the Arduino 101: getting-started/boards/getting-started-with-arduino-wifi-101.md
-        - Getting Started with the AdaFruit Feather Huzzah: mqtt.md
+        - Getting Started with Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
+        - Getting Started with Arduino: getting-started/boards/getting-started-with-arduino-wifi-101.md
 - Security:
     - Overview: security.md
-    - Access Keys: mqtt.md
+- User Accounts:
+    - Overview: user-accounts/overview.md
 - Applications:
-    - Overview: mqtt.md
-    - Access Keys: mqtt.md
-    - Webhooks: mqtt.md
+    - Overview: applications/overview.md
+    - Access Keys: applications/access-keys.md
+    - Webhooks: applications/webhooks.md
+- Events:
+    - Overview: events/overview.md
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
@@ -37,7 +38,6 @@ pages:
 - Workflows:
     - Overview: workflows/overview.md
     - Triggers:
-        - Overview: mqtt.md
         - Device: workflows/triggers/device.md
         - Event: workflows/triggers/event.md
         - MQTT: workflows/triggers/mqtt.md
@@ -58,14 +58,14 @@ pages:
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
         - Get Value: workflows/data/get-value.md
-        #- HTTP: workflows/data/http.md
-        #- Store Value: workflows/data/store-value.md
-    #- Outputs:
-        #- Debug: workflows/outputs/debug.md
-        #- Device Command: workflows/outputs/device-command.md
-        #- Record Event: workflows/outputs/record-event.md
-        #- HTTP: workflows/outputs/http.md
-        #- MQTT: workflows/outputs/mqtt.md
+        - HTTP: workflows/data/http.md
+        - Store Value: workflows/data/store-value.md
+    - Outputs:
+        - Debug: workflows/outputs/debug.md
+        - Device Command: workflows/outputs/device-command.md
+        - Record Event: workflows/outputs/record-event.md
+        - HTTP: workflows/outputs/http.md
+        - MQTT: workflows/outputs/mqtt.md
         #- SendGrid: workflows/outputs/sendgrid.md
         #- Slack: workflows/outputs/slack.md
         #- Email: workflows/outputs/email.md
@@ -73,7 +73,6 @@ pages:
         #- Tweet: workflows/outputs/tweet.md
         #- Twilio: workflows/outputs/twilio.md
         #- Virtual Device: workflows/outputs/virtual-device.md
-
 - MQTT: mqtt.md
 - Limits: limits.md
 theme_dir: 'structure'
