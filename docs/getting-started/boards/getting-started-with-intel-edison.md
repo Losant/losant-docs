@@ -20,7 +20,7 @@ Add the `structure-sdk-js` module to the package.json dependencies.
 
 ```json
 {
-  "name": "My Edison Project",
+  "name": "MyEdisonProject",
   "description": "",
   "version": "0.0.0",
   "main": "main.js",
