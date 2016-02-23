@@ -70,7 +70,7 @@ pages:
         - Slack: workflows/outputs/slack.md
         - Email: workflows/outputs/email.md
         - SMS: workflows/outputs/sms.md
-        #- Tweet: workflows/outputs/tweet.md
+        - Tweet: workflows/outputs/tweet.md
         #- Twilio: workflows/outputs/twilio.md
         - Virtual Device: workflows/outputs/virtual-device.md
 - Structure SDKs:
