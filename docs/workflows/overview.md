@@ -180,7 +180,7 @@ _Simple evaluation_
 
 ```
 {{data.name}} is {{#data.deceased}}not {{/data.deceased}} alive.
-// My favorite actor is Bruce Campbell!
+// Bruce Campbell is alive.
 ```
 _Conditionals based on property existence_
 
