@@ -82,7 +82,7 @@ Click the HTTP node to configure it. There are two important configuration optio
 https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
 ```
 
-The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request weather for. [MyGeoPosition.com](http://mygeoposition.com) is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Structure's headquarters if you'd like to use these:
+The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. [MyGeoPosition.com](http://mygeoposition.com) is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Structure's headquarters if you'd like to use these:
 
 ```
 https://api.forecast.io/forecast/APIKEY/39.1119359,-84.51254
@@ -90,7 +90,7 @@ https://api.forecast.io/forecast/APIKEY/39.1119359,-84.51254
 
 The second required configuration parameter for this HTTP node is the location on the payload to put the result. Workflows work by passing a payload through each node in the workflow. Nodes can add, remove, or modify the payload as needed as it flows through them. In this case, we're going to add a `weather` field to the payload that will hold the response from the Forecast.io API.
 
-Deploy with workflow now and we can inspect the payload using the debug node.
+Deploy the workflow now and we can inspect the payload using the debug node.
 
 ![Deploy Workflow](/images/getting-started/walkthrough/deploy-workflow.png "Deploy Workflow")
 
