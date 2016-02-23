@@ -1,5 +1,19 @@
 # User Accounts
 
+Users are the highest level resource in Structure. All applications and dashboards are owned by a user. You can sign up for a new user on the <a href="https://accounts.getstructure.io/create-account" target="_blank">create user page</a>.
+
+## User Profile
+
+Your user profile stores information like your name and email address. To view and edit this information, click your name on the top right of the screen and select `Account Settings`. Once in the settings page, click the `User Profile` tab.
+
+![Profile](/images/user-accounts/profile.png "Profile")
+
+## Change Password
+
+Once logged in, you can change your password at any time by providing it on the `Change Password` tab in your user settings. If you forgot your password and cannot login, navigate to the <a href="https://accounts.getstructure.io/forgot-password" target="_blank">forgot password page</a>.
+
+![Reset Password](/images/user-accounts/reset-password.png "Reset Password")
+
 ## Two-Factor Authentication
 
 Structure's 2-factor authentication protects your account against unauthorized access even in the event your password has been compromised.
