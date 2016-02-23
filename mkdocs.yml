@@ -73,6 +73,11 @@ pages:
         #- Tweet: workflows/outputs/tweet.md
         #- Twilio: workflows/outputs/twilio.md
         #- Virtual Device: workflows/outputs/virtual-device.md
+- Structure SDKs:
+    - JavaScript: structure-sdks/javascript.md
+    - Arduino: structure-sdks/arduino.md
+- REST API:
+    - Overview: rest-api/overview.md
 - MQTT:
     - Overview: mqtt/overview.md
 - Limits:
