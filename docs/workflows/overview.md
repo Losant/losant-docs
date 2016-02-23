@@ -130,3 +130,117 @@ Workflows can be enabled and disabled by clicking the `Enabled` checkbox on the 
 Once a workflow has been deployed, it will take effect immediately.
 
 ## Template Fields and Payload Paths
+
+The keys to accessing data from your workflow payloads is **Template Fields**, and the way to add data or modify existing values in your payloads is through **Payload Paths**.
+
+### Template Fields
+
+Template fields are based on the <a href="https://mustache.github.io/" target="\_blank">Mustache templating language</a>. Simply put, a template field is a dot-separated JSON path inside of double curly braces.
+
+For example, say you have the following payload ...
+
+```json
+{
+  "data" : {
+    "name" : "Bruce Campbell",
+    "age" : 57,
+    "movies" : [
+      {
+        "title" : "Army of Darkness",
+        "year" : "1992"
+      },
+      {
+        "title" : "Evil Dead II",
+        "year" : "1987"
+      },
+      {
+        "title" : "The Evil Dead",
+        "year" : "1981"
+      }
+    ]
+  }
+}
+```
+
+We can access the data within this payload for our workflows using template fields.
+
+```
+My favorite actor is {{data.name}}!
+// My favorite actor is Bruce Campbell!
+```
+_String interpolation_
+
+
+```
+{{data.age > 50}} // returns true
+{{data.age === 45}} // returns false
+```
+_Simple evaluation_
+
+
+```
+{{data.name}} is {{#data.deceased}}not {{/data.deceased}} alive.
+// My favorite actor is Bruce Campbell!
+```
+_Conditionals based on property existence_
+
+
+```
+  My favorite movies are:
+  {{#data.movies}}
+    {{#title}} from {{#year}}
+  {{/data.movies}}
+  // My favorite movies are:
+  // Army of Darkness from 1992
+  // Evil Dead II from 1987
+  // The Evil Dead from 1981
+```
+_Array iteration_
+
+
+```
+I haven't seen {{data.movies.1.title}} YET ...
+// I haven't seen Evil Dead II YET ...
+```
+_Deep object traversing and array item lookup by index_
+
+### Payload Paths
+
+Like template fields, payload paths are also based on a dot-separated JSON syntax. The differences between template fields and payload paths are:
+
+- Payload paths **do not** require the double curly braces `{{ }}` around the dot-separated object paths
+- Payload paths are used to **retrieve, store or modify payload data**, whereas template fields are used to evaluate the payload and output its contents
+
+Following our previous example from above, we could us a payload path to copy the first movie in the array ...
+`data.movies.0`
+
+... and set it in a new object representing our favorite film ...
+`favoriteMovie`
+
+... and our new payload would look like this ...
+```json
+{
+  "data" : {
+    "name" : "Bruce Campbell",
+    "age" : 57,
+    "movies" : [
+      {
+        "title" : "Army of Darkness",
+        "year" : "1992"
+      },
+      {
+        "title" : "Evil Dead II",
+        "year" : "1987"
+      },
+      {
+        "title" : "The Evil Dead",
+        "year" : "1981"
+      }
+    ]
+  },
+  "favoriteMovie" : {
+    "title" : "Army of Darkness",
+    "year" : "1992"    
+  }
+}
+```
