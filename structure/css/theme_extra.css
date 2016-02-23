@@ -1609,6 +1609,7 @@ code {
   
   .header .nav-logo a img {
     height: 28px !important;
+    max-width: none;
   }
   
   .header .main-nav {
