@@ -67,7 +67,7 @@ pages:
         - HTTP: workflows/outputs/http.md
         - MQTT: workflows/outputs/mqtt.md
         - SendGrid: workflows/outputs/sendgrid.md
-        #- Slack: workflows/outputs/slack.md
+        - Slack: workflows/outputs/slack.md
         - Email: workflows/outputs/email.md
         - SMS: workflows/outputs/sms.md
         #- Tweet: workflows/outputs/tweet.md
