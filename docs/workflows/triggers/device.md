@@ -20,8 +20,8 @@ The payload will include the triggering device's state on the `data` field. The 
 {
   "time": <time of the event>,
   "data": {
-    "attribute-name" : value,
-    "attribute-name" : value,
+    "attribute-name": value,
+    "attribute-name": value,
     ...
   },
   "applicationId": <id of the current application>,
@@ -37,8 +37,8 @@ For the example workflow above, a specific payload for a triggered workflow migh
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
-    "current" : 10,
-    "on" : true
+    "current": 10,
+    "on": true
   },
   "applicationId": "568beedeb436ab01007be53d",
   "triggerId": "56c8967bb8df0f0100d629120",
