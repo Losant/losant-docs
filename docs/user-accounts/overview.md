@@ -48,9 +48,7 @@ To disable 2-factor authentication, navigate to the `Two Factor Auth` tab under 
 
 ## Linked Accounts
 
-Structure allows users to connect third-party accounts for use within the Structure Platform. For example to send a tweet from a workflow, you must first have a connected Twitter account.
-
-For an example on how linked accounts can be used, check out the [Tweet Workflow Node](/workflows/outputs/tweet/) documentation.
+Structure allows users to connect third-party accounts for use within the Structure Platform.
 
 ### View Linked Accounts
 

@@ -1,21 +1,25 @@
 # Tweet Node
 
-The Tweet node allows a workflow to post a tweet to a linked [Twitter](https://twitter.com/) account.
+The Tweet node allows a workflow to post a tweet using the provided [Twitter](https://twitter.com/) application and account.
 
 ![Tweet Node](/images/workflows/outputs/tweet-node.png "Tweet Node")
 
-## Linking To Twitter
+## Configuration
 
-For the tweet node to work, the Structure account that owns the workflow must be linked to Twitter.  This is due to the fact that Twitter uses Oauth to provide API access instead of API Keys - so it is not possible to just configure a Twitter node with API keys as Structure does with nodes such as [SendGrid](/workflows/outputs/sendgrid).
+For the tweet node to work, Structure needs a number of different Twitter authorization keys.  This is due to the fact that the Twitter API requires a [Twitter Application](https://apps.twitter.com/app/new) in order to interact with the Twitter API.  The first two values that Structure needs are the `Consumer Key` and `Consumer Secret` of the Twitter application that Structure should use.  These values can be found at the top of the "Keys And Access Tokens" tab in the settings of a Twitter application.
 
-If no Twitter account has been linked, the configuration for the tweet node will just prompt to link an account:
+![Tweet Node - Consumer Key And Secret](/images/workflows/outputs/tweet-node-consumer.png "Tweet Node - Consumer Key And Secret")
 
-![Tweet Node - No Account](/images/workflows/outputs/tweet-node-no-account.png "Tweet Node - No Account")
+Above, the tweet node is configured with `YOUR_APP_CONSUMER_KEY_HERE` as the Consumer Key and `YOUR_APP_CONSUMER_SECRET_HERE` as the Consumer Secret.
 
-To link with Twitter, follow the link in the tweet node configuration, or go to "Account Links" under "Account Settings".  See the [Account Links](/user-accounts/overview/#account-links) documentation for more information.
+Next Structure needs the tokens specific to the user account that the tweets will go out under.  These are the `Access Token` and `Access Token Secret`, and are specifically tied to the Twitter Application configured above.  These values can be found at the bottom of the "Keys And Access Tokens" tab in the settings of a Twitter application, under the "Your Access Token" section.
 
-Once linked with Twitter, the tweet node will show what account it will tweet under, and will have a text area for configuring the message to tweet.  The message supports payload templating - but remember to keep the message under the Twitter character limit, otherwise the tweet will be rejected.
+![Tweet Node - User Token](/images/workflows/outputs/tweet-node-user.png "Tweet Node - User Token")
 
-![Tweet Node - Linked Account](/images/workflows/outputs/tweet-node-linked-account.png "Tweet Node - Linked Account")
+Above, the tweet node is configured with `YOUR_USER_ACCESS_TOKEN_HERE` as the Access Token and `YOUR_USER_ACCESS_TOKEN_SECRET_HERE` as the Access Token Secret.
 
-In the example above, the tweet `Power level exceeded error threshold at {{ data.power }}!` (where `{{ data.power}}` will be replaced with the current value of `data.power` in the payload) will be posted to the twitter handle `@embreeEmergency`.
+Finally, now that all of those settings are configured, the actual tweet itself can be configured. The message field supports standard payload templating - but remember to keep the message under the Twitter character limit, otherwise the tweet will be rejected.
+
+![Tweet Node - Message](/images/workflows/outputs/tweet-node-message.png "Tweet Node - Message")
+
+In the example above, the tweet "Power level exceeded error threshold at {{ data.power }}!" (where `{{ data.power}}` will be replaced with the current value of `data.power` in the payload) will be posted to Twitter.
