@@ -40,6 +40,8 @@ pages:
     - Overview: workflows/overview.md
     - Triggers:
         - Device: workflows/triggers/device.md
+        - On Connect: workflows/triggers/on-connect.md
+        - On Disconnect: workflows/triggers/on-disconnect.md
         - Event: workflows/triggers/event.md
         - MQTT: workflows/triggers/mqtt.md
         - Timer: workflows/triggers/timer.md
