@@ -31,3 +31,11 @@ To delete a webhook, click the `delete` button on the webhook list.
 ## Using Webhooks
 
 For information on how to use Webhooks to trigger workflows checkout the [Webhook Trigger Documentation](/workflows/triggers/webhook/).
+
+### Testing Webhooks
+
+You can easily trigger a webhook for testing purposes right on the Webhook edit page.
+
+![Test Webhook](/images/applications/test-webhook.png "Test Webhook")
+
+You can fill in an optional path with query params, choose the request method, and fill in an optional JSON request body.  Clicking `Send Test Request` will trigger the Webhook just like an actual request against that Webhook's URL would - triggering any workflows linked to this Webhook with the provided request information.
