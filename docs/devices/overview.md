@@ -8,6 +8,10 @@ Devices can be added to your application on the `Devices` menu or using the `Add
 
 ![Add Device](/images/devices/add-device.png "Add Device")
 
+When adding a device, you have a choice between creating a device from scratch, or creating a device based off of a [device recipe](/devices/device-recipes).  When creating a device from scratch, all device configuration fields will start off blank.  When creating a device from a recipe, the recipe is used as an initial template for the device, and so the new device will be initially filled in with the configuration from the recipe (which you can override however you would like before actually saving the new device).
+
+![Device Creation Options](/images/devices/device-creation-options.png "Device Creation Options")
+
 ## Device Configuration
 
 Properly configuring devices is an important step to ensuring proper communication between your device and the Structure platform.
