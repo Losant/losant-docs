@@ -4,17 +4,17 @@ Webhooks are defined HTTP endpoints within the Structure Platform that can be us
 
 ## Viewing Webhooks
 
-You can view the available webhooks in the `Webhooks` tab under `Application Settings`.
+You can view the available webhooks through the `Webhooks` item under the `More` menu.
 
 ![Webhooks](/images/applications/webhooks.png "Webhooks")
 
 ## Creating a Webhook
 
-Webhooks can be added to your application by using the `Add Webhook` button within the `Webhooks` tab.
+Webhooks can be added to your application by using the `Add Webhook` button.
 
 ![Add Webhook](/images/applications/add-webhook.png "Add Webhook")
 
-Simply type in a meaningful name for you to reference later on while building you workflow and click the `Save Workflow` button.
+Simply type in a meaningful name for you to reference later on while building workflows and click the `Save Webhook` button.
 
 ![Save Webhook](/images/applications/save-webhook.png "Save Webhook")
 
