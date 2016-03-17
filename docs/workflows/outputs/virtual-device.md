@@ -12,6 +12,6 @@ There are two parts to configuring a virtual device node - selecting the virtual
 
 Any device marked as "Virtual Device" is a valid device to select as the device for this node.  If the device selected is not a "Virtual Device", the node will perform no operation.
 
-Any number of attributes can be configured - it does not have to be all of the attributes that the virtual device is configured for.  However, any attributes names that are not configured on the selected virtual device will be ignored when the node runs.  Attribute values support templating, and so can pull values off of the currently executing workflow payload.  Values will be cast (if possible) to the type of attribute that the device has been previously defined to expect.
+Any number of attributes can be configured - it does not have to be all of the attributes that the virtual device is configured for.  Attribute values support templating, and so can pull values off of the currently executing workflow payload.  Values will be cast (if possible) to the type of attribute that the device has been previously defined to expect.
 
-In the above example, the virtual device node is setting the state of the device `Electricity Cost`.  It will set the `cents` field to the value of the field `data.pricing.price` in the current payload.
+In the above example, the virtual device node is setting the state of the device `Electricity Cost`.  It will set the `cents` attribute to the value of the field `data.pricing.price` in the current payload.

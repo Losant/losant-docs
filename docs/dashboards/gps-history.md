@@ -24,5 +24,5 @@ The block data takes two parameters:
 
 ![GPS History Block Data](/images/dashboards/gps-history-block-data.png "GPS History Block Data")
 
-* **Device IDS / Tags** is a [device query](/devices/device-queries.md) for choosing which devices are displayed on the map.
-* **Attribute** is the device attribute that contains the location data. The attribute must be of type `NMEA (GPS Format)`. If displaying multiple devices on the map via tags or multiple IDs, each device must provide the same attribute name, and each must be in the correct format.
+*   **Device IDS / Tags** is a [device query](/devices/device-queries.md) for choosing which devices are displayed on the map.
+*   **Attribute** is the device attribute that contains the location data. The attribute must be of type `GPS String`. If displaying multiple devices on the map via tags or multiple IDs, each device must provide the same attribute name, and each must be in the correct format.

@@ -10,11 +10,23 @@ State is defined as one or more attributes. Typically an attribute maps to a sin
 
 ![Device Attributes](/images/devices/device-attributes.png "Device Attributes")
 
-Structure supports and understands a built-in set of data types for device attributes. These include `String`, `Number`, `GPS (NMEA)`, and `Boolean`. If you specify a state attribute as one data type and report something different, the Structure platform will attempt to convert the incoming data type into the one specified.
+Structure supports and understands a built-in set of data types for device attributes. These include `String`, `Number`, `GPS String`, and `Boolean`. If you specify a state attribute as one data type and report something different, the Structure platform will attempt to convert the incoming data type into the one specified.
 
-Any GPS attributes must be reported in the [NMEA string format](http://www.gpsinformation.org/dale/nmea.htm). This provides Structure with a consistent format that can be parsed and understood for the GPS visualizations and geofence workflow nodes. The [NMEA GLL format](http://www.gpsinformation.org/dale/nmea.htm#GLL) is the most basic and easiest to create. It will work for most standard longitude/latitude reporting.
+GPS attributes must be reported in one of four ways:
 
-Attributes can be added and removed from a device at any time. If you change the data type of an existing attribute, all data for that device will be deleted. This is because Structure won't be able to aggregate data of two different data types for the same attribute.
+*   [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)<br/>
+    Example: `37.33233141,-122.0312186`
+
+*   [Degrees Minutes Seconds](https://en.wikipedia.org/wiki/Degree_(angle)#Subdivisions) (also known as Sexagesimal)<br/>
+    Example: `37°19'56.39"N,122°1'52.38"W`
+
+*   [NMEA GLL](http://www.gpsinformation.org/dale/nmea.htm#GLL)<br/>
+    Example: `$GPGLL,3906.71226,N,8430.74572,W,000653,A,*24`
+
+*   [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)<br/>
+    Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
+
+Attributes can be added and removed from a device at any time. If you change the data type of an existing attribute, the previous data for that attribute will be lost. This is because Structure won't be able to aggregate data of two different data types for the same attribute.
 
 ## Reporting State
 

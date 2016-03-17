@@ -18,13 +18,27 @@ In the above example, there are actually two different geofences.  The first che
 
 ![Geofence Node Input Config](/images/workflows/logic/geofence-node-input-config.png "Geofence Node Input Config")
 
-The input coordinates can be defined two different ways - either as a GPS NMEA string (of the GGA or GLL types), or as longitude and latitude values.  In either case, payload templating is allowed, using the standard `{{ }}` syntax.  In the above example, the input coordinates are defined as a NMEA string in the `data.location` field of the payload.
+The input coordinates can be defined four different ways:
+
+*   [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)<br/>
+    Example: `37.33233141,-122.0312186`
+
+*   [Degrees Minutes Seconds](https://en.wikipedia.org/wiki/Degree_(angle)#Subdivisions) (also known as Sexagesimal)<br/>
+    Example: `37°19'56.39"N,122°1'52.38"W`
+
+*   [NMEA GLL](http://www.gpsinformation.org/dale/nmea.htm#GLL)<br/>
+    Example: `$GPGLL,3906.71226,N,8430.74572,W,000653,A,*24`
+
+*   [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)<br/>
+    Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
+
+In any of these cases, payload templating is allowed, using the standard `{{ }}` syntax.  In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an a NMEA string.
 
 ### Center Point Coordinate Configuration
 
 ![Geofence Node Center Config](/images/workflows/logic/geofence-node-center-config.png "Geofence Node Center Config")
 
-The center point coordinates can be defined the same was as the input coordinates - either as a GPS NMEA string (of the GGA or GLL types), or as longitude and latitude values.  While in the common case, the center point coordinate values will be static, these fields also support payload templating in case a dynamic center point is needed.  Because the common case is a static center point, a map visualization is displayed to help show the real world location of the geofence.  In the above example, the center point coordinates are defined statically using longitude and latitude values.
+The center point coordinates can be defined the same was as the input coordinates, in any one of the 4 formats described above.  While in the common case, the center point coordinate values will be static, these fields also support payload templating in case a dynamic center point is needed.  Because the common case is a static center point, a map visualization is displayed to help show the real world location of the geofence.  In the above example, the center point coordinates are defined statically using decimal degrees.
 
 ### Radius Configuration
 
@@ -32,11 +46,15 @@ The center point coordinates can be defined the same was as the input coordinate
 
 The radius of the center point is defined in meters, and must be greater than 0.  If the radius is defined as 0 meters, only an exact match between the center point and input point will count as being "within" the geofence.  In the common case, the radius will be defined as a static value, but the field does support payload templating in case the radius needs to be dynamically defined based upon the current payload.  If the radius (and center point) are defined statically, the map visualization will show the extent of the real world location of the geofence.  In the above example, the radius is defined as 50 meters, and the map shows what that actually covers in the physical world.
 
-### Adding Distance to the Payload
+### Adding Distance or Branch to the Payload
 
 ![Geofence Node Distance Value](/images/workflows/logic/geofence-node-distance-value.png "Geofence Node Distance Value")
 
-The geofence node has the ability to optionally add the calculated distance between the input and center point to the payload at an arbitrary JSON path. If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the geofence node is taken.  If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the `distance` path.  In the above example, the distance between the input and center coordinates will be placed at the `data.distance.work` path.  So, for example, given the following payload:
+The geofence node has the ability to optionally add the calculated distance between the input and center point to the payload at an arbitrary JSON path. If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the geofence node is taken.  If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the `distance` path.  In the above example, the distance between the input and center coordinates will be placed at the `data.distance.work` path.
+
+The node also has the ability to optionally add which branch out of the node was taken to the payload.  If a path is defined, `true` or `false` will be placed at the given path, depending on which branch out of the node is taken.  In the above example, the branch taken will be placed at the `data.geobranch.work` path.
+
+ So, for example, given the following payload:
 
 ```JSON
 {
@@ -64,6 +82,10 @@ The payload after execution of the geofence node would look like:
     "distance": {
       "home": 1654,
       "work": 34
+    },
+    "geobranch": {
+      "home": false,
+      "work": true
     }
   },
   "applicationId": "56919b1a9d206d0100c54152",
