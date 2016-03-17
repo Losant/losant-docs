@@ -12,16 +12,6 @@ The debug node is extremely simple to configure - its only property is an option
 
 ## Live Stream
 
-When a workflow runs through a debug node, the node live streams the current payload to the debug node panel.  As new payloads arrive, they will briefly glow green to indicate their arrival:
-
-![Debug Node Before Mutate Stream](/images/workflows/outputs/debug-node-before-mutate-stream.png "Debug Node Before Mutate Stream")
-
-Multiple debug nodes in a workflow work in concert - clicking on each debug node will show the particular payloads streaming through that node.  For instance, here are the payloads streaming through the second debug node in the above workflow:
-
-![Debug Node After Mutate Stream](/images/workflows/outputs/debug-node-after-mutate-stream.png "Debug Node After Mutate Stream")
-
-The "After Mutate" debug node shows different payloads than the "Before Mutate" debug node, because the mutate node has modified the payload (the mutate node is configured to remove the `tempC` field and rename the `tempF` field to `temperature`).
-
-It is also possible to see the live stream of all debug nodes in the workflow at once - this stream of debug information is available on the main workflow properties panel, under "Debug & Error Stream":
+When a workflow runs through a debug node, the node live streams the current payload to the debug tab of the properties panel.  As new payloads arrive, they will appear expanded at the top of the list. Multiple debug nodes in a workflow work in concert, so you can see the payload at various stages in the workflow.  For instance, here are the payloads from both debug nodes in the above workflow:
 
 ![Debug Node Workflow Stream](/images/workflows/outputs/debug-node-workflow-stream.png "Debug Node Workflow Stream")
