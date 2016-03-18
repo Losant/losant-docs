@@ -4,7 +4,7 @@ A device recipe in Structure is a template (or 'recipe') for creating devices.  
 
 ## Adding a Device Recipe
 
-Device recipes can be added to your application in the `Device Recipes` tab under `Application Settings`.
+Device recipes can be added to your application on the `Device Recipes` page (accessible under the `More` menu).
 
 ![Add Device Recipe](/images/devices/add-device-recipe.png "Add Device Recipe")
 
