@@ -22,7 +22,7 @@ After signing up you'll be prompted to create your first application. You can al
 
 ## Step 3: Add the Virtual Device
 
-Now that we have an application we need a [device](/devices/overview) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu.
+Now that we have an application we need a [device](/devices/overview) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu.  Choose `Create From Scratch` on the following screen, since we want to create from a blank device.
 
 ![Add Device](/images/getting-started/walkthrough/add-device.png "Add Device")
 
@@ -94,7 +94,7 @@ Deploy the workflow now and we can inspect the payload using the debug node.
 
 ![Deploy Workflow](/images/getting-started/walkthrough/deploy-workflow.png "Deploy Workflow")
 
-You can now wait 2 minutes for the timer to fire, or simply click the virtual button to trigger the workflow. Once triggered, click on the debug node to view the output.
+You can now wait 2 minutes for the timer to fire, or simply click the virtual button to trigger the workflow. Once triggered, click the debug tab at the bottom of the properties panel to see the output.
 
 ![Debug Output](/images/getting-started/walkthrough/debug-output.png "Debug Output")
 
@@ -108,7 +108,7 @@ Now that we've got weather data being queried every 2 minutes, it's time to star
 
 ![Virtual Device](/images/getting-started/walkthrough/virtual-device.png "Virtual Device")
 
-The virtual device node requires the device ID you obtained earlier when you added the device to the Structure application. We then set the devices state by publishing values for all of the attributes we defined for the device earlier. The values support what Structure calls templates, which means we can reference data stored on the payload. As you saw from the debug output earlier, the payload currently looks something like this:
+The virtual device node requires you to select the device to report as - which in this case is the device you created earlier. We then set the devices state by publishing values for all of the attributes we defined for the device earlier. The values support what Structure calls templates, which means we can reference data stored on the payload. As you saw from the debug output earlier, the payload currently looks something like this:
 
 ```json
 {
@@ -189,7 +189,7 @@ Set the block title to "Temperature" and select your application from the applic
 
 Set the duration to `Last received data point`. Gauges can also display aggregates over time. So if you were to select a time range, a new field would appear in the block data section where you could specify how to aggregate the data. For example, you could display the average temperature over the last 24 hours.
 
-For the block data, set the label to ˚F, which is an arbitrary string that will appear under the number. Typically this would be the units for the data being displayed. Set the device ID to the ID of your device and set the attribute to `temp`. The attributes correspond to the attributes we defined for our device and the attributes that the workflow is currently populating with weather data.
+For the block data, set the label to ˚F, which is an arbitrary string that will appear under the number. Typically this would be the units for the data being displayed. Select the device you created earlier and set the attribute to `temp`. The attributes correspond to the attributes we defined for our device and the attributes that the workflow is currently populating with weather data.
 
 What this does is pull the most recently received value for the temp attribute from the device ID and displays it on the dashboard. Click `Add Block` to view it on your new dashboard.
 
