@@ -4,13 +4,13 @@ To connect your devices to the Structure Platform, you must use a set of securit
 
 ## Viewing Access Keys
 
-You can view the available access keys in the `Access Keys` tab under `Application Settings`.
+You can view the available access keys in the `Access Keys` item under the `More` menu.
 
 ![Access Keys](/images/applications/access-keys.png "Access Keys")
 
 ## Generating an Access Key
 
-Access keys can be added to your application by using the `Generate Key` button within the `Access Keys` tab.
+Access keys can be added to your application by using the `Generate Key` on the `Access Keys` page.
 
 ![Generate Key](/images/applications/generate-key.png "Generate Key")
 
