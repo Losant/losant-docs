@@ -16,7 +16,7 @@ Payload:
 
 ```json
 {
-  "username" : "your-username",
+  "email" : "your-email",
   "password" : "your-password"
 }
 ```
