@@ -14,6 +14,7 @@ Gauge blocks currently support two types. Additional types will be added in futu
 
 * **Number Gauge** displays a value as a single number.
 * **Dial Gauge** displays the value as a number, but also provides a gauge representation to show where that number stands against a minimum and maximum value provided by you. When "Dial Gauge" is selected, the "Min" and "Max" values are required, and each must be a number.
+* The **Precision** field allows you to specify the number of digits of precision to display in the gauge (the default is 4).
 
 ### Duration
 
