@@ -61,6 +61,7 @@ pages:
         - Mutate: workflows/logic/mutate.md
         - On Change: workflows/logic/on-change.md
         - Throttle: workflows/logic/throttle.md
+        - Time Range: workflows/logic/time-range.md
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
         - Get Value: workflows/data/get-value.md
