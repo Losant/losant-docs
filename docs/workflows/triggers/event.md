@@ -22,9 +22,11 @@ The payload will include information about the event on the `data` field, as wel
   "data": {
     "sourceType": <"flow" or "user" or "device">,
     "sourceId":   <id of the source>,
-    "level":      <level of the event - "error" or "warning" or "info">,
+    "level":      <event level - "critical" / "error" / "warning" / "info">,
     "subject":    <subject of the event>,
-    "message":    <detailed event message>
+    "message":    <detailed event message>,
+    "state":      "new",
+    "id":         <event id>
   },
   "applicationId": <id of the current application>,
   "triggerId": <id of the workflow trigger>,
@@ -43,7 +45,9 @@ For the example workflow above, a specific payload for a triggered workflow migh
     "sourceId":   "56c794a06895b00100cbe84c",
     "level":      "error",
     "subject":    "Abnormal Power Draw",
-    "message":    "Draw on device FC12221TG112 has exceeded maximum threshold"
+    "message":    "Draw on device FC12221TG112 has exceeded maximum threshold",
+    "state"  :    "new",
+    "id":         "66c794a06895b00100cbe84c"
   },
   "applicationId": "568beedeb436ab01007be53d",
   "triggerId": "error/Abnormal Power Draw",

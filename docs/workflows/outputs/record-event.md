@@ -10,7 +10,7 @@ There are three parts to configuring a record event node - selecting the level o
 
 ![Record Event Node Configuration](/images/workflows/outputs/record-event-node-config.png "Record Event Node Configuration")
 
-The level of the event can be one of "Info", "Warning", or "Error". The subject of the event supports payload templating, and so can be determined dynamically based on the current workflow payload. The detailed message is optional, but also supports payload templating if needed. If the detailed message is not set, the event is created with an empty detailed message. In the above example, the record event node will create an event with the level "Error", the subject "Power Level Critical", and the message "Power level exceeded error threshold at {{ data.power }}".
+The level of the event can be one of "Info", "Warning", "Error", or "Critical". The subject of the event supports payload templating, and so can be determined dynamically based on the current workflow payload. The detailed message is optional, but also supports payload templating if needed. If the detailed message is not set, the event is created with an empty detailed message. In the above example, the record event node will create an event with the level "Error", the subject "Power Level Critical", and the message "Power level exceeded error threshold at {{ data.power }}".
 
 ## Notes on Event Creation
 
