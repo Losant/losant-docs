@@ -33,6 +33,7 @@ pages:
     - Data Table: dashboards/data-table.md
     - Device Connection Log: dashboards/device-connection-log.md
     - Event List: dashboards/event-list.md
+    - Open Event Indicator: dashboards/open-event-indicator.md
     - External Website: dashboards/external-website.md
     - Device List: dashboards/device-list.md
     - Workflow List: dashboards/workflow-list.md
