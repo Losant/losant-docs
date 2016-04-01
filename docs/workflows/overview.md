@@ -271,7 +271,7 @@ Workflows can have a set of global config keys - which are essentially keys/valu
 
 In the above example, there are 3 global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `632-538-0975`).  Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value.  Whenever the workflow runs, the payload will always include these global values.  For the above example, a payload might end up looking like the following:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -290,3 +290,15 @@ In the above example, there are 3 global keys set &mdash; `minLevel` (with a num
 ```
 
 And these values will be accessible in any node configuration that expects payload paths (such as `globals.minLevel`) or templates (such as `{{globals.phone}}`).
+
+## Workflow Storage
+
+The workflow storage interface lets you view and manipulate the persistent workflow storage.  This is the storage space used by the [Get Value](/workflows/data/get-value/) and [Store Value](/workflows/data/store-value/) nodes.  The storage interface is located under the "Storage" tab in the workflow properties editor.
+
+![Workflow Storage](/images/workflows/workflow-storage.png "Workflow Storage")
+
+In the top half of the interface, you can add new storage entries or modify existing ones.  Specify the identifier to add (or change), specify the value and the Data Type, and click `Set Value`.  The data type can be `String` (the value is treated as a string), `Number` (the value is treated as a number), or `JSON` (the value is parsed as JSON).  the JSON data type can be used to set complex objects or arrays, or even just `true`/`false`/`null`.
+
+**NOTE:**  The act of clicking `Set Value` has an immediate affect.  This will change or add the value **immediately**, this is separate from saving/deploying the workflow.
+
+In the bottom half of the interface, you can view the values of existing storage identifiers.  In this case, there is one identifier, `storedColor`, and its value is the number `35000` - this identifier was previous set by the Store Value node in a previous run of the above workflow.  This table of values will automatically refresh every 60 seconds, but you can always click the refresh link on the upper right if you want to see the latest values now.  You can also delete values here using the delete button on the right of each row.  **NOTE:** deleting, just like setting or modifying a value, takes effect immediately and is not tied to saving/deploying the workflow.
