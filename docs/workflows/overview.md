@@ -168,22 +168,22 @@ We can access the data within this payload for our workflows using template fiel
 My favorite actor is {{data.name}}!
 // My favorite actor is Bruce Campbell!
 ```
-_String interpolation_
 
+_String interpolation_
 
 ```
 {{data.age > 50}} // returns true
 {{data.age === 45}} // returns false
 ```
-_Simple evaluation_
 
+_Simple evaluation_
 
 ```
 {{data.name}} is {{#data.deceased}}not {{/data.deceased}} alive.
 // Bruce Campbell is alive.
 ```
-_Conditionals based on property existence_
 
+_Conditionals based on property existence_
 
 ```
   My favorite movies are:
@@ -195,21 +195,22 @@ _Conditionals based on property existence_
   // Evil Dead II from 1987
   // The Evil Dead from 1981
 ```
-_Array iteration_
 
+_Array iteration_
 
 ```
 I haven't seen {{data.movies.1.title}} YET ...
 // I haven't seen Evil Dead II YET ...
 ```
+
 _Deep object traversing and array item lookup by index_
 
 ### Payload Paths
 
 Like template fields, payload paths are also based on a dot-separated JSON syntax. The differences between template fields and payload paths are:
 
-- Payload paths **do not** require the double curly braces `{{ }}` around the dot-separated object paths
-- Payload paths are used to **retrieve, store or modify payload data**, whereas template fields are used to evaluate the payload and output its contents
+-   Payload paths **do not** require the double curly braces `{{ }}` around the dot-separated object paths
+-   Payload paths are used to **retrieve, store or modify payload data**, whereas template fields are used to evaluate the payload and output its contents
 
 Following our previous example from above, we could us a payload path to copy the first movie in the array ...
 `data.movies.0`
@@ -218,6 +219,7 @@ Following our previous example from above, we could us a payload path to copy th
 `favoriteMovie`
 
 ... and our new payload would look like this ...
+
 ```json
 {
   "data" : {
@@ -244,7 +246,9 @@ Following our previous example from above, we could us a payload path to copy th
   }
 }
 ```
+
 <br/>
+
 ## Import / Export
 
 Workflows can be exported to a file, and can later be imported from that file into a workflow in a different (or the same) application.  Exporting a workflow can be done from the main workflow properties panel.
@@ -258,3 +262,31 @@ The most common case when importing a workflow will be importing into a blank wo
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 
 When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application.  So for instance, when importing a workflow across applications, things like a selected device id on a device trigger will be cleared, since that id will not exist in the application being imported to.
+
+## Workflow Globals
+
+Workflows can have a set of global config keys - which are essentially keys/value pairs added to the payload under the `globals` key whenever the workflow runs.  This is a great place to store configuration values or API keys, especially if they are needed for use in multiple different nodes.  Globals can be accessed through the "Globals" tab of the properties panel.
+
+![Workflow Globals](/images/workflows/workflow-globals.png "Workflow Globals")
+
+In the above example, there are 3 global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `632-538-0975`).  Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value.  Whenever the workflow runs, the payload will always include these global values.  For the above example, a payload might end up looking like the following:
+
+```JSON
+{
+  "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
+  "data": {
+    "moisture": 576
+  },
+  "globals":{
+    "minLevel": 300,
+    "resetLevel": 500,
+    "phone": "632-538-0975"
+  }
+  "applicationId": "56919b1a9d206d0100c54152",
+  "triggerId": "56c794a06895b00100cbe84c",
+  "triggerType": "deviceId",
+  "flowId": "56956cd25a6f2f0100dc70d4"
+}
+```
+
+And these values will be accessible in any node configuration that expects payload paths (such as `globals.minLevel`) or templates (such as `{{globals.phone}}`).
