@@ -55,6 +55,7 @@ pages:
         - Geofence: workflows/logic/geofence.md
         - JSON Encode: workflows/logic/json-encode.md
         - JSON Decode: workflows/logic/json-decode.md
+        - Latch: workflows/logic/latch.md
         - Math: workflows/logic/math.md
         - Mutate: workflows/logic/mutate.md
         - On Change: workflows/logic/on-change.md
