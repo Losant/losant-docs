@@ -10,7 +10,15 @@ There are three parts to configuring a record event node - selecting the level o
 
 ![Record Event Node Configuration](/images/workflows/outputs/record-event-node-config.png "Record Event Node Configuration")
 
-The level of the event can be one of "Info", "Warning", "Error", or "Critical". The subject of the event supports payload templating, and so can be determined dynamically based on the current workflow payload. The detailed message is optional, but also supports payload templating if needed. If the detailed message is not set, the event is created with an empty detailed message. In the above example, the record event node will create an event with the level "Error", the subject "Power Level Critical", and the message "Power level exceeded error threshold at {{ data.power }}".
+The level of the event can be one of "Info", "Warning", "Error", "Critical", or "Payload Template". When "Payload Template" is selected, the level is determined by evaluating the given template string, allowing the level to be dynamically determined from the current workflow payload.  When using a template, the template string must evaluate to one of `info` / `warning` / `error` / `critical` - if it does not, the event creation will fail.
+
+The subject of the event supports payload templating, and so can be determined dynamically based on the current workflow payload. The detailed message is optional, but also supports payload templating if needed. If the detailed message is not set, the event is created with an empty detailed message. In the above example, the record event node will create an event with the level "Error", the subject "Power Level Critical", and the message "Power level exceeded error threshold at {{ data.power }}".
+
+## Output
+
+![Record Event Node Output](/images/workflows/outputs/record-event-node-output.png "Record Event Node Output")
+
+The record event node can optionally place the id of the created event onto the payload at an arbitrary JSON path.  In the above example, the event id will be placed on the payload at the path `data.newEventId`.  In the case of event creation being throttled, there will be no value placed at the path.
 
 ## Notes on Event Creation
 
