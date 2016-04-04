@@ -11,6 +11,8 @@ pages:
     - Overview: security.md
 - User Accounts:
     - Overview: user-accounts/overview.md
+- Organizations:
+    - Overview: organizations/overview.md
 - Applications:
     - Overview: applications/overview.md
     - Access Keys: applications/access-keys.md

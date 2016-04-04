@@ -1,6 +1,6 @@
 # User Accounts
 
-Users are the highest level resource in Structure. All applications and dashboards are owned by a user. You can sign up for a new user on the <a href="https://accounts.getstructure.io/create-account" target="_blank">create user page</a>.
+Users are the highest level resource in Structure. All applications and dashboards are either owned by a user or by an organization (of which users can be members). You can sign up as a new user on the <a href="https://accounts.getstructure.io/create-account" target="_blank">create account page</a>.
 
 ## User Profile
 
