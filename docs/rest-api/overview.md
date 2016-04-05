@@ -63,15 +63,15 @@ The response will include several fields, including your API token.
 
 Publishing [device state](/devices/state/) is likely one of the most common actions a user will perform with the REST API.
 
-`POST: https://api.getstructure.io/applications/:appId/devices/:deviceId/state`
+`POST: https://api.getstructure.io/applications/:applicationId/devices/:deviceId/state`
 
 Payload:
 
 ```json
 {
   "data" : {
-    "attribute-name" : "attribute-value",
-    "attribute-name" : "attribute-value"
+    <attribute-name> : <attribute-value>,
+    <attribute-name> : <attribute-value>
     ...
   }
 }
