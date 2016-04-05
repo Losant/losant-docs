@@ -32,6 +32,7 @@ pages:
     - GPS History: dashboards/gps-history.md
     - Gauge: dashboards/gauge.md
     - Pie Chart: dashboards/pie-chart.md
+    - Bar Chart: dashboards/bar-chart.md
     - Data Table: dashboards/data-table.md
     - Device Connection Log: dashboards/device-connection-log.md
     - Event List: dashboards/event-list.md
