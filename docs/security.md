@@ -18,7 +18,7 @@ Losant does not store the tokens once they are generated. It is up to the user t
 
 Devices that communicate using MQTT make use of application secrets and keys. These are implemented in the same way as API Security Tokens, but automatically scope access to the specific application. The key and secret are used as MQTT's username and password fields respectively.
 
-## Infralosant Security
+## Infrastructure Security
 
 Losant uses [Google Compute](https://cloud.google.com) as the underlying infrastructure provider. All data is stored using Google Compute Engine's [persistent disk](https://cloud.google.com/compute/docs/disks/#pd_encryption) functionality, which encrypts all data in transit and at rest. Google complies to the strictest of information and physical security requirements. Please refer to their [security documentation](https://cloud.google.com/security) for full details.
 
