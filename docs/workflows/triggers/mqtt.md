@@ -1,12 +1,12 @@
 # MQTT Trigger
 
-The MQTT trigger will trigger a workflow whenever a message is sent to the configured topic on the Structure MQTT Broker.
+The MQTT trigger will trigger a workflow whenever a message is sent to the configured topic on the Losant MQTT Broker.
 
 ![MQTT Trigger](/images/workflows/triggers/mqtt-trigger.png "MQTT Trigger")
 
 ## Configuration
 
-The only configuration needed for this node is the topic name to trigger on.  The node supports valid MQTT topic names.  The topic is not allowed to be a wildcard topic, a MQTT system topic, or a Structure specific topic.
+The only configuration needed for this node is the topic name to trigger on.  The node supports valid MQTT topic names.  The topic is not allowed to be a wildcard topic, a MQTT system topic, or a Losant specific topic.
 
 ![MQTT Trigger Config](/images/workflows/triggers/mqtt-trigger-config.png "MQTT Trigger Config")
 

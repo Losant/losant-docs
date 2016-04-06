@@ -1,6 +1,6 @@
 # Limits
 
-The following are the default limits applied to each account and application. If you'd like to increase these limits, please [contact us](https://www.getstructure.io/contact-us).
+The following are the default limits applied to each account and application. If you'd like to increase these limits, please [contact us](https://www.losant.com/contact-us).
 
 <table>
   <th>Item</th><th>Limit</th>

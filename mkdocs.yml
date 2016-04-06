@@ -1,8 +1,8 @@
 site_name: Documentation
 pages:
 - Getting Started:
-    - What is Structure: getting-started/what-is-structure.md
-    - Structure Walkthrough: getting-started/walkthrough.md
+    - What is Losant: getting-started/what-is-losant.md
+    - Losant Walkthrough: getting-started/walkthrough.md
     - Boards:
         - Getting Started with Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
         - Getting Started with Raspberry PI: getting-started/boards/getting-started-with-raspberry-pi.md
@@ -84,15 +84,15 @@ pages:
         - Tweet: workflows/outputs/tweet.md
         - Twilio: workflows/outputs/twilio.md
         - Virtual Device: workflows/outputs/virtual-device.md
-- Structure SDKs:
-    - JavaScript: structure-sdks/javascript.md
-    - Arduino: structure-sdks/arduino.md
+- Losant SDKs:
+    - JavaScript: losant-sdks/javascript.md
+    - Arduino: losant-sdks/arduino.md
 - REST API:
     - Overview: rest-api/overview.md
 - MQTT:
     - Overview: mqtt/overview.md
 - Limits:
     - Overview: limits/overview.md
-theme_dir: 'structure'
+theme_dir: 'losant'
 extra:
-    site_title: 'Structure Documentation'
+    site_title: 'Losant Documentation'

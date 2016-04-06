@@ -1,10 +1,10 @@
 # Getting Started with the Intel Edison
 
-The <a href="http://www.intel.com/content/www/us/en/do-it-yourself/edison.html" target="_blank">Intel Edison</a> is a very capable compute module that runs Linux. It's an idea IoT device because it has built-in WiFi and Bluetooth connectivity. This guide will cover how to connect an Intel Edison to the Structure Developer Platform.
+The <a href="http://www.intel.com/content/www/us/en/do-it-yourself/edison.html" target="_blank">Intel Edison</a> is a very capable compute module that runs Linux. It's an idea IoT device because it has built-in WiFi and Bluetooth connectivity. This guide will cover how to connect an Intel Edison to the Losant Developer Platform.
 
 ## Setup the Edison and XDK
 
-The Edison requires some setting up before it's ready to use. Follow our <a href="https://www.getstructure.io/blog/getting-started-with-the-intel-edison" target="_blank">setup guide</a> to flash and connect the Edison to your WiFi network.
+The Edison requires some setting up before it's ready to use. Follow our <a href="https://www.losant.com/blog/getting-started-with-the-intel-edison" target="_blank">setup guide</a> to flash and connect the Edison to your WiFi network.
 
 Next, follow <a href="https://software.intel.com/en-us/intel-xdk-iot-edition-guide" target="_blank">Intel's instructions</a> for installing, configuring, and connect the Intel XDK to the Edison board.
 
@@ -14,9 +14,9 @@ Be sure to enable the `Intel XDK IoT Edition` in the options. At the time of thi
 
 ## Programming the Edison
 
-Create a new project using the Intel XDK. Structure provides an open source <a href="https://github.com/GetStructure/structure-sdk-js" target="_blank">JavaScript SDK</a> that can be used to easily connect the Edison to the Structure platform.
+Create a new project using the Intel XDK. Losant provides an open source <a href="https://github.com/GetStructure/losant-sdk-js" target="_blank">JavaScript SDK</a> that can be used to easily connect the Edison to the Losant platform.
 
-Add the `structure-sdk-js` module to the package.json dependencies.
+Add the `losant-sdk-js` module to the package.json dependencies.
 
 ```json
 {
@@ -28,17 +28,17 @@ Add the `structure-sdk-js` module to the package.json dependencies.
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "structure-sdk-js" : "^1.0.0"
+    "losant-sdk-js" : "^1.0.0"
   }
 }
 ```
 
-## Connecting to Structure
+## Connecting to Losant
 
-To connect your device to Structure, simply create an instance of the Device object, pass it your access keys, and call connect.
+To connect your device to Losant, simply create an instance of the Device object, pass it your access keys, and call connect.
 
 ```JavaScript
-var Device = require('structure-sdk-js').Device;
+var Device = require('losant-sdk-js').Device;
 
 // Construct a device instance.
 var device = new Device({
@@ -47,11 +47,11 @@ var device = new Device({
   secret: 'my-access-secret'
 });
 
-// Connect device to Structure.
+// Connect device to Losant.
 device.connect();
 ```
 
-The device ID is obtained by first adding your [device](/devices/overview) to your Structure application. [Access keys](/applications/access-keys) allow you to grant access on a per-device or per-application basis.
+The device ID is obtained by first adding your [device](/devices/overview) to your Losant application. [Access keys](/applications/access-keys) allow you to grant access on a per-device or per-application basis.
 
 ## Sending State
 
@@ -61,7 +61,7 @@ Once the device is connected you can begin reporting [state](/devices/state). Fo
 // Reading temperature from analog input.
 var temp = new mraa.Aio(0);
 
-// Once a second, read the temp and report to Structure.
+// Once a second, read the temp and report to Losant.
 setInterval(function() {
 
   // Read temp voltage and convert.
@@ -72,7 +72,7 @@ setInterval(function() {
   console.log(degreesC);
   console.log(degreesF);
 
-  // Report state to Structure.
+  // Report state to Losant.
   device.sendState({ temp: degreesF });
 
 }, 1000);
@@ -90,4 +90,4 @@ device.on('command', function(command) {
 });
 ```
 
-The full source for this examples can be found on the Structure <a href="https://github.com/GetStructure/structure-sdk-js" target="_blank">JavaScript SDK</a> GitHub repository.
+The full source for this examples can be found on the Losant <a href="https://github.com/GetStructure/losant-sdk-js" target="_blank">JavaScript SDK</a> GitHub repository.

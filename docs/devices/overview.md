@@ -1,6 +1,6 @@
 # Devices
 
-A device in Structure is a single thing or widget. A device could be car, thermostat, smart bulb, or any kind of custom gadget. Devices can contain many sensors or attached peripherals.
+A device in Losant is a single thing or widget. A device could be car, thermostat, smart bulb, or any kind of custom gadget. Devices can contain many sensors or attached peripherals.
 
 ## Adding a Device
 
@@ -14,17 +14,17 @@ When adding a device, you have a choice between creating a device from scratch, 
 
 ## Device Configuration
 
-Properly configuring devices is an important step to ensuring proper communication between your device and the Structure platform.
+Properly configuring devices is an important step to ensuring proper communication between your device and the Losant platform.
 
 ### Virtual Device
 
 ![Virtual Device](/images/devices/virtual-device.png "Virtual Device")
 
-A virtual device acts just like a physical device in most cases. The major difference is how state is reported. A virtual device's state can only be reported using a Structure workflow. Virtual devices are useful if you'd like to record sensor data from something other than a physical thing. For example, you could create a workflow that requests the outside temperature every few minutes from a 3rd party weather API and saves the result as the state of a virtual device. Since this information is now on a device, you can visualize, trigger workflows, or perform any other actions on this information as if the data came from an actual physical widget.
+A virtual device acts just like a physical device in most cases. The major difference is how state is reported. A virtual device's state can only be reported using a Losant workflow. Virtual devices are useful if you'd like to record sensor data from something other than a physical thing. For example, you could create a workflow that requests the outside temperature every few minutes from a 3rd party weather API and saves the result as the state of a virtual device. Since this information is now on a device, you can visualize, trigger workflows, or perform any other actions on this information as if the data came from an actual physical widget.
 
 ### Device Tags
 
-Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Structure platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries) for targeting devices by tag within the platform.
+Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries) for targeting devices by tag within the platform.
 
 ![Device Tags](/images/devices/device-tags.png "Device Tags")
 
@@ -42,7 +42,7 @@ Refer the [device state](#) documentation for further details about state.
 
 ## Device Management
 
-Once the device is added and successfully connected to Structure, there are several useful pieces of information available on the device page.
+Once the device is added and successfully connected to Losant, there are several useful pieces of information available on the device page.
 
 ### Connection Status
 
@@ -58,19 +58,19 @@ Whenever a device is disconnected the log will contain the reason and the number
 
 ### Debugging
 
-Structure provides several tools on the device page to help debug communication between your device and the Structure platform.
+Losant provides several tools on the device page to help debug communication between your device and the Losant platform.
 
 #### Recent Device States
 
-To debug whether or not your device is sending state to Structure, you can use the `Recent Device States` section of the device page.
+To debug whether or not your device is sending state to Losant, you can use the `Recent Device States` section of the device page.
 
 ![Recent Device States](/images/devices/state-log.png "Recent Device States")
 
-This list will display the most recent 10 states published to Structure by this device. It displays the raw JSON data that represents a state request. This list will automatically update once a minute, but you can force a refresh at any time by clicking the `Refresh` button on the bottom right.
+This list will display the most recent 10 states published to Losant by this device. It displays the raw JSON data that represents a state request. This list will automatically update once a minute, but you can force a refresh at any time by clicking the `Refresh` button on the bottom right.
 
 #### Force State
 
-The `Force State in Structure` section of the device page allows you to report state on behalf of your device. This is useful if you're debugging workflows or other actions that are triggered based on device state.
+The `Force State in Losant` section of the device page allows you to report state on behalf of your device. This is useful if you're debugging workflows or other actions that are triggered based on device state.
 
 ![Force State](/images/devices/force-state.png "Force State")
 

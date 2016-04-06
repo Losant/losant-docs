@@ -1,10 +1,10 @@
-# Structure Walkthrough
+# Losant Walkthrough
 
-Don't have a device? No problem! This walkthrough will allow you to experience many of the features Structure provides while building a virtual weather station powered by the <a href="https://developer.forecast.io" target="_blank">Forecast.io API</a>.
+Don't have a device? No problem! This walkthrough will allow you to experience many of the features Losant provides while building a virtual weather station powered by the <a href="https://developer.forecast.io" target="_blank">Forecast.io API</a>.
 
 ![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
 
-Since all data doesn't come from physical things, Structure provides the concept of [virtual devices](/devices/overview/#device-configuration), which get their state information from sources other than real objects. We're going to use a virtual device in this walkthrough to store and visualize real weather data.
+Since all data doesn't come from physical things, Losant provides the concept of [virtual devices](/devices/overview/#device-configuration), which get their state information from sources other than real objects. We're going to use a virtual device in this walkthrough to store and visualize real weather data.
 
 ## Step 1: Sign up for Forecast.io API
 
@@ -14,7 +14,7 @@ Since all data doesn't come from physical things, Structure provides the concept
 
 No, sorry, the API key in the above screenshot won't work.
 
-## Step 2: Create Structure Application
+## Step 2: Create Losant Application
 
 After signing up you'll be prompted to create your first application. You can also create an application from the main `Applications` menu at the top of every screen.
 
@@ -32,7 +32,7 @@ The [Forecast.io API](https://developer.forecast.io/docs/v2) provides a lot of i
 
 When creating the device, make sure `Virtual Device` is checked. Device tags won't be needed since we only have a single device. Tags become useful when you start organizing hundreds or thousands of devices.
 
-The `Device Attributes` are important. These are what tell Structure what data this device will be reporting and what Structure will be storing. For the weather device, we'll be storing the following attributes:
+The `Device Attributes` are important. These are what tell Losant what data this device will be reporting and what Losant will be storing. For the weather device, we'll be storing the following attributes:
 
 * `temp` - the temperature in degrees Fahrenheit.
 * `feels-like` - the apparent temperature with wind chill and humidity accounted for.
@@ -52,7 +52,7 @@ The screen will change and display information about your device, including the 
 
 ## Step 4: Requesting Weather Data
 
-In this step, we're going to use a [Structure workflow](/workflows/overview/) to periodically request weather data from Forecast.io and store it using our new virtual device.
+In this step, we're going to use a [Losant workflow](/workflows/overview/) to periodically request weather data from Forecast.io and store it using our new virtual device.
 
 Create a new workflow from the `Workflows` main menu.
 
@@ -82,7 +82,7 @@ Click the HTTP node to configure it. There are two important configuration optio
 https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
 ```
 
-The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. <a href="http://mygeoposition.com" target="_blank">MyGeoPosition.com</a> is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Structure's headquarters if you'd like to use these:
+The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. <a href="http://mygeoposition.com" target="_blank">MyGeoPosition.com</a> is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Losant's headquarters if you'd like to use these:
 
 ```
 https://api.forecast.io/forecast/APIKEY/39.1119359,-84.51254
@@ -108,7 +108,7 @@ Now that we've got weather data being queried every 2 minutes, it's time to star
 
 ![Virtual Device](/images/getting-started/walkthrough/virtual-device.png "Virtual Device")
 
-The virtual device node requires you to select the device to report as - which in this case is the device you created earlier. We then set the devices state by publishing values for all of the attributes we defined for the device earlier. The values support what Structure calls templates, which means we can reference data stored on the payload. As you saw from the debug output earlier, the payload currently looks something like this:
+The virtual device node requires you to select the device to report as - which in this case is the device you created earlier. We then set the devices state by publishing values for all of the attributes we defined for the device earlier. The values support what Losant calls templates, which means we can reference data stored on the payload. As you saw from the debug output earlier, the payload currently looks something like this:
 
 ```json
 {
@@ -165,7 +165,7 @@ We can then assign values to our various attributes by using the following templ
 * visibility : `{{ weather.body.currently.visibility }}`
 * pressure : `{{ weather.body.currently.pressure }}`
 
-You can now deploy this workflow and every time the timer triggers, the virtual device will publish those state attributes to Structure.
+You can now deploy this workflow and every time the timer triggers, the virtual device will publish those state attributes to Losant.
 
 ![Deploy Workflow](/images/getting-started/walkthrough/deploy-workflow.png "Deploy Workflow")
 
@@ -175,7 +175,7 @@ You can verify the device is properly reporting state by inspecting the recent d
 
 ## Step 6: Create a Dashboard
 
-Now that we've got weather data being stored, we can start to visualize it using Structure's [dashboarding tools](/dashboards/overview). Create a new dashboard using the `Dashboard` main menu. You can name it whatever you like.
+Now that we've got weather data being stored, we can start to visualize it using Losant's [dashboarding tools](/dashboards/overview). Create a new dashboard using the `Dashboard` main menu. You can name it whatever you like.
 
 ![Create Dashboard](/images/getting-started/walkthrough/create-dashboard.png "Create Dashboard")
 

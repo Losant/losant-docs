@@ -1,6 +1,6 @@
 # Organizations
 
-Organizations allow multiple Structure users to collaborate on applications, workflows, devices, dashboards and more.  To use organizations, you must have a Structure Business Account - if you'd like to learn more about being a business customer, please [contact us](https://www.getstructure.io/contact-us).
+Organizations allow multiple Losant users to collaborate on applications, workflows, devices, dashboards and more.  To use organizations, you must have a Losant Business Account - if you'd like to learn more about being a business customer, please [contact us](https://www.losant.com/contact-us).
 
 ## Organization Ownership
 
@@ -20,7 +20,7 @@ An organization can have many users who are members in that org, and each user h
 
 ## Managing Organizations
 
-You can see all the organizations that you are a member of on the <a href="https://app.getstructure.io/#/organizations" target="_blank">organization listing page</a> page, which can be found in the menu under your name on the top right of the screen.
+You can see all the organizations that you are a member of on the <a href="https://app.losant.com/#/organizations" target="_blank">organization listing page</a> page, which can be found in the menu under your name on the top right of the screen.
 
 ![Organization Home](/images/organizations/org-home.png "Organization Home")
 
@@ -30,4 +30,4 @@ If you have the Administrator role in this organization, there will be a "Settin
 
 ![Organization Settings](/images/organizations/org-settings.png "Organization Settings")
 
-You can remove current members, or change the role of current members - although you cannot change your own role.  You can also send out invitations to the organization by email address - users that you invite will receive an invitation email from Structure with a link which will allow them to accept (and thereby become an organization member) or decline the invitation.
+You can remove current members, or change the role of current members - although you cannot change your own role.  You can also send out invitations to the organization by email address - users that you invite will receive an invitation email from Losant with a link which will allow them to accept (and thereby become an organization member) or decline the invitation.

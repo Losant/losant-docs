@@ -14,7 +14,7 @@ Each time series graph provides the ability to view a single device or an aggreg
 
 The duration and resolution fields allow you to configure how far into the past to view and how to group the data together. The available resolutions will change based on what you specify for the duration. For example, when you choose 30 days of data, the smallest resolution available is 60 minutes. This is because smaller resolutions result in more data points, and too much data can't be graphed by the browser and is hard to understand by the viewer.
 
-The resolution and the aggregator specified in the block data section work together in order to generate a data point. For example, if the resolution is 60 minutes and the aggregator is mean, Structure will average all of the data together in 60 minute increments to create a single point on the graph.
+The resolution and the aggregator specified in the block data section work together in order to generate a data point. For example, if the resolution is 60 minutes and the aggregator is mean, Losant will average all of the data together in 60 minute increments to create a single point on the graph.
 
 ### Block Data
 

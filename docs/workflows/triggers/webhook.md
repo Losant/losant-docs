@@ -64,5 +64,5 @@ For the example workflow above, a specific payload for a triggered workflow migh
 The curl command that triggered the flow with the above example payload looked like the following:
 
 ```bash
-curl -H 'Content-Type: application/json' -X POST -d '{"value":"30"}' https://triggers.getstructure.io/webhooks/jk1NopMpgQHyqQQn1Ax6tpPjEkb/transition/up?location=52
+curl -H 'Content-Type: application/json' -X POST -d '{"value":"30"}' https://triggers.losant.com/webhooks/jk1NopMpgQHyqQQn1Ax6tpPjEkb/transition/up?location=52
 ```

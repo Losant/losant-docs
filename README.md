@@ -1,5 +1,5 @@
-# structure-docs
-Structure documentation can be downloaded and ran locally.  To build the structure documentation, do the following:
+# losant-docs
+Losant documentation can be downloaded and ran locally.  To build the losant documentation, do the following:
 
 **Prerequisites**
 

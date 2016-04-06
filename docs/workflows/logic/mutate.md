@@ -1,6 +1,6 @@
 # Mutate Node
 
-The mutate node allows a workflow to perform an arbitrary changes to the structure of the payload object.
+The mutate node allows a workflow to perform an arbitrary changes to the losant of the payload object.
 
 ![Mutate Node](/images/workflows/logic/mutate-node.png "Mutate Node")
 

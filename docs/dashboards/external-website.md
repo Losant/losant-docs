@@ -1,6 +1,6 @@
 # External Website
 
-The External Website block allows you to display some other web page or status board along side Structure information on your Structure dashboard.
+The External Website block allows you to display some other web page or status board along side Losant information on your Losant dashboard.
 
 ![External Website](/images/dashboards/external-example.png "External Website")
 

@@ -257,7 +257,7 @@ Workflows can be exported to a file, and can later be imported from that file in
 
 There is one option for exporting a workflow, and that is if the values for the global config should be included in the export.  The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
 
-The most common case when importing a workflow will be importing into a blank workflow - however, Structure also supports importing into a workflow with existing nodes.  In that case, the nodes for the imported workflow are just added alongside the existing nodes.  Importing a workflow can be done right below the export option on the main workflow properties panel.
+The most common case when importing a workflow will be importing into a blank workflow - however, Losant also supports importing into a workflow with existing nodes.  In that case, the nodes for the imported workflow are just added alongside the existing nodes.  Importing a workflow can be done right below the export option on the main workflow properties panel.
 
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 

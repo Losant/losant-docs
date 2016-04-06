@@ -1,6 +1,6 @@
 # Device Queries
 
-Many features within the Structure platform require users to provide a list of devices to interact with. For example:
+Many features within the Losant platform require users to provide a list of devices to interact with. For example:
 
 * Dashboard blocks can visualize data from one or many devices
 * Workflows can trigger commands to one or more devices
@@ -21,13 +21,13 @@ Once you have found the device / tag you would like to add to your query, either
 
 ## Querying by Devices
 
-When creating a device, you are prompted to give your new device a name; and immediately after creation, that device is assigned an ID by Structure. When searching for a device to add to your query, you may enter any part of the device's name or ID to find it.
+When creating a device, you are prompted to give your new device a name; and immediately after creation, that device is assigned an ID by Losant. When searching for a device to add to your query, you may enter any part of the device's name or ID to find it.
 
 You may provide just a single ID to interact with one device, or you may provide a list of as many device IDs as you would like to interact with multiple specific devices.
 
 ![Device Queries One or Many](/images/devices/device-query-one-or-many.png "Device Queries One or Many")
 
-Some components in the Structure platform only accept one device at a time, in which case you will only be able to select one device.
+Some components in the Losant platform only accept one device at a time, in which case you will only be able to select one device.
 
 ![Device Query One Device](/images/devices/device-query-one-device.png "Device Query One Device")
 

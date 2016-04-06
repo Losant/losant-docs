@@ -1,6 +1,6 @@
 # Webhooks
 
-Webhooks are defined HTTP endpoints within the Structure Platform that can be used to trigger workflows from external sources.
+Webhooks are defined HTTP endpoints within the Losant Platform that can be used to trigger workflows from external sources.
 
 ## Viewing Webhooks
 

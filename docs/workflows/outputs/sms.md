@@ -1,6 +1,6 @@
 # SMS Node
 
-The sms node allows a workflow to send SMS messages using Structure provided SMS delivery.  NOTE: This node is rate limited to one SMS message per minute.  If more frequent SMS messages are required, please use the [Twilio node](/workflows/outputs/twilio/).
+The sms node allows a workflow to send SMS messages using Losant provided SMS delivery.  NOTE: This node is rate limited to one SMS message per minute.  If more frequent SMS messages are required, please use the [Twilio node](/workflows/outputs/twilio/).
 
 ![SMS Node](/images/workflows/outputs/sms-node.png "SMS Node")
 

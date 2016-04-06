@@ -1,12 +1,12 @@
 # Dashboards
 
-Structure dashboards provide a flexible and powerful way to display information relevant to your specific connected solution. Users can have many different dashboards and a single dashboard can display information from many different applications and devices.
+Losant dashboards provide a flexible and powerful way to display information relevant to your specific connected solution. Users can have many different dashboards and a single dashboard can display information from many different applications and devices.
 
 ![Full Dashboard](/images/dashboards/overview-dashboard-full.png "Full Dashboard")
 
 ## Adding Blocks
 
-Structure supports many different blocks for visualizing various pieces of information. New blocks can be added to your dashboard by clicking the `Add Block` link at the top of the dashboard.
+Losant supports many different blocks for visualizing various pieces of information. New blocks can be added to your dashboard by clicking the `Add Block` link at the top of the dashboard.
 
 ![Add Block](/images/dashboards/overview-add-block.png "Add Block")
 

@@ -1,6 +1,6 @@
 # Access Keys
 
-To connect your devices to the Structure Platform, you must use a set of security credentials called access keys. Access keys consist of a generated key and secret pair. An access key can be used to authenticate multiple devices in an application or multiple access keys can be created to scope your devices into virtual security groups.
+To connect your devices to the Losant Platform, you must use a set of security credentials called access keys. Access keys consist of a generated key and secret pair. An access key can be used to authenticate multiple devices in an application or multiple access keys can be created to scope your devices into virtual security groups.
 
 ## Viewing Access Keys
 
@@ -18,7 +18,7 @@ You can choose to either make this access key valid for use by any device in thi
 
 ![Define Access Restrictions](/images/applications/access-restrictions.png "Define Access Restrictions")
 
-After clicking `Create Access Key`, the newly generated key and secret will be displayed. <u>__IMPORTANT__: Structure does not store key secrets and they can not be recovered or regenerated if lost.</u>
+After clicking `Create Access Key`, the newly generated key and secret will be displayed. <u>__IMPORTANT__: Losant does not store key secrets and they can not be recovered or regenerated if lost.</u>
 
 After you save your key and secret in a safe and secure place, check the `I have copied my app secret to a safe place` box and click `Close Window`.
 
@@ -32,6 +32,6 @@ If you think an access key has been compromised or is no longer needed, you may 
 
 ## Using Access Keys
 
-To find out more on using access keys with our SDKs, checkout the [Structure JS SDK](https://github.com/GetStructure/structure-sdk-js) or the [Structure Arduino SDK](https://github.com/GetStructure/structure-sdk-arduino).
+To find out more on using access keys with our SDKs, checkout the [Losant JS SDK](https://github.com/GetStructure/losant-sdk-js) or the [Losant Arduino SDK](https://github.com/GetStructure/losant-sdk-arduino).
 
-For information on connecting to the Structure Platform via MQTT take a look at the [Structure MQTT Documentation](/mqtt/overview).
+For information on connecting to the Losant Platform via MQTT take a look at the [Losant MQTT Documentation](/mqtt/overview).

@@ -1,16 +1,16 @@
 # On Disconnect Trigger
 
-The on disconnect trigger will trigger a workflow whenever one or more devices disconnect from the Structure platform.
+The on disconnect trigger will trigger a workflow whenever one or more devices disconnect from the Losant platform.
 
 ![On Disconnect Trigger](/images/workflows/triggers/on-disconnect-trigger.png "On Disconnect Trigger")
 
 ## Configuration
 
-The on disconnect trigger can be configured with one or more specific devices, or a selection of tags (or both).  When a device that matches anything in the selection disconnects from Structure, the workflow will trigger.  See the [device query](/devices/device-queries/) documentation for more info about how id and tag matching works.
+The on disconnect trigger can be configured with one or more specific devices, or a selection of tags (or both).  When a device that matches anything in the selection disconnects from Losant, the workflow will trigger.  See the [device query](/devices/device-queries/) documentation for more info about how id and tag matching works.
 
 ![On Disconnect Trigger Config](/images/workflows/triggers/on-disconnect-trigger-config.png "On Disconnect Trigger Config")
 
-In the above example, the workflow will be triggered whenever any device that has a `location` tag disconnects from Structure.
+In the above example, the workflow will be triggered whenever any device that has a `location` tag disconnects from Losant.
 
 ## Payload
 

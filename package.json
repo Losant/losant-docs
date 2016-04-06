@@ -1,10 +1,10 @@
 {
-  "name": "structure-docs",
+  "name": "losant-docs",
   "scripts": {
     "gzip": "find site -type f -exec gzip '{}' \\; -exec mv '{}.gz' '{}' \\;",
     "gunzip": "find site -type f -exec gunzip -S \"\" -f '{}' \\;",
     "predeploy": "mkdocs build --clean",
-    "deploy": "npm run gzip && s3-cli --config .s3 -P --delete-removed --add-header=\"Cache-Control:public,max-age=3600\" --add-header=Content-Encoding:gzip sync ./site s3://docs.getstructure.io/ && npm run gunzip"
+    "deploy": "npm run gzip && s3-cli --config .s3 -P --delete-removed --add-header=\"Cache-Control:public,max-age=3600\" --add-header=Content-Encoding:gzip sync ./site s3://docs.losant.com/ && npm run gunzip"
   },
   "devDependencies": {
     "s3-cli": "^0.13.0"

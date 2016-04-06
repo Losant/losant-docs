@@ -1,6 +1,6 @@
 # Device Recipes
 
-A device recipe in Structure is a template (or 'recipe') for creating devices.  If you have many devices that are the same or very similar, you can use device recipes to make creating those devices in structure much easier.
+A device recipe in Losant is a template (or 'recipe') for creating devices.  If you have many devices that are the same or very similar, you can use device recipes to make creating those devices in losant much easier.
 
 ## Adding a Device Recipe
 
@@ -40,7 +40,7 @@ There are two choices when bulk creating devices.  The simplest is just choosing
 
 When using this option, the devices will be created as exact copies of the template - except for the name of the device, which will get an incrementing number on the end of the name to allow differentiation of the created devices.
 
-The second choice when bulk creating is to upload a CSV file of device information to use when creating devices.  When you choose to upload a CSV, Structure will show a preview of what will happen when the devices are bulk created.
+The second choice when bulk creating is to upload a CSV file of device information to use when creating devices.  When you choose to upload a CSV, Losant will show a preview of what will happen when the devices are bulk created.
 
 ![Bulk Device CSV Creation](/images/devices/bulk-create-csv.png "Bulk Device CSV Creation")
 
@@ -55,8 +55,8 @@ Widget Alpha,Device For Bob,Texas,
 Widget 2.0,,Cincy,Plain ESP8266
 ```
 
-After bulk device creation (in both the simple or the CSV case) you will be presented with a table of the created device information, along with the option to download the created device information as a CSV file.  The resulting information will include all of the information from the original CSV, plus any blank cells filled in with the values actually used for that device (such as generated device names, etc..).  In addition, there is a `structureDeviceId` column added, which holds the ids of the newly created devices. If there are any errors in creating any of the devices, those errors will be in a special `creationErrors` column of the result - if that column is blank, then the device for that row was created successfully.
+After bulk device creation (in both the simple or the CSV case) you will be presented with a table of the created device information, along with the option to download the created device information as a CSV file.  The resulting information will include all of the information from the original CSV, plus any blank cells filled in with the values actually used for that device (such as generated device names, etc..).  In addition, there is a `losantDeviceId` column added, which holds the ids of the newly created devices. If there are any errors in creating any of the devices, those errors will be in a special `creationErrors` column of the result - if that column is blank, then the device for that row was created successfully.
 
 ![Bulk Device Result](/images/devices/bulk-create-result.png "Bulk Device Result")
 
-In the above example result, all 3 devices were created successfully.  The `creationErrors` column is blank for all three devices, and all three have a `structureDeviceId`.  In addition, you can see how the name was auto-generated for the second device as `Builder Kit Widget 0000`, and the `board` tag was filled in with the default recipe value for the first device.
+In the above example result, all 3 devices were created successfully.  The `creationErrors` column is blank for all three devices, and all three have a `losantDeviceId`.  In addition, you can see how the name was auto-generated for the second device as `Builder Kit Widget 0000`, and the `board` tag was filled in with the default recipe value for the first device.

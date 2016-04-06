@@ -6,7 +6,7 @@ Events provide a way to collect, view, and respond to exceptional occurrences in
 
 ## Creating Events
 
-Events are typically created using Structure [workflows](/workflows/overview). The [events](/workflows/outputs/record-event) output node allow you to create events as needed.
+Events are typically created using Losant [workflows](/workflows/overview). The [events](/workflows/outputs/record-event) output node allow you to create events as needed.
 
 ![Create Event Workflow](/images/events/create-event-workflow.png "Create Event Workflow")
 

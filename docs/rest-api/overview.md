@@ -1,6 +1,6 @@
-# Structure REST API
+# Losant REST API
 
-Structure is powered by a full REST API that provides access to nearly every feature. The Structure web portal is built on top of the open-source <a href="https://github.com/GetStructure/structure-api-js" target="_blank">structure-api-js</a> Node.js client. This is the recommended client to easily communicate with the Structure API.
+Losant is powered by a full REST API that provides access to nearly every feature. The Losant web portal is built on top of the open-source <a href="https://github.com/GetStructure/losant-api-js" target="_blank">losant-api-js</a> Node.js client. This is the recommended client to easily communicate with the Losant API.
 
 ## Obtaining API Token
 
@@ -10,7 +10,7 @@ In order to make API requests, you must first obtain an API token. You can gener
 
 An account level token provide access to all resources owned by the user account.
 
-`POST: https://api.getstructure.io/auth/user`
+`POST: https://api.losant.com/auth/user`
 
 Payload:
 
@@ -36,7 +36,7 @@ The response will include several fields, including your API token.
 
 A device level token will only allow access to resources for a specific device. In order to generate a device-level API token, you must first generate an application [access key](/applications/access-keys).
 
-`POST: https://api.getstructure.io/auth/device`
+`POST: https://api.losant.com/auth/device`
 
 Payload:
 
@@ -63,7 +63,7 @@ The response will include several fields, including your API token.
 
 Publishing [device state](/devices/state/) is likely one of the most common actions a user will perform with the REST API.
 
-`POST: https://api.getstructure.io/applications/:applicationId/devices/:deviceId/state`
+`POST: https://api.losant.com/applications/:applicationId/devices/:deviceId/state`
 
 Payload:
 
@@ -93,7 +93,7 @@ For example, if you have a sensor that measures temperature and humidity, the pa
 Once a token is obtained you can construct a client, pass it the token, and begin using the API.
 
 ```JavaScript
-var api = require('structure-api-js');
+var api = require('losant-api-js');
 
 var client = api.createClient({
   accessToken: 'my-token'
@@ -102,4 +102,4 @@ var client = api.createClient({
 
 ## Documentation
 
-Full documentation is not yet available. Please refer to the <a href="https://github.com/GetStructure/structure-api-js" target="_blank">Node.js client repository</a> for usage details.
+Full documentation is not yet available. Please refer to the <a href="https://github.com/GetStructure/losant-api-js" target="_blank">Node.js client repository</a> for usage details.
