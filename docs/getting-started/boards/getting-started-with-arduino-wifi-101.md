@@ -3,7 +3,7 @@
 This guide demonstrates how to connect to the [Losant IoT developer platform](https://losant.com) using the [Arduino WiFi 101 Shield](https://www.arduino.cc/en/Main/ArduinoWiFiShield101).
 
 ## Supported Boards
-The [Losant library](https://github.com/GetStructure/losant-sdk-arduino) and dependencies are supported on a wide variety of Arduino boards, including the [Arduino Zero](https://www.arduino.cc/en/Main/ArduinoBoardZero) and [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101). Currently the [Arduino Uno](https://www.arduino.cc/en/Main/ArduinoBoardUno) does not have enough memory to support both the WiFi 101 Shield and Losant libraries.
+The [Losant library](https://github.com/Losant/losant-sdk-arduino) and dependencies are supported on a wide variety of Arduino boards, including the [Arduino Zero](https://www.arduino.cc/en/Main/ArduinoBoardZero) and [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101). Currently the [Arduino Uno](https://www.arduino.cc/en/Main/ArduinoBoardUno) does not have enough memory to support both the WiFi 101 Shield and Losant libraries.
 
 ## Arduino IDE
 Follow the specific instructions for your Arduino board to properly configure the Arduino IDE. Adding the WiFi 101 library to the IDE can be done using the Arduino Library Manager.
@@ -14,11 +14,11 @@ The Losant SDK requires two libraries to be installed: [PubSubClient](https://gi
 ![Manage Libaries](http://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/manage-libraries.png?noresize=true "Manage Libaries")
 
 ## Install Losant Arduino SDK
-The [Losant Arduino SDK](https://github.com/GetStructure/losant-sdk-arduino) makes it easy to connect your Arduino-based devices to the Losant platform.
+The [Losant Arduino SDK](https://github.com/Losant/losant-sdk-arduino) makes it easy to connect your Arduino-based devices to the Losant platform.
 
 Download a zip of the library from the following URL:
 
-[https://github.com/GetStructure/losant-sdk-arduino/archive/master.zip](https://github.com/GetStructure/losant-sdk-arduino/archive/master.zip)
+[https://github.com/Losant/losant-sdk-arduino/archive/master.zip](https://github.com/Losant/losant-sdk-arduino/archive/master.zip)
 
 Once downloaded, add the library to your Arduino installation by using the Sketch -> Include Library -> Add .ZIP Library menu.
 
@@ -196,4 +196,4 @@ void setup() {
 What command names are supported and what the payloads include is entirely up to your device firmware and your specific application needs.
 
 ## Additional Examples
-For additional Arduino examples, please refer to the [examples](https://github.com/GetStructure/losant-sdk-arduino/tree/master/examples) folder of the [Losant Arduino SDK](https://github.com/GetStructure/losant-sdk-arduino) repository.
+For additional Arduino examples, please refer to the [examples](https://github.com/Losant/losant-sdk-arduino/tree/master/examples) folder of the [Losant Arduino SDK](https://github.com/Losant/losant-sdk-arduino) repository.

@@ -4,11 +4,11 @@ The <a href="https://www.raspberrypi.org/" target="\_blank">Raspberry Pi</a> is 
 
 The example for this guide is a button that is connected to the GPIO on the Raspberry Pi. Whenever the button is pressed, a [state](/devices/state) message will be sent to the platform that can be used to trigger actions. To demonstrate device [commands](/devices/state), there is also an LED connected to GPIO that the platform can turn on and off.
 
-The source code for this example is <a href="https://github.com/GetStructure/example-raspberry-pi" target="\_blank">available on GitHub</a>.
+The source code for this example is <a href="https://github.com/Losant/example-raspberry-pi" target="\_blank">available on GitHub</a>.
 
 ## Install Node.js on the Raspberry Pi
 
-We're going to use the <a href="https://github.com/GetStructure/losant-api-js" target="\_blank">Losant JavaScript SDK</a> to connect the Raspberry Pi to the Losant Platform. Follow the instructions <a href="https://www.losant.com/blog/how-to-install-nodejs-on-raspberry-pi" target="\_blank">on our blog</a> to install Node.js.
+We're going to use the <a href="https://github.com/Losant/losant-api-js" target="\_blank">Losant JavaScript SDK</a> to connect the Raspberry Pi to the Losant Platform. Follow the instructions <a href="https://www.losant.com/blog/how-to-install-nodejs-on-raspberry-pi" target="\_blank">on our blog</a> to install Node.js.
 
 ## Install Dependencies
 

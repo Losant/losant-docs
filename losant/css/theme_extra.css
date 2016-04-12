@@ -8,48 +8,48 @@
 
 @font-face {
     font-family: 'Natasha';
-    src: url('https//www.losant.com/hubfs/Website/Fonts/Natasha/Natasha.eot');
-    src: url('https://www.losant.com/hubfs/Website/Fonts/Natasha/Natasha.eot?#iefix') format('embedded-opentype'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Natasha/Natasha.woff2') format('woff2'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Natasha/Natasha.woff') format('woff'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Natasha/Natasha.ttf') format('truetype'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Natasha/Natasha.svg#Natasha') format('svg');
+    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Natasha/Natasha.eot');
+    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Natasha/Natasha.eot?#iefix') format('embedded-opentype'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Natasha/Natasha.woff2') format('woff2'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Natasha/Natasha.woff') format('woff'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Natasha/Natasha.ttf') format('truetype'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Natasha/Natasha.svg#Natasha') format('svg');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Knockout-30';
-    src: url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.eot');
-    src: url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.eot?#iefix') format('embedded-opentype'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.woff2') format('woff2'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.woff') format('woff'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.ttf') format('truetype'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.svg#Knockout-HTF30-JuniorWelterwt') format('svg');
+    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.eot');
+    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.eot?#iefix') format('embedded-opentype'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.woff2') format('woff2'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.woff') format('woff'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.ttf') format('truetype'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.svg#Knockout-HTF30-JuniorWelterwt') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Knockout-50';
-    src: url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.eot');
-    src: url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.eot?#iefix') format('embedded-opentype'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.woff2') format('woff2'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.woff') format('woff'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.ttf') format('truetype'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.svg#Knockout-HTF50-Welterweight') format('svg');
+    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.eot');
+    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.eot?#iefix') format('embedded-opentype'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.woff2') format('woff2'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.woff') format('woff'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.ttf') format('truetype'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.svg#Knockout-HTF50-Welterweight') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Fira Sans';
-    src: url('https://www.losant.com/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.eot');
-    src: url('https://www.losant.com/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.eot?#iefix') format('embedded-opentype'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.woff2') format('woff2'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.woff') format('woff'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.ttf') format('truetype'),
-         url('https://www.losant.com/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.svg#FiraSans-Regular') format('svg');
+    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.eot');
+    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.woff2') format('woff2'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.woff') format('woff'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.ttf') format('truetype'),
+         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.svg#FiraSans-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -59,15 +59,15 @@
 
 @font-face {
   font-family: 'Black Tie';
-  src: url('https://www.losant.com/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.eot?v=1.0.0');
-  src: url('https://www.losant.com/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.eot?#iefix&v=1.0.0') format('embedded-opentype'), url('https://www.losant.com/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.woff2?v=1.0.0') format('woff2'), url('https://www.losant.com/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.woff?v=1.0.0') format('woff'), url('https://www.losant.com/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.ttf?v=1.0.0') format('truetype'), url('https://www.losant.com/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.svg?v=1.0.0#black_tieregular') format('svg');
+  src: url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.eot?v=1.0.0');
+  src: url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.eot?#iefix&v=1.0.0') format('embedded-opentype'), url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.woff2?v=1.0.0') format('woff2'), url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.woff?v=1.0.0') format('woff'), url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.ttf?v=1.0.0') format('truetype'), url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Black_Tie/Regular/BlackTie-Regular-webfont.svg?v=1.0.0#black_tieregular') format('svg');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Font Awesome Brands';
-  src: url(' https://www.losant.com/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.eot?v=1.0.0');
-  src: url(' https://www.losant.com/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.eot?#iefix&v=1.0.0') format('embedded-opentype'), url(' https://www.losant.com/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.woff2?v=1.0.0') format('woff2'), url(' https://www.losant.com/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.woff?v=1.0.0') format('woff'), url(' https://www.losant.com/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.ttf?v=1.0.0') format('truetype'), url(' https://www.losant.com/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.svg?v=1.0.0#font_awesome_brandsregular') format('svg');
+  src: url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.eot?v=1.0.0');
+  src: url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.eot?#iefix&v=1.0.0') format('embedded-opentype'), url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.woff2?v=1.0.0') format('woff2'), url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.woff?v=1.0.0') format('woff'), url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.ttf?v=1.0.0') format('truetype'), url('//cdn2.hubspot.net/hub/742943/hubfs/Icons/Font_Awesome_Brands/FontAwesomeBrands-Regular-webfont.svg?v=1.0.0#font_awesome_brandsregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }

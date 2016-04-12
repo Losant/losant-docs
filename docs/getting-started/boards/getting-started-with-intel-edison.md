@@ -14,7 +14,7 @@ Be sure to enable the `Intel XDK IoT Edition` in the options. At the time of thi
 
 ## Programming the Edison
 
-Create a new project using the Intel XDK. Losant provides an open source <a href="https://github.com/GetStructure/losant-sdk-js" target="_blank">JavaScript SDK</a> that can be used to easily connect the Edison to the Losant platform.
+Create a new project using the Intel XDK. Losant provides an open source <a href="https://github.com/Losant/losant-sdk-js" target="_blank">JavaScript SDK</a> that can be used to easily connect the Edison to the Losant platform.
 
 Add the `losant-sdk-js` module to the package.json dependencies.
 
@@ -90,4 +90,4 @@ device.on('command', function(command) {
 });
 ```
 
-The full source for this examples can be found on the Losant <a href="https://github.com/GetStructure/losant-sdk-js" target="_blank">JavaScript SDK</a> GitHub repository.
+The full source for this examples can be found on the Losant <a href="https://github.com/Losant/losant-sdk-js" target="_blank">JavaScript SDK</a> GitHub repository.

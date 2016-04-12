@@ -1,6 +1,6 @@
 # Losant REST API
 
-Losant is powered by a full REST API that provides access to nearly every feature. The Losant web portal is built on top of the open-source <a href="https://github.com/GetStructure/losant-api-js" target="_blank">losant-api-js</a> Node.js client. This is the recommended client to easily communicate with the Losant API.
+Losant is powered by a full REST API that provides access to nearly every feature. The Losant web portal is built on top of the open-source <a href="https://github.com/Losant/losant-api-js" target="_blank">losant-api-js</a> Node.js client. This is the recommended client to easily communicate with the Losant API.
 
 ## Obtaining API Token
 
@@ -102,4 +102,4 @@ var client = api.createClient({
 
 ## Documentation
 
-Full documentation is not yet available. Please refer to the <a href="https://github.com/GetStructure/losant-api-js" target="_blank">Node.js client repository</a> for usage details.
+Full documentation is not yet available. Please refer to the <a href="https://github.com/Losant/losant-api-js" target="_blank">Node.js client repository</a> for usage details.

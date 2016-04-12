@@ -12,12 +12,10 @@
   {% endblock %}
 
   {% if favicon %}<link rel="shortcut icon" href="{{ favicon }}">
-  {% else %}<link rel="shortcut icon" href="{{ base_url }}/img/favicon.ico">{% endif %}
+  {% else %}<link rel="shortcut icon" href="{{ base_url }}/favicon.ico">{% endif %}
 
   {# CSS #}
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="shortcut icon" href="//cdn2.hubspot.net/hubfs/742943/Website/favicon.ico?t=1455573400868">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -63,7 +61,7 @@
 <body class="wy-body-for-nav" role="document">
   <div class="row header sticky">
     <div class="nav-logo col-xs-3">
-      <a href="/" id="hs-link-nav_logo" style="border-width:0px;border:0px;"><img src="//cdn2.hubspot.net/hub/742943/hubfs/Website/Images/structure_logo_horizontal_coolwhite.svg?t=1455573400868&amp;width=208" class="hs-image-widget " style="width:208px;border-width:0px;border:0px;" width="208" alt="Losant | IoT Application Platform" title="Losant | IoT Application Platform"></a>
+      <a href="/" id="hs-link-nav_logo" style="border-width:0px;border:0px;"><img src="/img/losant_logo_horizontal_coolwhite.svg" class="hs-image-widget " style="width:208px;border-width:0px;border:0px;" width="208" alt="Losant | IoT Application Platform" title="Losant | IoT Application Platform"></a>
     </div>
     {% include "nav.html" %}
   </div>
