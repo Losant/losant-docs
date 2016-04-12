@@ -26,6 +26,12 @@ The aggregator applied to the series defines how the data is combined based on t
 
 Each series can also aggregate the same attribute across multiple devices; therefore, **Device IDs / Tags** should be populated with a [device query](/devices/device-queries.md) to aggregate data for one or more devices per series.
 
-![Time Series Settings Device Aggregate](/images/dashboards/time-series-combined.png "Time Series Settings Device Aggregate")
+![Time Series Settings](/images/dashboards/time-series-settings-tags.png "Time Series Settings")
 
 When this is graphed, it is now a single series that contains the average temperature of both devices.
+
+You also have the option of setting a custom color for each line on the time series graph. Colors will automatically be assigned in the event you do not assign a color.
+
+Finally, the minimum and/or maximum y-axis values may be manually set for each data series. If at any point the line extends beyond a defined minimum or maximum value, the time series line will disappear off the edge of the graph until the data returns to the defined window.
+
+If you choose not to define a y-axis minimum or maximum value, the time series graph will automatically define a scale based on the data set it is currently rendering for the data series.

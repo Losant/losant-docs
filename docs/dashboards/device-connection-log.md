@@ -6,6 +6,6 @@ The Device Connection Log block displays a list of devices logs their connection
 
 ## Configuration
 
-The block takes a list of device IDs to display within the log. One device ID is entered per input.
+The block takes a [device query](/devices/device-queries.md) (device IDs only) to display within the log.
 
 ![Device Connection Log Config](/images/dashboards/connection-log-config.png "Device Connection Log Config")
