@@ -6,13 +6,15 @@ The record event node allows a workflow to record an [event](/events/overview) f
 
 ## Configuration
 
-There are three parts to configuring a record event node - selecting the level of the event, configuring the event subject, and optionally configuring the detailed event message.
+There are four parts to configuring a record event node - selecting the level of the event, configuring the event subject, and optionally configuring the detailed event message and any structured data for the event.
 
 ![Record Event Node Configuration](/images/workflows/outputs/record-event-node-config.png "Record Event Node Configuration")
 
 The level of the event can be one of "Info", "Warning", "Error", "Critical", or "Payload Template". When "Payload Template" is selected, the level is determined by evaluating the given template string, allowing the level to be dynamically determined from the current workflow payload.  When using a template, the template string must evaluate to one of `info` / `warning` / `error` / `critical` - if it does not, the event creation will fail.
 
 The subject of the event supports payload templating, and so can be determined dynamically based on the current workflow payload. The detailed message is optional, but also supports payload templating if needed. If the detailed message is not set, the event is created with an empty detailed message. In the above example, the record event node will create an event with the level "Error", the subject "Power Level Critical", and the message "Power level exceeded error threshold at {{ data.power }}".
+
+An event can also be optionally created with some structured data attached, by providing a JSON path in the `Extra Event Data Path` field.  If provided, this JSON path will be evaluated against the payload and the result will be attached to the event as a JSON object.
 
 ## Output
 
