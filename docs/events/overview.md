@@ -34,4 +34,4 @@ Events include basic lifecycle features for proper organization and handling.
 New -> Acknowledged -> Resolved
 `
 
-How the events transition through these states is entirely up to your and your specific application.
+How the events transition through these states is entirely up to your and your specific application.  A log of who/what transitioned an event (as well as when that occurred) is attached to each event with optional comments and structured data.
