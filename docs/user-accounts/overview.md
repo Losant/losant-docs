@@ -18,7 +18,7 @@ Once logged in, you can change your password at any time by providing it on the 
 
 Losant's 2-factor authentication protects your account against unauthorized access even in the event your password has been compromised.
 
-To use Losant's 2-factor authentication you must have a mobile/desktop application that supports the open [TOTP](http://tools.ietf.org/html/rfc6238) standard. Google Authenticator is available for both [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2 "Google Authenticator - Android") and [iOS](https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8 "Google Authenticator - iOS"). Another excellent application for managing TOTP accounts is [Authy](https://www.authy.com/app/) which has both mobile and desktop clients.
+To use Losant's 2-factor authentication you must have a mobile/desktop application that supports the open [TOTP](https://tools.ietf.org/html/rfc6238) standard. Google Authenticator is available for both [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2 "Google Authenticator - Android") and [iOS](https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8 "Google Authenticator - iOS"). Another excellent application for managing TOTP accounts is [Authy](https://www.authy.com/app/) which has both mobile and desktop clients.
 
 ### Enabling 2-Factor Authentication
 

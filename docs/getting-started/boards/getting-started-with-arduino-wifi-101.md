@@ -1,6 +1,6 @@
 # Getting Started with the Arduino WiFi 101 Shield
 
-This guide demonstrates how to connect to the [Losant IoT developer platform](https://losant.com) using the [Arduino WiFi 101 Shield](https://www.arduino.cc/en/Main/ArduinoWiFiShield101).
+This guide demonstrates how to connect to the [Losant IoT developer platform](https://www.losant.com) using the [Arduino WiFi 101 Shield](https://www.arduino.cc/en/Main/ArduinoWiFiShield101).
 
 ## Supported Boards
 The [Losant library](https://github.com/Losant/losant-sdk-arduino) and dependencies are supported on a wide variety of Arduino boards, including the [Arduino Zero](https://www.arduino.cc/en/Main/ArduinoBoardZero) and [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101). Currently the [Arduino Uno](https://www.arduino.cc/en/Main/ArduinoBoardUno) does not have enough memory to support both the WiFi 101 Shield and Losant libraries.
