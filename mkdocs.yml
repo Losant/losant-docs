@@ -68,6 +68,7 @@ pages:
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
         - AWS Lambda: workflows/data/aws-lambda.md
+        - Gauge Query: workflows/data/gauge-query.md
         - Get Value: workflows/data/get-value.md
         - HTTP: workflows/data/http.md
         - Store Value: workflows/data/store-value.md
