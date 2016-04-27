@@ -3,6 +3,11 @@ pages:
 - Getting Started:
     - What is Losant: getting-started/what-is-losant.md
     - Losant Walkthrough: getting-started/walkthrough.md
+    - Losant IoT Dev Kits:
+        - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
+        - Builder Kit Instructions: getting-started/losant-iot-dev-kits/builder-kit.md
+        - Moisture Sensor Kit Instructions: getting-started/losant-iot-dev-kits/moisture-sensor-kit.md
+        - Door Sensor Kit Instructions: getting-started/losant-iot-dev-kits/door-sensor-kit.md
     - Boards:
         - Getting Started with Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
         - Getting Started with Raspberry PI: getting-started/boards/getting-started-with-raspberry-pi.md
