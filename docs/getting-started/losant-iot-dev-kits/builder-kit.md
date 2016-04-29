@@ -45,6 +45,10 @@ The next step is to register the builder kit device with the platform. Click the
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-menu.png "Add Device Menu")
 
+Next, choose the `Create from Scratch` option.
+
+![Create From Scratch](/images/getting-started/losant-iot-dev-kits/moisture-sensor/add-from-scratch.png "Create From Scratch")
+
 ![Add Device](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device.png "Add Device")
 
 1. Name the device anything you want.
@@ -84,7 +88,7 @@ Now let's get the firmware you'll be flashing to the device. Download and extrac
 
 If you're familiar with git, you can also clone the repository from here:
 
-[https://github.com/Losant/losant-kit-builder](https://github.com/Losant/losant-kit-builder/archive/master.zip)
+[https://github.com/Losant/losant-kit-builder](https://github.com/Losant/losant-kit-builder)
 
 ## Workshop 1 – Internet Button
 
