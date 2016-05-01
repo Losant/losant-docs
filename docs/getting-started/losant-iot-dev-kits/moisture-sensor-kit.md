@@ -2,12 +2,14 @@
 
 The Losant Moisture Sensor Kit includes everything required to keep your plants watered and happy. These instructions provide a step-by-step overview to build and configure your moisture sensor to alert you via SMS or email when your plant needs attention.
 
-As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
+// TODO: picture
+
+As you follow these instructions, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
 Your kit should include the following items:
 
 * 1 NodeMCU development board
-* 1 Moisture sensor
+* 1 moisture sensor
 * 1 LED
 * 2 male-to-male jump wires
 * 3 male-to-female jump wires
@@ -21,7 +23,7 @@ In order to properly program the kit's microcontroller, please follow the [envir
 
 ## Losant Setup
 
-In this section, you’ll register for a Losant account, create your application, and add the device for your builder kit.
+In this section, you’ll register for a Losant account, create your application, and add the device for your moisture sensor kit.
 
 ### Create Account
 
@@ -53,7 +55,7 @@ Next, choose the `Create from Scratch` option.
 1. No device tags are required.
 1. Add a device attribute with the name "moisture" and the type `Number`.
 
-The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report the raw moisture level from the sensor every minute. Device attributes are ***case sensitive***, so make sure these are ***all lowercase***.
+The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report the raw moisture level from the sensor every minute. Device attributes are ***case sensitive***, so make the name is ***all lowercase***.
 
 Click the `Create Device` button. The screen will change and show the device’s ID. This ID is required for the following sections. You might want to copy/paste it somewhere convenient.
 
@@ -104,7 +106,7 @@ In this step we're going to to connect the moisture sensor and the LED to the mi
 
 ## Flash the Firmware
 
-Connect the microcontroller to your computer with the supplied USB cable. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected.
+Connect the microcontroller to your computer with the supplied USB cable. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/door-sensor-kit/#environment-setup) guide.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the kit source code and open the file `losant-kit-moisture/losant-kit-moisture.ino`. Edit the following variables at the top of the file.
 
@@ -124,7 +126,7 @@ Your code will automatically be saved as part of the upload process when it's fl
 
 The serial monitor won't print any information until we flash the device with the source code in the next step.
 
-Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds, and the microcontroller will rapidly blink a blue light while it’s uploading.
+Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds and the microcontroller will rapidly blink a blue light while it’s uploading.
 
 ![Upload Button](/images/getting-started/losant-iot-dev-kits/moisture-sensor/upload-button.png "Upload Button")
 
@@ -207,7 +209,7 @@ This section explains each part of the workflow so you can get an understanding 
 
 In this step, we're going to build a dashboard to visualize the real-time and historical moisture levels. First, create a new dashboard from the `Dashboards` menu.
 
-![Create Dashboard Create](/images/getting-started/losant-iot-dev-kits/moisture-sensor/create-dashboard-menu.png "Create Dashboard Menu")
+![Create Dashboard Menu](/images/getting-started/losant-iot-dev-kits/moisture-sensor/create-dashboard-menu.png "Create Dashboard Menu")
 
 You can name the dashboard anything you'd like. If you'd like to [let other people](/dashboards/overview/#public-dashboards) see your dashboard, you can optionally click the `Dashboard Is Public` checkbox.
 

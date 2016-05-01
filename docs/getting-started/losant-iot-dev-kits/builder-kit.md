@@ -2,6 +2,8 @@
 
 The Losant Builder Kit is an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
 
+// TODO: picture
+
 As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
 Your kit should include the following items:
@@ -114,7 +116,7 @@ For this workshop, you’ll need to attach the AdaFruit Feather Huzzah and butto
 
 ### Flash the Firmware
 
-Plug the AdaFruit Feather microcontroller back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected.
+Plug the AdaFruit Feather microcontroller back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/door-sensor-kit/#environment-setup) guide.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop-1-internet-button/workshop-1-internet-button.ino`. Edit the following variables at the top of the file.
 
@@ -134,7 +136,7 @@ Your code will automatically be saved as part of the upload process in the follo
 
 The serial monitor won't print any information until we flash the device with the source code in the next step.
 
-Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds, and the Feather will rapidly blink a blue light while it’s uploading.
+Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds and the Feather will rapidly blink a blue light while it’s uploading.
 
 ![Upload Button](/images/getting-started/losant-iot-dev-kits/builder-kit/upload-button.png "Upload Button")
 
@@ -229,7 +231,7 @@ Each workshop builds on the previous one, so if you completed the first workshop
 ![Workshop 2 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-2-wiring-diagram.png "Workshop 2 Wiring Diagram")
 
 
-1. Add the LED so the positive lead (the longer one) is in terminal c20 and the negative lead is in c21.
+1. Add the LED so the positive lead (the longer one) is in terminal d20 and the negative lead is in d21.
 1. Connect the positive lead of the LED to GPIO 12 on the Feather (terminal j9) with a jump wire.
 1. Connect the negative lead of the LED from terminal c21 to the negative rail with a resistor.
 
