@@ -2,7 +2,7 @@
 
 The Losant Moisture Sensor Kit includes everything required to keep your plants watered and happy. These instructions provide a step-by-step overview to build and configure your moisture sensor to alert you via SMS or email when your plant needs attention.
 
-// TODO: picture
+![Moisture Sensor](/images/getting-started/losant-iot-dev-kits/moisture-sensor/moisture-sensor-header.jpg "Moisture Sensor")
 
 As you follow these instructions, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
@@ -91,11 +91,11 @@ If you're familiar with git, you can also clone the repository from here:
 
 In this step we're going to to connect the moisture sensor and the LED to the microcontroller. Below is the wiring diagram.
 
-// TODO: Diagram
+![Wiring Diagram](/images/getting-started/losant-iot-dev-kits/moisture-sensor/wiring-diagram.png "Wiring Diagram")
 
 1. Push the microcontroller into terminals 1-15 on either side of the center line, which are rows `b` and `i`. The USB port should be facing away from the breadboard.
 1. Connect the GND pin on the microcontroller `a2` to the negative rail with a jump wire. The color of the jump wire doesn't matter.
-1. Insert the LED into terminals `b22` and `b23`. Ensure the positive lead on the LED (the longer one) is in terminal `b22`.
+1. Insert the LED into terminals `d22` and `d23`. Ensure the positive lead on the LED (the longer one) is in terminal `d22`.
 1. Connect the negative rail to the negative lead on the LED `c23` with the resistor.
 1. Connect the positive lead on the LED `c22` to pin D1 on the microcontroller `a14`.
 1. Use a female-to-male jump wire to connect the `GND` terminal on the moisture sensor to the negative rail on the breadboard.

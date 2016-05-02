@@ -2,7 +2,7 @@
 
 The Losant Door Sensor Kit includes everything required to be notified when a door is opened or left open for a certain amount of time. These instructions provide a step-by-step overview to build and configure your door sensor to alert you via SMS or email when your door or window is opened.
 
-// TODO: picture
+![Door Sensor](/images/getting-started/losant-iot-dev-kits/door-sensor/door-sensor.jpg "Door Sensor")
 
 As you follow these instructions, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
@@ -90,7 +90,7 @@ If you're familiar with git, you can also clone the repository from here:
 
 In this step we're going to to connect the door sensor to the microcontroller. Below is the wiring diagram.
 
-// TODO: Diagram
+![Wiring Diagram](/images/getting-started/losant-iot-dev-kits/door-sensor/wiring-diagram.png "Wiring Diagram")
 
 1. Push the microcontroller into terminals 1-15 on either side of the center line, which are rows `b` and `i`. The USB port should be facing away from the breadboard.
 1. Connect the GND pin on the microcontroller `a2` to the negative rail with a jump wire. The color of the jump wire doesn't matter.
