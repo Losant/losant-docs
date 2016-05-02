@@ -158,17 +158,17 @@ Once imported, your workflow should look like the following.
 
 Don't worry, this workflow will be completely explained later, but for now we need to properly configure it.
 
-You'll notice that there is one node that has a small error icon. This has an error because it needs a device to be configured. Click on the node and select your door sensor device form the dropdown.
+You'll notice that there is one node that has a small error icon. This has an error because it needs a device to be configured. Click on the node and select your door sensor device from the dropdown.
 
 ![Nodes with Errors](/images/getting-started/losant-iot-dev-kits/door-sensor/nodes-with-errors.png "Nodes with Errors")
 
 ![Node Device Option](/images/getting-started/losant-iot-dev-kits/door-sensor/node-device-option.png "Node Device Option")
 
-The last thing you'll have to do is set up this workflow's global configuration. The global configuration holds the left open time threshold, your phone number, and your email address. Click on the `Globals` tab on the bottom right.
+The last thing you'll have to do is set up this workflow's global configuration. The global configuration holds the amount of time the door must be left open to alert, your phone number, and your email address. Click on the `Globals` tab on the bottom right.
 
 ![Globals Tab](/images/getting-started/losant-iot-dev-kits/door-sensor/globals-tab.png "Globals Tab")
 
-The `leftOpenTime` time is the number of milliseconds the door must be left open before you are notified. For now, fill in 60000 (one minute) for testing. You can come back and change this at any time.
+The `leftOpenTime` is the number of milliseconds the door must be left open before you are notified. For now, fill in 60000 (one minute) for testing. You can come back and change this at any time.
 
 Fill in the `smsNumber` and `email` fields with your phone number and email address respectively. These are the alerts that Losant will use.
 
@@ -182,11 +182,11 @@ After deploying, you can now inspect the payload in real-time as the sensor repo
 
 As you can see in the above example, the sensor reported `{ "open" : 1 }` which indicates the door is opened. If the door doesn't close in 60 seconds, this workflow will also alert using SMS and email.
 
-You may have also noticed there's no line connecting a set of SMS and email alerts.
+You may have also noticed there's no line connecting a set of SMS and email nodes.
 
 ![No Connector](/images/getting-started/losant-iot-dev-kits/door-sensor/no-connector.png "No Connector")
 
-If you decide to connect those lines, you will receive an alert every time the door is opened. I leave it as a challenge to you to figure out how to limit those alerts to specific hours, like overnight.
+If you decide to connect those lines, you will receive an alert every time the door is opened. This is left off by default, because it likely generates an annoying amount of alerts. I leave it as a challenge to you to figure out how to limit those alerts to specific hours, like overnight.
 
 This workflow is just a starting point. Losant can connect this device to many different outputs and other 3rd-party services. You can modify this workflow to configure any rules required for your specific door or window monitoring solution. Feel free to explore!
 
@@ -214,7 +214,7 @@ Next, add a gauge block. This block will display the total number of times the d
 
 ![Gauge Settings](/images/getting-started/losant-iot-dev-kits/door-sensor/gauge-settings.png "Gauge Settings")
 
-Name the block anything you want. Make sure your application is selected. Set the `Duration` to `24 hours`. Make sure your device is selected, set the label to whatever you want, make sure the `open` attribute is selected, and change the `Aggregation` to `SUM`. As soon as all the fields are filled out, you should see a real-time preview on the top-right of the screen. Since our device reports the number 1 whenever the door is opened, we can simply sum up all of those ones to see how many times the door was opened.
+Name the block anything you want. Make sure your application is selected. Set the `Duration` to `24 hours`. Make sure your device is selected, set the label to whatever you want, make sure the `open` attribute is selected, and change the `Aggregation` to `SUM`. As soon as all the fields are filled out, you should see a real-time preview on the top-right of the screen. Since our device reports the number 1 whenever the door is opened, we can simply sum up all of those 1's to see how many times the door was opened.
 
 Click `Add Block` to add the gauge to your dashboard.
 
@@ -226,7 +226,7 @@ Now let's add another gauge block to display the current opened state of the doo
 
 ![Door Open Gauge Settings](/images/getting-started/losant-iot-dev-kits/door-sensor/door-open-gauge-settings.png "Door Open Gauge Settings")
 
-Name the block anything you want. Make sure your application is selected. Set the `Duration` to `Last received data point`. Make sure you device is selected. Set the label to anything you want and make sure the `open` attribute is selected.
+Name the block anything you want. Make sure your application is selected. Set the `Duration` to `Last received data point`. Make sure your device is selected. Set the label to anything you want and make sure the `open` attribute is selected.
 
 This block will display `1` when the door is currently opened and `0` when it's not.
 

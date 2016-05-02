@@ -89,6 +89,6 @@ This will open a file browser. Simply select the zip you just downloaded.
 
 Your environment is now properly setup to begin programming your dev kits with their needed firmware. Please continue to the instructions for each specific kit.
 
-1. [Builder Kit Instructions](#)
-1. [Moisture Sensor Kit Instructions](#)
-1. [Door Sensor Kit Instructions](#)
+1. [Builder Kit Instructions](/getting-started/losant-iot-dev-kits/builder-kit/)
+1. [Moisture Sensor Kit Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/)
+1. [Door Sensor Kit Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/)
