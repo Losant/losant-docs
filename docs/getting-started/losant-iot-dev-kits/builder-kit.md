@@ -2,7 +2,7 @@
 
 The Losant Builder Kit is an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
 
-// TODO: picture
+![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit/builder-kit.jpg "Builder Kit")
 
 As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
