@@ -134,7 +134,7 @@ After the upload is complete, the Serial Monitor should start printing informati
 
 ![Serial Output](/images/getting-started/losant-iot-dev-kits/door-sensor/serial-output.png "Serial Output")
 
-Every time the door sensor parts come together, this firmware publishes `{ "open": 1 }` to Losant. Every time the sensor parts move away, this firmware publishes `{ "open" : 0 }`.
+Every time the door sensor parts come together, this firmware publishes `{ "open": 0 }` to Losant. Every time the sensor parts move away, this firmware publishes `{ "open" : 1 }`.
 
 It’s now time to go into Losant and make use of this data.
 
