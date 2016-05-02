@@ -4,6 +4,7 @@ pages:
     - What is Losant: getting-started/what-is-losant.md
     - Losant Walkthrough: getting-started/walkthrough.md
     - Losant IoT Dev Kits:
+        - Overview: getting-started/losant-iot-dev-kits/overview.md
         - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
         - Builder Kit Instructions: getting-started/losant-iot-dev-kits/builder-kit.md
         - Moisture Sensor Kit Instructions: getting-started/losant-iot-dev-kits/moisture-sensor-kit.md
