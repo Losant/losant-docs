@@ -1,4 +1,5 @@
 site_name: Documentation
+google_analytics: ['UA-67977500-5', 'auto']
 pages:
 - Getting Started:
     - What is Losant: getting-started/what-is-losant.md
@@ -74,6 +75,7 @@ pages:
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
         - AWS Lambda: workflows/data/aws-lambda.md
+        - Gauge Query: workflows/data/gauge-query.md
         - Get Value: workflows/data/get-value.md
         - HTTP: workflows/data/http.md
         - Store Value: workflows/data/store-value.md
