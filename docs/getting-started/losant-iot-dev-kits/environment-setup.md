@@ -44,7 +44,6 @@ After selecting the board, additional options will appear in the Tools menu. Ens
 
 1. ***Flash Mode = QIO***
 1. Flash Frequency = 40MHz
-1. Upload Using = Serial
 1. CPU Frequency = 80MHz
 1. ***Flash Size = 4M 1M SPIFFS***
 1. ***Reset Method = nodemcu***
