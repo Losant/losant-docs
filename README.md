@@ -12,3 +12,7 @@ Losant documentation can be downloaded and ran locally.  To build the losant doc
 **To build static documentation website:**
 
 1. Go to root directory, and run `mkdocs build`.  Your website will be built in the `site` folder.
+
+**To deploy documentation:**
+
+1. AWS_SECRET_KEY=<secret> AWS_ACCESS_KEY=<key> npm run deploy
