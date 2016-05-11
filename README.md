@@ -15,4 +15,4 @@ Losant documentation can be downloaded and ran locally.  To build the losant doc
 
 **To deploy documentation:**
 
-1. AWS_SECRET_KEY=<secret> AWS_ACCESS_KEY=<key> npm run deploy
+1. AWS_SECRET_KEY=your_secret AWS_ACCESS_KEY=your_key npm run deploy
