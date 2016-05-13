@@ -23,3 +23,7 @@ There are a number of outputs that can optionally be configured on the latch nod
 *   **Path for prior latch state** takes a JSON path and will place `true` or `false` at that path on the payload depending on if the latch node was latched when entering the latch node.
 *   **Path for current latch state** takes a JSON path and will place `true` or `false` at that path on the payload depending on if the latch node is now latched upon exiting the node.
 *   **Path for branch taken** takes a JSON path and will place `true` or `false` at that path on the payload depending on which branch out of the latch node was taken.
+
+## Advanced Options
+
+The Latch node also has an optional field at the bottom named `Latch Identifier`.  This field is a template and can be used to make a single latch node function as the equivalent of multiple latches.  For example, if multiple devices can trigger a workflow and pass through this latch node, you can have the latch identifier be the triggering device id - that way the latch node will latch/unlatch on a per-device basis, instead of on a global workflow basis.
