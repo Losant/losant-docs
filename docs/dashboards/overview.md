@@ -26,8 +26,22 @@ Dashboards by default will automatically refresh the data every 60 seconds. You 
 
 ## Public Dashboards
 
-Dashboards can be made public - which means that anyone going to the url for a dashboard can see that dashboard.  This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone.  Do not make your dashboard public if it contains any private or sensitive data.  You can control if your dashboard is public on the settings page for the dashboard:
+Dashboards can be made public - which means that anyone who has the URL for a dashboard can see it, regardless of whether that person is logged in to a Losant account.  This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone.  Do not make your dashboard public if it contains any private or sensitive data.  You can control if your dashboard is public on the settings page for the dashboard:
 
 ![Public Checkbox](/images/dashboards/public-checkbox.png "Public Checkbox")
 
-NOTE: There are certain dashboard blocks that will not display any data on public dashboards, because in general they expose large amounts of data about the underlying application or account.  These are the `Application List`, `Workflow List`, `Device List`, `Event List` and `Device Connection Log` blocks.  All other blocks display identically when viewed publicly.
+## Embedding Dashboard Blocks into Other Sites
+
+If your dashboard has been set to `public`, you may embed any of your dashboard blocks into a third-party site. To get an embed code, hover over your dashboard block and click the `<>` icon in the block header.
+
+This will display a modal where you can set the block's `width`, `height` and `theme` properties. For your width and height, make sure to enter a valid CSS length attribute (`%`, `px`, `em`, `vw`, etc.).
+
+![Embed Block Modal Checkbox](/images/dashboards/embed-block-modal.png "Embed Block Modal")
+
+NOTE: The following blocks will not display any data on public dashboards or to non-authorized users when embedded. In general they expose large amounts of data about the underlying application or account:
+
+* `Application List`
+* `Workflow List`
+* `Device List`
+* `Event List`
+* `Device Connection Log`
