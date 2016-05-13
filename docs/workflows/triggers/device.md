@@ -28,6 +28,7 @@ The payload will include the triggering device's state on the `data` field. The 
   "triggerId": <id of the triggering device>,
   "triggerType": "deviceId",
   "deviceTags": [<any tags for the device>],
+  "deviceName": <the device name>,
   "flowId": <id of the current workflow>
 }
 ```
@@ -48,6 +49,7 @@ For the example workflow above, a specific payload for a triggered workflow migh
     { "key": "floor", "value": "2" },
     { "key": "location", "value": "warehouse1" }
   ],
+  "deviceName": "My Factory Device",
   "flowId": "56c74add04d0b50100043381"
 }
 ```
