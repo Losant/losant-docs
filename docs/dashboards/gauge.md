@@ -13,8 +13,28 @@ Gauge blocks currently support two types. Additional types will be added in futu
 ![Gauge Type](/images/dashboards/gauge-block-type.png "Gauge Type")
 
 * **Number Gauge** displays a value as a single number.
-* **Dial Gauge** displays the value as a number, but also provides a gauge representation to show where that number stands against a minimum and maximum value provided by you. When "Dial Gauge" is selected, the "Min" and "Max" values are required, and each must be a number.
-* The **Precision** field allows you to specify the number of digits of precision to display in the gauge (the default is 4).
+* **Dial Gauge** displays the value as a number, but also provides a gauge representation to show where that number stands against a minimum and maximum value provided by you.
+
+When "Dial Gauge" is selected, additional configuration options become available:
+
+* **Min** and **Max** values are required. Each must be a number, and Min must be less than Max. These numbers determine the upper and lower bounds of your dial gauge.
+* Optionally, the gauge value and mininum and maximum bounds can be **displayed as a percentage** instead of raw numbers.
+
+Values that go above or below the set Min or Max will continue to display in the middle of the gauge, but the gauge itself will either be empty or full, depending on if the value falls below the Min or exceeds the Max, respectively.
+
+### Number Display Rules
+
+The value displayed in the gauge block can be rounded or represented a few different ways, and depending on the value being returned by your devices, these rules can greatly enhance the usability of the gauge block (especially for very large or very small numbers).
+
+* For the **Precision Type**, choose **Significant Digits** (default) to round the value based on the number of digits selected. To always display a certain number of decimal points, choose **Floating Point**.
+* For the **Digits**, enter any integer greater than 0. This number will be applied to the Precision Type previously selected. Default is 4.
+
+For example, say you have a gauge displaying the current outside temperate. The actual number reported by the device is **64.61**. Here is how different number display rules would represent that number:
+
+|                    | 1    | 2     | 3      | 4       |
+|--------------------|------|-------|--------|---------|
+| Significant Digits | 6e+1 | 65    | 64.7   | 64.67   |
+| Floating Point     | 64.7 | 64.67 | 64.670 | 64.6700 |
 
 ### Duration
 
@@ -30,7 +50,7 @@ The block data takes four parameters, three of which are required:
 
 ![Gauge Block Data](/images/dashboards/gauge-block-data.png "Gauge Block Data")
 
-* **Label** is the text displayed beneath number / dial representation of your device(s) state. This can be any value, but you will want it to properly represent the data displayed along with it.
+* **Label** is the text displayed beneath number / dial representation of your device(s) state. This can be any value, but you will want it to properly represent the data displayed along with it. HTML entities and <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a> are allowed here.
 * **Device IDS / Tags** is a [device query](/devices/device-queries.md) for choosing which devices are displayed within the gauge.
 * **Attribute** is the device attribute whose value will be displayed in the gauge. This attribute must be of the type `Number`. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Aggregation Type** is only visible when Duration is set to anything other than "Last received data point", OR when a device tag is supplied in the device query, OR if more than one device ID is supplied within the device query. This determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "MEAN" will average all data points together before displaying within the gauge.
