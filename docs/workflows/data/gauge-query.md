@@ -8,9 +8,13 @@ The gauge query node allows a workflow to query and aggregate state data for one
 
 The configuration for the gauge query node is extremely similar to the [gauge dashboard block](/dashboards/gauge/).
 
-![Gauge Query Node Configuration](/images/workflows/data/gauge-query-node-config.png "Gauge Query Node Configuration")
+![Gauge Query Node Device Selection](/images/workflows/data/gauge-query-node-device.png "Gauge Query Node Device Selection")
 
-The gauge node needs to know what device(s) to query, over what time frame, on what attribute, and what aggregation to use.  When querying only a single device, and requesting only the last data point, no aggregation is needed (since there will only be a single value).  In the above example, the attribute `current` will be averaged over the last 24 hours for all devices with the tag key `floor` set to `2`.
+First step is selecting the devices to query.  The node has two options for selecting devices - you can specifically select a set of devices to query, or you can pull one or more device ids off of the current workflow payload to query.  That second option allows a workflow to dynamically change what specific devices are being queried depending on the payload currently being processed.  In the example above, the first option is being used, and the node will query all devices whose tag `floor` is equal to `2`.
+
+![Gauge Query Node Config](/images/workflows/data/gauge-query-node-config.png "Gauge Query Node Config")
+
+The gauge node also needs to know the time frame, the attribute, and what aggregation to use for the query.  When querying only a single device, and requesting only the last data point, no aggregation is needed (since there will only be a single value).  In the above example, the attribute `current` will be averaged over the last 24 hours for the selected devices.
 
 ![Gauge Query Node Result](/images/workflows/data/gauge-query-node-result.png "Gauge Query Node Result")
 
