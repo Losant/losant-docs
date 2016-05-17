@@ -104,4 +104,5 @@ pages:
     - Overview: limits/overview.md
 theme_dir: 'losant'
 extra:
-    site_title: 'Losant Documentation'
+  site_title: 'Losant Documentation'
+  hidden: []
