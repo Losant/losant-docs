@@ -8,6 +8,7 @@ pages:
         - Overview: getting-started/losant-iot-dev-kits/overview.md
         - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
         - Builder Kit Instructions: getting-started/losant-iot-dev-kits/builder-kit.md
+        - Builder Kit NodeMCU Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodemcu.md
         - Moisture Sensor Kit Instructions: getting-started/losant-iot-dev-kits/moisture-sensor-kit.md
         - Door Sensor Kit Instructions: getting-started/losant-iot-dev-kits/door-sensor-kit.md
     - Boards:
@@ -105,4 +106,4 @@ pages:
 theme_dir: 'losant'
 extra:
   site_title: 'Losant Documentation'
-  hidden: []
+  hidden: ['Builder Kit NodeMCU Instructions']
