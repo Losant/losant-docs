@@ -216,6 +216,32 @@ Click the “Deploy Workflow” button and press the hardware button. You should
 
 This completes the first workshop. You’ve successfully created an Internet button that can be used for any number of useful actions. For an extra challenge, try browsing the other output nodes and come up with other actions you can control with your Internet button, such as sending yourself a text message.
 
+## Bonus Workshop - Virtual Light Wall
+
+On the projector you'll see a 3x3 grid of squares - that's the "Virtual Light Wall". In this workshop, we're going to make one of those squares light up with a random color and display a message of your choosing whenever you hit your internet button.
+
+Start by adding an HTTP node to your workflow and connecting it to the Conditional node. You may also want to disconnect the Email node so you don't get emails every time you press the button during this workshop.
+
+![HTTP Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workflow-http-node.png "HTTP Workflow Node")
+
+On the HTTP node configuration properties, change the `Request Method` to `POST` and set the `URL Template` to "http://lights.mod.bz". You can also view this URL in your browser if you'd like to see the light wall for yourself.
+
+Set the body template to the following:
+
+```json
+{ "name" : "your name here", "message" : "your message here" }
+```
+
+The name and message can be anything you want. Try to keep it family friendly because it will be displayed in front of everyone.
+
+Lastly, add a request header by setting the `Name` to "content-type" and the `Value Template` to "application/json".
+
+Click the `Deploy Workflow` button to deploy this workflow. Now whenever you press the internet button, this workflow is making a request to the Light Wall website that includes your name and message. The Light Wall then lights up a random square and displays the information.
+
+This workshop shows a lot of the power behind workflows. We've completely changed the behavior of our internet button without having to write any code or update the firmware running on the device itself.
+
+Feel free to press the button randomly throughout the workshops so we can keep the light wall active!
+
 ## Workshop 2 – Remote Control LED
 
 In the previous workshop, we showed you how to make a physical button do something in the virtual world. In this example, we’re going show how a virtual button can do something in the physical world.
