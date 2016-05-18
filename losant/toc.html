@@ -2,7 +2,7 @@
   <ul class="subnav">
     <li><span>{{ nav_item.title }}</span></li>
     {% for nav_item in nav_item.children %}
-      {% if not nav_item.title in config.hidden %}
+      {% if not nav_item.title in config.extra.hidden %}
         {% include 'toc.html' %}
       {% endif %}
     {% endfor %}

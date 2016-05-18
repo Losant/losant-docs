@@ -76,7 +76,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         <ul class="current">
           {% for nav_item in nav %}
-            {% if not nav_item.title in config.hidden %}
+            {% if not nav_item.title in config.extra.hidden %}
               <li>{% include "toc.html" %}<li>
             {% endif %}
           {% endfor %}
