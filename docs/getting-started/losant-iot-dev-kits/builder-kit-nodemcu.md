@@ -2,9 +2,7 @@
 
 The Losant Builder Kit is an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
 
-// TODO: new image
-
-![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit/builder-kit.jpg "Builder Kit")
+![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/kit-complete.jpg "Builder Kit")
 
 As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
@@ -88,13 +86,11 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 Now let's get the firmware you'll be flashing to the device. Download and extract the following zip file to your computer. We'll be editing and opening these files using the Arduino IDE, so put it somewhere convenient.
 
-// TODO
-[https://github.com/Losant/losant-kit-builder/archive/master.zip](https://github.com/Losant/losant-kit-builder/archive/master.zip)
+[https://github.com/Losant/losant-kit-builder-nodemcu/archive/master.zip](https://github.com/Losant/losant-kit-builder-nodemcu/archive/master.zip)
 
 If you're familiar with git, you can also clone the repository from here:
 
-// TODO
-[https://github.com/Losant/losant-kit-builder](https://github.com/Losant/losant-kit-builder)
+[https://github.com/Losant/losant-kit-builder-nodemcu](https://github.com/Losant/losant-kit-builder-nodemcu)
 
 ## Workshop 1 – Internet Button
 
@@ -116,8 +112,7 @@ For this workshop, you’ll need to attach the NodeMCU and button to the breadbo
 1. Connect the negative rail to the button using terminal c30 using a resistor. It doesn’t matter which way resistors are oriented.
 1. Connect Pin D1 on the NodeMCU (a14) to the button (j30) with a jump wire.
 
-// TODO
-![Workshop 1 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-1-wiring-image.png "Workshop 1 Wiring Image")
+![Workshop 1 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-1-wiring-image.jpg "Workshop 1 Wiring Image")
 
 ### Flash the Firmware
 
@@ -135,7 +130,6 @@ With the Arduino IDE, use the `File -> Open` menu to navigate to where you downl
 
 Your changes will automatically be saved as part of the upload process in the following steps. After editing the code, open the Arduino IDE's Serial Monitor and change the baud rate to 115200. The serial monitor can be opened using the button on the top right of the Arduino IDE or using the `Tools -> Serial Monitor` menu.
 
-// TODO
 ![Open Serial Monitor](/images/getting-started/losant-iot-dev-kits/builder-kit/open-serial-button.png "Open Serial Monitor")
 
 ![Serial Monitor Baud](/images/getting-started/losant-iot-dev-kits/builder-kit/serial-monitor-baud.png "Serial Monitor Baud")
@@ -144,12 +138,10 @@ The serial monitor won't print any information until we flash the device with th
 
 Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds and the NodeMCU will rapidly blink a blue light while it’s uploading.
 
-// TODO
 ![Upload Button](/images/getting-started/losant-iot-dev-kits/builder-kit/upload-button.png "Upload Button")
 
 After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. Then when you click the button, it will print “Button Pressed!”
 
-// TODO
 ![Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit/serial-output.png "Serial Output")
 
 If you don’t see the “Button Pressed!” message, check your wiring. The jump wires are not always the best connectors and sometimes just need wiggled around a little.
@@ -243,8 +235,7 @@ Each workshop builds on the previous one, so if you completed the first workshop
 1. Connect the positive lead of the LED to D2 on the NodeMCU (terminal a13) with a jump wire.
 1. Connect the negative lead of the LED from terminal c20 to the negative rail with a resistor.
 
-// TODO
-![Workshop 2 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-2-wiring-image.png "Workshop 2 Wiring Image")
+![Workshop 2 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-image.jpg "Workshop 2 Wiring Image")
 
 ### Flash the Firmware
 
@@ -288,7 +279,6 @@ Once deployed, you can now click the virtual button and see the LED on the board
 
 The Serial Monitor will also print a message whenever a command is received.
 
-// TODO
 ![Command Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit/command-serial-output.png "Command Serial Output")
 
 We’ve now seen the two primary ways devices can communicate with Losant – state and commands. If you link these together, a whole world of possibilities opens up. Imagine having two builder kits where the button on one invokes the toggle command on another via a workflow. This allows us to easily perform machine-to-machine (m2m) communication without the devices even knowing about each other.
@@ -311,8 +301,7 @@ Just like the previous workshop, keep everything you've already wired and add th
 1. Connect the leftmost lead (a22) of the temperature sensor to the positive rail using a jump wire.
 1. Connect the center lead (a23) to the A0 pin on the NodeMCU (terminal j15) with a jump wire.
 
-// TODO
-![Workshop 3 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-3-wiring-image.jpg "Workshop 3 Wiring Image")
+![Workshop 3 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-3-wiring-image.jpg "Workshop 3 Wiring Image")
 
 ### Flash the Firmware
 
@@ -322,7 +311,6 @@ Plug the NodeMCU back into USB. Open the file workshop-3-temp.ino. Just as in th
 
 After the upload completes, the Serial Monitor will print the temperature every 15 seconds.
 
-// TODO
 ![Temp Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit/temp-serial-output.png "Temp Serial Output")
 
 This firmware is publishing state every 15 seconds to the Losant platform. The state includes the tempF and tempC attributes that we defined back when the device was added. This is also why we had to add the Conditional Workflow node to the Internet button (Workshop 1). Without the Conditional, you’d get an email every time the device published temperature, which is likely not what you want.
