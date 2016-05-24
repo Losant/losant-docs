@@ -1,6 +1,6 @@
 # Moisture Sensor Kit Instructions
 
-The Losant Moisture Sensor Kit includes everything required to keep your plants watered and happy. These instructions provide a step-by-step overview to build and configure your moisture sensor to alert you via SMS or email when your plant needs attention.
+The <a href="https://store.losant.com/products/losant-moisture-sensor-kit" target="_blank">Losant Moisture Sensor Kit</a> includes everything required to keep your plants watered and happy. These instructions provide a step-by-step overview to build and configure your moisture sensor to alert you via SMS or email when your plant needs attention.
 
 ![Moisture Sensor](/images/getting-started/losant-iot-dev-kits/moisture-sensor/moisture-sensor-header.jpg "Moisture Sensor")
 

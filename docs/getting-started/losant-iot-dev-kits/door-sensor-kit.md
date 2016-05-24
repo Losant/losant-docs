@@ -1,6 +1,6 @@
 # Door Sensor Kit Instructions
 
-The Losant Door Sensor Kit includes everything required to be notified when a door is opened or left open for a certain amount of time. These instructions provide a step-by-step overview to build and configure your door sensor to alert you via SMS or email when your door or window is opened.
+The <a href="https://store.losant.com/collections/losant-kits/products/losant-door-sensor-kit" target="_blank">Losant Door Sensor Kit</a> includes everything required to be notified when a door is opened or left open for a certain amount of time. These instructions provide a step-by-step overview to build and configure your door sensor to alert you via SMS or email when your door or window is opened.
 
 ![Door Sensor](/images/getting-started/losant-iot-dev-kits/door-sensor/door-sensor.jpg "Door Sensor")
 
