@@ -94,6 +94,8 @@ pages:
         - Tweet: workflows/outputs/tweet.md
         - Twilio: workflows/outputs/twilio.md
         - Virtual Device: workflows/outputs/virtual-device.md
+- Losant Go:
+    - Overview: losant-go/overview.md
 - Losant SDKs:
     - JavaScript: losant-sdks/javascript.md
     - Arduino: losant-sdks/arduino.md
