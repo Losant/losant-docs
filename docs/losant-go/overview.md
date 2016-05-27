@@ -6,9 +6,9 @@ The Losant GO app works by turning your mobile phone into a Losant device. You c
 
 ### Create Account
 
-If you don't already have an account, navigate to [https://accounts.losant.com/create-account](https://accounts.losant.com/create-account) to register, or sign up through the app.
+If you don't already have an account, navigate to [https://accounts.losant.com/create-account](https://accounts.losant.com/create-account) to register, or create an account through the app.
 
-<div class="slim-image-container"><img src="/images/losant-go/sign-up-link.png" /><img src="/images/losant-go/sign-up-screen.png" alt="Auto Setup Option" title="Auto Setup Option" /></div>
+<div class="slim-image-container"><img src="/images/losant-go/sign-up-link.png" alt="Create Account Link" title="Create Account Link" /><img src="/images/losant-go/sign-up-screen.png" alt="Auto Setup Option" title="Auto Setup Option" /></div>
 
 ### Auto Setup
 
@@ -58,15 +58,15 @@ To view the debugging data, log in to Losant, and do the following:
 
 ![View Applications](/images/losant-go/view-applications.png "View Applications")
 
-*2. Click on "Losant Go Mobile App"*
+*2. Click on "Losant Go Mobile App".*
 
 ![Losant Go Mobile App Link](/images/losant-go/losant-go-app-link.png "Losant Go Mobile App Link")
 
-*3. Click on "Losant Mobile Workflow"*
+*3. Click on "Losant Mobile Workflow".*
 
 ![Losant Mobie Workflow Link](/images/losant-go/losant-mobile-workflow-link.png "Losant Mobie Workflow Link")
 
-*4. Click the "Debug" tab on the screen*
+*4. Click the "Debug" tab on the screen.*
 
 ![Debug Tab](/images/losant-go/debug-tab.png "Debug Tab")
 
@@ -80,11 +80,11 @@ This information is called a "payload", and it is in JSON format.  We will revis
 
 Ok, let’s make your button do something.  In the following example, you will be configuring the Losant workflow to send an SMS with data from your payload.
 
-*1. Scroll down "Node Palette" on the left side, and locate the "SMS" node. Drag it to the screen*
+*1. Scroll down "Node Palette" on the left side, and locate the "SMS" node. Drag it to the screen.*
 
 ![Drag SMS Node](/images/losant-go/drag-sms-node.png "Drag SMS Node")
 
-*2. Connect the "Debug" node to the "SMS" node by dragging the bottom point of the "Debug" node to the top point of the "SMS" node*
+*2. Connect the "Debug" node to the "SMS" node by dragging the bottom point of the "Debug" node to the top point of the "SMS" node.*
 
 ![Connect Debug node to SMS node](/images/losant-go/connect-debug-sms.png "Connect Debug node to SMS node")
 
@@ -100,7 +100,7 @@ Ok, let’s make your button do something.  In the following example, you will b
 
 This will pull data from your payload, which was mentioned above.  You can reference data in the payload json using the {{ }}.
 
-*5. Click "Deploy Workflow"*
+*5. Click "Deploy Workflow".*
 
 ![Click Deploy Workflow](/images/losant-go/deploy-workflow.png "Click Deploy Workflow")
 
