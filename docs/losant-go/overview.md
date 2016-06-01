@@ -111,4 +111,5 @@ This will pull data from your payload, which was mentioned above.  You can refer
 That was just the surface of what you can do with the Losant Go App.  Using workflows with the Losant Go App, you can do many things like open up a garage door, turn on a coffee maker or control any smart device.  Read more about [workflows](/workflows/overview/).
 
 
-To download the app, visit the app store on Apple and the Play store on Android
+To download the app, visit the [App Store](https://itunes.apple.com/us/app/losant-go/id1112244753?mt=8
+) or [Google Play](https://play.google.com/store/apps/details?id=com.losant.go&hl=en).
