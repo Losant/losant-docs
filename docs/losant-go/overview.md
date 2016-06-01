@@ -1,6 +1,6 @@
 # Losant Go App Overview
 
-The Losant GO app works by turning your mobile phone into a Losant device. You can then trigger workflows to do any number of amazing things whenever you push the button.
+The Losant Go app works by turning your mobile phone into a Losant device. You can then trigger workflows to do any number of amazing things whenever you push the button.
 
 ## Application Setup
 
@@ -24,7 +24,7 @@ Auto Setup automatically creates the following:
 
 <div class="slim-image-container"><img src="/images/losant-go/auto-setup-complete.png" alt="Auto Setup Complete" title="Auto Setup Complete" /></div>
 
-Your mobile device is now set up. You'll just need to login to [https://app.losant.com](https://app.losant.com) to configure your workflow to do something useful.  View [workflows](/workflows/overview/) for more details.  Read [Using the button](#using-the-button) to use the button.
+Your mobile device is now set up. You'll just need to login to [https://app.losant.com](https://app.losant.com) to configure your workflow to do something useful.  View [workflows](/workflows/overview/) for more details.  Read [Using the Button](#using-the-button) to use the button.
 
 ### Manual Setup
 
@@ -42,7 +42,7 @@ Advanced users can choose Manual Setup to select a pre-existing application and 
 
 <div class="slim-image-container"><img src="/images/losant-go/select-device.png" alt="Select Device" title="Select Device" /></div>
 
-## Using the button
+## Using the Button
 
 Tap the Losant Go button to use it.  If the button has successfully communicated with the Losant platform, you will receive a "Success" message on your button.
 
@@ -113,3 +113,5 @@ That was just the surface of what you can do with the Losant Go App.  Using work
 
 To download the app, visit the [App Store](https://itunes.apple.com/us/app/losant-go/id1112244753?mt=8
 ) or [Google Play](https://play.google.com/store/apps/details?id=com.losant.go&hl=en).
+
+<div class="badge-image-container"><a href="https://itunes.apple.com/us/app/losant-go/id1112244753?mt=8"><img src="/images/losant-go/app-store-badge.png" alt="Download on the App Store" title="Download on the App Store" /></a><a href="https://play.google.com/store/apps/details?id=com.losant.go&hl=en"><img src="/images/losant-go/google-play-badge.png" alt="Get it on Google Play" title="Get it on Google Play" /></a></div>
