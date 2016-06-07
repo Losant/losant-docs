@@ -48,7 +48,7 @@ const char* LOSANT_ACCESS_SECRET = "my-access-secret";
 
 // Create a secure WiFi client. This can also be an instance of the unsecured
 // WiFiClient class, but the secure TLS client is recommended.
-WiFiClientSecure wifiClient;
+WiFiSSLClient wifiClient;
 
 // Create an instance of a Losant device.
 LosantDevice device(LOSANT_DEVICE_ID);
