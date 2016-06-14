@@ -101,6 +101,30 @@ pages:
     - Arduino: losant-sdks/arduino.md
 - REST API:
     - Overview: rest-api/overview.md
+    - Access Token: rest-api/access-token.md
+    - Access Tokens: rest-api/access-tokens.md
+    - Application Key: rest-api/application-key.md
+    - Application Keys: rest-api/application-keys.md
+    - Application: rest-api/application.md
+    - Applications: rest-api/applications.md
+    - Auth: rest-api/auth.md
+    - Dashboard: rest-api/dashboard.md
+    - Dashboards: rest-api/dashboards.md
+    - Data: rest-api/data.md
+    - Device Recipe: rest-api/device-recipe.md
+    - Device Recipes: rest-api/device-recipes.md
+    - Device: rest-api/device.md
+    - Devices: rest-api/devices.md
+    - Event: rest-api/event.md
+    - Events: rest-api/events.md
+    - Me: rest-api/me.md
+    - Organization: rest-api/org.md
+    - Organizations: rest-api/orgs.md
+    - Webhook: rest-api/webhook.md
+    - Webhooks: rest-api/webhooks.md
+    - Workflow: rest-api/flow.md
+    - Workflows: rest-api/flows.md
+    - Schemas: rest-api/schemas.md
 - MQTT:
     - Overview: mqtt/overview.md
 - Limits:
@@ -108,4 +132,4 @@ pages:
 theme_dir: 'losant'
 extra:
   site_title: 'Losant Documentation'
-  hidden: ['Builder Kit NodeMCU Instructions']
+  hidden: ['Builder Kit NodeMCU Instructions', 'Access Token', 'Access Tokens']
