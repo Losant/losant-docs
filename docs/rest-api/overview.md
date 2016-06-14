@@ -1,6 +1,6 @@
 # Losant REST API
 
-Losant is powered by a full REST API that provides access to nearly every feature. The Losant front-end web application itself is built on top of this API, and so almost all the data and functionality in the front end is available through the API itself.  In fact, the front-end uses the open-source <a href="https://github.com/Losant/losant-api-js" target="_blank">losant-api-js</a> Javascript client to communicate with the Losant API. If Javascript is not your language of choice, no need to worry! We have easy to use libraries for a number of different languages:
+Losant is powered by a full REST API that provides access to nearly every feature. The Losant front-end web application itself is built on top of this API, and so almost all the data and functionality in the front end is available through the API itself.  In fact, the front-end uses the open-source <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a> Javascript client to communicate with the Losant API. If Javascript is not your language of choice, no need to worry! We have easy to use libraries for a number of different languages:
 
 *   Python with <a href="https://github.com/Losant/losant-rest-python" target="_blank">losant-rest-python</a>  
 Available in the Python Package Index: `pip install losant-rest`
@@ -8,7 +8,7 @@ Available in the Python Package Index: `pip install losant-rest`
 *   Ruby with <a href="https://github.com/Losant/losant-rest-ruby" target="_blank">losant-rest-ruby</a>  
 Available in RubyGems: `gem install losant_rest`
 
-*   Javascript with <a href="https://github.com/Losant/losant-api-js" target="_blank">losant-api-js</a>  
+*   Javascript with <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a>  
 Available in Node Package Manager: `npm install losant-api-js`
 
 Of course, if you are working in a language not listed above, the API is reasonably easy to use directly - if your language has a good HTTP request library and a good JSON library, you should be able to make any API request you need to using the documentation here.

@@ -8,7 +8,7 @@ The source code for this example is <a href="https://github.com/Losant/example-r
 
 ## Install Node.js on the Raspberry Pi
 
-We're going to use the <a href="https://github.com/Losant/losant-api-js" target="\_blank">Losant JavaScript SDK</a> to connect the Raspberry Pi to the Losant Platform. Follow the instructions <a href="https://www.losant.com/blog/how-to-install-nodejs-on-raspberry-pi" target="\_blank">on our blog</a> to install Node.js.
+We're going to use the <a href="https://github.com/Losant/losant-rest-js" target="\_blank">Losant JavaScript SDK</a> to connect the Raspberry Pi to the Losant Platform. Follow the instructions <a href="https://www.losant.com/blog/how-to-install-nodejs-on-raspberry-pi" target="\_blank">on our blog</a> to install Node.js.
 
 ## Install Dependencies
 
