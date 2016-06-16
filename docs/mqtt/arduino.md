@@ -1,6 +1,6 @@
-# Arduino SDK
+# Arduino MQTT Client
 
-The Losant Arduino SDK is a C++ library designed to work on a variety of Arduino compatible boards. The library is open source and <a href="https://github.com/Losant/losant-sdk-arduino" target="_blank">available on GitHub</a>.
+The Losant Arduino MQTT Client is a C++ library designed to work on a variety of Arduino compatible boards. The library is open source and <a href="https://github.com/Losant/losant-mqtt-arduino" target="_blank">available on GitHub</a>.
 
 Below is a basic example for connecting and Arduino board with an Arduino 101 WiFi Shield.
 
@@ -121,4 +121,4 @@ void loop() {
 }
 ```
 
-Please refer to the <a href="https://github.com/Losant/losant-sdk-arduino" target="_blank">repository</a> for detailed documentation and examples.
+Please refer to the <a href="https://github.com/Losant/losant-mqtt-arduino" target="_blank">repository</a> for detailed documentation and examples.

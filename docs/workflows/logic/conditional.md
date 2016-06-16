@@ -31,7 +31,7 @@ Values in the expression that are surrounded by double curly braces (`{{ value }
 
 ## Expression Details
 
-While the conditional expression supports a wide array of operators, it is not Javascript or even a full language on its own.  Expressions do support parentheses, standard operator precedence, a specific set of operators, a specific set of keywords, and a specific set of functions, as detailed below.
+While the conditional expression supports a wide array of operators, it is not JavaScript or even a full language on its own.  Expressions do support parentheses, standard operator precedence, a specific set of operators, a specific set of keywords, and a specific set of functions, as detailed below.
 
 Expressions support the following operators:
 
@@ -76,6 +76,7 @@ Expressions also support the following functions:
 *   `asinh` (computes the hyperbolic arcsine of a number)
 *   `acosh` (computes the hyperbolic arccosine of a number)
 *   `atanh` (computes the hyperbolic arctangent of a number)
+*   `atan2` (computes the arctangent of the two variables y and x)
 *   `sqrt` (computes the square root of a number)
 *   `log` (computes the natural logarithm of a number)
 *   `log10` (computes the base 10 logarithm of a number)
@@ -85,6 +86,7 @@ Expressions also support the following functions:
 *   `round` (rounds a number to the nearest integer)
 *   `trunc` (truncates any fractional digits of a number)
 *   `exp` (computes e raised to the power of the given number)
+*   `pow` (raises a number to the power of a second number)
 
 All of the above can be combined to produce powerful expressions, such as:
 

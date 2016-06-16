@@ -32,6 +32,6 @@ If you think an access key has been compromised or is no longer needed, you may 
 
 ## Using Access Keys
 
-To find out more on using access keys with our SDKs, checkout the [Losant JS SDK](https://github.com/Losant/losant-sdk-js) or the [Losant Arduino SDK](https://github.com/Losant/losant-sdk-arduino).
+To find out more on using access keys with our MQTT clients, checkout the various [Losant MQTT](/mqtt/overview) client libraries.
 
 For information on connecting to the Losant Platform via MQTT take a look at the [Losant MQTT Documentation](/mqtt/overview).

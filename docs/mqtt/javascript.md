@@ -1,13 +1,13 @@
-# JavaScript SDK
+# JavaScript MQTT Client
 
-The Losant JavaScript SDK is a library for Node.js compatible compute modules. The library is open source and <a href="https://github.com/Losant/losant-sdk-js" target="_blank">available on GitHub</a>.
+The Losant JavaScript MQTT Client is a library for Node.js compatible compute modules. The library is open source and <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">available on GitHub</a>.
 
 Below is a basic example demonstrating how to connect, send [state](/devices/state), and subscribe to [commands](/devices/commands).
 
-```JavaScript
-var Device = require('losant-sdk-js').Device;
+```javascript
+var Device = require('losant-mqtt').Device;
 
-// Construct gateway.
+// Construct device
 var device = new Device({
   id: 'my-device-id',
   key: 'my-app-access-key',
@@ -30,4 +30,4 @@ setInterval(function() {
 }, 1000);
 ```
 
-Please refer to the <a href="https://github.com/Losant/losant-sdk-js" target="_blank">repository</a> for detailed documentation and examples.
+Please refer to the <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">repository</a> for detailed documentation and examples.

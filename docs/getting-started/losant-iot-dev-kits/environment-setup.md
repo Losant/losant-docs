@@ -76,9 +76,9 @@ The next library is ArduinoJson. Repeat the the same process again, but this tim
 
 ![Install ArduinoJson](/images/getting-started/losant-iot-dev-kits/environment-setup/install-arduinojson.png "Install ArduinoJson")
 
-The last library is the Losant Arduino SDK. We'll include this library as a zip file. Download the zip from the following URL and save it somewhere convenience on your computer. You'll use this file in the next step.
+The last library is the Losant Arduino MQTT Client. We'll include this library as a zip file. Download the zip from the following URL and save it somewhere convenience on your computer. You'll use this file in the next step.
 
-[https://github.com/Losant/losant-sdk-arduino/archive/master.zip](https://github.com/Losant/losant-sdk-arduino/archive/master.zip)
+[https://github.com/Losant/losant-mqtt-arduino/archive/master.zip](https://github.com/Losant/losant-mqtt-arduino/archive/master.zip)
 
 Next, add the zip you just downloaded to your libraries using the `Sketch -> Include Library -> Add .ZIP Library` menu.
 

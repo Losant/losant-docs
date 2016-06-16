@@ -1,18 +1,34 @@
-# losant-docs
-Losant documentation can be downloaded and ran locally.  To build the losant documentation, do the following:
+# Losant Documentation
 
-**Prerequisites**
+Repository backing the main [Losant](https://www.losant.com) documentation,
+which is live at <https://docs.losant.com>.  Pull requests and other updates
+are always welcome!
 
-1. Install Mkdocs. [See Instructions](http://www.mkdocs.org/#installation).
+## Editing The Documentation
 
-**To use built in mkdocs built-in webserver:**
+This documentation uses [mkdocs](http://www.mkdocs.org) to build
+the actual documentation website.  This repo can be cloned and run locally
+using mkdocs for making changes and previewing them.
 
-1. Go to root directory, and run `mkdocs serve`.  Your site will be running at http://localhost:8000
+To build the Losant documentation yourself, do the following:
 
-**To build static documentation website:**
+*   **Prerequisites**  
+Install Mkdocs. [See Instructions](http://www.mkdocs.org/#installation).
 
-1. Go to root directory, and run `mkdocs build`.  Your website will be built in the `site` folder.
+*   **Run the built in mkdocs webserver**  
+Go to the repo directory, and run `mkdocs serve`. The documentation site
+will be running at <http://localhost:8000>.  Any changes made to the documentation
+markdown will be reflected automatically.
 
-**To deploy documentation:**
+## Deploying
 
-1. AWS_SECRET_KEY=your_secret AWS_ACCESS_KEY=your_key npm run deploy
+```bash
+npm install
+AWS_SECRET_KEY=your_secret AWS_ACCESS_KEY=your_key npm run deploy
+```
+
+*****
+
+Copyright (c) 2016 Losant IoT, Inc
+
+<https://www.losant.com>

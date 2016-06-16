@@ -12,7 +12,7 @@ Losant provides device connectivity using open and industry standards like [MQTT
 
 ![Communication Diagram](/images/getting-started/communication-diagram.png "Communication Diagram")
 
-Losant provides open source SDKs for <a href="https://github.com/Losant/losant-sdk-arduino" target="_blank">Arduino</a> and <a href="https://github.com/Losant/losant-sdk-js" target="_blank">Node.js</a>. This allows devices based on these technologies to quickly connect without requiring any additional implementation for the communication.
+Losant provides open source clients for both our [MQTT](/mqtt/overview) and [REST](/rest-api/overview) APIs for Node.js, Ruby, Python, and Arduino. This allows devices based on these technologies to quickly connect without requiring any additional implementation for the communication.
 
 The two major communication mechanisms between devices and Losant are [state](/devices/state) and [commands](/devices/commands). State represents a snapshot of the device at some point in time. This is typically sensor data or some other periodic information the device generates. Devices will report state as often as needed, for example a device that reports temperature may report every few minutes, whereas a device with a button may only report when the button is pressed.
 

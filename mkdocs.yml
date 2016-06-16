@@ -96,9 +96,12 @@ pages:
         - Virtual Device: workflows/outputs/virtual-device.md
 - Losant Go:
     - Overview: losant-go/overview.md
-- Losant SDKs:
-    - JavaScript: losant-sdks/javascript.md
-    - Arduino: losant-sdks/arduino.md
+- MQTT:
+    - Overview: mqtt/overview.md
+    - Arduino: mqtt/arduino.md
+    - JavaScript: mqtt/javascript.md
+    - Python: mqtt/python.md
+    - Ruby: mqtt/ruby.md
 - REST API:
     - Overview: rest-api/overview.md
     - Access Token: rest-api/access-token.md
@@ -125,8 +128,6 @@ pages:
     - Workflow: rest-api/flow.md
     - Workflows: rest-api/flows.md
     - Schemas: rest-api/schemas.md
-- MQTT:
-    - Overview: mqtt/overview.md
 - Limits:
     - Overview: limits/overview.md
 theme_dir: 'losant'

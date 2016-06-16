@@ -14,9 +14,9 @@ Be sure to enable the `Intel XDK IoT Edition` in the options. At the time of thi
 
 ## Programming the Edison
 
-Create a new project using the Intel XDK. Losant provides an open source <a href="https://github.com/Losant/losant-sdk-js" target="_blank">JavaScript SDK</a> that can be used to easily connect the Edison to the Losant platform.
+Create a new project using the Intel XDK. Losant provides an open source <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">JavaScript MQTT Client</a> that can be used to easily connect the Edison to the Losant platform.
 
-Add the `losant-sdk-js` module to the package.json dependencies.
+Add the `losant-mqtt` module to the package.json dependencies.
 
 ```json
 {
@@ -28,7 +28,7 @@ Add the `losant-sdk-js` module to the package.json dependencies.
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "losant-sdk-js" : "^1.0.0"
+    "losant-mqtt" : "^1.0.0"
   }
 }
 ```
@@ -37,8 +37,8 @@ Add the `losant-sdk-js` module to the package.json dependencies.
 
 To connect your device to Losant, simply create an instance of the Device object, pass it your access keys, and call connect.
 
-```JavaScript
-var Device = require('losant-sdk-js').Device;
+```javascript
+var Device = require('losant-mqtt').Device;
 
 // Construct a device instance.
 var device = new Device({
@@ -57,7 +57,7 @@ The device ID is obtained by first adding your [device](/devices/overview) to yo
 
 Once the device is connected you can begin reporting [state](/devices/state). For this example, the Edison will report the value of a TMP36 temperature sensor every one second.
 
-```JavaScript
+```javascript
 // Reading temperature from analog input.
 var temp = new mraa.Aio(0);
 
@@ -82,7 +82,7 @@ setInterval(function() {
 
 [Commands](/devices/commands) allow you to instruct your device to take some kind of action. Commands include a name and an optional payload. Subscribing to commands is done by attaching the `command` event listener.
 
-```JavaScript
+```javascript
 // Attach event listener for commmands.
 device.on('command', function(command) {
   console.log(command.name);
@@ -90,4 +90,4 @@ device.on('command', function(command) {
 });
 ```
 
-The full source for this examples can be found on the Losant <a href="https://github.com/Losant/losant-sdk-js" target="_blank">JavaScript SDK</a> GitHub repository.
+The full source for this examples can be found on the Losant <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">JavaScript MQTT Client</a> GitHub repository.

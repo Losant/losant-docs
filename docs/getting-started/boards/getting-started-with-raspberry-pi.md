@@ -8,14 +8,14 @@ The source code for this example is <a href="https://github.com/Losant/example-r
 
 ## Install Node.js on the Raspberry Pi
 
-We're going to use the <a href="https://github.com/Losant/losant-rest-js" target="\_blank">Losant JavaScript SDK</a> to connect the Raspberry Pi to the Losant Platform. Follow the instructions <a href="https://www.losant.com/blog/how-to-install-nodejs-on-raspberry-pi" target="\_blank">on our blog</a> to install Node.js.
+We're going to use the <a href="https://github.com/Losant/losant-mqtt-js" target="\_blank">Losant JavaScript MQTT Client</a> to connect the Raspberry Pi to the Losant Platform. Follow the instructions <a href="https://www.losant.com/blog/how-to-install-nodejs-on-raspberry-pi" target="\_blank">on our blog</a> to install Node.js.
 
 ## Install Dependencies
 
 After a lot of research, we have found <a href="http://johnny-five.io/" target="\_blank">Johnny Five</a> to be the best library for working with the Raspberry Pi GPIO. It's very well maintained and works with the most recent versions of Node.js. Combined with the excellent <a href="https://github.com/rwaldron/johnny-five/blob/master/docs/raspi-io.md" target="\_blank">raspi-io</a> module, we can easily read and write to the Raspberry Pi's GPIO.
 
 ```sh
-$ npm install --save johnny-five raspi-io losant-sdk-js
+$ npm install --save johnny-five raspi-io losant-mqtt
 ```
 
 Your package.json should look something like this:
@@ -26,7 +26,7 @@ Your package.json should look something like this:
   "dependencies": {
     "johnny-five": "^0.9.26",
     "raspi-io": "^5.3.0",
-    "losant-sdk-js": "^1.0.3"
+    "losant-mqtt": "^1.0.3"
   }
 }
 ```
@@ -51,13 +51,13 @@ Finally, create an [access key](/applications/access-keys), which you'll use to 
 
 ## Send Button Presses
 
-Now we need the Raspberry Pi to connect to Losant and begin sending state. Fortunately Johnny Five and the Losant SDK make this simple.
+Now we need the Raspberry Pi to connect to Losant and begin sending state. Fortunately Johnny Five and the Losant MQTT Client make this simple.
 
-```JavaScript
+```javascript
 var five = require('johnny-five');
 var raspi = require('raspi-io');
 
-var Device = require('losant-sdk-js').Device;
+var Device = require('losant-mqtt').Device;
 
 // Construct Losant device.
 var device = new Device({
@@ -101,7 +101,7 @@ Once the states are being sent, [Losant workflows](/workflows/overview) allow yo
 
 Along with states, Losant also supports [commands](/devices/commands), which allow you instruct the device to take an action. For this example, the device will watch for a "toggle" command, which will cause it to toggle the LED.
 
-```JavaScript
+```javascript
 board.on('ready', function() {
 
   // LED connected to GPIO pin 23.

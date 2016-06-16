@@ -16,12 +16,11 @@ In the above example, the smoke detector is reporting state whenever motion is d
 
 Command names and payloads can be anything. It's entirely up the device and its firmware for what commands will be supported.
 
-
 ## Handling Commands
 
-Commands can currently only be received over an [MQTT connection](/mqtt/overview) to Losant. The Losant SDKs make connecting and receiving commands very easy for custom devices. All commands contain a name and an optional payload. All payloads are JSON objects.
+Commands can currently only be received over an [MQTT connection](/mqtt/overview) to Losant. The Losant MQTT clients make connecting and receiving commands very easy for custom devices. All commands contain a name and an optional payload.
 
-Below is an example of using the Losant Arduino SDK to handle a command and turn on an LED.
+Below is an example of using the Losant Arduino MQTT client to handle a command and turn on an LED.
 
 ```arduino
 // Called whenever the device receives a command from the Losant platform.
