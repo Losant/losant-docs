@@ -4,15 +4,15 @@ To connect your devices to the Losant Platform, you must use a set of security c
 
 ## Viewing Access Keys
 
-You can view the available access keys in the `Access Keys` item under the `More` menu.
+You can view the available access keys under `Access Keys` in the Application menu bar.
 
 ![Access Keys](/images/applications/access-keys.png "Access Keys")
 
 ## Generating an Access Key
 
-Access keys can be added to your application by using the `Generate Key` on the `Access Keys` page.
+Access keys can be added to your application by using the `Add Access Key` button on the `Access Keys` page.
 
-![Generate Key](/images/applications/generate-key.png "Generate Key")
+![Add Access Key](/images/applications/generate-key.png "Add Access Key")
 
 You can choose to either make this access key valid for use by any device in this application, or restrict it to work for only a subset of devices. A restricted key will only be usable for authentication by the devices you define, and any device authenticated using a restricted key will only be able to see other devices that are in that same restricted scope. Restrictions can be specified as a comma-separated list of device IDs and tags. Tags are specified using "key=value" pairs. For more information device IDs and tags read about [Device Queries](/devices/device-queries/ "Device Queries").
 
@@ -32,6 +32,5 @@ If you think an access key has been compromised or is no longer needed, you may 
 
 ## Using Access Keys
 
-To find out more on using access keys with our MQTT clients, checkout the various [Losant MQTT](/mqtt/overview) client libraries.
-
-For information on connecting to the Losant Platform via MQTT take a look at the [Losant MQTT Documentation](/mqtt/overview).
+To find out more on using access keys with our MQTT clients, checkout the various [Losant MQTT](/mqtt/overview) client libraries.  To learn more about using access keys with our
+REST API, checkout the various [Losant REST](/rest-api/overview/) client libraries.
