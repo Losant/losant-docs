@@ -79,6 +79,7 @@ pages:
         - Gauge Query: workflows/data/gauge-query.md
         - Get Value: workflows/data/get-value.md
         - HTTP: workflows/data/http.md
+        - MongoDB: workflows/data/mongo.md
         - Store Value: workflows/data/store-value.md
     - Outputs:
         - Debug: workflows/outputs/debug.md
