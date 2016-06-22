@@ -4,7 +4,7 @@ Don't have a device? No problem! This walkthrough will allow you to experience m
 
 ![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
 
-Since all data doesn't come from physical things, Losant provides the concept of [virtual devices](/devices/overview/#device-configuration), which get their state information from sources other than real objects. We're going to use a virtual device in this walkthrough to store and visualize real weather data.
+Since all data doesn't come from physical things, Losant provides the concept of [virtual devices](/devices/overview/#device-type), which get their state information from sources other than real objects. We're going to use a virtual device in this walkthrough to store and visualize real weather data.
 
 ## Step 1: Sign up for Forecast.io API
 
@@ -30,7 +30,7 @@ The [Forecast.io API](https://developer.forecast.io/docs/v2) provides a lot of i
 
 ![Device Settings](/images/getting-started/walkthrough/device-settings.png "Device Settings")
 
-When creating the device, make sure `Virtual Device` is checked. Device tags won't be needed since we only have a single device. Tags become useful when you start organizing hundreds or thousands of devices.
+When creating the device, make sure `Virtual` is selected as the device type. Device tags won't be needed since we only have a single device. Tags become useful when you start organizing hundreds or thousands of devices.
 
 The `Device Attributes` are important. These are what tell Losant what data this device will be reporting and what Losant will be storing. For the weather device, we'll be storing the following attributes:
 

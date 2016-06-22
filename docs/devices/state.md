@@ -14,17 +14,17 @@ Losant supports and understands a built-in set of data types for device attribut
 
 GPS attributes must be reported in one of four ways:
 
-*   [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)<br/>
-    Example: `37.33233141,-122.0312186`
+*   [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)  
+Example: `37.33233141,-122.0312186`
 
-*   [Degrees Minutes Seconds](https://en.wikipedia.org/wiki/Degree_(angle)#Subdivisions) (also known as Sexagesimal)<br/>
-    Example: `37°19'56.39"N,122°1'52.38"W`
+*   [Degrees Minutes Seconds](https://en.wikipedia.org/wiki/Degree_(angle)#Subdivisions) (also known as Sexagesimal)  
+Example: `37°19'56.39"N,122°1'52.38"W`
 
-*   [NMEA GLL](http://www.gpsinformation.org/dale/nmea.htm#GLL)<br/>
-    Example: `$GPGLL,3906.71226,N,8430.74572,W,000653,A,*24`
+*   [NMEA GLL](http://www.gpsinformation.org/dale/nmea.htm#GLL)  
+Example: `$GPGLL,3906.71226,N,8430.74572,W,000653,A,*24`
 
-*   [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)<br/>
-    Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
+*   [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)  
+Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
 
 Attributes can be added and removed from a device at any time. If you change the data type of an existing attribute, the previous data for that attribute will be lost. This is because Losant won't be able to aggregate data of two different data types for the same attribute.
 
@@ -32,9 +32,9 @@ Attributes can be added and removed from a device at any time. If you change the
 
 A device can report state as often as needed, as long as it's within the Losant platform's [rate limitations](/limits/overview). Devices are not required to report all attributes every time. For example, a thermostat might report the `inside-temp` attribute every few minutes, but only report the `temp-setting` attribute when the user changes it.
 
-Devices typically report state over an MQTT or REST connection. The Losant MQTT clients make it easy to form MQTT connections and report state to Losant. If your device only reports state every few minutes or every few hours, then the REST interface likely makes more sense so it doesn't have to maintain a persistent connection.
+[Standalone](/devices/overview/#device-type) or [Gateway](/devices/overview/#device-type) devices typically report state over an MQTT or REST connection. The Losant MQTT clients make it easy to form MQTT connections and report state to Losant. If your device only reports state every few minutes or every few hours, then the REST interface likely makes more sense so it doesn't have to maintain a persistent connection.
 
-[Virtual devices](/devices/overview/#device-configuration) cannot report their own state. Reporting the state of a virtual device is typically done using a workflow.
+[Virtual](/devices/overview/#device-type) or [Peripheral](/devices/overview/#device-type) do not connect to Losant or report their own state. Reporting the state of a virtual device is typically done using a workflow, while a gateway device generally reports the state of a peripheral device on behalf of that peripheral.
 
 ## Using State
 

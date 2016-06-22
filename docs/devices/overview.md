@@ -16,11 +16,33 @@ When adding a device, you have a choice between creating a device from scratch, 
 
 Properly configuring devices is an important step to ensuring proper communication between your device and the Losant platform.
 
-### Virtual Device
+### Device Type
 
-![Virtual Device](/images/devices/virtual-device.png "Virtual Device")
+![Device Type](/images/devices/device-type.png "Device Type")
 
-A virtual device acts just like a physical device in most cases. The major difference is how state is reported. A virtual device's state can only be reported using a Losant workflow. Virtual devices are useful if you'd like to record sensor data from something other than a physical thing. For example, you could create a workflow that requests the outside temperature every few minutes from a 3rd party weather API and saves the result as the state of a virtual device. Since this information is now on a device, you can visualize, trigger workflows, or perform any other actions on this information as if the data came from an actual physical widget.
+The first thing to configure is the type of device.  This is not about the actual pysical
+type of the device, but more about how you expect the device to connect and report state
+to the Losant platform.  There are 4 categories, but in most cases you will be choosing
+the first, `Standalone`.
+
+*   **Standalone**  
+A standalone device is your normal everyday type of physical device.  It will connect
+directly to Losant and report its own state.
+
+*   **Virtual**  
+The major difference with a virtual device is how state is reported. A virtual device is not expected to actually connect to the platform, so a virtual device's state can only be reported using a Losant workflow. Virtual devices are useful if you'd like to record sensor data from something other than a physical thing. For example, you could create a workflow that requests the outside temperature every few minutes from a 3rd party weather API and saves the result as the state of a virtual device. Since this information is now on a device, you can visualize, trigger workflows, or perform any other actions on this information as if the data came from an actual physical widget.
+
+*   **Gateway**  
+A gateway device is a device that connects to Losant and reports both its own state and the
+state of other devices - i.e., other devices that use this device as a "gateway".  Gateways
+are extremely useful for helping to report the state of non-internet connected devices to Losant - such as bluetooth sensors.
+
+*   **Peripheral**  
+A peripheral device does not connect directly to Losant - instead they report their
+state to a gateway device, and that gateway pushes that state to Losant.  When choosing
+periperal as the device type, you must choose the particular gateway device that this
+device will be reporting through, so that Losant knows what gateway has permission to report
+as this peripheral device.
 
 ### Device Tags
 
@@ -46,11 +68,11 @@ Once the device is added and successfully connected to Losant, there are several
 
 ### Connection Status
 
-The current connection status of your device is always available at the top of the device page.
+The current connection status of your device is always available at the top of the device page.  For peripheral type devices, the connection status of the gateway device it is configured to use is displayed.
 
 ![Connection Status](/images/devices/connection-status.png "Connection Status")
 
-You can also view a log off recent device connection events in the `Device Connection Log` section of the device page.
+For Standalone and Gateway type devices, you can also view a log of recent device connection events in the `Device Connection Log` section of the device page.
 
 ![Connection Log](/images/devices/connection-log.png "Connection Log")
 
