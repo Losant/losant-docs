@@ -109,7 +109,7 @@ Connect the microcontroller to your computer with the supplied USB cable. Make s
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the kit source code and open the file `losant-kit-door-sensor/losant-kit-door-sensor.ino`. Edit the following variables at the top of the file.
 
 1. WIFI_SSID = the name of your WiFi network
-1. WIFI_PASS = your wifi password
+1. WIFI_PASS = your WiFi password
 1. LOSANT_DEVICE_ID = set this to the ID you received after adding the device to the Losant application
 1. LOSANT_ACCESS_KEY = set this to the access key you generated after creating the Losant application
 1. LOSANT_ACCESS_SECRET = set this to the access secret you generated after creating the Losant application

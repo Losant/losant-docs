@@ -16,11 +16,11 @@ To view the current state of your device(s), select "Last received data point". 
 
 Each bar in the bar chart represents one data set. In the example above, each bar represents the number of remaining pours in a keg.
 
-Each series can graph a single [device state](/devices/state.md) attribute. **The data type of the state attribute must be set to Number to be properly visualized.**
+Each series can graph a single [device state](/devices/state) attribute. **The data type of the state attribute must be set to Number to be properly visualized.**
 
 ![Bar Chart Data Set](/images/dashboards/bar-chart-data-set.png "Bar Chart Data Set")
 
-Each series can also aggregate the same attribute across multiple devices; therefore, **Device IDs / Tags** should be populated with a [device query](/devices/device-queries.md) to aggregate data for one or more devices per series.
+Each series can also aggregate the same attribute across multiple devices; therefore, **Device IDs / Tags** should be populated with a [device query](/devices/device-queries) to aggregate data for one or more devices per series.
 
 In the event that a duration other than "Last received data point" is chosen, OR if more than one device is selected for a data set (either by manually choosing multiple devices or by specifying a device tag), an aggregation method must be defined for your data set. This determines how the data should be represented on the graph when multiple data points are present.
 

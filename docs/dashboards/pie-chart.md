@@ -21,6 +21,6 @@ The block data is an array of segments, and each segment represents a region on 
 Each segment takes four parameters:
 
 * **Label** is the text displayed in the graph key for each segment. This can be any value, but you will want it to properly represent its segment.
-* **Device IDS / Tags** is a [device query](/devices/device-queries.md) for choosing which devices are displayed within the segment.
+* **Device IDS / Tags** is a [device query](/devices/device-queries) for choosing which devices are displayed within the segment.
 * **Attribute** is the device attribute whose value will be displayed in the gauge. This attribute must be of the type `Number`. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Aggregation Type** only applies when Duration is set to anything other than "Last received data point", OR when a device tag is supplied in the device query, OR if more than one device ID is supplied within the device query. This determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "MEAN" will average all data points together before displaying within the gauge.

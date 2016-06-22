@@ -62,7 +62,7 @@ Next, choose the `Create from Scratch` option.
     1. tempC: number
     1. tempF: number
 
-The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case sensitive***, so make sure these are ***all lowercase***.
+The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case sensitive***, so make sure these are ***all lowercase***.
 
 Click the `Create Device` button. The screen will change and show the device’s ID. This ID is required for the following sections. You might want to copy/paste it somewhere convenient.
 
@@ -121,7 +121,7 @@ Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop-1-internet-button/workshop-1-internet-button.ino`. Edit the following variables at the top of the file.
 
 1. WIFI_SSID = the name of your WiFi network
-1. WIFI_PASS = your wifi password
+1. WIFI_PASS = your WiFi password
 1. LOSANT_DEVICE_ID = set this to the ID you received after adding the device to the Losant application
 1. LOSANT_ACCESS_KEY = set this to the access key you generated after creating the Losant application
 1. LOSANT_ACCESS_SECRET = set this to the access secret you generated after creating the Losant application

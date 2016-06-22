@@ -70,7 +70,7 @@ The following workshops require a few dependencies to be installed. The first tw
 
 The first required library is PubSubClient. Type that in the filter field, select the entry in the list and install the latest version.
 
-![Install Pubsubclient](/images/getting-started/losant-iot-dev-kits/environment-setup/install-pubsubclient.png "Install Pubsubclient")
+![Install PubSubClient](/images/getting-started/losant-iot-dev-kits/environment-setup/install-pubsubclient.png "Install PubSubClient")
 
 The next library is ArduinoJson. Repeat the the same process again, but this time choose the most recent non-beta version (5.0.8).
 

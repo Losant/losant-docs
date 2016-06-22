@@ -18,5 +18,5 @@ The block data for the data table accepts two parameters:
 
 ![Data Table Block Data](/images/dashboards/data-table-block-data.png "Data Table Block Data")
 
-* **Device IDS / Tags** is a [device query](/devices/device-queries.md) for choosing which devices are displayed within the table. Each device is given a separate row in the table, and if a duration other than "Last received data point" is selected, each device's reported state is displayed if it falls within the selected duration.
+* **Device IDS / Tags** is a [device query](/devices/device-queries) for choosing which devices are displayed within the table. Each device is given a separate row in the table, and if a duration other than "Last received data point" is selected, each device's reported state is displayed if it falls within the selected duration.
 * **Attributes** is a comma-separated list of which attributes appear as columns within the table. If any device does not report one of the specified attributes, the column will be blank for that device.

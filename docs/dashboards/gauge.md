@@ -18,7 +18,7 @@ Gauge blocks currently support two types. Additional types will be added in futu
 When "Dial Gauge" is selected, additional configuration options become available:
 
 * **Min** and **Max** values are required. Each must be a number, and Min must be less than Max. These numbers determine the upper and lower bounds of your dial gauge.
-* Optionally, the gauge value and mininum and maximum bounds can be **displayed as a percentage** instead of raw numbers.
+* Optionally, the gauge value and minimum and maximum bounds can be **displayed as a percentage** instead of raw numbers.
 
 Values that go above or below the set `Min` or `Max` will continue to display in the middle of the gauge, but the gauge itself will either be empty or full, depending on if the value falls below the `Min` or exceeds the `Max`, respectively.
 
@@ -51,6 +51,6 @@ The block data takes four parameters, three of which are required:
 ![Gauge Block Data](/images/dashboards/gauge-block-data.png "Gauge Block Data")
 
 * **Label** is the text displayed beneath number / dial representation of your device(s) state. This can be any value, but you will want it to properly represent the data displayed along with it. HTML entities and <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a> are allowed here.
-* **Device IDS / Tags** is a [device query](/devices/device-queries.md) for choosing which devices are displayed within the gauge.
+* **Device IDS / Tags** is a [device query](/devices/device-queries) for choosing which devices are displayed within the gauge.
 * **Attribute** is the device attribute whose value will be displayed in the gauge. This attribute must be of the type `Number`. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Aggregation Type** is only visible when Duration is set to anything other than "Last received data point", OR when a device tag is supplied in the device query, OR if more than one device ID is supplied within the device query. This determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "MEAN" will average all data points together before displaying within the gauge.

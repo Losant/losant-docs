@@ -56,7 +56,7 @@ Each math node supports multiple statements, but this example is only using one.
 ( {{ data.tempF }} - 32 ) / 1.8
 ```
 
-Just like with the conditional node, you can reference values from the payload in these expressions. This is simply converting degrees Fahrenheit to degrees celsius.
+Just like with the conditional node, you can reference values from the payload in these expressions. This is simply converting degrees Fahrenheit to degrees Celsius.
 
 The second part of each math expression is a payload path to store the result. In this example the payload path is:
 
@@ -85,7 +85,7 @@ Just like the previous two nodes, the SMS node also supports template fields. Bu
 Temperature warning. Temperature now at {{ degreesCelsius }} deg C!
 ```
 
-For this example, the user wanted to send an SMS alert with the temperature in celsius, but our temperature sensor reported the value in Fahrenheit. This is why we used the math node to convert the temperature before being sent.
+For this example, the user wanted to send an SMS alert with the temperature in Celsius, but our temperature sensor reported the value in Fahrenheit. This is why we used the math node to convert the temperature before being sent.
 
 ## Common Payload Fields
 

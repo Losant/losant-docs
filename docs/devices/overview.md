@@ -20,7 +20,7 @@ Properly configuring devices is an important step to ensuring proper communicati
 
 ![Device Type](/images/devices/device-type.png "Device Type")
 
-The first thing to configure is the type of device.  This is not about the actual pysical
+The first thing to configure is the type of device.  This is not about the actual physical
 type of the device, but more about how you expect the device to connect and report state
 to the Losant platform.  There are 4 categories, but in most cases you will be choosing
 the first, `Standalone`.
@@ -35,12 +35,12 @@ The major difference with a virtual device is how state is reported. A virtual d
 *   **Gateway**  
 A gateway device is a device that connects to Losant and reports both its own state and the
 state of other devices - i.e., other devices that use this device as a "gateway".  Gateways
-are extremely useful for helping to report the state of non-internet connected devices to Losant - such as bluetooth sensors.
+are extremely useful for helping to report the state of non-internet connected devices to Losant - such as Bluetooth sensors.
 
 *   **Peripheral**  
 A peripheral device does not connect directly to Losant - instead they report their
 state to a gateway device, and that gateway pushes that state to Losant.  When choosing
-periperal as the device type, you must choose the particular gateway device that this
+peripheral as the device type, you must choose the particular gateway device that this
 device will be reporting through, so that Losant knows what gateway has permission to report
 as this peripheral device.
 

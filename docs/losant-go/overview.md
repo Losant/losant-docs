@@ -64,7 +64,7 @@ To view the debugging data, log in to Losant, and do the following:
 
 *3. Click on "Losant Mobile Workflow".*
 
-![Losant Mobie Workflow Link](/images/losant-go/losant-mobile-workflow-link.png "Losant Mobie Workflow Link")
+![Losant Mobile Workflow Link](/images/losant-go/losant-mobile-workflow-link.png "Losant Mobile Workflow Link")
 
 *4. Click the "Debug" tab on the screen.*
 

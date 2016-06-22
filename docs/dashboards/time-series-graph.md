@@ -20,11 +20,11 @@ The resolution and the aggregator specified in the block data section work toget
 
 The time series graph is configured as individual series. Each series is displayed as a separate line on the graph. The example above is displaying the temperature of two different devices. Since they are specified as two different series, the graph is representing them as two different lines.
 
-Each series can graph a single [device state](/devices/state.md) attribute. **The data type of the state attribute must be set to Number to be properly visualized.**
+Each series can graph a single [device state](/devices/state) attribute. **The data type of the state attribute must be set to Number to be properly visualized.**
 
 The aggregator applied to the series defines how the data is combined based on the chosen resolution. The above example has the resolution set to 10 seconds. This means if your devices are reporting temperature once per second, each data point on the graph will be the average of 10 temperature readings.
 
-Each series can also aggregate the same attribute across multiple devices; therefore, **Device IDs / Tags** should be populated with a [device query](/devices/device-queries.md) to aggregate data for one or more devices per series.
+Each series can also aggregate the same attribute across multiple devices; therefore, **Device IDs / Tags** should be populated with a [device query](/devices/device-queries) to aggregate data for one or more devices per series.
 
 ![Time Series Settings](/images/dashboards/time-series-settings-tags.png "Time Series Settings")
 

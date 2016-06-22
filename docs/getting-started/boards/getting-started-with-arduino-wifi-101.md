@@ -11,7 +11,7 @@ Follow the specific instructions for your Arduino board to properly configure th
 ## Install Dependencies
 The Losant MQTT Client requires two libraries to be installed: [PubSubClient](https://github.com/knolleary/pubsubclient) and [ArduinoJson](https://github.com/bblanchon/ArduinoJson). Both of these libraries can be installed using the Arduino Library Manager.
 
-![Manage Libaries](http://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/manage-libraries.png?noresize=true "Manage Libaries")
+![Manage Libraries](http://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/manage-libraries.png?noresize=true "Manage Libraries")
 
 ## Install Losant MQTT Client
 The [Losant Arduino MQTT Client](https://github.com/Losant/losant-mqtt-arduino) makes it easy to connect your Arduino-based devices to the Losant platform.

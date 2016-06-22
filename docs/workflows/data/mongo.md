@@ -6,7 +6,7 @@ The MongoDB node allows a workflow to query or update values in a [MongoDB](http
 
 ## Configuration
 
-The configuration of the MongoDB node can be broken down into 4 major sections - configuring the connection, chooising the operation, setting up the arguments, and choosing what to do with the result.
+The configuration of the MongoDB node can be broken down into 4 major sections - configuring the connection, choosing the operation, setting up the arguments, and choosing what to do with the result.
 
 ![MongoDB Node Connection Configuration](/images/workflows/data/mongodb-node-connection.png "MongoDB Node Connection Configuration")
 
@@ -14,11 +14,11 @@ When configuring the connection, you must provide a Mongo [Connection String URI
 
 ![MongoDB Node Operation](/images/workflows/data/mongodb-node-operation.png "MongoDB Node Operation")
 
-Next you will need to choose the operation that will be performed against the database.  Currently the node has support for the operations [Count](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#count), [Distinct](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#distinct), [Find](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#find), [FindOne](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne), [Insert](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insert), and [Remove](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#remove).  Depending on what operation you choose, the next section of configuration will change - depending on the expected arguments for the choosen operation.  In the example above, the node is configured to perform a `findOne` operation.
+Next you will need to choose the operation that will be performed against the database.  Currently the node has support for the operations [Count](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#count), [Distinct](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#distinct), [Find](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#find), [FindOne](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne), [Insert](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insert), and [Remove](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#remove).  Depending on what operation you choose, the next section of configuration will change - depending on the expected arguments for the chosen operation.  In the example above, the node is configured to perform a `findOne` operation.
 
 ![MongoDB Node Arguments](/images/workflows/data/mongodb-node-arguments.png "MongoDB Node Arguments")
 
-Depending on the choosen operation, the expected arguments here will change.  For example,
+Depending on the chosen operation, the expected arguments here will change.  For example,
 with the `findOne` operation, there are two arguments - the query itself, and any options
 for the query.  In the above example, we are not passing any options, but we are passing
 a templated query - searching for a document in the collection with a deviceId field that

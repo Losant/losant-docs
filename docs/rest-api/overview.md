@@ -40,7 +40,7 @@ curl -H 'Content-Type: application/json' \
     -d '{ "email": "example@losant.com", "password": "your_password" }' \
     https://api.losant.com/auth/user
 
-# Example user authenication result
+# Example user authentication result
 # {
 #   "token": "a user auth token string",
 #   "userId": "theUserId"
@@ -127,7 +127,7 @@ curl -H 'Content-Type: application/json' \
 ### Resources
 
 Each of the following is a resource on the Losant API, wrapping up functionality
-for a particular item or colletion. See each resource documentation page for the
+for a particular item or collection. See each resource documentation page for the
 particular actions that can be performed on that resource.
 
 *   [Application Key](/rest-api/application-key)  
