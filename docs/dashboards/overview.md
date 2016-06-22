@@ -24,11 +24,17 @@ Dashboards by default will automatically refresh the data every 60 seconds. You 
 
 ![Refresh Button](/images/dashboards/overview-refresh-button.png "Refresh Button")
 
-## Public Dashboards
+## Dashboard Access Control
 
-Dashboards can be made public - which means that anyone who has the URL for a dashboard can see it, regardless of whether that person is logged in to a Losant account.  This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone.  Do not make your dashboard public if it contains any private or sensitive data.  You can control if your dashboard is public on the settings page for the dashboard:
+Dashboards have a three levels of access - private, password protected, and public.  Private
+means that only you (or members of your organization, if it is an organization-owned
+dashboard) can see the dashboard.  Public dashboards can be seen by anyone who has the
+dashboard url, regardless of whether that person is logged in to a Losant account. This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone. Do not make your dashboard public if it contains any private or sensitive data. The third level of access is in between public and private -
+you can add a password to your dashboard, and allow anyone with the url and the password
+to view the dashboard.  This adds some protection to your dashboard, while still making it
+easy to share with people who do not have Losant accounts. You can manage the access control for a dashboard on the settings page for the dashboard:
 
-![Public Checkbox](/images/dashboards/public-checkbox.png "Public Checkbox")
+![Dashboard Access Control](/images/dashboards/dashboard-access-control.png "Dashboard Access Control")
 
 ## Embedding Dashboard Blocks into Other Sites
 

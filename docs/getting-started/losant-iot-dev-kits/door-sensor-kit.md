@@ -204,7 +204,7 @@ In this step, we're going to build a dashboard to visualize the real-time and hi
 
 ![Create Dashboard Menu](/images/getting-started/losant-iot-dev-kits/door-sensor/create-dashboard-menu.png "Create Dashboard Menu")
 
-You can name the dashboard anything you'd like. If you'd like to [let other people](/dashboards/overview/#public-dashboards) see your dashboard, you can optionally click the `Dashboard Is Public` checkbox.
+You can name the dashboard anything you'd like. If you'd like to [let other people](/dashboards/overview/#dashboard-access-control) see your dashboard, you can optionally modify the access control level after creating the dashboard.
 
 ![Dashboard Settings](/images/getting-started/losant-iot-dev-kits/door-sensor/dashboard-settings.png "Dashboard Settings")
 
