@@ -87,6 +87,7 @@ Expressions also support the following functions:
 *   `trunc` (truncates any fractional digits of a number)
 *   `exp` (computes e raised to the power of the given number)
 *   `pow` (raises a number to the power of a second number)
+*   `length` (computes the length of an array, object, or string)
 
 All of the above can be combined to produce powerful expressions, such as:
 
