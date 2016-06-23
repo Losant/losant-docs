@@ -62,6 +62,12 @@ Retrieves information on a dashboard
 | -------------- | ----------- | ------- |
 | DASHBOARD_ID | ID of the associated dashboard | 575ece2b7ae143cd83dc4a9b |
 
+#### Request Query Parameters
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| password | N | Password for password-protected dashboards |  | myPassword |
+
 #### Request Headers
 
 | Name | Required | Description | Default |
