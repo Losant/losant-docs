@@ -6,7 +6,7 @@ The Input Controls block allows you to send commands to devices, or to trigger w
 
 ## Adding and Removing Controls
 
-From the block's edit screen, controls can be added by clicking the "Add Controls" button at the bottom of the configuration panel. This will open a drop-down menu containing all of the available input types. On selection of an control type, a new configuration panel will appear for that input.
+From the block's edit screen, controls can be added by clicking the "Add Controls" button at the bottom of the configuration panel. This will open a drop-down menu containing all of the available input types. On selection of a control type, a new configuration panel will appear for that input.
 
 ![Add Input Control](/images/dashboards/input-controls-add.png "Add Input Control")
 
@@ -71,7 +71,7 @@ Note that it is possible to set number or boolean values in a text input if the 
 
 ## Constructing Payloads
 
-Device commands and workflow triggers may optionally be sent with a JSON payload, and it is the purpose of the first three input types to help you construct that payload quickly and easily from the dashboard.
+Device commands and workflow triggers may optionally be sent with a JSON payload, and it is the purpose of the input controls to help you construct the payload quickly and easily from the dashboard.
 
 The payload attached to each button is run through the [Mustache templating language](https://mustache.github.io/mustache.5.html), where the values of each input (by Template ID) replaces the Mustache tag for the corresponding Template ID within your JSON object.
 
