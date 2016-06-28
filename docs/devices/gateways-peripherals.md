@@ -1,6 +1,6 @@
 # Gateways and Peripherals
 
-Some types of devices, like Bluetooth sensors, cannot connect directly to Losant. They require some form of middleman in order to communicate externally. In order to facilitate this, Losant has the concept of Gateway and Peripheral devices. Gateway devices are permitted to report state and receive commands on behalf of Peripheral devices.
+Some types of devices, like Bluetooth sensors, cannot connect directly to Losant. They require some form of middle man in order to communicate externally. In order to facilitate this, Losant has the concept of Gateway and Peripheral devices. Gateway devices are permitted to report state and receive commands on behalf of Peripheral devices.
 
 ## Gateways
 
@@ -59,6 +59,29 @@ A gateway can also post to a peripheral's REST state endpoint:
 ```
 
 Please refer to the [MQTT](/mqtt/overview/) and [REST](/rest-api/overview/) documentation for further details on the format of these requests.
+
+Below is an example of how to use the [Node.js MQTT module](https://github.com/mqttjs/MQTT.js) to connect as a gateway and publish state for a peripheral.
+
+```javascript
+var mqtt = require('mqtt');
+
+// Connect to Losant as the Gateway.
+var client = mqtt.connect('mqtts://broker.losant.com', {
+  clientId: 'my-gateway-id',
+  username: 'my-access-key',
+  password: 'my-access-secret'
+});
+
+client.on('connect', function() {
+
+  // Example peripheral state. Typically this would come over some
+  // remote connection, like Bluetooth.
+  var peripheralState = { data: { temperature: 72 }};
+
+  // Publish state for the peripheral.
+  client.publish('losant/my-peripheral-id', JSON.stringify(peripheralState));  
+});
+```
 
 When and how a gateway publishes these message is entirely up to your environment. For example, if the peripheral is a [LightBlueBean](https://punchthrough.com/bean) connected over Bluetooth to a Raspberry Pi gateway, the Pi may report the peripheral's state every few seconds by first requesting the temperature over the Bluetooth connection.
 
