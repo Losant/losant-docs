@@ -1680,3 +1680,7 @@ code {
 strong em {
   color: #284fff;
 }
+
+pre {
+  margin-bottom: 24px;
+}
