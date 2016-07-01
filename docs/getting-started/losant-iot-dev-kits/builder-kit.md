@@ -55,7 +55,7 @@ Next, choose the `Create from Scratch` option.
 
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
-1. Leave "Virtual Device" unchecked.
+1. Leave "Standalone" device type selected.
 1. No device tags are required.
 1. Add the following under "Device Attributes:"
     1. button : boolean
