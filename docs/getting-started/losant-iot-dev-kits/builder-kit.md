@@ -299,7 +299,7 @@ Just like the previous workshop, keep everything you've already wired and add th
 
 
 1. Add the tmp36 temperature sensor to terminals e23, e24, and e25. It’s ***VERY IMPORTANT*** that the sensor is oriented the right way with the flat side facing the bottom of the board – towards column a.
-1. Connect the rightmost lead (b25) of the temperature sensor to the negative rail using a resistor at c25.
+1. Connect the rightmost lead (c25) of the temperature sensor to the negative rail using a resistor.
 1. Connect the leftmost lead (a23) of the temperature sensor to the positive rail using a jump wire.
 1. Add one resistor between terminals h19 and h24.
 1. Add one resistor between terminals i24 and i29.
