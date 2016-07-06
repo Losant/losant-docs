@@ -101,3 +101,24 @@ The `Force State in Losant` section of the device page allows you to report stat
 The `Send Device Command` section of the device page allows you to send commands to your devices. This is useful if your debugging and during initial implementation of command support for your devices.
 
 ![Send Command](/images/devices/send-command.png "Send Command")
+
+#### Data Export
+
+![Request Data Export](/images/devices/data-export.png "Request Data Export")
+
+You can request a CSV export of the state data that Losant has for your device using the "Request Data Export" button.  This will generate a CSV file of the state data for your device and send you an email when the generation is complete. The email includes a link which will allow you to download the generated file (the link is time sensitive and will only work for 24 hours). The generated csv will have a timestamp column (where the timestamp will be represented as milliseconds since epoch), as well as columns for any attributes of your device. Each row will represent one reported state for the device.  The following is an example export for a device with a "location" and a "temperature" attribute:
+
+```csv
+time,location,temperature
+1467391295000,"17.060258678655675,-18.965965126906564",25.2
+1467391325000,"15.44856967605903,-17.68055596850872",25.1
+1467391355000,"14.08786621979826,-16.618000514802763",25.2
+1467391385000,"12.584784055193989,-15.465453903687301",25.3
+1467391415000,"11.086833923977336,-14.336184577263243",25.3
+```
+
+#### Data Deletion
+
+![Delete Device Data](/images/devices/data-deletion.png "Delete Device Data")
+
+In the case where you no longer want the data for a device or you want to clear out old incorrect data, you can do so with the "Delete Device Data" button.  This will remove all data for the device - state data for attributes, connection log history, and command history. Data deletion may take a few seconds to propagate through the system, but cannot be reversed or undone, so do not press this button lightly!

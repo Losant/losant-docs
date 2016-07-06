@@ -27,13 +27,15 @@ A unique URL is generated for every webhook and can found on the `Edit Webhook` 
 Certain third party services, such Facebook, require webhooks to be verified
 before use.  Generally this involves the webhook responding with a particular response
 or response code to a particular kind of query.  Losant currently has support for
-verifying a webhook against Facebook or Fitbit:
+verifying a webhook against Facebook, Fitbit, or Twilio:
 
 ![Fitbit Webhook Verification](/images/applications/fitbit-webhook-verification.png "Fitbit Webhook Verification")
 
 In the example above, the webhook is configured for Fitbit verification with the verification code `VERIFICATION_CODE_HERE` (and the hardcoded response code `204`, since Fitbit expects 204 responses).  For Fitbit, you can find the verification code to use in the `Subscriptions` table for your Fitbit application (after adding a webhook url as a Fitbit subscription).  You can read more about Fitbit webhook verification <a href="https://dev.fitbit.com/docs/subscriptions/#verify-a-subscriber" target="_blank">here</a>.
 
 You can also choose to verify as a Facebook webhook.  In the case of Facebook, you provide your own verification code - on Facebook's side, it is called a `Verify Token`.  What you provide to Facebook as the Verify Token and what you provide to Losant as the Verification Code can be anything, as long as they match.  You can read more about Facebook webhook verification <a href="https://developers.facebook.com/docs/graph-api/webhooks" target="_blank">here</a>.
+
+Twilio does not actually require verification, but requires a very specific response in order for Twilio not to consider it an error - a TwiML XML response.  Selecting the Twilio option tells Losant to reply with a body that Twilio expects (an empty TwiML response) so that the webhook call does not look like an error to Twilio.
 
 By default, the option of "No Verification" is selected for a webhook.  In this case, while there is no need for a verification code, we do allow you to specify the response code that Losant should respond with on when it receives a webhook request.  By default this is `200`, but can be changed to whatever response code is expected by the system sending the web request.
 
