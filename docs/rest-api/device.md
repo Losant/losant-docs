@@ -51,6 +51,58 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
+## POST - /export
+
+https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/export
+
+Creates a device data export (to be emailed to the requestor). Defaults to all data.
+
+#### Request Path Components
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+| DEVICE_ID | ID associated with the device | 575ecf887ae143cd83dc4aa2 |
+
+#### Request Query Parameters
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| start | N | Start time of export (ms since epoch - 0 means now, negative is relative to now) | 1 | 1465790400000 |
+| end | N | End time of export (ms since epoch - 0 means now, negative is relative to now) | 0 | 1465790400000 |
+
+#### Request Headers
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -X POST \
+    https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/export
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | If generation of export was successfully started |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if device was not found |
+
+<br/>
+
 ## GET
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**
@@ -315,6 +367,58 @@ curl -H 'Content-Type: application/json' \
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 200 | [Device](schemas.md#device) | Updated device information |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if device was not found |
+
+<br/>
+
+## DELETE - /data
+
+https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/data
+
+Removes all device data for the specified time range. Defaults to all data.
+
+#### Request Path Components
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+| DEVICE_ID | ID associated with the device | 575ecf887ae143cd83dc4aa2 |
+
+#### Request Query Parameters
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| start | N | Start time of export (ms since epoch - 0 means now, negative is relative to now) | 1 | 1465790400000 |
+| end | N | End time of export (ms since epoch - 0 means now, negative is relative to now) | 0 | 1465790400000 |
+
+#### Request Headers
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -X DELETE \
+    https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/data
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | If data removal was successfully started |
 
 #### Error Responses
 

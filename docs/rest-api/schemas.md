@@ -2862,6 +2862,7 @@ Schema for a single Device state
     "relayId": {
       "type": "string"
     },
+    "meta": {},
     "data": {
       "type": "object",
       "patternProperties": {
@@ -2919,6 +2920,7 @@ Schema for an array of Device states
       "relayId": {
         "type": "string"
       },
+      "meta": {},
       "data": {
         "type": "object",
         "patternProperties": {
@@ -6101,7 +6103,8 @@ Schema for the body of a request to press a Workflow virtual button
     "key": {
       "type": "string"
     },
-    "payload": {}
+    "payload": {},
+    "meta": {}
   },
   "required": [
     "key"
@@ -6174,7 +6177,8 @@ Schema for a single Webhook
       "enum": [
         "facebook",
         "fitbit",
-        "none"
+        "none",
+        "twilio"
       ]
     },
     "verificationCode": {
@@ -6229,7 +6233,8 @@ Schema for the body of a Webhook modification request
       "enum": [
         "facebook",
         "fitbit",
-        "none"
+        "none",
+        "twilio"
       ]
     },
     "verificationCode": {
@@ -6279,7 +6284,8 @@ Schema for the body of a Webhook creation request
       "enum": [
         "facebook",
         "fitbit",
-        "none"
+        "none",
+        "twilio"
       ]
     },
     "verificationCode": {
@@ -6362,7 +6368,8 @@ Schema for a collection of Webhooks
             "enum": [
               "facebook",
               "fitbit",
-              "none"
+              "none",
+              "twilio"
             ]
           },
           "verificationCode": {
