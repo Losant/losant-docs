@@ -4,7 +4,7 @@ A device recipe in Losant is a template (or 'recipe') for creating devices.  If 
 
 ## Adding a Device Recipe
 
-Device recipes can be added to your application on the `Device Recipes` page (accessible under the `More` menu).
+Device recipes can be added to your application on the `Recipes` page in an application.
 
 ![Add Device Recipe](/images/devices/add-device-recipe.png "Add Device Recipe")
 
@@ -15,6 +15,10 @@ A device recipe is configured in much the same way as a device - all of the sett
 A device created from a recipe copies all of the properties and configuration of the recipe to the new device being created.  One additional tag will be added to the new device - a tag with the name `DeviceRecipe` and the value being the name of the recipe used to create this device.  You can remove or modify this tag if desired, it is only added to help with device organization.
 
 One important thing to note is that modifying a device recipe does *not* modify devices previously created using that recipe.  A recipe acts as a template only - once a device is created, it is an independent item with no actual link back to recipe used to create it.
+
+### Recipe Import / Export
+
+Recipies can be exported and saved to a file using the "Export" button on the recipe edit page. Exported recipies can then be imported when creating a new recipe (instead of creating a recipe from scratch). This can be useful for sharing recipes with other users (or even just sharing recipies across applications).
 
 ## Using A Recipe
 

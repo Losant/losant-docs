@@ -46,8 +46,49 @@ This will display a modal where you can set the block's `width`, `height` and `t
 
 NOTE: The following blocks will not display any data on public dashboards or to non-authorized users when embedded. In general they expose large amounts of data about the underlying application or account:
 
-* `Application List`
-* `Workflow List`
-* `Device List`
-* `Event List`
-* `Device Connection Log`
+*   `Application List`
+*   `Workflow List`
+*   `Device List`
+*   `Event List`
+*   `Device Connection Log`
+*   `Input Controls`
+
+## Templating
+
+A number of the dashboard blocks allow templating of various output, for greater control over how data is displayed.  Templates are rendered through the [Handlebars templating language](http://handlebarsjs.com/), and in most cases (but not all) the result is treated as [Markdown](http://commonmark.org/help/) for display.  Handlebars has a number of [built in](http://handlebarsjs.com/builtin_helpers.html) helpers, but Losant provides a number of extra ones to make complex templating much easier:
+
+*   `eq` - If a value is equal to some number or string.  
+For example: `{{#eq value 100}}Value is 100{{else}}Value is not 100{{/eq}}`  
+<br/>
+*   `ne` - If a value is not equal to some number or string.  
+For example: `{{#ne value 100}}Value is not 100{{else}}Value is 100{{/ne}}`  
+<br/>
+*   `gt`, `gte` - If a value is greater than (or equal to) some number.  
+For example: `{{#gt value 100}}Bigger than 100{{else}}Not bigger than 100{{/gt}}`  
+<br/>
+*   `lt`, `lte` - If a value is less than (or equal to) some number.  
+For example: `{{#lt value 100}}Smaller than 100{{else}}Not smaller than 100{{/lt}}`  
+<br/>
+*   `match` - If a value matches a given regexp or string.  
+For example: `{{#match value "hello"}}Has hello{{else}}Does not have hello{{/match}}`  
+<br/>
+*   `format` - Formats a number or date using [d3](https://github.com/d3/d3-format) or [moment](http://momentjs.com/docs/#/displaying/format/) syntax, or JSON stringify objects or arrays. The second argument is optional - if not passed, default formatting will be used.  
+For example: `{{format value "0.1f"}}` or `{{format value}}`  
+<br/>
+*   `lower` - Transforms a string to all lowercase.  
+For example: `{{lower value}}`  
+<br/>
+*   `upper` - Transforms a string to all uppercase.  
+For example: `{{upper value}}`  
+<br/>
+*   `encodeURI` - Transforms a string through the [encodeURI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) function.  
+For example: `{{encodeURI value}}`  
+<br/>
+*   `decodeURI` - Transforms a string through the [decodeURI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI) function.  
+For example: `{{decodeURI value}}`  
+<br/>
+*   `encodeURIComponent` - Transforms a string through the [encodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) function.  
+For example: `{{encodeURIComponent value}}`  
+<br/>
+*   `decodeURIComponent` - Transforms a string through the [decodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent) function.  
+For example: `{{decodeURIComponent value}}`  

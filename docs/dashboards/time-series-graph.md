@@ -16,11 +16,17 @@ The duration and resolution fields allow you to configure how far into the past 
 
 The resolution and the aggregator specified in the block data section work together in order to generate a data point. For example, if the resolution is 60 minutes and the aggregator is mean, Losant will average all of the data together in 60 minute increments to create a single point on the graph.
 
+### Line Display Type
+
+![Line Display Type](/images/dashboards/time-series-type.png "Line Display Type")
+
+Time series graphs can either be displayed as a connected line graph (the "Line" option), where each point in a series is connected to the next point, or as a unconnected chart (the "Stick" option) where each point in the series is individual and represented as a stick rising from the x-axis.  In most cases, Line is the option that makes the most sense, but in cases where data points are disjointed or rare, the Stick display option can make for a more understandable display of the underlying data.
+
 ### Block Data
 
 The time series graph is configured as individual series. Each series is displayed as a separate line on the graph. The example above is displaying the temperature of two different devices. Since they are specified as two different series, the graph is representing them as two different lines.
 
-Each series can graph a single [device state](/devices/state) attribute. **The data type of the state attribute must be set to Number to be properly visualized.**
+Each series can graph a single [device state](/devices/state) attribute. **The data type of the state attribute must be set to Number or Boolean to be properly visualized.**
 
 The aggregator applied to the series defines how the data is combined based on the chosen resolution. The above example has the resolution set to 10 seconds. This means if your devices are reporting temperature once per second, each data point on the graph will be the average of 10 temperature readings.
 
@@ -32,6 +38,8 @@ When this is graphed, it is now a single series that contains the average temper
 
 You also have the option of setting a custom color for each line on the time series graph. Colors will automatically be assigned in the event you do not assign a color.
 
-Finally, the minimum and/or maximum y-axis values may be manually set for each data series. If at any point the line extends beyond a defined minimum or maximum value, the time series line will disappear off the edge of the graph until the data returns to the defined window.
+The minimum and/or maximum y-axis values may be manually set for each data series. If at any point the line extends beyond a defined minimum or maximum value, the time series line will disappear off the edge of the graph until the data returns to the defined window.
 
 If you choose not to define a y-axis minimum or maximum value, the time series graph will automatically define a scale based on the data set it is currently rendering for the data series.
+
+The Segment Label (in this case "Current A" is used to name this particular data series, and will be the label shown in the graph legend.  The Y Axis label is used to name the y axis for this series - if it is left blank, the name of the selected attribute is used.  Series that use the same Y Axis lables share that axis on the resulting graph.

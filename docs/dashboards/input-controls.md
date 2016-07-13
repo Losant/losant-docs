@@ -73,7 +73,7 @@ Note that it is possible to set number or boolean values in a text input if the 
 
 Device commands and workflow triggers may optionally be sent with a JSON payload, and it is the purpose of the input controls to help you construct the payload quickly and easily from the dashboard.
 
-The payload attached to each button is run through the [Mustache templating language](https://mustache.github.io/mustache.5.html), where the values of each input (by Template ID) replaces the Mustache tag for the corresponding Template ID within your JSON object.
+The payload attached to each button is run through the [Handlebars templating language](http://handlebarsjs.com/), where the values of each input (by Template ID) replaces the tag for the corresponding Template ID within your JSON object.
 
 For example, given the following configuration ...
 
@@ -81,16 +81,18 @@ For example, given the following configuration ...
 
 On press of the button, "My First Device" will receive a command named "setColor", with the following paylod:
 
-<pre>
-  {
-    "brightness": 70,
-    "enabled": true,
-    "foregroundColor": "rgb(125, 50, 75)",
-    "backgroundColor": "#f0f0f0",
-    "source": "dashboard"
-  }
-</pre>
+```json
+{
+  "brightness": 70,
+  "enabled": true,
+  "foregroundColor": "rgb(125, 50, 75)",
+  "backgroundColor": "#f0f0f0",
+  "source": "dashboard"
+}
+```
 
 `brightess` is passed as a number and `enabled` is passed as a boolean, whereas the R, G, and B values are passed as part of a string since the `foregroundColor` property's value is wrapped in double quotes. There is also a static property of `source` being passed in the payload, and since we are not assigning any Template ID to its value, the property will always be submitted with a value of `"dashboard"`.
+
+There are a number of different helpers available beyond the standard Handlebars helpers - you can learn more about what the available helpers are and what they do [here](/dashboards/overview/#templating).
 
 **Note:** If you do not define a payload for a Trigger Workflow button, the virtual button's default payload – as set within that button's parent workflow – will be sent when your dashboard button is clicked. If you wish to send a blank payload instead of the default payload, set the payload value to `{}` (opening and closing curly braces with nothing in between).
