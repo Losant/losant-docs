@@ -94,8 +94,4 @@ If you don't see an entry under the port menu, double check the following:
 1. Did you [install the USB driver](https://www.losant.com/kit#install-usb-drivers)?
 1. Did you connect the microcontroller to your computer with the supplied USB cable?
 
-Your environment is now properly setup to begin programming your dev kits with their needed firmware. Please continue to the instructions for each specific kit.
-
-1. [Builder Kit Instructions](/getting-started/losant-iot-dev-kits/builder-kit/)
-1. [Moisture Sensor Kit Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/)
-1. [Door Sensor Kit Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/)
+Your environment is now properly setup to begin programming your dev kits with their needed firmware. Please continue to the instructions for your specific kit.
