@@ -18,6 +18,10 @@ The microcontroller boards requires a USB to UART driver that must be installed 
 
 ![Mac Driver Download](/images/getting-started/losant-iot-dev-kits/environment-setup/uart-driver-mac.png "Mac Driver Download")
 
+On Mac, the above link downloads a disk image. Double-click the file to mount it, open the disk image, and then double-click the .pkg file to install the driver.
+
+![Mac Driver Disk Image](/images/getting-started/losant-iot-dev-kits/environment-setup/mac-driver-disk-image.png "Mac Driver Disk Image")
+
 ## Configure Arduino IDE
 
 Launch the Arduino IDE. Linux users typically have to open the IDE under sudo for correct permissions. In order for the board to show up as a board in Arduino, you must add the following to the “Additional Boards Manager URLs” field in the preferences. On Mac, the preferences can be found at `Arduino -> Preferences`.
