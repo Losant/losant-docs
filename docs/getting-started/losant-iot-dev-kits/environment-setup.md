@@ -51,17 +51,6 @@ After selecting the board, additional options will appear in the Tools menu. Ens
 
 ![Tools Menu](/images/getting-started/losant-iot-dev-kits/environment-setup/tools-menu.png "Tools Menu")
 
-***Remove the microcontroller from the foam*** (if needed), and connect it to your computer with the supplied USB cable.
-
-Use the `Tools -> Port` menu to select the port your device is connected to. This will change depending on your operating system. On a Mac, it’s always named `SLAB_USBtoUART`. On Windows it will be named `Com` and then a number, for example `Com3`.
-
-![Select Port](/images/getting-started/losant-iot-dev-kits/environment-setup/select-port.png "Select Port")
-
-If you don't see an entry under the port menu, double check the following:
-
-1. Did you [install the USB driver](https://www.losant.com/kit#install-usb-drivers)?
-1. Did you connect the microcontroller to your computer with the supplied USB cable?
-
 ## Install Libraries
 
 The following workshops require a few dependencies to be installed. The first two libraries can be installed using Arduino's Library Manager. Open the manager from the `Sketch -> Include Library -> Manage Libraries` menu.
@@ -72,7 +61,7 @@ The first required library is PubSubClient. Type that in the filter field, selec
 
 ![Install PubSubClient](/images/getting-started/losant-iot-dev-kits/environment-setup/install-pubsubclient.png "Install PubSubClient")
 
-The next library is ArduinoJson. Repeat the the same process again, but this time choose the most recent non-beta version (5.0.8).
+The next library is ArduinoJson. Repeat the the same process again, and install the latest version of ArduinoJson.
 
 ![Install ArduinoJson](/images/getting-started/losant-iot-dev-kits/environment-setup/install-arduinojson.png "Install ArduinoJson")
 
@@ -85,6 +74,21 @@ Next, add the zip you just downloaded to your libraries using the `Sketch -> Inc
 ![Add Zip Library](/images/getting-started/losant-iot-dev-kits/environment-setup/add-zip-library-menu.png "Add Zip Library")
 
 This will open a file browser. Simply select the zip you just downloaded.
+
+## Configure Device USB Port
+
+If you don't have a microcontroller yet, you can skip this step and return to it when you have the device.
+
+***Remove the microcontroller from the foam*** (if needed), and connect it to your computer with the supplied USB cable.
+
+Use the `Tools -> Port` menu to select the port your device is connected to. This will change depending on your operating system. On a Mac, it’s always named `SLAB_USBtoUART`. On Windows it will be named `Com` and then a number, for example `Com3`.
+
+![Select Port](/images/getting-started/losant-iot-dev-kits/environment-setup/select-port.png "Select Port")
+
+If you don't see an entry under the port menu, double check the following:
+
+1. Did you [install the USB driver](https://www.losant.com/kit#install-usb-drivers)?
+1. Did you connect the microcontroller to your computer with the supplied USB cable?
 
 Your environment is now properly setup to begin programming your dev kits with their needed firmware. Please continue to the instructions for each specific kit.
 
