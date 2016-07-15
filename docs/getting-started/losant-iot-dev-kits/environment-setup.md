@@ -34,7 +34,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 Restart the Arduino IDE.
 
-Open the Board Manager at `Tools -> Board -> Boards Manager`. Change the Type field to `Contributed` and enter `esp8266` in the Search field. Select the esp8266 entry in the list and click the `Install` button.
+Open the Board Manager at `Tools -> Board -> Boards Manager`. Change the Type field to `Contributed` and enter `esp8266` in the Search field. Select the esp8266 entry in the list, ***change the version to 2.2.0***, and click the `Install` button.
 
 ![Install Board](/images/getting-started/losant-iot-dev-kits/environment-setup/install-board.png "Install Board")
 
