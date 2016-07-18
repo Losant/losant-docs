@@ -218,13 +218,13 @@ This completes the first workshop. You’ve successfully created an Internet but
 
 ## Bonus Workshop - Virtual Light Wall
 
-On the projector you'll see a 3x3 grid of squares - that's the "Virtual Light Wall". In this workshop, we're going to make one of those squares light up with a random color and display a message of your choosing whenever you hit your internet button.
+If you visit [http://lights.mod.bz](http://lights.mod.bz) you'll see a 3x3 grid of squares - that's the "Virtual Light Wall". In this workshop, we're going to make one of those squares light up with a random color and display a message of your choosing whenever you hit your internet button.
 
 Start by adding an HTTP node to your workflow and connecting it to the Conditional node. You may also want to disconnect the Email node so you don't get emails every time you press the button during this workshop.
 
 ![HTTP Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workflow-http-node.png "HTTP Workflow Node")
 
-On the HTTP node configuration properties, change the `Request Method` to `POST` and set the `URL Template` to "http://lights.mod.bz". You can also view this URL in your browser if you'd like to see the light wall for yourself.
+On the HTTP node configuration properties, change the `Request Method` to `POST` and set the `URL Template` to "http://lights.mod.bz".
 
 Set the body template to the following:
 
@@ -236,11 +236,9 @@ The name and message can be anything you want. Try to keep it family friendly be
 
 Lastly, add a request header by setting the `Name` to "content-type" and the `Value Template` to "application/json".
 
-Click the `Deploy Workflow` button to deploy this workflow. Now whenever you press the internet button, this workflow is making a request to the Light Wall website that includes your name and message. The Light Wall then lights up a random square and displays the information.
+Click the `Deploy Workflow` button to deploy this workflow. Now whenever you press the internet button, this workflow is making a request to the Light Wall website that includes your name and message. The Light Wall then lights up a random square and displays the information. Everyone else who is also viewing the Virtual Light Wall will see your message in real-time.
 
 This workshop shows a lot of the power behind workflows. We've completely changed the behavior of our internet button without having to write any code or update the firmware running on the device itself.
-
-Feel free to press the button randomly throughout the workshops so we can keep the light wall active!
 
 ## Workshop 2 – Remote Control LED
 
