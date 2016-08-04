@@ -23,7 +23,7 @@ These instructions are split into three workshops. Each workshop builds on the p
 
 ## Environment Setup
 
-In order to properly program the kit's microcontroller, please follow the [environment setup instructions](/getting-started/losant-iot-dev-kits/environment-setup/).
+The [environment setup instructions](/getting-started/losant-iot-dev-kits/environment-setup/) must be performed in order to properly program the device.
 
 ## Losant Setup
 
@@ -139,6 +139,24 @@ The serial monitor won't print any information until we flash the device with th
 Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds and the NodeMCU will rapidly blink a blue light while it’s uploading.
 
 ![Upload Button](/images/getting-started/losant-iot-dev-kits/builder-kit/upload-button.png "Upload Button")
+
+If you see an error in the Arduino IDE's output window, refer to the ones below for common solutions.
+
+```
+#include <ESP8266WiFi.h>
+                         ^
+compilation terminated.
+exit status 1
+```
+
+This means the board is not installed or properly setup. Refer to the [Arduino Setup](/getting-started/losant-iot-dev-kits/environment-setup/#configure-arduino-ide) step of the environment setup instructions to install the board and configure the Arduino IDE to use it.
+
+```
+error: espcomm_open failed
+error: espcomm_upload_mem failed
+```
+
+This means the port is not properly selected. Refer to the [Configure Device USB Port](http://127.0.0.1:8000/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port) step of the environment setup instructions.
 
 After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. Then when you click the button, it will print “Button Pressed!”
 
