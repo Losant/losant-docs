@@ -212,3 +212,45 @@ Losant is now saving all light level and button press event data on our device. 
 ![Create Dashboard Menu](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/create-dashboard-menu.png "Create Dashboard Menu")
 
 ![Dashboard Name](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/dashboard-name.png "Dashboard Name")
+
+To start, we'll use a Time Series graph to display the last 30 minutes worth of light level data.
+
+![Time Series Graph](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/time-series-graph.png "Time Series Graph")
+
+![Time Series Settings](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/time-series-settings.png "Time Series Settings")
+
+1. Set the name of the block to anything you want.
+1. Make sure your workshop application is selected. If you only have one application, it will be selected by default.
+1. Set the Time Range to 30 minutes and the Resolution to 30 seconds. This will cause the graph to show the last 30 minutes of data with a data point every 30 seconds.
+1. Make sure you device is selected. If you only have one device, it will be selected by default.
+1. Set the Segment Label to anything you want.
+1. Choose the "light-level" attribute.
+
+The preview on the right side of the screen should update immediately with the data. Click `Add Block` to add the block to your dashboard. Your dashboard should now look something like the following image. You may not have much data right now, but the dashboard updates in real-time and will display more data as your Photon continues to publish the light level.
+
+![Dashboard with Graph](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/dashboard-with-graph.png "Dashboard with Graph")
+
+Next, let's display the number of times the button has been pressed. Add a new Gauge block to the dashboard.
+
+![Add Block Button](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/add-block-button.png "Add Block Button")
+
+![Add Gauge](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/add-gauge.png "Add Gauge")
+
+![Gauge Settings](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/gauge-settings.png "Gauge Settings")
+
+1. Name the block anything you want.
+1. Make sure your application is selected.
+1. Leave the Gauge Type and Precision Type set to their defaults.
+1. Set the duration to 24 hours.
+1. Make sure you device is selected.
+1. Set the label to anything you want.
+1. Select "button-pressed" as the attribute.
+1. Change aggregation to SUM.
+
+This block will now display the sum of all button presses over the last 24 hours. Click `Add Block` to add it to your dashboard.
+
+![Dashboard with Gauge](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/dashboard-with-gauge.png "Dashboard with Gauge")
+
+Feel free to resize and rearrange these blocks however you want. As an added challenge, see if you can display a Dial Gauge that shows the current light level as a value between 0-1024. You would do this by adding another Gauge block and setting the Gauge Type to Dial. I'll leave the rest up to you.
+
+As you continue the workshop, feel free to leave the dashboard open and let it continue to update with new data.
