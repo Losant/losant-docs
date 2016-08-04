@@ -16,6 +16,7 @@ pages:
         - Getting Started with Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
         - Getting Started with Raspberry PI: getting-started/boards/getting-started-with-raspberry-pi.md
         - Getting Started with Arduino: getting-started/boards/getting-started-with-arduino-wifi-101.md
+    - Tutorials And Projects: getting-started/tutorials.md
 - Security:
     - Overview: security.md
 - User Accounts:
