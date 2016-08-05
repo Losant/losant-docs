@@ -1,10 +1,8 @@
 # Losant Particle Builder Kit Instructions
 
-The Losant Particle Builder Kit is a Particle-based version of the <a href="https://store.losant.com/products/losant-builder-kit" target="_blank">Losant Builder Kit</a> and an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
+The Losant Particle Builder Kit provides an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within Losant.
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/builder-kit.jpg "Builder Kit")
-
-// TODO: redo this image.
 
 As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
@@ -26,7 +24,7 @@ The widget we're building in this workshop includes a button, a light sensor (ph
 
 ## Build the Widget
 
-Remove all the components from the Particle development kit box, remove the Photon from the breadboard, and build the widget as described below. If you're not familiar with how breadboards works, check out our [simple guide](https://www.losant.com/blog/how-to-use-a-breadboard). It might help make some of the wiring make sense.
+Remove all the components from the Particle development kit box, remove the Photon from the breadboard, and build the widget as described below. If you're not familiar with how breadboards works, check out our [simple guide](https://www.losant.com/blog/how-to-use-a-breadboard), which will help explain how the wiring works.
 
 ![Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/wiring-diagram.png "Wiring Diagram")
 
@@ -41,11 +39,11 @@ Remove all the components from the Particle development kit box, remove the Phot
 
 The finished widget should look like the below image.
 
-// TODO take picture.
+![Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/wiring-image.jpg "Wiring Image")
 
 ## Setup the Photon
 
-Follows [these instructions](https://docs.particle.io/guide/getting-started/start/photon/#step-1-power-on-your-device) to create a Particle account and properly connect the Photon to the WiFi network. It's likely that several Photons will show up in the list on your mobile device. In order to choose the correct one, you can find its ID on the back of your development kit box.
+Follows [these instructions](https://docs.particle.io/guide/getting-started/start/photon/#step-1-power-on-your-device) to create a Particle account and properly connect the Photon to the WiFi network. If more than one Photon shows up in the list, you can get the ID of yours by looking at the back of the development kit box.
 
 ![Kit Box](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/development-kit-box.jpg "Kit Box")
 
@@ -59,13 +57,11 @@ The sketch we need to upload to the Photon is available in GitHub. Navigate to t
 
 [https://github.com/Losant/losant-kit-builder-particle/blob/master/workshop.ino](https://github.com/Losant/losant-kit-builder-particle/blob/master/workshop.ino)
 
-// TODO: make this public
-
 Once pasted, flash the firmware to your device using the Flash button at the top-left corner of the screen.
 
 ![Flash Firmware](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/flash-firmware.png "Flash Firmware")
 
-The firmware we just flashed is publishing the value of the photoresistor to the Particle cloud every five seconds. It will also publish an event whenever the button is pressed. We can monitor these events using the Particle console. Navigate to [https://console.particle.io/logs](https://console.particle.io/logs) to these events being published in real-time.
+The firmware we just flashed is publishing the value of the photoresistor to the Particle cloud every five seconds. It will also publish an event whenever the button is pressed. We can monitor these events using the Particle console. Navigate to [https://console.particle.io/logs](https://console.particle.io/logs) to see these events being published in real-time.
 
 ![Console Logs](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/console-logs.png "Console Logs")
 
@@ -108,7 +104,7 @@ Click `Save Webhook` to create the webhook. The screen will now display the URL.
 
 ## Particle Integration Setup
 
-Now that we have a webhook, we can give it to Particle so it can send Losant all of those events that are being published. Navigate to [https://console.particle.io/integrations](https://console.particle.io/integrations) and select `New Integration`.
+Now that we have a webhook, we can give it to Particle so it can send Losant the events that are being published. Navigate to [https://console.particle.io/integrations](https://console.particle.io/integrations) and select `New Integration`.
 
 ![New Integration](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/new-integration.png "New Integration")
 
@@ -183,13 +179,17 @@ All triggers place their information on the `data` field of the payload. The web
 
 Now that we have data coming from Particle and into Losant, it's time to send it to the device we created earlier. The first thing we need to do it branch the workflow using a [Conditional](https://docs.losant.com/workflows/logic/conditional/) node based on the event that Particle sends: "light-level" or "button-pressed".
 
+Drag two conditional nodes onto the canvas and connect them to the debug node.
+
 ![Conditional Nodes](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/conditional-nodes.png "Conditional Nodes")
 
-Drag two conditional nodes onto the canvas and connect them to the debug node. Next, set the expression to check for the "light-level" event and the "button-pressed" event:
+Set the expression of the left conditional node to check for the "light-level" event:
 
 ```
 {{ data.body.event }} === "light-level"
 ```
+
+Set the expression of the right conditional node to check for the "button-pressed" event:
 
 ```
 {{ data.body.event }} === "button-pressed"
@@ -254,3 +254,51 @@ This block will now display the sum of all button presses over the last 24 hours
 Feel free to resize and rearrange these blocks however you want. As an added challenge, see if you can display a Dial Gauge that shows the current light level as a value between 0-1024. You would do this by adding another Gauge block and setting the Gauge Type to Dial. I'll leave the rest up to you.
 
 As you continue the workshop, feel free to leave the dashboard open and let it continue to update with new data.
+
+## Use the Button
+
+Since we have a workflow that gets triggered whenever the button is pressed, let's send ourselves an SMS message whenever it occurs. Go back to the workflow and drag an [SMS node](/workflows/outputs/sms/) onto the canvas and connect it to the virtual device node under the button-pressed conditional.
+
+![SMS Node](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/sms-node.png "SMS Node")
+
+1. Set the phone number to your own number.
+1. Set the message to anything you want.
+
+Deploy the workflow using the `Deploy Workflow` button. Now whenever you hit the button you'll get an SMS message. The default limit on the Losant SMS node is one message per minute. If you need more, you can use the [Twilio node](/workflows/outputs/twilio/) to send as many as you want.
+
+Next, let's invoke a third-party web service when you hit the button. If you navigate to [http://lights.mod.bz](http://lights.mod.bz) you'll see a grid of squares. You can post a message to this website and it will light up a random square and display a name and message of your choosing. Everyone else that's viewing the page will also see your message.
+
+Add an HTTP node and connect it to the same node that the SMS node is connected to. You may also want to remove the line connecting the SMS node if you want to stop getting messages to your phone.
+
+![HTTP Node](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/http-node.png "HTTP Node")
+
+1. Set the Request Method to POST.
+1. Set the URL Template to "http://lights.mod.bz".
+1. Set the Body Template to a JSON object with a name and message of your choosing: `{ "name" : "my-name", "message" : "my-message"}`.
+1. Add a header with the name "content-type" and the value "application/json".
+
+Deploy the workflow using the `Deploy Workflow` button. Now when you hit the button, your name and message will appear on the website.
+
+As an additional challenge, see if you can send yourself an email or put a message in one of your Slack channels whenever the button is pressed.
+
+## Remote Controlled LED
+
+The last workshop we're going to do is to remotely control the LED whenever a virtual button is pressed in the workflow. Start by adding a [Virtual Button](https://docs.losant.com/workflows/triggers/virtual-button/) trigger and an HTTP node to the canvas.
+
+![Virtual Button](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/virtual-button.png "Virtual Button")
+
+The virtual button doesn't require any configuration for this example. It's simply a button you can push to trigger the workflow. For the HTTP node, use the following details:
+
+1. Set the Request Method to POST.
+1. Set the URL Template to "https://api.particle.io/v1/devices/events".
+1. Set the Body Template to `{ "name" : "led-toggle" }`.
+1. Add a header with the name "Authorization" and the value "Bearer &lt;Particle Access token&gt;". You can get your Particle Access here: [https://build.particle.io/build#settings](https://build.particle.io/build#settings).
+1. Add a header with the name "content-type" and the value "application/json".
+
+Along with publishing the "light-level" and "button-pressed" events, the Photon firmware we flashed earlier is also subscribed to the "led-toggle" event. This means whenever "led-toggle" is published, it will invoke a function on the Photon to switch the state of the LED. The HTTP node we just added is using the Particle API to publish this event whenever the virtual button is pressed.
+
+Deploy the workflow using the `Deploy Workflow` button. You should now see the LED toggle whenever you press the virtual button.
+
+The Photon is also subscribed to "led-on" and "led-off" for additional control over the LED. As a final challenge, see if you can turn the LED on when the light level goes below a specific number, and turns off when the light level goes back up.
+
+Feel free to continue exploring Particle and Losant and come up with cleaver ways to use these platforms and the workshop hardware!
