@@ -139,4 +139,4 @@ pages:
 theme_dir: 'losant'
 extra:
   site_title: 'Losant Documentation'
-  hidden: ['Builder Kit NodeMCU Instructions', 'Builder Kit Particle Instructions', 'Access Token', 'Access Tokens']
+  hidden: ['Builder Kit NodeMCU Instructions', 'Access Token', 'Access Tokens']
