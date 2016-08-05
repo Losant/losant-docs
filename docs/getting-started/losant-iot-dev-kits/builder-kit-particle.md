@@ -30,9 +30,9 @@ Remove all the components from the Particle development kit box, remove the Phot
 
 1. Push the Photon into terminals 1-12 on either side of the center line, which are rows `c` and `h`. The USB port should be facing away from the breadboard.
 1. Connect the LED to terminals `i12` (D0 on the Photon) and `i15`. Make sure the long wire is connected to `i12`.
-1. Connect a resistor to terminals `i4` (GND on the Photon) and `i15`. The orientation of the resistor doesn't matter.
+1. Connect a resistor to terminals `j4` (GND on the Photon) and `j15`. The orientation of the resistor doesn't matter.
 1. Connect the photoresistor to terminals `b8` (A4 on the Photon) and `b12` (A0 on the Photon). The orientation doesn't matter.
-1. Connect a resistor to terminals `a2` (GND on the Photon) and `a12` (A0 on the Photon). The orientation doesn't matter.
+1. Connect a resistor to terminals `b2` (GND on the Photon) and `a12` (A0 on the Photon). The orientation doesn't matter.
 1. Connect the push button to terminals `e19`, `e21`, `f19`, and `f21`. It should straddle the center line of the breadboard.
 1. Connect a jump wire between terminals `j1` (3V3 on the Photon) and `j19`.
 1. Connect a jump wire between terminals `j11` (D1 on the Photon) and `j21`.
@@ -41,9 +41,9 @@ The finished widget should look like the below image.
 
 ![Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/wiring-image.jpg "Wiring Image")
 
-## Setup the Photon
+## Set Up the Photon
 
-Follows [these instructions](https://docs.particle.io/guide/getting-started/start/photon/#step-1-power-on-your-device) to create a Particle account and properly connect the Photon to the WiFi network. If more than one Photon shows up in the list, you can get the ID of yours by looking at the back of the development kit box.
+Follow [these instructions](https://docs.particle.io/guide/getting-started/start/photon/#step-1-power-on-your-device) to create a Particle account and properly connect the Photon to the WiFi network. If more than one Photon shows up in the list, you can get the ID of yours by looking at the back of the development kit box.
 
 ![Kit Box](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/development-kit-box.jpg "Kit Box")
 
