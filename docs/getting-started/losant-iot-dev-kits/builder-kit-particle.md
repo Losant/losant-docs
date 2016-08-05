@@ -147,9 +147,9 @@ The first thing we need to do is trigger this workflow with the webhook that's b
 
 ![Workflow Webhook](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/workflow-webhook.png "Workflow Webhook")
 
-Next, let's connect a [Debug node](https://docs.losant.com/workflows/outputs/debug/) so you can see what a workflow payload looks like. Every workflow is invoked by a trigger which includes a payload. In our example, the trigger is the webhook and the payload is whatever Particle sent us. As workflows execute, the payload flows through the nodes. Nodes can modify and make decisions based on the payload as needed. The debug node simply logs the payload to the debug tab.
+Next, let's connect a [Debug node](https://docs.losant.com/workflows/outputs/debug/) so you can see what a workflow payload looks like. Every workflow is invoked by a trigger which includes a payload. In our example, the trigger is the webhook and the payload is whatever Particle sent us. As workflows execute, the payload flows through the nodes. Nodes can modify and make decisions based on the payload as needed. The Debug node simply logs the payload to the debug tab.
 
-Drag a debug node to the canvas and connect it to the webhook node.
+Drag a Debug node to the canvas and connect it to the Webhook node.
 
 ![Workflow Debug](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/workflow-debug.png "Workflow Debug")
 
@@ -179,7 +179,7 @@ All triggers place their information on the `data` field of the payload. The web
 
 Now that we have data coming from Particle and into Losant, it's time to send it to the device we created earlier. The first thing we need to do it branch the workflow using a [Conditional](https://docs.losant.com/workflows/logic/conditional/) node based on the event that Particle sends: "light-level" or "button-pressed".
 
-Drag two conditional nodes onto the canvas and connect them to the debug node.
+Drag two Conditional nodes onto the canvas and connect them to the Debug node.
 
 ![Conditional Nodes](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/conditional-nodes.png "Conditional Nodes")
 
@@ -189,7 +189,7 @@ Set the expression of the left conditional node to check for the "light-level" e
 {{ data.body.event }} === "light-level"
 ```
 
-Set the expression of the right conditional node to check for the "button-pressed" event:
+Set the expression of the right Conditional node to check for the "button-pressed" event:
 
 ```
 {{ data.body.event }} === "button-pressed"
@@ -201,7 +201,7 @@ Let's now save all of this data on the Losant device we created earlier. Drag tw
 
 ![Virtual Device Nodes](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/virtual-device-node.png "Virtual Device Nodes")
 
-Each virtual device node will save state onto our Losant device. Under the light level condition, set the "light-level" device attribute to "{{ data.body.data }}". Under the button pressed condition, simply set the "button-pressed" attribute to the number 1. In the next section, when we create a dashboard, we will show a sum of all button presses, which is why we just need to report a 1 each time it is pressed.
+Each Virtual Device node will save state onto our Losant device. Under the light level condition, set the "light-level" device attribute to "{{ data.body.data }}". Under the button pressed condition, simply set the "button-pressed" attribute to the number 1. In the next section, when we create a dashboard, we will show a sum of all button presses, which is why we just need to report a 1 each time it is pressed.
 
 Deploy the workflow using the `Deploy Workflow` button.
 
@@ -222,7 +222,7 @@ To start, we'll use a Time Series graph to display the last 30 minutes worth of 
 1. Set the name of the block to anything you want.
 1. Make sure your workshop application is selected. If you only have one application, it will be selected by default.
 1. Set the Time Range to 30 minutes and the Resolution to 30 seconds. This will cause the graph to show the last 30 minutes of data with a data point every 30 seconds.
-1. Make sure you device is selected. If you only have one device, it will be selected by default.
+1. Make sure your device is selected. If you only have one device, it will be selected by default.
 1. Set the Segment Label to anything you want.
 1. Choose the "light-level" attribute.
 
@@ -242,7 +242,7 @@ Next, let's display the number of times the button has been pressed. Add a new G
 1. Make sure your application is selected.
 1. Leave the Gauge Type and Precision Type set to their defaults.
 1. Set the duration to 24 hours.
-1. Make sure you device is selected.
+1. Make sure your device is selected.
 1. Set the label to anything you want.
 1. Select "button-pressed" as the attribute.
 1. Change aggregation to SUM.
@@ -257,7 +257,7 @@ As you continue the workshop, feel free to leave the dashboard open and let it c
 
 ## Use the Button
 
-Since we have a workflow that gets triggered whenever the button is pressed, let's send ourselves an SMS message whenever it occurs. Go back to the workflow and drag an [SMS node](/workflows/outputs/sms/) onto the canvas and connect it to the virtual device node under the button-pressed conditional.
+Since we have a workflow that gets triggered whenever the button is pressed, let's send ourselves an SMS message whenever it occurs. Go back to the workflow and drag an [SMS node](/workflows/outputs/sms/) onto the canvas and connect it to the Virtual Device node under the button-pressed conditional.
 
 ![SMS Node](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/sms-node.png "SMS Node")
 
@@ -281,7 +281,7 @@ Deploy the workflow using the `Deploy Workflow` button. Now when you hit the but
 
 As an additional challenge, see if you can send yourself an email or put a message in one of your Slack channels whenever the button is pressed.
 
-## Remote Controlled LED
+## Remote-Controlled LED
 
 The last workshop we're going to do is to remotely control the LED whenever a virtual button is pressed in the workflow. Start by adding a [Virtual Button](https://docs.losant.com/workflows/triggers/virtual-button/) trigger and an HTTP node to the canvas.
 
@@ -301,4 +301,4 @@ Deploy the workflow using the `Deploy Workflow` button. You should now see the L
 
 The Photon is also subscribed to "led-on" and "led-off" for additional control over the LED. As a final challenge, see if you can turn the LED on when the light level goes below a specific number, and turns off when the light level goes back up.
 
-Feel free to continue exploring Particle and Losant and come up with cleaver ways to use these platforms and the workshop hardware!
+Feel free to continue exploring Particle and Losant and come up with clever ways to use these platforms and the workshop hardware!
