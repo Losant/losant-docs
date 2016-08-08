@@ -29,9 +29,11 @@ Most endpoints on the Losant API require authenticating as either a user or devi
 
 You can obtain an Authorization Token to use to make authenticated requests by calling one of the [Auth](/rest-api/auth/) endpoints.  There are two main endpoints, one for [authenticating as a user](/rest-api/auth/#post-user), and one for [authenticating as a device](/rest-api/auth/#post-device).  The JSON response for either endpoint has a `token` field, which is the authorization token you should use in the Authorization header in subsequent requests that you want to perform as that user or device.
 
-### User-Based Example
+### User-Based Authentication
 
-The following shows a sequence of curl commands for authenticating as a user and using the resulting token to get a list of devices for an application:
+When authenticated as a user, any API calls have full access to the Losant system. Any applications or dashboards owned by that user can be accessed or modified, and any applications or dashboards that are owned by an organization that the user user is a part of can be accessed (and potentially modified depending on the user's permissions within that organization). Essentially, when authenticated as a user through the API, anything that the user is allowed to do in the normal Losant web interface can be done through the API.
+
+The following shows a sequence of cURL commands for authenticating as a user and using the resulting token to get a list of devices for an application:
 
 ```bash
 curl -H 'Content-Type: application/json' \
@@ -93,9 +95,14 @@ curl -H 'Content-Type: application/json' \
 # }
 ```
 <small><br/></small>
-### Device-Based Example
+### Device-Based Authentication
 
-The following shows a sequence of curl commands for authenticating as a device and using the resulting token to publish state as that device:
+Unlike authenticating as a user, a device authenticated against the API receives a very limited set of permissions.  Any authenticated device can read information about itself ([Device Get](/rest-api/device/#get), [Devices Get](/rest-api/devices/#get)),
+send state information about itself to Losant ([Device Post State](/rest-api/device/#post-state)), query historical state information for itself ([Device Get State](/rest-api/device/#get-state), [Data](/rest-api/data/)), and query historical commands that were sent to it ([Device Get Commands](/rest-api/device/#get-command)).  If the device is a gateway device, it will also be allowed to send state to Losant on behalf of any of its peripheral devices.
+
+If the application access key used to authenticate the device is scoped to more than just the one device, though, the scope of the API permissions also expands.  The device will have permission to query data about the other devices scoped to that key (general info, historical state, and historical commands).  It will also have permission to send commands to those other devices ([Device Post Command](/rest-api/device/#post-command), [Devices Post Command](/rest-api/devices/#post-command)).  If the access key used is unscoped (i.e., the access restriction is set to "All Devices"), a device authenticated with that key will have these read and command permissions for all devices in the application.  A device *never* has access to aything outside of the application it is a member of.
+
+The following shows a sequence of cURL commands for authenticating as a device and using the resulting token to publish state as that device:
 
 ```bash
 curl -H 'Content-Type: application/json' \
