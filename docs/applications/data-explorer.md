@@ -12,24 +12,24 @@ There are three main sections to the data explorer.  First, the inputs at the to
 
 ![Time Controls](/images/applications/data-explorer-time-controls.png "Time Controls")
 
-1.  **Start**: controls the start of the time range of the data to display.
-2.  **End**: controls the end of the time range of the data to display.
-3.  **Back**: moves the time range back by the current time range duration.  For example, if you are looking at a 3 hour time range, this will move the time range into the past by 3 hours.
-4.  **Forward**: moves the time range forward by the current time range duration.
-5.  **Aggregation**:  the aggregator function to use for accumulating the data into the selected resolution.  Defaults to MEAN (i.e., the average of all the values in a resolution window).
-6.  **Resolution**: The size of the aggregation window, which determines how many points will be displayed for a time range.  For example, a three hour time range at five minute resolution would have 36 data points - one for each five minute period in those three hours.
+*   **A - Start**: controls the start of the time range of the data to display.
+*   **B - End**: controls the end of the time range of the data to display.
+*   **C - Back**: moves the time range back by the current time range duration.  For example, if you are looking at a 3 hour time range, this will move the time range into the past by 3 hours.
+*   **D - Forward**: moves the time range forward by the current time range duration.
+*   **E - Aggregation**:  the aggregator function to use for accumulating the data into the selected resolution.  Defaults to MEAN (i.e., the average of all the values in a resolution window).
+*   **F - Resolution**: The size of the aggregation window, which determines how many points will be displayed for a time range.  For example, a three hour time range at five minute resolution would have 36 data points - one for each five minute period in those three hours.
 
 ## Data Controls
 
 <div class="slim-image-container">
-<img src="/images/applications/data-explorer-data-controls.png" alt="Data Controls" title="Data Controls" width="250" />
+<img src="/images/applications/data-explorer-data-controls.png" alt="Data Controls" title="Data Controls" width="400" />
 </div>
 
-1.  **Add a Device**: This dropdown lets you select one or more devices that you would like to display data for.
-2.  **Remove a Device**: Clicking this 'x' will remove the device from the data display.
-3.  **Hide/Show a Device**: Clicking this icon will allow you to temporarily hide or show the data for a device.
-4.  **Attributes**: This shows the available attributes to display for the given selected devices.  As a note, this will only show `number` attributes.
-5.  **Hide/Show an Attribute**: Clicking this icon will allow you to temporarily hide or show the data for an attribute.
+*   **A - Add a Device**: This dropdown lets you select one or more devices that you would like to display data for.
+*   **B - Hide/Show a Device**: Clicking this icon will allow you to temporarily hide or show the data for a device.
+*   **C - Remove a Device**: Clicking this 'x' will remove the device from the data display.
+*   **D - Attributes**: This shows the available attributes to display for the given selected devices.  As a note, this will only show `number` attributes.
+*   **E - Hide/Show an Attribute**: Clicking this icon will allow you to temporarily hide or show the data for an attribute.
 
 ## Data Display
 
