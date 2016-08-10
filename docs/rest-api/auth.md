@@ -53,6 +53,53 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
+## POST - /solutionUser
+
+https://api.losant.com/auth/solutionUser
+
+Authenticates a solution user using the provided credentials
+
+#### Request Body
+
+The body of the request should be serialized JSON that validates against
+the [User Credentials](schemas.md#user-credentials) schema.  For example, the following would be a
+valid body for this request:
+
+```json
+{
+  "solutionId": "57955788124b37010084c053",
+  "email": "example@solutionuser.com",
+  "password": "this is the password"
+}
+```
+<small><br/></small>
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -X POST \
+    -d '{"solutionId":"57955788124b37010084c053","email":"example@solutionuser.com","password":"this is the password"}' \
+    https://api.losant.com/auth/solutionUser
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Authenticated Solution User](schemas.md#authenticated-solution-user) | Successful authentication |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 401 | [Error](schemas.md#error) | Unauthorized error if authentication fails |
+
+<br/>
+
 ## POST - /user
 
 https://api.losant.com/auth/user

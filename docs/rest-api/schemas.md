@@ -1008,6 +1008,45 @@ Schema for the sucessful response when authenticating a Device
 ```
 
 <br/>
+## Authenticated Solution User
+
+Schema for the sucessful response when authenticating a Solution User
+
+### Schema <a name="authenticated-solution-user-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "solutionUserId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "token": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "solutionUserId",
+    "token"
+  ]
+}
+```
+
+<small></small>
+
+### Example <a name="authenticated-solution-user-example"></a>
+
+```json
+{
+  "solutionUserId": "566116085df4b701000258e3",
+  "token": "token_to_use_for_authenticating_subsequent_requests"
+}
+```
+
+<br/>
 ## Authenticated User
 
 Schema for the sucessful response when authenticating a User
@@ -5161,6 +5200,9 @@ Schema for a single Organization
       "type": "string",
       "maxLength": 32767
     },
+    "solutionsEnabled": {
+      "type": "boolean"
+    },
     "members": {
       "type": "array",
       "items": {
@@ -5523,6 +5565,9 @@ Schema for a collection of Organizations
             "type": "string",
             "maxLength": 32767
           },
+          "solutionsEnabled": {
+            "type": "boolean"
+          },
           "members": {
             "type": "array",
             "items": {
@@ -5765,6 +5810,973 @@ Schema for an array of recent items
       "name": "My Other Application"
     }
   ]
+}
+```
+
+<br/>
+## Solution
+
+Schema for a single Solution
+
+### Schema <a name="solution-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "solutionId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "orgId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[0-9a-z_-]{1,255}$"
+    },
+    "allowSelfDeletion": {
+      "type": "boolean"
+    },
+    "allowSelfEmailChange": {
+      "type": "boolean"
+    },
+    "passwordReset": {
+      "type": "object",
+      "properties": {
+        "allowPasswordReset": {
+          "type": "boolean"
+        },
+        "emailSubject": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "emailBody": {
+          "type": "string",
+          "maxLength": 32767
+        },
+        "emailFrom": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 1024
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "solutionUserCount": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="solution-example"></a>
+
+```json
+{
+  "id": "57955788124b37010084c053",
+  "solutionId": "57955788124b37010084c053",
+  "orgId": "575ed6e87ae143cd83dc4aa8",
+  "creationDate": "2016-06-13T04:00:00.000Z",
+  "lastUpdated": "2016-06-13T04:00:00.000Z",
+  "name": "My Solution",
+  "slug": "my_solution",
+  "allowSelfDeletion": false,
+  "allowSelfEmailChange": false,
+  "summary": {
+    "solutionUserCount": 0
+  }
+}
+```
+
+<br/>
+## Solution Patch
+
+Schema for the body of a Solution modification request
+
+### Schema <a name="solution-patch-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[0-9a-z_-]{1,255}$"
+    },
+    "allowSelfDeletion": {
+      "type": "boolean"
+    },
+    "allowSelfEmailChange": {
+      "type": "boolean"
+    },
+    "passwordReset": {
+      "type": "object",
+      "properties": {
+        "allowPasswordReset": {
+          "type": "boolean"
+        },
+        "emailSubject": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "emailBody": {
+          "type": "string",
+          "maxLength": 32767
+        },
+        "emailFrom": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 1024
+        }
+      },
+      "additionalProperties": false
+    },
+    "additionalProperties": false
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="solution-patch-example"></a>
+
+```json
+{
+  "name": "My Updated Solution",
+  "allowSelfDeletion": true
+}
+```
+
+<br/>
+## Solution Post
+
+Schema for the body of a Solution creation request
+
+### Schema <a name="solution-post-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[0-9a-z_-]{1,255}$"
+    },
+    "allowSelfDeletion": {
+      "type": "boolean"
+    },
+    "allowSelfEmailChange": {
+      "type": "boolean"
+    },
+    "passwordReset": {
+      "type": "object",
+      "properties": {
+        "allowPasswordReset": {
+          "type": "boolean"
+        },
+        "emailSubject": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "emailBody": {
+          "type": "string",
+          "maxLength": 32767
+        },
+        "emailFrom": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 1024
+        }
+      },
+      "additionalProperties": false
+    },
+    "required": [
+      "name",
+      "slug"
+    ],
+    "additionalProperties": false
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="solution-post-example"></a>
+
+```json
+{
+  "name": "My New Solution",
+  "slug": "my_new_solution"
+}
+```
+
+<br/>
+## Solution User
+
+Schema for a single Solution User
+
+### Schema <a name="solution-user-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "solutionUserId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "solutionId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "orgId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "passwordLastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastLogin": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 1024
+    },
+    "firstName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "lastName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "companyName": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "phoneNumber": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "location": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "url": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "forcePasswordResetOnNextLogin": {
+      "type": "boolean"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "twoFactorAuthEnabled": {
+      "type": "boolean"
+    },
+    "avatarUrl": {
+      "type": "string",
+      "format": "url"
+    },
+    "accessRestrictions": {
+      "type": "object",
+      "properties": {
+        "dashboardIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="solution-user-example"></a>
+
+```json
+{
+  "id": "566116085df4b701000258e3",
+  "solutionUserId": "566116085df4b701000258e3",
+  "solutionId": "57955788124b37010084c053",
+  "orgId": "575ed6e87ae143cd83dc4aa8",
+  "creationDate": "2016-06-13T04:00:00.000Z",
+  "lastUpdated": "2016-06-13T04:00:00.000Z",
+  "passwordLastUpdated": "2016-06-13T04:00:00.000Z",
+  "lastLogin": "2016-06-13T04:00:00.000Z",
+  "email": "example@solutionuser.com",
+  "firstName": "Example",
+  "lastName": "Name",
+  "forcePasswordResetOnNextLogin": false,
+  "fullName": "Example Name",
+  "twoFactorAuthEnabled": false,
+  "avatarUrl": "https://example.avatar.url/is_here.png",
+  "accessRestrictions": {
+    "dashboardIds": [
+      "575ece2b7ae143cd83dc4a9b",
+      "575ece2b7ae143cd83dc4a9c"
+    ]
+  }
+}
+```
+
+<br/>
+## User Credentials
+
+Schema for the body of a Solution User authentication request
+
+### Schema <a name="user-credentials-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "solutionId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 1024
+    },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 2048
+    },
+    "twoFactorCode": {
+      "type": "string",
+      "maxLength": 2048
+    }
+  },
+  "required": [
+    "solutionId",
+    "email",
+    "password"
+  ],
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="user-credentials-example"></a>
+
+```json
+{
+  "solutionId": "57955788124b37010084c053",
+  "email": "example@solutionuser.com",
+  "password": "this is the password"
+}
+```
+
+<br/>
+## Solution User Patch
+
+Schema for the body of a Solution User modification request
+
+### Schema <a name="solution-user-patch-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 1024
+    },
+    "firstName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "lastName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "companyName": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "phoneNumber": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "location": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "url": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "forcePasswordResetOnNextLogin": {
+      "type": "boolean"
+    },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 2048
+    },
+    "twoFactorAuthKey": {
+      "type": "string",
+      "minLength": 52,
+      "maxLength": 52
+    },
+    "accessRestrictions": {
+      "type": "object",
+      "properties": {
+        "dashboardIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="solution-user-patch-example"></a>
+
+```json
+{
+  "password": "aNewUserPassword",
+  "forcePasswordResetOnNextLogin": true
+}
+```
+
+<br/>
+## Solution User Post
+
+Schema for the body of a Solution User creation request
+
+### Schema <a name="solution-user-post-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 1024
+    },
+    "firstName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "lastName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "companyName": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "phoneNumber": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "location": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "url": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "forcePasswordResetOnNextLogin": {
+      "type": "boolean"
+    },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 2048
+    },
+    "twoFactorAuthKey": {
+      "type": "string",
+      "minLength": 52,
+      "maxLength": 52
+    },
+    "accessRestrictions": {
+      "type": "object",
+      "properties": {
+        "dashboardIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "email",
+    "firstName",
+    "lastName",
+    "password"
+  ],
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="solution-user-post-example"></a>
+
+```json
+{
+  "email": "example@solutionuser.com",
+  "firstName": "Example",
+  "lastName": "Name",
+  "password": "aUserPassword",
+  "accessRestrictions": {
+    "dashboardIds": [
+      "575ece2b7ae143cd83dc4a9b",
+      "575ece2b7ae143cd83dc4a9c"
+    ]
+  }
+}
+```
+
+<br/>
+## Solution Users
+
+Schema for a collection of Solution Users
+
+### Schema <a name="solution-users-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Solution User",
+        "description": "Schema for a single Solution User",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "solutionUserId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "solutionId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "orgId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "passwordLastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 1024
+          },
+          "firstName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024
+          },
+          "companyName": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "phoneNumber": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "location": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "forcePasswordResetOnNextLogin": {
+            "type": "boolean"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "twoFactorAuthEnabled": {
+            "type": "boolean"
+          },
+          "avatarUrl": {
+            "type": "string",
+            "format": "url"
+          },
+          "accessRestrictions": {
+            "type": "object",
+            "properties": {
+              "dashboardIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Fa-f\\d]{24}$"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "integer"
+    },
+    "totalCount": {
+      "type": "integer"
+    },
+    "perPage": {
+      "type": "integer"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "filter": {
+      "type": "string"
+    },
+    "filterField": {
+      "type": "string"
+    },
+    "sortField": {
+      "type": "string"
+    },
+    "sortDirection": {
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "orgId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "solutionId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="solution-users-example"></a>
+
+```json
+{
+  "items": [
+    {
+      "id": "566116085df4b701000258e3",
+      "solutionUserId": "566116085df4b701000258e3",
+      "solutionId": "57955788124b37010084c053",
+      "orgId": "575ed6e87ae143cd83dc4aa8",
+      "creationDate": "2016-06-13T04:00:00.000Z",
+      "lastUpdated": "2016-06-13T04:00:00.000Z",
+      "passwordLastUpdated": "2016-06-13T04:00:00.000Z",
+      "lastLogin": "2016-06-13T04:00:00.000Z",
+      "email": "example@solutionuser.com",
+      "firstName": "Example",
+      "lastName": "Name",
+      "forcePasswordResetOnNextLogin": false,
+      "fullName": "Example Name",
+      "twoFactorAuthEnabled": false,
+      "avatarUrl": "https://example.avatar.url/is_here.png",
+      "accessRestrictions": {
+        "dashboardIds": [
+          "575ece2b7ae143cd83dc4a9b",
+          "575ece2b7ae143cd83dc4a9c"
+        ]
+      }
+    }
+  ],
+  "count": 1,
+  "totalCount": 4,
+  "perPage": 1,
+  "page": 0,
+  "sortField": "name",
+  "sortDirection": "asc",
+  "solutionId": "57955788124b37010084c053",
+  "orgId": "575ed6e87ae143cd83dc4aa8"
+}
+```
+
+<br/>
+## Solutions
+
+Schema for a collection of Solutions
+
+### Schema <a name="solutions-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Solution",
+        "description": "Schema for a single Solution",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "solutionId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "orgId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 32767
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[0-9a-z_-]{1,255}$"
+          },
+          "allowSelfDeletion": {
+            "type": "boolean"
+          },
+          "allowSelfEmailChange": {
+            "type": "boolean"
+          },
+          "passwordReset": {
+            "type": "object",
+            "properties": {
+              "allowPasswordReset": {
+                "type": "boolean"
+              },
+              "emailSubject": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "emailBody": {
+                "type": "string",
+                "maxLength": 32767
+              },
+              "emailFrom": {
+                "type": "string",
+                "format": "email",
+                "maxLength": 1024
+              }
+            }
+          },
+          "summary": {
+            "type": "object",
+            "properties": {
+              "solutionUserCount": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "integer"
+    },
+    "totalCount": {
+      "type": "integer"
+    },
+    "perPage": {
+      "type": "integer"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "filter": {
+      "type": "string"
+    },
+    "filterField": {
+      "type": "string"
+    },
+    "sortField": {
+      "type": "string"
+    },
+    "sortDirection": {
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "orgId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="solutions-example"></a>
+
+```json
+{
+  "items": [
+    {
+      "id": "57955788124b37010084c053",
+      "solutionId": "57955788124b37010084c053",
+      "orgId": "575ed6e87ae143cd83dc4aa8",
+      "creationDate": "2016-06-13T04:00:00.000Z",
+      "lastUpdated": "2016-06-13T04:00:00.000Z",
+      "name": "My Solution",
+      "slug": "my_solution",
+      "allowSelfDeletion": false,
+      "allowSelfEmailChange": false,
+      "summary": {
+        "solutionUserCount": 0
+      }
+    }
+  ],
+  "count": 1,
+  "totalCount": 4,
+  "perPage": 1,
+  "page": 0,
+  "sortField": "name",
+  "sortDirection": "asc",
+  "orgId": "575ed6e87ae143cd83dc4aa8"
 }
 ```
 
