@@ -44,13 +44,9 @@ This will display a modal where you can set the block's `width`, `height` and `t
 
 ![Embed Block Modal Checkbox](/images/dashboards/embed-block-modal.png "Embed Block Modal")
 
-NOTE: The following blocks will not display any data on public dashboards or to non-authorized users when embedded. In general they expose large amounts of data about the underlying application or account:
+NOTE: The following blocks will not display any data on public dashboards or to non-authorized users when embedded:
 
 *   `Application List`
-*   `Workflow List`
-*   `Device List`
-*   `Event List`
-*   `Device Connection Log`
 *   `Input Controls`
 
 ## Templating
