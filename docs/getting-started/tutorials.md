@@ -4,6 +4,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/building-environment-monitor-johnny-five-inventors-kit" target="_blank">Build an Environmental Monitor with the Johnny-Five Inventor's Kit</a>
+
 *   <a href="https://www.losant.com/blog/getting-started-with-platformio-ide-and-losant" target="_blank">Getting Started with PlatformIO IDE and Losant</a>
 
 *   <a href="https://www.losant.com/blog/solving-a-restaurant-problem-with-a-smart-thermometer" target="_blank">Solving a Restaurant Problem with a Smart Thermometer</a>
