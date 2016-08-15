@@ -27,7 +27,6 @@ Below is an example of using the Losant Arduino MQTT client to handle a command 
 void handleCommand(LosantCommand *command) {
   Serial.print("Command received: ");
   Serial.println(command->name);
-
   if(strcmp(command->name, "turn-on-led") == 0) {
     digitalWrite(LED_PIN, 1);
   }
@@ -38,4 +37,18 @@ device.connectSecure(wifiClient, "my-access-key", "my-access-secret");
 
 // Subscribe to commands.
 device.onCommand(&handleCommand);
+```
+
+If you wish to send a payload with your commands, that value can be accessed and passed on to your handlers as well.
+```arduino
+void handleCommand(LosantCommand *command) {
+  JsonObject& payload = *command->payload;
+  payload.printTo(Serial); // print the entire payload
+  Serial.println(payload['key']); // print the 'key' property of the payload object
+}
+```
+
+Note: If you are sending payloads of even moderate size, and your commands are failing to reach your microcontroller, it may be necessary to adjust the MQTT's maximum packet size. Add the following line in your sketch:
+```arduino
+#define MQTT_MAX_PACKET_SIZE 256
 ```
