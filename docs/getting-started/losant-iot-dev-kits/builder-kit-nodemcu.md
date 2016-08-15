@@ -1,6 +1,6 @@
 # Losant Builder Kit Instructions
 
-The <a href="https://store.losant.com/products/losant-builder-kit" target="_blank">Losant Builder Kit</a> is an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
+The <a href="https://store.losant.com/products/losant-builder-kit" target="\_blank">Losant Builder Kit</a> is an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/kit-complete.jpg "Builder Kit")
 
@@ -8,14 +8,14 @@ As you perform these workshops, if you run into any issues, please refer to the 
 
 Your kit should include the following items:
 
-* 1 NodeMCU v1.0 dev kit microcontroller
-* 1 solderless breadboard
-* 8 jump wires
-* 2 resistors
-* 1 LED
-* 1 TMP36 temperature sensor
-* 1 button
-* 1 micro-USB cable
+  * 1 [NodeMCU v1.0](http://nodemcu.com/index_en.html) dev kit microcontroller <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="\_blank">(View board schematic)</a>
+  * 1 solderless breadboard
+  * 8 jump wires
+  * 2 resistors
+  * 1 LED
+  * 1 TMP36 temperature sensor
+  * 1 button
+  * 1 micro-USB cable
 
 ## Overview
 
@@ -51,18 +51,20 @@ Next, choose the `Create from Scratch` option.
 
 ![Create From Scratch](/images/getting-started/losant-iot-dev-kits/moisture-sensor/add-from-scratch.png "Create From Scratch")
 
-![Add Device](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device.png "Add Device")
+![Add Device Name](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-name.png "Add Device Name")
+
+![Add Device Attributes](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-attributes.png "Add Device Attributes")
 
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
-1. Leave "Virtual Device" unchecked.
+1. For "Device Type", leave "Standalone" selected.
 1. No device tags are required.
-1. Add the following under "Device Attributes:"
-    1. button : boolean
+1. Add the following under "Device Attributes":
+    1. button: boolean
     1. tempC: number
     1. tempF: number
 
-The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case sensitive***, so make sure these are ***all lowercase***.
+The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
 Click the `Create Device` button. The screen will change and show the device’s ID. This ID is required for the following sections. You might want to copy/paste it somewhere convenient.
 
@@ -100,7 +102,7 @@ The first workshop creates an Internet button that triggers a Losant Workflow to
 
 ***Disconnect the NodeMCU dev kit from USB.***
 
-For this workshop, you’ll need to attach the NodeMCU and button to the breadboard. Below is the wiring diagram.
+For this workshop, you’ll need to attach the NodeMCU and button to the breadboard. Below is the wiring diagram. For more information on what breadboards are and how they work, check out our blog post on <a href="https://www.losant.com/blog/how-to-use-a-breadboard" target="\_blank">How to Use a Breadboard</a>.
 
 ![Workshop 1 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-1-wiring-diagram.png "Workshop 1 Wiring Diagram")
 
@@ -120,11 +122,11 @@ Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino 
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop-1-internet-button/workshop-1-internet-button.ino`. Edit the following variables at the top of the file.
 
-1. WIFI_SSID = the name of your WiFi network
-1. WIFI_PASS = your WiFi password
-1. LOSANT_DEVICE_ID = set this to the ID you received after adding the device to the Losant application
-1. LOSANT_ACCESS_KEY = set this to the access key you generated after creating the Losant application
-1. LOSANT_ACCESS_SECRET = set this to the access secret you generated after creating the Losant application
+1. WIFI_SSID: The name of your WiFi network.
+1. WIFI_PASS: Your WiFi password.
+1. LOSANT_DEVICE_ID: After creating your device, the device ID is printed on the page in a gray box. You can also find it next to the name of your device on your application's "View All Devices" page.
+1. LOSANT_ACCESS_KEY: Set this to the access key you generated after creating the Losant application.
+1. LOSANT_ACCESS_SECRET: Set this to the access secret you generated after creating the Losant application.
 
 ![Update Variables](/images/getting-started/losant-iot-dev-kits/builder-kit/update-variables.png "Update Variables")
 
@@ -156,9 +158,9 @@ error: espcomm_open failed
 error: espcomm_upload_mem failed
 ```
 
-This means the port is not properly selected. Refer to the [Configure Device USB Port](http://127.0.0.1:8000/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port) step of the environment setup instructions.
+This means the port is not properly selected. Refer to the [Configure Device USB Port](/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port) step of the environment setup instructions.
 
-After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. Then when you click the button, it will print “Button Pressed!”
+After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. Push the button you wired up in the breadboard, and the Serial Monitor will print “Button Pressed!”
 
 ![Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit/serial-output.png "Serial Output")
 
