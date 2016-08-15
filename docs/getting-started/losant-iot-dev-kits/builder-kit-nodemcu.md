@@ -112,7 +112,7 @@ For this workshop, you’ll need to attach the NodeMCU and button to the breadbo
 1. Connect the button to the other end of the breadboard so its leads straddle the center line and connect it to terminals e28, e30, f28, and f30.
 1. Connect the positive rail to the button using terminal a28 using a jump wire.
 1. Connect the negative rail to the button using terminal c30 using a resistor. It doesn’t matter which way resistors are oriented.
-1. Connect Pin D1 on the NodeMCU (a14) to the button (j30) with a jump wire.
+1. Connect the pin labeled "D1" on the NodeMCU (a14) to the button (j30) with a jump wire. In our code, "D1" is the equivalent of GPIO pin 5.
 
 ![Workshop 1 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-1-wiring-image.jpg "Workshop 1 Wiring Image")
 
