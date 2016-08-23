@@ -42,4 +42,6 @@ The minimum and/or maximum y-axis values may be manually set for each data serie
 
 If you choose not to define a y-axis minimum or maximum value, the time series graph will automatically define a scale based on the data set it is currently rendering for the data series.
 
-The Segment Label (in this case "Current A" is used to name this particular data series, and will be the label shown in the graph legend.  The Y Axis label is used to name the y axis for this series - if it is left blank, the name of the selected attribute is used.  Series that use the same Y Axis lables share that axis on the resulting graph.
+The Segment Label (in this case "Current A" is used to name this particular data series, and will be the label shown in the graph legend.  The y-axis label is used to name the y-axis for this series - if it is left blank, the name of the selected attribute is used.  Series that use the same y-axis labels share that axis on the resulting graph.
+
+Finally, when the Line Display Type is set to "Line", each segment also takes a "Line Weight" property, which defines the thickness of the line displayed on the chart for that segment on a 1 (thin) to 5 (thick) scale.
