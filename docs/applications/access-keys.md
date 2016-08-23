@@ -18,9 +18,11 @@ You can choose to either make this access key valid for use by any device in thi
 
 ![Define Access Restrictions](/images/applications/access-restrictions.png "Define Access Restrictions")
 
-After clicking `Create Access Key`, the newly generated key and secret will be displayed. <u>__IMPORTANT__: Losant does not store key secrets and they can not be recovered or regenerated if lost.</u>
+After clicking `Create Access Key`, the newly generated key and secret will be displayed. You will either need to copy your key and secret to a secure location or download them to a file on your computer.
 
-After you save your key and secret in a safe and secure place, check the `I have copied my app secret to a safe place` box and click `Close Window`.
+__IMPORTANT__: Losant does not store key secrets and they can not be recovered or regenerated if lost. If you fail to save your key secret before closing the window, you will have to generate a new access key / secret pair.
+
+After you've saved your access key and secret, check the `I have copied my app secret to a safe place` box and click `Close Window`.
 
 ![Access Key Generated](/images/applications/access-key-generated.png "Access Key Generated")
 
