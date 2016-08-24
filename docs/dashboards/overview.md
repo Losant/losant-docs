@@ -24,6 +24,23 @@ Dashboards by default will automatically refresh the data every 60 seconds. You 
 
 ![Refresh Button](/images/dashboards/overview-refresh-button.png "Refresh Button")
 
+## Viewing Past Dashboard States
+
+By default, dashboards show values as of the last time data was fetched from Losant ("Now"). To view the state of your dashboard blocks at a given point in time, open the Time Jumper dropdown and select the "Jump to a specific date/time" option. After choosing a past time, the dashboard will refresh and display each dashboard block as it appeared at that moment.
+
+![Dashboard Time Jumper](/images/dashboards/dashboard-time-jumper.png "Dashboard Time Jumper")
+
+It is also possible to jump backward and forward in time simply by clicking the arrows on either side of the time jumper dropdown. This allows for quick perusing of dashboard states as they progressed over a period of time. By default, the arrows jump 60 minutes forward and backward, but this value can be changed in the Time Jumper dropdown. The arrow jump amount is stored locally on your browser and will be maintained across different dashboards.
+
+![Dashboard Time Jumper Arrows](/images/dashboards/dashboard-time-jumper-arrows.png "Dashboard Time Jumper Arrows")
+
+A few things to note when viewing past dashboard states:
+
+*  **The following dashboard blocks do not update** when viewing a past dashboard state (meaning, they continue to reflect the "as of now" state of the block): Input Controls, Event List, Device List, Workflow List, Application List, Dashboard List, External Website
+* When viewing a past state, the dashboard will cease to refresh data on a regular basis.
+* **Each individual block will honor its specific duration settings** regardless of the selected date. For example, when viewing 10:00am on June 1, 2016, a Time Series Graph configured to show the last hour of data will display data from 9:00am to 10:00am of that same date. Meanwhile, a Gauge Block set to display a mean aggregation of data collected over the past four hours will show the aggregated value of its attribute as collected from 6:00am to 10:00am that morning.
+* If you attempt to go forward in time past the current date/time, the dashboard will automatically revert to displaying "Now" data and the ability to go forward from that point will be disabled.
+
 ## Dashboard Access Control
 
 Dashboards have a three levels of access - private, password protected, and public.  Private
