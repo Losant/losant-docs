@@ -60,7 +60,7 @@ Your device's state attributes are one of the most important configuration optio
 
 The above example would work for a thermostat device. It has two attributes. One is named `inside-temp` and one is named `temp-setting`. This device would likely report the `inside-temp` every few minutes and only report `temp-setting` when the user has changed the setting.
 
-Refer the [device state](#) documentation for further details about state.
+Refer to the [device state](/devices/state) documentation for further details about state.
 
 ## Device Management
 
