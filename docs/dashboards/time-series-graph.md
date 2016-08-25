@@ -36,10 +36,10 @@ Each series can also aggregate the same attribute across multiple devices; there
 
 When this is graphed, it is now a single series that contains the average temperature of both devices.
 
-You also have the option of setting a custom color for each line on the time series graph. Colors will automatically be assigned in the event you do not assign a color.
+You may also set a custom color for each line on the time series graph, as well as the weight of each line (when "Display Type" is set to "Line"). Colors will automatically be assigned in the event you do not assign a color, and line weight defaults to the middle value.
 
 The minimum and/or maximum y-axis values may be manually set for each data series. If at any point the line extends beyond a defined minimum or maximum value, the time series line will disappear off the edge of the graph until the data returns to the defined window.
 
 If you choose not to define a y-axis minimum or maximum value, the time series graph will automatically define a scale based on the data set it is currently rendering for the data series.
 
-The Segment Label (in this case "Current A" is used to name this particular data series, and will be the label shown in the graph legend.  The Y Axis label is used to name the y axis for this series - if it is left blank, the name of the selected attribute is used.  Series that use the same Y Axis lables share that axis on the resulting graph.
+The Segment Label (in this case "Current A" is used to name this particular data series, and will be the label shown in the graph legend.  The y-axis label is used to name the y-axis for this series - if it is left blank, the name of the selected attribute is used.  Series that use the same y-axis labels share that axis on the resulting graph.

@@ -60,7 +60,7 @@ Your device's state attributes are one of the most important configuration optio
 
 The above example would work for a thermostat device. It has two attributes. One is named `inside-temp` and one is named `temp-setting`. This device would likely report the `inside-temp` every few minutes and only report `temp-setting` when the user has changed the setting.
 
-Refer the [device state](#) documentation for further details about state.
+Refer to the [device state](/devices/state) documentation for further details about state.
 
 ## Device Management
 
@@ -122,3 +122,11 @@ time,location,temperature
 ![Delete Device Data](/images/devices/data-deletion.png "Delete Device Data")
 
 In the case where you no longer want the data for a device or you want to clear out old incorrect data, you can do so with the "Delete Device Data" button.  This will remove all data for the device - state data for attributes, connection log history, and command history. Data deletion may take a few seconds to propagate through the system, but cannot be reversed or undone, so do not press this button lightly!
+
+## Exporting Devices
+
+![Export Devices](/images/devices/devices-export.png "Export Devices")
+
+To export a list of all the devices scoped to an application, visit the "All Devices" page and click the "Export All Devices" button in the top right corner of the list. This will retrieve all devices within the application and generate a CSV file for download. The CSV will include each device's name, ID, description, device type and each tag associated with the device.
+
+Note that device exports always include the application's entire device list, not just the devices that are currently displayed in the interface (as filtered by name or paginated).

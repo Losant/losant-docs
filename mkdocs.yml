@@ -54,6 +54,7 @@ pages:
     - Device List: dashboards/device-list.md
     - Workflow List: dashboards/workflow-list.md
     - Application List: dashboards/application-list.md
+    - Dashboard List: dashboards/dashboard-list.md
 - Workflows:
     - Overview: workflows/overview.md
     - Triggers:

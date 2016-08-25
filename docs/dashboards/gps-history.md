@@ -8,6 +8,8 @@ The map will automatically pan and zoom to display all the available data retrie
 
 ## Configuration
 
+At least one device ID or tag must be specified, along with a duration.
+
 ### Duration
 
 ![GPS History Duration](/images/dashboards/gps-history-duration.png "GPS History Duration")
@@ -26,6 +28,12 @@ The block data takes two parameters:
 
 *   **Device IDS / Tags** is a [device query](/devices/device-queries) for choosing which devices are displayed on the map.
 *   **Attribute** is the device attribute that contains the location data. The attribute must be of type `GPS String`, and any attribute reported by the selected devices that is not of the `GPS String` type will not be available to choose. If displaying multiple devices on the map via tags or multiple IDs, each device must provide the same attribute name.
+
+### Default Viewport
+
+![GPS History Default Viewport](/images/dashboards/gps-viewport.png "GPS History Default Viewport")
+
+Optionally, you may set a specific map center and/or zoom level for your map when it first loads. Failing to set a center, or setting "Automatic" for the zoom level, will cause the map to automatically set those aspects of its viewport to fit the data being passed to the map. Note that once a user manually pans or zooms the map, the default center and zoom will be ignored until the page is reloaded.
 
 ### Point Display Configuration
 
