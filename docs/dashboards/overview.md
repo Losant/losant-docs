@@ -64,6 +64,7 @@ This will display a modal where you can set the block's `width`, `height` and `t
 NOTE: The following blocks will not display any data on public dashboards or to non-authorized users when embedded:
 
 *   `Application List`
+*   `Dashboard List`
 *   `Input Controls`
 
 ## Templating
