@@ -20,7 +20,7 @@ On the edit screen, all controls can be resized and rearranged within the input 
 
 ## Control Configuration
 
-The block supports inputs of four types. Those inputs share a few common attributes:
+The block supports inputs of four types, plus a special ["Help Block" component](#help-block-component). The four inputs share a few common attributes:
 
 *   **Label**: All controls require a label attribute.
 *   **Color**: Controls other than text inputs can optionally be given a custom color.
@@ -73,13 +73,13 @@ Note that it is possible to set number or boolean values in a text input if the 
 
 Device commands and workflow triggers may optionally be sent with a JSON payload, and it is the purpose of the input controls to help you construct the payload quickly and easily from the dashboard.
 
-The payload attached to each button is run through the [Handlebars templating language](http://handlebarsjs.com/), where the values of each input (by Template ID) replaces the tag for the corresponding Template ID within your JSON object.
+The payload attached to each button is run through the <a href="http://handlebarsjs.com/" target="\_blank">Handlebars templating language</a>, where the values of each input (by Template ID) replaces the tag for the corresponding Template ID within your JSON object.
 
 For example, given the following configuration ...
 
 ![Lights Example](/images/dashboards/input-controls-lights-example.png "Lights Example")
 
-On press of the button, "My First Device" will receive a command named "setColor", with the following paylod:
+On press of the button, "My First Device" will receive a command named "setColor", with the following payload:
 
 ```json
 {
@@ -96,3 +96,17 @@ On press of the button, "My First Device" will receive a command named "setColor
 There are a number of different helpers available beyond the standard Handlebars helpers - you can learn more about what the available helpers are and what they do [here](/dashboards/overview/#templating).
 
 **Note:** If you do not define a payload for a Trigger Workflow button, the virtual button's default payload – as set within that button's parent workflow – will be sent when your dashboard button is clicked. If you wish to send a blank payload instead of the default payload, set the payload value to `{}` (opening and closing curly braces with nothing in between).
+
+## Help Block Component
+
+The Help Block is a special component in the Input Controls block that allows text to be displayed to users for the purpose of explaining, in greater detail than can be conveyed in a button label, what exactly will happen when a button is pressed and a workflow / device command is fired off.
+
+![Help Block Input](/images/dashboards/input-controls-help-input.png "Help Block Input")
+
+The component has only one input: a textarea in which arbitrary copy and payload variables can be entered. Like button payloads, the content of the textarea is run through the <a href="http://handlebarsjs.com/" target="\_blank">Handlebars templating language</a>, which allows for input control values (referenced by their Template ID) to be displayed within the block. These values will update as the user changes input values in the other components.
+
+![Help Block Example](/images/dashboards/input-controls-help-example.png "Help Block Example")
+
+The textarea also supports <a href="https://daringfireball.net/projects/markdown/syntax" target="\_blank">Markdown</a>, meaning that links, text formatting and even images can also be displayed within the Help Block.
+
+The Help Block is the only Input Controls component whose height can be adjusted – up to four times a normal component's height.

@@ -27,3 +27,9 @@ The physical location of one or multiple devices can be viewed on the GPS Heatma
 ![GPS Heatmap Attribute](/images/dashboards/heatmap-attribute.png "GPS Heatmap Attribute")
 
 The selected device(s) must return an attribute of the type `GPS String`. In the **Attribute** dropdown, select the attribute's name to display on the graph. Note that, when displaying multiple devices on the heatmap, each device must return data under the same attribute name, and any device attributes that are not of the `GPS String` type will not be available to choose.
+
+### Default Viewport
+
+![GPS Heatmap Default Viewport](/images/dashboards/gps-viewport.png "GPS Heatmap Default Viewport")
+
+Optionally, you may set a specific map center and/or zoom level for your map when it first loads. Failing to set a center, or setting "Automatic" for the zoom level, will cause the map to automatically set those aspects of its viewport to fit the data being passed to the map. Note that once a user manually pans or zooms the map, the default center and zoom will be ignored until the page is reloaded.
