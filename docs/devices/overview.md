@@ -26,11 +26,8 @@ to the Losant platform.  There are 4 categories, but in most cases you will be c
 the first, `Standalone`.
 
 *   **Standalone**  
-A standalone device is your normal everyday type of physical device.  It will connect
+A standalone device is your normal everyday type of device.  It is allowed to connect
 directly to Losant and report its own state.
-
-*   **Virtual**  
-The major difference with a virtual device is how state is reported. A virtual device is not expected to actually connect to the platform, so a virtual device's state can only be reported using a Losant workflow. Virtual devices are useful if you'd like to record sensor data from something other than a physical thing. For example, you could create a workflow that requests the outside temperature every few minutes from a 3rd party weather API and saves the result as the state of a virtual device. Since this information is now on a device, you can visualize, trigger workflows, or perform any other actions on this information as if the data came from an actual physical widget.
 
 *   **Gateway**  
 A gateway device is a device that connects to Losant and reports both its own state and the
@@ -41,8 +38,7 @@ are extremely useful for helping to report the state of non-internet connected d
 A peripheral device does not connect directly to Losant - instead they report their
 state to a gateway device, and that gateway pushes that state to Losant.  When choosing
 peripheral as the device type, you must choose the particular gateway device that this
-device will be reporting through, so that Losant knows what gateway has permission to report
-as this peripheral device.
+device will be reporting through, so that Losant knows what gateway has permission to report as this peripheral device.
 
 ### Device Tags
 

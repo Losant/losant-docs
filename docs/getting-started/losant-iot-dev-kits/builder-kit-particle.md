@@ -82,7 +82,9 @@ Next, add a device to the application to represent our Photon-powered widget.
 ![Device Setup](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/device-setup.png "Device Setup")
 
 1. Set the device name to anything you want.
-1. Set the device type to `Virtual`. This is required since the Photon won't be directly connecting to the Losant platform. The device's state information (light level and button presses) will be obtained by receiving webhooks from the Particle cloud, which we'll set up in a later step.
+1. "Description" can be left blank, or fill it with whatever you want.
+1. For "Device Type", leave "Standalone" selected.
+1. No device tags are required.
 1. Set two attributes on the device: "light-level" and "button-pressed". Set both of their data types to `Number`.
 
 Once everything is configured, click the `Create Device` button at the top-right on the screen.
@@ -197,11 +199,11 @@ Set the expression of the right Conditional node to check for the "button-presse
 
 Many places within a Losant workflow allow you to reference values on the current payload by surrounding the path with double curly braces. In this example, each conditional is checking that the value at `data.body` is equal to a string. With this conditional, we can do something different when the button is pressed compared to when the light level is received.
 
-Let's now save all of this data on the Losant device we created earlier. Drag two [Virtual Device](/workflows/outputs/virtual-device/) nodes onto the canvas and connect them to each conditional block.
+Let's now save all of this data on the Losant device we created earlier. Drag two [Device State](/workflows/outputs/device-state/) nodes onto the canvas and connect them to each conditional block.
 
-![Virtual Device Nodes](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/virtual-device-node.png "Virtual Device Nodes")
+![Device State Node](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/device-state-node.png "Device State Node")
 
-Each Virtual Device node will save state onto our Losant device. Under the light level condition, set the "light-level" device attribute to "{{ data.body.data }}". Under the button pressed condition, simply set the "button-pressed" attribute to the number 1. In the next section, when we create a dashboard, we will show a sum of all button presses, which is why we just need to report a 1 each time it is pressed.
+Each Device State node will save state onto our Losant device. Under the light level condition, set the "light-level" device attribute to "{{ data.body.data }}". Under the button pressed condition, simply set the "button-pressed" attribute to the number 1. In the next section, when we create a dashboard, we will show a sum of all button presses, which is why we just need to report a 1 each time it is pressed.
 
 Deploy the workflow using the `Deploy Workflow` button.
 
@@ -257,7 +259,7 @@ As you continue the workshop, feel free to leave the dashboard open and let it c
 
 ## Use the Button
 
-Since we have a workflow that gets triggered whenever the button is pressed, let's send ourselves an SMS message whenever it occurs. Go back to the workflow and drag an [SMS node](/workflows/outputs/sms/) onto the canvas and connect it to the Virtual Device node under the button-pressed conditional.
+Since we have a workflow that gets triggered whenever the button is pressed, let's send ourselves an SMS message whenever it occurs. Go back to the workflow and drag an [SMS node](/workflows/outputs/sms/) onto the canvas and connect it to the Device State node under the button-pressed conditional.
 
 ![SMS Node](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/sms-node.png "SMS Node")
 
