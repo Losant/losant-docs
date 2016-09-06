@@ -1684,3 +1684,56 @@ strong em {
 pre {
   margin-bottom: 24px;
 }
+
+a.button {
+  background: #FF495C;
+  border: 1px solid #FF495C;
+  padding: 0 20px;
+  color: #F5F4F3;
+  text-transform: uppercase;
+  font-family: 'Knockout-30', 'helvetica', sans-serif;
+  height: 33px;
+  font-size: 16px;
+  line-height: 33px;
+  letter-spacing: 2px;
+}
+
+a.button:hover {
+  border: 1px solid #F5F4F3;
+  text-decoration: none;
+
+}
+
+a.button:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+a.button:active {
+  color: #DBD9D6;
+  outline: none;
+}
+
+a.login-button {
+  background-color: #284FFF;
+  border-color: #DBD9D6;
+}
+
+.header .nav-sign-up {
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+.header .nav-sign-up a:first-child {
+  margin-left: 0;
+}
+
+.header .nav-sign-up a{
+  font-size: 12px;
+  height: auto;
+  line-height: 1;
+  padding: 5px 20px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
