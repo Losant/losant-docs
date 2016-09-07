@@ -18,10 +18,7 @@ In the above example, the workflow will decode the string at the `container.json
   "container": {
     "jsonString": "{\"messageBody\":[12,24],\"name\":\"Trigger52\"}"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "legacy/commands",
-  "triggerType": "mqttTopic",
-  "flowId": "56c74add04d0b50100043381"
+  ...
 }
 ```
 
@@ -40,9 +37,6 @@ The payload after execution of the JSON decode node would look like:
       "name": "Trigger52"
     }
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "legacy/commands",
-  "triggerType": "mqttTopic",
-  "flowId": "56c74add04d0b50100043381"
+  ...
 }
 ```

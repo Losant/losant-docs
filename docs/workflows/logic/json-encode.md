@@ -23,11 +23,7 @@ In the above example, the workflow will encode the value at the `container.jsonO
       ],
       "messageName": "Trigger52"
     }
-  },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "legacy/commands",
-  "triggerType": "mqttTopic",
-  "flowId": "56c74add04d0b50100043381"
+  ...
 }
 ```
 
@@ -46,9 +42,6 @@ The payload after execution of the JSON encode node would look like:
       "messageName": "Trigger52"
     }
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "legacy/commands",
-  "triggerType": "mqttTopic",
-  "flowId": "56c74add04d0b50100043381"
+  ...
 }
 ```

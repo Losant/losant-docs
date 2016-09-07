@@ -33,9 +33,12 @@ So with the above example, given the following payload:
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {},
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree"
   "triggerId": "f6094780d98111e5883a37908659487f",
   "triggerType": "timer",
-  "flowId": "568dcdee86985501006360ba"
+  "flowId": "568dcdee86985501006360ba",
+  "flowName": "Electricity Pricing Data",
+  "globals": { }
 }
 ```
 
@@ -67,8 +70,11 @@ The node will make a GET request to `https://rrtp.comed.com/api?type=5minutefeed
     }
   },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree"
   "triggerId": "f6094780d98111e5883a37908659487f",
   "triggerType": "timer",
-  "flowId": "568dcdee86985501006360ba"
+  "flowId": "568dcdee86985501006360ba",
+  "flowName": "Electricity Pricing Data",
+  "globals": { }
 }
 ```

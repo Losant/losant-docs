@@ -96,22 +96,28 @@ The payloads described above only include what was added by the trigger. All pay
   "time": <time of the event>,
   "data": { ... },
   "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
   "triggerId": <id of the workflow trigger>,
   "triggerType": <name of the trigger>,
-  "flowId": <id of the current workflow>
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
 }
 ```
 
-For example, a timer trigger will start a payload with the following payload:
+For example, a timer trigger will start a workflow with the following payload:
 
 ```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {},
   "applicationId": "56311a8e51645b2054eb258b",
+  "applicationName": "My Timer App",
   "triggerId": "78fbb050d7f811e5b995b3a5b31df7d8",
   "triggerType": "timer",
-  "flowId": "56c8967bb8df0f0100d62912"
+  "flowId": "56c8967bb8df0f0100d62912",
+  "flowName": "My Timer Flow",
+  "globals": {}
 }
 ```
 
@@ -283,9 +289,14 @@ In the above example, there are 3 global keys set &mdash; `minLevel` (with a num
     "phone": "632-538-0975"
   }
   "applicationId": "56919b1a9d206d0100c54152",
+  "applicationName": "Light Wall",
   "triggerId": "56c794a06895b00100cbe84c",
   "triggerType": "deviceId",
-  "flowId": "56956cd25a6f2f0100dc70d4"
+  "deviceTags": {},
+  "deviceName": "Moisture Sensor",
+  "flowId": "56956cd25a6f2f0100dc70d4",
+  "flowName": "Moisture Alert",
+  "globals": {}
 }
 ```
 

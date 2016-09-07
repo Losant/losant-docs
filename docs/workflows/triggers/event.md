@@ -33,9 +33,12 @@ The payload will include information about the event on the `data` field, as wel
     "latestUpdate": <most recent update to this event>
   },
   "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
   "triggerId": <id of the workflow trigger>,
   "triggerType": "event",
-  "flowId": <id of the current workflow>
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
 }
 ```
 
@@ -58,8 +61,11 @@ For the example workflow above, a specific payload for a triggered workflow migh
     "latestUpdate": null
   },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree",
   "triggerId": "error",
   "triggerType": "event",
-  "flowId": "56c74add04d0b50100043381"
+  "flowId": "56c74add04d0b50100043381",
+  "flowName": "Power Event Notification",
+  "globals": {}
 }
 ```

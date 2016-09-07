@@ -27,10 +27,7 @@ In the above example, the set rule will be creating a new value combined from th
     "lastName": "Smith",
     "firstName": "John"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  ...
 }
 ```
 
@@ -44,10 +41,7 @@ The payload after execution of the mutate node would look like:
     "firstName": "John",
     "fullName": "John Smith"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  ...
 }
 ```
 
@@ -66,10 +60,7 @@ In the above example, the remove rule will be remove the existing `data.firstNam
     "lastName": "Smith",
     "firstName": "John"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  ...
 }
 ```
 
@@ -81,10 +72,7 @@ The payload after execution of the mutate node would look like:
   "data": {
     "lastName": "Smith"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  ...
 }
 ```
 
@@ -103,10 +91,7 @@ In the above example, the copy rule will copy the value at the existing `data.fi
     "lastName": "Smith",
     "firstName": "John"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  ...
 }
 ```
 
@@ -120,10 +105,7 @@ The payload after execution of the mutate node would look like:
     "firstName": "John",
     "friendlyName": "John"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  ...
 }
 ```
 
@@ -142,10 +124,7 @@ In the above example, the move rule will move the value at the existing `data.fi
     "lastName": "Smith",
     "firstName": "John"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  ...
 }
 ```
 
@@ -158,9 +137,6 @@ The payload after execution of the mutate node would look like:
     "lastName": "Smith",
     "friendlyName": "John"
   },
-  "applicationId": "568beedeb436ab01007be53d",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  ...
 }
 ```

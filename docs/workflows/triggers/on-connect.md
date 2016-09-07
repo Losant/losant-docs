@@ -21,10 +21,14 @@ The payload will have an empty object on the standard data field, since there is
   "time": <time of the connection>,
   "data": { },
   "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
   "triggerId": <id of the triggering device>,
   "triggerType": "deviceIdConnect",
   "deviceTags": {<any tags for the device>},
-  "flowId": <id of the current workflow>
+  "deviceName": <the device name>,
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
 }
 ```
 
@@ -35,12 +39,16 @@ For the example workflow above, a specific payload for a triggered workflow migh
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": { },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree",
   "triggerId": "56c8967bb8df0f0100d629120",
   "triggerType": "deviceIdConnect",
   "deviceTags": {
     "floor": ["2"],
     "location": ["warehouse1"]
   },
-  "flowId": "56c74add04d0b50100043381"
+  "deviceName": "My Factory Device",
+  "flowId": "56c74add04d0b50100043381",
+  "flowName": "Connection Info",
+  "globals": {}
 }
 ```

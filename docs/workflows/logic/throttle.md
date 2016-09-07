@@ -25,10 +25,7 @@ The throttle node has the ability to optionally add the amount of time that has 
     "voltage": 1.7,
     "color": 1393
   },
-  "applicationId": "56311a8e51645b2054eb258b",
-  "triggerId": "56c74add04d0b50100043381",
-  "triggerType": "deviceId",
-  "flowId": "5661f1330ae2980100894f45"
+  ...
 }
 ```
 
@@ -42,9 +39,6 @@ The payload after execution of the throttle node could look like:
     "color": 1393,
     "timeSinceLastCommand": 27551
   },
-  "applicationId": "56311a8e51645b2054eb258b",
-  "triggerId": "56c74add04d0b50100043381",
-  "triggerType": "deviceId",
-  "flowId": "5661f1330ae2980100894f45"
+  ...
 }
 ```

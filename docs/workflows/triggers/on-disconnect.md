@@ -26,10 +26,14 @@ The payload will have various information on the data field about the connection
     "connectedAt": <time when connection was originally established>
   },
   "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
   "triggerId": <id of the triggering device>,
   "triggerType": "deviceIdDisconnect",
   "deviceTags": {<any tags for the device>},
-  "flowId": <id of the current workflow>
+  "deviceName": <the device name>,
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
 }
 ```
 
@@ -45,12 +49,16 @@ For the example workflow above, a specific payload for a triggered workflow migh
     "connectedAt": Fri Feb 19 2016 16:25:00 GMT-0500 (EST)
   },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree",
   "triggerId": "56c8967bb8df0f0100d629120",
   "triggerType": "deviceIdDisconnect",
   "deviceTags": {
     "floor": ["2"],
     "location": ["warehouse1"]
   },
-  "flowId": "56c74add04d0b50100043381"
+  "deviceName": "My Factory Device",
+  "flowId": "56c74add04d0b50100043381",
+  "flowName": "Connection Info",
+  "globals": {}
 }
 ```

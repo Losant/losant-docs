@@ -33,8 +33,10 @@ The payload after the execution of the example gauge query node above would look
   },
   "globals": { },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree",
   "triggerId": "56c794a06895b00100cbe84c",
   "triggerType": "timer",
-  "flowId": "56c794a06895b00100cbe84c"
+  "flowId": "56c794a06895b00100cbe84c",
+  "flowName": "Query Data",
 }
 ```

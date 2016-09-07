@@ -43,10 +43,7 @@ So the following payload would pass validation, and the workflow would take the 
   "data": {
     "voltage": 1.7
   },
-  "applicationId": "56311a8e51645b2054eb258b",
-  "triggerId": "56c74add04d0b50100043381",
-  "triggerType": "deviceId",
-  "flowId": "5661f1330ae2980100894f45"
+  ...
 }
 ```
 
@@ -58,9 +55,6 @@ But this next payload would not pass validation, and so the workflow would take 
   "data": {
     "voltage": "not a number"
   },
-  "applicationId": "56311a8e51645b2054eb258b",
-  "triggerId": "56c74add04d0b50100043381",
-  "triggerType": "deviceId",
-  "flowId": "5661f1330ae2980100894f45"
+  ...
 }
 ```

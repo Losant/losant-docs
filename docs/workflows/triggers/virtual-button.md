@@ -27,9 +27,12 @@ As just discussed, the configuration of the virtual button directly determines w
   "time": <time of the button press>,
   "data": <the object defined in the virtual button configuration>,
   "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
   "triggerId": <id of the virtual button trigger>,
   "triggerType": "virtualButton",
-  "flowId": <id of the current workflow>
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
 }
 ```
 
@@ -42,8 +45,11 @@ For the example workflow above, a specific payload for a triggered workflow migh
     "power": "toggle"
   },
   "applicationId": "56311a8e51645b2054eb258b",
+  "applicationName": "Embree",
   "triggerId": "56c8967bb8df0f0100d629120-VJ7sVsZje",
   "triggerType": "virtualButton",
-  "flowId": "56c8967bb8df0f0100d62912"
+  "flowId": "56c8967bb8df0f0100d62912",
+  "flowName": "Manual Power Switch",
+  "globals": {}
 }
 ```

@@ -39,11 +39,14 @@ The SendGrid node can optionally place the response from SendGrid on the current
     "power": 17
   },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree",
   "triggerId": "56c74add04d0b50100043381-EkjUNjEol",
   "triggerType": "virtualButton",
   "flowId": "56c74add04d0b50100043381",
+  "flowName": "Power Consumption Warning",
   "sendgridResult": {
     "message": "success"
-  }
+  },
+  "globals": {}
 }
 ```

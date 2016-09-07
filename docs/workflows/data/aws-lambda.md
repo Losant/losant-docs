@@ -37,12 +37,15 @@ Finally, if the lambda function that is being called returns a result, it can op
     "awsSecret": "AWS_SECRET_WOULD_BE_HERE"
   },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree",
   "triggerId": "56c8967bb8df0f0100d629120",
   "triggerType": "deviceId",
   "deviceTags": {
     "floor": ["2"],
     "location": ["warehouse1"]
   },
-  "flowId": "56c74add04d0b50100043381"
+  "deviceName": "My Factory Device",
+  "flowId": "56c74add04d0b50100043381",
+  "flowName": "Power Useage Alert"
 }
 ```

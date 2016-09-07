@@ -27,9 +27,12 @@ The payload for a workflow triggered by a webhook will include all of the inform
     "body": <the request body>
   },
   "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
   "triggerId": <id of the webhook>,
   "triggerType": "webhook",
-  "flowId": <id of the current workflow>
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
 }
 ```
 
@@ -55,9 +58,12 @@ For the example workflow above, a specific payload for a triggered workflow migh
     }
   },
   "applicationId": "56311a8e51645b2054eb258b",
+  "applicationName": "Embree",
   "triggerId": "56c8bc1db8df0f0100d62914",
   "triggerType": "webhook",
-  "flowId": "56c8967bb8df0f0100d62912"
+  "flowId": "56c8967bb8df0f0100d62912",
+  "flowName": "External Command",
+  "globals": {}
 }
 ```
 

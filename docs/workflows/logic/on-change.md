@@ -63,10 +63,7 @@ The on change node has the ability to optionally add information about the previ
     "voltage": 1.7,
     "color": 1393,
   },
-  "applicationId": "56311a8e51645b2054eb258b",
-  "triggerId": "56c74add04d0b50100043381",
-  "triggerType": "deviceId",
-  "flowId": "5661f1330ae2980100894f45"
+  ...
 }
 ```
 
@@ -83,9 +80,6 @@ The payload after execution of the on change node might look like:
       "time": 1455838590449
     }
   },
-  "applicationId": "56311a8e51645b2054eb258b",
-  "triggerId": "56c74add04d0b50100043381",
-  "triggerType": "deviceId",
-  "flowId": "5661f1330ae2980100894f45"
+  ...
 }
 ```

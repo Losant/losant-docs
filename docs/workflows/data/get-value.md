@@ -21,9 +21,14 @@ In the above example, the workflow will fetch the value stored under the identif
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": { },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Light Wall",
   "triggerId": "56c794a06895b00100cbe84c",
   "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  "deviceTags": { },
+  "deviceName": "Ranger"
+  "globals": { },
+  "flowId": "56c794a06895b00100cbe84c",
+  "flowName": "Range To Color"
 }
 ```
 
@@ -36,8 +41,13 @@ The payload after the execution of the get value node would look like:
     "color": 12562
   },
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Light Wall",
   "triggerId": "56c794a06895b00100cbe84c",
   "triggerType": "deviceId",
-  "flowId": "56c794a06895b00100cbe84c"
+  "deviceTags": { },
+  "deviceName": "Ranger"
+  "globals": { },
+  "flowId": "56c794a06895b00100cbe84c",
+  "flowName": "Range To Color"
 }
 ```

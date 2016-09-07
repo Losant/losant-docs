@@ -21,9 +21,12 @@ The payload will include the payload of the MQTT message on the `data` field, as
   "time": <time of the message>,
   "data": <the mqtt message payload, as a string>,
   "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
   "triggerId": <id of the mqtt trigger>,
   "triggerType": "mqttTopic",
-  "flowId": <id of the current workflow>
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
 }
 ```
 
@@ -34,8 +37,11 @@ For the example workflow above, a specific payload for a triggered workflow migh
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": "machineOn",
   "applicationId": "568beedeb436ab01007be53d",
+  "applicationName": "Embree",
   "triggerId": "legacy/commands",
   "triggerType": "mqttTopic",
-  "flowId": "56c74add04d0b50100043381"
+  "flowId": "56c74add04d0b50100043381",
+  "flowName": "Command Translator",
+  "globals": {}
 }
 ```

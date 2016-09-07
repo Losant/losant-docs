@@ -65,10 +65,7 @@ The node also has the ability to optionally add which branch out of the node was
       "home": 1654
     }
   },
-  "applicationId": "56919b1a9d206d0100c54152",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56956cd25a6f2f0100dc70d4"
+  ...
 }
 ```
 
@@ -88,9 +85,6 @@ The payload after execution of the geofence node would look like:
       "work": true
     }
   },
-  "applicationId": "56919b1a9d206d0100c54152",
-  "triggerId": "56c794a06895b00100cbe84c",
-  "triggerType": "deviceId",
-  "flowId": "56956cd25a6f2f0100dc70d4"
+  ...
 }
 ```

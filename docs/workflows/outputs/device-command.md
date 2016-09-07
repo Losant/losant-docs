@@ -25,10 +25,7 @@ In the above example, the device command node is sending the command `setHueColo
     "voltage": 1.7,
     "color": 1393
   },
-  "applicationId": "56311a8e51645b2054eb258b",
-  "triggerId": "56c74add04d0b50100043381",
-  "triggerType": "deviceId",
-  "flowId": "5661f1330ae2980100894f45"
+  ...
 }
 ```
 

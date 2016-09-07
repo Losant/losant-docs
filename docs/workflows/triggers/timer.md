@@ -21,9 +21,12 @@ Unlike most other triggers, there is no special data included in the payload for
   "time": <time of the trigger>,
   "data": <the mqtt message payload, as a string>,
   "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
   "triggerId": <id of the timer trigger>,
   "triggerType": "timer",
-  "flowId": <id of the current workflow>
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
 }
 ```
 
@@ -34,8 +37,11 @@ For the example workflow above, a specific payload for a triggered workflow migh
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {},
   "applicationId": "56311a8e51645b2054eb258b",
+  "applicationName": "Embree",
   "triggerId": "78fbb050d7f811e5b995b3a5b31df7d8",
   "triggerType": "timer",
-  "flowId": "56c8967bb8df0f0100d62912"
+  "flowId": "56c8967bb8df0f0100d62912",
+  "flowName": "Electricty Pricing Data",
+  "globals": {}
 }
 ```
