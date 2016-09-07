@@ -28,7 +28,7 @@ The payload will have various information on the data field about the connection
   "applicationId": <id of the current application>,
   "triggerId": <id of the triggering device>,
   "triggerType": "deviceIdDisconnect",
-  "deviceTags": [<any tags for the device>],
+  "deviceTags": {<any tags for the device>},
   "flowId": <id of the current workflow>
 }
 ```
@@ -47,10 +47,10 @@ For the example workflow above, a specific payload for a triggered workflow migh
   "applicationId": "568beedeb436ab01007be53d",
   "triggerId": "56c8967bb8df0f0100d629120",
   "triggerType": "deviceIdDisconnect",
-  "deviceTags": [
-    { "key": "floor", "value": "2" },
-    { "key": "location", "value": "warehouse1" }
-  ],
+  "deviceTags": {
+    "floor": ["2"],
+    "location": ["warehouse1"]
+  },
   "flowId": "56c74add04d0b50100043381"
 }
 ```

@@ -39,10 +39,10 @@ Finally, if the lambda function that is being called returns a result, it can op
   "applicationId": "568beedeb436ab01007be53d",
   "triggerId": "56c8967bb8df0f0100d629120",
   "triggerType": "deviceId",
-  "deviceTags": [
-    { "key": "floor", "value": "2" },
-    { "key": "location", "value": "warehouse1" }
-  ],
+  "deviceTags": {
+    "floor": ["2"],
+    "location": ["warehouse1"]
+  },
   "flowId": "56c74add04d0b50100043381"
 }
 ```
