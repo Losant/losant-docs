@@ -34,7 +34,9 @@ A device can report state as often as needed, as long as it's within the Losant 
 
 [Standalone](/devices/overview/#device-type) or [Gateway](/devices/overview/#device-type) devices typically report state over an MQTT or REST connection. The Losant MQTT clients make it easy to form MQTT connections and report state to Losant. If your device only reports state every few minutes or every few hours, then the REST interface likely makes more sense so it doesn't have to maintain a persistent connection.
 
-[Virtual](/devices/overview/#device-type) or [Peripheral](/devices/overview/#device-type) do not connect to Losant or report their own state. Reporting the state of a virtual device is typically done using a workflow, while a gateway device generally reports the state of a peripheral device on behalf of that peripheral.
+[Peripheral](/devices/overview/#device-type) do not connect to Losant or report their own state. A gateway device generally reports the state of a peripheral device on behalf of that peripheral.
+
+Workflows can also report state for any type of device using the [Device State](/workflows/outputs/device-state) node.  In addition, when authenticated against the Losant API as a user, the [Device Post State](/rest-api/device/#post-state) API endpoint can be used to record state for any type of device.
 
 ## Using State
 

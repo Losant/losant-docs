@@ -51,7 +51,7 @@ Next, choose the `Create from Scratch` option.
 
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
-1. Leave "Virtual Device" unchecked.
+1. For "Device Type", leave "Standalone" selected.
 1. No device tags are required.
 1. Add a device attribute with the name "moisture" and the type `Number`.
 

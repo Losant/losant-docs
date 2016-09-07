@@ -90,6 +90,7 @@ pages:
     - Outputs:
         - Debug: workflows/outputs/debug.md
         - Device Command: workflows/outputs/device-command.md
+        - Device State: workflows/outputs/device-state.md
         - Record Event: workflows/outputs/record-event.md
         - HTTP: workflows/outputs/http.md
         - Modify Event: workflows/outputs/modify-event.md
@@ -100,7 +101,6 @@ pages:
         - SMS: workflows/outputs/sms.md
         - Tweet: workflows/outputs/tweet.md
         - Twilio: workflows/outputs/twilio.md
-        - Virtual Device: workflows/outputs/virtual-device.md
 - Losant Go:
     - Overview: losant-go/overview.md
 - MQTT:

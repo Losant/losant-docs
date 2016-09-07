@@ -4,7 +4,7 @@ Losant is an easy-to-use and powerful developer platform designed to help you qu
 
 ![Overview Diagram](/images/getting-started/overview-diagram.png "Overview Diagram")
 
-If you don't have a device, but still want to experience many of the features Losant provides, please check out the [Losant Walkthrough](/getting-started/walkthrough), which will guide you through building a local weather dashboard using a virtual device.
+If you don't have a device, but still want to experience many of the features Losant provides, please check out the [Losant Walkthrough](/getting-started/walkthrough), which will guide you through building a local weather dashboard.
 
 ## Device Connectivity
 

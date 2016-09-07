@@ -4,7 +4,7 @@ Don't have a device? No problem! This walkthrough will allow you to experience m
 
 ![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
 
-Since all data doesn't come from physical things, Losant provides the concept of [virtual devices](/devices/overview/#device-type), which get their state information from sources other than real objects. We're going to use a virtual device in this walkthrough to store and visualize real weather data.
+Since all data doesn't come from physical things, Losant does not require that a Losant device map to an actual pyshical device.  State can be reported to a Losant device through other means - for instance, we are going to use a workflow to gather and report state for a device in this walkthrough in order to store and visualize real weather data.
 
 ## Step 1: Sign up for Forecast.io API
 
@@ -20,7 +20,7 @@ After signing up you'll be prompted to create your first application. You can al
 
 ![Create Application](/images/getting-started/walkthrough/create-application.png "Create Application")
 
-## Step 3: Add the Virtual Device
+## Step 3: Add the Device
 
 Now that we have an application we need a [device](/devices/overview) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu.  Choose `Create From Scratch` on the following screen, since we want to create from a blank device.
 
@@ -30,7 +30,7 @@ The [Forecast.io API](https://developer.forecast.io/docs/v2) provides a lot of i
 
 ![Device Settings](/images/getting-started/walkthrough/device-settings.png "Device Settings")
 
-When creating the device, make sure `Virtual` is selected as the device type. Device tags won't be needed since we only have a single device. Tags become useful when you start organizing hundreds or thousands of devices.
+When creating the device, make sure `Standalone` is selected as the device type. Device tags won't be needed since we only have a single device. Tags become useful when you start organizing hundreds or thousands of devices.
 
 The `Device Attributes` are important. These are what tell Losant what data this device will be reporting and what Losant will be storing. For the weather device, we'll be storing the following attributes:
 
@@ -52,7 +52,7 @@ The screen will change and display information about your device, including the 
 
 ## Step 4: Requesting Weather Data
 
-In this step, we're going to use a [Losant workflow](/workflows/overview/) to periodically request weather data from Forecast.io and store it using our new virtual device.
+In this step, we're going to use a [Losant workflow](/workflows/overview/) to periodically request weather data from Forecast.io and store it on our new device.
 
 Create a new workflow from the `Workflows` main menu.
 
@@ -104,11 +104,11 @@ We can now inspect our payload and can see the result from the Forecast.io API c
 
 ## Step 5: Save Weather Data to Device
 
-Now that we've got weather data being queried every 2 minutes, it's time to start storing it on our virtual device. Drag a virtual device node onto the canvas and connect it to the the HTTP node.
+Now that we've got weather data being queried every 2 minutes, it's time to start storing it on our device. Drag a device state node onto the canvas and connect it to the the HTTP node.
 
-![Virtual Device](/images/getting-started/walkthrough/virtual-device.png "Virtual Device")
+![Device State](/images/getting-started/walkthrough/device-state.png "Device State")
 
-The virtual device node requires you to select the device to report as - which in this case is the device you created earlier. We then set the devices state by publishing values for all of the attributes we defined for the device earlier. The values support what Losant calls templates, which means we can reference data stored on the payload. As you saw from the debug output earlier, the payload currently looks something like this:
+The device state node requires you to select the device to report as - which in this case is the device you created earlier. We then set the devices state by publishing values for all of the attributes we defined for the device earlier. The values support what Losant calls templates, which means we can reference data stored on the payload. As you saw from the debug output earlier, the payload currently looks something like this:
 
 ```json
 {
@@ -165,7 +165,7 @@ We can then assign values to our various attributes by using the following templ
 * visibility : `{{ weather.body.currently.visibility }}`
 * pressure : `{{ weather.body.currently.pressure }}`
 
-You can now deploy this workflow and every time the timer triggers, the virtual device will publish those state attributes to Losant.
+You can now deploy this workflow and every time the timer triggers, the device state node will publish those state attributes to your device in Losant.
 
 ![Deploy Workflow](/images/getting-started/walkthrough/deploy-workflow.png "Deploy Workflow")
 
