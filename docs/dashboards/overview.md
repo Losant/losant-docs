@@ -65,7 +65,6 @@ NOTE: The following blocks will not display any data on public dashboards or to 
 
 *   `Application List`
 *   `Dashboard List`
-*   `Input Controls`
 
 ## Templating
 
