@@ -85,6 +85,7 @@ pages:
         - Gauge Query: workflows/data/gauge-query.md
         - Get Value: workflows/data/get-value.md
         - HTTP: workflows/data/http.md
+        - Losant API: workflows/data/losant-api.md
         - MongoDB: workflows/data/mongo.md
         - Redis: workflows/data/redis.md
         - Store Value: workflows/data/store-value.md
