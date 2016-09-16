@@ -4,6 +4,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/getting-started-with-mc-things-and-losant" target="_blank">Getting Started with mc-Things and Losant</a>
+
 *   <a href="https://www.losant.com/blog/how-to-use-node-red-as-losant-gateway" target="_blank">How to Use Node-RED as a Losant Gateway</a>
 
 *   <a href="https://www.losant.com/blog/building-environment-monitor-johnny-five-inventors-kit" target="_blank">Build an Environmental Monitor with the Johnny-Five Inventor's Kit</a>
@@ -38,7 +40,7 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 *   <a href="https://www.losant.com/blog/how-to-connect-a-particle-photon-to-the-losant-iot-platform" target="_blank">How to connect a Particle Photon to the Losant IoT Platform</a>
 
-## Losant Hackster Projects
+## Losant Community Projects
 
 *   <a href="https://www.hackster.io/26972/tap-tracker-smart-tap-handle-ae15ba" target="_blank">Tap Tracker Smart Tap Handle</a>
 
@@ -55,3 +57,5 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 *   <a href="https://www.hackster.io/charifmahmoudi/ez-device-lib-to-connect-particle-board-to-structure-0e624d" target="_blank">EZ-Device: Lib to Connect Particle Board to Losant</a>
 
 *   <a href="https://www.hackster.io/anandtamboli/how-i-integrated-1btn-with-losant-iot-platform-15f736" target="_blank">How I Integrated 1btn with Losant IoT Platform</a>
+
+*   <a href="http://forefront.io/a/iot-intruder-detector/" target="_blank">Internet of Things Intruder Detector</a>
