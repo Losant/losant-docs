@@ -20,7 +20,7 @@ The payload will include information about the event on the `data` field, as wel
 {
   "time": <time of the event>,
   "data": {
-    "id":           <event id>
+    "id":           <event id>,
     "creationDate": <creation date of the event>
     "sourceType":   <"flow" or "user" or "device">,
     "sourceId":     <id of the source>,
@@ -48,7 +48,7 @@ For the example workflow above, a specific payload for a triggered workflow migh
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
-    "id":           "66c794a06895b00100cbe84c"
+    "id":           "66c794a06895b00100cbe84c",
     "creationDate": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
     "sourceType":   "flow",
     "sourceId":     "56c794a06895b00100cbe84c",
