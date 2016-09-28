@@ -88,6 +88,7 @@ pages:
         - Losant API: workflows/data/losant-api.md
         - MongoDB: workflows/data/mongo.md
         - Redis: workflows/data/redis.md
+        - Salesforce Cases: workflows/data/salesforce-cases.md
         - Store Value: workflows/data/store-value.md
     - Outputs:
         - Debug: workflows/outputs/debug.md
