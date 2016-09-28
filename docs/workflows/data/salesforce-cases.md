@@ -87,3 +87,63 @@ Update a case record. Leave a parameter blank to leave its current value unchang
 ![Salesforce Result](/images/workflows/data/salesforce-result.png "Salesforce Result")
 
  If a path is defined, the Salesforce Case node will store the response from the request at the defined [payload path](/workflows/overview/#payload-paths).
+
+ Depending on the type of request made, the response from Salesforce can take a few different forms. Here is an example of the most complicated response object: an array of results returned from a query (only one item is included here) ...
+
+```json
+ {
+   "errors": [],
+   "items": [
+     {
+       "attributes": {
+         "type": "Case",
+         "url": "/services/data/v37.0/sobjects/Case/500410000021Zt4AAE"
+       },
+       "Id": "500410000021Zt4AAE",
+       "IsDeleted": false,
+       "CaseNumber": "00001002",
+       "ContactId": "003410000052pXCAAY",
+       "AccountId": "00141000005JEI8AAO",
+       "AssetId": null,
+       "ParentId": null,
+       "SuppliedName": null,
+       "SuppliedEmail": null,
+       "SuppliedPhone": null,
+       "SuppliedCompany": null,
+       "Type": "Electrical",
+       "Status": "New",
+       "Reason": "Installation",
+       "Origin": "Web",
+       "Subject": "Seeking guidance on electrical wiring installation for GC5060",
+       "Priority": "Low",
+       "Description": null,
+       "IsClosed": false,
+       "ClosedDate": null,
+       "IsEscalated": false,
+       "OwnerId": "00541000000KCeFAAW",
+       "CreatedDate": "2016-09-27T20:32:11.000+0000",
+       "CreatedById": "00541000000KCeFAAW",
+       "LastModifiedDate": "2016-09-27T20:32:11.000+0000",
+       "LastModifiedById": "00541000000KCeFAAW",
+       "SystemModstamp": "2016-09-27T20:32:11.000+0000",
+       "LastViewedDate": null,
+       "LastReferencedDate": null,
+       "EngineeringReqNumber__c": null,
+       "SLAViolation__c": "No",
+       "Product__c": "GC3060",
+       "PotentialLiability__c": "No"
+     }
+   ],
+   "success": true
+  }
+```
+If there is an error in your request, the Salesforce API will return an appropriate error message. For example ...
+
+```json
+{
+  "success": false,
+  "errors": [
+    "Error: INVALID_LOGIN: Invalid username, password, security token; or user locked out."
+  ]
+}
+```
