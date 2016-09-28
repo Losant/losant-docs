@@ -8,11 +8,11 @@ The Losant Salesforce Builder Kit</a> is an easy way to get up and running with 
 
 The device we're building in this workshop contains a button and an LED. When the button is pressed, a <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=cases_home.htm&language=en_US" target="_blank">Salesforce Case</a> will be created. The LED will be controlled by the number of open cases. If there are any open cases, the LED will be lit. If there are no open cases, the LED will be off. This device provides a quick way to create new cases and an easy way to visualize whether or not there are open cases that need to be addressed.
 
-## Wiring
+## 1. Build the Device
 
 // TODO: combine the button and led wiring instructions into one step.
 
-## Salesforce Setup
+## 2. Salesforce Setup
 
 If you haven't already, sign up for a <a href="https://developer.salesforce.com" target="_blank">Salesforce developer account</a>.
 
@@ -28,7 +28,7 @@ The last step is to click your name in the top-right corner and select "Switch t
 
 ![Switch to Lightning](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/switch-to-lightning.jpg "Switch to Lightning")
 
-## How to get Salesforce Security Token
+## 3. How to get Salesforce Security Token
 
 In order to integrate with Salesforce, we're going to need a security token. You can get this through your account settings. First, click your account icon in the top-right corner and select "Settings".
 
