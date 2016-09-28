@@ -4,6 +4,10 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/displaying-garage-door-status-with-losant" target="_blank">Displaying My Garage Door Status With Losant</a>
+
+*   <a href="https://www.losant.com/blog/send-data-from-pubnub-blocks-to-the-losant-platform" target="_blank">Send Data From Pubnub Blocks To The Losant Platform</a>
+
 *   <a href="https://www.losant.com/blog/getting-started-with-mc-things-and-losant" target="_blank">Getting Started with mc-Things and Losant</a>
 
 *   <a href="https://www.losant.com/blog/how-to-use-node-red-as-losant-gateway" target="_blank">How to Use Node-RED as a Losant Gateway</a>
