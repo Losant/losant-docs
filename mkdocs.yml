@@ -57,6 +57,7 @@ pages:
     - Dashboard List: dashboards/dashboard-list.md
 - Workflows:
     - Overview: workflows/overview.md
+    - Accessing Payload Data: workflows/accessing-payload-data.md
     - Triggers:
         - Device: workflows/triggers/device.md
         - On Connect: workflows/triggers/on-connect.md
