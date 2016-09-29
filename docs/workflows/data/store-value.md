@@ -6,12 +6,9 @@ The store value node allows a workflow to store a value for retrieval and use in
 
 ## Configuration
 
-There are two configuration properties for the store value node - an identifier and a source. The identifier is how the workflow identifies the value being stored.  This identifier is what should be used in subsequent [get value node](/workflows/data/get-value/) nodes that want to load this value in other runs of the workflow, and can be any string (and is templateable).  The source is the value to actually store, and can be one of a couple different options:
+There are two configuration properties for the store value node - an identifier and a source. The identifier is how the workflow identifies the value being stored.  This identifier is a [string template](/workflows/accessing-payload-data/#string-templates) the key under which the value is stored. It is here that subsequent [get value node](/workflows/data/get-value/) nodes can access this value in other runs of the workflow.
 
-*   **Payload Path** is the most common, and the one displayed in the example below.  With this option, the source should be a JSON path defining where in the current payload the value to store will be. If the payload path does not actually exist in the current payload, the currently stored value (if there is one) will be deleted.
-*   **Template** means the value will be evaluated as a standard templatable field, and the result will be the value to store.
-*   **JSON** means the value will be treated as static JSON, and the resulting JSON parsed object will be what is stored.  Using this choice, you can set static complex objects as the value, or even just simple values like true or false.
-*   **Empty** means the node will explicitly clear whatever value is currently stored.
+The source is the value to actually store, and can be defined as a [payload path](/workflows/accessing-payload-data/#payload-paths), [string template](/workflows/accessing-payload-data/#string-templates) or [JSON template](/workflows/accessing-payload-data/#json-templates). You may also choose to explicitly clear the value at the identifier by choosing "Empty".
 
 ![Store Value Node Example](/images/workflows/data/store-value-node-example.png "Store Value Node Example")
 

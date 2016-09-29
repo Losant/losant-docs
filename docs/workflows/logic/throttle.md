@@ -16,7 +16,7 @@ In the above example, the workflow will follow the right route out of the thrott
 
 ![Throttle Node Time Since](/images/workflows/logic/throttle-node-time-since.png "Throttle Node Time Since")
 
-The throttle node has the ability to optionally add the amount of time that has passed since an un-throttled execution of the node to the payload at an arbitrary JSON path.  If a path is defined, the amount of time (in milliseconds) will be placed at that path no matter which branch out of the throttle node is taken.  In the above example, the amount of time will be placed at the `data.timeSinceLastCommand` path.  So for example, given the following payload:
+The throttle node has the ability to optionally add the amount of time that has passed since an un-throttled execution of the node to the payload at an arbitrary [payload path](/workflows/accessing-payload-data/#payload-paths).  If a path is defined, the amount of time (in milliseconds) will be placed at that path no matter which branch out of the throttle node is taken.  In the above example, the amount of time will be placed at the `data.timeSinceLastCommand` path.  So for example, given the following payload:
 
 ```JSON
 {

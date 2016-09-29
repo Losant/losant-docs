@@ -6,27 +6,29 @@ The MongoDB node allows a workflow to query or update values in a [MongoDB](http
 
 ## Configuration
 
-The configuration of the MongoDB node can be broken down into 4 major sections - configuring the connection, choosing the operation, setting up the arguments, and choosing what to do with the result.
+The configuration of the MongoDB node can be broken down into four major sections - configuring the connection, choosing the operation, setting up the arguments, and choosing what to do with the result.
 
 ![MongoDB Node Connection Configuration](/images/workflows/data/mongodb-node-connection.png "MongoDB Node Connection Configuration")
 
-When configuring the connection, you must provide a Mongo [Connection String URI](https://docs.mongodb.com/manual/reference/connection-string/), which must include a database name. You also choose here what collection that the node will be operating on.  Both of these fields are templatable, and so can be configured with values from the current workflow payload.  In the example above, the mongo node has been configured to connect to the `embree` database at `example.com` with the user name `user` and the password `pass`, and the node will be using the collection `alertMapping`.
+When configuring the connection, you must provide a Mongo [Connection String URI](https://docs.mongodb.com/manual/reference/connection-string/), which must include a database name. You also choose here what collection that the node will be operating on. Both of these fields accept [template strings](/workflows/accessing-payload-data/#template-strings), and so can be configured with values from the current workflow payload. In the example above, the Mongo node has been configured to connect to the `embree` database at `example.com` with the username `user` and the password `pass`, and the node will be using the collection `alertMapping`.
 
 ![MongoDB Node Operation](/images/workflows/data/mongodb-node-operation.png "MongoDB Node Operation")
 
-Next you will need to choose the operation that will be performed against the database.  Currently the node has support for the operations [Count](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#count), [Distinct](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#distinct), [Find](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#find), [FindOne](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne), [Insert](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insert), and [Remove](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#remove).  Depending on what operation you choose, the next section of configuration will change - depending on the expected arguments for the chosen operation.  In the example above, the node is configured to perform a `findOne` operation.
+Next you will need to choose the operation that will be performed against the database. Currently the node has support for the operations [Count](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#count), [Distinct](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#distinct), [Find](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#find), [FindOne](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne), [Insert](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insert), and [Remove](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#remove).
 
 ![MongoDB Node Arguments](/images/workflows/data/mongodb-node-arguments.png "MongoDB Node Arguments")
 
-Depending on the chosen operation, the expected arguments here will change.  For example,
+Depending on the chosen operation, the expected arguments here will change. For example,
 with the `findOne` operation, there are two arguments - the query itself, and any options
-for the query.  In the above example, we are not passing any options, but we are passing
-a templated query - searching for a document in the collection with a deviceId field that
-matches the trigger id that kicked off the run of the workflow.  Most of the arguments for the various operations are expected to evaluate to JSON objects, and the node supports [EJSON](https://docs.mongodb.com/manual/reference/mongodb-extended-json/) syntax for specifying things like ObjectIDs.
+for the query. In the above example, we are not passing any options, but we are passing
+a [JSON template](/workflows/accessing-payload-data/#json-templates) - searching for a document in the collection with a deviceId field that
+matches the trigger ID that kicked off the run of the workflow. Most of the arguments for the various operations are expected to evaluate to JSON objects, and the node supports [EJSON](https://docs.mongodb.com/manual/reference/mongodb-extended-json/) syntax for specifying things like ObjectIDs.
+
+Both the query argument and the options argument allows users to choose the method by which the value will be set: a [payload path](/workflows/accessing-payload-data/#payload-paths), a [string template](/workflows/accessing-payload-data/#string-templates) or a [JSON template](/workflows/accessing-payload-data/#payload-templates).
 
 ![MongoDB Node Result](/images/workflows/data/mongodb-node-result.png "MongoDB Node Result")
 
-Finally, you can optionally choose to store the result of the mongo operation on the payload.  For operations like `insert` or `remove`, you might not care about the result, but for an operation like the `findOne` above, you almost certainly do! In this case the result of the `findOne` is being placed at the JSON path `data.mongoResult`. Here is an example payload after the above MongoDB workflow node has been run:
+Finally, you can optionally choose to store the result of the Mongo operation on the payload. For operations like `insert` or `remove`, you might not care about the result, but for an operation like the `findOne` above, you almost certainly do! In this case the result of the `findOne` is being placed at the [payload path](/workflows/accessing-payload-data/#payload-paths) `data.mongoResult`. Here is an example payload after the above MongoDB workflow node has been run:
 
 ```json
 {

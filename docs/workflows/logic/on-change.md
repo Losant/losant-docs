@@ -16,11 +16,11 @@ If the payload field being monitored for changes does in fact change between wor
 
 ![On Change Node Field To Monitor](/images/workflows/logic/on-change-node-field-to-monitor.png "On Change Node Field To Monitor")
 
-The field to monitor is a JSON path to a value in the payload.  In the above example, the value of the field `data.color` in the payload is what will be compared across workflow runs.  If the field does not exist, the value that will be compared against will be `undefined`.
+The field to monitor is a [payload path](/workflows/accessing-payload-data/#payload-paths) to a value in the payload.  In the above example, the value of the field `data.color` in the payload is what will be compared across workflow runs.  If the field does not exist, the value that will be compared against will be `undefined`.
 
 ### The Type of Change
 
-There are 7 different ways that a "change" can be defined, and those can be broken into the following 3 groups.
+There are seven different ways that a "change" can be defined, and those can be broken into the following 3 groups.
 
 #### Equality Comparison
 
@@ -54,7 +54,7 @@ The percentage comparison types are very similar to the numerical comparison typ
 
 ![On Change Node Previous Value](/images/workflows/logic/on-change-node-previous-value.png "On Change Node Previous Value")
 
-The on change node has the ability to optionally add information about the previous value being compared against to the payload at an arbitrary JSON path. If a path is defined, the previous value and time at which that value ran through the workflow will be placed at that path no matter which branch out of the on change node is taken.  If there is no previous value that was compared against (i.e., this is the first time this field is being checked), then nothing will be added to the payload.  In the above example, the previous value information will be placed at the `data.previousColor` path. So, for example, given the following payload:
+The on change node has the ability to optionally add information about the previous value being compared against to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the previous value and time at which that value ran through the workflow will be placed at that path no matter which branch out of the on change node is taken.  If there is no previous value that was compared against (i.e., this is the first time this field is being checked), then nothing will be added to the payload.  In the above example, the previous value information will be placed at the `data.previousColor` path. So, for example, given the following payload:
 
 ```JSON
 {

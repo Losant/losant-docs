@@ -10,7 +10,7 @@ There are two main sections in configuring the time range node - first choosing 
 
 ![Time To Check](/images/workflows/logic/time-range-node-check-config.png "Time To Check")
 
-The time to check against is defined using a JSON path representing a location on the current workflow payload.  This can be left blank, and if it is left blank, the time of the payload itself is used.  In the above example, we are doing just that - using the time of the payload itself.
+The time to check against is defined using a [payload path](/workflows/accessing-payload-data/#payload-paths) representing a location on the current workflow payload.  This can be left blank, and if it is left blank, the time of the payload itself is used.  In the above example, we are doing just that - using the time of the payload itself.
 
 The range is defined using HH:MM format for a start time and end time (using 24 hour time format) - for instance 08:15 as the start and 13:30 as the end means that time values 8:15am or later, but earlier than 1:30pm, would fall within the range.  The start time value is inclusive, and the end time value is exclusive - meaning that in the 08:15 to 13:30 example, the exact time 08:15 would be in the range but the exact time 13:30 would not be included.  Leaving the start or end fields blank defaults those fields to the value 00:00, which means the entire day is included within the range.
 
@@ -26,4 +26,4 @@ In the above example the workflow will take the `true` (right) path out of the t
 
 ![Time Range Output](/images/workflows/logic/time-range-node-output.png "Time Range Output")
 
-The time range node has one optional output field.  The `Path for Branch` field takes a JSON path, and if it is defined the value `true` or `false` will be placed at the given path, depending on which branch out of the node is taken.
+The time range node has one optional output field.  The `Path for Branch` field takes a [payload path](/workflows/accessing-payload-data/#payload-paths), and if it is defined the value `true` or `false` will be placed at the given path, depending on which branch out of the node is taken.

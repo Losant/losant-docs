@@ -67,15 +67,11 @@ Text inputs allow for the setting of arbitrary values, usually as a **string**. 
 
 From the dashboard, enter some text within the text input field to use within your payload or command name.
 
-Note that it is possible to set number or boolean values in a text input if the input's Template ID is not "stringified" (by wrapping the `{{templateId}}` in double quotes) when constructing your payload. However, if you're not careful about what is entered in the text input, you may end up submitting invalid JSON, which will cause the button trigger to fail. For that reason, we recommend using range and toggle inputs for number and boolean values, respectively.
-
 ## Constructing Payloads
 
-Device commands and workflow triggers may optionally be sent with a JSON payload, and it is the purpose of the input controls to help you construct the payload quickly and easily from the dashboard.
+Device commands and workflow triggers may optionally be sent with a JSON payload, constructed as a [JSON template](/workflows/accessing-payload-data/#json-templates). It is the purpose of the input controls to help you construct the payload quickly and easily from the dashboard.
 
-The payload attached to each button is run through the <a href="http://handlebarsjs.com/" target="\_blank">Handlebars templating language</a>, where the values of each input (by Template ID) replaces the tag for the corresponding Template ID within your JSON object.
-
-For example, given the following configuration ...
+When constructing the [JSON template](/workflows/accessing-payload-data/#json-templates), the values of the other inputs are referenced by their Template ID. For example, given the following configuration ...
 
 ![Lights Example](/images/dashboards/input-controls-lights-example.png "Lights Example")
 
@@ -91,9 +87,7 @@ On press of the button, "My First Device" will receive a command named "setColor
 }
 ```
 
-`brightess` is passed as a number and `enabled` is passed as a boolean, whereas the R, G, and B values are passed as part of a string since the `foregroundColor` property's value is wrapped in double quotes. There is also a static property of `source` being passed in the payload, and since we are not assigning any Template ID to its value, the property will always be submitted with a value of `"dashboard"`.
-
-There are a number of different helpers available beyond the standard Handlebars helpers - you can learn more about what the available helpers are and what they do [here](/dashboards/overview/#templating).
+`brightness` is passed as a number and `enabled` is passed as a boolean, whereas the R, G, and B values are passed as part of a string since the `foregroundColor` property's value is wrapped in double quotes. There is also a static property of `source` being passed in the payload, and since we are not assigning any Template ID to its value, the property will always be submitted with a value of `"dashboard"`.
 
 **Note:** If you do not define a payload for a Trigger Workflow button, the virtual button's default payload – as set within that button's parent workflow – will be sent when your dashboard button is clicked. If you wish to send a blank payload instead of the default payload, set the payload value to `{}` (opening and closing curly braces with nothing in between).
 
@@ -103,7 +97,7 @@ The Help Block is a special component in the Input Controls block that allows te
 
 ![Help Block Input](/images/dashboards/input-controls-help-input.png "Help Block Input")
 
-The component has only one input: a textarea in which arbitrary copy and payload variables can be entered. Like button payloads, the content of the textarea is run through the <a href="http://handlebarsjs.com/" target="\_blank">Handlebars templating language</a>, which allows for input control values (referenced by their Template ID) to be displayed within the block. These values will update as the user changes input values in the other components.
+The component has only one input: a textarea in which arbitrary text and [string template](/workflows/accessing-payload-data/#string-templates) referencing values by Template ID can be entered. These values will update as the user changes input values in the other components.
 
 ![Help Block Example](/images/dashboards/input-controls-help-example.png "Help Block Example")
 

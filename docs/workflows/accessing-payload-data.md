@@ -73,6 +73,8 @@ Payload paths **do not accept variables** within the path definition; the paths 
 
 **String templates** are constructed using a payload path that is wrapped in double curly brackets, such as `{{foo.bar}}`. The value at the specified path should resolve to a printable property; specifically, the value should be of the type "string", "number", "boolean" or "undefined". Objects referenced in this way will return `[object Object]`, and arrays will return as comma-concatenated strings of all array values, such as `foo,bar,42,false`.
 
+Areas within the app that call for a string template do not necessarily have to include a variable; it is perfectly acceptable to put a static string value in place of a template.
+
 String templates appear in a number of use places within the Losant platform; in all cases, they serve one of two purposes:
 
 *   **Referencing payload values**, such as for setting state in the [Device State node](/workflows/outputs/device-state/)
@@ -189,6 +191,8 @@ String templates used within expressions **may not use block helpers**; they may
 
 Note that, when doing string comparisons in expressions, it is **not** necessary to wrap any string template in quotes to "stringify" the output. The expression will be evaluated with the output of the template string serving as a variable; for example `{{foo}} === 'bar'` or `{{bat}} !== {{baz}}`.
 
+Below are lists of operators, keywords and functions supported in expressions. If you have use cases that are not handled by these, please let us know in our [forums](https://forums.losant.com).
+
 ### Supported Operators
 
 Expressions support the following operators:
@@ -293,7 +297,7 @@ JSON templates can take any of the following formats (or a combination thereof):
 *   JSON containing string helpers for keys or values. e.g. `{"month": {{format date 'MMMM'}} }`
 *   A single reference to a property on an object whose value is an object. e.g. `{{foo.bar}}`
 
-Your entire input will run through Handlebars and the Losant-provided helpers. **After evaluation, the result must be valid JSON.**
+Your entire input will run through Handlebars and the Losant-provided helpers. **After evaluation, the result must be valid JSON.** Because of this, any string value being output by a string template should be wrapped in double quotes, like so: `{ "foo": "{{data.aStringProp}}" }`.
 
 ### Examples
 

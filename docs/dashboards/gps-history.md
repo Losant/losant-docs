@@ -39,9 +39,9 @@ Optionally, you may set a specific map center and/or zoom level for your map whe
 
 ![Point Display Configuration](/images/dashboards/gps-history-point-config.png "Point Display Configuration")
 
-The history block optionally allows templating of the icons and popups for the various points being displayed.  By default, the templates place a red marker at the oldest (starting) point and a green marker at the newest (current) point, and clicking either will display a popup with the time and coordinates for that point.
+The history block optionally allows [string templates](/workflows/accessing-payload-data/#string-templates) of the icons and popups for the various points being displayed. By default, the templates place a red marker at the oldest (starting) point and a green marker at the newest (current) point, and clicking either will display a popup with the time and coordinates for that point.
 
-Icon templates are rendered using [Handlebars](http://handlebarsjs.com/). The template must resolve to a single url pointing at an image with a size of 30x70 or larger using the same ratio (the center of the image is centered over the point). Popup templates are also rendered using [Handlebars](http://handlebarsjs.com/), and the result is treated as [Markdown](http://commonmark.org/help/) for display in the popup. If either the icon or popup render to a blank result, there is no icon or popup displayed for that point. Losant provides a number of [Handlebars Helpers](/dashboards/overview/#templating) which make it easy to build quite complex templates, and the popups have support for markdown link and image syntax.
+When using a string template for an icon, the template must resolve to a single URL pointing to an image with a size of **30px wide by 70 tall** – or larger, so long as the ratio is the same. (The center of the image is centered over the point). String templates in popups can also be wrapped in [Markdown](http://commonmark.org/help/), allowing for formatting options such as **bold** and *italic*. Using Losant's built-in [Handlebars helpers](/workflows/accessing-payload-data/#string-templates), it is possible to build quite complex templates image and icon string templates.
 
 Inside either the icon or popup templates, there are a number of variables available for you to use:
 

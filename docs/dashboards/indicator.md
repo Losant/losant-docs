@@ -62,8 +62,8 @@ Two template variables are available to you when configuring conditions:
 
 Each condition takes three parameters:
 
-*   **Expression**: The expression to evaluate. This should include either the `{{value}}` or the formatted `{{time}}` variable, an operator, and a static value against which to compare the result. If you're expecting the value to come back as a string, make sure to put the value template tag in quotes (e.g. `"{{value}}" === "foo"`).
-*   **Label**: The text to display within the indicator block. This field is optional, and can include [Handlebars](http://handlebarsjs.com/) (with our built-in [helpers](/dashboards/overview/#templating)) and [Markdown](http://commonmark.org/help/). The color of the text will automatically switch between black and white depending on the block's chosen background color.
+*   **Expression**: The [expression](/workflows/accessing-payload-data/#expressions) to evaluate. This should include either the `{{value}}` or the formatted `{{time}}` variable, and a static value against which to compare the result.
+*   **Label**: The text to display within the indicator block. This field is optional, and may include [string templates](workflows/accessing-payload-data/#string-templates) and [Markdown](http://commonmark.org/help/). The color of the text will automatically switch between black and white depending on the block's chosen background color.
 *   **Color**: The background color of the indicator block. Default is green.
 
 ## Default Condition
