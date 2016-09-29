@@ -10,7 +10,9 @@ There are two main configuration sections for the AWS Lambda node - first config
 
 ![AWS Lambda Node Credentials](/images/workflows/data/aws-lambda-node-credentials.png "AWS Lambda Node Credentials")
 
-There are three parts to configuring credentials - the `AWS Access Key ID`, the `AWS Secret Access Key` and the particular AWS region. Losant recommends that you create a AWS Key/Secret pair specifically for use for our workflow nodes - one that only has access to your AWS Lambda functions. All three fields can take [string templates](/workflows/accessing-payload-data/#string-templates), and so can pull values from the current payload. In the example above, the node is configured to pull the AWS Access Key from `globals.awsKey`, the AWS Secret from `globals.awsSecret`, and sets the region to `us-west-2`.
+There are three parts to configuring credentials - the `AWS Access Key ID`, the `AWS Secret Access Key` and the particular AWS region. Losant recommends that you create a AWS Key/Secret pair specifically for use for our workflow nodes - one that only has access to your AWS Lambda functions. All three fields can take [string templates](/workflows/accessing-payload-data/#string-templates), and so can pull values from the current payload. Most users store these values in their [workflow globals](/workflows/overview/#workflow-globals).
+
+In the example above, the node is configured to pull the AWS Access Key from `globals.awsKey`, the AWS Secret from `globals.awsSecret`, and sets the region to `us-west-2`.
 
 ![AWS Lambda Node Config](/images/workflows/data/aws-lambda-node-config.png "AWS Lambda Node Config")
 

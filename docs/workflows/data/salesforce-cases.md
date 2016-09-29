@@ -10,17 +10,17 @@ There are three main configuration sections for the Salesforce Cases node ...
 
 ### Authentication
 
-Most people choose to store these three values in their [workflow globals](/workflows/overview/#workflow-globals).
+Most people choose to store these three values in their [workflow globals](/workflows/overview/#workflow-globals). All three fields accept [string templates](/workflows/accessing-payload-data/#string-templates).
 
 ![Salesforce Credentials](/images/workflows/data/salesforce-credentials.png "Salesforce Credentials")
 
 *   **Salesforce Username**: Required. This is your username for authenticating against the Salesforce API.
 *   **Salesforce Password**: Required. This is your password for authenticating against the Salesforce API.
-*   **Security Token**: This may be required depending on your Salesforce account settings. <a href="https://developer.salesforce.com/forums?id=906F00000009B2zIAE" target="_blank">Read more about security tokens</a>.
+*   **Security Token**: This may be required depending on your Salesforce account settings. [Read more about security tokens](https://developer.salesforce.com/forums?id=906F00000009B2zIAE).
 
 ### Case Action Configuration
 
-Before filling out the rest of this section, users must first choose a **Salesforce Case Action**. Depending on the selected value, a number of other fields are presented. Each field accepts a static value or a [template field](/workflows/overview/#template-fields-and-payload-paths).
+Before filling out the rest of this section, users must first choose a **Salesforce Case Action**. Depending on the selected value, a number of other fields are presented. Each field accepts a static value or a [string template](/workflows/accessing-payload-data/#string-templates).
 
 ![Salesforce Query](/images/workflows/data/salesforce-query.png "Salesforce Query")
 
@@ -86,7 +86,7 @@ Update a case record. Leave a parameter blank to leave its current value unchang
 
 ![Salesforce Result](/images/workflows/data/salesforce-result.png "Salesforce Result")
 
- If a path is defined, the Salesforce Case node will store the response from the request at the defined [payload path](/workflows/overview/#payload-paths).
+ If a path is defined, the Salesforce Case node will store the response from the request at the defined [payload path](/workflows/accessing-payload-data/#payload-path).
 
  Depending on the type of request made, the response from Salesforce can take a few different forms. Here is an example of the most complicated response object: an array of results returned from a query (only one item is included here) ...
 
@@ -137,6 +137,7 @@ Update a case record. Leave a parameter blank to leave its current value unchang
    "success": true
   }
 ```
+
 If there is an error in your request, the Salesforce API will return an appropriate error message. For example ...
 
 ```json

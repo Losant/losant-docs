@@ -10,7 +10,7 @@ When building your query, you must select at least one device or at least one de
 
 ![Indicator Query Configuration](/images/dashboards/indicator-query-config.png "Indicator Query Configuration")
 
-In the event that a duration other than "Last received data point" is selected, or if more than one device is selected, or if at least one device tag is selected, it will also be necessary to select an aggregation method. This is the mathematical principle by which your query will boil down all data from the selected devices and duration into a single value. The default aggregation method is `MEAN`.
+In the event that a duration other than "Last received data point" is selected, or if more than one device is selected, or if at least one device tag is selected, it will also be necessary to select an aggregation method. This is the mathematical operation by which your query will boil down all data from the selected devices and duration into a single value. The default aggregation method is `MEAN`.
 
 ## Query Result
 
