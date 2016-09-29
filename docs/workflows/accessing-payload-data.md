@@ -42,6 +42,8 @@ Payload paths are dot-separated references to object properties, such as ```foo.
 
 When accessing an array value by index, the index must be wrapped in square brackets and preceded by a dot, such as  ```foo.bar.[1]```. Square brackets can also be used to access specific characters in a string value.
 
+### Examples
+
 Given our example object, here is how we would reference many of the properties using payload paths:
 
 ```javascript
@@ -99,7 +101,11 @@ These helpers are used to evaluate certain conditions and print values based on 
 
 These helpers convert a given to a different format of your choosing.
 
-*   ```{{format val formatStr}}```: If val is a **number**, returns the number in the [D3 format](https://github.com/d3/d3-format#locale_format) matching the formatStr parameter (default ',.6'). If val is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the formatStr parameter (default 'L LTS'). If val is an **object**, returns the stringified object and ignores the formatStr parameter. For **all other formats**, val is returned as a string without mutation.
+*   ```{{format val formatStr}}```:
+    * If val is a **number**, returns the number in the [D3 format](https://github.com/d3/d3-format#locale_format) matching the formatStr parameter (default ',.6').
+    * If val is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the formatStr parameter (default 'L LTS').
+    * If val is an **object**, returns the stringified object and ignores the formatStr parameter.
+    * For **all other formats**, val is returned as a string without mutation.
 *   ```{{lower str}}```: Returns str [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) to all lowercase characters.
 *   ```{{upper str}}```: Returns str [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to all uppercase characters.
 *   ```{{encodeURI str}}```: Returns str as an [encoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
@@ -173,7 +179,8 @@ Using our example object from above, let's see what each of these template strin
 Remember that, when checking strings for equality in Indicator block expressions and Conditional nodes, or when including a template string in a JSON object, you'll need to wrap the template string in quotes:
 
 ```javascript
-'{{lower data.aStringProp}}' === 'hello world'
+{{lower data.aStringProp}} === 'hello world' // false
+'{{lower data.aStringProp}}' === 'hello world' // true
 ```
 
 ```json
@@ -184,3 +191,44 @@ Remember that, when checking strings for equality in Indicator block expressions
 ```
 
 ## JSON Templates
+
+In a few places within the Losant platform – such as the [Input Controls block](/dashboards/input-controls/) and [Losant API node](/workflows/data/losant-api/), it is necessary to construct JSON objects from other data. In these instances we use **JSON templates**.
+
+JSON templates can take any of the following formats (or a combination thereof):
+
+*   Valid, static JSON. e.g. ```{"foo": "bar"}```, ```[1,2,3]``` or ```null```
+*   JSON containing block helpers around keys, values or both. e.g. ```{ {{#if foo}}"bar": "bat"{{else}}"baz": "bub"{{/if}} }```
+*   JSON containing string helpers for keys or values. e.g. ```{"month": {{format date 'MMMM'}} }```
+*   A single reference to a property on an object whose value is an object. e.g. ```{{foo.bar}}```
+
+Your entire input will run through Handlebars and the Losant-provided helpers. **After evaluation, the result must be valid JSON.**
+
+### Examples
+
+Again, given our example object above, these JSON templates will evaluate as follows ...
+
+```javascript
+{ "foo": "bar", "staticNumber" : 66 }
+// { "foo": "bar", "staticNumber" : 66 }
+
+{ "myArray": {{data.anArray}} }
+// { "myArray": [44, "Goodbye world", false, {"anObjectPropInAnArray": "I'm deep!"} }
+
+{ "timestamp": {{format data.aJavascriptDateObject 'x'}}, "capitalString": "{{upper data.aStringProp}}" }
+// { "timestamp": 1475091625000, "capitalString": "HELLO WORLD"}
+
+{ "myString": {{data.aStringProp}} }
+// FAILS since the string is not wrapped in double quotes
+
+{{data.anArray}}
+// [44, "Goodbye world", false, {"anObjectPropInAnArray": "I'm deep!"}
+
+{{data.nestedObject.nestedArray.[1]}}
+// 20
+
+{{data.nestedObject.nestedArray.[0]}}
+// FAILS because the referenced value is a string, which is not valid JSON
+
+{ {{#gt data.aNumberProp 21}}"highNumber"{{else}}"lowNumber"{{/gt}}: {{data.aNumberProp}} }
+// { "highNumber": 42 }
+```
