@@ -9,6 +9,7 @@ There are a few different methods for accessing and manipulating data from workf
     "aStringProp": "Hello world",
     "aBooleanProp": true,
     "aFalsyProp" : 0,
+    "aDecimal": 123.456789,
     "anUndefinedProp": undefined,
     "aNullProp": null,
     "aJavascriptDateObject": Wed Sep 28 2016 15:40:25 GMT-0400 (EDT),
@@ -60,7 +61,7 @@ data.anObject.aNestedNumber // 56
 data.anObject.aNestedArray // ["World Star!", 20, { }]
 data.anObject.aNestedArray.[1] // 20
 
-data.aNonexistentObject.aNonexistentProperty // (undefined. "aNonExistentObject" is not a property of "data")
+data.aNonexistentObject.aMissingProp // (undefined. "aNonExistentObject" is not a property of "data")
 aNumberProp // (undefined. This is not a top-level property of our object.)
 ```
 
@@ -78,11 +79,9 @@ Template paths appear in a number of use cases within the Losant platform, such 
 
 In all of these cases, it is possible to include a Handlebars helper within the template string for mutating the referenced value. For example, ```{{format time 'llll'}}```.
 
-Except when evaluating conditions, it is possible to wrap template strings in a [block helper](http://handlebarsjs.com/block_helpers.html), such as ```{{#if foo}}{{foo}}{{else}}Not set!{{/if}}```.
+Except when evaluating conditions, it is possible to wrap template strings in a [block helper](http://handlebarsjs.com/block_helpers.html), such as ```{{#if foo}}{{foo}}{{else}}Not set!{{/if}}```. Values in block helpers can themselves be wrapped in [subexpressions](http://handlebarsjs.com/expressions.html#subexpressions), such as ```{{#eq (upper foo) 'BAR'}}They're equal!{{/eq}}```.
 
-In addition to the [built-in Handlebars helpers](http://handlebarsjs.com/builtin_helpers.html), Losant has provided a number of other helpers for use in template strings.
-
-If you have an idea for a new helper, please let us know about it in our [forums](https://forums.losant.com).
+In addition to the [built-in Handlebars helpers](http://handlebarsjs.com/builtin_helpers.html), Losant has provided a number of other helpers for use in template strings. If you have an idea for a new helper, please let us know about it in our [forums](https://forums.losant.com).
 
 ### Conditional Block Helpers
 
@@ -98,7 +97,7 @@ These helpers are used to evaluate certain conditions and print values based on 
 
 ### Format Helpers
 
-Given a value, these helpers convert the values to readable formats of your choosing.
+These helpers convert a given to a different format of your choosing.
 
 *   ```{{format val formatStr}}```: If val is a **number**, returns the number in the [D3 format](https://github.com/d3/d3-format#locale_format) matching the formatStr parameter (default ',.6'). If val is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the formatStr parameter (default 'L LTS'). If val is an **object**, returns the stringified object and ignores the formatStr parameter. For **all other formats**, val is returned as a string without mutation.
 *   ```{{lower str}}```: Returns str [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) to all lowercase characters.
@@ -112,31 +111,76 @@ Given a value, these helpers convert the values to readable formats of your choo
 
 Using our example object from above, let's see what each of these template strings would print ...
 
+```handlebars
+{{data.aNumberProp}} => 42
+{{data.aStringProp}} => Hello world
+{{data.aBooleanProp}} => true
+{{data.anUndefinedProp}} => (prints nothing)
+{{data.aMissingProp}} => (prints nothing)
+{{data.anArray.[1]}} => Goodbye world
+{{data}} => [object Object]
+
+{{data.anArray}} => 44,Goodbye world,false,[object Object]
+(all items in the array concatenated by commas)
+
+{{data.anArray.[1].[0]}} => G
+(the character at index 0 of the item at index 1 of the array)
+
+{{data.anArray.0}} => (prints nothing)
+(0 is not a property of the array; should be [0] to access by index)
+
+{{data.anArray.[16]}} => (prints nothing)
+(index does not exist on the array.)
+
+{{#if data.aNumberProp}}The number is {{data.aNumberProp}}{{/if}}
+=> The number is 42
+
+{{#if data.aMissingProp}}The number is {{data.aMissingProp}}{{/if}}
+=> (prints nothing. The condition fails.)
+
+{{#if data.aFalsyProp}}Truth!{{else}}Fiction!{{/if}}
+=> Fiction! (0 is falsy so the condition falls to the else statement.)
+
+{{#each data.anArray}}{{@index}}: {{this}}; {{/each}}
+=> 0: 44; 1: Goodbye world; 2: false; 3: [object Object];
+
+{{#each data.anObject}}{{@key}}: {{this}}; {{/each}}
+=> aNestedArray: World Star!,20,[object Object]; aNestedNumber: 56; aNestedString: Wally World;
+
+{{#each data.aMissingObject}}{{@key}}: {{this}} -- {{else}}No object!{{/each}}
+=> No object!
+
+{{#gt data.aNumberProp 40}}First number is greater{{/gt}}
+=> First number is greater
+
+{{#lte data.aNumberProp 10}}Second number is greater{{/gt}}
+=> (prints nothing)
+
+{{#eq data.aStringProp 'hello world'}}Equal!{{else}}Not equal{{/eq}}
+=> Not equal (cases don't match)
+
+{{#eq (lower data.aStringProp) 'hello world'}}Equal!{{else}}Not equal{{/eq}}
+=> Equal! (cases match after running through the "lower" subexpression)
+
+{{format data}} => (the stringified object)
+{{format data.aDecimal ',.5'}} => 1,234.6
+{{encodeURIComponent data.aStringProp}} => Hello%20world
+
+{{#eq (format data.aJavascriptDateObject 'MMMM') 'September'}}Ba de ya!{{else}}Play something else{{/if}}
+=> Ba de ya!
+```
+
+Remember that, when checking strings for equality in Indicator block expressions and Conditional nodes, or when including a template string in a JSON object, you'll need to wrap the template string in quotes:
+
 ```javascript
-{{data.aNumberProp}} // 42
-{{data.aStringProp}} // Hello world
-{{data.aBooleanProp}} // true
+'{{lower data.aStringProp}}' === 'hello world'
+```
 
-{{data.anArray}} // 44,Goodbye world,false,[object Object] (all items in the array concatenated by commas)
-{{data.anArray.[1]}} // Goodbye world
-{{data.anArray.[1].[0]}} // G (the character at index 0 of the item at index 1 of the array)
-
-{{data.anArray.0}} // (prints nothing. 0 is not a property of the array; this is not how to reference an item by index.)
-{{data.anArray.[16]}} // (prints nothing. Index does not exist on the array.)
-
-{{data.anUndefinedProp}} // (prints nothing)
-{{data.aNonexistentProperty}} // (prints nothing)
-
-{{data}} // [object Object]
-{{format data}} // (a stringified representation of the entire data object)
-
-{{#if data.aNumberProp}}The number is {{data.aNumberProp}}{{/if}} // The number is 42
-{{#if data.aNonexistentProperty}}The number is {{data.aNonexistentProperty}}{{/if}} // (prints nothing. The condition fails.)
-{{#if data.aFalsyProp}}Truth!{{else}}Fiction!{{/if}} // Fiction! (0 is falsy so the condition falls to the else statement.)
-
-{{#each data.anArray}}{{@index}}: {{this}} -- {{/each}} // 0: 44 -- 1: Goodbye world -- 2: false -- 3: [object Object] --
-{{#each data.anObject}}{{@key}}: {{this}} -- {{/each}} // aNestedArray: World Star!,20,[object Object] -- aNestedNumber: 56 -- aNestedString: Wally World --
-{{#each data.aNonExistentObject}}{{@key}}: {{this}} -- {{else}}No object!{{/each}} // No object!
+```json
+{
+  "foo": "{{data.aStringProp}}",
+  "bar": {{data.aNumberProp}}
+}
 ```
 
 ## JSON Templates
