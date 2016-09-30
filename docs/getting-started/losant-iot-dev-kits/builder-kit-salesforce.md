@@ -10,9 +10,22 @@ In a factory, there are tons of hardware that work together to make a product. U
 
 The device we're building in this workshop contains a button and an LED. When the button is pressed, a <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=cases_home.htm&language=en_US" target="_blank">Salesforce Case</a> will be created. The LED will be controlled by the number of open cases. If there are any open cases, the LED will be lit. If there are no open cases, the LED will be off. This device provides a quick way to create new cases and an easy way to visualize whether or not there are open cases that need to be addressed.
 
+As you perform this workshop, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
+
 ## 1. Build the Device
 
 For this workshop, you’ll need to attach the NodeMCU, button, and LED to the breadboard. Below is the wiring diagram. For more information on what breadboards are and how they work, check out our blog post on <a href="https://www.losant.com/blog/how-to-use-a-breadboard" target="\_blank">How to Use a Breadboard</a>.
+
+Your kit should include the following items:
+
+  * 1 [NodeMCU v1.0](http://nodemcu.com/index_en.html) dev kit microcontroller <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="\_blank">(View board schematic)</a>
+  * 1 solderless breadboard
+  * 8 jump wires
+  * 2 resistors
+  * 1 LED
+  * 1 TMP36 temperature sensor
+  * 1 button
+  * 1 micro-USB cable
 
 ### Wiring
 
@@ -77,7 +90,7 @@ If you don't already have an account, navigate to [https://accounts.losant.com/c
 
 ## 5. Create Application
 
-Create an application for the builder kit. You can name it whatever you want. In the example below, we used "Builder Kit".
+Create an <a href="https://docs.losant.com/applications/overview/" target="_blank">application</a> for the builder kit. You can name it whatever you want. In the example below, we used "Builder Kit".
 
 ![Create Application](/images/getting-started/losant-iot-dev-kits/builder-kit/create-application.png "Create Application")
 
@@ -85,7 +98,7 @@ Create an application for the builder kit. You can name it whatever you want. In
 
 ## 6. Add Device
 
-The next step is to register the builder kit device with the platform. Click the `Add Device` button on the top right or select `Add Device` from the Devices dropdown.
+The next step is to register the builder kit <a href="https://docs.losant.com/devices/overview" target="_blank">device</a> with the platform. Click the `Add Device` button on the top right or select `Add Device` from the Devices dropdown.
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-menu.png "Add Device Menu")
 
@@ -95,7 +108,7 @@ Next, choose the `Create from Scratch` option.
 
 ![Add Device Name](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-name.png "Add Device Name")
 
-![Add Device Attributes](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-attributes.png "Add Device Attributes")
+![Add Device Attributes](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/add-device-attributes.png "Add Device Attributes")
 
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
@@ -112,7 +125,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ## 8. Generate Security Tokens
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `More > Access Keys` from the application menu.
+Now we need to generate some <a href="https://docs.losant.com/security/" target="_blank">security tokens</a> so your device can authenticate against the Losant platform. Select `More > Access Keys` from the application menu.
 
 ![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
@@ -124,11 +137,21 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 ![Access Token Popup](/images/getting-started/losant-iot-dev-kits/builder-kit/access-token-popup.png "Access Token Popup")
 
-## 9. Flash the Firmware
+## 9. Get Workshop Source Code
+
+Now let's get the firmware you'll be flashing to the device. Download and extract the following zip file to your computer. We'll be editing and opening these files using the Arduino IDE, so put it somewhere convenient.
+
+[https://github.com/Losant/losant-kit-builder-salesforce/archive/master.zip](https://github.com/Losant/losant-kit-builder-salesforce/archive/master.zip)
+
+If you're familiar with git, you can also clone the repository from here:
+
+[https://github.com/Losant/losant-kit-builder-salesforce](https://github.com/Losant/losant-kit-builder-salesforce)
+
+## 10. Flash the Firmware
 
 Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the [environment setup](/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port) for instructions on properly configuring the device port.
 
-With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop-1-internet-button/workshop-1-internet-button.ino`. Edit the following variables at the top of the file.
+With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop/workshop.ino`. Edit the following variables at the top of the file.
 
 1. WIFI_SSID: The name of your WiFi network.
 1. WIFI_PASS: Your WiFi password.
@@ -136,7 +159,7 @@ With the Arduino IDE, use the `File -> Open` menu to navigate to where you downl
 1. LOSANT_ACCESS_KEY: Set this to the access key you generated after creating the Losant application.
 1. LOSANT_ACCESS_SECRET: Set this to the access secret you generated after creating the Losant application.
 
-![Update Variables](/images/getting-started/losant-iot-dev-kits/builder-kit/update-variables.png "Update Variables")
+![Update Variables](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/update-variables.png "Update Variables")
 
 Your changes will automatically be saved as part of the upload process in the following steps. After editing the code, open the Arduino IDE's Serial Monitor and change the baud rate to 115200. The serial monitor can be opened using the button on the top right of the Arduino IDE or using the `Tools -> Serial Monitor` menu.
 
@@ -178,7 +201,7 @@ Every time the button is pressed, the firmware is publishing the state `{ "butto
 
 It’s now time to go into Losant and make use of this data.
 
-## 10. Create Workflow
+## 11. Create Workflow
 
 [Workflows](https://docs.losant.com/workflows/overview/) in Losant allow you to easily perform actions based on various triggers. In this workshop, our trigger will be a device state. Whenever the button is pressed, the device publishes a state message to Losant that we can use to trigger an action – for example, opening a ticket in Salesforce Service Cloud.
 
