@@ -18,10 +18,7 @@ In the above example, there are actually two different geofences. The first chec
 
 ![Geofence Node Input Config](/images/workflows/logic/geofence-node-input-config.png "Geofence Node Input Config")
 
-The input coordinates can be defined four different ways:
-
-*   [String template](/workflows/accessing-payload-data/#string-templates)<br/>
-    Example: `{{data.lat}},{{data.lng}}` or `{{data.coordinates}}`
+The input coordinates can be defined three different ways:
 
 *   [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)<br/>
     Example: `37.33233141,-122.0312186`
@@ -35,7 +32,7 @@ The input coordinates can be defined four different ways:
 *   [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)<br/>
     Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
 
-In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an a NMEA string.
+No matter which type is selected, the field will also accept a [string template](/workflows/accessing-payload-data/#string-templates) for the value. In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an a NMEA string.
 
 ### Center Point Coordinate Configuration
 

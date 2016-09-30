@@ -13,7 +13,7 @@ Configuring a conditional node involves writing an [expression](/workflows/acces
 In the above example, the workflow will take the right (or `true`) path whenever the value of the payload field `data.path` is equal to the string "/transition/up", and will take the left (or `false`) path otherwise.
 
 For example, the following workflow payload would take the `true` path:
-
+ 
 ```json
 {
   "data": {

@@ -16,7 +16,7 @@ The most important part of the configuration is the Account SID and Auth Token f
 
 Optionally, the maximum allowed price of an SMS message can be configured (see Twilio's [API Docs](https://www.twilio.com/docs/api/rest/sending-messages) for more information on this field).
 
-All of the account configuration inputs, including the maximum price, support [string templates](/workflows/accessing-payload-data/#string-templates).
+All of the account configuration inputs, except for the maximum price, support [string templates](/workflows/accessing-payload-data/#string-templates).
 
 ### Message Configuration
 
