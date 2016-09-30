@@ -189,7 +189,7 @@ Any operators or functions applied to a string template within an expression sho
 
 String templates used within expressions **may not use block helpers**; they may, however, use format helpers.
 
-Note that, when doing string comparisons in expressions, it is **not** necessary to wrap any string template in quotes to "stringify" the output. The expression will be evaluated with the output of the template string serving as a variable; for example `{{foo}} === 'bar'` or `{{bat}} !== {{baz}}`.
+Note that, when doing string comparisons in expressions, it is **not** necessary to wrap any string template in quotes to "stringify" the output. The expression will be evaluated with the output of the string template serving as a variable; for example `{{foo}} === 'bar'` or `{{bat}} !== {{baz}}`.
 
 Below are lists of operators, keywords and functions supported in expressions. If you have use cases that are not handled by these, please let us know in our [forums](https://forums.losant.com).
 

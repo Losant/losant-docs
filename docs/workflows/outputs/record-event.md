@@ -10,7 +10,7 @@ There are four parts to configuring a record event node - selecting the level of
 
 ![Record Event Node Configuration](/images/workflows/outputs/record-event-node-config.png "Record Event Node Configuration")
 
-The level of the event can be one of "Info", "Warning", "Error", "Critical", or "Payload Template". When "Payload Template" is selected, the level is determined by evaluating the given [string template](/workflows/accessing-payload-data/#string-templates), allowing the level to be dynamically determined from the current workflow payload. When using a template, the template string must evaluate to one of `info` / `warning` / `error` / `critical` - if it does not, the event creation will fail.
+The level of the event can be one of "Info", "Warning", "Error", "Critical", or "Payload Template". When "Payload Template" is selected, the level is determined by evaluating the given [string template](/workflows/accessing-payload-data/#string-templates), allowing the level to be dynamically determined from the current workflow payload. When using a template, it must evaluate to one of `info` / `warning` / `error` / `critical` - if it does not, the event creation will fail.
 
 The subject of the event, as well as the message, also support [string templates](/workflows/accessing-payload-data/#string-templates). If the detailed message is not set, the event is created with an empty detailed message. In the above example, the record event node will create an event with the level "Error", the subject "Power Level Critical", and the message "Power level exceeded error threshold at {{ data.power }}".
 

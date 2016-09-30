@@ -10,7 +10,7 @@ The configuration of the MongoDB node can be broken down into four major section
 
 ![MongoDB Node Connection Configuration](/images/workflows/data/mongodb-node-connection.png "MongoDB Node Connection Configuration")
 
-When configuring the connection, you must provide a Mongo [Connection String URI](https://docs.mongodb.com/manual/reference/connection-string/), which must include a database name. You also choose here what collection that the node will be operating on. Both of these fields accept [template strings](/workflows/accessing-payload-data/#template-strings), and so can be configured with values from the current workflow payload. In the example above, the Mongo node has been configured to connect to the `embree` database at `example.com` with the username `user` and the password `pass`, and the node will be using the collection `alertMapping`.
+When configuring the connection, you must provide a Mongo [Connection String URI](https://docs.mongodb.com/manual/reference/connection-string/), which must include a database name. You also choose here what collection that the node will be operating on. Both of these fields accept [string templates](/workflows/accessing-payload-data/#string-templates), and so can be configured with values from the current workflow payload. In the example above, the Mongo node has been configured to connect to the `embree` database at `example.com` with the username `user` and the password `pass`, and the node will be using the collection `alertMapping`.
 
 ![MongoDB Node Operation](/images/workflows/data/mongodb-node-operation.png "MongoDB Node Operation")
 
@@ -24,7 +24,7 @@ for the query. In the above example, we are not passing any options, but we are 
 a [JSON template](/workflows/accessing-payload-data/#json-templates) - searching for a document in the collection with a deviceId field that
 matches the trigger ID that kicked off the run of the workflow. Most of the arguments for the various operations are expected to evaluate to JSON objects, and the node supports [EJSON](https://docs.mongodb.com/manual/reference/mongodb-extended-json/) syntax for specifying things like ObjectIDs.
 
-Both the query argument and the options argument allows users to choose the method by which the value will be set: a [payload path](/workflows/accessing-payload-data/#payload-paths), a [string template](/workflows/accessing-payload-data/#string-templates) or a [JSON template](/workflows/accessing-payload-data/#payload-templates).
+Both the query argument and the options argument allows users to choose the method by which the value will be set: a [payload path](/workflows/accessing-payload-data/#payload-paths), a [string template](/workflows/accessing-payload-data/#string-templates) or a [JSON template](/workflows/accessing-payload-data/#json-templates).
 
 ![MongoDB Node Result](/images/workflows/data/mongodb-node-result.png "MongoDB Node Result")
 
