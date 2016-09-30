@@ -20,7 +20,7 @@ All workflows start with a trigger. There are many different triggers and each o
 
 ![Workflow Overview Trigger](/images/workflows/overview-trigger.png "Workflow Overview Trigger")
 
-In this example the trigger is a device node, which will run the payload whenever a device reports its [state](/devices/state). The device trigger places the state that was reported on the payload's data field. When the workflow starts, the payload will look like this:
+In this example the trigger is a [device node](/workflows/triggers/device), which will run the payload whenever a device reports its [state](/devices/state). The device trigger places the state that was reported on the payload's data field. When the workflow starts, the payload will look like this:
 
 ```json
 {
@@ -32,11 +32,11 @@ The workflow will then continue with this payload and pass it to the next node, 
 
 ### Temp High - Conditional Node
 
-Conditional nodes allow you to branch the workflow based on some expression that evaluates to true or false. If the expression is true, the workflow branches right. If the expression is false, the workflow branches left.
+[Conditional nodes](/workflows/logic/conditional) allow you to branch the workflow based on an [expression](/workflows/accessing-payload-data/#expressions) that evaluates to true or false. If the expression is true, the workflow branches right. If the expression is false, the workflow branches left.
 
 ![Workflow Overview Conditional](/images/workflows/overview-conditional.png "Workflow Overview Conditional")
 
-This node doesn't modify the payload, but it is using a value in the payload to make a decision. Conditional nodes support templates, which are expressions you can write and include values from the payload. Refer to the [Templates Fields and Payload Paths](#template-fields-and-payload-paths) section of this document for detailed information. In this example, the expression is:
+This node doesn't modify the payload, but it is using a value in the payload to make a decision. In short, the [expression](/workflows/accessing-payload-data/#expressions) in the conditional node allows for testing the truthiness of a condition against a payload property. Set the conditional expression to the following: In this example, the expression is:
 
 ```
 {{ data.tempF }} > 75
@@ -46,11 +46,11 @@ Whenever this node is executed it will grab the `data.tempF` value in the payloa
 
 ### Convert ˚F to ˚C - Math Node
 
-Math nodes allow you to write mathematical expressions and store the result anywhere on the payload.
+[Math nodes](/workflows/logic/math) allow you to write mathematical expressions and store the result anywhere on the payload.
 
 ![Workflow Overview Math](/images/workflows/overview-math.png "Workflow Overview Math")
 
-Each math node supports multiple statements, but this example is only using one. Each statement includes the actual expression and a payload path of where to store the result. For this example, the expression is:
+Each math node supports multiple statements, but this example is only using one. Each statement includes the actual expression and a [payload path](/workflows/accessing-payload-data/#payload-paths) of where to store the result. For this example, the expression is:
 
 ```
 ( {{ data.tempF }} - 32 ) / 1.8
@@ -58,7 +58,7 @@ Each math node supports multiple statements, but this example is only using one.
 
 Just like with the conditional node, you can reference values from the payload in these expressions. This is simply converting degrees Fahrenheit to degrees Celsius.
 
-The second part of each math expression is a payload path to store the result. In this example the payload path is:
+The second part of each math expression is a [payload path](/workflows/accessing-payload-data/#payload-paths) to store the result. In this example the payload path is:
 
 ```
 degreesCelsius
@@ -75,11 +75,11 @@ This payload path will place the result of the math expression on the root of th
 
 ### SMS Node
 
-The SMS node allows you to send an SMS message one or more phone numbers. This example demonstrates how to use the newly modified payload in a useful way.
+The [SMS node](/workflows/outputs/sms) allows you to send an SMS message one or more phone numbers. This example demonstrates how to use the newly modified payload in a useful way.
 
 ![Workflow Overview SMS](/images/workflows/overview-sms.png "Workflow Overview SMS")
 
-Just like the previous two nodes, the SMS node also supports template fields. But unlike evaluating to a boolean for the conditional node, or a number for the math node, the SMS node uses the template field to create a custom message that contains a value from the payload.
+The SMS node supports [string templates](/workflows/accessing-payload-data/#string-templates). But unlike evaluating to a boolean for the conditional node, or a number for the math node, the SMS node uses the that value to create a custom message that contains a value from the payload.
 
 ```
 Temperature warning. Temperature now at {{ degreesCelsius }} deg C!
@@ -134,126 +134,6 @@ Workflows can be enabled and disabled by clicking the `Enabled` checkbox on the 
 ![Enable Workflow](/images/workflows/overview-enable.png "Enable Workflow")
 
 Once a workflow has been deployed, it will take effect immediately.
-
-## Template Fields and Payload Paths
-
-The keys to accessing data from your workflow payloads is **Template Fields**, and the way to add data or modify existing values in your payloads is through **Payload Paths**.
-
-### Template Fields
-
-Template fields are based on the <a href="https://mustache.github.io/" target="\_blank">Mustache templating language</a>. Simply put, a template field is a dot-separated JSON path inside of double curly braces.
-
-For example, say you have the following payload ...
-
-```json
-{
-  "data" : {
-    "name" : "Bruce Campbell",
-    "age" : 57,
-    "movies" : [
-      {
-        "title" : "Army of Darkness",
-        "year" : "1992"
-      },
-      {
-        "title" : "Evil Dead II",
-        "year" : "1987"
-      },
-      {
-        "title" : "The Evil Dead",
-        "year" : "1981"
-      }
-    ]
-  }
-}
-```
-
-We can access the data within this payload for our workflows using template fields.
-
-```
-My favorite actor is {{data.name}}!
-// My favorite actor is Bruce Campbell!
-```
-
-_String interpolation_
-
-```
-{{data.age > 50}} // returns true
-{{data.age === 45}} // returns false
-```
-
-_Simple evaluation_
-
-```
-{{data.name}} is {{#data.deceased}}not {{/data.deceased}} alive.
-// Bruce Campbell is alive.
-```
-
-_Conditionals based on property existence_
-
-```
-  My favorite movies are:
-  {{#data.movies}}
-    {{#title}} from {{#year}}
-  {{/data.movies}}
-  // My favorite movies are:
-  // Army of Darkness from 1992
-  // Evil Dead II from 1987
-  // The Evil Dead from 1981
-```
-
-_Array iteration_
-
-```
-I haven't seen {{data.movies.1.title}} YET ...
-// I haven't seen Evil Dead II YET ...
-```
-
-_Deep object traversing and array item lookup by index_
-
-### Payload Paths
-
-Like template fields, payload paths are also based on a dot-separated JSON syntax. The differences between template fields and payload paths are:
-
--   Payload paths **do not** require the double curly braces `{{ }}` around the dot-separated object paths
--   Payload paths are used to **retrieve, store or modify payload data**, whereas template fields are used to evaluate the payload and output its contents
-
-Following our previous example from above, we could us a payload path to copy the first movie in the array ...
-`data.movies.0`
-
-... and set it in a new object representing our favorite film ...
-`favoriteMovie`
-
-... and our new payload would look like this ...
-
-```json
-{
-  "data" : {
-    "name" : "Bruce Campbell",
-    "age" : 57,
-    "movies" : [
-      {
-        "title" : "Army of Darkness",
-        "year" : "1992"
-      },
-      {
-        "title" : "Evil Dead II",
-        "year" : "1987"
-      },
-      {
-        "title" : "The Evil Dead",
-        "year" : "1981"
-      }
-    ]
-  },
-  "favoriteMovie" : {
-    "title" : "Army of Darkness",
-    "year" : "1992"
-  }
-}
-```
-
-<br/>
 
 ## Import / Export
 

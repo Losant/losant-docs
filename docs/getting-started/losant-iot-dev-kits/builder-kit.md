@@ -196,7 +196,7 @@ Since the Device node can be triggered on any state request and we only want thi
 
 You can delete the existing Debug node or click on the connecting line and delete it. Either way, insert a Conditional node between the Device node and the Debug node.
 
-Many workflow nodes, including the Conditional node, support what Losant calls a [template field](https://docs.losant.com/workflows/overview/#template-fields-and-payload-paths). Template fields allow you to write full expressions or blocks of text while referencing values in the payload. Set the conditional expression to the following:
+Many workflow nodes, including the Conditional node, support what Losant calls [expressions](/workflows/accessing-payload-data/#expressions), which allow for testing the truthiness of a condition against a payload property. Set the conditional expression to the following:
 
 ```text
 {{ data.button }} == true

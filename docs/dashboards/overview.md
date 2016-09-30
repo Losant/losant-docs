@@ -65,7 +65,3 @@ NOTE: The following blocks will not display any data on public dashboards or to 
 
 *   `Application List`
 *   `Dashboard List`
-
-## Templating
-
-A number of the dashboard blocks allow string templates for greater control over how data is displayed, and in many cases (but not all) the string templates can be wrapped in [Markdown](http://commonmark.org/help/) for additional formatting.
