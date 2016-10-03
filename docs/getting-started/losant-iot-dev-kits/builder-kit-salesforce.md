@@ -153,6 +153,12 @@ If you're familiar with git, you can also clone the repository from here:
 
 ## 10. Flash the Firmware
 
+**If you are doing this workshop at home, you will need to make sure your <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">enviroment is set up correctly</a>. **
+
+Let's open Arduino IDE by clicking the shortcut on the Desktop.
+
+![Open Arduino IDE](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/open-arduino.gif "Open Arduino IDE")
+
 Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">environment setup</a> for instructions on properly configuring the device port.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop/workshop.ino`. Edit the following variables at the top of the file.
@@ -270,3 +276,16 @@ Enter your email address as a recipient. You can then specify any subject and bo
 Click the “Deploy Workflow” button and press the hardware button. You should now receive an email with the subject and body you specified.
 
 This completes the first workshop. You’ve successfully created an Internet button that can be used for any number of useful actions. For an extra challenge, try browsing the other output nodes and come up with other actions you can control with your Internet button, such as sending yourself a text message.
+
+Let people know you have completed the workshop:
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.losant.com/kit" data-text="I just completed the @LosantHQ #IoT Salesforce Builder Kit at @Dreamforce!" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+# Next Steps
+
+These workshops are just the beginning. You now have a kit that can be used for any number of interesting solutions. We have a growing list of [tutorials and project](/getting-started/tutorials.md) so learn more about hardware, IoT, and Losant. Losant also has several kits available:
+
+1. Losant Builder Kit ( [Buy Now](https://store.losant.com/products/losant-builder-kit) | [Instructions](/getting-started/losant-iot-dev-kits/builder-kit/) )
+1. Moisture Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-moisture-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/) )
+1. Door Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/) )
