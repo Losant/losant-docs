@@ -131,15 +131,19 @@ Now we need to generate some <a href="https://docs.losant.com/applications/acces
 
 For these workshops, generate an access key that provides access to all devices in your application.
 
-![Token Restrictions](/images/getting-started/losant-iot-dev-kits/builder-kit/token-restrictions.png "Token Restrictions")
+![Token Restrictions](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/token-restrictions.png "Token Restrictions")
 
 This will cause a popup to appear with your access tokens. Losant ***DOES NOT*** store the secret, so you’ll have to copy it somewhere secure. Both of these values will be needed in the following sections, so make sure you copy/paste them somewhere convenient.
 
-![Access Token Popup](/images/getting-started/losant-iot-dev-kits/builder-kit/access-token-popup.png "Access Token Popup")
+![Access Token Popup](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/access-token-popup.png "Access Token Popup")
 
 ## 9. Get Workshop Source Code
 
-Now let's get the firmware you'll be flashing to the device. Download and extract the following zip file to your computer. We'll be editing and opening these files using the Arduino IDE, so put it somewhere convenient.
+Now let's get the firmware you'll be flashing to the device.
+
+**If you are doing this workshop at the <a href="https://www.salesforce.com/dreamforce/DF16/">Dreamforce Conference</a>, the workshop code is located on your desktop. You can skip to [step 10](#10-flash-the-firmware).**
+
+Download and extract the following zip file to your computer. We'll be editing and opening these files using the Arduino IDE, so put it somewhere convenient.
 
 [https://github.com/Losant/losant-kit-builder-salesforce/archive/master.zip](https://github.com/Losant/losant-kit-builder-salesforce/archive/master.zip)
 
@@ -193,7 +197,7 @@ This means the port is not properly selected. Refer to the [Configure Device USB
 
 After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. Push the button you wired up in the breadboard, and the Serial Monitor will print “Button Pressed!”
 
-![Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit/serial-output.png "Serial Output")
+![Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/serial-output.png "Serial Output")
 
 If you don’t see the “Button Pressed!” message, check your wiring. The jump wires are not always the best connectors and sometimes just need wiggled around a little.
 
