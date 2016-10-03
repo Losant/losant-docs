@@ -82,7 +82,7 @@ Lastly, click the "Reset Security Token" button.
 
 Once complete, Salesforce will send you the security token via email. This token will be used in later steps to invoke the Salesforce API to create cases when the button is pressed.
 
-Now, you’ll need to register for a Losant account, create your application, and add the device for your builder kit.
+Salesforce is now successfully setup and ready to use.
 
 ## 4. Create Losant Account
 
@@ -102,7 +102,7 @@ The next step is to register the builder kit <a href="https://docs.losant.com/de
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-menu.png "Add Device Menu")
 
-Next, choose the `Create from Scratch` option.
+Next, choose the `Create Blank Device` option.
 
 ![Create From Scratch](/images/getting-started/losant-iot-dev-kits/moisture-sensor/add-from-scratch.png "Create From Scratch")
 
@@ -125,7 +125,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ## 8. Generate Security Tokens
 
-Now we need to generate some <a href="https://docs.losant.com/security/" target="_blank">security tokens</a> so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu.
+Now we need to generate some <a href="https://docs.losant.com/applications/access-keys/" target="_blank">security tokens</a> so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu.
 
 ![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
@@ -149,7 +149,7 @@ If you're familiar with git, you can also clone the repository from here:
 
 ## 10. Flash the Firmware
 
-Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the [environment setup](/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port) for instructions on properly configuring the device port.
+Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">environment setup</a> for instructions on properly configuring the device port.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop/workshop.ino`. Edit the following variables at the top of the file.
 
