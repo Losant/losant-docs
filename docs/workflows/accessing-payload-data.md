@@ -325,7 +325,11 @@ JSON templates can take any of the following formats (or a combination thereof):
 *   JSON containing string helpers for keys or values. e.g. `{"month": "{{format date 'MMMM'}}" }`
 *   A single reference to a property on an object whose value is an object. e.g. `{{foo.bar}}`
 
-Your entire input will run through Handlebars and the Losant-provided helpers. **After evaluation, the result must be valid JSON.** Because of this, any string value being output by a string template should be wrapped in double quotes, like so: `{ "foo": "{{data.aStringProp}}" }`.
+Your entire input will run through Handlebars and the Losant-provided helpers. **After evaluation, the result must be valid JSON.** Because of this, there are a few things to keep in mind when using string templates within your JSON templates:
+
+*   Any string value being output by a string template should be wrapped in double quotes, like so: `{ "foo": "{{data.aStringProp}}" }`.
+*   Any boolean or number value being output by a string template should **not** be wrapped in quotes, unless you want the value passed as a string: `{ "foo": {{data.aNumberProp}} }`.
+*   Any objects or arrays being referenced by a string helper should always use the `jsonEncode` Handlebars helper to ensure that all string values are wrapped in quotes and all objects print as valid JSON: `{ "anObject": {{jsonEncode data.anObjectProp}} }` or `{ "anArray": {{jsonEncode data.anArrayProp}} }`.
 
 ### Examples
 
@@ -335,11 +339,11 @@ Again, given our example object above, these JSON templates will evaluate as fol
 { "foo": "bar", "staticNumber" : 66 }
 // { "foo": "bar", "staticNumber" : 66 }
 
-{ "myArray": {{data.anArray}} }
+{ "myArray": {{jsonEncode data.anArray}} }
 // { "myArray": [44, "Goodbye world", false, {"anObjectPropInAnArray": "I'm deep!"} }
 
-{ "timestamp": {{format data.aJavascriptDateObject 'x'}}, "capitalString": "{{upper data.aStringProp}}" }
-// { "timestamp": 1475091625000, "capitalString": "HELLO WORLD"}
+{ "timestamp": {{format data.aJavascriptDateObject 'x'}}, "dayOfWeek": "{{format data.aJavascriptDateObject 'dddd'}}", "capitalString": "{{upper data.aStringProp}}" }
+// { "timestamp": 1475091625000, "dayOfWeek": "Wednesday", "capitalString": "HELLO WORLD"}
 
 { "myString": {{data.aStringProp}} }
 // FAILS since the string is not wrapped in double quotes
