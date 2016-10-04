@@ -158,7 +158,7 @@ Let's open Arduino IDE by clicking the shortcut on the Desktop.
 
 Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">environment setup</a> for instructions on properly configuring the device port.
 
-With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop/workshop.ino`. Edit the following variables at the top of the file.
+With the Arduino IDE, use the `File -> Open` menu to navigate to the builder kit source code and open the file `workshop/workshop.ino`. Edit the following variables at the top of the file.
 
 1. WIFI_SSID: The name of your WiFi network.
 1. WIFI_PASS: Your WiFi password.
