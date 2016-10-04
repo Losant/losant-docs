@@ -261,9 +261,9 @@ You can now deploy the workflow again and anytime the button is pressed, a Sales
 
 On new accounts, Salesforce pre-populates your cases with some examples. This would be a good time to delete those using the small triangle on the right of each case.
 
-If you'd like an additional challenge before moving to the next step, see what else you can do when the button is pressed. For example, send yourself an email and SMS message.
+If you'd like an additional challenge before moving to the next step, see what else you can do when the button is pressed. For example, send yourself an email or SMS message.
 
-## 12. Open Cases Indicator
+## 12. Open Cases Indicator LED
 
 The builder kit you've assembled includes an LED light. In this step, we're going to extend our workflow to control that light based on whether or not there are open cases.
 
