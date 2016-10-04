@@ -287,7 +287,9 @@ Next, add a debug node and attach it to the Salesforce node and deploy this work
 
 As you can see, the result is now available on the payload at `data.result.count`. Next add a <a href="/workflows/logic/conditional/" target="_blank">Conditional node</a> and connect it to the Salesforce node so we can make a decision based on this value.
 
-Set the conditional to:
+![Conditional Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/conditional-node.png "Conditional Node")
+
+Set the `Expression` field to:
 
 ```text
 {{ data.result.count }} > 0
@@ -295,23 +297,21 @@ Set the conditional to:
 
 For this field, we've used a template, which allows us to pull a value from the current payload. Every time this condition node runs, it will pull whatever was returned by Salesforce and check whether or not it is greater than zero. If the condition is true, it will take the right (green) path. If the condition is false, it will take the left (red) path.
 
-The firmware we flashed to the device earlier understands two Device Commands (TODO: link): "ledOn" and "ledOff". If the condition is true, we want to send the device the "ledOn" command. If the condition is false, we want to send the device the "ledOff" command.
+The firmware we flashed to the device earlier understands two <a href="/devices/commands/" target="_blank">Device Commands</a>: "ledOn" and "ledOff". If the condition is true, we want to send the device the "ledOn" command. If the condition is false, we want to send the device the "ledOff" command.
 
 Start by dragging a Device Command node onto the canvas and attaching it to the right (green) connector on the conditional node.
 
-TODO: screenshot
+![LED On Command](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/ledOn-command.png "LED On Command")
 
 Make sure your builder kit device is selected and set the command name to "ledOn". Commands also support optional payloads so you can send additional information to the device. For this workshop, all we need is the name, so leave the payload field blank.
 
 Now add a second Device Command node and attach it to the left (red) connector on the conditional node. Again, make sure your device is selected and this time send the "ledOff" command.
 
-TODO: screenshot
+![LED Off Command](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/ledOff-command.png "LED Off Command")
 
 You can now deploy this workflow. After the 10 second timer elapses, if you still have a case open, you should see the LED turn on. You can then go into Salesforce, delete every case, and see the LED turn off. If you press the button, which creates a case, the LED will turn back on.
 
-You've now successfully completed the Losant & Salesforce Builder Kit Workshop! If you'd like to keep experimenting, checkout the full builder kit instructions (TODO: link), which contains several other uses for your kit hardware.
+You've now successfully completed the Losant & Salesforce Builder Kit Workshop! If you'd like to keep experimenting, checkout the full <a href="/getting-started/losant-iot-dev-kits/builder-kit/" target="_blank">builder kit instructions</a>, which contains several other uses for your kit hardware.
 
-Let people know you have completed the workshop:
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.losant.com/kit" data-text="I just completed the @LosantHQ #IoT Salesforce Builder Kit Workshop at @Dreamforce!" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.losant.com/kit" data-text="I just completed the @LosantHQ #IoT Salesforce Builder Kit Workshop at @Dreamforce 2016!" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
