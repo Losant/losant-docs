@@ -259,7 +259,9 @@ You can now deploy the workflow again and anytime the button is pressed, a Sales
 
 ![Cases Menu Item](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/cases-menu-item.png "Cases Menu Item")
 
-On new accounts, Salesforce pre-populates your cases with some examples. This would be a good time to delete those using the small triangle on the right of each case.
+On new accounts, Salesforce pre-populates your cases with some examples. This would be a good time to delete those using the small triangle on the right of each case. You'll first have to switch the Salesforce view to "All Open Cases" in order to see every case.
+
+![Open Cases](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/open-cases.png "Open Cases")
 
 If you'd like an additional challenge before moving to the next step, see what else you can do when the button is pressed. For example, send yourself an email or SMS message.
 
@@ -281,7 +283,11 @@ Next, **add a debug node and attach it to the Salesforce node** and deploy this 
 
 ![Salesforce Count Result](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/count-result.png "Salesforce Count Result")
 
+<<<<<<< HEAD
 As you can see, the result is now available on the payload at `data.result.count`. Next **add a <a href="/workflows/logic/conditional/" target="_blank">Conditional node</a>** and connect it to the Salesforce node so we can make a decision based on this value.
+=======
+As you can see, the result is now available on the payload at `data.result.count`. Next, add a <a href="/workflows/logic/conditional/" target="_blank">Conditional node</a> and connect it to the Salesforce node so we can make a decision based on this value.
+>>>>>>> 9df5d99c919774d616f3b815a642a3aae5b39b40
 
 ![Conditional Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/conditional-node.png "Conditional Node")
 
