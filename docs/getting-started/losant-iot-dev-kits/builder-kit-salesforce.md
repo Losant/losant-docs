@@ -111,8 +111,7 @@ Next, choose the `Create Blank Device` option.
 1. "Description" can be left blank, or fill it with whatever you want.
 1. For "Device Type", leave "Standalone" selected.
 1. No device tags are required.
-1. Add the following under "Device Attributes":
-    1. button: boolean
+1. Add one device attribute with the name "button" and the data type "Boolean".
 
 The <a href="https://docs.losant.com/devices/overview/#device-attributes" target="_blank">device attributes</a> specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed. Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
@@ -150,9 +149,9 @@ If you're familiar with git, you can also clone the repository from here:
 
 ## 10. Flash the Firmware
 
-**If you are doing this workshop at home, you will need to make sure your <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">environment is set up correctly</a>. **
+**If you are doing this workshop at home, you will need to make sure your <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">environment is set up correctly</a>. If you're at the Dreamforce workshop, your workstation is already properly setup. **
 
-Let's open Arduino IDE by clicking the shortcut on the Desktop.
+Let's open the Arduino IDE by clicking the shortcut on the Desktop.
 
 ![Open Arduino IDE](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/open-arduino.gif "Open Arduino IDE")
 
