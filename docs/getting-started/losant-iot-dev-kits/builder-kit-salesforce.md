@@ -211,23 +211,23 @@ It’s now time to go into Losant and make use of this data.
 
 [Workflows](https://docs.losant.com/workflows/overview/) in Losant allow you to easily perform actions based on various triggers. In this workshop, our trigger will be a device state. Whenever the button is pressed, the device publishes a state message to Losant that we can use to trigger an action – for example, opening a ticket in Salesforce Service Cloud.
 
-Create a new workflow and name it “Internet Button.”
+**Create a new workflow and name it “Internet Button.”**
 
 ![Create Workflow](/images/getting-started/losant-iot-dev-kits/builder-kit/create-workflow.png "Create Workflow")
 
 ![Save Workflow](/images/getting-started/losant-iot-dev-kits/builder-kit/save-workflow.png "Save Workflow")
 
-Start by dragging a Device workflow trigger node to the canvas. Then, on the Device trigger's configuration panel, select your builder kit device. Since this is likely the application's only device, it will be selected by default. If, however, you have more than one device, simply start typing the name of the device and select it from the dropdown.
+Start by **dragging a Device workflow trigger node to the canvas.** Then, on the Device trigger's configuration panel, select your builder kit device. Since this is likely the application's only device, it will be selected by default. If, however, you have more than one device, simply start typing the name of the device and select it from the dropdown.
 
 ![Device Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/device-workflow-node.png "Device Workflow Node")
 
-Next, add a [Debug node](https://docs.losant.com/workflows/outputs/debug/) so you can test that the workflow is triggered when the button is pressed. This is also an opportunity to see what a workflow payload looks like. Understanding the payload will help make the following steps make sense.
+Next, **add a [Debug node](https://docs.losant.com/workflows/outputs/debug/)** so you can test that the workflow is triggered when the button is pressed. This is also an opportunity to see what a workflow payload looks like. Understanding the payload will help make the following steps make sense.
 
 ![Debug Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/debug-workflow-node.png "Debug Workflow Node")
 
 Workflow nodes are connected by clicking on the small diamond-shaped connector on the source node and dragging it to anywhere on the destination node.
 
-This workflow is now ready to test. Deploy it using the `Deploy Workflow` button on the top right.
+This workflow is now ready to test. **Deploy it using the `Deploy Workflow` button on the top right.**
 
 ![Deploy Workflow Button](/images/getting-started/losant-iot-dev-kits/builder-kit/deploy-workflow-button.png "Deploy Workflow Button")
 
@@ -251,9 +251,9 @@ The next step is to create a Salesforce Case whenever the button is pressed. Add
 
 You may notice that all the fields have "template" in their labels. Many workflow nodes, including the Salesforce Cases node, support what Losant calls a <a href="/workflows/overview/#template-fields-and-payload-paths" target="_blank">template field</a>. Template fields allow you to reference variables in the payload by surrounding them in double curly braces. For example `My devices name is {{ deviceName }}` would pull the `deviceName` variable from the payload and put it in that string. This step doesn't require the use of templates, but they are important to understand because nearly all complex solutions make use of them. For example, if your device was reporting the temperature of a piece of manufacturing equipment, you could use a template to put the actual temperature value in the subject or description of a newly created Salesforce case.
 
-To configure this node, provide your Salesforce username, password, and security token in the first three fields. These are required so the Losant platform can properly authenticate to the Salesforce API in order to perform actions.
+**To configure this node, provide your Salesforce username, password, and security token in the first three fields.** These are required so the Losant platform can properly authenticate to the Salesforce API in order to perform actions.
 
-Next, set the `Salesforce Case Action` to `Create`. Enter "New" as the status, "Web" as the origin, and enter any subject you'd like.
+Next, **set the `Salesforce Case Action` to `Create`. Enter "New" as the status, "Web" as the origin, and enter any subject you'd like.**
 
 You can now deploy the workflow again and anytime the button is pressed, a Salesforce case will be created. You can see created cases by returning to the Salesforce portal and clicking the "Cases" icon on the bottom-left. It can sometimes take a few second for newly created cases to show up in the portal.
 
@@ -267,25 +267,25 @@ If you'd like an additional challenge before moving to the next step, see what e
 
 The builder kit you've assembled includes an LED light. In this step, we're going to extend our workflow to control that light based on whether or not there are open cases.
 
-We're going to accomplish this by periodically requesting the count of open cases from Salesforce and then sending a command to the kit device to either turn on or off the LED based on that count. The first step is to drag a <a href="/workflows/triggers/timer/" target="_blank">Timer node</a> onto your workflow canvas and set its interval to 10 seconds.
+We're going to accomplish this by periodically requesting the count of open cases from Salesforce and then sending a command to the kit device to either turn on or off the LED based on that count. **The first step is to drag a <a href="/workflows/triggers/timer/" target="_blank">Timer node</a> onto your workflow canvas and set its interval to 10 seconds.**
 
 ![Timer Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/timer-node.png "Timer Node")
 
-Next, drag another Salesforce Cases node onto the canvas and connect it to the Timer.
+Next, **drag another Salesforce Cases node onto the canvas** and connect it to the Timer.
 
 ![Salesforce Count Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/salesforce-count-node.png "Salesforce Count Node")
 
-Just like before, provide your username, password, and security token in the first three fields. This time set the `Case Action` to `Count`, set the `Status` to "New" and `Case Origin` to "Web". Lastly we need to put the result somewhere on the payload. Set the `Payload Path to Store Result` field to "data.result".
+Just like before, provide your username, password, and security token in the first three fields. This time **set the `Case Action` to `Count`, set the `Status` to "New" and `Case Origin` to "Web"**. Lastly we need to put the result somewhere on the payload. **Set the `Payload Path to Store Result` field to "data.result".**
 
-Next, add a debug node and attach it to the Salesforce node and deploy this workflow. This will allow us to see what the response looks like that comes back from the Salesforce API.
+Next, **add a debug node and attach it to the Salesforce node** and deploy this workflow. This will allow us to see what the response looks like that comes back from the Salesforce API.
 
 ![Salesforce Count Result](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/count-result.png "Salesforce Count Result")
 
-As you can see, the result is now available on the payload at `data.result.count`. Next add a <a href="/workflows/logic/conditional/" target="_blank">Conditional node</a> and connect it to the Salesforce node so we can make a decision based on this value.
+As you can see, the result is now available on the payload at `data.result.count`. Next **add a <a href="/workflows/logic/conditional/" target="_blank">Conditional node</a>** and connect it to the Salesforce node so we can make a decision based on this value.
 
 ![Conditional Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/conditional-node.png "Conditional Node")
 
-Set the `Expression` field to:
+**Set the `Expression` field to:**
 
 ```text
 {{ data.result.count }} > 0
@@ -295,17 +295,17 @@ For this field, we've used a template, which allows us to pull a value from the 
 
 The firmware we flashed to the device earlier understands two <a href="/devices/commands/" target="_blank">Device Commands</a>: "ledOn" and "ledOff". If the condition is true, we want to send the device the "ledOn" command. If the condition is false, we want to send the device the "ledOff" command.
 
-Start by dragging a Device Command node onto the canvas and attaching it to the right (green) connector on the conditional node.
+**Start by dragging a Device Command node onto the canvas** and attaching it to the right (green) connector on the conditional node.
 
 ![LED On Command](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/ledOn-command.png "LED On Command")
 
-Make sure your builder kit device is selected and set the command name to "ledOn". Commands also support optional payloads so you can send additional information to the device. For this workshop, all we need is the name, so leave the payload field blank.
+Make sure your builder kit device is selected and **set the command name to "ledOn".** Commands also support optional payloads so you can send additional information to the device. For this workshop, all we need is the name, so leave the payload field blank.
 
-Now add a second Device Command node and attach it to the left (red) connector on the conditional node. Again, make sure your device is selected and this time send the "ledOff" command.
+Now **add a second Device Command node and attach it to the left (red) connector** on the conditional node. Again, make sure your device is selected and this time send the "ledOff" command.
 
 ![LED Off Command](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/ledOff-command.png "LED Off Command")
 
-You can now deploy this workflow. After the 10-second timer elapses, if you still have a case open, you should see the LED turn on. You can then go into Salesforce, delete every case, and see the LED turn off. If you press the button, which creates a case, the LED will turn back on.
+**You can now deploy this workflow.** After the 10-second timer elapses, if you still have a case open, you should see the LED turn on. You can then go into Salesforce, delete every case, and see the LED turn off. If you press the button, which creates a case, the LED will turn back on.
 
 You've now successfully completed the Losant & Salesforce Builder Kit Workshop! As an additional challenge, try building a <a href="/dashboards/overview/" target="_blank">dashboard</a> that shows the number of times you've pressed the button.
 
