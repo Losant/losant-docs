@@ -6,9 +6,9 @@ The Losant Salesforce Builder Kit</a> is an easy way to get up and running with 
 
 ## Overview
 
-In a factory, there are tons of hardware that work together to make a product. Unfortunately, things break and unexpected problems occur. Ideally, there would be a system in place that will automatically detect a failure and open up a maintenance/support ticket to resolve a problem. Salesforce Service Cloud is a smart, fast support platform with a powerful API. Losant can collect hardware data and trigger actions based on definable rules. In this workshop, we are going to use Salesforce Service Cloud and Losant together to solve this problem.
+In a factory, there are tons of hardware that work together to make a product. Unfortunately, things break, and unexpected problems occur. Ideally, there would be a system in place that will automatically detect a failure and open up a maintenance/support ticket to resolve a problem. Salesforce Service Cloud is a smart, fast support platform with a powerful API. Losant can collect hardware data and trigger actions based on definable rules. In this workshop, we are going to use Salesforce Service Cloud and Losant together to solve this problem.
 
-The device we're building in this workshop contains a button and an LED. When the button is pressed, a <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=cases_home.htm&language=en_US" target="_blank">Salesforce Case</a> will be created. The LED will be controlled by the number of open cases. If there are any open cases, the LED will be lit. If there are no open cases, the LED will be off. This device provides a quick way to create new cases and an easy way to visualize whether or not there are open cases that need to be addressed.
+The device we're building in this workshop contains a button and a LED. When the button is pressed, a <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=cases_home.htm&language=en_US" target="_blank">Salesforce Case</a> will be created. The LED will be controlled by the number of open cases. If there are any open cases, the LED will be lit. If there are no open cases, the LED will be off. This device provides a quick way to create new cases and an easy way to visualize whether or not there are open cases that need to be addressed.
 
 As you perform this workshop, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
@@ -36,11 +36,11 @@ Your kit should include the following items:
 1. Push the NodeMCU into terminals 1-15 on either side of the center line, which are rows “b” and “i.” The USB port should be facing away from the breadboard.
 1. Connect the 3V3 pin from the NodeMCU (a1) to the positive rail with a jump wire.
 1. Connect the GND pin from the NodeMCU (a2) to the negative rail with a jump wire.
-1. Connect the button to the other end of the breadboard so its leads straddle the center line and connect it to terminals e28, e30, f28, and f30.
+1. Connect the button to the other end of the breadboard, so its leads straddle the center line and connect it to terminals e28, e30, f28, and f30.
 1. Connect the positive rail to the button using terminal a28 using a jump wire.
 1. Connect the negative rail to the button using terminal c30 using a resistor. It doesn’t matter which way resistors are oriented.
 1. Connect the pin labeled "D1" on the NodeMCU (a14) to the button (j30) with a jump wire. In our code, "D1" is the equivalent of GPIO pin 5.
-1. Add the LED so the positive lead (the longer one) is in terminal c19 and the negative lead is in c20.
+1. Add the LED, so the positive lead (the longer one) is in terminal c19 and the negative lead is in c20.
 1. Connect the positive lead of the LED to D2 on the NodeMCU (terminal a13) with a jump wire.
 1. Connect the negative lead of the LED from terminal c20 to the negative rail with a resistor.
 
@@ -54,7 +54,7 @@ Your device should look very similar to this:
 
 If you haven't already, sign up for a <a href="https://developer.salesforce.com" target="_blank">Salesforce developer account</a>.
 
-The screenshots in this workshop are using Salesforce's new Lightning Experience. You can enabled the Lightning Experience by first clicking the Lightning Experience menu item on the left.
+The screenshots in this workshop are using Salesforce's new Lightning Experience. You can enable the Lightning Experience by first clicking the Lightning Experience menu item on the left.
 
 ![Lightning Menu](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/lightning-menu.jpg "Lightning Menu")
 
@@ -205,9 +205,9 @@ After the upload is complete, the Serial Monitor should start printing informati
 
 ![Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/serial-output.png "Serial Output")
 
-If you don’t see the “Button Pressed!” message, check your wiring. The jump wires are not always the best connectors and sometimes just need wiggled around a little.
+If you don’t see the “Button Pressed!” message, check your wiring. The jump wires are not always the best connectors and sometimes just need to be wiggled around a little.
 
-Every time the button is pressed, the firmware is publishing the state `{ "button": true }` to Losant. Currently, this firmware only reports when the button goes to true, it does not report the button going back to false. So if you hold the button down for a long time, it will only report when the button is initially pressed.
+Every time the button is pressed, the firmware is publishing the state `{ "button": true }` to Losant. Currently, this firmware only reports when the button goes to true; it does not report the button going back to false. So if you hold the button down for a long time, it will only report when the button is initially pressed.
 
 It’s now time to go into Losant and make use of this data.
 
@@ -269,7 +269,7 @@ If you'd like an additional challenge before moving to the next step, see what e
 
 ## 12. Open Cases Indicator
 
-The builder kit you've assembled includes an LED light. In this step we're going to extend our workflow to control that light based on whether or not there are open cases.
+The builder kit you've assembled includes an LED light. In this step, we're going to extend our workflow to control that light based on whether or not there are open cases.
 
 We're going to accomplish this by periodically requesting the count of open cases from Salesforce and then sending a command to the kit device to either turn on or off the LED based on that count. The first step is to drag a <a href="/workflows/triggers/timer/" target="_blank">Timer node</a> onto your workflow canvas and set its interval to 10 seconds.
 
@@ -307,9 +307,9 @@ Now add a second Device Command node and attach it to the left (red) connector o
 
 TODO: screenshot
 
-You can now deploy this workflow. After the 10 second timer elapses, if you still have a case open, you should see the LED turn on. You can then go into Salesforce, delete every case, and see the LED turn off. If you press the button, which creates a case, the LED will turn back on.
+You can now deploy this workflow. After the 10-second timer elapses, if you still have a case open, you should see the LED turn on. You can then go into Salesforce, delete every case, and see the LED turn off. If you press the button, which creates a case, the LED will turn back on.
 
-You've now successfully completed the Losant & Salesforce Builder Kit Workshop! If you'd like to keep experimenting, checkout the full builder kit instructions (TODO: link), which contains several other uses for your kit hardware.
+You've now successfully completed the Losant & Salesforce Builder Kit Workshop! If you'd like to keep experimenting, check out the full builder kit instructions (TODO: link), which contains several other uses for your kit hardware.
 
 Let people know you have completed the workshop:
 
