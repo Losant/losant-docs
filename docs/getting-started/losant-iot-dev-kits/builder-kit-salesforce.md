@@ -259,7 +259,9 @@ You can now deploy the workflow again and anytime the button is pressed, a Sales
 
 ![Cases Menu Item](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/cases-menu-item.png "Cases Menu Item")
 
-On new accounts, Salesforce pre-populates your cases with some examples. This would be a good time to delete those using the small triangle on the right of each case.
+On new accounts, Salesforce pre-populates your cases with some examples. This would be a good time to delete those using the small triangle on the right of each case. You'll first have to switch the Salesforce view to "All Open Cases" in order to see every case.
+
+![Open Cases](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/open-cases.png "Open Cases")
 
 If you'd like an additional challenge before moving to the next step, see what else you can do when the button is pressed. For example, send yourself an email or SMS message.
 
