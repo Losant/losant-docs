@@ -10,15 +10,13 @@ In a factory, there are tons of hardware that work together to make a product. U
 
 The device we're building in this workshop contains a button and an LED. When the button is pressed, a <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=cases_home.htm&language=en_US" target="_blank">Salesforce Case</a> will be created. The LED will be controlled by the number of open cases. If there are any open cases, the LED will be lit. If there are no open cases, the LED will be off. This device provides a quick way to create new cases and an easy way to visualize whether or not there are open cases that need to be addressed.
 
-As you perform this workshop, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
-
 ## 1. Build the Device
 
 For this workshop, you’ll need to attach the NodeMCU, button, and LED to the breadboard. Below is the wiring diagram. For more information on what breadboards are and how they work, check out our blog post on <a href="https://www.losant.com/blog/how-to-use-a-breadboard" target="\_blank">How to Use a Breadboard</a>.
 
 Your kit should include the following items:
 
-  * 1 [NodeMCU v1.0](http://nodemcu.com/index_en.html) dev kit microcontroller <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="\_blank">(View board schematic)</a>
+  * 1 <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="_blank">NodeMCU v1.0</a> dev kit microcontroller
   * 1 solderless breadboard
   * 8 jump wires
   * 2 resistors
@@ -29,7 +27,7 @@ Your kit should include the following items:
 
 ### Wiring
 
-***Disconnect the NodeMCU dev kit from USB.***
+***If connected, disconnect the NodeMCU dev kit from USB.***
 
 ![Salesforce Workshop Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-diagram.png "Salesforce Workshop Wiring Diagram")
 
@@ -37,13 +35,12 @@ Your kit should include the following items:
 1. Connect the 3V3 pin from the NodeMCU (a1) to the positive rail with a jump wire.
 1. Connect the GND pin from the NodeMCU (a2) to the negative rail with a jump wire.
 1. Connect the button to the other end of the breadboard so its leads straddle the center line and connect it to terminals e28, e30, f28, and f30.
-1. Connect the positive rail to the button using terminal a28 using a jump wire.
-1. Connect the negative rail to the button using terminal c30 using a resistor. It doesn’t matter which way resistors are oriented.
-1. Connect the pin labeled "D1" on the NodeMCU (a14) to the button (j30) with a jump wire. In our code, "D1" is the equivalent of GPIO pin 5.
-1. Add the LED so the positive lead (the longer one) is in terminal c19 and the negative lead is in c20.
-1. Connect the positive lead of the LED to D2 on the NodeMCU (terminal a13) with a jump wire.
-1. Connect the negative lead of the LED from terminal c20 to the negative rail with a resistor.
-
+1. Connect the positive rail to the button (a28) with a jump wire.
+1. Connect the negative rail to the button (c30) using a resistor. It doesn’t matter which way resistors are oriented.
+1. Connect the pin labeled "D1" on the NodeMCU (a14) to the button (j30) with a jump wire.
+1. Add the LED so the positive lead (the longer one) is in terminal e19 and the negative lead is in e20.
+1. Connect the positive lead of the LED (c19) to D2 on the NodeMCU (a13) with a jump wire.
+1. Connect the negative lead of the LED (c20) to the negative rail with a resistor.
 
 Your device should look very similar to this:
 
