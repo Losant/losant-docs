@@ -281,7 +281,7 @@ Next, add a debug node and attach it to the Salesforce node and deploy this work
 
 ![Salesforce Count Result](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/count-result.png "Salesforce Count Result")
 
-As you can see, the result is now available on the payload at `data.result.count`. Next add a <a href="/workflows/logic/conditional/" target="_blank">Conditional node</a> and connect it to the Salesforce node so we can make a decision based on this value.
+As you can see, the result is now available on the payload at `data.result.count`. Next, add a <a href="/workflows/logic/conditional/" target="_blank">Conditional node</a> and connect it to the Salesforce node so we can make a decision based on this value.
 
 ![Conditional Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/conditional-node.png "Conditional Node")
 
