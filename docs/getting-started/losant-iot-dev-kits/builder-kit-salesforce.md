@@ -311,7 +311,10 @@ Now add a second Device Command node and attach it to the left (red) connector o
 
 You can now deploy this workflow. After the 10 second timer elapses, if you still have a case open, you should see the LED turn on. You can then go into Salesforce, delete every case, and see the LED turn off. If you press the button, which creates a case, the LED will turn back on.
 
-You've now successfully completed the Losant & Salesforce Builder Kit Workshop! If you'd like to keep experimenting, checkout the full <a href="/getting-started/losant-iot-dev-kits/builder-kit/" target="_blank">builder kit instructions</a>, which contains several other uses for your kit hardware.
+You've now successfully completed the Losant & Salesforce Builder Kit Workshop! As an additional challenge, try building a <a href="/dashboards/overview/" target="_blank">dashboard</a> that shows the number of times you've pressed the button.
+
+If you'd like to keep experimenting, checkout the full <a href="/getting-started/losant-iot-dev-kits/builder-kit/" target="_blank">builder kit instructions</a>, which contains several other uses for your kit hardware.
+
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.losant.com/kit" data-text="I just completed the @LosantHQ #IoT Salesforce Builder Kit Workshop at @Dreamforce 2016!" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
