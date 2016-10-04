@@ -153,7 +153,7 @@ If you're familiar with git, you can also clone the repository from here:
 
 ## 10. Flash the Firmware
 
-**If you are doing this workshop at home, you will need to make sure your <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">enviroment is set up correctly</a>. **
+**If you are doing this workshop at home, you will need to make sure your <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">environment is set up correctly</a>. **
 
 Let's open Arduino IDE by clicking the shortcut on the Desktop.
 
@@ -249,43 +249,69 @@ If you have an empty data field that does not include the button value, the typi
 
 You may remember that when you originally set up the device, we added an attribute named “button” whose data type was boolean. This is the attribute that the firmware we flashed is sending to Losant. There’s nothing special about the name “button”; we could have named it anything.
 
-Since the Device node can be triggered on any state request and we only want this workflow to run when the button attribute is sent, let’s add a [Conditional node](https://docs.losant.com/workflows/logic/conditional/) to check that the value of button is true. This will be important for the later workshops when the device starts sending other state information. We don’t want an email every time the device sends something.
+The next step is to create a Salesforce Case whenever the button is pressed. Add a <a href="/workflows/data/salesforce-cases/" target="_blank">Salesforce Cases node</a> to the workflow and connect it to the Device node.
 
-![Conditional Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/conditional-workflow-node.png "Conditional Workflow Node")
+![Salesforce Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/salesforce-workflow-node.png "Salesforce Workflow Node")
 
-You can delete the existing Debug node or click on the connecting line and delete it. Either way, insert a Conditional node between the Device node and the Debug node.
+You may notice that all the fields have "template" in their labels. Many workflow nodes, including the Salesforce Cases node, support what Losant calls a <a href="/workflows/overview/#template-fields-and-payload-paths" target="_blank">template field</a>. Template fields allow you to reference variables in the payload by surrounding them in double curly braces. For example `My devices name is {{ deviceName }}` would pull the `deviceName` variable from the payload and put it in that string. This step doesn't require the use of templates, but they are important to understand because nearly all complex solutions make use of them. For example, if your device was reporting the temperature of a piece of manufacturing equipment, you could use a template to put the actual temperature value in the subject or description of a newly created Salesforce case.
 
-Many workflow nodes, including the Conditional node, support what Losant calls a [template field](https://docs.losant.com/workflows/overview/#template-fields-and-payload-paths). Template fields allow you to write full expressions or blocks of text while referencing values in the payload. Set the conditional expression to the following:
+To configure this node, provide your Salesforce username, password, and security token in the first three fields. These are required so the Losant platform can properly authenticate to the Salesforce API in order to perform actions.
+
+Next, set the `Salesforce Case Action` to `Create`. Enter "New" as the status, "Web" as the origin, and enter any subject you'd like.
+
+You can now deploy the workflow again and anytime the button is pressed, a Salesforce case will be created. You can see created cases by returning to the Salesforce portal and clicking the "Cases" icon on the bottom-left. It can sometimes take a few second for newly created cases to show up in the portal.
+
+![Cases Menu Item](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/cases-menu-item.png "Cases Menu Item")
+
+On new accounts, Salesforce pre-populates your cases with some examples. This would be a good time to delete those using the small triangle on the right of each case.
+
+If you'd like an additional challenge before moving to the next step, see what else you can do when the button is pressed. For example, send yourself an email and SMS message.
+
+## 12. Open Cases Indicator
+
+The builder kit you've assembled includes an LED light. In this step we're going to extend our workflow to control that light based on whether or not there are open cases.
+
+We're going to accomplish this by periodically requesting the count of open cases from Salesforce and then sending a command to the kit device to either turn on or off the LED based on that count. The first step is to drag a <a href="/workflows/triggers/timer/" target="_blank">Timer node</a> onto your workflow canvas and set its interval to 10 seconds.
+
+![Timer Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/timer-node.png "Timer Node")
+
+Next, drag another Salesforce Cases node onto the canvas and connect it to the Timer.
+
+![Salesforce Count Node](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/salesforce-count-node.png "Salesforce Count Node")
+
+Just like before, provide your username, password, and security token in the first three fields. This time set the `Case Action` to `Count`, set the `Status` to "New" and `Case Origin` to "Web". Lastly we need to put the result somewhere on the payload. Set the `Payload Path to Store Result` field to "data.result".
+
+Next, add a debug node and attach it to the Salesforce node and deploy this workflow. This will allow us to see what the response looks like that comes back from the Salesforce API.
+
+![Salesforce Count Result](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/count-result.png "Salesforce Count Result")
+
+As you can see, the result is now available on the payload at `data.result.count`. Next add a <a href="/workflows/logic/conditional/" target="_blank">Conditional node</a> and connect it to the Salesforce node so we can make a decision based on this value.
+
+Set the conditional to:
 
 ```text
-{{ data.button }} == true
+{{ data.result.count }} > 0
 ```
 
-This expression pulls the value of data.button from the payload, which you saw earlier using the debug node. If data.button doesn’t exist, this will evaluate to false.
+For this field, we've used a template, which allows us to pull a value from the current payload. Every time this condition node runs, it will pull whatever was returned by Salesforce and check whether or not it is greater than zero. If the condition is true, it will take the right (green) path. If the condition is false, it will take the left (red) path.
 
-The Conditional node branches the workflow depending on whether the expression is true or false. If the value is true, the workflow takes the right branch. If the expression is false, the workflow takes the left branch. Since we have nothing attached to the false branch, the workflow simply ends and nothing happens.
+The firmware we flashed to the device earlier understands two Device Commands (TODO: link): "ledOn" and "ledOff". If the condition is true, we want to send the device the "ledOn" command. If the condition is false, we want to send the device the "ledOff" command.
 
-The last step is to add the Email node to send yourself an email every time the button is pressed.
+Start by dragging a Device Command node onto the canvas and attaching it to the right (green) connector on the conditional node.
 
-![Email Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/email-workflow-node.png "Email Workflow Node")
+TODO: screenshot
 
-Losant has two email output nodes. The [Email](https://docs.losant.com/workflows/outputs/email/) node sends emails using Losant’s servers, but has a limit of one email per minute. If you need to send more than that, you can use the [Sendgrid](https://docs.losant.com/workflows/outputs/sendgrid/) email node.
+Make sure your builder kit device is selected and set the command name to "ledOn". Commands also support optional payloads so you can send additional information to the device. For this workshop, all we need is the name, so leave the payload field blank.
 
-Enter your email address as a recipient. You can then specify any subject and body you’d like. All of these fields support templates, which means they could pull their values from the payload, but this doesn’t apply for our example. For now, simply type any text you'd like.
+Now add a second Device Command node and attach it to the left (red) connector on the conditional node. Again, make sure your device is selected and this time send the "ledOff" command.
 
-Click the “Deploy Workflow” button and press the hardware button. You should now receive an email with the subject and body you specified.
+TODO: screenshot
 
-This completes the first workshop. You’ve successfully created an Internet button that can be used for any number of useful actions. For an extra challenge, try browsing the other output nodes and come up with other actions you can control with your Internet button, such as sending yourself a text message.
+You can now deploy this workflow. After the 10 second timer elapses, if you still have a case open, you should see the LED turn on. You can then go into Salesforce, delete every case, and see the LED turn off. If you press the button, which creates a case, the LED will turn back on.
+
+You've now successfully completed the Losant & Salesforce Builder Kit Workshop! If you'd like to keep experimenting, checkout the full builder kit instructions (TODO: link), which contains several other uses for your kit hardware.
 
 Let people know you have completed the workshop:
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.losant.com/kit" data-text="I just completed the @LosantHQ #IoT Salesforce Builder Kit at @Dreamforce!" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.losant.com/kit" data-text="I just completed the @LosantHQ #IoT Salesforce Builder Kit Workshop at @Dreamforce!" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-# Next Steps
-
-These workshops are just the beginning. You now have a kit that can be used for any number of interesting solutions. We have a growing list of [tutorials and project](/getting-started/tutorials.md) so learn more about hardware, IoT, and Losant. Losant also has several kits available:
-
-1. Losant Builder Kit ( [Buy Now](https://store.losant.com/products/losant-builder-kit) | [Instructions](/getting-started/losant-iot-dev-kits/builder-kit/) )
-1. Moisture Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-moisture-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/) )
-1. Door Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/) )
