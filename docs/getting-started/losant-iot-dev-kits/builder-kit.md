@@ -2,20 +2,20 @@
 
 The <a href="https://store.losant.com/products/losant-builder-kit" target="\_blank">Losant Builder Kit</a> is an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
 
-![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit/builder-kit.jpg "Builder Kit")
+![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/kit-complete.jpg "Builder Kit")
 
 As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
 
 Your kit should include the following items:
 
-* 1 [Adafruit Feather Huzzah](https://www.adafruit.com/products/2821) development board <a href="https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts" target="\_blank">(View board schematic)</a>
-* 1 solderless breadboard
-* 9 jump wires
-* 5 resistors
-* 1 LED
-* 1 TMP36 temperature sensor
-* 1 button
-* 1 micro-USB cable
+  * 1 [NodeMCU v1.0](http://nodemcu.com/index_en.html) dev kit microcontroller <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="\_blank">(View board schematic)</a>
+  * 1 solderless breadboard
+  * 8 jump wires
+  * 2 resistors
+  * 1 LED
+  * 1 TMP36 temperature sensor
+  * 1 button
+  * 1 micro-USB cable
 
 ## Overview
 
@@ -23,7 +23,7 @@ These instructions are split into three workshops. Each workshop builds on the p
 
 ## Environment Setup
 
-In order to properly program the kit's microcontroller, please follow the [environment setup instructions](/getting-started/losant-iot-dev-kits/environment-setup/).
+The [environment setup instructions](/getting-started/losant-iot-dev-kits/environment-setup/) must be performed in order to properly program the device.
 
 ## Losant Setup
 
@@ -72,7 +72,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ### Generate Security Tokens
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu.
+Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `More > Access Keys` from the application menu.
 
 ![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
@@ -88,11 +88,11 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 Now let's get the firmware you'll be flashing to the device. Download and extract the following zip file to your computer. We'll be editing and opening these files using the Arduino IDE, so put it somewhere convenient.
 
-[https://github.com/Losant/losant-kit-builder/archive/master.zip](https://github.com/Losant/losant-kit-builder/archive/master.zip)
+[https://github.com/Losant/losant-kit-builder-nodemcu/archive/master.zip](https://github.com/Losant/losant-kit-builder-nodemcu/archive/master.zip)
 
 If you're familiar with git, you can also clone the repository from here:
 
-[https://github.com/Losant/losant-kit-builder](https://github.com/Losant/losant-kit-builder)
+[https://github.com/Losant/losant-kit-builder-nodemcu](https://github.com/Losant/losant-kit-builder-nodemcu)
 
 ## Workshop 1 – Internet Button
 
@@ -100,25 +100,25 @@ The first workshop creates an Internet button that triggers a Losant Workflow to
 
 ### Wiring
 
-***Disconnect the AdaFruit Feather microcontroller from USB.***
+***Disconnect the NodeMCU dev kit from USB.***
 
-For this workshop, you’ll need to attach the AdaFruit Feather Huzzah and button to the breadboard. Below is the wiring diagram. For more information on what breadboards are and how they work, check out our blog post on <a href="https://www.losant.com/blog/how-to-use-a-breadboard" target="\_blank">How to Use a Breadboard</a>.
+For this workshop, you’ll need to attach the NodeMCU and button to the breadboard. Below is the wiring diagram. For more information on what breadboards are and how they work, check out our blog post on <a href="https://www.losant.com/blog/how-to-use-a-breadboard" target="\_blank">How to Use a Breadboard</a>.
 
-![Workshop 1 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-1-wiring-diagram.png "Workshop 1 Wiring Diagram")
+![Workshop 1 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-1-wiring-diagram.png "Workshop 1 Wiring Diagram")
 
-1. Push the Feather into terminals 1-16 on either side of the center line, which are rows “c” and “i.” The USB port should be facing away from the breadboard.
-1. Connect the 3V pin from the Feather (a2) to the positive rail with a jump wire.
-1. Connect the GND pin from the Feather (a4) to the negative rail with a jump wire.
+1. Push the NodeMCU into terminals 1-15 on either side of the center line, which are rows “b” and “i.” The USB port should be facing away from the breadboard.
+1. Connect the 3V3 pin from the NodeMCU (a1) to the positive rail with a jump wire.
+1. Connect the GND pin from the NodeMCU (a2) to the negative rail with a jump wire.
 1. Connect the button to the other end of the breadboard so its leads straddle the center line and connect it to terminals e28, e30, f28, and f30.
 1. Connect the positive rail to the button using terminal a28 using a jump wire.
 1. Connect the negative rail to the button using terminal c30 using a resistor. It doesn’t matter which way resistors are oriented.
-1. Connect Pin 14 on the Feather (j8) to the button (j30) with a jump wire.
+1. Connect the pin labeled "D1" on the NodeMCU (a14) to the button (j30) with a jump wire. In our code, "D1" is the equivalent of GPIO pin 5.
 
-![Workshop 1 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-1-wiring-image.png "Workshop 1 Wiring Image")
+![Workshop 1 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-1-wiring-image.jpg "Workshop 1 Wiring Image")
 
 ### Flash the Firmware
 
-Plug the AdaFruit Feather microcontroller back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/environment-setup) guide.
+Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the [environment setup](/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port) for instructions on properly configuring the device port.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop-1-internet-button/workshop-1-internet-button.ino`. Edit the following variables at the top of the file.
 
@@ -130,7 +130,7 @@ With the Arduino IDE, use the `File -> Open` menu to navigate to where you downl
 
 ![Update Variables](/images/getting-started/losant-iot-dev-kits/builder-kit/update-variables.png "Update Variables")
 
-Your code will automatically be saved as part of the upload process in the following step. After editing the code, open the Arduino IDE's Serial Monitor and change the baud rate to 115200. The serial monitor can be opened using the button on the top right of the Arduino IDE or using the `Tools -> Serial Monitor` menu.
+Your changes will automatically be saved as part of the upload process in the following steps. After editing the code, open the Arduino IDE's Serial Monitor and change the baud rate to 115200. The serial monitor can be opened using the button on the top right of the Arduino IDE or using the `Tools -> Serial Monitor` menu.
 
 ![Open Serial Monitor](/images/getting-started/losant-iot-dev-kits/builder-kit/open-serial-button.png "Open Serial Monitor")
 
@@ -138,9 +138,27 @@ Your code will automatically be saved as part of the upload process in the follo
 
 The serial monitor won't print any information until we flash the device with the source code in the next step.
 
-Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds and the Feather will rapidly blink a blue light while it’s uploading.
+Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds and the NodeMCU will rapidly blink a blue light while it’s uploading.
 
 ![Upload Button](/images/getting-started/losant-iot-dev-kits/builder-kit/upload-button.png "Upload Button")
+
+If you see an error in the Arduino IDE's output window, refer to the ones below for common solutions.
+
+```
+#include <ESP8266WiFi.h>
+                         ^
+compilation terminated.
+exit status 1
+```
+
+This means the board is not installed or properly setup. Refer to the [Arduino Setup](/getting-started/losant-iot-dev-kits/environment-setup/#configure-arduino-ide) step of the environment setup instructions to install the board and configure the Arduino IDE to use it.
+
+```
+error: espcomm_open failed
+error: espcomm_upload_mem failed
+```
+
+This means the port is not properly selected. Refer to the [Configure Device USB Port](/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port) step of the environment setup instructions.
 
 After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. Push the button you wired up in the breadboard, and the Serial Monitor will print “Button Pressed!”
 
@@ -212,11 +230,35 @@ The last step is to add the Email node to send yourself an email every time the 
 
 Losant has two email output nodes. The [Email](https://docs.losant.com/workflows/outputs/email/) node sends emails using Losant’s servers, but has a limit of one email per minute. If you need to send more than that, you can use the [Sendgrid](https://docs.losant.com/workflows/outputs/sendgrid/) email node.
 
-Enter your email address as a recipient. You can then specify any subject and body you’d like. All of these fields support templates, which means they could pull their values from the payload, but this doesn’t apply for our example. For now, simply type the actual values.
+Enter your email address as a recipient. You can then specify any subject and body you’d like. All of these fields support templates, which means they could pull their values from the payload, but this doesn’t apply for our example. For now, simply type any text you'd like.
 
 Click the “Deploy Workflow” button and press the hardware button. You should now receive an email with the subject and body you specified.
 
 This completes the first workshop. You’ve successfully created an Internet button that can be used for any number of useful actions. For an extra challenge, try browsing the other output nodes and come up with other actions you can control with your Internet button, such as sending yourself a text message.
+
+## Bonus Workshop - Virtual Light Wall
+
+If you visit [http://lights.mod.bz](http://lights.mod.bz) you'll see a 3x3 grid of squares - that's the "Virtual Light Wall". In this workshop, we're going to make one of those squares light up with a random color and display a message of your choosing whenever you hit your internet button.
+
+Start by adding an HTTP node to your workflow and connecting it to the Conditional node. You may also want to disconnect the Email node so you don't get emails every time you press the button during this workshop.
+
+![HTTP Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workflow-http-node.png "HTTP Workflow Node")
+
+On the HTTP node configuration properties, change the `Request Method` to `POST` and set the `URL Template` to "http://lights.mod.bz".
+
+Set the body template to the following:
+
+```json
+{ "name" : "your name here", "message" : "your message here" }
+```
+
+The name and message can be anything you want. Try to keep it family friendly because it will be displayed in front of everyone.
+
+Lastly, add a request header by setting the `Name` to "content-type" and the `Value Template` to "application/json".
+
+Click the `Deploy Workflow` button to deploy this workflow. Now whenever you press the internet button, this workflow is making a request to the Light Wall website that includes your name and message. The Light Wall then lights up a random square and displays the information. Everyone else who is also viewing the Virtual Light Wall will see your message in real-time.
+
+This workshop shows a lot of the power behind workflows. We've completely changed the behavior of our internet button without having to write any code or update the firmware running on the device itself.
 
 ## Workshop 2 – Remote Control LED
 
@@ -226,26 +268,26 @@ Losant supports two major communication mechanisms – [states](https://docs.los
 
 ### Wiring
 
-***Disconnect the Adafruit Feather microcontroller from USB.***
+***Disconnect the NodeMCU from USB.***
 
-Each workshop builds on the previous one, so if you completed the first workshop, it is not necessary to disconnect any components from your breadboard. We will simply add an LED and connect it to the Feather.
+Each workshop builds on the previous one, so if you completed the first workshop, it is not necessary to disconnect any components from your breadboard. We will simply add an LED and connect it to the NodeMCU.
 
-![Workshop 2 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-2-wiring-diagram.png "Workshop 2 Wiring Diagram")
+![Workshop 2 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-diagram.png "Workshop 2 Wiring Diagram")
 
 
-1. Add the LED so the positive lead (the longer one) is in terminal d20 and the negative lead is in d21.
-1. Connect the positive lead of the LED to GPIO 12 on the Feather (terminal j9) with a jump wire.
-1. Connect the negative lead of the LED from terminal c21 to the negative rail with a resistor.
+1. Add the LED so the positive lead (the longer one) is in terminal c19 and the negative lead is in c20.
+1. Connect the positive lead of the LED to D2 on the NodeMCU (terminal a13) with a jump wire.
+1. Connect the negative lead of the LED from terminal c20 to the negative rail with a resistor.
 
-![Workshop 2 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-2-wiring-image.png "Workshop 2 Wiring Image")
+![Workshop 2 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-image.jpg "Workshop 2 Wiring Image")
 
 ### Flash the Firmware
 
-Plug the Adafruit Feather microcontroller back into USB.
+Plug the NodeMCU back into USB.
 
 Open the file `workshop-2-led.ino` with the Arduino IDE. Just like in the first workshop, you’ll have to edit the WiFi and credentials fields. You can use the same values from the previous workshop.
 
-Just like before, make sure the Serial Monitor is open and upload the sketch to the Feather microcontroller. On some Windows machines, we've noticed you have to re-select the board and port whenever you open a new file. Make sure these are properly set under the `Tools -> Board menu and Tools -> Port` menu.
+Just like before, make sure the Serial Monitor is open and upload the sketch to the NodeMCU. On some Windows machines, we've noticed you have to re-select the board and port whenever you open a new file. Make sure these are properly set under the `Tools -> Board menu and Tools -> Port` menu.
 
 ![Upload Workshop 2](/images/getting-started/losant-iot-dev-kits/builder-kit/upload-workshop-2.png "Upload Workshop 2")
 
@@ -263,13 +305,13 @@ Once created, drag the Virtual Button workflow node to the canvas.
 
 ![Virtual Button Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/virtual-button-workflow-node.png "Virtual Button Workflow Node")
 
-The Virtual Button node allows you to completely define the payload that will flow through the workflow. Since we won’t be using the payload, it can be kept as an empty object or left blank. The Virtual Button is often useful to debug complex workflows because you can trigger the workflow with any test data you’d like.
+The Virtual Button node allows you to completely define the payload that will flow through the workflow. Since we won’t be using the payload, it can be kept as an empty object or left blank. The Virtual Button is often useful to debug complex workflows because you can trigger the workflow with any test data you’d like, but in our case, we're going to use it to send the toggle command to our device.
 
 Next, drag a Device Command node onto the canvas and connect it to the Virtual Button.
 
 ![Device Command Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/device-command-workflow-node.png "Device Command Workflow Node")
 
-The Device Command node requires the device and the command details. Since you likely only have one device, it should be automatically selected. If not, choose it from the dropdown. The command name that the kit supports is “toggle.” Command names can be anything, and what commands a device supports are entirely up to the firmware. In our example, the firmware we flashed is looking for a command named “toggle” and knows to flip the LED when it’s received. Commands also support optional payloads that could be arguments to the command. For example, if the command is “start recording,” the payload could be `{ "resolution" : 1080 }`. The toggle command doesn't need a payload, so leave it blank.
+The Device Command node requires the device and the command details. Since you likely only have one device, it should be automatically selected. If not, choose it from the dropdown. The command name that the kit supports is “toggle.” Command names can be anything, and what commands a device supports are entirely up to the firmware. In our example, the firmware we flashed is looking for a command named “toggle” and knows to flip the LED when it’s received. Commands also support optional payloads that could be arguments to the command. For example, if the command is “start recording,” the payload could be `{ "resolution" : 1080 }`. Our toggle command, however, doesn't need a payload, so leave it blank.
 
 Click the “Deploy Workflow” button at the top-right of the screen.
 
@@ -291,29 +333,23 @@ In this workshop, we’re going to add a temperature sensor to your builder kit.
 
 ### Wiring
 
-***Disconnect the Adafruit Feather microcontroller from USB.***
-
-The wiring for this step is slightly complicated because the Feather’s analog input only supports up to 1V, but the temperature sensor reports up to roughly 1.75V. We have to use a pair of resistors to divide the voltage before sending it to the microcontroller.
+***Disconnect the NodeMCU from USB.***
 
 Just like the previous workshop, keep everything you've already wired and add these new components.
 
-![Workshop 3 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-3-wiring-diagram.png "Workshop 3 Wiring Diagram")
+![Workshop 3 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-3-wiring-diagram.png "Workshop 3 Wiring Diagram")
 
 
-1. Add the tmp36 temperature sensor to terminals e23, e24, and e25. It’s ***VERY IMPORTANT*** that the sensor is oriented the right way with the flat side facing the bottom of the board – towards column a.
-1. Connect the rightmost lead (c25) of the temperature sensor to the negative rail using a resistor.
-1. Connect the leftmost lead (a23) of the temperature sensor to the positive rail using a jump wire.
-1. Add one resistor between terminals h19 and h24.
-1. Add one resistor between terminals i24 and i29.
-1. Connect g24 to the ADC input on the Feather microcontroller (terminal a5) with a jump wire.
-1. Connect h29 to the negative rail with a jump wire.
-1. Connect g19 to the output on the temperature sensor (a24) with a jump wire.
+1. Add the tmp36 temperature sensor to terminals e22, e23, and e24. It’s ***VERY IMPORTANT*** that the sensor is oriented the right way with the flat side facing the bottom of the board – towards column a.
+1. Connect the rightmost lead (a24) of the temperature sensor to the negative rail using a jump wire.
+1. Connect the leftmost lead (a22) of the temperature sensor to the positive rail using a jump wire.
+1. Connect the center lead (a23) to the A0 pin on the NodeMCU (terminal j15) with a jump wire.
 
-![Workshop 3 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-3-wiring-image.jpg "Workshop 3 Wiring Image")
+![Workshop 3 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-3-wiring-image.jpg "Workshop 3 Wiring Image")
 
 ### Flash the Firmware
 
-Plug the Adafruit Feather microcontroller back into USB. Open the file workshop-3-temp.ino. Just as in the previous two workshops, edit the top of the file to set the WiFi and Losant credentials. You can use the same values as the previous two workshops.
+Plug the NodeMCU back into USB. Open the file workshop-3-temp.ino. Just as in the previous two workshops, edit the top of the file to set the WiFi and Losant credentials. You can use the same values as the previous two workshops.
 
 ![Deploy Workshop 3](/images/getting-started/losant-iot-dev-kits/builder-kit/deploy-workshop-3.png "Deploy Workshop 3")
 
