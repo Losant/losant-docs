@@ -1523,7 +1523,7 @@ nav.stickynav {
 
 .header.sticky {
   height: 60px;
-  background: {{ cobaltBlue }};
+  background-color: #284fff;
   padding: 5px 0 0;
 }
 
@@ -1667,7 +1667,7 @@ code {
 
   .header .main-nav a:hover {
     border: 0;
-    background: {{ atmosphereGrey }};
+    background-color: #DBD9D6;
   }
 }
 
