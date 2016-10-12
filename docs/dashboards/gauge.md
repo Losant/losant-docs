@@ -46,11 +46,23 @@ Note that, when choosing a value other than "Last received data point", it is ne
 
 ### Block Data
 
-The block data takes four parameters, three of which are required:
+The block data takes five parameters, three of which are required:
 
 ![Gauge Block Data](/images/dashboards/gauge-block-data.png "Gauge Block Data")
 
 * **Label** is the text displayed beneath number / dial representation of your device(s) state. This can be any value, but you will want it to properly represent the data displayed along with it. HTML entities and <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a> are allowed here.
 * **Device IDS / Tags** is a [device query](/devices/device-queries) for choosing which devices are displayed within the gauge.
 * **Attribute** is the device attribute whose value will be displayed in the gauge. This attribute must be of the type `Number`. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
+* **Color** can only be set when the gauge type is set to "Dial". The color picker defaults to green, but any color may be selected as the default gauge color.
 * **Aggregation Type** is only visible when Duration is set to anything other than "Last received data point", OR when a device tag is supplied in the device query, OR if more than one device ID is supplied within the device query. This determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "MEAN" will average all data points together before displaying within the gauge.
+
+### Conditional Gauge Colors
+
+If the gauge type is set to "Dial", you may optionally create a list of conditions that change the color of the gauge depending on the query's returned value. This works similarly to the [indicator block](/dashboards/indicator/), in that the first [expression](/workflows/accessing-payload-data/#expressions) that returns `true` determines the gauge's color. If none of them returns `true`, the default color set in the "Block Data" section will be the gauge's color.
+
+![Gauge Block Conditions](/images/dashboards/gauge-block-conditions.png "Gauge Block Conditions")
+
+The conditions can be arranged via drag-and-drop to set their priority relative to one another. Two variables are available when writing the expressions:
+
+* `{{value}}` represents the raw numeric value returned from the query.
+* `{{percent}}` is the percentage the value represents when compared against the minimum and maximum values set in the dial gauge configuration. For example, given a minimum of 10 and a maximum of 50, when {{value}} is equal to 40, the corresponding {{percent}} is 75.

@@ -36,9 +36,11 @@ $( document ).ready(function() {
     var container = $('.stickynav'),
     scrollTo = $("a.current");
 
-    container.scrollTop(
+    if (scrollTo.length) {
+      container.scrollTop(
         scrollTo.offset().top - container.offset().top + container.scrollTop()
-    );
+      );
+    }
 });
 
 window.SphinxRtdTheme = (function (jquery) {

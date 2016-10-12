@@ -4,7 +4,7 @@ All Losant IoT Developer Kits use an ESP8266 based WiFi development board. Befor
 
 ## Install Arduino IDE
 Download and install v1.6.9 of the Arduino IDE by following the instructions at:<br />
-[https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
+<a href="https://www.arduino.cc/en/Main/Software" target="_blank">https://www.arduino.cc/en/Main/Software</a>
 
 If you already have the Arduino IDE installed, it is strongly recommend that you ***download and install 1.6.9***. There have been issues with previous versions not working correctly.
 
@@ -12,7 +12,7 @@ If you already have the Arduino IDE installed, it is strongly recommend that you
 
 The microcontroller boards requires a USB to UART driver that must be installed for programming. Download and install the driver for your platform by following the instructions at:
 
-[https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx)
+<a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx</a>
 
 ![Windows Driver Download](/images/getting-started/losant-iot-dev-kits/environment-setup/uart-driver-windows.png "Windows Download")
 
@@ -91,7 +91,7 @@ Use the `Tools -> Port` menu to select the port your device is connected to. Thi
 
 If you don't see an entry under the port menu, double check the following:
 
-1. Did you [install the USB driver](https://www.losant.com/kit#install-usb-drivers)?
+1. Did you [install the USB driver](/getting-started/losant-iot-dev-kits/environment-setup/#install-usb-drivers)?
 1. Did you connect the microcontroller to your computer with the supplied USB cable?
 
 Your environment is now properly setup to begin programming your dev kits with their needed firmware. Please continue to the instructions for your specific kit.
