@@ -79,6 +79,7 @@ pages:
         - Math: workflows/logic/math.md
         - Mutate: workflows/logic/mutate.md
         - On Change: workflows/logic/on-change.md
+        - Random Number: workflows/logic/random-number.md
         - Throttle: workflows/logic/throttle.md
         - Time Range: workflows/logic/time-range.md
         - Validate Payload: workflows/logic/validate-payload.md
