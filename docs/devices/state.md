@@ -51,8 +51,13 @@ If the time field is omitted, or if the provided string cannot be parsed, the br
 
 The ability to pass a `time` along with state data is important for two reasons:
 
-*   This allows for batching state reports together in one call to the Losant API. If your use case allows for it, doing so means fewer HTTP requests, which can (for example) provide for more efficient power consumption.
-*   Previous state reports can be overwritten if an equal timestamp **down to the millisecond** is sent to the API. Note, however, that doing so will still trigger any workflows that are tied to that device's reporting of state.
+#### Batch Reporting
+
+If your use case allows for it, doing so means fewer HTTP requests, your state reports can be collected on the device and sent to the Losant API as an array of payloads in one request. This can, for example, provide for more efficient power consumption or allow the device to continue recording state when it loses an Internet connection. **However**, if any [workflows](/workflows/overview/) are tied to that device [reporting its state](/workflows/triggers/device/), the workflow will run for **each payload in the array**.
+
+#### Overwriting Previous States
+
+If a state payload is sent with a timestamp, and that timestamp corresponds to a previously reported state **down to the millisecond**, the new payload will overwrite any attribute values reported within that payload. Any attributes reported on the original payload that are not part of the new payload will remain intact. Note that overwriting device states **will still trigger workflows** that are tied to that device's reporting of state.
 
 ## Using State
 
