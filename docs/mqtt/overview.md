@@ -61,7 +61,7 @@ Messages published to the Losant topics gain access to the full features of the 
 
 #### Publishing Device State
 
-A [device state](/devices/state) is likely the most commonly published message. When thinking in terms of sensor data, the device state is typically the value of one or more sensors.
+A [device state](/devices/state) is likely the most commonly published message. When thinking in terms of sensor data, the device state is typically the value of one or more sensors. Note that the `time` property is optional, but that [reporting a time with state](/devices/state/#including-timestamps) can be beneficial depending on your use case.
 
 ###### Topic
 
@@ -79,7 +79,7 @@ A [device state](/devices/state) is likely the most commonly published message. 
 }
 ```
 
-The payload optionally includes the time and any [device attributes](/devices/overview).  The time, if provided, can be formatted in <a href="https://docs.mongodb.org/manual/reference/mongodb-extended-json" target="_blank">EJSON</a> format (as it is in the above example), seconds since epoch, or milliseconds since epoch. If the time field is omitted, the broker will automatically set it to the current time. When thinking in terms of sensor data, it's very likely you'll have an attribute for each sensor attached to your device. For example, if a device with id `575ecf887ae143cd83dc4aa2` had a temperature sensor, you might report state that has an attribute named "temperature" by publishing to the topic below with the following payload:
+When thinking in terms of sensor data, it's very likely you'll have an attribute for each sensor attached to your device. For example, if a device with id `575ecf887ae143cd83dc4aa2` had a temperature sensor, you might report state that has an attribute named "temperature" by publishing to the topic below with the following payload:
 
 ###### Topic
 
