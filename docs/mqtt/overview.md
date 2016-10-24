@@ -1,21 +1,21 @@
 # MQTT Protocol
 
-<a href="http://mqtt.org" target="_blank">MQTT</a> is a lightweight communication protocol targeted at embedded devices with limited connectivity. MQTT is the preferred communication mechanism between your devices and the Losant platform. Currently, Losant has MQTT Clients
+<a href="http://mqtt.org" target="\_blank">MQTT</a> is a lightweight communication protocol targeted at embedded devices with limited connectivity. MQTT is the preferred communication mechanism between your devices and the Losant platform. Currently, Losant has MQTT Clients
 that easily wrap up the communication between Losant and a device for the following languages:
 
-*   Arduino with <a href="https://github.com/Losant/losant-mqtt-arduino" target="_blank">losant-mqtt-arduino</a>  
+*   Arduino with <a href="https://github.com/Losant/losant-mqtt-arduino" target="\_blank">losant-mqtt-arduino</a>  
 Available in Platform.io: `platformio lib install 277`  
 <br/>
 
-*   JavaScript with <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">losant-mqtt-js</a>  
+*   JavaScript with <a href="https://github.com/Losant/losant-mqtt-js" target="\_blank">losant-mqtt-js</a>  
 Available in Node Package Manager: `npm install losant-mqtt`  
 <br/>
 
-*   Python with <a href="https://github.com/Losant/losant-mqtt-python" target="_blank">losant-mqtt-python</a>  
+*   Python with <a href="https://github.com/Losant/losant-mqtt-python" target="\_blank">losant-mqtt-python</a>  
 Available in the Python Package Index: `pip install losant-mqtt`  
 <br/>
 
-*   Ruby with <a href="https://github.com/Losant/losant-mqtt-ruby" target="_blank">losant-mqtt-ruby</a>  
+*   Ruby with <a href="https://github.com/Losant/losant-mqtt-ruby" target="\_blank">losant-mqtt-ruby</a>  
 Available in RubyGems: `gem install losant_mqtt`  
 
 For most developers the Losant MQTT Clients abstract the complexity of MQTT, but it
@@ -42,7 +42,7 @@ The Losant Message Broker can be reached using several transports.
 
 Losant requires the client ID, username, and password fields be correctly set on all MQTT connect calls. `client id` must be set to a valid device ID that is already registered with the Losant platform. `username` must be set to a Losant access key. `password` must be set to a Losant access secret. Access keys can be obtained through your [application settings](/applications/access-keys/).
 
-For example, below is a connect call using the <a href="https://github.com/mqttjs/MQTT.js" target="_blank">Node.js MQTT client</a>
+For example, below is a connect call using the <a href="https://github.com/mqttjs/MQTT.js" target="\_blank">Node.js MQTT client</a>
 
 ```javascript
 var client = mqtt.connect('mqtts://broker.losant.com', {
@@ -61,7 +61,7 @@ Messages published to the Losant topics gain access to the full features of the 
 
 #### Publishing Device State
 
-A [device state](/devices/state) is likely the most commonly published message. When thinking in terms of sensor data, the device state is typically the value of one or more sensors.
+A [device state](/devices/state) is likely the most commonly published message. When thinking in terms of sensor data, the device state is typically the value of one or more sensors. Note that the `time` property is optional, but that [reporting a time with state](/devices/state/#including-timestamps) can be beneficial depending on your use case.
 
 ###### Topic
 
@@ -79,7 +79,7 @@ A [device state](/devices/state) is likely the most commonly published message. 
 }
 ```
 
-The payload optionally includes the time and any [device attributes](/devices/overview).  The time, if provided, can be formatted in <a href="https://docs.mongodb.org/manual/reference/mongodb-extended-json" target="_blank">EJSON</a> format (as it is in the above example), seconds since epoch, or milliseconds since epoch. If the time field is omitted, the broker will automatically set it to the current time. When thinking in terms of sensor data, it's very likely you'll have an attribute for each sensor attached to your device. For example, if a device with id `575ecf887ae143cd83dc4aa2` had a temperature sensor, you might report state that has an attribute named "temperature" by publishing to the topic below with the following payload:
+When thinking in terms of sensor data, it's very likely you'll have an attribute for each sensor attached to your device. For example, if a device with id `575ecf887ae143cd83dc4aa2` had a temperature sensor, you might report state that has an attribute named "temperature" by publishing to the topic below with the following payload:
 
 ###### Topic
 
