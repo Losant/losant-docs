@@ -121,8 +121,8 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 *   `{{decodeURI str}}`: Returns `str` as a [decoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
 *   `{{decodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent).
 *   `{{jsonEncode val}}`: Returns `val` [stringified](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
-*   `{{encodeBase64 val}}`: Treats val as a string, and returns the base 64 encoded version of that string.
-*   `{{decodeBase64 val}}`: Treats val as a string encoded in base 64, and returns a decoded string.
+*   `{{encodeBase64 val}}`: Treats `val` as a string, and returns the [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64) version of that string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
+*   `{{decodeBase64 val}}`: Treats `val` as a [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64), and returns a decoded string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
 *   `{{length val}}`:
     * If `val` is an **array**, returns the number of items in the array.
     * If `val` is an **object**, returns the number of keys on the object.
