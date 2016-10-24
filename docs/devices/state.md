@@ -38,6 +38,27 @@ A device can report state as often as needed, as long as it's within the Losant 
 
 Workflows can also report state for any type of device using the [Device State](/workflows/outputs/device-state) node.  In addition, when authenticated against the Losant API as a user, the [Device Post State](/rest-api/device/#post-state) API endpoint can be used to record state for any type of device.
 
+### Including Timestamps
+
+Devices may optionally include a `time` to correspond to the data being reported. If provided, the time can be provided in a number of different formats.
+
+*   <a href="https://docs.mongodb.org/manual/reference/mongodb-extended-json" target="\_blank">EJSON format</a> (e.g. `{"time": { "$date" : "<ISO Date String>" } }`)
+*   Seconds since the <a href="https://en.wikipedia.org/wiki/Unix_time" target="\_blank">Unix Epoch</a> (e.g. `{"time": 1476479740 }`)
+*   Milliseconds since the Unix Epoch (e.g. `{"time": 1476479740543 }`)
+*   A string that is recognizable by the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse" target="\_blank">JavaScript Date.parse() method</a> (e.g. `{"time": "2016-10-14T21:16:34" }`)
+
+If the time field is omitted, or if the provided string cannot be parsed, the broker will automatically set it to the current time.
+
+The ability to pass a `time` along with state data is important for two reasons:
+
+#### Batch Reporting
+
+If your use case allows for it, doing so means fewer HTTP requests, your state reports can be collected on the device and sent to the Losant API as an array of payloads in one request. This can, for example, provide for more efficient power consumption or allow the device to continue recording state when it loses an Internet connection. **However**, if any [workflows](/workflows/overview/) are tied to that device [reporting its state](/workflows/triggers/device/), the workflow will run for **each payload in the array**.
+
+#### Overwriting Previous States
+
+If a state payload is sent with a timestamp, and that timestamp corresponds to a previously reported state **down to the millisecond**, the new payload will overwrite any attribute values reported within that payload. Any attributes reported on the original payload that are not part of the new payload will remain intact. Note that overwriting device states **will still trigger workflows** that are tied to that device's reporting of state.
+
 ## Using State
 
 Once your device is reporting state, the information is most commonly used for dashboard visualizations and [workflow triggers](/workflows/triggers/device/).
