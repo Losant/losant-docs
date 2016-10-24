@@ -11,7 +11,7 @@
 </nav>
 <div class="col-xs-3">
     <div class="nav-sign-up hidden-sm hidden-xs">
-      <a href="https://accounts.losant.com/create-account?utm_campaign=Docs&utm_source=Docs" class="button">Sign Up</a>
+      <a href="https://accounts.losant.com/create-account?utm_campaign=Docs&utm_source=Docs" class="sign-up-button button">Sign Up</a>
       <a href="https://accounts.losant.com/signin?utm_campaign=Docs&utm_source=Docs" class="login-button button">Log In</a>
     </div>
   </div>
@@ -20,3 +20,12 @@
     <i class="btr bt-bars bold white"></i>
   </a>
 </div>
+<script>
+  $('.sign-up-button').on('click', function() {
+    console.log('words')
+    ga('send', 'event', {
+      eventCategory: 'Sign Up',
+      eventAction: 'click'
+    });
+  });
+</script>
