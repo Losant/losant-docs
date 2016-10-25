@@ -6,22 +6,22 @@ The Indicator block displays a color and message of your choosing based on the r
 
 ## Query Configuration
 
-It is possible to build multiple data series into your indicator block, and the result of each query will be available when writing conditions and displaying data. You must create at least one series, and each series must have at least one device or one device tag selected, along with one attribute from which to return data. A duration must also be selected, though the value defaults to "Last received data point".
+It is possible to build multiple data queries into your indicator block, and the result of each query will be available when writing conditions and displaying data. You must create at least one query, and each must have at least one device or one device tag selected, along with one attribute from which to return data. A duration must also be selected, though the value defaults to "Last received data point".
 
 ![Indicator Query Configuration](/images/dashboards/indicator-query-config.png "Indicator Query Configuration")
 
-In the event that a duration other than "Last received data point" is selected, or if (within a series) more than one device is selected within a series at least one device tag is selected, it will also be necessary to select an aggregation method. This is the mathematical operation by which your query will boil down all data from the selected devices and duration into a single value. The default aggregation method is `MEAN`.
+In the event that a duration other than "Last received data point" is selected, or if (within a query) more than one device is selected or at least one device tag is selected, it will also be necessary to select an aggregation method. This is the mathematical operation by which your query will boil down all data from the selected devices and duration into a single value. The default aggregation method is `MEAN`.
 
 ## Query Result
 
-For each series, there are two variables returned, which can be accessed via Handlebars [string templates](/workflows/accessing-payload-data/#string-templates) and [expressions](/workflows/accessing-payload-data/#expressions):
+For each query, there are two variables returned, which can be accessed via Handlebars [string templates](/workflows/accessing-payload-data/#string-templates) and [expressions](/workflows/accessing-payload-data/#expressions):
 
-*   `value-${i}`, which is the result of the query if a result is returned. Depending on the query's construction and the attribute type, the result's type can take one of many forms. (See below.)
-*   `time-${i}`, which is a JavaScript Date object representing the time the value was reported. If the value is being aggregated, this will always be equal to the dashboard's last refresh time; otherwise, it will be equal to the time the queried device last reported state.
+*   `value-i`, which is the result of the query if a result is returned. Depending on the query's construction and the attribute type, the result's type can take one of many forms. (See below.)
+*   `time-i`, which is a [JavaScript Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) representing the time the value was reported. If the value is being aggregated, this will always be equal to the dashboard's last refresh time; otherwise, it will be equal to the time the queried device last reported state.
 
-In the two examples above, `${i}` represents index of the query. The full variable name is printed within the series configuration.
+In the two examples above, `i` represents the index of the query. The full variable name is printed along with each query configuration.
 
-Another variable can be referenced no matter how many series return data: `lastUpdated`, which is the latest time any of the queries returned a value. A human-readable "from now" version of this variable is printed in the bottom left corner of the block.
+Another variable can be referenced no matter how many queries return data: `lastUpdated`, which is the latest time any of the queries returned a value. A human-readable "from now" version of this variable is printed in the bottom left corner of the block.
 
 Depending on the type of attribute selected, the query's value can return data of varying types ...
 
@@ -62,8 +62,8 @@ You may set as many conditions to test the result against as you wish. New condi
 
 Each condition takes three parameters:
 
-*   **Expression**: The [expression](/workflows/accessing-payload-data/#expressions) to evaluate. All of your series values (e.g. `{{value-0}}` and `{{value-1}}`) and series times (e.g. `{{time-0}}` and `{{time-1}}`), as well as the `{{lastUpdated}}` variable, are available to compare against one another or against a static value.
-*   **Label**: The text to display within the indicator block. This field is optional, and may include [string templates](workflows/accessing-payload-data/#string-templates) formatting your series variables as well as [Markdown](http://commonmark.org/help/). The color of the text will automatically switch between black and white depending on the block's chosen background color.
+*   **Expression**: The [expression](/workflows/accessing-payload-data/#expressions) to evaluate. All of your query values (e.g. `{{value-0}}` and `{{value-1}}`) and times (e.g. `{{time-0}}` and `{{time-1}}`), as well as the `{{lastUpdated}}` variable, are available to compare against one another or against a static value.
+*   **Label**: The text to display within the indicator block. This field is optional, and may include [string templates](workflows/accessing-payload-data/#string-templates) formatting your query variables as well as [Markdown](http://commonmark.org/help/). The color of the text will automatically switch between black and white depending on the block's chosen background color.
 *   **Color**: The background color of the indicator block. Default is green.
 
 ## Default Condition
