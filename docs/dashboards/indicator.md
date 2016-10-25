@@ -50,7 +50,7 @@ To expand a condition for editing, simply click the header. You can also choose 
 
 ## Conditions
 
-When a query returns a result, that result is evaluated against all the set conditions, starting with the top-most item in the list. The first condition that returns true has its corresponding label and color displayed within the indicator block.
+When a query returns a result, that result is evaluated against all the set conditions, starting with the top-most item in the list. The first condition that returns `true` has its corresponding label and color displayed within the indicator block.
 
 ![Indicator Conditions](/images/dashboards/indicator-condition-config.png "Indicator Conditions")
 
@@ -70,4 +70,4 @@ Each condition takes three parameters:
 
 ![Indicator Default Condition](/images/dashboards/indicator-default-condition.png "Indicator Default Condition")
 
-If none of the set conditions return true, the indicator block will display a default label and color. Configuration is the same as for a condition, except no expression is set.
+If none of the set conditions return `true`, the indicator block will display a default label and color. Configuration is the same as for a condition, except no expression is set.
