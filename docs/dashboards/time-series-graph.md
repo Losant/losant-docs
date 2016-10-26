@@ -32,6 +32,8 @@ When this is graphed, it is now a single series that contains the average of the
 
 Each series may be displayed as a line graph, a bar graph or an area chart, and each series also displays in a separate color. Line graphs and area charts also allow for configuring the weight of the line representing their data.
 
+You also have the option of displaying each series as <a href="https://www.mathsisfun.com/data/cumulative-tables-graphs.html" target="\_blank">cumulative</a>, meaning that the point graphed at any given time is the sum of that point plus all previous points.
+
 Hovering your mouse over the graph will display a tooltip, which shows the value of each series at that moment in time. Move your mouse left or right to view graph data back or forward in time respectively.
 
 The minimum and/or maximum y-axis values may be manually set for each data series. If no values are set for the axis, the graph will default to a reasonable minimum and maximum for ALL series that are not given a custom axis. If a min and/or max is defined, and if at any point the graph extends beyond the defined minimum or maximum value, the graph will disappear off the edge of the block until the data returns to the defined window.
