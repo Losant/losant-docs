@@ -4,6 +4,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/building-a-nodemcu-javascript-night-light" target="_blank">Using a NodeMCU and Light Sensor to Build a Javascript Night Light</a>
+
 *   <a href="https://www.losant.com/blog/displaying-garage-door-status-with-losant" target="_blank">Displaying My Garage Door Status With Losant</a>
 
 *   <a href="https://www.losant.com/blog/send-data-from-pubnub-blocks-to-the-losant-platform" target="_blank">Send Data From Pubnub Blocks To The Losant Platform</a>
