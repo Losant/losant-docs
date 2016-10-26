@@ -1,16 +1,16 @@
 # Losant Walkthrough
 
-Don't have a device? No problem! This walkthrough will allow you to experience many of the features Losant provides while building a virtual weather station powered by the <a href="https://developer.forecast.io" target="_blank">Forecast.io API</a>.
+Don't have a device? No problem! This walkthrough will allow you to experience many of the features Losant provides while building a virtual weather station powered by the <a href="https://darksky.net" target="_blank">Dark Sky API</a>.
 
 ![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
 
 Since all data doesn't come from physical things, Losant does not require that a Losant device map to an actual pyshical device.  State can be reported to a Losant device through other means - for instance, we are going to use a workflow to gather and report state for a device in this walkthrough in order to store and visualize real weather data.
 
-## Step 1: Sign up for Forecast.io API
+## Step 1: Sign up for Dark Sky API
 
-<a href="https://developer.forecast.io/register" target="_blank">Signing up</a> for the Forecast.io API is extremely simple and only requires an email address. Once you sign up you'll be provided an API key. Keep this handy for future steps. This API key gives you 1,000 requests free each day, which is more than enough for this application.
+<a href="https://darksky.net/dev/register" target="_blank">Signing up</a> for the Dark Sky API is extremely simple and only requires an email address. Once you sign up you'll be provided an API key. Keep this handy for future steps. This API key gives you 1,000 requests free each day, which is more than enough for this application.
 
-![Forecast.io API Key](/images/getting-started/walkthrough/forecast-api-key.png "Forecast.io API Key")
+![Dark Sky API Key](/images/getting-started/walkthrough/dark-sky-api-key.png "Dark Sky API Key")
 
 No, sorry, the API key in the above screenshot won't work.
 
@@ -26,7 +26,7 @@ Now that we have an application we need a [device](/devices/overview) to store a
 
 ![Add Device](/images/getting-started/walkthrough/add-device.png "Add Device")
 
-The [Forecast.io API](https://developer.forecast.io/docs/v2) provides a lot of information, but we're only going to track and store the most common information people are typically interested in.
+The [Dark Sky API](https://darksky.net/dev/docs/forecast) provides a lot of information, but we're only going to track and store the most common information people are typically interested in.
 
 ![Device Settings](/images/getting-started/walkthrough/device-settings.png "Device Settings")
 
@@ -42,7 +42,7 @@ The `Device Attributes` are important. These are what tell Losant what data this
 * `visibility` - the average visibility in miles.
 * `pressure` - the sea-level air pressure in millibars.
 
-Once all the attributes are properly defined, click the `Create Device` button at the top of the page.
+Once all the attributes are properly defined, click the `Create Device` button at the bottom of the page.
 
 ![Create Device Button](/images/getting-started/walkthrough/create-device-button.png "Create Device Button")
 
@@ -52,7 +52,7 @@ The screen will change and display information about your device, including the 
 
 ## Step 4: Requesting Weather Data
 
-In this step, we're going to use a [Losant workflow](/workflows/overview/) to periodically request weather data from Forecast.io and store it on our new device.
+In this step, we're going to use a [Losant workflow](/workflows/overview/) to periodically request weather data from Dark Sky and store it on our new device.
 
 Create a new workflow from the `Workflows` main menu.
 
@@ -68,7 +68,7 @@ All workflows start with a trigger. For this example, we simply want this workfl
 
 ![Timer Trigger](/images/getting-started/walkthrough/timer-trigger.png "Timer Trigger")
 
-Once it's added to the canvas, set the interval to every 2 minutes. Forecast.io provides us with 1,000 API requests per day. Requesting every 2 minutes will use 720 of those.
+Once it's added to the canvas, set the interval to every 2 minutes. Dark Sky provides us with 1,000 API requests per day. Requesting every 2 minutes will use 720 of those.
 
 ### Requesting Data
 
@@ -76,19 +76,19 @@ You'll see a few extra nodes on the below workflow. The `Virtual Button` node wa
 
 ![HTTP Node](/images/getting-started/walkthrough/http-node.png "HTTP Node")
 
-Click the HTTP node to configure it. There are two important configuration options for the HTTP node. The first is the URL and the second is where to store the result. The URL will be Forecast.io's API endpoint:
+Click the HTTP node to configure it. There are two important configuration options for the HTTP node. The first is the URL and the second is where to store the result. The URL will be Dark Sky's API endpoint:
 
 ```
-https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
+https://api.darksky.net/forecast/APIKEY/LATITUDE,LONGITUDE
 ```
 
-The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Forecast.io. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. <a href="http://mygeoposition.com" target="_blank">MyGeoPosition.com</a> is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Losant's headquarters if you'd like to use these:
+The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Dark Sky. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. <a href="http://mygeoposition.com" target="_blank">MyGeoPosition.com</a> is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Losant's headquarters if you'd like to use these:
 
 ```
-https://api.forecast.io/forecast/APIKEY/39.1119359,-84.51254
+https://api.darksky.net/forecast/APIKEY/39.1119359,-84.51254
 ```
 
-The second required configuration parameter for this HTTP node is the location on the payload to put the result. Workflows work by passing a payload through each node in the workflow. Nodes can add, remove, or modify the payload as needed as it flows through them. In this case, we're going to add a `weather` field to the payload that will hold the response from the Forecast.io API.
+The second required configuration parameter for this HTTP node is the location on the payload to put the result. Workflows work by passing a payload through each node in the workflow. Nodes can add, remove, or modify the payload as needed as it flows through them. In this case, we're going to add a `weather` field to the payload that will hold the response from the Dark Sky API.
 
 Deploy the workflow now and we can inspect the payload using the debug node.
 
@@ -98,7 +98,7 @@ You can now wait 2 minutes for the timer to fire, or simply click the virtual bu
 
 ![Debug Output](/images/getting-started/walkthrough/debug-output.png "Debug Output")
 
-We can now inspect our payload and can see the result from the Forecast.io API call has been placed on the `weather` field of the payload.
+We can now inspect our payload and can see the result from the Dark Sky API call has been placed on the `weather` field of the payload.
 
 ![Payload](/images/getting-started/walkthrough/payload.png "Payload")
 
@@ -206,7 +206,7 @@ Next, let's add another gauge to show the humidity. Add a new gauge block using 
 
 ![Humidity Gauge Settings](/images/getting-started/walkthrough/humidity-gauge-settings.png "Humidity Gauge Settings")
 
-Humidity is returned from Forecast.io as a number between 0 and 1, so we need to set the minimum and maximum values of the dial gauge to those. The only other change is to use the humidity attribute instead of the temp attribute. Once done, click `Add Block` to see your new gauge.
+Humidity is returned from Dark Sky as a number between 0 and 1, so we need to set the minimum and maximum values of the dial gauge to those. The only other change is to use the humidity attribute instead of the temp attribute. Once done, click `Add Block` to see your new gauge.
 
 ![Humidity Gauge](/images/getting-started/walkthrough/dashboard-with-humidity.png "Humidity Gauge")
 
