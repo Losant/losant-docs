@@ -115,7 +115,7 @@ curl -H 'Content-Type: application/json' \
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/events
 
-Updates information for matching events by subject and/or current state
+Asynchronously updates information for matching events by subject and/or current state
 
 #### Request Path Components
 
@@ -167,7 +167,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Success](schemas.md#success) | If updates were successfully applied |
+| 200 | [Success](schemas.md#success) | If the bulk update has been successfully started |
 
 #### Error Responses
 

@@ -153,3 +153,54 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
+## GET - /payloadCounts
+
+https://api.losant.com/applications/**`APPLICATION_ID`**/payloadCounts
+
+Returns payload counts for the time range specified for this application
+
+#### Request Path Components
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID of the associated application | 575ec8687ae143cd83dc4a97 |
+
+#### Request Query Parameters
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| start | N | Start of range for payload count query (ms since epoch) | -2592000000 | 0 |
+| end | N | End of range for payload count query (ms since epoch) | 0 | 1465790400000 |
+
+#### Request Headers
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -X GET \
+    https://api.losant.com/applications/APPLICATION_ID/payloadCounts
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Payload Counts](schemas.md#payload-counts) | Payload counts, by type and source |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if application was not found |
+
+<br/>
+
