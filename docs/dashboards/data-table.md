@@ -27,3 +27,11 @@ The column Header and the column Cell both support [string templates](/workflows
 The default Header and Cell templates are extremely simple - `{{name}}` and `{{format value}}` respectively. However, you can make them as complicated as you need - using standard Markdown syntax will allow you to create links and bring in images. Combined with Losant's [built-in helpers](/workflows/accessing-payload-data/#conditional-block-helpers), this allows for complex template construction.
 
 ![Data Table Column Configuration](/images/dashboards/data-table-column-config.png "Data Table Column Configuration")
+
+### Default Table Sorting
+
+After all columns have been added to your table, you have the option of setting a default sort method from the block editing screen. In the block preview, click on a column header to select it as the default column to sort by. Click the column a second time to switch the order from ascending to descending.
+
+When viewing the block on the dashboard, you may sort by the other columns at any time by clicking the appropriate column header. However, should you refresh the page, the block's sort order will revert to the default method that was set while editing the block.
+
+![Data Table Sort](/images/dashboards/data-table-sort.png "Data Table Sort")
