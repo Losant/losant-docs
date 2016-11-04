@@ -23,7 +23,7 @@ These instructions are split into three workshops. Each workshop builds on the p
 
 ## Environment Setup
 
-The [environment setup instructions](/getting-started/losant-iot-dev-kits/environment-setup/) must be performed in order to properly program the device.
+The microcontroller included in this kit is programmed using the Arduino tools. Those must be installed by following the <a href="/getting-started/losant-iot-dev-kits/environment-setup/" target="_blank">environment setup instructions</a>.
 
 ## Losant Setup
 
