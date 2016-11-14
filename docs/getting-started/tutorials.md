@@ -48,6 +48,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## Losant Community Projects
 
+*   <a href="https://rollbar.com/blog/internet-of-things-production-error-alarm/" target="_blank">Building the IoT Rollbar error alarm</a>
+
 *   <a href="https://www.hackster.io/hologram/unicorn-finder-kid-tracker-for-techie-parents-335486" target="_blank">Unicorn Finder (Kid Tracker for Techie Parents)</a>
 
 *   <a href="https://www.hackster.io/26972/tap-tracker-smart-tap-handle-ae15ba" target="_blank">Tap Tracker Smart Tap Handle</a>
