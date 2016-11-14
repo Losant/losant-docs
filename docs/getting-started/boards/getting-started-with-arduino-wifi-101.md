@@ -11,7 +11,7 @@ Follow the specific instructions for your Arduino board to properly configure th
 ## Install Dependencies
 The Losant MQTT Client requires two libraries to be installed: [PubSubClient](https://github.com/knolleary/pubsubclient) and [ArduinoJson](https://github.com/bblanchon/ArduinoJson). Both of these libraries can be installed using the Arduino Library Manager.
 
-![Manage Libraries](http://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/manage-libraries.png?noresize=true "Manage Libraries")
+![Manage Libraries](https://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/manage-libraries.png?noresize=true "Manage Libraries")
 
 ## Install Losant MQTT Client
 The [Losant Arduino MQTT Client](https://github.com/Losant/losant-mqtt-arduino) makes it easy to connect your Arduino-based devices to the Losant platform.
@@ -22,7 +22,7 @@ Download a zip of the library from the following URL:
 
 Once downloaded, add the library to your Arduino installation by using the Sketch -> Include Library -> Add .ZIP Library menu.
 
-![Add .Zip Library Menu](http://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/add-zip-library-menu.png?noresize=true "Add .ZIP Library Menu")
+![Add .Zip Library Menu](https://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/add-zip-library-menu.png?noresize=true "Add .ZIP Library Menu")
 
 You can now use the library by adding the following include statement to your sketch:
 
