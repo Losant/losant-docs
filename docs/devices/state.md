@@ -46,6 +46,7 @@ Devices may optionally include a `time` to correspond to the data being reported
 *   Seconds since the <a href="https://en.wikipedia.org/wiki/Unix_time" target="\_blank">Unix Epoch</a> (e.g. `{"time": 1476479740 }`)
 *   Milliseconds since the Unix Epoch (e.g. `{"time": 1476479740543 }`)
 *   A string that is recognizable by the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse" target="\_blank">JavaScript Date.parse() method</a> (e.g. `{"time": "2016-10-14T21:16:34" }`)
+*   Negative numbers are treated as relative milliseconds - (e.g. `{"time": -60000 }` is treated as 60 seconds ago).
 
 If the time field is omitted, or if the provided string cannot be parsed, the broker will automatically set it to the current time.
 

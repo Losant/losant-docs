@@ -114,6 +114,8 @@ Handlebars helpers can also mutate a given value in place and print the result. 
     * If `val` is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the `formatStr` parameter (default 'L LTS').
     * If `val` is an **object**, returns the stringified object and ignores the `formatStr` parameter.
     * For **all other formats**, `val` is returned as a string without mutation.
+*   `{{formatDate val formatStr}}`: Casts the given value as a date, and then formats it using the `formatStr` parameter (default 'L LTS').
+*   `{{formatDateRelative date relativeTo}}`: Outputs a relative date value (such as "5 minutes ago").  Date is calcuated relative to the `relativeTo` parameter, which defaults to the current time when not set.
 *   `{{lower str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) to all lowercase characters.
 *   `{{upper str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to all uppercase characters.
 *   `{{encodeURI str}}`: Returns `str` as an [encoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
@@ -128,6 +130,10 @@ Handlebars helpers can also mutate a given value in place and print the result. 
     * If `val` is an **object**, returns the number of keys on the object.
     * If `val` is a **string**, returns the length of the string.
     * For everything else, returns `undefined`.
+*   `{{add val1 val2}}`: Casts the two values as numbers and adds them.
+*   `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
+*   `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
+*   `{{divide val1 val2}}`: Casts the two values as numbers and divides them.
 
 ### Iterating Over Arrays and Objects
 
