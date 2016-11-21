@@ -188,11 +188,11 @@ After the reset is complete, the Serial Monitor should start printing informatio
 
 Once you see the intro message, you are now able to configure the device. Copy your JSON command with the updated values and paste it into the top input bar of the serial monitor. This will send the JSON to the device.
 
-The firmware running on the device knows how to <a href="https://github.com/Losant/losant-kit-builder-nodevember" target="_blank">parse JSON</a> and update the respective values. This new configuration will be saved in the device's local memory so that the config persists when you unplug or restart your device.
-
 ![Json Serial Input](/images/getting-started/losant-iot-dev-kits/builder-kit-nodevember/json-serial-input.png "Json Serial Input")
 
-After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. Push the button you wired up in the breadboard, and the Serial Monitor will print “Button Pressed!”
+The firmware running on the device knows how to <a href="https://github.com/Losant/losant-kit-builder-nodevember" target="_blank">parse JSON</a> and update the respective values. This new configuration will be <a href="https://github.com/Losant/losant-kit-builder-nodevember/blob/master/workshop/workshop.ino#L303" target="_blank">saved in the device's local memory </a>so that it persists when you unplug or restart your device.
+
+After the configuration is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. Push the button you wired up in the breadboard, and the Serial Monitor will print “Button Pressed!”
 
 ![Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit-nodevember/serial-output.png "Serial Output")
 
