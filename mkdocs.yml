@@ -107,6 +107,7 @@ pages:
         - SMS: workflows/outputs/sms.md
         - Tweet: workflows/outputs/tweet.md
         - Twilio: workflows/outputs/twilio.md
+        - Webhook Reply: workflows/outputs/webhook-reply.md
         - Workflow Trigger: workflows/outputs/workflow-trigger.md
 - Losant Go:
     - Overview: losant-go/overview.md
