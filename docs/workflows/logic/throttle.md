@@ -42,3 +42,7 @@ The payload after execution of the throttle node could look like:
   ...
 }
 ```
+
+## Advanced Options
+
+The On Change node also has an optional field named `Throttle Identifier`. This field is a [string template](/workflows/accessing-payload-data/#string-templates) and can be used to make a single throttle node function as the equivalent of multiple throttle checks. For example, if multiple devices can trigger a workflow and pass through this throttle node, you can have the throttle identifier be the triggering device ID. That way the on throttle will work on a per-device basis, instead of on a global workflow basis.

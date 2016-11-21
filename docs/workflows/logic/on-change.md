@@ -83,3 +83,7 @@ The payload after execution of the on change node might look like:
   ...
 }
 ```
+
+## Advanced Options
+
+The On Change node also has an optional field named `On Change Identifier`. This field is a [string template](/workflows/accessing-payload-data/#string-templates) and can be used to make a single on change node function as the equivalent of multiple on change checks. For example, if multiple devices can trigger a workflow and pass through this on change node, you can have the on change identifier be the triggering device ID. That way the on change node will trigger on a per-device basis, instead of on a global workflow basis.
