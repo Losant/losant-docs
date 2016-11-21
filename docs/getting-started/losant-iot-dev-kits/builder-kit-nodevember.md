@@ -45,7 +45,7 @@ These instructions are split into three workshops. Each workshop builds on the p
 
 ## Environment Setup
 
-The microcontroller included in this kit is configured using the Arduino tools. In this workshop, you will not have to do any programming. We will configure the device using the <a href="https://www.arduino.cc/en/Reference/Serial" target="_blank">Arduino IDE's serial monitor</a>. Also, we will need to install USB drivers to communicate with the microcontroller.
+The microcontroller included in this kit is configured using the Arduino tools. In this workshop, you will not have to do any programming. In this workshop, we have already pre-configured the device to accept JSON commands via Serial. <a href="https://www.arduino.cc/en/Reference/Serial" target="_blank">Serial</a> is just a communication protocol that allows us to send and receive information from a device. Generally, serial output is used as a simple logging mechanism.W Also, we will need to install USB drivers to communicate with the microcontroller.
 
 ### Install Arduino IDE
 Download and install the latest version of the Arduino IDE by following the instructions at:<br />
@@ -148,7 +148,7 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 ### Configure Device
 
-Now that you have a device configured in Losant, we can configure our internet button to connect to WiFi and Losant. In this workshop, we have already pre-configured the device to accept JSON commands via Serial. Serial is just a communication protocol that allows us to send and receive information from a device. Generally, serial output is used as a simple logging mechanism. The JSON command to configure this device looks like the following:
+Now that you have a device configured in Losant, we can configure our internet button to connect to WiFi and Losant. The JSON command to configure this device looks like the following:
 
 ```
 {
@@ -167,7 +167,7 @@ If interested, this builder kit has another set of <a href="https://docs.losant.
 
 ### Update Serial Port
 
-Now, let's open up the Arduino IDE and setup our device. First, you
+Now, let's open up the Arduino IDE, plug in your device, and setup our device. First, you
 will need to update Arduino's serial port. The Arduino IDE needs to know which USB device to communicate with.  Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If it is not there, check to make sure you have installed the <a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">USB drivers</a>.
 
 ![Update Serial Port](/images/getting-started/losant-iot-dev-kits/builder-kit-nodevember/serial-uart.png "Update Serial Port")
