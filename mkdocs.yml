@@ -7,6 +7,7 @@ pages:
         - Overview: getting-started/losant-iot-dev-kits/overview.md
         - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
         - Builder Kit Instructions: getting-started/losant-iot-dev-kits/builder-kit.md
+        - Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
         - Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
         - Builder Kit Particle Instructions: getting-started/losant-iot-dev-kits/builder-kit-particle.md
         - Builder Kit Salesforce Instructions: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
