@@ -148,4 +148,4 @@ pages:
 theme_dir: 'losant'
 extra:
   site_title: 'Losant Documentation'
-  hidden: ['Builder Kit Feather Instructions', 'Access Token', 'Access Tokens']
+  hidden: ['Builder Kit Feather Instructions', 'Access Token', 'Access Tokens', 'Builder Kit Nodevember Instructions']
