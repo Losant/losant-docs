@@ -148,7 +148,7 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 ### Configure Device
 
-Now that you have a device configured in Losant, we can configure our internet button to connect to WiFI and Losant. In this workshop, we have already pre-configured the device to accept JSON commands via Serial. Serial is just a communication protocol that allows us to send and receive information from a device. Generally, serial output is used as a simple logging mechanism. The JSON command to configure this device looks like the following:
+Now that you have a device configured in Losant, we can configure our internet button to connect to WiFi and Losant. In this workshop, we have already pre-configured the device to accept JSON commands via Serial. Serial is just a communication protocol that allows us to send and receive information from a device. Generally, serial output is used as a simple logging mechanism. The JSON command to configure this device looks like the following:
 
 ```
 {
@@ -200,7 +200,7 @@ If you don’t see the “Button Pressed!” message, check your wiring. The jum
 
 Every time the button is pressed, the firmware is publishing the state `{ "button": true }` to Losant. Currently, this firmware only reports when the button goes to true, it does not report the button going back to false. So if you hold the button down for a long time, it will only report when the button is initially pressed.
 
-In come cases, it may be helpful to reset the device. There is a JSON command called `losant-config-clear` that will wipe the configuration to it's initial state.
+In come cases, it may be helpful to reset the device. There is a JSON command called `losant-config-clear` that will wipe the configuration to its initial state.
 
 ```
 { "losant-config-clear" : true }
