@@ -166,7 +166,7 @@ Retrieve the last known commands(s) sent to the device
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
 | limit | N | Max command entries to return (ordered by time descending) | 1 | 10 |
-| since | N | Look for command entries since this time (ms since epoch) | 0 | 1465790400000 |
+| since | N | Look for command entries since this time (ms since epoch) |  | 1465790400000 |
 
 #### Request Headers
 
@@ -218,7 +218,7 @@ Retrieve the recent log entries about the device
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
 | limit | N | Max log entries to return (ordered by time descending) | 1 | 10 |
-| since | N | Look for log entries since this time (ms since epoch) | 0 | 1465790400000 |
+| since | N | Look for log entries since this time (ms since epoch) |  | 1465790400000 |
 
 #### Request Headers
 
@@ -270,7 +270,7 @@ Retrieve the last known state(s) of the device
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
 | limit | N | Max state entries to return (ordered by time descending) | 1 | 10 |
-| since | N | Look for state entries since this time (ms since epoch) | 0 | 1465790400000 |
+| since | N | Look for state entries since this time (ms since epoch) |  | 1465790400000 |
 
 #### Request Headers
 
