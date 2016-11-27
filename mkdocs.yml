@@ -13,6 +13,7 @@ pages:
         - Builder Kit Salesforce Instructions: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
         - Moisture Sensor Kit Instructions: getting-started/losant-iot-dev-kits/moisture-sensor-kit.md
         - Door Sensor Kit Instructions: getting-started/losant-iot-dev-kits/door-sensor-kit.md
+        - LCD Kit Instructions: getting-started/losant-iot-dev-kits/lcd-kit.md
     - Boards:
         - Getting Started with Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
         - Getting Started with Raspberry PI: getting-started/boards/getting-started-with-raspberry-pi.md
