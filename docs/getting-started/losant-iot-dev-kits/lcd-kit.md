@@ -1,10 +1,12 @@
 # LCD Kit Instructions
 
-The <a href="https://store.losant.com/products/losant-lcd-kit" target="_blank"> LCD Kit</a> includes everything required to create your own personal weather station. These instructions provide a step-by-step overview to build and configure your own desk station. This station displays the time, outside temperature, a summary of the outside weather, and inside temperature. With this kit, you could even display other bits of information besides weather.
+The <a href="https://store.losant.com/products/losant-lcd-kit" target="_blank"> LCD Kit</a> includes everything to add a display to your hardware project. These instructions provide a step-by-step overview to build and configure your own Internet-connected weather station. This station displays a summary of the outside weather, temperature, time. However, with this kit, you could display other bits of information besides weather.
 
 ![Weather Station](/images/getting-started/losant-iot-dev-kits/lcd-kit/weather-station.jpg "Weather Station")
 
 As you follow these instructions, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
+
+## Materials
 
 Your kit should include the following items:
 
@@ -32,7 +34,7 @@ Your kit should include the following items:
 
 ## 1. Environment Setup
 
-In order to properly program the kit's microcontroller, please follow the [environment setup instructions](/getting-started/losant-iot-dev-kits/environment-setup/). These steps only need to be completed once, so if you've already done this for a previous kit, you can skip this step.
+In order to properly program the kit's microcontroller, please follow the **<a href="/getting-started/losant-iot-dev-kits/environment-setup/" target="_blank">environment setup instructions</a>**. The NodeMCU included in this kit is programmed using the Arduino toolchain. These steps only need to be completed once, so if you've already done this for a previous kit, you can skip this step.
 
 ## 2. Wiring
 
@@ -59,15 +61,15 @@ In this step we're going to to connect the temperature sensor and LCD to the mic
 
 ## 3. Losant Setup
 
-In this section, you’ll register for a Losant account, create your application, and add the device for your LCD kit.
+In this section, you’ll register for a Losant account, create your application, and add a device for your kit.
 
 ### Create Account
 
-If you don't already have an account, navigate to [https://accounts.losant.com/create-account](https://accounts.losant.com/create-account) to register.
+If you don't already have an account, navigate to Losant to <a href="https://accounts.losant.com/create-account" target="_blank"> creat account </a>.
 
 ### Create Application
 
-Create an application for the moisture sensor kit. You can name it whatever you want.
+In Losant, every thing starts with an application. All devices and workflows belong to applications. So, **create an application** and you can name it whatever you want.
 
 ![Create Application](/images/getting-started/losant-iot-dev-kits/builder-kit/create-application.png "Create Application")
 
@@ -75,7 +77,9 @@ Create an application for the moisture sensor kit. You can name it whatever you 
 
 ### Add Device
 
-The next step is to register the device with the platform. Click the `Add Device` button on the top right or select `Add Device` from the Devices dropdown. Next, choose the `Create from Scratch` option.
+A device in Losant is a single thing or widget. A device could be car, thermostat, smart bulb, or any kind of custom gadget. Devices can contain many sensors or attached peripherals. In this example, our device is our weather station.
+
+The next step is to register the device with the platform. **Select `Add Device` from the Devices dropdown. Next, choose the `Create from Scratch` option.**
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/lcd-kit/add-device.png "Add Device Menu")
 
@@ -86,11 +90,11 @@ The next step is to register the device with the platform. Click the `Add Device
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
 1. For "Device Type", leave "Standalone" selected.
-1. No device tags are required.
+1. No <a href="/devices/overview/#device-tags" target="_blank">device tags</a> are required.
 1. Add a device attribute with the name "tempC" and the type `Number`.
 1. Add a device attribute with the name "tempF" and the type `Number`.
 
-The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report the raw moisture level from the sensor every minute. Device attributes are ***case sensitive***, so make the name is ***all lowercase***.
+The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case sensitive***, so make the name is ***all lowercase***.
 
 Click the `Create Device` button. The screen will change and show the device’s ID. This ID is required for the following sections. You might want to copy/paste it somewhere convenient.
 
@@ -100,7 +104,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `More > Access Keys` from the application menu.
 
-![Access Keys Menu](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys Menu")
+![Access Keys Menu](/images/getting-started/losant-iot-dev-kits/lcd-kit/access-keys.png "Access Keys Menu")
 
 Generate an access key that provides access to all devices in your application.
 
@@ -138,7 +142,7 @@ With the Arduino IDE, use the `File -> Open` menu to navigate to where you downl
 
 Your code will automatically be saved as part of the upload process when it's flashed to the device. After editing the code, open the Arduino IDE's Serial Monitor and change the baud rate to 115200. The serial monitor can be opened using the button on the top right of the Arduino IDE or using the `Tools -> Serial Monitor` menu.
 
-![Open Serial Monitor](/images/getting-started/losant-iot-dev-kits/moisture-sensor/serial-monitor-button.png "Open Serial Monitor")
+![Open Serial Monitor](/images/getting-started/losant-iot-dev-kits/lcd-kit/serial-monitor-button.png "Open Serial Monitor")
 
 ![Serial Monitor Baud](/images/getting-started/losant-iot-dev-kits/builder-kit/serial-monitor-baud.png "Serial Monitor Baud")
 
@@ -146,9 +150,9 @@ The serial monitor won't print any information until we flash the device with th
 
 Upload the firmware to the device by clicking the `Upload` button or the `Sketch -> Upload` menu. This will take a few seconds and the microcontroller will rapidly blink a blue light while it’s uploading.
 
-![Upload Button](/images/getting-started/losant-iot-dev-kits/moisture-sensor/upload-button.png "Upload Button")
+![Upload Button](/images/getting-started/losant-iot-dev-kits/lcd-kit/upload-button.png "Upload Button")
 
-After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. It may also print some garbage, but that's just part of the board booting up. It will then print the moisture level every minute.
+After the upload is complete, the Serial Monitor should start printing information about it connecting to WiFi and Losant. It may also print some garbage, but that's just part of the board booting up.
 
 ![Serial Output](/images/getting-started/losant-iot-dev-kits/lcd-kit/serial-output.png "Serial Output")
 
@@ -162,7 +166,7 @@ It’s now time to display the rest of the weather data on the LCD screen.
 
 ## 5. Displaying Data on LCD
 
-As we've seen, Losant can capture state from the device. Losant can also send commands back to the device. In this case, we can send a command to the device with infomation we want it to display on the screen. In the firmware we flashed, there is a function called `handleCommand`:
+As we've seen, Losant can capture state from the device. Losant can also send commands back to the device. In this case, we can send a command to the device with information we want it to display on the screen. In the firmware we flashed, there is a function called `handleCommand`:
 
 ```C
 void handleCommand(LosantCommand *command) {
@@ -187,16 +191,17 @@ void handleCommand(LosantCommand *command) {
 }
 ```
 
-As you can see, we are looking for a command called `refresh`. If received, it will print `L1` (Line One) and `L2` (Line Two) to the LCD screen. This allows us to easily edit and control what the screen displays with out having to continuously
-flash the device with new firmware.
+The <a href="/mqtt/arduino/" target="_blank">Losant Arduino firmware</a> uses MQTT to communication with devices. Once a MQTT payload is received, `handleCommand` will be called. As you can see, we are looking for a command called `refresh`. If received, it will print `L1` (Line One) and `L2` (Line Two) to the LCD screen. This allows us to easily edit and control what the screen displays with out having to continuously flash the device with new firmware.
 
-We are already tracking the inside temperature. This is the temperature you see displayed in the Serial output. Now, we need to get the outside weather and time to display on the screen.
+We have the inside temperature data - this is the temperature displayed in the Serial output. Now, we need to get the outside weather and time to display it. We will use a <a href="/workflows/overview/" target="_blank">workflow</a> for this.
 
-First, create a new workflow and name it whatever you want.
+### Create a Workflow
+
+Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to trigger notifications, create events, send commands, and many more. Workflows are basically the brains of your connected solution.
+
+**First, create a new workflow and name it whatever you want.**
 
 ![Create Workflow](/images/getting-started/losant-iot-dev-kits/lcd-kit/create-workflow.png "Create Workflow")
-
-![Workflow Settings](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-settings.png "Workflow Settings")
 
 ### Import Workflow
 
@@ -214,7 +219,7 @@ Let's talk about how this workflow works. All workflows start with a trigger. Fo
 
 ### Node Errors
 
-You'll notice that there are two nodes that have small error icons: the `On Connect` trigger and the `Device Command` output. These have errors because they need a device to be configured. Click on each of them and select your device from the dropdown. All two nodes should be configured for the same device.
+You'll notice that there are two nodes that have small error icons: the `On Connect` trigger and the `Device Command` output. These have errors because they need a device to be configured. Click on each of them and select your device from the dropdown. The two nodes should be configured for the same device.
 
 ![Nodes with Errors](/images/getting-started/losant-iot-dev-kits/lcd-kit/nodes-with-errors.png "Nodes with Errors")
 
@@ -222,7 +227,7 @@ Lets walkthrough the other nodes and make sure that they are properly configured
 
 ### Timer
 
-A <a href="https://store.losant.com/products/losant-lcd-kit" target="_blank">Timer</a> node will simply just execute this workflow on a interval you define.
+A <a href="https://store.losant.com/products/losant-lcd-kit" target="_blank">Timer</a> node will trigger on a interval you define.
 
 ![Workflow Timer](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-timer.png "Workflow Timer")
 
@@ -276,9 +281,9 @@ Time is now appended to our payload to send later.
 
 ### Math
 
-Sometimes we need to do some simple calculations to our data before sending it some where else. In this case, since we have limited space on the LCD screen, we want our temperatures to be whole numbers, not decimals. We can use the <a href="https://docs.losant.com/workflows/logic/math/" target="_blank">Math</a> node to solve this problem.
+In many situations, we need to do some simple calculations to our data before sending it some where else. In this case, since we have limited space on the LCD screen, we want our temperatures to be whole numbers, not decimals. Losant provides a <a href="https://docs.losant.com/workflows/logic/math/" target="_blank">Math</a> node to solve this problem.
 
-![Workflow Math](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-timer.png "Workflow Math")
+![Workflow Math](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-math.png "Workflow Math")
 
 In our math node, we can round the temperature:
 
@@ -316,7 +321,7 @@ This workflow is just a starting point. Losant can connect this device to many d
 
 Since the firmware accepts line one and line two, you can send it any data for all different types of projects!
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-moisture-sensor-kit" data-text="Green thumb activated! Just installed my @LosantHQ  #IoT moisture sensor kit" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-lcd-kit" data-text="Just installed my @LosantHQ  #IoT LCD kit" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 Don't stop now! Losant has several kits available.
