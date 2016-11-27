@@ -24,7 +24,8 @@ The payload for a workflow triggered by a webhook will include all of the inform
     "method": <the request method - "post" or "put" or "patch" or "delete" >,
     "headers": <any request headers>,
     "query": <any request query params>,
-    "body": <the request body>
+    "body": <the request body>,
+    "replyId": <the reply id, if the webhook expects a reply>
   },
   "applicationId": <id of the current application>,
   "applicationName": <name of the current application>,

@@ -114,7 +114,7 @@ Retrieve the recent log entries about the flows
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
 | limit | N | Max log entries to return (ordered by time descending) | 1 | 10 |
-| since | N | Look for log entries since this time (ms since epoch) | 0 | 1465790400000 |
+| since | N | Look for log entries since this time (ms since epoch) |  | 1465790400000 |
 
 #### Request Headers
 
