@@ -1,6 +1,6 @@
 # LCD Kit Instructions
 
-The <a href="https://store.losant.com/products/losant-lcd-kit" target="_blank"> LCD Kit</a> includes everything to add a display to your hardware project. These instructions provide a step-by-step overview to build and configure your own Internet-connected weather station. This station displays a summary of the outside weather, temperature, time. However, with this kit, you could display other bits of information besides weather.
+The <a href="https://store.losant.com/products/lcd-kit" target="_blank"> LCD Kit</a> includes everything to add a display to your hardware project. These instructions provide a step-by-step overview to build and configure your own Internet-connected weather station. This station displays a summary of the outside weather, temperature, time. However, with this kit, you could display other bits of information besides weather.
 
 ![Weather Station](/images/getting-started/losant-iot-dev-kits/lcd-kit/weather-station.jpg "Weather Station")
 
@@ -329,3 +329,4 @@ Don't stop now! Losant has several kits available.
 1. Losant Builder Kit ( [Buy Now](https://store.losant.com/products/losant-builder-kit) | [Instructions](/getting-started/losant-iot-dev-kits/builder-kit/) )
 1. Moisture Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-moisture-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/) )
 1. Door Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/) )
+1. LCD Kit ( [Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/) )
