@@ -134,6 +134,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 *   `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
 *   `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
 *   `{{divide val1 val2}}`: Casts the two values as numbers and divides them.
+*   `{{valueByKey objArray key keyField valueField}}`: Returns the value of `valueField` on the object in the `objArray` whose value for `keyField` matches the value of `key`. The arguments `keyField` and `valueField` are optional, defaulting to the field names `key` and `value`.  If there is no match found, a blank result is returned.
 
 ### Iterating Over Arrays and Objects
 
