@@ -94,7 +94,7 @@ The next step is to register the device with the platform. **Select `Add Device`
 1. Add a device attribute with the name "tempC" and the type `Number`.
 1. Add a device attribute with the name "tempF" and the type `Number`.
 
-The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case sensitive***, so make the name is ***all lowercase***.
+The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
 Click the `Create Device` button. The screen will change and show the device’s ID. This ID is required for the following sections. You might want to copy/paste it somewhere convenient.
 

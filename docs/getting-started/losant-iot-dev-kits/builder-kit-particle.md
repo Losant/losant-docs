@@ -225,7 +225,7 @@ To start, we'll use a Time Series graph to display the last 30 minutes worth of 
 1. Make sure your workshop application is selected. If you only have one application, it will be selected by default.
 1. Set the Time Range to 30 minutes and the Resolution to 30 seconds. This will cause the graph to show the last 30 minutes of data with a data point every 30 seconds.
 1. Make sure your device is selected. If you only have one device, it will be selected by default.
-1. Set the Segment Label to anything you want.
+1. Set the Series Label to anything you want.
 1. Choose the "light-level" attribute.
 
 The preview on the right side of the screen should update immediately with the data. Click `Add Block` to add the block to your dashboard. Your dashboard should now look something like the following image. You may not have much data right now, but the dashboard updates in real-time and will display more data as your Photon continues to publish the light level.
