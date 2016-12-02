@@ -30,7 +30,7 @@ Attributes can be added and removed from a device at any time. If you change the
 
 ## Reporting State
 
-A device can report state as often as needed, as long as it's within the Losant platform's [rate limitations](/limits/overview). Devices are not required to report all attributes every time. For example, a thermostat might report the `inside-temp` attribute every few minutes, but only report the `temp-setting` attribute when the user changes it.
+A device can report state as often as needed, as long as it's within the Losant platform's [rate limitations](/organizations/resource-limits/#message-throttling). Devices are not required to report all attributes every time. For example, a thermostat might report the `inside-temp` attribute every few minutes, but only report the `temp-setting` attribute when the user changes it.
 
 [Standalone](/devices/overview/#device-type) or [Gateway](/devices/overview/#device-type) devices typically report state over an MQTT or REST connection. The Losant MQTT clients make it easy to form MQTT connections and report state to Losant. If your device only reports state every few minutes or every few hours, then the REST interface likely makes more sense so it doesn't have to maintain a persistent connection.
 

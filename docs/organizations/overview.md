@@ -14,9 +14,16 @@ For example, in the above screenshot, we are creating a new dashboard which will
 
 An organization can have many users who are members in that org, and each user has a role.  There are three possible roles for a member: Viewer, Editor, and Administrator.
 
-*   **Viewer**: A member with the Viewer role can see the contents of an organization, including all applications and dashboards owned by that organization, but can not change or modify anything about those applications, dashboards, or the organization itself.  This extends into any application as well - with the Viewer role, a user can see devices and workflows inside an org-owned application, but will not be able to modify them.
-*   **Editor**: A member with the Editor role can do everything a member with the Viewer role can do, but can in addition modify applications or dashboards owned by the organization (and can also create new applications or dashboards in that organization).
-*   **Administrator**: A member with the Administrator role can do everything a member with the Editor role can do, and in addition can modify and manage the organization itself (for instance, inviting new members).  At all times, an organization is required to have one member with the Administrator role, but other than that there are no limits on membership.
+*   **Viewer**: A member with the Viewer role can see the contents of an organization, including all applications and dashboards owned by that organization, but can not change or modify anything about those applications, dashboards, or the organization itself. This extends into any application as well - with the Viewer role, a user can see devices and workflows inside an org-owned application, but will not be able to modify them.
+*   **Editor**: A member with the Editor role can do everything a member with the Viewer role can do, plus ...
+    * Modify applications or dashboards owned by the organization
+    * Create new applications or dashboards in that organization
+    * Create or modify sub-resources within the org-owned application (e.g. devices, workflows)
+*   **Administrator**: At all times, an organization is required to have one member with the Administrator role. A member with the Administrator role can do everything a member with the Editor role can do, plus ...
+    * Modify and manage the organization itself (name, description, billing plan)
+    * Manage organization membership
+    * [Transfer resources](/organizations/transferring-resources) to or from the organization, into or out of their own [Sandbox](/user-accounts/sandbox) or any organization where they are also an administrator.
+
 
 ## Managing Organizations
 

@@ -148,8 +148,6 @@ pages:
     - Workflow: rest-api/flow.md
     - Workflows: rest-api/flows.md
     - Schemas: rest-api/schemas.md
-- Limits:
-    - Overview: limits/overview.md
 theme_dir: 'losant'
 extra:
   site_title: 'Losant Documentation'
