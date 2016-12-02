@@ -16,13 +16,18 @@ No, sorry, the API key in the above screenshot won't work.
 
 ## Step 2: Create Losant Application
 
-After signing up you'll be prompted to create your first application. You can also create an application from the main `Applications` menu at the top of every screen.
+After signing up you'll be prompted to create your first application. You can also go to create an application from the main `Applications` menu at the top of every screen.
+
+![Welcome Page](/images/getting-started/walkthrough/welcome-page.png "Welcome Page")
+
+You can name your application whatever you would like - in this case we have called it
+"Weather Station".
 
 ![Create Application](/images/getting-started/walkthrough/create-application.png "Create Application")
 
 ## Step 3: Add the Device
 
-Now that we have an application we need a [device](/devices/overview) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu.  Choose `Create From Scratch` on the following screen, since we want to create from a blank device.
+Now that we have an application we need a [device](/devices/overview) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu.  Choose `Create Blank Device` on the following screen, since we want to create from a blank device.
 
 ![Add Device](/images/getting-started/walkthrough/add-device.png "Add Device")
 
@@ -43,12 +48,6 @@ The `Device Attributes` are important. These are what tell Losant what data this
 * `pressure` - the sea-level air pressure in millibars.
 
 Once all the attributes are properly defined, click the `Create Device` button at the bottom of the page.
-
-![Create Device Button](/images/getting-started/walkthrough/create-device-button.png "Create Device Button")
-
-The screen will change and display information about your device, including the device's ID. This ID will be important for later steps, so you might want to copy/paste it somewhere convenient.
-
-![Device ID](/images/getting-started/walkthrough/device-id.png "Device ID")
 
 ## Step 4: Requesting Weather Data
 
@@ -172,7 +171,7 @@ You can now deploy this workflow and every time the timer triggers, the device s
 
 ![Deploy Workflow](/images/getting-started/walkthrough/deploy-workflow.png "Deploy Workflow")
 
-You can verify the device is properly reporting state by inspecting the recent device states section on your device page. Your device page will be available on the `Devices` menu. Your device will be listed under the `Recent Devices` section.
+You can verify the device is properly reporting state by inspecting the recent device states in the debug section of your device page. Your device will be available in the `Devices` menu under the `Recent Devices` section.
 
 ![Recent States](/images/getting-started/walkthrough/recent-states.png "Recent States")
 
@@ -194,7 +193,7 @@ Set the duration to `Last received data point`. Gauges can also display aggregat
 
 For the block data, set the label to ˚F, which is an arbitrary string that will appear under the number. Typically this would be the units for the data being displayed. Select the device you created earlier and set the attribute to `temp`. The attributes correspond to the attributes we defined for our device and the attributes that the workflow is currently populating with weather data.
 
-What this does is pull the most recently received value for the temp attribute from the device ID and displays it on the dashboard. Click `Add Block` to view it on your new dashboard.
+What this does is pull the most recently received value for the temp attribute from the device and displays it on the dashboard. Click `Add Block` to view it on your new dashboard.
 
 ![Temp Gauge](/images/getting-started/walkthrough/dashboard-with-temp-gauge.png "Temp Gauge")
 
@@ -206,7 +205,7 @@ Next, let's add another gauge to show the humidity. Add a new gauge block using 
 
 ![Humidity Gauge Settings](/images/getting-started/walkthrough/humidity-gauge-settings.png "Humidity Gauge Settings")
 
-Humidity is returned from Dark Sky as a number between 0 and 1, so we need to set the minimum and maximum values of the dial gauge to those. The only other change is to use the humidity attribute instead of the temp attribute. Once done, click `Add Block` to see your new gauge.
+Humidity is returned from Dark Sky as a number between 0 and 1, so we need to set the minimum and maximum values of the dial gauge to those, and check "Display as Percentage" since humidity is a percentage. The only other change is to use the humidity attribute instead of the temp attribute in the data section. Once done, click `Add Block` to see your new gauge.
 
 ![Humidity Gauge](/images/getting-started/walkthrough/dashboard-with-humidity.png "Humidity Gauge")
 
@@ -216,13 +215,19 @@ Now let's make some space for a nice big linear graph that we'll add next. Drag 
 
 Next, let's add a graph that displays temperature vs. humidity over time. Click the `Add Block` button and add a `Time Series Graph` block.
 
-![Time Series Settings](/images/getting-started/walkthrough/time-series-settings.png "Time Series Settings")
+![Time Series Basic Settings](/images/getting-started/walkthrough/time-series-settings-1.png "Time Series Basic Settings")
 
 The [time series graph](/dashboards/time-series-graph) requires you to select a duration and a resolution. The duration is how far back in time you'd like to view. Since you don't have much data yet, select 60 minutes. As your device continues to collect weather data, you can increase this to view longer time periods if needed.
 
 The resolution is how far apart individual data points are. Select one minute for this example, which means you'll see a data point for every minute. Resolution works closely with the aggregator in the block data section. If you're collecting data more often than the resolution, it will be aggregated by the method you specify. This example will take the average of all data points each minute and graph the result.
 
-Unlike the gauge, which can only display a single value, time series graphs can display multiple series. In this example we want to display two: one for the temperature and one for the humidity. After clicking `Add Block` you will now see a graph that displays temperature and humidity over the last 60 minutes.
+![Time Series Temperature"](/images/getting-started/walkthrough/time-series-settings-2.png "Time Series Temperature")
+
+Unlike the gauge, which can only display a single value, time series graphs can display multiple series. In this example we want to display two: one for the temperature and one for the humidity. After configuring the first series to diplay temperature, like above, click the "Add Segment" button to add a second configuration block for humidity.
+
+![Time Series Humidity](/images/getting-started/walkthrough/time-series-settings-3.png "Time Series Humidity")
+
+Configure the second series to display humidity, click `Add Block` to add this new block to the dashboard. You now have a graph that displays temperature and humidity over the last 60 minutes.
 
 ![Time Series Graph](/images/getting-started/walkthrough/dashboard-with-graph.png "Time Series Graph")
 

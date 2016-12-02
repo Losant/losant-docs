@@ -54,7 +54,7 @@ Next, choose the `Create from Scratch` option.
 1. No device tags are required.
 1. Add a device attribute with the name "open" and the type `Number`.
 
-The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report `{ "open" : 1 }` when the door opens and `{ "open" : 0 }` when the door closes. Device attributes are ***case sensitive***, so make sure the name is ***all lowercase***.
+The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report `{ "open" : 1 }` when the door opens and `{ "open" : 0 }` when the door closes. Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
 Click the `Create Device` button. The screen will change and show the device’s ID. This ID is required for the following sections. You might want to copy/paste it somewhere convenient.
 
@@ -258,3 +258,4 @@ Don't stop now! Losant has several kits available.
 1. Losant Builder Kit ( [Buy Now](https://store.losant.com/products/losant-builder-kit) | [Instructions](/getting-started/losant-iot-dev-kits/builder-kit/) )
 1. Moisture Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-moisture-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/) )
 1. Door Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/) )
+1. LCD Kit ( [Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/) )

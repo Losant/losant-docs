@@ -1,6 +1,6 @@
 # LCD Kit Instructions
 
-The <a href="https://store.losant.com/products/losant-lcd-kit" target="_blank"> LCD Kit</a> includes everything to add a display to your hardware project. These instructions provide a step-by-step overview to build and configure your own Internet-connected weather station. This station displays a summary of the outside weather, temperature, time. However, with this kit, you could display other bits of information besides weather.
+The <a href="https://store.losant.com/products/lcd-kit" target="_blank"> LCD Kit</a> includes everything to add a display to your hardware project. These instructions provide a step-by-step overview to build and configure your own Internet-connected weather station. This station displays a summary of the outside weather, temperature, time. However, with this kit, you could display other bits of information besides weather.
 
 ![Weather Station](/images/getting-started/losant-iot-dev-kits/lcd-kit/weather-station.jpg "Weather Station")
 
@@ -94,7 +94,7 @@ The next step is to register the device with the platform. **Select `Add Device`
 1. Add a device attribute with the name "tempC" and the type `Number`.
 1. Add a device attribute with the name "tempF" and the type `Number`.
 
-The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case sensitive***, so make the name is ***all lowercase***.
+The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
 Click the `Create Device` button. The screen will change and show the device’s ID. This ID is required for the following sections. You might want to copy/paste it somewhere convenient.
 
@@ -321,7 +321,7 @@ This workflow is just a starting point. Losant can connect this device to many d
 
 Since the firmware accepts line one and line two, you can send it any data for all different types of projects!
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-lcd-kit" data-text="Just installed my @LosantHQ  #IoT LCD kit" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/lcd-kit" data-text="Just installed my @LosantHQ  #IoT LCD kit" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 Don't stop now! Losant has several kits available.
@@ -329,3 +329,4 @@ Don't stop now! Losant has several kits available.
 1. Losant Builder Kit ( [Buy Now](https://store.losant.com/products/losant-builder-kit) | [Instructions](/getting-started/losant-iot-dev-kits/builder-kit/) )
 1. Moisture Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-moisture-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/) )
 1. Door Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/) )
+1. LCD Kit ( [Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/) )

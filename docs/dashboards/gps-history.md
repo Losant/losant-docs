@@ -35,6 +35,12 @@ The block data takes two parameters:
 
 Optionally, you may set a specific map center and/or zoom level for your map when it first loads. Failing to set a center, or setting "Automatic" for the zoom level, will cause the map to automatically set those aspects of its viewport to fit the data being passed to the map. Note that once a user manually pans or zooms the map, the default center and zoom will be ignored until the page is reloaded.
 
+### Map Style
+
+![GPS History Map Style](/images/dashboards/map-style.png "GPS History Map Style")
+
+Optionally, you may choose a particular map style. The two current styles available are `Normal` and `Satellite`. Normal is a standard vector map with streets and labels, and will change from a light to a dark style depending on the theme choosen for viewing the dashboard. Satellite uses satellite imagery to display the map with streets and labels overlaid on top - the satellite style does not have themes for light or dark, and will remain the same no matter what theme is choosen for the dashboard.
+
 ### Point Display Configuration
 
 ![Point Display Configuration](/images/dashboards/gps-history-point-config.png "Point Display Configuration")

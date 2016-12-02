@@ -68,7 +68,7 @@ The current connection status of your device is always available at the top of t
 
 ![Connection Status](/images/devices/connection-status.png "Connection Status")
 
-For Standalone and Gateway type devices, you can also view a log of recent device connection events in the `Device Connection Log` section of the device page.
+For Standalone and Gateway type devices, you can also view a log of recent device connection events in the `Device Connection Log` under the `Debug` section of the device page.
 
 ![Connection Log](/images/devices/connection-log.png "Connection Log")
 
@@ -80,7 +80,7 @@ Losant provides several tools on the device page to help debug communication bet
 
 #### Recent Device States
 
-To debug whether or not your device is sending state to Losant, you can use the `Recent Device States` section of the device page.
+To debug whether or not your device is sending state to Losant, you can use the `Recent Device States` log under the debug section of the device page.
 
 ![Recent Device States](/images/devices/state-log.png "Recent Device States")
 
@@ -88,13 +88,13 @@ This list will display the most recent 10 states published to Losant by this dev
 
 #### Force State
 
-The `Force State in Losant` section of the device page allows you to report state on behalf of your device. This is useful if you're debugging workflows or other actions that are triggered based on device state.
+The `Force State in Losant` form under the debug section of the device page allows you to report state on behalf of your device. This is useful if you're debugging workflows or other actions that are triggered based on device state.
 
 ![Force State](/images/devices/force-state.png "Force State")
 
 #### Send Command
 
-The `Send Device Command` section of the device page allows you to send commands to your devices. This is useful if your debugging and during initial implementation of command support for your devices.
+The `Send Device Command` form under the debug section of the device page allows you to send commands to your devices. This is useful if your debugging and during initial implementation of command support for your devices.
 
 ![Send Command](/images/devices/send-command.png "Send Command")
 
@@ -102,22 +102,22 @@ The `Send Device Command` section of the device page allows you to send commands
 
 ![Request Data Export](/images/devices/data-export.png "Request Data Export")
 
-You can request a CSV export of the state data that Losant has for your device using the "Request Data Export" button.  This will generate a CSV file of the state data for your device and send you an email when the generation is complete. The email includes a link which will allow you to download the generated file (the link is time sensitive and will only work for 24 hours). The generated csv will have a timestamp column (where the timestamp will be represented as milliseconds since epoch), as well as columns for any attributes of your device. Each row will represent one reported state for the device.  The following is an example export for a device with a "location" and a "temperature" attribute:
+You can request a CSV export of the state data that Losant has for your device using the "Request Data Export" form under the data section of the device page.  This will generate a CSV file of the state data for your device and send you an email when the generation is complete. The email includes a link which will allow you to download the generated file (the link is time sensitive and will only work for 24 hours). The generated csv will have a timestamp column (where the timestamp will be represented as milliseconds since epoch), an ISO Date column (where the time is represented in human readable form), as well as columns for any attributes of your device. Each row will represent one reported state for the device.  The following is an example export for a device with a "location" and a "temperature" attribute:
 
 ```csv
-time,location,temperature
-1467391295000,"17.060258678655675,-18.965965126906564",25.2
-1467391325000,"15.44856967605903,-17.68055596850872",25.1
-1467391355000,"14.08786621979826,-16.618000514802763",25.2
-1467391385000,"12.584784055193989,-15.465453903687301",25.3
-1467391415000,"11.086833923977336,-14.336184577263243",25.3
+Timestamp,ISO Date,location,temperature
+1467391295000,"2016-07-01T16:41:35.000Z","17.060258678655,-18.965965126906",25.2
+1467391325000,"2016-07-01T16:42:05.000Z","15.448569676059,-17.680555968508",25.1
+1467391355000,"2016-07-01T16:42:35.000Z","14.087866219798,-16.618000514802",25.2
+1467391385000,"2016-07-01T16:43:05.000Z","12.584784055193,-15.465453903687",25.3
+1467391415000,"2016-07-01T16:43:35.000Z","11.086833923977,-14.336184577263",25.3
 ```
 
 #### Data Deletion
 
 ![Delete Device Data](/images/devices/data-deletion.png "Delete Device Data")
 
-In the case where you no longer want the data for a device or you want to clear out old incorrect data, you can do so with the "Delete Device Data" button.  This will remove all data for the device - state data for attributes, connection log history, and command history. Data deletion may take a few seconds to propagate through the system, but cannot be reversed or undone, so do not press this button lightly!
+In the case where you no longer want the data for a device or you want to clear out old incorrect data, you can do so with the "Delete Device Data" form under the data section of the device page. This will remove either all data for the device or data for a specific time range that you select - state data for attributes, connection log history, and command history. Data deletion may take a few seconds to propagate through the system, but cannot be reversed or undone, so do not press this button lightly!
 
 ## Exporting Devices
 

@@ -55,7 +55,7 @@ curl -H 'Content-Type: application/json' \
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/export
 
-Creates a device data export (to be emailed to the requestor). Defaults to all data.
+Creates a device data export. Defaults to all data.
 
 #### Request Path Components
 
@@ -70,6 +70,8 @@ Creates a device data export (to be emailed to the requestor). Defaults to all d
 | ---- | -------- | ----------- | ------- | ------- |
 | start | N | Start time of export (ms since epoch - 0 means now, negative is relative to now) | 1 | 1465790400000 |
 | end | N | End time of export (ms since epoch - 0 means now, negative is relative to now) | 0 | 1465790400000 |
+| email | N | Email address to send export to.  Defaults to current user&#x27;s email. |  | email@example.com |
+| callbackUrl | N | Callback URL to call with export result. |  | https://example.com/cburl |
 
 #### Request Headers
 
@@ -190,6 +192,58 @@ curl -H 'Content-Type: application/json' \
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 200 | [Device Commands](schemas.md#device-commands) | Recent device commands |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if device was not found |
+
+<br/>
+
+## GET - /compositeState
+
+https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/compositeState
+
+Retrieve the composite last complete state of the device
+
+#### Request Path Components
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+| DEVICE_ID | ID associated with the device | 575ecf887ae143cd83dc4aa2 |
+
+#### Request Query Parameters
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| start | N | Start of time range to look at to build composite state | 1 | 1465790400000 |
+| end | N | End of time range to look at to build composite state | 0 | 1465790400000 |
+
+#### Request Headers
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -X GET \
+    https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/compositeState
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Composite Device State](schemas.md#composite-device-state) | Composite last state of the device |
 
 #### Error Responses
 
