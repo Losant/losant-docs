@@ -321,7 +321,7 @@ This workflow is just a starting point. Losant can connect this device to many d
 
 Since the firmware accepts line one and line two, you can send it any data for all different types of projects!
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-lcd-kit" data-text="Just installed my @LosantHQ  #IoT LCD kit" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/lcd-kit" data-text="Just installed my @LosantHQ  #IoT LCD kit" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 Don't stop now! Losant has several kits available.
