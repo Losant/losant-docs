@@ -7,11 +7,13 @@ pages:
         - Overview: getting-started/losant-iot-dev-kits/overview.md
         - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
         - Builder Kit Instructions: getting-started/losant-iot-dev-kits/builder-kit.md
+        - Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
         - Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
         - Builder Kit Particle Instructions: getting-started/losant-iot-dev-kits/builder-kit-particle.md
         - Builder Kit Salesforce Instructions: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
         - Moisture Sensor Kit Instructions: getting-started/losant-iot-dev-kits/moisture-sensor-kit.md
         - Door Sensor Kit Instructions: getting-started/losant-iot-dev-kits/door-sensor-kit.md
+        - LCD Kit Instructions: getting-started/losant-iot-dev-kits/lcd-kit.md
     - Boards:
         - Getting Started with Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
         - Getting Started with Raspberry PI: getting-started/boards/getting-started-with-raspberry-pi.md
@@ -151,4 +153,4 @@ pages:
 theme_dir: 'losant'
 extra:
   site_title: 'Losant Documentation'
-  hidden: ['Builder Kit Feather Instructions', 'Access Token', 'Access Tokens']
+  hidden: ['Builder Kit Feather Instructions', 'Access Token', 'Access Tokens', 'Builder Kit Nodevember Instructions']
