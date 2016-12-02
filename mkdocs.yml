@@ -21,8 +21,11 @@ pages:
     - Overview: security.md
 - User Accounts:
     - Overview: user-accounts/overview.md
+    - Sandbox: user-accounts/sandbox.md
 - Organizations:
     - Overview: organizations/overview.md
+    - Resource Limits: organizations/resource-limits.md
+    - Transferring Resources: organizations/transferring-resources.md
 - Applications:
     - Overview: applications/overview.md
     - Access Keys: applications/access-keys.md
