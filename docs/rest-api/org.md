@@ -287,8 +287,8 @@ Returns payload counts for the time range specified for all applications this or
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| start | N | Start of range for payload count query (ms since epoch) | -2592000000 | 0 |
-| end | N | End of range for payload count query (ms since epoch) | 0 | 1465790400000 |
+| start | N | Start of range for payload count query (ms since epoch) |  | 0 |
+| end | N | End of range for payload count query (ms since epoch) |  | 1465790400000 |
 
 #### Request Headers
 
@@ -318,7 +318,7 @@ curl -H 'Content-Type: application/json' \
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
-| 404 | [Error](schemas.md#error) | Error if application was not found |
+| 404 | [Error](schemas.md#error) | Error if organization was not found |
 
 <br/>
 
@@ -463,6 +463,68 @@ curl -H 'Content-Type: application/json' \
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 | 404 | [Error](schemas.md#error) | Error if organization not found |
+
+<br/>
+
+## PATCH - /transferResources
+
+https://api.losant.com/orgs/**`ORG_ID`**/transferResources
+
+Moves resources to a new owner
+
+#### Request Path Components
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| ORG_ID | ID associated with the organization | 575ed6e87ae143cd83dc4aa8 |
+
+#### Request Headers
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+#### Request Body
+
+The body of the request should be serialized JSON that validates against
+the [Resource Transfer](schemas.md#resource-transfer) schema.  For example, the following would be a
+valid body for this request:
+
+```json
+{
+  "destinationId": "575ed6e87ae143cd83dc4aa8",
+  "destinationType": "organization",
+  "applicationIds": [
+    "575ec8687ae143cd83dc4a97"
+  ]
+}
+```
+<small><br/></small>
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -X PATCH \
+    -d '{"destinationId":"575ed6e87ae143cd83dc4aa8","destinationType":"organization","applicationIds":["575ec8687ae143cd83dc4a97"]}' \
+    https://api.losant.com/orgs/ORG_ID/transferResources
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | If resource transfer was successful |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if organization was not found |
 
 <br/>
 
