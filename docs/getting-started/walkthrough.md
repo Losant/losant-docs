@@ -193,7 +193,7 @@ Set the duration to `Last received data point`. Gauges can also display aggregat
 
 For the block data, set the label to ˚F, which is an arbitrary string that will appear under the number. Typically this would be the units for the data being displayed. Select the device you created earlier and set the attribute to `temp`. The attributes correspond to the attributes we defined for our device and the attributes that the workflow is currently populating with weather data.
 
-What this does is pull the most recently received value for the temp attribute from the device ID and displays it on the dashboard. Click `Add Block` to view it on your new dashboard.
+What this does is pull the most recently received value for the temp attribute from the device and displays it on the dashboard. Click `Add Block` to view it on your new dashboard.
 
 ![Temp Gauge](/images/getting-started/walkthrough/dashboard-with-temp-gauge.png "Temp Gauge")
 
