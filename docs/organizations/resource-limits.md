@@ -56,7 +56,7 @@ We also supply a detailed breakdown of the number of payloads by type so that yo
 -   Device connections to and disconnections from the [Losant broker](/mqtt/overview/#the-losant-message-broker)
 -   Workflow [timer triggers](/workflows/triggers/timer/)
 -   Incoming [webhook](/applications/webhooks/) requests
--   Workflow virtual buttons triggered by an [Input Controls](/dashboards/input-controls/) block
+-   Workflow virtual buttons presses, including those triggered by an [Input Controls](/dashboards/input-controls/) block
 -   MQTT inbound and outbound messages (other than those listed above)
 
 **These interactions do NOT count as a payload:**
@@ -64,7 +64,6 @@ We also supply a detailed breakdown of the number of payloads by type so that yo
 -   Losant [event](/events/overview) creations and modifications
 -   [Data requests](/rest-api/data/), including those made by Losant dashboards and [device data exports](/devices/overview/)
 -   [Webhook replies](/workflows/outputs/webhook-reply/) in workflows
--   Manual (pressed) workflows [virtual button triggers](/workflows/triggers/virtual-button/)
 -   Workflow runs triggered by another workflow
 
 ## Soft-Limited Resources
