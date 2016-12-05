@@ -4,7 +4,7 @@ Don't have a device? No problem! This walkthrough will allow you to experience m
 
 ![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
 
-Since all data doesn't come from physical things, Losant does not require that a Losant device map to an actual pyshical device.  State can be reported to a Losant device through other means - for instance, we are going to use a workflow to gather and report state for a device in this walkthrough in order to store and visualize real weather data.
+Since all data doesn't come from physical things, Losant does not require that a Losant device map to an actual physical device.  State can be reported to a Losant device through other means - for instance, we are going to use a workflow to gather and report state for a device in this walkthrough in order to store and visualize real weather data.
 
 ## Step 1: Sign up for Dark Sky API
 
