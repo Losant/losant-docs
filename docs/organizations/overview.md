@@ -1,47 +1,81 @@
 # Organizations
 
-Organizations allow users to unlock the full potential of the Losant platform by allowing multiple users to collaborate on shared [applications](/applications/overview) and [dashboards](/dashboards/overview). Additionally, organizations have significantly higher limits than [Sandboxes](/user-accounts/sandbox) on [devices](/devices/overview), [payload counts](/organizations/resource-limits/#payloads-limits) and data retention periods, as well as additional platform support options.
-
-## Organization Membership and Roles
-
-There are three levels of organization membership:
-
-*   **Viewer**: A member with the Viewer role can see the contents of an organization, including all applications and dashboards owned by that organization, but can not change or modify anything about those applications, dashboards, or the organization itself. This extends into any application as well - with the Viewer role, a user can see devices and workflows inside an org-owned application, but will not be able to modify them.
-*   **Editor**: A member with the Editor role can do everything a member with the Viewer role can do, plus ...
-    * Modify applications or dashboards owned by the organization
-    * Create new applications or dashboards in that organization
-    * Create or modify sub-resources within the org-owned application (e.g. devices, workflows)
-*   **Administrator**: At all times, an organization is required to have one member with the Administrator role. A member with the Administrator role can do everything a member with the Editor role can do, plus ...
-    * Modify and manage the organization itself (name, description, billing plan)
-    * Manage organization membership (invite / remove members and change member roles)
-    * [Transfer resources](/organizations/transferring-resources) to or from the organization, into or out of their own [Sandbox](/user-accounts/sandbox) or any organization where they are also an administrator.
-
-An organization can have multiple members, with limits on members and pending invitations depending on the organization's tier level. The organization's overview screen displays a list of current members, and the `Members` screen provides more details on each member. If you're an Administrator, that screen also displays a list of pending and expired invitations.
-
-### Inviting New Members
-
-### Managing Existing Members
-
-## Managing Organizations
-
-### Overview
-
-### Usage
-
-### Billing Plan
-
-### Payment Method
-
-### Invoices
+Organizations allow users to unlock the full potential of the Losant platform by allowing multiple [members](/organizations/members) to collaborate on shared [applications](/applications/overview) and [dashboards](/dashboards/overview). Additionally, organizations have significantly higher limits than [Sandboxes](/user-accounts/sandbox) on [devices](/devices/overview), [payload counts](/organizations/resource-limits/#payloads-limits) and data retention periods, as well as additional platform support options.
 
 You can see all the organizations that you are a member of on the <a href="https://app.losant.com/#/organizations" target="\_blank">organization listing page</a> page, which can be found in the menu under your name on the top right of the screen.
 
-![Organization Home](/images/organizations/org-home.png "Organization Home")
+![Organization Overview](/images/organizations/organization-overview.png "Organization Overview")
 
-If you select an organization, you will be taken to the home page of the organization, similar to the screenshot above.  Here you can see all the applications and dashboards owned by the organization, as well as the current organization members.  This is also where you have the option to leave an organization if you no longer wish to be a member.
+Selecting an organization will take you to the home page of the organization. Here you can see all the applications and dashboards owned by the organization, as well as the current organization members. This is also where you have the option to [leave an organization](/organizations/members/#leaving-an-organization) if you no longer wish to be a member.
 
-If you have the Administrator role in this organization, there will be a "Settings" link in the upper right.  Clicking this will take you to a page where you can edit the organization itself, as well as manage and invite users.
+## Creating a New Organization
 
-![Organization Settings](/images/organizations/org-settings.png "Organization Settings")
+Any user can create a new organization at any time. There are a handful of links throughout the platform that will lead a user to create a new organization; two of the most visible are a button on the user's Sandbox, and in the `Organizations` dropdown in the main site header.
 
-You can remove current members, or change the role of current members - although you cannot change your own role.  You can also send out invitations to the organization by email address - users that you invite will receive an invitation email from Losant with a link which will allow them to accept (and thereby become an organization member) or decline the invitation.
+![Organization Creation Link](/images/organizations/organization-create-cta.png "Organization Creation Link")
+
+### Choosing a Plan
+
+Choose a billing plan that will meet the short-term needs of your new organization by clicking its `Select Plan` button, then click the `Continue` button at the bottom of the page. Note that the tier can be upgraded (or downgraded) at any time.
+
+![Organization Plan](/images/organizations/organization-choose-plan.png "Organization Plan")
+
+If none of the predefined tiers will meet the needs of your new organization, or if you need additional functionality that is not part of the existing tiers, you may [contact Losant](mailto:hello@losant.com) about an Enterprise contract.
+
+### Entering Organization Info
+
+After choosing a plan, you will fill out the following information to complete the organization creation. All of these can be changed at a later time:
+
+-   **Name:** The name of the organization. This will be visible to all members of the organization.
+-   **Icon Color:** This is simply to help identify your organization in lists of applications, dashboards and other organizations. The letters within the icon are a derivative of the organization name. The color can be changed by clicking the icon. Note that this icon is never visible to the public.
+-   **Description:** An optional description of the organization.
+-   **Billing Email Address:** Defaults to your user's email address.
+-   **Payment Info:** The credit card that will be billed for this new organization on a recurring basis. The first charge will be placed immediately on organization creation; this charge is for the upcoming billing period.
+
+![Organization Setup](/images/organizations/organization-creation-inputs.png "Organization Setup")
+
+When you're finished, click the `Create Organization` button at the bottom of the screen. Once the organization is created, you can create new resources for the organization (see below); [invite members](/organizations/members/#inviting-new-members) to join the organization; or [transfer resources](/organizations/transferring-resources/) from your Sandbox (or from other organizations) into the new organization.
+
+## Creating Organization Resources
+
+If you have `Editor` permissions for at least one organization, you will have the option of setting the owner of any new application or dashboard you create to one of your organizations, or to your own [Sandbox](/user-accounts/sandbox).
+
+![Organization New Resource Owner](/images/organizations/organization-new-resource-owner.png "Organization New Resource Owner")
+
+If the resource has already been created, and you have `Administator` permissions for its owner organization, you will have the option of transferring ownership of that resource to another organization where you have `Administrator` permissions or to your own `Sandbox`. Note that, when transferring resources, the entity receiving the transfer must not exceed any of its [resource limits](/organizations/resouce-limits) or the transfer will fail.
+
+## Managing Organizations
+
+![Organization Settings Link](/images/organizations/organization-settings-link.png "Organization Settings Link")
+
+If you have the Administrator role in this organization, there will be a `Settings` link in the organization subnavigation. Clicking this will take you to a page where you can edit many aspects of the organization itself.
+
+### Overview
+
+![Organization Settings Overview](/images/organizations/org-settings-overview.png "Organization Settings Overview")
+
+From here you can edit the organization's name, description and icon color.
+
+### Usage
+
+![Organization Settings Usage](/images/organizations/org-settings-usage.png "Organization Settings Usage")
+
+This screen displays your detailed resource and payload usage for the current billing period.
+
+### Payment Method
+
+![Organization Settings Payment Method](/images/organizations/org-settings-payment.png "Organization Settings Payment Method")
+
+The recurring payment method can be updated on this screen.
+
+### Billing Plan
+
+![Organization Settings Plan](/images/organizations/org-settings-plan.png "Organization Settings Plan")
+
+Here you can upgrade or downgrade your billing plan at any time. Changes will be prorated and the extra charge (or credit) will appear on your next invoice. Note that downgrading may lead to overage charges if your new plan has fewer monthly payloads than your applications are currently using.
+
+### Invoices
+
+![Organization Settings Invoices](/images/organizations/org-settings-invoices.png "Organization Settings Invoices")
+
+Here you'll find a list of the last 12 invoices for your organization, including the invoice date, its payment status and the amount billed. Clicking any invoice will show you additional details about that billing period, including line-item charges and application usage.

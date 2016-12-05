@@ -26,6 +26,7 @@ pages:
     - Sandbox: user-accounts/sandbox.md
 - Organizations:
     - Overview: organizations/overview.md
+    - Members: organizations/members.md
     - Resource Limits: organizations/resource-limits.md
     - Transferring Resources: organizations/transferring-resources.md
 - Applications:
