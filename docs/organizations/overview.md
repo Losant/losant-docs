@@ -56,6 +56,23 @@ If you have the Administrator role in this organization, there will be a `Settin
 
 From here you can edit the organization's name, description and icon color.
 
+#### Deleting an Organization
+
+You may also delete the organization from this screen by clicking the `Delete Organization` button in the bottom bar. **This cannot be undone**, so be absolutely sure before taking this action.
+
+Deleting an organization will:
+
+-   Delete all applications tied to the organization, including all sub-resources under those applications (devices, workflows, etc.)
+-   Delete all data tied to those applications and their sub-resources.
+-   Delete all dashboards tied to the organization.
+-   Nullify any pending organization invitations.
+-   Cancel the organization's billing plan, meaning the credit card on file will no longer get billed after the final invoice (if charges exist). If the account has a credit, that amount will be applied back to the credit card on file.
+
+Deleting an organization will **NOT**:
+
+-   Delete or otherwise affect the Losant accounts of any organization member, including those members' Sandbox resources or resources tied to other organizations
+-   Cancel any outstanding debt for provided services.
+
 ### Usage
 
 ![Organization Settings Usage](/images/organizations/org-settings-usage.png "Organization Settings Usage")
@@ -67,6 +84,16 @@ This screen displays your detailed resource and payload usage for the current bi
 ![Organization Settings Payment Method](/images/organizations/org-settings-payment.png "Organization Settings Payment Method")
 
 The recurring payment method can be updated on this screen.
+
+#### If Payment Method Fails ...
+
+Should Losant attempt to charge the credit card on file and the charge fails, the organization will be put in a `Past Due` status. A notification bar at the top of the organization screen, as well as atop any application or dashboard owned by the organization, will alert you to this. [Public and password-protected dashboards](/dashboards/overview/#dashboard-access-control) will never display this notification.
+
+![Organization Delinquent Status](/images/organizations/org-delinquent-bar.png "Organization Delinquent Status")
+
+While your organization's payment is past due, **all platform features will continue to function as normal**, and we will attempt to charge the card on file again every seven days until the charge is successful. Should you need to change the card on file, you should do so immediately so that the change is picked up on the next billing attempt.
+
+After 28 days of being in `Past Due` status, the account will be moved to an `Unpaid` status. At this time, **all payloads will be rejected** and your applications and dashboards will cease to function. You will have to update the organization's payment method to reactivate the account. At that time, all outstanding invoices will be charged, and if successful, the organization's full functionality will be restored.
 
 ### Billing Plan
 
