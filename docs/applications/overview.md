@@ -8,7 +8,7 @@ Application can be created at any time using the main `Applications` menu.
 
 ![Create Application](/images/applications/create-application.png "Create Application")
 
-Provide a name an an optional description to finish creating the application.
+Provide a name an optional description to finish creating the application.
 
 ![Create Application Form](/images/applications/create-application-form.png "Create Application Form")
 
