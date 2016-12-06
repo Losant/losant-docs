@@ -28,11 +28,13 @@ After you've saved your access key and secret, check the `I have copied my app s
 
 ## Deleting an Access Key
 
-If you think an access key has been compromised or is no longer needed, you may delete it by clicking on the `delete` button in the access key list.
+If you think an access key has been compromised or is no longer needed, you may delete it by:
+
+-   Clicking on the `Delete` icon in the access key list, OR
+-   Clicking the `Delete Access Key` button on the access key's detail page
 
 ![Delete Key](/images/applications/delete-key.png "Delete Key")
 
 ## Using Access Keys
 
-To find out more on using access keys with our MQTT clients, checkout the various [Losant MQTT](/mqtt/overview) client libraries.  To learn more about using access keys with our
-REST API, checkout the various [Losant REST](/rest-api/overview/) client libraries.
+To find out more on using access keys with our MQTT clients, checkout the various [Losant MQTT](/mqtt/overview) client libraries. To learn more about using access keys with our REST API, checkout the various [Losant REST](/rest-api/overview/) client libraries.

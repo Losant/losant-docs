@@ -4,23 +4,21 @@ Webhooks are defined HTTP endpoints within the Losant Platform that can be used 
 
 ## Viewing Webhooks
 
-You can view the available webhooks through the `Webhooks` item under the `More` menu.
-
-![Webhooks](/images/applications/webhooks.png "Webhooks")
-
-## Creating a Webhook
-
-Webhooks can be added to your application by using the `Add Webhook` button.
+You can view the available webhooks under `Webhooks` in the Application menu bar.
 
 ![Add Webhook](/images/applications/add-webhook.png "Add Webhook")
 
-Simply type in a meaningful name for you to reference later on while building workflows and click the `Save Webhook` button.
+## Creating a Webhook
+
+Webhooks can be added to your application by using the `Add Webhook` button. A name is all that is required to create the webhook, which you will use to reference the webhook in [workflows](/workflows/overview) or other implementations. The name can be changed at any time.
+
+You also have the option to set verification and webhook reply options. More info on those is available below.
 
 ![Save Webhook](/images/applications/save-webhook.png "Save Webhook")
 
-A unique URL is generated for every webhook and can found on the `Edit Webhook` screen.
+A unique URL is generated for every webhook and can found on the `Edit Webhook` screen, as well as in the list of webhooks.
 
-![Edit Webhook](/images/applications/edit-webhook.png "Edit Webhook")
+![Webhooks](/images/applications/webhooks.png "Webhooks")
 
 ## Webhook Verification
 
@@ -53,7 +51,7 @@ When this checkbox is checked, any call against this webhook will generate a `re
 
 ## Deleting a Webhook
 
-To delete a webhook, click the `delete` button on the webhook list.
+If you no longer need a webhook, you may delete it by clicking the `Delete` icon on the webhook list or by clicking the `Delete Webhook` button on the detail screen.
 
 ![Delete Webhook](/images/applications/delete-webhook.png "Delete Webhook")
 

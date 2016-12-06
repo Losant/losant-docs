@@ -4,6 +4,22 @@ Losant dashboards provide a flexible and powerful way to display information rel
 
 ![Full Dashboard](/images/dashboards/overview-dashboard-full.png "Full Dashboard")
 
+## Creating a Dashboard
+
+A dashboard can be created at any time from the `Dashboards` dropdown in the site header, or from a few other places within the platform.
+
+When creating a dashboard, you'll be asked for three pieces of information:
+
+-   **Dashboard Name:** You are required to name your new dashboard. The name can be changed at any time.
+-   **Description:** Optionally, you may also provide a more detailed description of the application.
+-   **Owner:** The dashboard must be scoped to your personal [Sandbox](/user-accounts/sandbox) or to an [organization](/organizations/overview) for which you have the [Editor role](/organizations/members/#member-roles). The owner can be changed at a later date only if you have Administrator permissions for the parent organization (or Sandbox).
+
+Note that, should you choose to make your dashboard public, the name and description **will be visible** to those users.
+
+![Create Dashboard](/images/dashboards/create-dashboard.png "Create Dashboard")
+
+After filling out the form, click `Save Dashboard` to start adding blocks.
+
 ## Adding Blocks
 
 Losant supports many different blocks for visualizing various pieces of information. New blocks can be added to your dashboard by clicking the `Add Block` link at the top of the dashboard.
@@ -11,6 +27,10 @@ Losant supports many different blocks for visualizing various pieces of informat
 ![Add Block](/images/dashboards/overview-add-block.png "Add Block")
 
 ![Select Block](/images/dashboards/overview-select-block.png "Select Block")
+
+## Application Access
+
+Most dashboard blocks require an [application](/applications/overview) from which to fetch their data. Dashboards owned by an organization may only pull data from applications owned by that organization, whereas applications owned by a user's Sandbox may pull data from any application owned by the user **or** any organization the user is a member of. This allow users to build their own customized views from various projects across multiple organizations.
 
 ## Editing Dashboards
 
@@ -43,17 +63,18 @@ A few things to note when viewing past dashboard states:
 
 ## Dashboard Access Control
 
-Dashboards have a three levels of access - private, password protected, and public.  Private
-means that only you (or members of your organization, if it is an organization-owned
-dashboard) can see the dashboard.  Public dashboards can be seen by anyone who has the
-dashboard url, regardless of whether that person is logged in to a Losant account. This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone. Do not make your dashboard public if it contains any private or sensitive data. The third level of access is in between public and private -
-you can add a password to your dashboard, and allow anyone with the url and the password
-to view the dashboard.  This adds some protection to your dashboard, while still making it
-easy to share with people who do not have Losant accounts. You can manage the access control for a dashboard on the settings page for the dashboard:
+Dashboards have a three levels of access:
+
+-   **Private** dashboards are only accessible to you, or members of your organization if it is an organization-owned
+dashboard.
+-   **Public** dashboards can be seen by anyone who has the dashboard URL, regardless of whether that person is logged in to a Losant account. This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone. Do not make your dashboard public if it contains any private or sensitive data.
+-   **Password-protected** dashboards allow anyone with the URL and a global password set by you to view the dashboard.  This adds some protection to your dashboard, while still making it easy to share with people who do not have Losant accounts.
+
+You can manage the access control for a dashboard on the settings page for the dashboard:
 
 ![Dashboard Access Control](/images/dashboards/dashboard-access-control.png "Dashboard Access Control")
 
-## Embedding Dashboard Blocks into Other Sites
+## Embedding Blocks in Other Sites
 
 If your dashboard has been set to `public`, you may embed any of your dashboard blocks into a third-party site. To get an embed code, hover over your dashboard block and click the `<>` icon in the block header.
 
