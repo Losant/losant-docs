@@ -4,6 +4,10 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/how-to-integrate-aws-iot-losant" target="_blank">How To Integrate AWS IoT and Losant</a>
+
+*   <a href="https://www.losant.com/blog/collect-monitor-visualize-sigfox-data" target="_blank">Collect, Monitor, and Visualize Your Sigfox Data With Losant</a>
+
 *   <a href="https://www.losant.com/blog/building-a-nodemcu-javascript-night-light" target="_blank">Using a NodeMCU and Light Sensor to Build a Javascript Night Light</a>
 
 *   <a href="https://www.losant.com/blog/displaying-garage-door-status-with-losant" target="_blank">Displaying My Garage Door Status With Losant</a>
