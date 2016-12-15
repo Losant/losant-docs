@@ -137,6 +137,7 @@ The payload can be any arbitrary JSON value that provides necessary arguments to
 
 Losant supports MQTT version v3.1.1 with the following exceptions:
 
-*   QoS 1 and QoS 2 are not supported.
+*   QoS 2 is not supported for publishing or subscribing.
 *   Retained messages are not supported.
 *   CleanSession 0 is not supported.
+*   Maximum message payload size is 256KB.
