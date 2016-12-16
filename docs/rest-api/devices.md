@@ -6,6 +6,57 @@ Below are the various requests that can be performed against the
 Devices resource, as well as the expected
 parameters and the potential responses.
 
+## POST - /export
+
+https://api.losant.com/applications/**`APPLICATION_ID`**/devices/export
+
+Creates an export of all device metadata.
+
+#### Request Path Components
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+
+#### Request Query Parameters
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| email | N | Email address to send export to.  Defaults to current user&#x27;s email. |  | email@example.com |
+| callbackUrl | N | Callback URL to call with export result. |  | https://example.com/cburl |
+
+#### Request Headers
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -X POST \
+    https://api.losant.com/applications/APPLICATION_ID/devices/export
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | If generation of export was successfully started |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if application was not found |
+
+<br/>
+
 ## GET
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/devices
