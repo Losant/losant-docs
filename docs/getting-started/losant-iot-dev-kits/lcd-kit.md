@@ -8,27 +8,19 @@ As you follow these instructions, if you run into any issues, please refer to th
 
 ## Materials
 
+![Losant LCD Kit Materials](/images/getting-started/losant-iot-dev-kits/lcd-kit/lcd-kit-materials.png "Losant LCD Kit Materials")
+
 Your kit should include the following items:
 
 * 1 [NodeMCU development board](https://www.amazon.com/HiLetgo-Version-NodeMCU-Internet-Development/dp/B010O1G1ES)
 
-![NodeMCU](/images/getting-started/losant-iot-dev-kits/lcd-kit/nodemcu.jpg "NodeMCU")
-
 * 1 [TMP36 temperature sensor](https://www.adafruit.com/product/165)
-
-![TMP36](/images/getting-started/losant-iot-dev-kits/lcd-kit/tmp36.jpg "TMP36")
 
 * 4 [male-to-female jumper wires](https://www.adafruit.com/product/826)
 
-![Male-to-Female](/images/getting-started/losant-iot-dev-kits/lcd-kit/male-to-female-jumper.jpg "Male-to-Female")
-
 * 5 [male-to-male jumper wires](https://www.adafruit.com/product/758)
 
-![Male-to-Male](/images/getting-started/losant-iot-dev-kits/lcd-kit/male-to-male-jumper.jpg "Male-to-Male")
-
 * 1 [half-size solderless breadboard](https://www.adafruit.com/products/64)
-
-![Half Size Solderless Breadbaord](/images/getting-started/losant-iot-dev-kits/lcd-kit/half-size-solderless-breadboard.jpg)
 
 * 1 [Micro USB cable](https://www.amazon.com/AmazonBasics-USB-Male-Micro-Cable/dp/B01EK87T9M)
 
