@@ -58,6 +58,13 @@ In this step we're going to to connect the temperature sensor and LCD to the mic
 
 ![Wiring Image](/images/getting-started/losant-iot-dev-kits/lcd-kit/wiring-image.jpg "Wiring Image")
 
+Once you have everything wired up, it's important that the two pins on the back of the LCD are tied together. These two pins power the backlight.
+
+![Backlight Pin](/images/getting-started/losant-iot-dev-kits/lcd-kit/lcd-backlight-pin.png "Backlight Pin")
+
+There is also a <a target="_blank" href="https://en.wikipedia.org/wiki/Potentiometer">potentiometer</a> on the back of the display. The potentiometer controls the contrast of the text on the LCD. So, once you start working on your device, if you can't see any text, try adjusting the contrast.
+
+![LCD Potentiometer](/images/getting-started/losant-iot-dev-kits/lcd-kit/lcd-potentiometer.png "LCD Potentiometer")
 
 ## 3. Losant Setup
 
@@ -102,7 +109,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ### Generate Security Tokens
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `More > Access Keys` from the application menu.
+Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu.
 
 ![Access Keys Menu](/images/getting-started/losant-iot-dev-kits/lcd-kit/access-keys.png "Access Keys Menu")
 
