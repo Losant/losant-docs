@@ -65,7 +65,7 @@ In this section, you’ll register for a Losant account, create your application
 
 ### Create Account
 
-If you don't already have an account, navigate to Losant to <a href="https://accounts.losant.com/create-account" target="_blank"> createaccount </a>.
+If you don't already have an account, navigate to Losant to <a href="https://accounts.losant.com/create-account" target="_blank">create account</a>.
 
 ### Create Application
 
