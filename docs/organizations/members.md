@@ -44,7 +44,7 @@ To revoke a pending invitation - whether it has already been sent or not – cli
 
 Any invitation that was not accepted after seven days appears in the `Expired Invitations` section of the `Members` page. Invitations in this state do not count against your new invitation limit. Invitees whose invitation has expired can no longer join your organization.
 
-### Rewewing Expired Invitations
+### Renewing Expired Invitations
 
 Any pending or expired invitation can be renewed by clicking the `Renew` link. This resets the timer on the invitation's seven-day expiration timeline, and any expired invitation's link is once again valid.
 

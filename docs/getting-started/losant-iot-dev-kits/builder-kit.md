@@ -226,7 +226,7 @@ The last step is to add the Email node to send yourself an email every time the 
 
 ![Email Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/email-workflow-node.png "Email Workflow Node")
 
-Losant has two email output nodes. The [Email](https://docs.losant.com/workflows/outputs/email/) node sends emails using Losant’s servers, but has a limit of one email per minute. If you need to send more than that, you can use the [Sendgrid](https://docs.losant.com/workflows/outputs/sendgrid/) email node.
+Losant has two email output nodes. The [Email](https://docs.losant.com/workflows/outputs/email/) node sends emails using Losant’s servers, but has a limit of one email per minute. If you need to send more than that, you can use the [SendGrid](https://docs.losant.com/workflows/outputs/sendgrid/) email node.
 
 Enter your email address as a recipient. You can then specify any subject and body you’d like. All of these fields support templates, which means they could pull their values from the payload, but this doesn’t apply for our example. For now, simply type any text you'd like.
 

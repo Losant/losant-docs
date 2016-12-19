@@ -48,6 +48,6 @@ Finally, if the Lambda function that is being called returns a result, it can op
   },
   "deviceName": "My Factory Device",
   "flowId": "56c74add04d0b50100043381",
-  "flowName": "Power Useage Alert"
+  "flowName": "Power Usage Alert"
 }
 ```

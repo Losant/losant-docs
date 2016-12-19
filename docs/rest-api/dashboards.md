@@ -59,7 +59,7 @@ curl -H 'Content-Type: application/json' \
 
 https://api.losant.com/dashboards
 
-Create a new dasboard
+Create a new dashboard
 
 #### Request Headers
 

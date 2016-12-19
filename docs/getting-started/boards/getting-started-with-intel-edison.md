@@ -83,7 +83,7 @@ setInterval(function() {
 [Commands](/devices/commands) allow you to instruct your device to take some kind of action. Commands include a name and an optional payload. Subscribing to commands is done by attaching the `command` event listener.
 
 ```javascript
-// Attach event listener for commmands.
+// Attach event listener for commands.
 device.on('command', function(command) {
   console.log(command.name);
   console.log(command.payload);

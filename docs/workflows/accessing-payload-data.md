@@ -115,7 +115,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
     * If `val` is an **object**, returns the stringified object and ignores the `formatStr` parameter.
     * For **all other formats**, `val` is returned as a string without mutation.
 *   `{{formatDate val formatStr}}`: Casts the given value as a date, and then formats it using the `formatStr` parameter (default 'L LTS').
-*   `{{formatDateRelative date relativeTo}}`: Outputs a relative date value (such as "5 minutes ago").  Date is calcuated relative to the `relativeTo` parameter, which defaults to the current time when not set.
+*   `{{formatDateRelative date relativeTo}}`: Outputs a relative date value (such as "5 minutes ago").  Date is calculated relative to the `relativeTo` parameter, which defaults to the current time when not set.
 *   `{{lower str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) to all lowercase characters.
 *   `{{upper str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to all uppercase characters.
 *   `{{encodeURI str}}`: Returns `str` as an [encoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).

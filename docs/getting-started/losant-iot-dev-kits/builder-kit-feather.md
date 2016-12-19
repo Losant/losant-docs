@@ -98,9 +98,9 @@ The first workshop creates an Internet button that triggers a Losant Workflow to
 
 ### Wiring
 
-***Disconnect the AdaFruit Feather microcontroller from USB.***
+***Disconnect the Adafruit Feather microcontroller from USB.***
 
-For this workshop, you’ll need to attach the AdaFruit Feather Huzzah and button to the breadboard. Below is the wiring diagram. For more information on what breadboards are and how they work, check out our blog post on <a href="https://www.losant.com/blog/how-to-use-a-breadboard" target="\_blank">How to Use a Breadboard</a>.
+For this workshop, you’ll need to attach the Adafruit Feather Huzzah and button to the breadboard. Below is the wiring diagram. For more information on what breadboards are and how they work, check out our blog post on <a href="https://www.losant.com/blog/how-to-use-a-breadboard" target="\_blank">How to Use a Breadboard</a>.
 
 ![Workshop 1 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-1-wiring-diagram.png "Workshop 1 Wiring Diagram")
 
@@ -116,7 +116,7 @@ For this workshop, you’ll need to attach the AdaFruit Feather Huzzah and butto
 
 ### Flash the Firmware
 
-Plug the AdaFruit Feather microcontroller back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/environment-setup) guide.
+Plug the Adafruit Feather microcontroller back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/environment-setup) guide.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop-1-internet-button/workshop-1-internet-button.ino`. Edit the following variables at the top of the file.
 
@@ -208,7 +208,7 @@ The last step is to add the Email node to send yourself an email every time the 
 
 ![Email Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/email-workflow-node.png "Email Workflow Node")
 
-Losant has two email output nodes. The [Email](https://docs.losant.com/workflows/outputs/email/) node sends emails using Losant’s servers, but has a limit of one email per minute. If you need to send more than that, you can use the [Sendgrid](https://docs.losant.com/workflows/outputs/sendgrid/) email node.
+Losant has two email output nodes. The [Email](https://docs.losant.com/workflows/outputs/email/) node sends emails using Losant’s servers, but has a limit of one email per minute. If you need to send more than that, you can use the [SendGrid](https://docs.losant.com/workflows/outputs/sendgrid/) email node.
 
 Enter your email address as a recipient. You can then specify any subject and body you’d like. All of these fields support templates, which means they could pull their values from the payload, but this doesn’t apply for our example. For now, simply type the actual values.
 

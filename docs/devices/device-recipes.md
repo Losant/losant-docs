@@ -18,7 +18,7 @@ One important thing to note is that modifying a device recipe does *not* modify 
 
 ### Recipe Import / Export
 
-Recipies can be exported and saved to a file using the "Export" button on the recipe edit page. Exported recipies can then be imported when creating a new recipe (instead of creating a recipe from scratch). This can be useful for sharing recipes with other users (or even just sharing recipies across applications).
+Recipes can be exported and saved to a file using the "Export" button on the recipe edit page. Exported recipes can then be imported when creating a new recipe (instead of creating a recipe from scratch). This can be useful for sharing recipes with other users (or even just sharing recipes across applications).
 
 ## Using A Recipe
 

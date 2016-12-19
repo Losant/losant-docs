@@ -26,7 +26,7 @@ Navigate to the `Two-Factor Auth`, and the click the `Enable Two-Factor Authenti
 
 ![Enable Two-Factor Auth](/images/user-accounts/enable-2fa.png "Enable Two-Factor Auth")
 
-Use your favorite 2FA app like Google Authenticator to scan the QR code. The app will then start generating short-lived, one-time use codes. Type the code displayed within your app into the `Two-Factor Code` field in your Losant account settings. Enter your Losant password and click `Enable Two Factor Auth`. If the code expires before you click the button, you will have to enter the new code dispayed within your app.
+Use your favorite 2FA app like Google Authenticator to scan the QR code. The app will then start generating short-lived, one-time use codes. Type the code displayed within your app into the `Two-Factor Code` field in your Losant account settings. Enter your Losant password and click `Enable Two Factor Auth`. If the code expires before you click the button, you will have to enter the new code displayed within your app.
 
 ![Verify Two-Factor Auth](/images/user-accounts/verify-2fa.png "Verify Two-Factor Auth")
 

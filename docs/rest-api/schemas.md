@@ -953,7 +953,7 @@ Schema for a collection of Applications
 <br/>
 ## Authenticated Device
 
-Schema for the sucessful response when authenticating a Device
+Schema for the successful response when authenticating a Device
 
 ### Schema <a name="authenticated-device-schema"></a>
 
@@ -1010,7 +1010,7 @@ Schema for the sucessful response when authenticating a Device
 <br/>
 ## Authenticated Solution User
 
-Schema for the sucessful response when authenticating a Solution User
+Schema for the successful response when authenticating a Solution User
 
 ### Schema <a name="authenticated-solution-user-schema"></a>
 
@@ -1049,7 +1049,7 @@ Schema for the sucessful response when authenticating a Solution User
 <br/>
 ## Authenticated User
 
-Schema for the sucessful response when authenticating a User
+Schema for the successful response when authenticating a User
 
 ### Schema <a name="authenticated-user-schema"></a>
 

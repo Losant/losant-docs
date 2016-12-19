@@ -1,6 +1,6 @@
 # Webhook Reply Node
 
-The webhook reply node allows a workflow to send a reply back to a webhook trigger (as long as the webhhok is configured to [wait for a reply](/applications/webhooks/#custom-replies)).
+The webhook reply node allows a workflow to send a reply back to a webhook trigger (as long as the webhook is configured to [wait for a reply](/applications/webhooks/#custom-replies)).
 
 ![Webhook Reply Node](/images/workflows/outputs/webhook-reply-node.png "Webhook Reply Node")
 
@@ -12,7 +12,7 @@ All the standard components of an http response are configurable in the Webhook 
 
 In the above example, the response code is set to `200`, although that field is templatable and so can be configured from the current payload. It is expected to resolve to a valid response code number, and if it does not, the reply will default to a response code of `200`.
 
-The body of the reply can be set either as a string template or as a payload path.  In the above example, it is a string template that resolves to a string of json. If payload path is choosen and the payload path points to an object, that object is cast to a json string for use as the body. The body is allowed to be empty, if no body is desired on the reply.
+The body of the reply can be set either as a string template or as a payload path.  In the above example, it is a string template that resolves to a string of json. If payload path is chosen and the payload path points to an object, that object is cast to a json string for use as the body. The body is allowed to be empty, if no body is desired on the reply.
 
 ![Webhook Reply Node Header Config](/images/workflows/outputs/webhook-reply-node-header-config.png "Webhook Reply Node Header Config")
 

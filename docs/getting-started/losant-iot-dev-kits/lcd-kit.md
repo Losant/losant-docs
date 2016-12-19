@@ -28,7 +28,7 @@ Your kit should include the following items:
 
 * 1 [half-size solderless breadboard](https://www.adafruit.com/products/64)
 
-![Half Size Solderless Breadbaord](/images/getting-started/losant-iot-dev-kits/lcd-kit/half-size-solderless-breadboard.jpg)
+![Half Size Solderless Breadboard](/images/getting-started/losant-iot-dev-kits/lcd-kit/half-size-solderless-breadboard.jpg)
 
 * 1 [Micro USB cable](https://www.amazon.com/AmazonBasics-USB-Male-Micro-Cable/dp/B01EK87T9M)
 
@@ -65,7 +65,7 @@ In this section, you’ll register for a Losant account, create your application
 
 ### Create Account
 
-If you don't already have an account, navigate to Losant to <a href="https://accounts.losant.com/create-account" target="_blank"> creat account </a>.
+If you don't already have an account, navigate to Losant to <a href="https://accounts.losant.com/create-account" target="_blank"> createaccount </a>.
 
 ### Create Application
 

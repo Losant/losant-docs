@@ -42,7 +42,7 @@ If you have `Editor` permissions for at least one organization, you will have th
 
 ![Organization New Resource Owner](/images/organizations/organization-new-resource-owner.png "Organization New Resource Owner")
 
-If the resource has already been created, and you have `Administator` permissions for its owner organization, you will have the option of transferring ownership of that resource to another organization where you have `Administrator` permissions or to your own `Sandbox`. Note that, when transferring resources, the entity receiving the transfer must not exceed any of its [resource limits](/organizations/resouce-limits) or the transfer will fail.
+If the resource has already been created, and you have `Administrator` permissions for its owner organization, you will have the option of transferring ownership of that resource to another organization where you have `Administrator` permissions or to your own `Sandbox`. Note that, when transferring resources, the entity receiving the transfer must not exceed any of its [resource limits](/organizations/resource-limits) or the transfer will fail.
 
 ## Managing Organizations
 

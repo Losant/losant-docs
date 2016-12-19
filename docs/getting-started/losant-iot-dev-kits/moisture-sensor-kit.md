@@ -133,7 +133,7 @@ After the upload is complete, the Serial Monitor should start printing informati
 
 ![Serial Output](/images/getting-started/losant-iot-dev-kits/moisture-sensor/serial-output.png "Serial Output")
 
-Every 60 seconds the firmware is publishing the state `{ "moisture": <value> }` to Losant. The moisture value is the raw number between 0-1024 that the microcontoller's ADC is providing. Higher values mean more moisture and lower values mean less moisture.
+Every 60 seconds the firmware is publishing the state `{ "moisture": <value> }` to Losant. The moisture value is the raw number between 0-1024 that the microcontroller's ADC is providing. Higher values mean more moisture and lower values mean less moisture.
 
 It’s now time to put your moisture sensor in a plant and start making use of this data.
 

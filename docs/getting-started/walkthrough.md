@@ -221,7 +221,7 @@ The resolution is how far apart individual data points are. Select one minute fo
 
 ![Time Series Temperature"](/images/getting-started/walkthrough/time-series-settings-2.png "Time Series Temperature")
 
-Unlike the gauge, which can only display a single value, time series graphs can display multiple series. In this example we want to display two: one for the temperature and one for the humidity. After configuring the first series to diplay temperature, like above, click the "Add Segment" button to add a second configuration block for humidity.
+Unlike the gauge, which can only display a single value, time series graphs can display multiple series. In this example we want to display two: one for the temperature and one for the humidity. After configuring the first series to display temperature, like above, click the "Add Segment" button to add a second configuration block for humidity.
 
 ![Time Series Humidity](/images/getting-started/walkthrough/time-series-settings-3.png "Time Series Humidity")
 

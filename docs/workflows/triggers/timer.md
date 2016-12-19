@@ -41,7 +41,7 @@ For the example workflow above, a specific payload for a triggered workflow migh
   "triggerId": "78fbb050d7f811e5b995b3a5b31df7d8",
   "triggerType": "timer",
   "flowId": "56c8967bb8df0f0100d62912",
-  "flowName": "Electricty Pricing Data",
+  "flowName": "Electricity Pricing Data",
   "globals": {}
 }
 ```

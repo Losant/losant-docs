@@ -26,9 +26,9 @@ Events can also be used to trigger other workflows. In the refrigerator example,
 
 In the above example, the workflow is trigger whenever an event is created with a specific level (info, warning, error, critical) and specific subject. The workflow then sends an SMS message to alert the user.
 
-## Events Lifecycle
+## Events Life Cycle
 
-Events include basic lifecycle features for proper organization and handling.
+Events include basic life cycle features for proper organization and handling.
 
 `
 New -> Acknowledged -> Resolved

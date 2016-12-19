@@ -31,7 +31,7 @@ An **incoming message** is typically a device reporting its state, and an **outg
 
 For example, if one command is sent to 50 devices, the command only counts as one outgoing message against the message throttling limit, but it counts as 50 payloads against the payload limit.
 
-[Gateway devices](/devices/gateways-peripherals/#gateways) are an exception to the message throttling rule, since they are responsible for all communication between the Losant platform and their [pateway devices](/devices/gateways-peripherals/#peripherals). For gateways, the message throttling limit is applied on a per-peripheral basis, meaning the throttling limit is applied individually to each peripheral.
+[Gateway devices](/devices/gateways-peripherals/#gateways) are an exception to the message throttling rule, since they are responsible for all communication between the Losant platform and their [peripheral devices](/devices/gateways-peripherals/#peripherals). For gateways, the message throttling limit is applied on a per-peripheral basis, meaning the throttling limit is applied individually to each peripheral.
 
 ## Payloads Limits
 

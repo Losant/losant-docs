@@ -24,7 +24,7 @@ Next, the contents of the email can be configured. There are four items to confi
 
 ### Recipient Addresses
 
-![SendGrid Node Recipient Addresses](/images/workflows/outputs/sendgrid-node-receipient-addresses.png "SendGrid Node Recipient Addresses")
+![SendGrid Node Recipient Addresses](/images/workflows/outputs/sendgrid-node-recipient-addresses.png "SendGrid Node Recipient Addresses")
 
 The "To", "CC", and "BCC" addresses for the email can all be independently configured. These fields also support [string templates](/workflows/accessing-payload-data/#string-templates). The above node is set to send the email to `bob@embree.net` and `john@embree.net`, and CC `jane@embree.net` (and has no BCC addresses set).
 
