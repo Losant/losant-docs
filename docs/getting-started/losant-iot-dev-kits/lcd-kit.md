@@ -8,33 +8,33 @@ As you follow these instructions, if you run into any issues, please refer to th
 
 ## Materials
 
+![Losant LCD Kit Materials](/images/getting-started/losant-iot-dev-kits/lcd-kit/lcd-kit-materials.png "Losant LCD Kit Materials")
+
 Your kit should include the following items:
 
 * 1 [NodeMCU development board](https://www.amazon.com/HiLetgo-Version-NodeMCU-Internet-Development/dp/B010O1G1ES)
 
-![NodeMCU](/images/getting-started/losant-iot-dev-kits/lcd-kit/nodemcu.jpg "NodeMCU")
-
 * 1 [TMP36 temperature sensor](https://www.adafruit.com/product/165)
-
-![TMP36](/images/getting-started/losant-iot-dev-kits/lcd-kit/tmp36.jpg "TMP36")
 
 * 4 [male-to-female jumper wires](https://www.adafruit.com/product/826)
 
-![Male-to-Female](/images/getting-started/losant-iot-dev-kits/lcd-kit/male-to-female-jumper.jpg "Male-to-Female")
-
 * 5 [male-to-male jumper wires](https://www.adafruit.com/product/758)
-
-![Male-to-Male](/images/getting-started/losant-iot-dev-kits/lcd-kit/male-to-male-jumper.jpg "Male-to-Male")
 
 * 1 [half-size solderless breadboard](https://www.adafruit.com/products/64)
 
-![Half Size Solderless Breadboard](/images/getting-started/losant-iot-dev-kits/lcd-kit/half-size-solderless-breadboard.jpg)
-
-* 1 [Micro USB cable](https://www.amazon.com/AmazonBasics-USB-Male-Micro-Cable/dp/B01EK87T9M)
+* 1 [micro USB cable](https://www.amazon.com/AmazonBasics-USB-Male-Micro-Cable/dp/B01EK87T9M)
 
 ## 1. Environment Setup
 
-In order to properly program the kit's microcontroller, please follow the **<a href="/getting-started/losant-iot-dev-kits/environment-setup/" target="_blank">environment setup instructions</a>**. The NodeMCU included in this kit is programmed using the Arduino toolchain. These steps only need to be completed once, so if you've already done this for a previous kit, you can skip this step.
+To properly program the kit's microcontroller, please follow the **<a href="/getting-started/losant-iot-dev-kits/environment-setup/" target="_blank">environment setup instructions</a>**. The NodeMCU included in this kit is programmed using the Arduino toolchain. These steps only need to be completed once, so if you've already done this for a previous kit, you can skip this step.
+
+Additionally to the setup instructions, we need to install the <a href="https://github.com/marcoschwartz/LiquidCrystal_I2C" target="_blank">LiquidCrystal_I2C</a> library. This library will allow us to control LCD displays with the <a href="https://learn.sparkfun.com/tutorials/i2c" target="_blank">I2C protocol</a>.
+
+To install the LiquidCrystal_I2C library, open the library manager from the `Sketch -> Include Library -> Manage Libraries` menu and search for LiquidCrystal_I2C. There are a couple of similar libraries, so, you will want to choose the one by `Frank de Brabander`.
+
+![Liquid Crystal I2C Library](/images/getting-started/losant-iot-dev-kits/lcd-kit/i2c-library.png "Liquid Crystal I2C Library")
+
+Once installed, your environment is ready.
 
 ## 2. Wiring
 
@@ -58,6 +58,13 @@ In this step we're going to to connect the temperature sensor and LCD to the mic
 
 ![Wiring Image](/images/getting-started/losant-iot-dev-kits/lcd-kit/wiring-image.jpg "Wiring Image")
 
+Once you have everything wired up, it's important that the two pins on the back of the LCD are tied together. These two pins power the backlight.
+
+![Backlight Pin](/images/getting-started/losant-iot-dev-kits/lcd-kit/lcd-backlight-pin.png "Backlight Pin")
+
+There is also a <a target="_blank" href="https://en.wikipedia.org/wiki/Potentiometer">potentiometer</a> on the back of the display. The potentiometer controls the contrast of the text on the LCD. So, once you start working on your device, if you can't see any text, try adjusting the contrast.
+
+![LCD Potentiometer](/images/getting-started/losant-iot-dev-kits/lcd-kit/lcd-potentiometer.png "LCD Potentiometer")
 
 ## 3. Losant Setup
 
