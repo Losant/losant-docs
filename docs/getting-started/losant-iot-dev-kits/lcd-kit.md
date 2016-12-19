@@ -1,6 +1,6 @@
 # LCD Kit Instructions
 
-The <a href="https://store.losant.com/products/lcd-kit" target="_blank"> LCD Kit</a> includes everything to add a display to your hardware project. These instructions provide a step-by-step overview to build and configure your own Internet-connected weather station. This station displays a summary of the outside weather, temperature, time. However, with this kit, you could display other bits of information besides weather.
+The <a href="https://store.losant.com/products/lcd-kit" target="_blank"> LCD Kit</a> includes everything to add a display to your hardware project. These instructions provide a step-by-step overview to build and configure your own Internet-connected weather station. This station displays a summary of the outside weather, temperature, and time. However, with this kit, you could display other bits of information besides weather.
 
 ![Weather Station](/images/getting-started/losant-iot-dev-kits/lcd-kit/weather-station.jpg "Weather Station")
 
@@ -72,7 +72,7 @@ In this section, you’ll register for a Losant account, create your application
 
 ### Create Account
 
-If you don't already have an account, navigate to Losant to <a href="https://accounts.losant.com/create-account" target="_blank">create account</a>.
+If you don't already have an account, navigate to Losant to <a href="https://accounts.losant.com/create-account" target="_blank">create an account</a>.
 
 ### Create Application
 
