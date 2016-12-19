@@ -58,3 +58,23 @@ But this next payload would not pass validation, and so the workflow would take 
   ...
 }
 ```
+
+![Validate Payload Errors](/images/workflows/logic/validate-payload-error.png "Validate Payload Errors")
+
+Optionally, any errors from validating the payload can be placed on the payload at a payload path. If this path is provided and there are no errors, the value at the path will be set as an empty array.  If there are in fact errors, it will be an array of error objects. For example, in the "not a number" payload case above, if the error path was set to `data.validationErrors`, the payload after the validation node would look like the following:
+
+```JSON
+{
+  "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
+  "data": {
+    "voltage": "not a number",
+    "validationErrors": [
+      {
+        "field": "data.voltage",
+        "message": "is the wrong type"
+      }
+    ]
+  },
+  ...
+}
+```

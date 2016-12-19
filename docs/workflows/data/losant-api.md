@@ -65,7 +65,8 @@ After an error response for the above request, the payload might look like this 
     "apiResult": {
       "error": {
         "type": "NotFound",
-        "statusCode": 404
+        "statusCode": 404,
+        "message": "Device not found"
       }
     }
   },
