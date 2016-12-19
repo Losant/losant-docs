@@ -40,14 +40,6 @@ state to a gateway device, and that gateway pushes that state to Losant.  When c
 peripheral as the device type, you must choose the particular gateway device that this
 device will be reporting through, so that Losant knows what gateway has permission to report as this peripheral device.
 
-### Device Tags
-
-Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries) for targeting devices by tag within the platform.
-
-![Device Tags](/images/devices/device-tags.png "Device Tags")
-
-In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` or `color=red` to find the specific devices.
-
 ### Device Attributes
 
 Your device's state attributes are one of the most important configuration options. These define what fields your device will report when it reports state.
@@ -57,6 +49,14 @@ Your device's state attributes are one of the most important configuration optio
 The above example would work for a thermostat device. It has two attributes. One is named `inside-temp` and one is named `temp-setting`. This device would likely report the `inside-temp` every few minutes and only report `temp-setting` when the user has changed the setting.
 
 Refer to the [device state](/devices/state) documentation for further details about state.
+
+### Device Tags
+
+Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries) for targeting devices by tag within the platform.
+
+![Device Tags](/images/devices/device-tags.png "Device Tags")
+
+In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` or `color=red` to find the specific devices.
 
 ## Device Management
 
@@ -123,6 +123,6 @@ In the case where you no longer want the data for a device or you want to clear 
 
 ![Export Devices](/images/devices/devices-export.png "Export Devices")
 
-To export a list of all the devices scoped to an application, visit the "All Devices" page and click the "Export All Devices" button in the top right corner of the list. This will retrieve all devices within the application and generate a CSV file for download. The CSV will include each device's name, ID, description, device type and each tag associated with the device.
+To export a list of all the devices scoped to an application, visit the "All Devices" page and click the "Export All Devices" button in the top right corner of the list. This generate a CSV file of all devices in the application for download, which will be emailed to you after the export has completed. The CSV will include each device's name, ID, description, device type and each tag associated with the device.
 
 Note that device exports always include the application's entire device list, not just the devices that are currently displayed in the interface (as filtered by name or paginated).

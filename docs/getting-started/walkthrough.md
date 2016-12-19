@@ -35,9 +35,7 @@ The [Dark Sky API](https://darksky.net/dev/docs/forecast) provides a lot of info
 
 ![Device Settings](/images/getting-started/walkthrough/device-settings.png "Device Settings")
 
-When creating the device, make sure `Standalone` is selected as the device type. Device tags won't be needed since we only have a single device. Tags become useful when you start organizing hundreds or thousands of devices.
-
-The `Device Attributes` are important. These are what tell Losant what data this device will be reporting and what Losant will be storing. For the weather device, we'll be storing the following attributes:
+When creating the device, make sure `Standalone` is selected as the device type. The `Device Attributes` are important. These are what tell Losant what data this device will be reporting and what Losant will be storing. For the weather device, we'll be storing the following attributes:
 
 * `temp` - the temperature in degrees Fahrenheit.
 * `feels-like` - the apparent temperature with wind chill and humidity accounted for.

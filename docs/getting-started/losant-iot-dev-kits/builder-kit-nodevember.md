@@ -109,7 +109,7 @@ The next step is to register the builder kit device with the platform. Click the
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-menu.png "Add Device Menu")
 
-Next, choose the `Create from Scratch` option.
+Next, choose the `Create Blank Device` option.
 
 ![Create From Scratch](/images/getting-started/losant-iot-dev-kits/moisture-sensor/add-from-scratch.png "Create From Scratch")
 
@@ -120,11 +120,9 @@ Next, choose the `Create from Scratch` option.
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
 1. For "Device Type", leave "Standalone" selected.
-1. No device tags are required.
-1. Add the following under "Device Attributes":
-    1. button: boolean
-    1. tempC: number
-    1. tempF: number
+1. Add a device attribute with the type `Boolean` and the name `button`.
+1. Add a device attribute with the type `Number` and the name `tempF`.
+1. Add a device attribute with the type `Number` and the name `tempC`.
 
 The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
@@ -134,7 +132,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ### Generate Security Tokens
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `More > Access Keys` from the application menu.
+Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu bar.
 
 ![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
@@ -439,3 +437,4 @@ Don't stop now! Losant has several kits available.
 1. Losant Builder Kit ( [Buy Now](https://store.losant.com/products/losant-builder-kit) | [Instructions](/getting-started/losant-iot-dev-kits/builder-kit/) )
 1. Moisture Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-moisture-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/) )
 1. Door Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/) )
+1. LCD Kit ( [Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/) )

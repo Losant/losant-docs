@@ -110,8 +110,7 @@ Next, choose the `Create Blank Device` option.
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
 1. For "Device Type", leave "Standalone" selected.
-1. No device tags are required.
-1. Add one device attribute with the name "button" and the data type "Boolean".
+1. Add one device attribute with the data type `Boolean` the name `button`.
 
 The <a href="https://docs.losant.com/devices/overview/#device-attributes" target="_blank">device attributes</a> specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed. Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 

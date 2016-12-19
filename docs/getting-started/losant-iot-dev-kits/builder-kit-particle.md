@@ -69,9 +69,14 @@ Now that we have data being published, it's time to integrate Losant so we can c
 
 ## Losant Setup
 
-If you haven't already, [sign up for Losant](https://accounts.losant.com/create-account). After signing up, create a new application for this workshop. You can name it anything you want.
+If you haven't already, [sign up for Losant](https://accounts.losant.com/create-account). After signing up you'll be prompted to create your first application. You can also go to create an application from the main Applications menu at the top of every screen.
 
-![New Application](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/new-application.png "New Application")
+![Welcome Page](/images/getting-started/walkthrough/welcome-page.png "Welcome Page")
+
+You can name your application whatever you would like - in this case we have called it
+"Losant Particle Workshop".
+
+![Create Application](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/create-application.png "Create Application")
 
 Next, add a device to the application to represent our Photon-powered widget.
 
@@ -84,8 +89,8 @@ Next, add a device to the application to represent our Photon-powered widget.
 1. Set the device name to anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
 1. For "Device Type", leave "Standalone" selected.
-1. No device tags are required.
-1. Set two attributes on the device: "light-level" and "button-pressed". Set both of their data types to `Number`.
+1. Add a device attribute with the type `Number` and the name `light-level`.
+1. Add a device attribute with the type `Number` and the name `button-pressed`.
 
 Once everything is configured, click the `Create Device` button at the top-right on the screen.
 

@@ -42,7 +42,7 @@ The next step is to register the door sensor kit device with the platform. Click
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/door-sensor/add-device-menu.png "Add Device Menu")
 
-Next, choose the `Create from Scratch` option.
+Next, choose the `Create Blank Device` option.
 
 ![Create From Scratch](/images/getting-started/losant-iot-dev-kits/door-sensor/add-from-scratch.png "Create From Scratch")
 
@@ -51,8 +51,7 @@ Next, choose the `Create from Scratch` option.
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
 1. For "Device Type", leave "Standalone" selected.
-1. No device tags are required.
-1. Add a device attribute with the name "open" and the type `Number`.
+1. Add a device attribute with the type `Number` and the name `open`.
 
 The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report `{ "open" : 1 }` when the door opens and `{ "open" : 0 }` when the door closes. Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
@@ -62,7 +61,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ### Generate Security Tokens
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `More > Access Keys` from the application menu.
+Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu bar.
 
 ![Access Keys Menu](/images/getting-started/losant-iot-dev-kits/door-sensor/access-keys-menu.png "Access Keys Menu")
 

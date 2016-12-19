@@ -79,7 +79,7 @@ In Losant, every thing starts with an application. All devices and workflows bel
 
 A device in Losant is a single thing or widget. A device could be car, thermostat, smart bulb, or any kind of custom gadget. Devices can contain many sensors or attached peripherals. In this example, our device is our weather station.
 
-The next step is to register the device with the platform. **Select `Add Device` from the Devices dropdown. Next, choose the `Create from Scratch` option.**
+The next step is to register the device with the platform. **Select `Add Device` from the Devices dropdown. Next, choose the `Create Blank Device` option.**
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/lcd-kit/add-device.png "Add Device Menu")
 
@@ -90,9 +90,8 @@ The next step is to register the device with the platform. **Select `Add Device`
 1. Name the device anything you want.
 1. "Description" can be left blank, or fill it with whatever you want.
 1. For "Device Type", leave "Standalone" selected.
-1. No <a href="/devices/overview/#device-tags" target="_blank">device tags</a> are required.
-1. Add a device attribute with the name "tempC" and the type `Number`.
-1. Add a device attribute with the name "tempF" and the type `Number`.
+1. Add a device attribute with the type `Number` and the name `tempF`.
+1. Add a device attribute with the type `Number` and the name `tempC`.
 
 The device attributes specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed, the temperature in Celsius (tempC), and the temperature in Fahrenheit (tempF). Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
@@ -102,7 +101,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ### Generate Security Tokens
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `More > Access Keys` from the application menu.
+Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu bar.
 
 ![Access Keys Menu](/images/getting-started/losant-iot-dev-kits/lcd-kit/access-keys.png "Access Keys Menu")
 
