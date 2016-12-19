@@ -26,7 +26,15 @@ Your kit should include the following items:
 
 ## 1. Environment Setup
 
-In order to properly program the kit's microcontroller, please follow the **<a href="/getting-started/losant-iot-dev-kits/environment-setup/" target="_blank">environment setup instructions</a>**. The NodeMCU included in this kit is programmed using the Arduino toolchain. These steps only need to be completed once, so if you've already done this for a previous kit, you can skip this step.
+To properly program the kit's microcontroller, please follow the **<a href="/getting-started/losant-iot-dev-kits/environment-setup/" target="_blank">environment setup instructions</a>**. The NodeMCU included in this kit is programmed using the Arduino toolchain. These steps only need to be completed once, so if you've already done this for a previous kit, you can skip this step.
+
+Additionally to the setup instructions, we need to install the <a href="https://github.com/marcoschwartz/LiquidCrystal_I2C" target="_blank">LiquidCrystal_I2C</a> library. This library will allow us to control LCD displays with the <a href="https://learn.sparkfun.com/tutorials/i2c" target="_blank">I2C protocol</a>.
+
+To install the LiquidCrystal_I2C library, open the library manager from the `Sketch -> Include Library -> Manage Libraries` menu and search for LiquidCrystal_I2C. There are a couple of similar libraries, so, you will want to choose the one by `Frank de Brabander`.
+
+![Liquid Crystal I2C Library](/images/getting-started/losant-iot-dev-kits/lcd-kit/i2c-library.png "Liquid Crystal I2C Library")
+
+Once installed, your environment is ready.
 
 ## 2. Wiring
 
