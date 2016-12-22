@@ -101,7 +101,7 @@ The next step is to register the builder kit <a href="https://docs.losant.com/de
 
 Next, choose the `Create Blank Device` option.
 
-![Create From Scratch](/images/getting-started/losant-iot-dev-kits/moisture-sensor/add-from-scratch.png "Create From Scratch")
+![Create From Scratch](/images/getting-started/losant-iot-dev-kits/builder-kit/add-from-scratch.png "Create From Scratch")
 
 ![Add Device Name](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-name.png "Add Device Name")
 
