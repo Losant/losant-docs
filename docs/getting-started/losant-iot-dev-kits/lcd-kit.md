@@ -14,6 +14,8 @@ Your kit should include the following items:
 
 * 1 [NodeMCU development board](https://www.amazon.com/HiLetgo-Version-NodeMCU-Internet-Development/dp/B010O1G1ES)
 
+* 1 [16x2 LCD Screen](https://www.amazon.com/Arducam-HD44780-Character-Backlight-Interface/dp/B01985FB6A) - with Hitachi HD44780 compatible controller
+
 * 1 [TMP36 temperature sensor](https://www.adafruit.com/product/165)
 
 * 4 [male-to-female jumper wires](https://www.adafruit.com/product/826)
@@ -198,6 +200,8 @@ void handleCommand(LosantCommand *command) {
 ```
 
 The <a href="/mqtt/arduino/" target="_blank">Losant Arduino firmware</a> uses MQTT to communication with devices. Once a MQTT payload is received, `handleCommand` will be called. As you can see, we are looking for a command called `refresh`. If received, it will print `L1` (Line One) and `L2` (Line Two) to the LCD screen. This allows us to easily edit and control what the screen displays with out having to continuously flash the device with new firmware.
+
+When sending larger payloads, you may have to [change a parameter to allow MQTT to send larger packet sizes.](https://forums.losant.com/t/sending-commands-with-larger-payloads/135)
 
 We have the inside temperature data - this is the temperature displayed in the Serial output. Now, we need to get the outside weather and time to display it. We will use a <a href="/workflows/overview/" target="_blank">workflow</a> for this.
 
