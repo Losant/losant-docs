@@ -1,6 +1,7 @@
 # Store Value Node
 
-The store value node allows a workflow to store a value for retrieval and use in a subsequent workflow run by the [get value node](/workflows/data/get-value/).  Stored values can also be viewed and manipulated using the [workflow storage tab](/workflows/overview/#workflow-storage).
+The store value node allows a workflow to store a value for retrieval and use in a subsequent workflow run by the [get value node](/workflows/data/get-value/).  Stored values can also be viewed and manipulated using the [workflow storage tab](/workflows/overview/#workflow-storage). The maximum size of a value stored
+by a store value node is 16KB.
 
 ![Store Value Node](/images/workflows/data/store-value-node.png "Store Value Node")
 

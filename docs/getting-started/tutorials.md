@@ -4,6 +4,14 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/how-to-build-an-interactive-alexa-skill-with-no-code-using-losant" target="_blank">How to Build an Interactive Alexa Skill with no Code Using Losant</a>
+
+*   <a href="https://www.losant.com/blog/how-to-grow-food-with-the-internet-of-things" target="_blank">How to Grow Food with the Internet of Things</a>
+
+*   <a href="https://www.losant.com/blog/how-to-use-light-sensor-control-holiday-lights" target="_blank">How to use a Light Sensor to Control Your Holiday lights</a>
+
+*   <a href="https://www.losant.com/blog/build-a-cloud-based-callbox-using-twilio-slack-and-losant-webhooks" target="_blank">Build a Cloud-Based Callbox using Twilio, Slack and Losant Webhooks</a>
+
 *   <a href="https://www.losant.com/blog/how-to-integrate-aws-iot-losant" target="_blank">How To Integrate AWS IoT and Losant</a>
 
 *   <a href="https://www.losant.com/blog/collect-monitor-visualize-sigfox-data" target="_blank">Collect, Monitor, and Visualize Your Sigfox Data With Losant</a>
@@ -73,3 +81,5 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 *   <a href="https://www.hackster.io/anandtamboli/how-i-integrated-1btn-with-losant-iot-platform-15f736" target="_blank">How I Integrated 1btn with Losant IoT Platform</a>
 
 *   <a href="http://forefront.io/a/iot-intruder-detector/" target="_blank">Internet of Things Intruder Detector</a>
+
+*   <a href="https://medium.com/@stevecaldwell/how-i-hacked-my-humidor-with-losant-and-a-particle-photon-84342744755b" target="_blank">How I Hacked my Humidor with Losant and a Particle Photon</a>
