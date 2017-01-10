@@ -1,16 +1,16 @@
 # IoT Developer Kit Environment Setup
 
-All Losant IoT Developer Kits use an ESP8266 based WiFi development board. Before you can flash the required firmware to these devices, you must setup your environment with the proper development tools. The below instructions will walk you through installing all necessary 3rd party tools. These instructions only need to be followed once and the same environment can be used for all Losant IoT developer kits.
+All Losant IoT Developer Kits use an ESP8266 based WiFi development board. Before you can flash the required firmware to these devices, you must setup your environment with the proper development tools. The below instructions will walk you through installing all necessary 3rd party tools. These instructions only need to be followed once, and the same environment can be used for all Losant IoT developer kits.
 
 ## Install Arduino IDE
-Download and install v1.6.9 of the Arduino IDE by following the instructions at:<br />
+Download and install v1.8.0 of the Arduino IDE by following the instructions at:<br />
 <a href="https://www.arduino.cc/en/Main/Software" target="_blank">https://www.arduino.cc/en/Main/Software</a>
 
-If you already have the Arduino IDE installed, it is strongly recommend that you ***download and install 1.6.9***. There have been issues with previous versions not working correctly.
+If you already have the Arduino IDE installed, it is strongly recommend that you ***download and install 1.8.0***. There have been issues with previous versions not working correctly.
 
 ## Install USB Drivers
 
-The microcontroller boards requires a USB to UART driver that must be installed for programming. Download and install the driver for your platform by following the instructions at:
+The microcontroller boards requires the USB to UART driver to be installed in order to program it. Download and install the driver for your platform by following the instructions at:
 
 <a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx</a>
 
@@ -18,13 +18,13 @@ The microcontroller boards requires a USB to UART driver that must be installed 
 
 ![Mac Driver Download](/images/getting-started/losant-iot-dev-kits/environment-setup/uart-driver-mac.png "Mac Driver Download")
 
-On Mac, the above link downloads a disk image. Double-click the file to mount it, open the disk image, and then double-click the .pkg file to install the driver.
+On a Mac, the above link downloads a disk image. Double-click the file to mount it, open the disk image, then double-click the .pkg file to install the driver.
 
 ![Mac Driver Disk Image](/images/getting-started/losant-iot-dev-kits/environment-setup/mac-driver-disk-image.png "Mac Driver Disk Image")
 
 ## Configure Arduino IDE
 
-Launch the Arduino IDE. Linux users typically have to open the IDE under sudo for correct permissions. In order for the board to show up as a board in Arduino, you must add the following to the “Additional Boards Manager URLs” field in the preferences. On Mac, the preferences can be found at `Arduino -> Preferences`.
+Launch the Arduino IDE. Linux users typically have to open the IDE under sudo for correct permissions. In order for the board to show up as a board in Arduino, you must add the following to the “Additional Boards Manager URLs” field in the preferences. On a Mac, the preferences can be found at `Arduino -> Preferences`.
 
 ```text
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
@@ -34,7 +34,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 Restart the Arduino IDE.
 
-Open the Board Manager at `Tools -> Board -> Boards Manager`. Change the Type field to `Contributed` and enter `esp8266` in the Search field. Select the esp8266 entry in the list, ***change the version to 2.2.0***, and click the `Install` button.
+Open the Board Manager at `Tools -> Board -> Boards Manager`. Change the Type field to `Contributed` and enter `esp8266` in the Search field. Select the esp8266 entry in the list, ***change the version to 2.3.0***, and click the `Install` button.
 
 ![Install Board](/images/getting-started/losant-iot-dev-kits/environment-setup/install-board.png "Install Board")
 
@@ -44,7 +44,7 @@ Open the Arduino IDE, select the Tools menu, and change the Board to `Generic ES
 
 ![Select Board](/images/getting-started/losant-iot-dev-kits/environment-setup/select-board.png "Select Board")
 
-After selecting the board, additional options will appear in the Tools menu. Ensure the other options are set to the following. The bold ones typically need changed from their defaults.
+After selecting the board, additional options will appear in the Tools menu. Ensure the other options are set to the following; the bolded options typically need changed from their defaults.
 
 1. ***Flash Mode = QIO***
 1. Flash Frequency = 40MHz
