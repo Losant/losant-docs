@@ -10,21 +10,21 @@ Events are typically created using Losant [workflows](/workflows/overview). The 
 
 ![Create Event Workflow](/images/events/create-event-workflow.png "Create Event Workflow")
 
-In the above example, a device is reporting temperature state and triggering the workflow. The condition node is checking the value of the temperature. If the value is greater than 40 a temperature warning event is created.
+In the above example, a device is reporting temperature state and triggering the workflow. The condition node is checking the value of the temperature. If the value is greater than 50 a temperature error event is created.
 
 ## Using Events
 
-Events are typically consumed using the events page, which is accessible on the Events menu.
+Events are typically consumed using the events page, which is accessible under `Events` in the Application menu bar.
 
 ![Events Menu](/images/events/events-menu.png "Events Menu")
 
-The events page allows you to review the details about each event, acknowledged them if needed, and resolve them. Resolved events will no longer show up on the events page.
+The events page allows you to review the details about each event, acknowledged them if needed, and resolve them.
 
 Events can also be used to trigger other workflows. In the refrigerator example, if you wanted to perform additional actions when an event gets created, you could use the [event trigger](/workflows/triggers/event/) to run additional workflows.
 
 ![Event Trigger](/images/events/event-trigger.png "Event Trigger")
 
-In the above example, the workflow is trigger whenever an event is created with a specific level (info, warning, error, critical) and specific subject. The workflow then sends an SMS message to alert the user.
+In the above example, the workflow is trigger whenever an event is created with a specific level (error). The workflow then sends an SMS message to alert the user.
 
 ## Events Life Cycle
 
