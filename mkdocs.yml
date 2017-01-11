@@ -99,6 +99,7 @@ pages:
         - Redis: workflows/data/redis.md
         - Salesforce Cases: workflows/data/salesforce-cases.md
         - Store Value: workflows/data/store-value.md
+        - Time Series: workflows/data/time-series.md
     - Outputs:
         - Debug: workflows/outputs/debug.md
         - Device Command: workflows/outputs/device-command.md
