@@ -29,6 +29,7 @@ pages:
     - Members: organizations/members.md
     - Resource Limits: organizations/resource-limits.md
     - Transferring Resources: organizations/transferring-resources.md
+    - Audit Logs: organizations/audit-logs.md
 - Applications:
     - Overview: applications/overview.md
     - Access Keys: applications/access-keys.md
