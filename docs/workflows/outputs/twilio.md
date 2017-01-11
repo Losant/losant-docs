@@ -30,4 +30,22 @@ Next is the actual message to send - this can include a message, a media URL, or
 
 ![Twilio Node Recipient Numbers](/images/workflows/outputs/twilio-node-recipient-numbers.png "Twilio Node Recipient Numbers")
 
-Multiple phone numbers can be provided to the Twilio node. The recipient phone number fields support [string templates](/workflows/accessing-payload-data/#string-templates), so the phone numbers can potentially be pulled off of the payload. Values that do not render to valid phone numbers are ignored. As a note, when multiple phone numbers are defined, multiple individual SMS messages will be sent - one to each recipient phone number (it does not create a group SMS message). In the above example, the SMS message is only sent to a single phone number, `(212) 867-5309`.
+Multiple phone numbers can be provided to the Twilio node. The recipient phone number fields support [string templates](/workflows/accessing-payload-data/#string-templates), so the phone numbers can potentially be pulled off of the payload. As a note, when multiple phone numbers are defined, multiple individual SMS messages will be sent - one to each recipient phone number (it does not create a group SMS message). In the above example, the SMS message is only sent to a single phone number, `(212) 867-5309`.
+
+### Result information
+
+![Twilio Node Result](/images/workflows/outputs/twilio-node-result.png "Twilio Node Result")
+
+Optionally, a payload path can be provided to store the results of the SMS messsage sends. If one is provided, the twilio node will place an array at this path, with one entry per recipient number (it will be in the same order as the recipient numbers as well).  In the case of a successful send to a number, the value will be the object `{ success: true }`.  In the case of an error, the value will be an object of the form `{ error: true, message: 'A message describing the error' }`.  In the case of the node configured in this example, the payload after the node runs might look like the following:
+
+```JSON
+{
+  "data": {
+    "power": 73,
+    "smsResults": [
+      { "success": true }
+    ]
+  },
+  ...
+}
+```
