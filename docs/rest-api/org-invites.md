@@ -1,28 +1,23 @@
-# Applications Actions
+# Org Invites Actions
 
-https://api.losant.com/applications
+https://api.losant.com/invites
 
 Below are the various requests that can be performed against the
-Applications resource, as well as the expected
+Org Invites resource, as well as the expected
 parameters and the potential responses.
 
 ## GET
 
-https://api.losant.com/applications
+https://api.losant.com/invites
 
-Returns the applications the current user has permission to see
+Gets information about an invite
 
 #### Request Query Parameters
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, ownerId | name | name |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
-| page | N | Which page of results to return | 0 | 0 |
-| perPage | N | How many items to return per page | 1000 | 10 |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my * app |
-| orgId | N | If not provided, return all applications. If provided but blank, only return applications belonging to the current user. If provided and an id, only return applications belonging to the given organization id. |  | 575ecdf07ae143cd83dc4a9a |
+| token | Y | The token associated with the invite |  | aTokenString |
+| email | Y | The email associated with the invite |  | example@example.com |
 
 #### Request Headers
 
@@ -37,7 +32,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
     -X GET \
-    https://api.losant.com/applications
+    https://api.losant.com/invites?token=aTokenString&email=example%40example.com
 ```
 <br/>
 
@@ -45,21 +40,23 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Applications](schemas.md#applications) | Collection of applications |
+| 200 | [Organization Invitation Information](schemas.md#organization-invitation-information) | Information about invite |
 
 #### Error Responses
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if invite not found |
+| 410 | [Error](schemas.md#error) | Error if invite has expired |
 
 <br/>
 
 ## POST
 
-https://api.losant.com/applications
+https://api.losant.com/invites
 
-Create a new application
+Accepts/Rejects an invite
 
 #### Request Headers
 
@@ -70,13 +67,14 @@ Create a new application
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Application Post](schemas.md#application-post) schema.  For example, the following would be a
+the [Organization Invitation Action](schemas.md#organization-invitation-action) schema.  For example, the following would be a
 valid body for this request:
 
 ```json
 {
-  "name": "My New Application",
-  "description": "Description of my new application"
+  "email": "invitedUser@losant.com",
+  "token": "the_invitation_token",
+  "accept": true
 }
 ```
 <small><br/></small>
@@ -88,8 +86,8 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
     -X POST \
-    -d '{"name":"My New Application","description":"Description of my new application"}' \
-    https://api.losant.com/applications
+    -d '{"email":"invitedUser@losant.com","token":"the_invitation_token","accept":true}' \
+    https://api.losant.com/invites
 ```
 <br/>
 
@@ -97,13 +95,15 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Application](schemas.md#application) | Successfully created application |
+| 200 | [Organization Invitation Result](schemas.md#organization-invitation-result) | Acceptance/Rejection of invite |
 
 #### Error Responses
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if invite not found |
+| 410 | [Error](schemas.md#error) | Error if invite has expired |
 
 <br/>
 

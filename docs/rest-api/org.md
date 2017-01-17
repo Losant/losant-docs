@@ -370,7 +370,7 @@ curl -H 'Content-Type: application/json' \
 
 https://api.losant.com/orgs/**`ORG_ID`**/member
 
-Modifies a current org member&#x27;s role
+Removes a member from the org
 
 #### Request Path Components
 

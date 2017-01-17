@@ -70,7 +70,7 @@ Creates a device data export. Defaults to all data.
 | ---- | -------- | ----------- | ------- | ------- |
 | start | N | Start time of export (ms since epoch - 0 means now, negative is relative to now) | 1 | 1465790400000 |
 | end | N | End time of export (ms since epoch - 0 means now, negative is relative to now) | 0 | 1465790400000 |
-| email | N | Email address to send export to.  Defaults to current user&#x27;s email. |  | email@example.com |
+| email | N | Email address to send export to. Defaults to current user&#x27;s email. |  | email@example.com |
 | callbackUrl | N | Callback URL to call with export result. |  | https://example.com/cburl |
 
 #### Request Headers

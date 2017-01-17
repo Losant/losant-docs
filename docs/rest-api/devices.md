@@ -22,7 +22,7 @@ Creates an export of all device metadata.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| email | N | Email address to send export to.  Defaults to current user&#x27;s email. |  | email@example.com |
+| email | N | Email address to send export to. Defaults to current user&#x27;s email. |  | email@example.com |
 | callbackUrl | N | Callback URL to call with export result. |  | https://example.com/cburl |
 
 #### Request Headers
