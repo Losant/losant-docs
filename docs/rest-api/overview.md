@@ -159,6 +159,16 @@ Contains all of the actions that can be performed against the set of
 currently authenticated user has access to - such as
 listing the applications or creating a new application.
 
+*   [Audit Log](/rest-api/audit-log)  
+Contains all of the actions that can be performed against a single
+[Audit Log](/organizations/audit-logs/) that belongs to an organization -
+such as viewing a log.
+
+*   [Audit Logs](/rest-api/audit-logs)  
+Contains all of the actions that can be performed against the set of
+[Audit Logs](/organizations/audit-logs/) that belong to an organization -
+such as listing the logs.
+
 *   [Auth](/rest-api/auth)  
 Contains the actions used for authenticating against the api, either as a
 user or as a device.  The result of authentication calls contain the auth_token
@@ -238,6 +248,10 @@ Contains all of the actions that can be performed against the set of
 [Organizations](/organizations/overview/) that the
 currently authenticated user has access to - such as
 listing the organizations or creating a new organization.
+
+*   [Organization Invites](/rest-api/org-invites)  
+Contains all of the actions that can be performed against a
+invitation to an organization, such as accepting the invitation.
 
 *   [Webhook](/rest-api/webhook)  
 Contains all the actions that can be performed against a single

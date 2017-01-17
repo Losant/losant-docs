@@ -133,6 +133,8 @@ pages:
     - Application Keys: rest-api/application-keys.md
     - Application: rest-api/application.md
     - Applications: rest-api/applications.md
+    - Audit Log: rest-api/audit-log.md
+    - Audit Logs: rest-api/audit-logs.md
     - Auth: rest-api/auth.md
     - Dashboard: rest-api/dashboard.md
     - Dashboards: rest-api/dashboards.md
@@ -146,6 +148,7 @@ pages:
     - Me: rest-api/me.md
     - Organization: rest-api/org.md
     - Organizations: rest-api/orgs.md
+    - Organization Invites: rest-api/org-invites.md
     - Webhook: rest-api/webhook.md
     - Webhooks: rest-api/webhooks.md
     - Workflow: rest-api/flow.md
