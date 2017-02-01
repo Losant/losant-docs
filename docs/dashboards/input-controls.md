@@ -1,6 +1,6 @@
 # Input Controls
 
-The Input Controls block allows you to send commands to devices, or to trigger workflows, directly from a dashboard. The block includes various input components to allow for configuring the payloads sent with those commands or triggers.
+The Input Controls block allows you to send commands to devices, or to trigger workflows, directly from a dashboard. The block includes various input components to allow for configuring the payloads sent with those commands or triggers, and those components can also be configured to show the current state of your devices.
 
 ![Input Controls Dashboard](/images/dashboards/input-controls-overview.png "Input Controls Dashboard")
 
@@ -20,28 +20,26 @@ On the edit screen, all controls can be resized and rearranged within the input 
 
 ## Control Configuration
 
-The block supports inputs of four types, plus a special ["Help Block" component](#help-block-component). The four inputs share a few common attributes:
+The block supports inputs of four types, plus a special ["Help Block" component](#help-blocks). The four inputs share a few common attributes:
 
 *   **Label**: All controls require a label attribute.
 *   **Color**: Controls other than text inputs can optionally be given a custom color.
 *   **Template ID:** Controls other than buttons are automatically assigned a Template ID, which can be used when constructing your command / workflow payloads. You may change this ID if you wish.
+*   **Default Value:** Controls other than buttons all get a default value, and optionally, each control can have its default value set by a device data query.
 
-### Button Inputs
+### Dynamic Default Values
 
-Buttons are responsible for triggering device commands or workflows when clicked. Without a button, the other controls within the input controls block are useless, so make sure your block has at least one button within it.
+By setting dynamic default values for your controls, you can extend the functionality of the Input Controls block to also serve as a series of simple gauges reflecting the last recorded state of your devices. When the block is "locked" in View Mode (the toggle in the top right corner displays an eye), each of the controls that has a dynamic default set will update with a new value every time your dashboard refreshes.
 
-![Button Input](/images/dashboards/input-controls-send-command.png "Button Input")
+![Input Controls Dynamic Default](/images/dashboards/input-controls-dynamic-default.png "Input Controls Dynamic Default")
 
-If you'd like your button press to trigger a [device command](/devices/commands/), select the **Send Device Command** radio button. This will display two required input fields:
+Any control that has a dynamic default set is marked with an icon in the control's label. Any control whose query fails to return a result, or if the result cannot be cast to a value the input can display (such as a string being applied to a range input), will be indicated with a red icon. That input's default will fall back to the static value.
 
-*   **Device IDs / Tags**: A [device query](/devices/device-queries/) for which device(s) should receive the command. Note that the only available devices are the ones within the block's currently selected application.
-*   **Command Name**: The command that should be sent to the device(s). The field may be set with a static value (e.g. `setColor`), or with a Mustache-wrapped Template ID for a text input (e.g. `{{text-0}}`).
+When setting a **dynamic default value**, you must define the following values for your data query:
 
-If your button should trigger a [workflow](/workflows/overview/), select the **Trigger Workflow** radio button. This will display one required input field:
-
-*   **Workflow Virtual Button**: In order to trigger a workflow, you must have at least one workflow within the selected application, and at least one [virtual button](/workflows/triggers/virtual-button/) within that workflow. This input will display all virtual buttons across all of the application's workflows, from which one must be selected to trigger when the button is pressed.
-
-![Select Virtual Button](/images/dashboards/input-controls-trigger-workflow.png "Select Virtual Button")
+*   **Device IDs / Tags**: A list of devices and/or tags to query for state data.
+*   **Attribute**: The attribute whose last reported value should be returned.
+*   **Aggregation**: If necessary (such as when two or more devices or at least one device tag is selected), the method by which the multiple results returned by the query should be reduced to a single value.
 
 ### Range Inputs
 
@@ -67,6 +65,37 @@ Text inputs allow for the setting of arbitrary values, usually as a **string**. 
 
 From the dashboard, enter some text within the text input field to use within your payload or command name.
 
+### Button Triggers
+
+Buttons are responsible for triggering device commands or workflows when clicked. Without a button, it is impossible to send commands or trigger workflows; so, unless you are simply using an Input Controls block to display device state within the other controls, make sure your block has at least one button within it.
+
+![Button Trigger](/images/dashboards/input-controls-send-command.png "Button Trigger")
+
+If you'd like your button press to trigger a [device command](/devices/commands/), select the **Send Device Command** radio button. This will display two required input fields:
+
+*   **Device IDs / Tags**: A [device query](/devices/device-queries/) for which device(s) should receive the command. Note that the only available devices are the ones within the block's currently selected application.
+*   **Command Name**: The command that should be sent to the device(s). The field may be set with a static value (e.g. `setColor`), or with a Mustache-wrapped Template ID for a text input (e.g. `{{text-0}}`).
+
+If your button should trigger a [workflow](/workflows/overview/), select the **Trigger Workflow** radio button. This will display one required input field:
+
+*   **Workflow Virtual Button**: In order to trigger a workflow, you must have at least one workflow within the selected application, and at least one [virtual button](/workflows/triggers/virtual-button/) within that workflow. This input will display all virtual buttons across all of the application's workflows, from which one must be selected to trigger when the button is pressed.
+
+![Select Virtual Button](/images/dashboards/input-controls-trigger-workflow.png "Select Virtual Button")
+
+### Help Blocks
+
+The Help Block is a special component in the Input Controls block that allows text to be displayed to users for the purpose of explaining, in greater detail than can be conveyed in a button label, what exactly will happen when a button is pressed and a workflow / device command is fired off.
+
+![Help Block Input](/images/dashboards/input-controls-help-input.png "Help Block Input")
+
+The component has only one input: a textarea in which arbitrary text and [string template](/workflows/accessing-payload-data/#string-templates) referencing values by Template ID can be entered. These values will update as the user changes input values in the other components.
+
+![Help Block Example](/images/dashboards/input-controls-help-example.png "Help Block Example")
+
+The textarea also supports <a href="https://daringfireball.net/projects/markdown/syntax" target="\_blank">Markdown</a>, meaning that links, text formatting and even images can also be displayed within the Help Block.
+
+The Help Block is the only Input Controls component whose height can be adjusted – up to four times a normal component's height.
+
 ## Constructing Payloads
 
 Device commands and workflow triggers may optionally be sent with a JSON payload, constructed as a [JSON template](/workflows/accessing-payload-data/#json-templates). It is the purpose of the input controls to help you construct the payload quickly and easily from the dashboard.
@@ -91,16 +120,20 @@ On press of the button, "My First Device" will receive a command named "setColor
 
 **Note:** If you do not define a payload for a Trigger Workflow button, the virtual button's default payload – as set within that button's parent workflow – will be sent when your dashboard button is clicked. If you wish to send a blank payload instead of the default payload, set the payload value to `{}` (opening and closing curly braces with nothing in between).
 
-## Help Block Component
+## View Mode vs. Edit Mode
 
-The Help Block is a special component in the Input Controls block that allows text to be displayed to users for the purpose of explaining, in greater detail than can be conveyed in a button label, what exactly will happen when a button is pressed and a workflow / device command is fired off.
+In order to send commands or trigger workflows, you must first switch the Input Controls block from "View Mode" (eye icon) to "Input Mode" (pencil icon).
 
-![Help Block Input](/images/dashboards/input-controls-help-input.png "Help Block Input")
+![View Mode](/images/dashboards/input-controls-view-mode.png "View Mode")
 
-The component has only one input: a textarea in which arbitrary text and [string template](/workflows/accessing-payload-data/#string-templates) referencing values by Template ID can be entered. These values will update as the user changes input values in the other components.
+**When in "View Mode" ...**
 
-![Help Block Example](/images/dashboards/input-controls-help-example.png "Help Block Example")
+*   Controls with dynamic default values will update as your dashboard data refreshes
+*   Buttons and controls are disabled, preventing user interaction. This is to ensure that a stray mouse press does not trigger an unintentional action.
 
-The textarea also supports <a href="https://daringfireball.net/projects/markdown/syntax" target="\_blank">Markdown</a>, meaning that links, text formatting and even images can also be displayed within the Help Block.
+![Edit Mode](/images/dashboards/input-controls-edit-mode.png "Edit Mode")
 
-The Help Block is the only Input Controls component whose height can be adjusted – up to four times a normal component's height.
+**When in "Edit Mode" ...**
+
+*   Controls with dynamic defaults cease to update with dashboard data refreshes. (Dynamic default indicators in the control labels will disappear to indicate this.) This holds true until the block is put back into "View Mode".
+*   Buttons can be pressed and controls can be adjusted, thereby allowing commands to be sent to devices and workflows to be triggered.
