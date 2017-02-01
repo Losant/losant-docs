@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Event resource, as well as the expected
 parameters and the potential responses.
 
-## DELETE
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/events/**`EVENT_ID`**
+## Delete
 
 Deletes an event
+
+#### Method And Url
+
+DELETE https://api.losant.com/applications/**`APPLICATION_ID`**/events/**`EVENT_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, event.*, or event.delete.
 
 #### Request Path Components
 
@@ -30,7 +37,7 @@ Deletes an event
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/applications/APPLICATION_ID/events/EVENT_ID
 ```
@@ -51,11 +58,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/events/**`EVENT_ID`**
+## Get
 
 Retrieves information on an event
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/events/**`EVENT_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, event.*, or event.get.
 
 #### Request Path Components
 
@@ -75,7 +89,7 @@ Retrieves information on an event
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/events/EVENT_ID
 ```
@@ -96,11 +110,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/events/**`EVENT_ID`**
+## Patch
 
 Updates information about an event
+
+#### Method And Url
+
+PATCH https://api.losant.com/applications/**`APPLICATION_ID`**/events/**`EVENT_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, event.*, or event.patch.
 
 #### Request Path Components
 
@@ -134,7 +155,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"state":"acknowledged","comment":"Looking into this issue"}' \
     https://api.losant.com/applications/APPLICATION_ID/events/EVENT_ID

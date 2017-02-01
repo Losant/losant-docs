@@ -1,6 +1,6 @@
 # Losant REST API
 
-Losant is powered by a full REST API that provides access to nearly every feature. The Losant front-end web application itself is built on top of this API, and so almost all the data and functionality in the front end is available through the API itself.  In fact, the front-end uses the open-source <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a> JavaScript client to communicate with the Losant API. If JavaScript is not your language of choice, no need to worry! We have easy to use libraries for a number of different languages:
+Losant is powered by a full REST API that provides access to nearly every feature. The Losant front-end web application itself is built on top of this API, and so almost all the data and functionality in the front end is available through the API itself. In fact, the front-end uses the open-source <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a> JavaScript client to communicate with the Losant API. If JavaScript is not your language of choice, no need to worry! We have easy to use libraries for a number of different languages:
 
 *   JavaScript with <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a>  
 Available in Node Package Manager: `npm install losant-rest`  
@@ -13,25 +13,28 @@ Available in RubyGems: `gem install losant_rest`
 
 Of course, if you are working in a language not listed above, the API is reasonably easy to use directly - if your language has a good HTTP request library and a good JSON library, you should be able to make any API request you need to using the documentation here.
 
-All of the documentation and examples here are aimed at making direct HTTP requests against the Losant API, using curl examples whenever possible.  If you plan on using one of the wrapping libraries listed above, the documentation in those repositories will be a much more useful place to learn how to use the particular library.
+All of the documentation and examples here are aimed at making direct HTTP requests against the Losant API, using curl examples whenever possible. If you plan on using one of the wrapping libraries listed above, the documentation in those repositories will be a much more useful place to learn how to use the particular library.
 
 ## API Overview
-<small><br/></small>
+
 ### Content & Encoding
 
-The Losant API is uses JSON for almost all requests and responses - all request bodies should be JSON encoded, and all responses will be encoded JSON, even in the case of errors.  So every request should have both the `Content-Type` and `Accept` headers set to `application/json`.
+The Losant API is uses JSON for almost all requests and responses - all request bodies should be JSON encoded, and all responses will be encoded JSON, even in the case of errors. So every request should have both the `Content-Type` and `Accept` headers set to `application/json`.
 
 ### Authenticating a Request
 
-Most endpoints on the Losant API require authenticating as either a user or device.  This is done by passing a Bearer Authorization token in the `Authorization` header field for the request (e.g. `"Authorization": "Bearer your-api-token-goes-here"`).
+Most endpoints on the Losant API require an api access token. This is done by passing a Bearer Authorization token in the `Authorization` header field for the request (e.g. `"Authorization": "Bearer your-api-token-goes-here"`).
 
-### Obtaining an Authorization Token
+### Obtaining an Api Access Token
 
-You can obtain an Authorization Token to use to make authenticated requests by calling one of the [Auth](/rest-api/auth/) endpoints.  There are two main endpoints, one for [authenticating as a user](/rest-api/auth/#post-user), and one for [authenticating as a device](/rest-api/auth/#post-device).  The JSON response for either endpoint has a `token` field, which is the authorization token you should use in the Authorization header in subsequent requests that you want to perform as that user or device.
+You can obtain an Authorization Token to use to make authenticated requests by calling one of the [Auth](/rest-api/auth/) endpoints. There are two main endpoints, one for [authenticating as a user](/rest-api/auth/#authenticate-user), and one for [authenticating as a device](/rest-api/auth/#authenticate-device). The JSON response for either endpoint has a `token` field, which is the authorization token you should use in the Authorization header in subsequent requests that you want to perform as that user or device.
+
+You can also obtain api access tokens through the [Application Api Tokens](/rest-api/application-api-tokens) and [Application Api Token](/rest-api/application-api-token) resources. These resources allow you to create and manage api
+access tokens specific to a particular application. By default, tokens created for an application will have the scope `all.Application` (and will therefore have access to any endpoints that accept the scope `all.Application`), but can be created with very specific scopes if desired. An application api token will only ever be able to access and manage resources within the application they were created in.
 
 ### User-Based Authentication
 
-When authenticated as a user, any API calls have full access to the Losant system. Any applications or dashboards owned by that user can be accessed or modified, and any applications or dashboards that are owned by an organization that the user user is a part of can be accessed (and potentially modified depending on the user's permissions within that organization). Essentially, when authenticated as a user through the API, anything that the user is allowed to do in the normal Losant web interface can be done through the API.
+When authenticated as a user, any API calls have full access to the Losant system. The returned api access token has the scope `all.User`, which allows access to any api endpoint. Any applications or dashboards owned by that user can be accessed or modified, and any applications or dashboards that are owned by an organization that the user user is a part of can be accessed (and potentially modified depending on the user's permissions within that organization). Essentially, when authenticated as a user through the API, anything that the user is allowed to do in the normal Losant web interface can be done through the API.
 
 The following shows a sequence of cURL commands for authenticating as a user and using the resulting token to get a list of devices for an application:
 
@@ -97,10 +100,10 @@ curl -H 'Content-Type: application/json' \
 <small><br/></small>
 ### Device-Based Authentication
 
-Unlike authenticating as a user, a device authenticated against the API receives a very limited set of permissions.  Any authenticated device can read information about itself ([Device Get](/rest-api/device/#get), [Devices Get](/rest-api/devices/#get)),
-send state information about itself to Losant ([Device Post State](/rest-api/device/#post-state)), query historical state information for itself ([Device Get State](/rest-api/device/#get-state), [Data](/rest-api/data/)), and query historical commands that were sent to it ([Device Get Commands](/rest-api/device/#get-command)).  If the device is a gateway device, it will also be allowed to send state to Losant on behalf of any of its peripheral devices.
+Unlike authenticating as a user, a device authenticated against the API receives a very limited set of permissions. An authenticated device receives an api access token with the scope `all.Device`, and so can access any endpoints that accept the authentication scope `all.Device`. For example, an authenticated device can read information about itself ([Device Get](/rest-api/device/#get), [Devices Get](/rest-api/devices/#get)),
+send state information about itself to Losant ([Device Send State](/rest-api/device/#send-state)), query historical state information for itself ([Device Get State](/rest-api/device/#get-state), [Data](/rest-api/data/)), and query historical commands that were sent to it ([Device Get Commands](/rest-api/device/#get-command)). If the device is a gateway device, it will also be allowed to send state to Losant on behalf of any of its peripheral devices.
 
-If the application access key used to authenticate the device is scoped to more than just the one device, though, the scope of the API permissions also expands.  The device will have permission to query data about the other devices scoped to that key (general info, historical state, and historical commands).  It will also have permission to send commands to those other devices ([Device Post Command](/rest-api/device/#post-command), [Devices Post Command](/rest-api/devices/#post-command)).  If the access key used is unscoped (i.e., the access restriction is set to "All Devices"), a device authenticated with that key will have these read and command permissions for all devices in the application.  A device *never* has access to anything outside of the application it is a member of.
+If the application access key used to authenticate the device allows more than just the one device, though, the API permissions also expand. The device will have permission to query data about the other devices allowed with that key (general info, historical state, and historical commands). It will also have permission to send commands to those other devices ([Device Send Command](/rest-api/device/#send-command), [Devices Send Command](/rest-api/devices/#send-command)). If the access key used is set to allow "All Devices", a device authenticated with that key will have these read and command permissions for all devices in the application. A device *never* has access to anything outside of the application it is a member of.
 
 The following shows a sequence of cURL commands for authenticating as a device and using the resulting token to publish state as that device:
 
@@ -137,6 +140,16 @@ Each of the following is a resource on the Losant API, wrapping up functionality
 for a particular item or collection. See each resource documentation page for the
 particular actions that can be performed on that resource.
 
+*   [Application Api Token](/rest-api/application-api-token)  
+Contains all the actions that can be performed against a single
+Api Access Token belonging to an application -
+for instance, getting info on a single token or revoking a token.
+
+*   [Application Api Tokens](/rest-api/application-api-tokens)  
+Contains all of the actions that can be performed against the collection of
+Api Access Tokens belonging to an Application - such as
+listing all tokens or creating a new token.
+
 *   [Application Key](/rest-api/application-key)  
 Contains all the actions that can be performed against a single
 [Application Key](/applications/access-keys/) -
@@ -171,8 +184,8 @@ such as listing the logs.
 
 *   [Auth](/rest-api/auth)  
 Contains the actions used for authenticating against the api, either as a
-user or as a device.  The result of authentication calls contain the auth_token
-needed for authenticated calls - see the examples for more details.
+user or as a device. The result of authentication calls contain the api access
+token needed for authenticated calls - see the examples for more details.
 
 *   [Dashboard](/rest-api/dashboard)  
 Contains all of the actions that can be performed against a single

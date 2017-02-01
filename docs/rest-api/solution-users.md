@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Solution Users resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/orgs/**`ORG_ID`**/solutions/**`SOLUTION_ID`**/users
+## Get
 
 Returns the users for the solution
+
+#### Method And Url
+
+GET https://api.losant.com/orgs/**`ORG_ID`**/solutions/**`SOLUTION_ID`**/users
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.Organization.read, all.User, all.User.read, solutionUsers.*, or solutionUsers.get.
 
 #### Request Path Components
 
@@ -41,7 +48,7 @@ Returns the users for the solution
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/orgs/ORG_ID/solutions/SOLUTION_ID/users
 ```
@@ -61,11 +68,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/orgs/**`ORG_ID`**/solutions/**`SOLUTION_ID`**/users
+## Post
 
 Create a new solution user
+
+#### Method And Url
+
+POST https://api.losant.com/orgs/**`ORG_ID`**/solutions/**`SOLUTION_ID`**/users
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, solutionUsers.*, or solutionUsers.post.
 
 #### Request Path Components
 
@@ -107,7 +121,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"email":"example@solutionuser.com","firstName":"Example","lastName":"Name","password":"aUserPassword","accessRestrictions":{"dashboardIds":["575ece2b7ae143cd83dc4a9b","575ece2b7ae143cd83dc4a9c"]}}' \
     https://api.losant.com/orgs/ORG_ID/solutions/SOLUTION_ID/users

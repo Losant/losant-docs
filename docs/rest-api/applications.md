@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Applications resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/applications
+## Get
 
 Returns the applications the current user has permission to see
+
+#### Method And Url
+
+GET https://api.losant.com/applications
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.Organization.read, all.User, all.User.read, applications.*, or applications.get.
 
 #### Request Query Parameters
 
@@ -35,7 +42,7 @@ Returns the applications the current user has permission to see
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications
 ```
@@ -55,11 +62,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/applications
+## Post
 
 Create a new application
+
+#### Method And Url
+
+POST https://api.losant.com/applications
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, applications.*, or applications.post.
 
 #### Request Headers
 
@@ -86,7 +100,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"name":"My New Application","description":"Description of my new application"}' \
     https://api.losant.com/applications

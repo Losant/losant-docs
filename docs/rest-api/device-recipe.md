@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Device Recipe resource, as well as the expected
 parameters and the potential responses.
 
-## POST - /bulkCreate
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**/bulkCreate
+## Bulk Create
 
 Bulk creates devices using this recipe from a CSV
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**/bulkCreate
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, deviceRecipe.*, or deviceRecipe.bulkCreate.
 
 #### Request Path Components
 
@@ -45,7 +52,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"nameColumn":"myNameColumn","descriptionColumn":"column2","csv":"a,comma,separated,string,of,input,data"}' \
     https://api.losant.com/applications/APPLICATION_ID/device-recipes/DEVICE_RECIPE_ID/bulkCreate
@@ -67,11 +74,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## DELETE
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**
+## Delete
 
 Deletes a device recipe
+
+#### Method And Url
+
+DELETE https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, deviceRecipe.*, or deviceRecipe.delete.
 
 #### Request Path Components
 
@@ -91,7 +105,7 @@ Deletes a device recipe
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/applications/APPLICATION_ID/device-recipes/DEVICE_RECIPE_ID
 ```
@@ -112,11 +126,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**
+## Get
 
 Retrieves information on a device recipe
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, deviceRecipe.*, or deviceRecipe.get.
 
 #### Request Path Components
 
@@ -136,7 +157,7 @@ Retrieves information on a device recipe
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/device-recipes/DEVICE_RECIPE_ID
 ```
@@ -157,11 +178,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**
+## Patch
 
 Updates information about a device recipe
+
+#### Method And Url
+
+PATCH https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, deviceRecipe.*, or deviceRecipe.patch.
 
 #### Request Path Components
 
@@ -210,7 +238,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"name":"My Updated Device Recipe","deviceName":"Future device name","description":"Description of my updated device recipe","deviceDescription":"Future device description","tags":[{"key":"TagKey","value":"TagValue"}],"attributes":[{"name":"voltage","dataType":"number"}],"deviceClass":"standalone"}' \
     https://api.losant.com/applications/APPLICATION_ID/device-recipes/DEVICE_RECIPE_ID

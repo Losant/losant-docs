@@ -127,8 +127,8 @@ pages:
     - Ruby: mqtt/ruby.md
 - REST API:
     - Overview: rest-api/overview.md
-    - Access Token: rest-api/access-token.md
-    - Access Tokens: rest-api/access-tokens.md
+    - Application API Token: rest-api/application-api-token.md
+    - Application API Tokens: rest-api/application-api-tokens.md
     - Application Key: rest-api/application-key.md
     - Application Keys: rest-api/application-keys.md
     - Application: rest-api/application.md

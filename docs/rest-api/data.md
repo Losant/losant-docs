@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Data resource, as well as the expected
 parameters and the potential responses.
 
-## POST - /last-value-query
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/data/last-value-query
+## Last Value Query
 
 Returns the last known data for the given attribute
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/data/last-value-query
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, data.*, or data.lastValueQuery.
 
 #### Request Path Components
 
@@ -46,7 +53,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"deviceIds":["575ecf887ae143cd83dc4aa2","575ef5c97ae143cd83dc4aac"],"attribute":"voltage"}' \
     https://api.losant.com/applications/APPLICATION_ID/data/last-value-query
@@ -68,11 +75,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /time-series-query
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/data/time-series-query
+## Time Series Query
 
 Returns the data for the given query
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/data/time-series-query
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, data.*, or data.timeSeriesQuery.
 
 #### Request Path Components
 
@@ -114,7 +128,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"end":0,"duration":600000,"resolution":300000,"aggregation":"MEAN","attributes":["voltage"],"deviceTags":{"key":"floor","value":"8"}}' \
     https://api.losant.com/applications/APPLICATION_ID/data/time-series-query

@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Audit Logs resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/orgs/**`ORG_ID`**/audit-logs
+## Get
 
 Returns the audit logs for the organization
+
+#### Method And Url
+
+GET https://api.losant.com/orgs/**`ORG_ID`**/audit-logs
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.Organization.read, all.User, all.User.read, auditLogs.*, or auditLogs.get.
 
 #### Request Path Components
 
@@ -41,7 +48,7 @@ Returns the audit logs for the organization
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/orgs/ORG_ID/audit-logs
 ```
