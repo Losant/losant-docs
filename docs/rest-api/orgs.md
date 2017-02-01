@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Orgs resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/orgs
+## Get
 
 Returns the organizations associated with the current user
+
+#### Method And Url
+
+GET https://api.losant.com/orgs
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.User, all.User.read, orgs.*, or orgs.get.
 
 #### Request Query Parameters
 
@@ -22,6 +29,7 @@ Returns the organizations associated with the current user
 | perPage | N | How many items to return per page | 1000 | 10 |
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*org |
+| summaryExclude | N | List of summary fields to exclude from org summaries |  | payloadCount |
 
 #### Request Headers
 
@@ -34,7 +42,7 @@ Returns the organizations associated with the current user
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/orgs
 ```
@@ -54,11 +62,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/orgs
+## Post
 
 Create a new organization
+
+#### Method And Url
+
+POST https://api.losant.com/orgs
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.User, orgs.*, or orgs.post.
 
 #### Request Headers
 
@@ -85,7 +100,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"name":"My New Organization","description":"Description of my new organization"}' \
     https://api.losant.com/orgs

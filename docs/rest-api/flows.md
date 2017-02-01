@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Flows resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+## Get
 
 Returns the flows for an application
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, flows.*, or flows.get.
 
 #### Request Path Components
 
@@ -40,7 +47,7 @@ Returns the flows for an application
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/flows
 ```
@@ -61,11 +68,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+## Post
 
 Create a new flow for an application
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, flows.*, or flows.create.
 
 #### Request Path Components
 
@@ -98,7 +112,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"name":"My New Workflow","description":"Description of my new workflow"}' \
     https://api.losant.com/applications/APPLICATION_ID/flows

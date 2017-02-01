@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Device resource, as well as the expected
 parameters and the potential responses.
 
-## DELETE
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**
+## Delete
 
 Deletes a device
+
+#### Method And Url
+
+DELETE https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, device.*, or device.delete.
 
 #### Request Path Components
 
@@ -30,7 +37,7 @@ Deletes a device
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID
 ```
@@ -51,11 +58,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /export
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/export
+## Export
 
 Creates a device data export. Defaults to all data.
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/export
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, device.*, or device.export.
 
 #### Request Path Components
 
@@ -84,7 +98,7 @@ Creates a device data export. Defaults to all data.
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/export
 ```
@@ -105,11 +119,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**
+## Get
 
 Retrieves information on a device
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, device.*, or device.get.
 
 #### Request Path Components
 
@@ -129,7 +150,7 @@ Retrieves information on a device
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID
 ```
@@ -150,11 +171,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /command
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/command
+## Get Command
 
 Retrieve the last known commands(s) sent to the device
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/command
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, device.*, or device.getCommand.
 
 #### Request Path Components
 
@@ -181,7 +209,7 @@ Retrieve the last known commands(s) sent to the device
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/command
 ```
@@ -202,11 +230,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /compositeState
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/compositeState
+## Get Composite State
 
 Retrieve the composite last complete state of the device
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/compositeState
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, device.*, or device.getCompositeState.
 
 #### Request Path Components
 
@@ -233,7 +268,7 @@ Retrieve the composite last complete state of the device
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/compositeState
 ```
@@ -254,11 +289,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /logs
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/logs
+## Get Log Entries
 
 Retrieve the recent log entries about the device
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/logs
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, device.*, or device.getLogEntries.
 
 #### Request Path Components
 
@@ -285,7 +327,7 @@ Retrieve the recent log entries about the device
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/logs
 ```
@@ -306,11 +348,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /state
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/state
+## Get State
 
 Retrieve the last known state(s) of the device
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/state
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, device.*, or device.getState.
 
 #### Request Path Components
 
@@ -337,7 +386,7 @@ Retrieve the last known state(s) of the device
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/state
 ```
@@ -358,11 +407,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**
+## Patch
 
 Updates information about a device
+
+#### Method And Url
+
+PATCH https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, device.*, or device.patch.
 
 #### Request Path Components
 
@@ -409,7 +465,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"name":"My Updated Device","description":"Description of my updated device","tags":[{"key":"TagKey","value":"TagValue"}],"attributes":[{"name":"voltage","dataType":"number"}],"deviceClass":"standalone"}' \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID
@@ -431,11 +487,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## DELETE - /data
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/data
+## Remove Data
 
 Removes all device data for the specified time range. Defaults to all data.
+
+#### Method And Url
+
+DELETE https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/data
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, device.*, or device.removeData.
 
 #### Request Path Components
 
@@ -462,7 +525,7 @@ Removes all device data for the specified time range. Defaults to all data.
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/data
 ```
@@ -483,11 +546,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /command
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/command
+## Send Command
 
 Send a command to a device
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/command
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Device, all.Organization, all.User, device.*, or device.sendCommand.
 
 #### Request Path Components
 
@@ -528,7 +598,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"time":"2016-06-13T04:00:00.000Z","name":"myCommand","payload":[1,1,2,3,5]}' \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/command
@@ -550,11 +620,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /state
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/state
+## Send State
 
 Send the current state of the device
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/state
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Device, all.Organization, all.User, device.*, or device.sendState.
 
 #### Request Path Components
 
@@ -590,7 +667,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"time":"2016-06-13T04:00:00.000Z","data":{"voltage":22.4}}' \
     https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/state

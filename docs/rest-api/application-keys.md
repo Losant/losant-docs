@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Application Keys resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/keys
+## Get
 
 Returns the applicationKeys for an application
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/keys
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, applicationKeys.*, or applicationKeys.get.
 
 #### Request Path Components
 
@@ -40,7 +47,7 @@ Returns the applicationKeys for an application
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/keys
 ```
@@ -61,11 +68,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/keys
+## Post
 
 Create a new applicationKey for an application
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/keys
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, applicationKeys.*, or applicationKeys.post.
 
 #### Request Path Components
 
@@ -97,7 +111,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"description":"An example new key description"}' \
     https://api.losant.com/applications/APPLICATION_ID/keys

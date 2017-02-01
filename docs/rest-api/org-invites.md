@@ -6,11 +6,16 @@ Below are the various requests that can be performed against the
 Org Invites resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/invites
+## Get
 
 Gets information about an invite
+
+#### Method And Url
+
+GET https://api.losant.com/invites
+
+#### Authentication
+No authentication is required for this endpoint.
 
 #### Request Query Parameters
 
@@ -19,18 +24,11 @@ Gets information about an invite
 | token | Y | The token associated with the invite |  | aTokenString |
 | email | Y | The email associated with the invite |  | example@example.com |
 
-#### Request Headers
-
-| Name | Required | Description | Default |
-| ---- | -------- | ----------- | ------- |
-| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
-
 #### Curl Example
 
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
     -X GET \
     https://api.losant.com/invites?token=aTokenString&email=example%40example.com
 ```
@@ -52,17 +50,16 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/invites
+## Post
 
 Accepts/Rejects an invite
 
-#### Request Headers
+#### Method And Url
 
-| Name | Required | Description | Default |
-| ---- | -------- | ----------- | ------- |
-| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+POST https://api.losant.com/invites
+
+#### Authentication
+No authentication is required for this endpoint.
 
 #### Request Body
 
@@ -84,7 +81,6 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
     -X POST \
     -d '{"email":"invitedUser@losant.com","token":"the_invitation_token","accept":true}' \
     https://api.losant.com/invites

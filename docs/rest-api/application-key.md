@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Application Key resource, as well as the expected
 parameters and the potential responses.
 
-## DELETE
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/keys/**`APPLICATION_KEY_ID`**
+## Delete
 
 Deletes an applicationKey
+
+#### Method And Url
+
+DELETE https://api.losant.com/applications/**`APPLICATION_ID`**/keys/**`APPLICATION_KEY_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, applicationKey.*, or applicationKey.delete.
 
 #### Request Path Components
 
@@ -30,7 +37,7 @@ Deletes an applicationKey
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/applications/APPLICATION_ID/keys/APPLICATION_KEY_ID
 ```
@@ -51,11 +58,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/keys/**`APPLICATION_KEY_ID`**
+## Get
 
 Retrieves information on an applicationKey
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/keys/**`APPLICATION_KEY_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, applicationKey.*, or applicationKey.get.
 
 #### Request Path Components
 
@@ -75,7 +89,7 @@ Retrieves information on an applicationKey
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/keys/APPLICATION_KEY_ID
 ```
@@ -96,11 +110,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/keys/**`APPLICATION_KEY_ID`**
+## Patch
 
 Updates information about an applicationKey
+
+#### Method And Url
+
+PATCH https://api.losant.com/applications/**`APPLICATION_ID`**/keys/**`APPLICATION_KEY_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, applicationKey.*, or applicationKey.patch.
 
 #### Request Path Components
 
@@ -134,7 +155,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"status":"active","description":"An example updated key description"}' \
     https://api.losant.com/applications/APPLICATION_ID/keys/APPLICATION_KEY_ID

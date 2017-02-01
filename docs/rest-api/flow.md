@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Flow resource, as well as the expected
 parameters and the potential responses.
 
-## DELETE
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**
+## Delete
 
 Deletes a flow
+
+#### Method And Url
+
+DELETE https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, flow.*, or flow.delete.
 
 #### Request Path Components
 
@@ -30,7 +37,7 @@ Deletes a flow
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/applications/APPLICATION_ID/flows/FLOW_ID
 ```
@@ -51,11 +58,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**
+## Get
 
 Retrieves information on a flow
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, flow.*, or flow.get.
 
 #### Request Path Components
 
@@ -75,7 +89,7 @@ Retrieves information on a flow
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/flows/FLOW_ID
 ```
@@ -96,11 +110,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /logs
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/logs
+## Get Log Entries
 
 Retrieve the recent log entries about the flows
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/logs
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, flow.*, or flow.log.
 
 #### Request Path Components
 
@@ -127,7 +148,7 @@ Retrieve the recent log entries about the flows
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/flows/FLOW_ID/logs
 ```
@@ -148,11 +169,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /storage
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/storage
+## Get Storage Entries
 
 Gets the current values in persistent storage
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/storage
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, flow.*, or flow.getStorageEntries.
 
 #### Request Path Components
 
@@ -172,7 +200,7 @@ Gets the current values in persistent storage
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/flows/FLOW_ID/storage
 ```
@@ -193,11 +221,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**
+## Patch
 
 Updates information about a flow
+
+#### Method And Url
+
+PATCH https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, flow.*, or flow.patch.
 
 #### Request Path Components
 
@@ -232,7 +267,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"name":"My Updated Workflow","description":"Description of my updated workflow","enabled":false}' \
     https://api.losant.com/applications/APPLICATION_ID/flows/FLOW_ID
@@ -254,11 +289,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /virtualButton
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/virtualButton
+## Press Virtual Button
 
 Presses the specified virtual button on the flow
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/virtualButton
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, flow.*, or flow.pressVirtualButton.
 
 #### Request Path Components
 
@@ -294,7 +336,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"key":"575ed18f7ae143cd83dc4aa6-SJaEw_dV","payload":{"some":"data"}}' \
     https://api.losant.com/applications/APPLICATION_ID/flows/FLOW_ID/virtualButton
@@ -316,11 +358,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH - /storage
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/storage
+## Set Storage Entry
 
 Sets a storage value
+
+#### Method And Url
+
+PATCH https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/storage
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, flow.*, or flow.setStorageEntry.
 
 #### Request Path Components
 
@@ -354,7 +403,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"key":"myStorageKey","value":12}' \
     https://api.losant.com/applications/APPLICATION_ID/flows/FLOW_ID/storage

@@ -6,11 +6,16 @@ Below are the various requests that can be performed against the
 Auth resource, as well as the expected
 parameters and the potential responses.
 
-## POST - /device
+## Authenticate Device
 
-https://api.losant.com/auth/device
+Authenticates a device using the provided credentials.
 
-Authenticates a device using the provided credentials
+#### Method And Url
+
+POST https://api.losant.com/auth/device
+
+#### Authentication
+No authentication is required for this endpoint.
 
 #### Request Body
 
@@ -42,7 +47,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Authenticated Device](schemas.md#authenticated-device) | Successful authentication |
+| 200 | [Authenticated Device](schemas.md#authenticated-device) | Successful authentication. The included api access token has the scope &#x27;all.Device&#x27;. |
 
 #### Error Responses
 
@@ -53,11 +58,16 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /solutionUser
+## Authenticate Solution User
 
-https://api.losant.com/auth/solutionUser
+Authenticates a solution user using the provided credentials.
 
-Authenticates a solution user using the provided credentials
+#### Method And Url
+
+POST https://api.losant.com/auth/solutionUser
+
+#### Authentication
+No authentication is required for this endpoint.
 
 #### Request Body
 
@@ -100,11 +110,16 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /user
+## Authenticate User
 
-https://api.losant.com/auth/user
+Authenticates a user using the provided credentials.
 
-Authenticates a user using the provided credentials
+#### Method And Url
+
+POST https://api.losant.com/auth/user
+
+#### Authentication
+No authentication is required for this endpoint.
 
 #### Request Body
 
@@ -135,7 +150,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Authenticated User](schemas.md#authenticated-user) | Successful authentication |
+| 200 | [Authenticated User](schemas.md#authenticated-user) | Successful authentication. The included api access token has the scope &#x27;all.User&#x27;. |
 
 #### Error Responses
 
@@ -146,11 +161,16 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /user/github
+## Authenticate User Github
 
-https://api.losant.com/auth/user/github
+Authenticates a user via GitHub OAuth.
 
-Authenticates a user via GitHub OAuth
+#### Method And Url
+
+POST https://api.losant.com/auth/user/github
+
+#### Authentication
+No authentication is required for this endpoint.
 
 #### Request Body
 
@@ -180,7 +200,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Authenticated User](schemas.md#authenticated-user) | Successful authentication |
+| 200 | [Authenticated User](schemas.md#authenticated-user) | Successful authentication. The included api access token has the scope &#x27;all.User&#x27;. |
 
 #### Error Responses
 

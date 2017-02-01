@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Events resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/events
+## Get
 
 Returns the events for an application
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/events
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, events.*, or events.get.
 
 #### Request Path Components
 
@@ -41,7 +48,7 @@ Returns the events for an application
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/events
 ```
@@ -62,11 +69,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /mostRecentBySeverity
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/events/mostRecentBySeverity
+## Most Recent by Severity
 
 Returns the first new event ordered by severity and then creation
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/events/mostRecentBySeverity
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, events.*, or events.mostRecentBySeverity.
 
 #### Request Path Components
 
@@ -91,7 +105,7 @@ Returns the first new event ordered by severity and then creation
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/events/mostRecentBySeverity
 ```
@@ -111,11 +125,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/events
+## Patch
 
 Asynchronously updates information for matching events by subject and/or current state
+
+#### Method And Url
+
+PATCH https://api.losant.com/applications/**`APPLICATION_ID`**/events
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, events.*, or events.patch.
 
 #### Request Path Components
 
@@ -156,7 +177,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"state":"acknowledged","comment":"Looking into this issue"}' \
     https://api.losant.com/applications/APPLICATION_ID/events
@@ -178,11 +199,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/events
+## Post
 
 Create a new event for an application
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/events
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, events.*, or events.post.
 
 #### Request Path Components
 
@@ -217,7 +245,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"level":"info","state":"new","subject":"Power levels critical","message":"Power levels on device 432 have surpassed critical thresholds"}' \
     https://api.losant.com/applications/APPLICATION_ID/events

@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Devices resource, as well as the expected
 parameters and the potential responses.
 
-## POST - /export
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/export
+## Export
 
 Creates an export of all device metadata.
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/devices/export
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, devices.*, or devices.export.
 
 #### Request Path Components
 
@@ -36,7 +43,7 @@ Creates an export of all device metadata.
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     https://api.losant.com/applications/APPLICATION_ID/devices/export
 ```
@@ -57,11 +64,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices
+## Get
 
 Returns the devices for an application
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/devices
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, devices.*, or devices.get.
 
 #### Request Path Components
 
@@ -92,7 +106,7 @@ Returns the devices for an application
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/devices
 ```
@@ -113,11 +127,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices
+## Post
 
 Create a new device for an application
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/devices
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, devices.*, or devices.post.
 
 #### Request Path Components
 
@@ -163,7 +184,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"name":"My New Device","description":"Description of my new device","tags":[{"key":"TagKey","value":"TagValue"}],"attributes":[{"name":"voltage","dataType":"number"}],"deviceClass":"standalone"}' \
     https://api.losant.com/applications/APPLICATION_ID/devices
@@ -185,11 +206,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /command
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/devices/command
+## Send Command
 
 Send a command to multiple devices
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/devices/command
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Device, all.Organization, all.User, devices.*, or devices.sendCommand.
 
 #### Request Path Components
 
@@ -235,7 +263,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"time":"2016-06-13T04:00:00.000Z","name":"myCommand","payload":[1,1,2,3,5],"deviceTags":[{"key":"floor","value":8}]}' \
     https://api.losant.com/applications/APPLICATION_ID/devices/command

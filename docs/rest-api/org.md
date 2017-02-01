@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Org resource, as well as the expected
 parameters and the potential responses.
 
-## DELETE
-
-https://api.losant.com/orgs/**`ORG_ID`**
+## Delete
 
 Deletes an organization
+
+#### Method And Url
+
+DELETE https://api.losant.com/orgs/**`ORG_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, org.*, or org.delete.
 
 #### Request Path Components
 
@@ -29,7 +36,7 @@ Deletes an organization
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/orgs/ORG_ID
 ```
@@ -50,17 +57,30 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/orgs/**`ORG_ID`**
+## Get
 
 Retrieves information on an organization
+
+#### Method And Url
+
+GET https://api.losant.com/orgs/**`ORG_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.Organization.read, all.User, all.User.read, org.*, or org.get.
 
 #### Request Path Components
 
 | Path Component | Description | Example |
 | -------------- | ----------- | ------- |
 | ORG_ID | ID associated with the organization | 575ed6e87ae143cd83dc4aa8 |
+
+#### Request Query Parameters
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| summaryExclude | N | List of summary fields to exclude from org summary |  | payloadCount |
 
 #### Request Headers
 
@@ -73,7 +93,7 @@ Retrieves information on an organization
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/orgs/ORG_ID
 ```
@@ -94,11 +114,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /invites
-
-https://api.losant.com/orgs/**`ORG_ID`**/invites
+## Invite Member
 
 Invites a person to an organization
+
+#### Method And Url
+
+POST https://api.losant.com/orgs/**`ORG_ID`**/invites
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, org.*, or org.inviteMember.
 
 #### Request Path Components
 
@@ -131,7 +158,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"email":"invitedUser@losant.com","role":"edit"}' \
     https://api.losant.com/orgs/ORG_ID/invites
@@ -153,11 +180,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH - /member
-
-https://api.losant.com/orgs/**`ORG_ID`**/member
+## Modify Member
 
 Modifies a current org member&#x27;s role
+
+#### Method And Url
+
+PATCH https://api.losant.com/orgs/**`ORG_ID`**/member
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, org.*, or org.modifyMember.
 
 #### Request Path Components
 
@@ -190,7 +224,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"userId":"575ef90f7ae143cd83dc4aad","role":"view"}' \
     https://api.losant.com/orgs/ORG_ID/member
@@ -212,11 +246,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/orgs/**`ORG_ID`**
+## Patch
 
 Updates information about an organization
+
+#### Method And Url
+
+PATCH https://api.losant.com/orgs/**`ORG_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, org.*, or org.patch.
 
 #### Request Path Components
 
@@ -249,7 +290,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"name":"My Updated Organization","description":"Description of my updated organization"}' \
     https://api.losant.com/orgs/ORG_ID
@@ -271,11 +312,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /payloadCounts
-
-https://api.losant.com/orgs/**`ORG_ID`**/payloadCounts
+## Payload Counts
 
 Returns payload counts for the time range specified for all applications this organization owns
+
+#### Method And Url
+
+GET https://api.losant.com/orgs/**`ORG_ID`**/payloadCounts
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.Organization.read, all.User, all.User.read, org.*, or org.payloadCounts.
 
 #### Request Path Components
 
@@ -301,7 +349,7 @@ Returns payload counts for the time range specified for all applications this or
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/orgs/ORG_ID/payloadCounts
 ```
@@ -322,11 +370,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /invites
-
-https://api.losant.com/orgs/**`ORG_ID`**/invites
+## Pending Invites
 
 Gets the current pending invites
+
+#### Method And Url
+
+GET https://api.losant.com/orgs/**`ORG_ID`**/invites
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.Organization.read, all.User, all.User.read, org.*, or org.pendingInvites.
 
 #### Request Path Components
 
@@ -345,7 +400,7 @@ Gets the current pending invites
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/orgs/ORG_ID/invites
 ```
@@ -366,11 +421,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## DELETE - /member
-
-https://api.losant.com/orgs/**`ORG_ID`**/member
+## Remove Member
 
 Removes a member from the org
+
+#### Method And Url
+
+DELETE https://api.losant.com/orgs/**`ORG_ID`**/member
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, org.*, or org.removeMember.
 
 #### Request Path Components
 
@@ -395,7 +457,7 @@ Removes a member from the org
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/orgs/ORG_ID/member?userId=575ed70c7ae143cd83dc4aa9
 ```
@@ -416,11 +478,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## DELETE - /invites
-
-https://api.losant.com/orgs/**`ORG_ID`**/invites
+## Revoke Invite
 
 Revokes an existing invite
+
+#### Method And Url
+
+DELETE https://api.losant.com/orgs/**`ORG_ID`**/invites
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, org.*, or org.revokeInvite.
 
 #### Request Path Components
 
@@ -445,7 +514,7 @@ Revokes an existing invite
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/orgs/ORG_ID/invites?inviteId=575ed71e7ae143cd83dc4aaa
 ```
@@ -466,11 +535,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH - /transferResources
-
-https://api.losant.com/orgs/**`ORG_ID`**/transferResources
+## Transfer Resources
 
 Moves resources to a new owner
+
+#### Method And Url
+
+PATCH https://api.losant.com/orgs/**`ORG_ID`**/transferResources
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, org.*, or org.transferResources.
 
 #### Request Path Components
 
@@ -506,7 +582,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"destinationId":"575ed6e87ae143cd83dc4aa8","destinationType":"organization","applicationIds":["575ec8687ae143cd83dc4a97"]}' \
     https://api.losant.com/orgs/ORG_ID/transferResources

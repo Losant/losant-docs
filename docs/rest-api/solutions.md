@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Solutions resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/orgs/**`ORG_ID`**/solutions
+## Get
 
 Returns the solutions for the organization
+
+#### Method And Url
+
+GET https://api.losant.com/orgs/**`ORG_ID`**/solutions
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.Organization.read, all.User, all.User.read, solutions.*, or solutions.get.
 
 #### Request Path Components
 
@@ -40,7 +47,7 @@ Returns the solutions for the organization
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/orgs/ORG_ID/solutions
 ```
@@ -60,11 +67,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/orgs/**`ORG_ID`**/solutions
+## Post
 
 Create a new solution
+
+#### Method And Url
+
+POST https://api.losant.com/orgs/**`ORG_ID`**/solutions
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, solutions.*, or solutions.post.
 
 #### Request Path Components
 
@@ -97,7 +111,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"name":"My New Solution","slug":"my_new_solution"}' \
     https://api.losant.com/orgs/ORG_ID/solutions

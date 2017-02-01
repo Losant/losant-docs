@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Device Recipes resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes
+## Get
 
 Returns the device recipes for an application
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, deviceRecipes.*, or deviceRecipes.get.
 
 #### Request Path Components
 
@@ -40,7 +47,7 @@ Returns the device recipes for an application
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/device-recipes
 ```
@@ -61,11 +68,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes
+## Post
 
 Create a new device recipe for an application
+
+#### Method And Url
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, deviceRecipes.*, or deviceRecipes.post.
 
 #### Request Path Components
 
@@ -113,7 +127,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"name":"My New Device Recipe","deviceName":"Future device name","description":"Description of my new device recipe","deviceDescription":"Future device description","tags":[{"key":"TagKey","value":"TagValue"}],"attributes":[{"name":"voltage","dataType":"number"}],"deviceClass":"standalone"}' \
     https://api.losant.com/applications/APPLICATION_ID/device-recipes

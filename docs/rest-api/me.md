@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Me resource, as well as the expected
 parameters and the potential responses.
 
-## POST - /recentItems
-
-https://api.losant.com/me/recentItems
+## Add Recent Item
 
 Adds an item to a recent item list
+
+#### Method And Url
+
+POST https://api.losant.com/me/recentItems
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.addRecentItem.
 
 #### Request Headers
 
@@ -38,7 +45,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"itemType":"device","parentId":"575ec8687ae143cd83dc4a97","itemId":"575ecf887ae143cd83dc4aa2"}' \
     https://api.losant.com/me/recentItems
@@ -59,11 +66,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /delete
-
-https://api.losant.com/me/delete
+## Delete
 
 Deletes the current user
+
+#### Method And Url
+
+POST https://api.losant.com/me/delete
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.delete.
 
 #### Request Headers
 
@@ -90,7 +104,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"email":"example@losant.com","password":"this is the password"}' \
     https://api.losant.com/me/delete
@@ -111,11 +125,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH - /disableTwoFactorAuth
-
-https://api.losant.com/me/disableTwoFactorAuth
+## Disable Two Factor Auth
 
 Disables two factor auth for the current user
+
+#### Method And Url
+
+PATCH https://api.losant.com/me/disableTwoFactorAuth
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.disableTwoFactorAuth.
 
 #### Request Headers
 
@@ -142,7 +163,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"twoFactorCode":"123123","password":"this would be your password"}' \
     https://api.losant.com/me/disableTwoFactorAuth
@@ -163,11 +184,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH - /disconnectGithub
-
-https://api.losant.com/me/disconnectGithub
+## Disconnect Github
 
 Disconnects the user from Github
+
+#### Method And Url
+
+PATCH https://api.losant.com/me/disconnectGithub
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.disconnectGithub.
 
 #### Request Headers
 
@@ -180,7 +208,7 @@ Disconnects the user from Github
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     https://api.losant.com/me/disconnectGithub
 ```
@@ -200,11 +228,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH - /disconnectTwitter
-
-https://api.losant.com/me/disconnectTwitter
+## Disconnect Twitter
 
 Disconnects the user from Twitter
+
+#### Method And Url
+
+PATCH https://api.losant.com/me/disconnectTwitter
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.disconnectTwitter.
 
 #### Request Headers
 
@@ -217,7 +252,7 @@ Disconnects the user from Twitter
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     https://api.losant.com/me/disconnectTwitter
 ```
@@ -237,11 +272,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH - /enableTwoFactorAuth
-
-https://api.losant.com/me/enableTwoFactorAuth
+## Enable Two Factor Auth
 
 Enables two factor auth for the current user
+
+#### Method And Url
+
+PATCH https://api.losant.com/me/enableTwoFactorAuth
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.enableTwoFactorAuth.
 
 #### Request Headers
 
@@ -268,7 +310,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"twoFactorAuthKey":"HBBGWJJVOVLXS4ZGNRTDOUKTMESFUR3BMRWVQND2HJYT44TOMVJA","password":"this would be your password"}' \
     https://api.losant.com/me/enableTwoFactorAuth
@@ -289,11 +331,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /recentItems
-
-https://api.losant.com/me/recentItems
+## Fetch Recent Items
 
 Gets a recent item list
+
+#### Method And Url
+
+GET https://api.losant.com/me/recentItems
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.SolutionUser.read, all.User, all.User.read, me.*, or me.fetchRecentItems.
 
 #### Request Query Parameters
 
@@ -313,7 +362,7 @@ Gets a recent item list
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/me/recentItems?itemType=application
 ```
@@ -333,17 +382,25 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/me
+## Get
 
 Retrieves information on the current user
+
+#### Method And Url
+
+GET https://api.losant.com/me
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.SolutionUser.read, all.User, all.User.read, me.*, or me.get.
 
 #### Request Query Parameters
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
 | includeRecent | N | Should the user include recent app/dashboard info |  | true |
+| summaryExclude | N | List of summary fields to exclude from user summary |  | payloadCount |
 
 #### Request Headers
 
@@ -356,7 +413,7 @@ Retrieves information on the current user
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/me
 ```
@@ -375,11 +432,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/me
+## Patch
 
 Updates information about the current user
+
+#### Method And Url
+
+PATCH https://api.losant.com/me
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.patch.
 
 #### Request Headers
 
@@ -410,7 +474,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"email":"example@losant.com","firstName":"Example","lastName":"Name","companyName":"Losant IoT, Inc.","url":"https://www.losant.com","password":"my new password"}' \
     https://api.losant.com/me
@@ -431,11 +495,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /payloadCounts
-
-https://api.losant.com/me/payloadCounts
+## Payload Counts
 
 Returns payload counts for the time range specified for all applications the current user owns
+
+#### Method And Url
+
+GET https://api.losant.com/me/payloadCounts
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, all.User.read, me.*, or me.payloadCounts.
 
 #### Request Query Parameters
 
@@ -455,7 +526,7 @@ Returns payload counts for the time range specified for all applications the cur
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/me/payloadCounts
 ```
@@ -475,11 +546,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH - /transferResources
-
-https://api.losant.com/me/transferResources
+## Transfer Resources
 
 Moves resources to a new owner
+
+#### Method And Url
+
+PATCH https://api.losant.com/me/transferResources
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.transferResources.
 
 #### Request Headers
 
@@ -509,7 +587,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"destinationId":"575ed6e87ae143cd83dc4aa8","destinationType":"organization","applicationIds":["575ec8687ae143cd83dc4a97"]}' \
     https://api.losant.com/me/transferResources
@@ -530,11 +608,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST - /verify-email
-
-https://api.losant.com/me/verify-email
+## Verify Email
 
 Sends an email verification to the user
+
+#### Method And Url
+
+POST https://api.losant.com/me/verify-email
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.verifyEmail.
 
 #### Request Headers
 
@@ -547,7 +632,7 @@ Sends an email verification to the user
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     https://api.losant.com/me/verify-email
 ```

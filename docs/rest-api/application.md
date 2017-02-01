@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Application resource, as well as the expected
 parameters and the potential responses.
 
-## DELETE
-
-https://api.losant.com/applications/**`APPLICATION_ID`**
+## Delete
 
 Deletes an application
+
+#### Method And Url
+
+DELETE https://api.losant.com/applications/**`APPLICATION_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, application.*, or application.delete.
 
 #### Request Path Components
 
@@ -29,7 +36,7 @@ Deletes an application
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/applications/APPLICATION_ID
 ```
@@ -50,11 +57,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/applications/**`APPLICATION_ID`**
+## Get
 
 Retrieves information on an application
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, application.*, or application.get.
 
 #### Request Path Components
 
@@ -73,7 +87,7 @@ Retrieves information on an application
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID
 ```
@@ -94,11 +108,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/applications/**`APPLICATION_ID`**
+## Patch
 
 Updates information about an application
+
+#### Method And Url
+
+PATCH https://api.losant.com/applications/**`APPLICATION_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, application.*, or application.patch.
 
 #### Request Path Components
 
@@ -131,7 +152,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"name":"My Updated Application","description":"Description of my updated application"}' \
     https://api.losant.com/applications/APPLICATION_ID
@@ -153,11 +174,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET - /payloadCounts
-
-https://api.losant.com/applications/**`APPLICATION_ID`**/payloadCounts
+## Payload Counts
 
 Returns payload counts for the time range specified for this application
+
+#### Method And Url
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/payloadCounts
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, application.*, or application.payloadCounts.
 
 #### Request Path Components
 
@@ -183,7 +211,7 @@ Returns payload counts for the time range specified for this application
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/payloadCounts
 ```

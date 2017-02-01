@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Dashboards resource, as well as the expected
 parameters and the potential responses.
 
-## GET
-
-https://api.losant.com/dashboards
+## Get
 
 Returns the dashboards the current user has permission to see
+
+#### Method And Url
+
+GET https://api.losant.com/dashboards
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.SolutionUser, all.SolutionUser.read, all.User, dashboards.*, or dashboards.get.
 
 #### Request Query Parameters
 
@@ -35,7 +42,7 @@ Returns the dashboards the current user has permission to see
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
     https://api.losant.com/dashboards
 ```
@@ -55,11 +62,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## POST
-
-https://api.losant.com/dashboards
+## Post
 
 Create a new dashboard
+
+#### Method And Url
+
+POST https://api.losant.com/dashboards
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, dashboards.*, or dashboards.post.
 
 #### Request Headers
 
@@ -86,7 +100,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
     -d '{"name":"My New Dashboard","public":false}' \
     https://api.losant.com/dashboards

@@ -6,11 +6,18 @@ Below are the various requests that can be performed against the
 Dashboard resource, as well as the expected
 parameters and the potential responses.
 
-## DELETE
-
-https://api.losant.com/dashboards/**`DASHBOARD_ID`**
+## Delete
 
 Deletes a dashboard
+
+#### Method And Url
+
+DELETE https://api.losant.com/dashboards/**`DASHBOARD_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, dashboard.*, or dashboard.delete.
 
 #### Request Path Components
 
@@ -29,7 +36,7 @@ Deletes a dashboard
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X DELETE \
     https://api.losant.com/dashboards/DASHBOARD_ID
 ```
@@ -50,11 +57,16 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## GET
-
-https://api.losant.com/dashboards/**`DASHBOARD_ID`**
+## Get
 
 Retrieves information on a dashboard
+
+#### Method And Url
+
+GET https://api.losant.com/dashboards/**`DASHBOARD_ID`**
+
+#### Authentication
+No authentication is required for this endpoint.
 
 #### Request Path Components
 
@@ -68,18 +80,11 @@ Retrieves information on a dashboard
 | ---- | -------- | ----------- | ------- | ------- |
 | password | N | Password for password-protected dashboards |  | myPassword |
 
-#### Request Headers
-
-| Name | Required | Description | Default |
-| ---- | -------- | ----------- | ------- |
-| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
-
 #### Curl Example
 
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
     -X GET \
     https://api.losant.com/dashboards/DASHBOARD_ID
 ```
@@ -100,11 +105,18 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
-## PATCH
-
-https://api.losant.com/dashboards/**`DASHBOARD_ID`**
+## Patch
 
 Updates information about a dashboard
+
+#### Method And Url
+
+PATCH https://api.losant.com/dashboards/**`DASHBOARD_ID`**
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, dashboard.*, or dashboard.patch.
 
 #### Request Path Components
 
@@ -139,7 +151,7 @@ valid body for this request:
 ```bash
 curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer YOUR_AUTH_TOKEN' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
     -d '{"name":"My Updated Dashboard","description":"Description of my updated dashboard","refreshRate":300,"public":true}' \
     https://api.losant.com/dashboards/DASHBOARD_ID
