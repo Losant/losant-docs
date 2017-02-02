@@ -4,6 +4,10 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/speech-synthesis-on-the-raspberry-pi-using-node.js" target="_blank">Speech Synthesis on the Raspberry Pi Using Node.js</a>
+
+*   <a href="https://www.losant.com/blog/how-to-connect-linkedin-and-slack-using-losant" target="_blank">How to Connect LinkedIn and Slack Using Losant</a>
+
 *   <a href="https://www.losant.com/blog/how-to-build-an-interactive-alexa-skill-with-no-code-using-losant" target="_blank">How to Build an Interactive Alexa Skill with no Code Using Losant</a>
 
 *   <a href="https://www.losant.com/blog/how-to-grow-food-with-the-internet-of-things" target="_blank">How to Grow Food with the Internet of Things</a>
@@ -59,6 +63,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 *   <a href="https://www.losant.com/blog/how-to-connect-a-particle-photon-to-the-losant-iot-platform" target="_blank">How to connect a Particle Photon to the Losant IoT Platform</a>
 
 ## Losant Community Projects
+
+*   <a href="https://www.hackster.io/mschaus/soil-moisture-sensor-over-cellular-for-remote-garden-plot-794c1b" target="_blank">Soil Moisture Sensor Over Cellular for Remote Garden Plot</a>
 
 *   <a href="https://rollbar.com/blog/internet-of-things-production-error-alarm/" target="_blank">Building the IoT Rollbar error alarm</a>
 
