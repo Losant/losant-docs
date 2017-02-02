@@ -77,17 +77,17 @@ pages:
         - Webhook: workflows/triggers/webhook.md
     - Logic:
         - Conditional: workflows/logic/conditional.md
-        - Switch: workflows/logic/switch.md
         - Delay: workflows/logic/delay.md
         - Function: workflows/logic/function.md
         - Geofence: workflows/logic/geofence.md
-        - JSON Encode: workflows/logic/json-encode.md
         - JSON Decode: workflows/logic/json-decode.md
+        - JSON Encode: workflows/logic/json-encode.md
         - Latch: workflows/logic/latch.md
         - Math: workflows/logic/math.md
         - Mutate: workflows/logic/mutate.md
         - On Change: workflows/logic/on-change.md
         - Random Number: workflows/logic/random-number.md
+        - Switch: workflows/logic/switch.md
         - Throttle: workflows/logic/throttle.md
         - Time Range: workflows/logic/time-range.md
         - Validate Payload: workflows/logic/validate-payload.md
