@@ -77,6 +77,7 @@ pages:
         - Webhook: workflows/triggers/webhook.md
     - Logic:
         - Conditional: workflows/logic/conditional.md
+        - Switch: workflows/logic/switch.md
         - Delay: workflows/logic/delay.md
         - Function: workflows/logic/function.md
         - Geofence: workflows/logic/geofence.md
