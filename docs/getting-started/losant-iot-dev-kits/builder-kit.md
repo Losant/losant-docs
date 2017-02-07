@@ -273,8 +273,8 @@ Each workshop builds on the previous one, so if you completed the first workshop
 ![Workshop 2 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-diagram.png "Workshop 2 Wiring Diagram")
 
 
-1. Add the LED so the positive lead (the longer one) is in terminal c19 and the negative lead is in c20.
-1. Connect the positive lead of the LED to D2 on the NodeMCU (terminal a13) with a jump wire.
+1. Add the LED so the positive lead (the longer one) is in terminal e19 and the negative lead is in e20.
+1. Connect the positive lead of the LED from terminal c19 to D2 on the NodeMCU (terminal a13) with a jump wire.
 1. Connect the negative lead of the LED from terminal c20 to the negative rail with a resistor.
 
 ![Workshop 2 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-image.jpg "Workshop 2 Wiring Image")
