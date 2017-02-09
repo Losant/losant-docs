@@ -1759,6 +1759,94 @@ Schema for a single Dashboard
         ],
         "additionalProperties": false
       }
+    },
+    "contextConfiguration": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "deviceId",
+              "deviceAttribute",
+              "string",
+              "number"
+            ]
+          },
+          "applicationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "defaultValue": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "validationEnabled": {
+            "type": "boolean"
+          },
+          "validationConfig": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "regExp": {
+                "type": "string",
+                "maxLength": 1024
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                }
+              },
+              "deviceIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Fa-f\\d]{24}$"
+                }
+              },
+              "deviceTags": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                    },
+                    "value": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 255
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "defaultValue"
+        ],
+        "additionalProperties": false
+      }
     }
   }
 }
@@ -1781,6 +1869,40 @@ Schema for a single Dashboard
   "refreshRate": 60,
   "public": false,
   "blocks": []
+}
+```
+
+<br/>
+## Dashboard Context Instance
+
+Schema for a dashboard context instance
+
+### Schema <a name="dashboard-context-instance-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "patternProperties": {
+    "^[0-9a-zA-Z_-]{1,255}$": {
+      "type": [
+        "string",
+        "number"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="dashboard-context-instance-example"></a>
+
+```json
+{
+  "myContextVariable": "myValue",
+  "myOtherVariable": "575ecf887ae143cd83dc4aa2"
 }
 ```
 
@@ -1863,6 +1985,94 @@ Schema for the body of a Dashboard modification request
         "string",
         "null"
       ]
+    },
+    "contextConfiguration": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "deviceId",
+              "deviceAttribute",
+              "string",
+              "number"
+            ]
+          },
+          "applicationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "defaultValue": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "validationEnabled": {
+            "type": "boolean"
+          },
+          "validationConfig": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "regExp": {
+                "type": "string",
+                "maxLength": 1024
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                }
+              },
+              "deviceIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Fa-f\\d]{24}$"
+                }
+              },
+              "deviceTags": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                    },
+                    "value": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 255
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "defaultValue"
+        ],
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false
@@ -1965,6 +2175,94 @@ Schema for the body of a Dashboard creation request
         "string",
         "null"
       ]
+    },
+    "contextConfiguration": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "deviceId",
+              "deviceAttribute",
+              "string",
+              "number"
+            ]
+          },
+          "applicationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "defaultValue": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "validationEnabled": {
+            "type": "boolean"
+          },
+          "validationConfig": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "regExp": {
+                "type": "string",
+                "maxLength": 1024
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                }
+              },
+              "deviceIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Fa-f\\d]{24}$"
+                }
+              },
+              "deviceTags": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                    },
+                    "value": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 255
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "defaultValue"
+        ],
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false,
@@ -2092,6 +2390,94 @@ Schema for a collection of Dashboards
                 "startY",
                 "width",
                 "height"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "contextConfiguration": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "deviceId",
+                    "deviceAttribute",
+                    "string",
+                    "number"
+                  ]
+                },
+                "applicationId": {
+                  "type": "string",
+                  "pattern": "^[A-Fa-f\\d]{24}$"
+                },
+                "defaultValue": {
+                  "type": [
+                    "string",
+                    "number"
+                  ]
+                },
+                "validationEnabled": {
+                  "type": "boolean"
+                },
+                "validationConfig": {
+                  "type": "object",
+                  "properties": {
+                    "min": {
+                      "type": "number"
+                    },
+                    "max": {
+                      "type": "number"
+                    },
+                    "regExp": {
+                      "type": "string",
+                      "maxLength": 1024
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                      }
+                    },
+                    "deviceIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Fa-f\\d]{24}$"
+                      }
+                    },
+                    "deviceTags": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string",
+                            "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                          },
+                          "value": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 255
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "name",
+                "type",
+                "defaultValue"
               ],
               "additionalProperties": false
             }
