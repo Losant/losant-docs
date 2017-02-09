@@ -16,11 +16,11 @@ Your kit should include the following items:
 * 1 solderless breadboard
 * 1 USB cable
 
-## Environment Setup
+## 1. Environment Setup
 
 In order to properly program the kit's microcontroller, please follow the [environment setup instructions](/getting-started/losant-iot-dev-kits/environment-setup/). These steps only need to be completed once, so if you've already done this for a previous kit, you can skip this step.
 
-## Losant Setup
+## 2. Losant Setup
 
 In this section, you’ll register for a Losant account, create your application, and add the device for your door sensor kit.
 
@@ -59,11 +59,11 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ![Device ID](/images/getting-started/losant-iot-dev-kits/door-sensor/device-id.png "Device ID")
 
-### Generate Security Tokens
+### Generate An Access Key
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu bar.
+Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
 
-![Access Keys Menu](/images/getting-started/losant-iot-dev-kits/door-sensor/access-keys-menu.png "Access Keys Menu")
+![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
 Generate an access key that provides access to all devices in your application.
 
@@ -73,7 +73,7 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 ![Access Token Popup](/images/getting-started/losant-iot-dev-kits/builder-kit/access-token-popup.png "Access Token Popup")
 
-## Get Door Sensor Firmware
+## 3. Get Door Sensor Firmware
 
 Now let's get the firmware you'll be flashing to the device. Download and extract the following zip file to your computer. We'll be editing and opening these files using the Arduino IDE, so put it somewhere convenient.
 
@@ -83,7 +83,7 @@ If you're familiar with git, you can also clone the repository from here:
 
 [https://github.com/Losant/losant-kit-door-sensor](https://github.com/Losant/losant-kit-door-sensor)
 
-## Wiring
+## 4. Wiring
 
 ***Disconnect the microcontroller from USB before wiring.***
 
@@ -101,7 +101,7 @@ In this step we're going to to connect the door sensor to the microcontroller. B
 
 ![Wiring Image](/images/getting-started/losant-iot-dev-kits/door-sensor/wiring-image.jpg "Wiring Image")
 
-## Flash the Firmware
+## 5. Flash the Firmware
 
 Connect the microcontroller to your computer with the supplied USB cable. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/door-sensor-kit/#environment-setup) guide.
 
@@ -137,7 +137,7 @@ Every time the door sensor parts come together, this firmware publishes `{ "open
 
 It’s now time to go into Losant and make use of this data.
 
-## Setup Alerts
+## 6. Setup Alerts
 
 Now that real door sensor data is flowing into Losant, we can set up our alerts to be notified by SMS and email whenever a door opens or is left open for a certain amount of time. For this, we're going to use [Losant Workflows](/workflows/overview/).
 
@@ -197,7 +197,7 @@ This workflow is split into two sections. The left section contains the Device T
 
 The section on the right is triggered by a Timer every 5 seconds. The purpose of this section is to simply check to see if 60 seconds has elapsed. The Get Value node grabs the `startTime` recorded previously and then the Condition node checks to see if 60 seconds has elapsed since the start time. If it has, the SMS and email alerts are sent out and the `startTime` is cleared.
 
-## Build a Dashboard
+## 7. Build a Dashboard
 
 In this step, we're going to build a dashboard to visualize the real-time and historical door activity. First, create a new dashboard from the `Dashboards` menu.
 

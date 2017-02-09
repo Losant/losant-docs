@@ -17,11 +17,11 @@ Your kit should include the following items:
 * 1 solderless breadboard
 * 1 USB cable
 
-## Environment Setup
+## 1. Environment Setup
 
 In order to properly program the kit's microcontroller, please follow the [environment setup instructions](/getting-started/losant-iot-dev-kits/environment-setup/). These steps only need to be completed once, so if you've already done this for a previous kit, you can skip this step.
 
-## Losant Setup
+## 2. Losant Setup
 
 In this section, you’ll register for a Losant account, create your application, and add the device for your moisture sensor kit.
 
@@ -60,11 +60,11 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ![Device ID](/images/getting-started/losant-iot-dev-kits/moisture-sensor/device-id.png "Device ID")
 
-### Generate Security Tokens
+### Generate An Access Key
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu bar.
+Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
 
-![Access Keys Menu](/images/getting-started/losant-iot-dev-kits/moisture-sensor/access-keys-menu.png "Access Keys Menu")
+![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
 Generate an access key that provides access to all devices in your application.
 
@@ -74,7 +74,7 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 ![Access Token Popup](/images/getting-started/losant-iot-dev-kits/builder-kit/access-token-popup.png "Access Token Popup")
 
-## Get Moisture Sensor Firmware
+## 3. Get Moisture Sensor Firmware
 
 Now let's get the firmware you'll be flashing to the device. Download and extract the following zip file to your computer. We'll be editing and opening these files using the Arduino IDE, so put it somewhere convenient.
 
@@ -84,7 +84,7 @@ If you're familiar with git, you can also clone the repository from here:
 
 [https://github.com/Losant/losant-kit-moisture](https://github.com/Losant/losant-kit-moisture)
 
-## Wiring
+## 4. Wiring
 
 ***Disconnect the microcontroller from USB before wiring.***
 
@@ -103,7 +103,7 @@ In this step we're going to to connect the moisture sensor and the LED to the mi
 
 ![Wiring Image](/images/getting-started/losant-iot-dev-kits/moisture-sensor/wiring-image.jpg "Wiring Image")
 
-## Flash the Firmware
+## 5. Flash the Firmware
 
 Connect the microcontroller to your computer with the supplied USB cable. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/door-sensor-kit/#environment-setup) guide.
 
@@ -137,7 +137,7 @@ Every 60 seconds the firmware is publishing the state `{ "moisture": <value> }` 
 
 It’s now time to put your moisture sensor in a plant and start making use of this data.
 
-## Install Moisture Sensor
+## 6. Install Moisture Sensor
 
 Insert the moisture sensor roughly halfway to two thirds into your plant's soil. Make sure the soil is not touching any of the components or leads at the top of the sensor. You can then position the microcontroller and breadboard wherever is convenient.
 
@@ -145,7 +145,7 @@ Insert the moisture sensor roughly halfway to two thirds into your plant's soil.
 
 ![Moisture Sensors](/images/getting-started/losant-iot-dev-kits/moisture-sensor/moisture-sensors.jpg "Moisture Sensors")
 
-## Setup Alerts
+## 7. Setup Alerts
 
 Now that real moisture data is flowing into Losant, we can set up our alerts to be notified by SMS and email whenever the moisture level reaches a certain value. We're also going to send a command back to the board to turn on the LED, just in case you missed the alert. For this, we're going to use [Losant Workflows](/workflows/overview/).
 
@@ -204,7 +204,7 @@ This section explains each part of the workflow so you can get an understanding 
 1. The `SMS` and `Email` nodes. These are pretty straightforward. Whenever the latch determines the moisture level is low (and it's not already latched), these two nodes will be executed. The SMS node simply sends a message to the number stored in the `smsNumber` global configuration field and the email node sends a message to the addressed stored in the `email` global configuration field.
 1. The `Debug` node. You've already seen the output of the debug node using the debug tab. Whenever a payload hits the debug node it is displayed in that tab. This allows you to easily debug workflows as you are building them.
 
-## Build a Dashboard
+## 8. Build a Dashboard
 
 In this step, we're going to build a dashboard to visualize the real-time and historical moisture levels. First, create a new dashboard from the `Dashboards` menu.
 
