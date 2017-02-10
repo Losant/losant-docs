@@ -142,13 +142,13 @@ particular actions that can be performed on that resource.
 
 *   [Application API Token](/rest-api/application-api-token)  
 Contains all the actions that can be performed against a single
-API Access Token belonging to an application -
+[API Access Token](/applications/application-tokens/) belonging to an application -
 for instance, getting info on a single token or revoking a token.
 
 *   [Application API Tokens](/rest-api/application-api-tokens)  
 Contains all of the actions that can be performed against the collection of
-API Access Tokens belonging to an Application - such as
-listing all tokens or creating a new token.
+[API Access Tokens](/applications/application-tokens/) belonging to an Application -
+such as listing all tokens or creating a new token.
 
 *   [Application Key](/rest-api/application-key)  
 Contains all the actions that can be performed against a single

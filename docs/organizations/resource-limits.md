@@ -78,5 +78,6 @@ Soft-limited resources include:
 -   [Dashboards](/dashboards/overview)
 -   [Workflows](/workflows/overview)
 -   [Access Keys](/applications/access-keys)
+-   [Application API Tokens](/applications/application-tokens)
 -   [Webhooks](/applications/webhooks)
 -   [Device Recipes](/devices/device-recipes)

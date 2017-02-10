@@ -40,7 +40,8 @@ As a general rule, any request that creates, edits or deletes a Losant resource 
 *   Creation or deletion of any [application](/applications/overview/) or [dashboard](/dashboards/overview/) owned by the organization, or edits to those resources. This includes application sub-resources, such as:
     * [Devices](/devices/overview)
     * [Workflows](/workflows/overview)
-    * [Access keys](/applications/access-keys)
+    * [Access Keys](/applications/access-keys)
+    * [Application API Tokens](/applications/application-tokens)
     * [Webhooks](/applications/webhooks)
     * [Device recipes](/devices/device-recipes)
 
