@@ -25,11 +25,11 @@ The Losant API is uses JSON for almost all requests and responses - all request 
 
 Most endpoints on the Losant API require an api access token. This is done by passing a Bearer Authorization token in the `Authorization` header field for the request (e.g. `"Authorization": "Bearer your-api-token-goes-here"`).
 
-### Obtaining an Api Access Token
+### Obtaining an API Access Token
 
 You can obtain an Authorization Token to use to make authenticated requests by calling one of the [Auth](/rest-api/auth/) endpoints. There are two main endpoints, one for [authenticating as a user](/rest-api/auth/#authenticate-user), and one for [authenticating as a device](/rest-api/auth/#authenticate-device). The JSON response for either endpoint has a `token` field, which is the authorization token you should use in the Authorization header in subsequent requests that you want to perform as that user or device.
 
-You can also obtain api access tokens through the [Application Api Tokens](/rest-api/application-api-tokens) and [Application Api Token](/rest-api/application-api-token) resources. These resources allow you to create and manage api
+You can also obtain api access tokens through the [Application API Tokens](/rest-api/application-api-tokens) and [Application API Token](/rest-api/application-api-token) resources. These resources allow you to create and manage api
 access tokens specific to a particular application. By default, tokens created for an application will have the scope `all.Application` (and will therefore have access to any endpoints that accept the scope `all.Application`), but can be created with very specific scopes if desired. An application api token will only ever be able to access and manage resources within the application they were created in.
 
 ### User-Based Authentication
@@ -140,14 +140,14 @@ Each of the following is a resource on the Losant API, wrapping up functionality
 for a particular item or collection. See each resource documentation page for the
 particular actions that can be performed on that resource.
 
-*   [Application Api Token](/rest-api/application-api-token)  
+*   [Application API Token](/rest-api/application-api-token)  
 Contains all the actions that can be performed against a single
-Api Access Token belonging to an application -
+API Access Token belonging to an application -
 for instance, getting info on a single token or revoking a token.
 
-*   [Application Api Tokens](/rest-api/application-api-tokens)  
+*   [Application API Tokens](/rest-api/application-api-tokens)  
 Contains all of the actions that can be performed against the collection of
-Api Access Tokens belonging to an Application - such as
+API Access Tokens belonging to an Application - such as
 listing all tokens or creating a new token.
 
 *   [Application Key](/rest-api/application-key)  
