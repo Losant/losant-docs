@@ -14,7 +14,7 @@ First step is selecting the devices to query. The node has two options for selec
 
 ![Time Series Node Config](/images/workflows/data/time-series-node-config.png "Time Series Node Config")
 
-The time series node also needs to know the attribue, the time range, the resolution, and what aggregation to use for the query. The available resolutions will vary depending on the selected time range, just like the time series dashboard block. In the above example, the attribute `kwattHours` will be queried over the last 24 hours with a 1 hour resolution using a SUM aggregation.
+The time series node also needs to know the attribute, the time range, the resolution, and what aggregation to use for the query. The available resolutions will vary depending on the selected time range, just like the time series dashboard block. In the above example, the attribute `kwattHours` will be queried over the last 24 hours with a 1 hour resolution using a SUM aggregation.
 
 ![Time Series Node Result](/images/workflows/data/time-series-node-result.png "Time Series Node Result")
 

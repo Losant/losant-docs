@@ -51,7 +51,7 @@ Not everything that happens within your organization is available in the audit l
 
 *   User or device [authentications](/rest-api/auth/)
 *   Edits to any personal [user account](/user-accounts/overview/), including password resets
-*   [Device commands](/devices/commands) or [state reports](/devices/state), whether by [REST](/rest-api/overview) or [MQTT](/mqtt/overfiew)
+*   [Device commands](/devices/commands) or [state reports](/devices/state), whether by [REST](/rest-api/overview) or [MQTT](/mqtt/overview)
 *   Creation or deletion of [Losant events](/events/overview/), or the editing of any event
 *   State retrieval queries, including those made by Losant dashboards
 *   GET requests (data retrieval) on any organization-owned resource or sub-resource
