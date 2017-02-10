@@ -1,6 +1,6 @@
 # GPS History
 
-The GPS History block shows the path of GPS datapoints across one or more devices. The map visualizes the historical path of each device as a connected line, with a start and end bubble.
+The GPS History block shows the path of GPS data points across one or more devices. The map visualizes the historical path of each device as a connected line, with a start and end bubble.
 
 ![GPS History Dashboard](/images/dashboards/gps-history-example.png "GPS History Dashboard")
 
@@ -43,13 +43,51 @@ Optionally, you may choose a particular map style. The two current styles availa
 
 ### Point Display Configuration
 
-![Point Display Configuration](/images/dashboards/gps-history-point-config.png "Point Display Configuration")
+Losant allows for customization of the pins for points on the map as well as the popups that appear when clicking on a map pin.
 
-The history block optionally allows [string templates](/workflows/accessing-payload-data/#string-templates) of the icons and popups for the various points being displayed. By default, the templates place a red marker at the oldest (starting) point and a green marker at the newest (current) point, and clicking either will display a popup with the time and coordinates for that point.
+#### Simple Pin Style Configuration
 
-When using a string template for an icon, the template must resolve to a single URL pointing to an image with a size of **30px wide by 70 tall** – or larger, so long as the ratio is the same. (The center of the image is centered over the point). String templates in popups can also be wrapped in [Markdown](http://commonmark.org/help/), allowing for formatting options such as **bold** and *italic*. Using Losant's built-in [Handlebars helpers](/workflows/accessing-payload-data/#string-templates), it is possible to build quite complex templates image and icon string templates.
+![Simple Pin Style Configuration](/images/dashboards/gps-history-simple-pin-config.png "Simple Pin Style Configuration")
 
-Inside either the icon or popup templates, there are a number of variables available for you to use:
+By default, Losant places a red marker at the oldest (starting) point for a series and a green marker at the most recent
+(ending) point for a series. You can change the color of either pin using the color picker for that pin, and the change
+will apply to all of the relevant start or end pins on the map.
+
+#### Advanced Pin Style Configuration
+
+![Advanced Pin Style Configuration](/images/dashboards/gps-history-advanced-pin-config.png "Advanced Pin Style Configuration")
+
+If you want more control over marker pins, you can select `Advanced`. This allows you to provide a [string templates](/workflows/accessing-payload-data/#string-templates)
+that will be rendered for each individual point in each series displayed on the map. The string template must resolve to a single URL pointing to an image with a size of
+**30px wide by 70 tall** – or larger, so long as the ratio is the same. If the template does not resolves to a blank string for a point, no marker will be displayed for
+that point. Losant provides a helper function `colorMarker` which can be used to create the same kinds of markers that the `simple` configuration uses - the function takes
+a single argument, which is a hex color string, and returns an image url for a marker of that color. The default template for the advanced section uses this helper, rendering
+a red marker for the starting (oldest) point of a series, and a green marker for the ending (most recent) point of a series.
+
+When using the advanced mode, the following variables are available for you to use in the icon template:
+
+*   `isFirstPoint` - True if this is the first (oldest) data point in the series.
+*   `isLastPoint` - True if this is the last (most recent) data point in the series.
+*   `index` - Index of the current data point in the series.
+*   `deviceName` - Name of the device that generated this data point.
+*   `deviceId` - Id of the device that generated this data point.
+*   `latitude` - Latitude of the current data point.
+*   `longitude` - Longitude of the current data point.
+*   `time` - Time of the current data point.
+*   `data.<attributeName>` - Value of given attribute at this data point.
+
+#### Popup Style Configuration
+
+![Popup Style Configuration](/images/dashboards/gps-history-popup-config.png "Popup Style Configuration")
+
+Just like the `Advanced` pin configuration, the popup configuration allows you to provide a [string templates](/workflows/accessing-payload-data/#string-templates) that will
+be used for rendering the popup for a point. The popup for a point will only be available if there is a pin for that point, so make sure that a pin is rendered for any points
+that you want to provide a popup for. String templates for popups are treated as [Markdown](http://commonmark.org/help/), allowing for formatting options such as **bold** and
+*italic*. Using Losant's built-in [Handlebars helpers](/workflows/accessing-payload-data/#string-templates), it is possible to build quite complex popup templates that include
+images and links. By default the popup template renders simple text with the device name, timestamp of the point, and lat/lng location of the point. If the template renders to
+an empty string for a point, no popup will appear when clicking the map pin for that point.
+
+The following variables are available for you to use in the popup template:
 
 *   `isFirstPoint` - True if this is the first (oldest) data point in the series.
 *   `isLastPoint` - True if this is the last (most recent) data point in the series.
