@@ -20,20 +20,25 @@ You can choose to either make this access key valid for use by any device in thi
 
 After clicking `Create Access Key`, the newly generated key and secret will be displayed. You will either need to copy your key and secret to a secure location or download them to a file on your computer.
 
-__IMPORTANT__: Losant does not store key secrets and they can not be recovered or regenerated if lost. If you fail to save your key secret before closing the window, you will have to generate a new access key / secret pair.
+__IMPORTANT__: Losant does not store key secrets and they cannot be recovered or regenerated if lost. If you fail to save your key secret before closing the window, you will have to generate a new access key / secret pair.
 
 After you've saved your access key and secret, check the `I have copied my app secret to a safe place` box and click `Close Window`.
 
 ![Access Key Generated](/images/applications/access-key-generated.png "Access Key Generated")
 
-## Deleting an Access Key
+## Deleting / Deactivating an Access Key
 
-If you think an access key has been compromised or is no longer needed, you may delete it by:
+To temporarily deactivate an access key ...
 
--   Clicking on the `Delete` icon in the access key list, OR
--   Clicking the `Delete Access Key` button on the access key's detail page
+*   Click the checkbox alongside the access key in the list view, OR
+*   From the access key's detail page, select the "Inactive" radio button under the "Status" label and save the key.
 
 ![Delete Key](/images/applications/delete-key.png "Delete Key")
+
+If an access key is no longer needed, or you believe it has been compromised, you may permanently delete it by:
+
+*   Clicking on the `Delete` icon in the access key list, OR
+*   Clicking the `Delete Access Key` button on the access key's detail page
 
 ## Using Access Keys
 
