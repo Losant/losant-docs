@@ -108,11 +108,11 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ![Device ID](/images/getting-started/losant-iot-dev-kits/lcd-kit/device-id.png "Device ID")
 
-### Generate Security Tokens
+### Generate An Access Key
 
-Now we need to generate some security tokens so your device can authenticate against the Losant platform. Select `Access Keys` from the application menu bar.
+Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
 
-![Access Keys Menu](/images/getting-started/losant-iot-dev-kits/lcd-kit/access-keys.png "Access Keys Menu")
+![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
 Generate an access key that provides access to all devices in your application.
 

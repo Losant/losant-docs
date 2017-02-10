@@ -173,3 +173,60 @@ curl -H 'Content-Type: application/json' \
 
 <br/>
 
+## Validate Context
+
+Validates a context object against the dashboard&#x27;s context configuration
+
+#### Method And Url
+
+POST https://api.losant.com/dashboards/**`DASHBOARD_ID`**/validateContext
+
+#### Authentication
+No authentication is required for this endpoint.
+
+#### Request Path Components
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| DASHBOARD_ID | ID of the associated dashboard | 575ece2b7ae143cd83dc4a9b |
+
+#### Request Body
+
+The body of the request should be serialized JSON that validates against
+the [Dashboard Context Instance](schemas.md#dashboard-context-instance) schema.  For example, the following would be a
+valid body for this request:
+
+```json
+{
+  "myContextVariable": "myValue",
+  "myOtherVariable": "575ecf887ae143cd83dc4aa2"
+}
+```
+<small><br/></small>
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -X POST \
+    -d '{"myContextVariable":"myValue","myOtherVariable":"575ecf887ae143cd83dc4aa2"}' \
+    https://api.losant.com/dashboards/DASHBOARD_ID/validateContext
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | If context is valid |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if context is invalid |
+| 404 | [Error](schemas.md#error) | Error if dashboard or application was not found |
+
+<br/>
+

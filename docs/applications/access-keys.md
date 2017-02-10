@@ -4,13 +4,13 @@ To connect your devices to the Losant Platform, you must use a set of security c
 
 ## Viewing Access Keys
 
-You can view the available access keys under `Access Keys` in the Application menu bar.
+You can view the the access keys for an application by choosing `Security` in the Application menu bar, and then clicking `Device Access Keys` in the left navigation.
 
 ![Access Keys](/images/applications/access-keys.png "Access Keys")
 
 ## Generating an Access Key
 
-Access keys can be added to your application by using the `Add Access Key` button on the `Access Keys` page.
+Access keys can be added to your application by using the `Add Access Key` button on the `Device Access Keys` page.
 
 ![Add Access Key](/images/applications/generate-key.png "Add Access Key")
 
