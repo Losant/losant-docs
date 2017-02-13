@@ -1470,7 +1470,7 @@ Schema for the successful response when authenticating a Device
       "type": "string",
       "pattern": "^[A-Fa-f\\d]{24}$"
     },
-    "devicecClass": {
+    "deviceClass": {
       "type": "string",
       "enum": [
         "standalone",
@@ -1502,7 +1502,7 @@ Schema for the successful response when authenticating a Device
 {
   "applicationId": "575ec8687ae143cd83dc4a97",
   "deviceId": "575ecf887ae143cd83dc4aa2",
-  "devicecClass": "standalone",
+  "deviceClass": "standalone",
   "token": "token_to_use_for_authenticating_subsequent_requests"
 }
 ```
