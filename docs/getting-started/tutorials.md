@@ -64,6 +64,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## Losant Community Projects
 
+*   <a href="https://help.iotify.io/virtual-lab/smart-trash-iot-with-iotify-and-losant" target="_blank">Smart Trash IoT with IoTIFY and Losant</a>
+
 *   <a href="https://www.hackster.io/mschaus/soil-moisture-sensor-over-cellular-for-remote-garden-plot-794c1b" target="_blank">Soil Moisture Sensor Over Cellular for Remote Garden Plot</a>
 
 *   <a href="https://rollbar.com/blog/internet-of-things-production-error-alarm/" target="_blank">Building the IoT Rollbar error alarm</a>
