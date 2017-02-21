@@ -47,6 +47,7 @@ pages:
     - Device Recipes: devices/device-recipes.md
 - Dashboards:
     - Overview: dashboards/overview.md
+    - Context Variables: dashboards/context-variables.md
     - Time Series Graph: dashboards/time-series-graph.md
     - GPS Heatmap: dashboards/gps-heatmap.md
     - GPS History: dashboards/gps-history.md

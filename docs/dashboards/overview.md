@@ -24,7 +24,7 @@ After filling out the form, click `Save Dashboard` to start adding blocks.
 
 Losant supports many different blocks for visualizing various pieces of information. New blocks can be added to your dashboard by clicking the `Add Block` link at the top of the dashboard.
 
-![Add Block](/images/dashboards/overview-add-block.png "Add Block")
+<img style="width: 450px; margin: 0 auto; display: block;" src="/images/dashboards/overview-add-block.png" alt="Add Block" />
 
 ![Select Block](/images/dashboards/overview-select-block.png "Select Block")
 
@@ -38,11 +38,20 @@ Dashboard blocks and be dynamically resized and dragged for the arrangement that
 
 ![Dashboard Animation](/images/dashboards/overview-animation.gif "Dashboard Animation")
 
+## Display Settings
+
+Within the dashboard settings menu, there are a couple options for changing the dashboard's display style ...
+
+*   **Dark Theme** flips the color scheme to a much darker style. This is stored as a user-level preference, so switching to the dark theme on one dashboard will cause other dashboards you visit to also be displayed in the dark theme until you disable the setting.
+*   **Fullscreen** hides the Losant header and footer and expands the dashboard to fit the screen's dimensions. Not all devices support this feature (smartphones and most tablets specifically), and if your device does not allow fullscreen display, this option will not be visible.
+
+<img style="width: 341px; margin: 0 auto; display: block;" src="/images/dashboards/dashboard-display-settings.png" alt="Dashboard Display Options" />
+
 ## Auto Refreshing
 
 Dashboards by default will automatically refresh the data every 60 seconds. You can pause the refreshing at any time by clicking the pause button at the top of the dashboard. You can also force the dashboard to refresh by clicking the refresh button.  You can also control the refresh interval under the settings for the dashboard.
 
-![Refresh Button](/images/dashboards/overview-refresh-button.png "Refresh Button")
+<img style="width: 440px; margin: 0 auto; display: block;" src="/images/dashboards/overview-refresh-button.png" alt="Refresh Button" />
 
 ## Viewing Past Dashboard States
 
@@ -52,7 +61,7 @@ By default, dashboards show values as of the last time data was fetched from Los
 
 It is also possible to jump backward and forward in time simply by clicking the arrows on either side of the time jumper dropdown. This allows for quick perusing of dashboard states as they progressed over a period of time. By default, the arrows jump 60 minutes forward and backward, but this value can be changed in the Time Jumper dropdown. The arrow jump amount is stored locally on your browser and will be maintained across different dashboards.
 
-![Dashboard Time Jumper Arrows](/images/dashboards/dashboard-time-jumper-arrows.png "Dashboard Time Jumper Arrows")
+<img style="width: 440px; margin: 0 auto; display: block;" src="/images/dashboards/dashboard-time-jumper-arrows.png" alt="Dashboard Time Jumper Arrows" />
 
 A few things to note when viewing past dashboard states:
 
