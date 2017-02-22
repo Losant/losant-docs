@@ -12,7 +12,7 @@
   {% endblock %}
 
   {% if favicon %}<link rel="shortcut icon" href="{{ favicon }}">
-  {% else %}<link rel="shortcut icon" href="{{ base_url }}/favicon.ico">{% endif %}
+  {% else %}<link rel="shortcut icon" href="/favicon.ico">{% endif %}
 
   {# CSS #}
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -55,10 +55,12 @@
     })(document,"script","hs-analytics",300000);
   </script>
 
+  {%- block extrahead %} {% endblock %}
+
   {%- for path in extra_javascript %}
   <script src="{{ path }}"></script>
   {%- endfor %}
-  {%- block extrahead %} {% endblock %}
+
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -72,7 +74,7 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="{{ homepage_url }}" class="icon icon-home"> {{ site_name }}</a>
+        <a href="{{ nav.homepage.abs_url }}" class="icon icon-home"> {{ site_name }}</a>
         {% include "searchbox.html" %}
       </div>
 
@@ -93,7 +95,7 @@
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ homepage_url }}">{{ site_name }}</a>
+        <a href="{{ nav.homepage.abs_url }}">{{ site_name }}</a>
       </nav>
 
       {# PAGE CONTENT #}
