@@ -71,6 +71,7 @@ When using the advanced mode, the following variables are available for you to u
 *   `index` - Index of the current data point in the series.
 *   `deviceName` - Name of the device that generated this data point.
 *   `deviceId` - Id of the device that generated this data point.
+*   `deviceTags` - The tags (as an object) of the device that generated this data point.
 *   `latitude` - Latitude of the current data point.
 *   `longitude` - Longitude of the current data point.
 *   `time` - Time of the current data point.
@@ -94,6 +95,7 @@ The following variables are available for you to use in the popup template:
 *   `index` - Index of the current data point in the series.
 *   `deviceName` - Name of the device that generated this data point.
 *   `deviceId` - Id of the device that generated this data point.
+*   `deviceTags` - The tags (as an object) of the device that generated this data point.
 *   `latitude` - Latitude of the current data point.
 *   `longitude` - Longitude of the current data point.
 *   `time` - Time of the current data point.
