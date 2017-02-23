@@ -22,7 +22,7 @@ Properly configuring devices is an important step to ensuring proper communicati
 
 The first thing to configure is the type of device.  This is not about the actual physical
 type of the device, but more about how you expect the device to connect and report state
-to the Losant platform.  There are 4 categories, but in most cases you will be choosing
+to the Losant platform.  There are 3 categories, but in most cases you will be choosing
 the first, `Standalone`.
 
 *   **Standalone**  
@@ -37,8 +37,7 @@ are extremely useful for helping to report the state of non-internet connected d
 *   **Peripheral**  
 A peripheral device does not connect directly to Losant - instead they report their
 state to a gateway device, and that gateway pushes that state to Losant.  When choosing
-peripheral as the device type, you must choose the particular gateway device that this
-device will be reporting through, so that Losant knows what gateway has permission to report as this peripheral device.
+peripheral as the device type, there are two options. You can either choose to let the device report state through any gateway in the application (which is useful for devices that move through the range of multiple gateways), or you can choose to only allow reporting through a specific gateway (useful for static or directly connected devices).
 
 ### Device Attributes
 

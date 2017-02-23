@@ -14,7 +14,7 @@ A gateway device is created by choosing the `Gateway` device type when adding a 
 
 Unlike regular devices, peripherals do not connect directly to Losant. They are typically connected to a Gateway using something like Bluetooth. How a peripheral is actually connected to a gateway is entirely up to your specific environment.
 
-Peripherals are created by choosing the `Peripheral` device type when adding new devices. You must also then choose the Gateway device that is permitted to report on behalf of this peripheral.
+Peripherals are created by choosing the `Peripheral` device type when adding new devices. You can then decide if the peripheral device should be allowed to report its state through any gateway within the application, or if state reporting should be restricted to only a particular gateway. "Any Gateway" is generally used for peripheral devices that move, and so might switch between statically located gateways at multiple locations. "Specific Gateway" is generally used for a peripherals that are attached to a single gateway, perhaps even actually physically attached.
 
 ![Add Peripheral](/images/devices/gateways-peripherals/create-peripheral.png "Add Peripheral")
 
