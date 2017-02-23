@@ -39,6 +39,14 @@ By default, the option of "No Verification" is selected for a webhook.  In this 
 
 If there are other webhook verification systems that you would like Losant to support, please <a href="https://forums.losant.com/" target="_blank">let us know</a>.
 
+## Basic Auth
+
+You can optionally choose to require HTTP basic auth when calling a webhook. This can be useful if you want a layer of security on top of your webhook calls beyond just the webhook token itself.
+
+![Webhook Basic Auth](/images/applications/webhook-basic-auth.png "Webhook Basic Auth")
+
+If the basic auth fields are left blank, no authentication is required. If either the username or password field is filled in, then Losant expects the standard basic auth HTTP header to be set on any incoming webhook requests with that username and/or password. It is perfectly acceptable to only set a username or only set a password, in which case Losant just expects the other to be an empty string on any incoming requests.
+
 ## Custom Replies
 
 Sometimes, it can be very useful to respond back to a given webhook call.  In
