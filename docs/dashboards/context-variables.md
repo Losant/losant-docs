@@ -28,7 +28,7 @@ A "Device ID" is a [device query](/devices/device-queries/) that takes a single 
 
 *   **Application ID** is the Losant [application](/applications/overview) to which any selected device must belong.
 *   **Default Value** is the device ID to use when no value is provided by the user.
-*   **Validation** is optional; it is a [device query](/devices/device-queries/) that accepts device IDs and/or [tags](/devices/overview/#device-tags) that the variable must match. If both IDs and tags are provided, the variable may match a specific ID, or the tag must be applied to the device. If multiple tags are defined in validation, the device must match **all** tags (or a provided ID). Note that the default value does not have to match your defined validation rules.
+*   **Validation** is optional; it is a [device query](/devices/device-queries/) that accepts device IDs and/or [tags](/devices/overview/#device-tags) that the variable must match. If both IDs and tags are provided, the variable may match a specific ID, or the tag must be applied to the device. If multiple tags are defined in validation, the device must match **all** tags (or a provided ID). If no validation rules are provided, then any device from the selected application is valid. Note that the default value does not have to match your defined validation rules.
 
 If a device ID is used in a query with an attribute that is not defined on the device, the block that is referencing the variable will fail to load.
 
