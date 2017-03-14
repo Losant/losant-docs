@@ -4,7 +4,7 @@ The <a href="https://store.losant.com/products/lcd-kit" target="_blank"> LCD Kit
 
 ![Weather Station](/images/getting-started/losant-iot-dev-kits/lcd-kit/weather-station.jpg "Weather Station")
 
-As you follow these instructions, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
+As you follow these instructions, if you run into any issues, please refer to the [Losant Documentation](/) and the [Losant Forums](https://forums.losant.com) for help.
 
 ## Materials
 
@@ -136,7 +136,7 @@ If you're familiar with git, you can also clone the repository from here:
 
 ### Flashing
 
-Connect the microcontroller to your computer with the supplied USB cable. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](https://docs.losant.com/getting-started/losant-iot-dev-kits/environment-setup/) guide.
+Connect the microcontroller to your computer with the supplied USB cable. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/environment-setup/) guide.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the kit source code and open the file `losant-kit-lcd/losant-kit-lcd.ino`. Edit the following variables at the top of the file.
 
@@ -225,7 +225,7 @@ Once imported, your workflow should look like the following:
 
 ### Workflow Overview
 
-Let's talk about how this workflow works. All workflows start with a trigger. For this example, we have three triggers. When<a href="https://docs.losant.com/workflows/triggers/on-connect/" target="_blank"> the device is started</a>, we want to grab the weather and send it down to the device. We also need a <a href="https://docs.losant.com/workflows/triggers/timer/" target="_blank"> timer</a> to send data periodically. Lastly, we can configure a <a href="https://docs.losant.com/workflows/triggers/virtual-button/" target="_blank"> button</a> to send the data on demand. We simply want this workflow to run and send time and weather data to our device.
+Let's talk about how this workflow works. All workflows start with a trigger. For this example, we have three triggers. When <a href="/workflows/triggers/on-connect/" target="_blank">the device is started</a>, we want to grab the weather and send it down to the device. We also need a <a href="/workflows/triggers/timer/" target="_blank">timer</a> to send data periodically. Lastly, we can configure a <a href="/workflows/triggers/virtual-button/" target="_blank">button</a> to send the data on demand. We simply want this workflow to run and send time and weather data to our device.
 
 ### Node Errors
 
@@ -237,7 +237,7 @@ Lets walkthrough the other nodes and make sure that they are properly configured
 
 ### Timer
 
-A <a href="https://store.losant.com/products/losant-lcd-kit" target="_blank">Timer</a> node will trigger on a interval you define.
+A <a href="/workflows/triggers/timer/" target="_blank">Timer</a> node will trigger on a interval you define.
 
 ![Workflow Timer](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-timer.png "Workflow Timer")
 
@@ -273,7 +273,7 @@ The second required configuration parameter for this HTTP node is the location o
 
 ### Function
 
-The NodeMCU does not have an internal clock. So, keeping time is a little challenging. It is possible to configure it to be synced with an <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">NTP server</a> but, for time's sake, we can simulate time in a workflow. Losant has a <a href="https://docs.losant.com/workflows/logic/function/" target="_blank">Function</a> node that we can use to run our own JavaScript to get the time.
+The NodeMCU does not have an internal clock. So, keeping time is a little challenging. It is possible to configure it to be synced with an <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">NTP server</a> but, for time's sake, we can simulate time in a workflow. Losant has a <a href="/workflows/logic/function/" target="_blank">Function</a> node that we can use to run our own JavaScript to get the time.
 
 ![Workflow Function](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-function.png "Workflow Function")
 
@@ -291,7 +291,7 @@ Time is now appended to our payload to send later.
 
 ### Math
 
-In many situations, we need to do some simple calculations to our data before sending it some where else. In this case, since we have limited space on the LCD screen, we want our temperatures to be whole numbers, not decimals. Losant provides a <a href="https://docs.losant.com/workflows/logic/math/" target="_blank">Math</a> node to solve this problem.
+In many situations, we need to do some simple calculations to our data before sending it some where else. In this case, since we have limited space on the LCD screen, we want our temperatures to be whole numbers, not decimals. Losant provides a <a href="/workflows/logic/math/" target="_blank">Math</a> node to solve this problem.
 
 ![Workflow Math](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-math.png "Workflow Math")
 
@@ -303,7 +303,7 @@ In our math node, we can round the temperature:
 
 ### Device Command
 
-Now that we have all the data, we need to format it and send it to the device. For this purpose, we use the <a href="http://localhost:8000/workflows/outputs/device-command/" target="_blank">Device Command node</a>.
+Now that we have all the data, we need to format it and send it to the device. For this purpose, we use the <a href="/workflows/outputs/device-command/" target="_blank">Device Command node</a>.
 
 ![Workflow Device Command](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-device-command.png "Workflow Device Command")
 
@@ -315,6 +315,7 @@ As seen earlier, we need to send the device `L1` and `L2`. In this node we can c
   "L2": "{{weather.body.currently.summary}} "
 }
 ```
+
 ### Deploy
 
 With all fields configured you can now deploy this workflow and begin sending data to your device.

@@ -87,7 +87,7 @@ If you don't already have an account, navigate to [https://accounts.losant.com/c
 
 ## 5. Create Application
 
-Create an <a href="https://docs.losant.com/applications/overview/" target="_blank">application</a> for the builder kit. You can name it whatever you want. In the example below, we used "Builder Kit".
+Create an <a href="/applications/overview/" target="_blank">application</a> for the builder kit. You can name it whatever you want. In the example below, we used "Builder Kit".
 
 ![Create Application](/images/getting-started/losant-iot-dev-kits/builder-kit/create-application.png "Create Application")
 
@@ -95,7 +95,7 @@ Create an <a href="https://docs.losant.com/applications/overview/" target="_blan
 
 ## 6. Add Device
 
-The next step is to register the builder kit <a href="https://docs.losant.com/devices/overview" target="_blank">device</a> with the platform. Click the `Add Device` button on the top right or select `Add Device` from the Devices dropdown.
+The next step is to register the builder kit <a href="/devices/overview" target="_blank">device</a> with the platform. Click the `Add Device` button on the top right or select `Add Device` from the Devices dropdown.
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-menu.png "Add Device Menu")
 
@@ -112,7 +112,7 @@ Next, choose the `Create Blank Device` option.
 1. For "Device Type", leave "Standalone" selected.
 1. Add one device attribute with the data type `Boolean` the name `button`.
 
-The <a href="https://docs.losant.com/devices/overview/#device-attributes" target="_blank">device attributes</a> specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed. Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
+The <a href="/devices/overview/#device-attributes" target="_blank">device attributes</a> specify what state information the device reports. The firmware that you’ll flash in the following sections will report whenever a button is pressed. Device attributes are ***case-sensitive***, so make sure to enter these ***exactly as they appear***.
 
 Click the `Create Device` button. The screen will change and show the device’s ID. This ID is required for the following sections. You might want to copy/paste it somewhere convenient.
 
@@ -208,7 +208,7 @@ It’s now time to go into Losant and make use of this data.
 
 ## 11. Create Workflow
 
-[Workflows](https://docs.losant.com/workflows/overview/) in Losant allow you to easily perform actions based on various triggers. In this workshop, our trigger will be a device state. Whenever the button is pressed, the device publishes a state message to Losant that we can use to trigger an action – for example, opening a ticket in Salesforce Service Cloud.
+[Workflows](/workflows/overview/) in Losant allow you to easily perform actions based on various triggers. In this workshop, our trigger will be a device state. Whenever the button is pressed, the device publishes a state message to Losant that we can use to trigger an action – for example, opening a ticket in Salesforce Service Cloud.
 
 **Create a new workflow and name it “Internet Button.”**
 
@@ -220,7 +220,7 @@ Start by **dragging a Device workflow trigger node to the canvas.** Then, on the
 
 ![Device Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/device-workflow-node.png "Device Workflow Node")
 
-Next, **add a [Debug node](https://docs.losant.com/workflows/outputs/debug/)** so you can test that the workflow is triggered when the button is pressed. This is also an opportunity to see what a workflow payload looks like. Understanding the payload will help make the following steps make sense.
+Next, **add a [Debug node](/workflows/outputs/debug/)** so you can test that the workflow is triggered when the button is pressed. This is also an opportunity to see what a workflow payload looks like. Understanding the payload will help make the following steps make sense.
 
 ![Debug Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/debug-workflow-node.png "Debug Workflow Node")
 

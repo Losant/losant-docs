@@ -142,7 +142,7 @@ Changing attributes in context can allow users to ...
 
 Currently there are no blocks whose returned data depends on a number attribute, but there are many ways in which a block's appearance can be altered using a number variable, such as:
 
-*   Minimum and maximum values can be defined on the axes of [time series graphs](/dashboards/time-series-graph) and [bar charts](/dashboards/bar-charts), as well as the bounds of a [gauge block](/dashboards/gauge).
+*   Minimum and maximum values can be defined on the axes of [time series graphs](/dashboards/time-series-graph/) and [bar charts](/dashboards/bar-chart/), as well as the bounds of a [gauge block](/dashboards/gauge/).
 *   Ranges on [input control blocks](/dashboards/input-controls/#range-inputs) can also have minimums, maximums and default values defined by number context variables.
 
 ### Strings

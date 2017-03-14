@@ -4,7 +4,7 @@ The Losant Particle Builder Kit provides an easy way to get up and running with 
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/builder-kit.jpg "Builder Kit")
 
-As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
+As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](/) and the [Losant Forums](https://forums.losant.com) for help.
 
 Your kit should include the following items:
 
@@ -140,7 +140,7 @@ At this point, all event data is now being published to Particle and then sent t
 
 ## Save Device Data
 
-Particle is pushing event data to Losant using a webhook. We need to catch those webhooks and send that data into the Losant device we created earlier. Fortunately this is very easy to do using a [Losant Workflow](https://docs.losant.com/workflows/overview/).
+Particle is pushing event data to Losant using a webhook. We need to catch those webhooks and send that data into the Losant device we created earlier. Fortunately this is very easy to do using a [Losant Workflow](/workflows/overview/).
 
 First, create a new workflow and name it anything you'd like.
 
@@ -150,11 +150,11 @@ First, create a new workflow and name it anything you'd like.
 
 ![Empty Workflow](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/empty-workflow.png "Empty Workflow")
 
-The first thing we need to do is trigger this workflow with the webhook that's being invoked by Particle. Start by dragging a [Webhook trigger](https://docs.losant.com/workflows/triggers/webhook/) onto the workflow canvas.
+The first thing we need to do is trigger this workflow with the webhook that's being invoked by Particle. Start by dragging a [Webhook trigger](/workflows/triggers/webhook/) onto the workflow canvas.
 
 ![Workflow Webhook](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/workflow-webhook.png "Workflow Webhook")
 
-Next, let's connect a [Debug node](https://docs.losant.com/workflows/outputs/debug/) so you can see what a workflow payload looks like. Every workflow is invoked by a trigger which includes a payload. In our example, the trigger is the webhook and the payload is whatever Particle sent us. As workflows execute, the payload flows through the nodes. Nodes can modify and make decisions based on the payload as needed. The Debug node simply logs the payload to the debug tab.
+Next, let's connect a [Debug node](/workflows/outputs/debug/) so you can see what a workflow payload looks like. Every workflow is invoked by a trigger which includes a payload. In our example, the trigger is the webhook and the payload is whatever Particle sent us. As workflows execute, the payload flows through the nodes. Nodes can modify and make decisions based on the payload as needed. The Debug node simply logs the payload to the debug tab.
 
 Drag a Debug node to the canvas and connect it to the Webhook node.
 
@@ -184,7 +184,7 @@ All triggers place their information on the `data` field of the payload. The web
 }
 ```
 
-Now that we have data coming from Particle and into Losant, it's time to send it to the device we created earlier. The first thing we need to do it branch the workflow using a [Conditional](https://docs.losant.com/workflows/logic/conditional/) node based on the event that Particle sends: "light-level" or "button-pressed".
+Now that we have data coming from Particle and into Losant, it's time to send it to the device we created earlier. The first thing we need to do it branch the workflow using a [Conditional](/workflows/logic/conditional/) node based on the event that Particle sends: "light-level" or "button-pressed".
 
 Drag two Conditional nodes onto the canvas and connect them to the Debug node.
 
@@ -290,7 +290,7 @@ As an additional challenge, see if you can send yourself an email or put a messa
 
 ## Remote-Controlled LED
 
-The last workshop we're going to do is to remotely control the LED whenever a virtual button is pressed in the workflow. Start by adding a [Virtual Button](https://docs.losant.com/workflows/triggers/virtual-button/) trigger and an HTTP node to the canvas.
+The last workshop we're going to do is to remotely control the LED whenever a virtual button is pressed in the workflow. Start by adding a [Virtual Button](/workflows/triggers/virtual-button/) trigger and an HTTP node to the canvas.
 
 ![Virtual Button](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/virtual-button.png "Virtual Button")
 

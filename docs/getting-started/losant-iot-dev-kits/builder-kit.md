@@ -4,7 +4,7 @@ The <a href="https://store.losant.com/products/losant-builder-kit" target="\_bla
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/kit-complete.jpg "Builder Kit")
 
-As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
+As you perform these workshops, if you run into any issues, please refer to the [Losant Documentation](/) and the [Losant Forums](https://forums.losant.com) for help.
 
 Your kit should include the following items:
 
@@ -170,7 +170,7 @@ It’s now time to go into Losant and make use of this data.
 
 ### Create Workflow
 
-[Workflows](https://docs.losant.com/workflows/overview/) in Losant allow you to easily perform actions based on various triggers. In this workshop, our trigger will be a device state. Whenever the button is pressed, the device publishes a state message to Losant that we can use to trigger an action – for example, sending an email.
+[Workflows](/workflows/overview/) in Losant allow you to easily perform actions based on various triggers. In this workshop, our trigger will be a device state. Whenever the button is pressed, the device publishes a state message to Losant that we can use to trigger an action – for example, sending an email.
 
 Create a new workflow and name it “Internet Button.”
 
@@ -182,7 +182,7 @@ Start by dragging a Device workflow trigger node to the canvas. Then, on the Dev
 
 ![Device Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/device-workflow-node.png "Device Workflow Node")
 
-Next, add a [Debug node](https://docs.losant.com/workflows/outputs/debug/) so you can test that the workflow is triggered when the button is pressed. This is also an opportunity to see what a workflow payload looks like. Understanding the payload will help make the following steps make sense.
+Next, add a [Debug node](/workflows/outputs/debug/) so you can test that the workflow is triggered when the button is pressed. This is also an opportunity to see what a workflow payload looks like. Understanding the payload will help make the following steps make sense.
 
 ![Debug Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/debug-workflow-node.png "Debug Workflow Node")
 
@@ -206,7 +206,7 @@ If you have an empty data field that does not include the button value, the typi
 
 You may remember that when you originally set up the device, we added an attribute named “button” whose data type was boolean. This is the attribute that the firmware we flashed is sending to Losant. There’s nothing special about the name “button”; we could have named it anything.
 
-Since the Device node can be triggered on any state request and we only want this workflow to run when the button attribute is sent, let’s add a [Conditional node](https://docs.losant.com/workflows/logic/conditional/) to check that the value of button is true. This will be important for the later workshops when the device starts sending other state information. We don’t want an email every time the device sends something.
+Since the Device node can be triggered on any state request and we only want this workflow to run when the button attribute is sent, let’s add a [Conditional node](/workflows/logic/conditional/) to check that the value of button is true. This will be important for the later workshops when the device starts sending other state information. We don’t want an email every time the device sends something.
 
 ![Conditional Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/conditional-workflow-node.png "Conditional Workflow Node")
 
@@ -226,7 +226,7 @@ The last step is to add the Email node to send yourself an email every time the 
 
 ![Email Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/email-workflow-node.png "Email Workflow Node")
 
-Losant has two email output nodes. The [Email](https://docs.losant.com/workflows/outputs/email/) node sends emails using Losant’s servers, but has a limit of one email per minute. If you need to send more than that, you can use the [SendGrid](https://docs.losant.com/workflows/outputs/sendgrid/) email node.
+Losant has two email output nodes. The [Email](/workflows/outputs/email/) node sends emails using Losant’s servers, but has a limit of one email per minute. If you need to send more than that, you can use the [SendGrid](/workflows/outputs/sendgrid/) email node.
 
 Enter your email address as a recipient. You can then specify any subject and body you’d like. All of these fields support templates, which means they could pull their values from the payload, but this doesn’t apply for our example. For now, simply type any text you'd like.
 
@@ -262,7 +262,7 @@ This workshop shows a lot of the power behind workflows. We've completely change
 
 In the previous workshop, we showed you how to make a physical button do something in the virtual world. In this example, we’re going show how a virtual button can do something in the physical world.
 
-Losant supports two major communication mechanisms – [states](https://docs.losant.com/devices/state/) and [commands](https://docs.losant.com/devices/commands/). You already saw how state works in the previous example. Commands allow you to send actions to the device. In this workshop, we’re going to send a “toggle” command that will turn on and off an LED.
+Losant supports two major communication mechanisms – [states](/devices/state/) and [commands](/devices/commands/). You already saw how state works in the previous example. Commands allow you to send actions to the device. In this workshop, we’re going to send a “toggle” command that will turn on and off an LED.
 
 ### Wiring
 

@@ -4,7 +4,7 @@ The <a href="https://store.losant.com/products/losant-moisture-sensor-kit" targe
 
 ![Moisture Sensor](/images/getting-started/losant-iot-dev-kits/moisture-sensor/moisture-sensor-header.jpg "Moisture Sensor")
 
-As you follow these instructions, if you run into any issues, please refer to the [Losant Documentation](https://docs.losant.com) and the [Losant Forums](https://forums.losant.com) for help.
+As you follow these instructions, if you run into any issues, please refer to the [Losant Documentation](/) and the [Losant Forums](https://forums.losant.com) for help.
 
 Your kit should include the following items:
 

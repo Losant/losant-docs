@@ -1,6 +1,6 @@
 # Indicator
 
-The Indicator block displays a color and message of your choosing based on the result returned from a [gauge query](workflows/data/gauge-query/).
+The Indicator block displays a color and message of your choosing based on the result returned from a [gauge query](/workflows/data/gauge-query/).
 
 ![Indicator Example](/images/dashboards/indicator-example.png "Indicator Example")
 
@@ -63,7 +63,7 @@ You may set as many conditions to test the result against as you wish. New condi
 Each condition takes three parameters:
 
 *   **Expression**: The [expression](/workflows/accessing-payload-data/#expressions) to evaluate. All of your query values (e.g. `{{value-0}}` and `{{value-1}}`) and times (e.g. `{{time-0}}` and `{{time-1}}`), as well as the `{{lastUpdated}}` variable, are available to compare against one another or against a static value.
-*   **Label**: The text to display within the indicator block. This field is optional, and may include [string templates](workflows/accessing-payload-data/#string-templates) formatting your query variables as well as [Markdown](http://commonmark.org/help/). The color of the text will automatically switch between black and white depending on the block's chosen background color.
+*   **Label**: The text to display within the indicator block. This field is optional, and may include [string templates](/workflows/accessing-payload-data/#string-templates) formatting your query variables as well as [Markdown](http://commonmark.org/help/). The color of the text will automatically switch between black and white depending on the block's chosen background color.
 *   **Color**: The background color of the indicator block. Default is green.
 
 ## Default Condition

@@ -116,6 +116,6 @@ That was just the surface of what you can do with the Losant Go App.  Using work
 
 
 To download the app, visit the [App Store](https://itunes.apple.com/us/app/losant-go/id1112244753?mt=8
-) or [Google Play](https://play.google.com/store/apps/details?id=com.losant.go&hl=en).
+) or [Google Play](https://play.google.com/store/apps/details?id=com.losant.goapp).
 
 <div class="badge-image-container"><a href="https://itunes.apple.com/us/app/losant-go/id1112244753?mt=8"><img src="/images/losant-go/app-store-badge.png" alt="Download on the App Store" title="Download on the App Store" /></a><a href="https://play.google.com/store/apps/details?id=com.losant.goapp&hl=en"><img src="/images/losant-go/google-play-badge.png" alt="Get it on Google Play" title="Get it on Google Play" /></a></div>
