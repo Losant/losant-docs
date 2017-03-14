@@ -1,6 +1,6 @@
 # Record Event Node
 
-The record event node allows a workflow to record an [event](/events/overview) for the current application.
+The record event node allows a workflow to record an [event](/events/overview/) for the current application.
 
 ![Record Event Node](/images/workflows/outputs/record-event-node.png "Record Event Node")
 
@@ -26,4 +26,4 @@ The record event node can optionally place the ID of the created event onto the 
 
 Event creation is limited to **one event per second per application**. In general, however, it is recommended that event creation be throttled even further using a [throttle node](/workflows/logic/throttle/) in case of a large burst of potential events, since there is almost never a need to create events that frequently.
 
-Events created through a workflow will be marked with a `sourceType` of `flow`, and a `sourceId` of the ID of the current workflow. This can be seen when viewing the event details page, or in the `data` provided to a workflow using the [event trigger](/workflows/triggers/event).
+Events created through a workflow will be marked with a `sourceType` of `flow`, and a `sourceId` of the ID of the current workflow. This can be seen when viewing the event details page, or in the `data` provided to a workflow using the [event trigger](/workflows/triggers/event/).

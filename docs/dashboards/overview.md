@@ -12,7 +12,7 @@ When creating a dashboard, you'll be asked for three pieces of information:
 
 -   **Dashboard Name:** You are required to name your new dashboard. The name can be changed at any time.
 -   **Description:** Optionally, you may also provide a more detailed description of the application.
--   **Owner:** The dashboard must be scoped to your personal [Sandbox](/user-accounts/sandbox) or to an [organization](/organizations/overview) for which you have the [Editor role](/organizations/members/#member-roles). The owner can be changed at a later date only if you have Administrator permissions for the parent organization (or Sandbox).
+-   **Owner:** The dashboard must be scoped to your personal [Sandbox](/user-accounts/sandbox/) or to an [organization](/organizations/overview/) for which you have the [Editor role](/organizations/members/#member-roles). The owner can be changed at a later date only if you have Administrator permissions for the parent organization (or Sandbox).
 
 Note that, should you choose to make your dashboard public, the name and description **will be visible** to those users.
 
@@ -30,7 +30,7 @@ Losant supports many different blocks for visualizing various pieces of informat
 
 ## Application Access
 
-Most dashboard blocks require an [application](/applications/overview) from which to fetch their data. Dashboards owned by an organization may only pull data from applications owned by that organization, whereas applications owned by a user's Sandbox may pull data from any application owned by the user **or** any organization the user is a member of. This allow users to build their own customized views from various projects across multiple organizations.
+Most dashboard blocks require an [application](/applications/overview/) from which to fetch their data. Dashboards owned by an organization may only pull data from applications owned by that organization, whereas applications owned by a user's Sandbox may pull data from any application owned by the user **or** any organization the user is a member of. This allow users to build their own customized views from various projects across multiple organizations.
 
 ## Editing Dashboards
 

@@ -1,6 +1,6 @@
 # Organizations
 
-Organizations allow users to unlock the full potential of the Losant platform by allowing multiple [members](/organizations/members) to collaborate on shared [applications](/applications/overview) and [dashboards](/dashboards/overview). Additionally, organizations have significantly higher limits than [Sandboxes](/user-accounts/sandbox) on [devices](/devices/overview), [payload counts](/organizations/resource-limits/#payloads-limits) and data retention periods, as well as additional platform support options.
+Organizations allow users to unlock the full potential of the Losant platform by allowing multiple [members](/organizations/members/) to collaborate on shared [applications](/applications/overview/) and [dashboards](/dashboards/overview/). Additionally, organizations have significantly higher limits than [Sandboxes](/user-accounts/sandbox/) on [devices](/devices/overview/), [payload counts](/organizations/resource-limits/#payloads-limits) and data retention periods, as well as additional platform support options.
 
 You can see all the organizations that you are a member of on the <a href="https://app.losant.com/#/organizations" target="\_blank">organization listing page</a> page, which can be found in the menu under your name on the top right of the screen.
 
@@ -38,11 +38,11 @@ When you're finished, click the `Create Organization` button at the bottom of th
 
 ## Creating Organization Resources
 
-If you have `Editor` permissions for at least one organization, you will have the option of setting the owner of any new application or dashboard you create to one of your organizations, or to your own [Sandbox](/user-accounts/sandbox).
+If you have `Editor` permissions for at least one organization, you will have the option of setting the owner of any new application or dashboard you create to one of your organizations, or to your own [Sandbox](/user-accounts/sandbox/).
 
 ![Organization New Resource Owner](/images/organizations/organization-new-resource-owner.png "Organization New Resource Owner")
 
-If the resource has already been created, and you have `Administrator` permissions for its owner organization, you will have the option of transferring ownership of that resource to another organization where you have `Administrator` permissions or to your own `Sandbox`. Note that, when transferring resources, the entity receiving the transfer must not exceed any of its [resource limits](/organizations/resource-limits) or the transfer will fail.
+If the resource has already been created, and you have `Administrator` permissions for its owner organization, you will have the option of transferring ownership of that resource to another organization where you have `Administrator` permissions or to your own `Sandbox`. Note that, when transferring resources, the entity receiving the transfer must not exceed any of its [resource limits](/organizations/resource-limits/) or the transfer will fail.
 
 ## Managing Organizations
 

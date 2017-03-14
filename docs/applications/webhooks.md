@@ -10,7 +10,7 @@ You can view the available webhooks under `Webhooks` in the Application menu bar
 
 ## Creating a Webhook
 
-Webhooks can be added to your application by using the `Add Webhook` button. A name is all that is required to create the webhook, which you will use to reference the webhook in [workflows](/workflows/overview) or other implementations. The name can be changed at any time.
+Webhooks can be added to your application by using the `Add Webhook` button. A name is all that is required to create the webhook, which you will use to reference the webhook in [workflows](/workflows/overview/) or other implementations. The name can be changed at any time.
 
 You also have the option to set verification and webhook reply options. More info on those is available below.
 

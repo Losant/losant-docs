@@ -27,7 +27,7 @@ You can name your application whatever you would like - in this case we have cal
 
 ## Step 3: Add the Device
 
-Now that we have an application we need a [device](/devices/overview) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu.  Choose `Create Blank Device` on the following screen, since we want to create from a blank device.
+Now that we have an application we need a [device](/devices/overview/) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu.  Choose `Create Blank Device` on the following screen, since we want to create from a blank device.
 
 ![Add Device](/images/getting-started/walkthrough/add-device.png "Add Device")
 
@@ -61,7 +61,7 @@ Name the workflow anything you like and provide an optional description.
 
 ### Timer Trigger
 
-All workflows start with a trigger. For this example, we simply want this workflow to run every couple of minutes and grab weather data. Drag a [timer trigger](/workflows/triggers/timer) onto the workflow canvas.
+All workflows start with a trigger. For this example, we simply want this workflow to run every couple of minutes and grab weather data. Drag a [timer trigger](/workflows/triggers/timer/) onto the workflow canvas.
 
 ![Timer Trigger](/images/getting-started/walkthrough/timer-trigger.png "Timer Trigger")
 
@@ -175,7 +175,7 @@ You can verify the device is properly reporting state by inspecting the recent d
 
 ## Step 6: Create a Dashboard
 
-Now that we've got weather data being stored, we can start to visualize it using Losant's [dashboarding tools](/dashboards/overview). Create a new dashboard using the `Dashboard` main menu. You can name it whatever you like.
+Now that we've got weather data being stored, we can start to visualize it using Losant's [dashboarding tools](/dashboards/overview/). Create a new dashboard using the `Dashboard` main menu. You can name it whatever you like.
 
 ![Create Dashboard](/images/getting-started/walkthrough/create-dashboard.png "Create Dashboard")
 
@@ -215,7 +215,7 @@ Next, let's add a graph that displays temperature vs. humidity over time. Click 
 
 ![Time Series Basic Settings](/images/getting-started/walkthrough/time-series-settings-1.png "Time Series Basic Settings")
 
-The [time series graph](/dashboards/time-series-graph) requires you to select a duration and a resolution. The duration is how far back in time you'd like to view. Since you don't have much data yet, select 60 minutes. As your device continues to collect weather data, you can increase this to view longer time periods if needed.
+The [time series graph](/dashboards/time-series-graph/) requires you to select a duration and a resolution. The duration is how far back in time you'd like to view. Since you don't have much data yet, select 60 minutes. As your device continues to collect weather data, you can increase this to view longer time periods if needed.
 
 The resolution is how far apart individual data points are. Select one minute for this example, which means you'll see a data point for every minute. Resolution works closely with the aggregator in the block data section. If you're collecting data more often than the resolution, it will be aggregated by the method you specify. This example will take the average of all data points each minute and graph the result.
 

@@ -89,7 +89,7 @@ String templates appear in a number of use places within the Losant platform; in
 
 ### Escaping HTML
 
-By default, HTML within a Handlebars helper is [escaped](http://handlebarsjs.com/#html-escaping) to prevent malformed HTML from breaking the page layout. If you wish to override this feature, put your string templates inside of triple curly brackets, e.g. `{{{aValueWithHtmlTags}}}`. You may, for example, wish to include HTML tags in the message body of the [Email node](/workflows/outputs/email).
+By default, HTML within a Handlebars helper is [escaped](http://handlebarsjs.com/#html-escaping) to prevent malformed HTML from breaking the page layout. If you wish to override this feature, put your string templates inside of triple curly brackets, e.g. `{{{aValueWithHtmlTags}}}`. You may, for example, wish to include HTML tags in the message body of the [Email node](/workflows/outputs/email/).
 
 ### Conditional Block Helpers
 
@@ -217,7 +217,7 @@ Using our example object from above, let's see what each of these string templat
 
 Sometimes it is necessary to evaluate our data and determine which of two (or many) paths to follow as a result of the evaluation, such as in the dashboard [Indicator block's expressions](/dashboards/indicator/) and the workflow [Conditional node](/workflows/logic/conditional/). In these cases we use **expressions**.
 
-An expression is a combination of string templates and [JavaScript operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) that forms a "JavaScript-like" expression after parsing through the Handlebars engine. The expression returns a value; depending on the use case, that value may be evaluated as [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) or [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) to determine which branch a workflow follows (as in the [Conditional node](/workflows/logic/conditional)), or the value may be added to a payload (as in the [Math node](/workflows/logic/math)).
+An expression is a combination of string templates and [JavaScript operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) that forms a "JavaScript-like" expression after parsing through the Handlebars engine. The expression returns a value; depending on the use case, that value may be evaluated as [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) or [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) to determine which branch a workflow follows (as in the [Conditional node](/workflows/logic/conditional/)), or the value may be added to a payload (as in the [Math node](/workflows/logic/math/)).
 
 Any operators or functions applied to a string template within an expression should be placed outside of the string template; for example, `{{foo}} > {{bar}}` or `!{{bat}}`.
 

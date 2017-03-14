@@ -16,7 +16,7 @@ There are three levels of organization membership:
 *   **Administrator**: At all times, an organization is required to have one member with the Administrator role. A member with the Administrator role can do everything a member with the Editor role can do, plus ...
     * Modify and manage the organization itself (name, description, billing plan)
     * Manage organization membership (invite / remove members and change member roles)
-    * [Transfer resources](/organizations/transferring-resources) to or from the organization, into or out of their own [Sandbox](/user-accounts/sandbox) or any organization where they are also an administrator.
+    * [Transfer resources](/organizations/transferring-resources/) to or from the organization, into or out of their own [Sandbox](/user-accounts/sandbox/) or any organization where they are also an administrator.
 
 ## Managing Existing Members
 

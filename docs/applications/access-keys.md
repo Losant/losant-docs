@@ -42,4 +42,4 @@ If an access key is no longer needed, or you believe it has been compromised, yo
 
 ## Using Access Keys
 
-To find out more on using access keys with our MQTT clients, checkout the various [Losant MQTT](/mqtt/overview) client libraries. To learn more about using access keys with our REST API, checkout the various [Losant REST](/rest-api/overview/) client libraries.
+To find out more on using access keys with our MQTT clients, checkout the various [Losant MQTT](/mqtt/overview/) client libraries. To learn more about using access keys with our REST API, checkout the various [Losant REST](/rest-api/overview/) client libraries.

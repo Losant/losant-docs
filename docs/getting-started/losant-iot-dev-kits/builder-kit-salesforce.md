@@ -95,7 +95,7 @@ Create an <a href="/applications/overview/" target="_blank">application</a> for 
 
 ## 6. Add Device
 
-The next step is to register the builder kit <a href="/devices/overview" target="_blank">device</a> with the platform. Click the `Add Device` button on the top right or select `Add Device` from the Devices dropdown.
+The next step is to register the builder kit <a href="/devices/overview/" target="_blank">device</a> with the platform. Click the `Add Device` button on the top right or select `Add Device` from the Devices dropdown.
 
 ![Add Device Menu](/images/getting-started/losant-iot-dev-kits/builder-kit/add-device-menu.png "Add Device Menu")
 

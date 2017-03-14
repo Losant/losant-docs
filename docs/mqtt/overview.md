@@ -61,7 +61,7 @@ Messages published to the Losant topics gain access to the full features of the 
 
 #### Publishing Device State
 
-A [device state](/devices/state) is likely the most commonly published message. When thinking in terms of sensor data, the device state is typically the value of one or more sensors. Note that the `time` property is optional, but that [reporting a time with state](/devices/state/#including-timestamps) can be beneficial depending on your use case.
+A [device state](/devices/state/) is likely the most commonly published message. When thinking in terms of sensor data, the device state is typically the value of one or more sensors. Note that the `time` property is optional, but that [reporting a time with state](/devices/state/#including-timestamps) can be beneficial depending on your use case.
 
 ###### Topic
 
@@ -96,11 +96,11 @@ When thinking in terms of sensor data, it's very likely you'll have an attribute
 }
 ```
 
-When a device publishes data in this format, Losant will automatically store the data and make it available in our [visualization tools](/dashboards/overview) as well as exposing it through [workflows](/workflows/overview). The attributes you send must first be configured on the device before Losant will accept the data.
+When a device publishes data in this format, Losant will automatically store the data and make it available in our [visualization tools](/dashboards/overview/) as well as exposing it through [workflows](/workflows/overview/). The attributes you send must first be configured on the device before Losant will accept the data.
 
 #### Subscribing to Commands
 
-[Commands](/devices/commands) instruct your device to perform a specific action. Commands are typically initiated using Losant workflows. Commands include a name and an optional payload. For example, if your device is a scrolling marquee, the command name might be "update text" and the payload would include the text to display.
+[Commands](/devices/commands/) instruct your device to perform a specific action. Commands are typically initiated using Losant workflows. Commands include a name and an optional payload. For example, if your device is a scrolling marquee, the command name might be "update text" and the payload would include the text to display.
 
 ###### Topic
 

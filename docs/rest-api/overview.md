@@ -29,7 +29,7 @@ Most endpoints on the Losant API require an api access token. This is done by pa
 
 You can obtain an Authorization Token to use to make authenticated requests by calling one of the [Auth](/rest-api/auth/) endpoints. There are two main endpoints, one for [authenticating as a user](/rest-api/auth/#authenticate-user), and one for [authenticating as a device](/rest-api/auth/#authenticate-device). The JSON response for either endpoint has a `token` field, which is the authorization token you should use in the Authorization header in subsequent requests that you want to perform as that user or device.
 
-You can also obtain api access tokens through the [Application API Tokens](/rest-api/application-api-tokens) and [Application API Token](/rest-api/application-api-token) resources. These resources allow you to create and manage api
+You can also obtain api access tokens through the [Application API Tokens](/rest-api/application-api-tokens/) and [Application API Token](/rest-api/application-api-token/) resources. These resources allow you to create and manage api
 access tokens specific to a particular application. By default, tokens created for an application will have the scope `all.Application` (and will therefore have access to any endpoints that accept the scope `all.Application`), but can be created with very specific scopes if desired. An application api token will only ever be able to access and manage resources within the application they were created in.
 
 ### User-Based Authentication
@@ -140,138 +140,138 @@ Each of the following is a resource on the Losant API, wrapping up functionality
 for a particular item or collection. See each resource documentation page for the
 particular actions that can be performed on that resource.
 
-*   [Application API Token](/rest-api/application-api-token)  
+*   [Application API Token](/rest-api/application-api-token/  
 Contains all the actions that can be performed against a single
 [API Access Token](/applications/application-tokens/) belonging to an application -
 for instance, getting info on a single token or revoking a token.
 
-*   [Application API Tokens](/rest-api/application-api-tokens)  
+*   [Application API Tokens](/rest-api/application-api-tokens/)  
 Contains all of the actions that can be performed against the collection of
 [API Access Tokens](/applications/application-tokens/) belonging to an Application -
 such as listing all tokens or creating a new token.
 
-*   [Application Key](/rest-api/application-key)  
+*   [Application Key](/rest-api/application-key/)  
 Contains all the actions that can be performed against a single
 [Application Key](/applications/access-keys/) -
 for instance, getting info on a single key or revoking a key.
 
-*   [Application Keys](/rest-api/application-keys)  
+*   [Application Keys](/rest-api/application-keys/)  
 Contains all of the actions that can be performed against the collection of
 [Application Keys](/applications/access-keys/) belonging
 to an Application - such as listing all keys or creating a new key.
 
-*   [Application](/rest-api/application)  
+*   [Application](/rest-api/application/)  
 Contains all of the actions that can be performed against a single
 [Application](/applications/overview/),
 which include things like getting info on an application or
 modifying an application.
 
-*   [Applications](/rest-api/applications)  
+*   [Applications](/rest-api/applications/)  
 Contains all of the actions that can be performed against the set of
 [Applications](/applications/overview/) that the
 currently authenticated user has access to - such as
 listing the applications or creating a new application.
 
-*   [Audit Log](/rest-api/audit-log)  
+*   [Audit Log](/rest-api/audit-log/)  
 Contains all of the actions that can be performed against a single
 [Audit Log](/organizations/audit-logs/) that belongs to an organization -
 such as viewing a log.
 
-*   [Audit Logs](/rest-api/audit-logs)  
+*   [Audit Logs](/rest-api/audit-logs/)  
 Contains all of the actions that can be performed against the set of
 [Audit Logs](/organizations/audit-logs/) that belong to an organization -
 such as listing the logs.
 
-*   [Auth](/rest-api/auth)  
+*   [Auth](/rest-api/auth/)  
 Contains the actions used for authenticating against the api, either as a
 user or as a device. The result of authentication calls contain the api access
 token needed for authenticated calls - see the examples for more details.
 
-*   [Dashboard](/rest-api/dashboard)  
+*   [Dashboard](/rest-api/dashboard/)  
 Contains all of the actions that can be performed against a single
 [Dashboard](/dashboards/overview/),
 which include things like getting info on a dashboard or
 modifying a dashboard.
 
-*   [Dashboards](/rest-api/dashboards)  
+*   [Dashboards](/rest-api/dashboards/)  
 Contains all of the actions that can be performed against the set of
 [Dashboards](/dashboards/overview/) that the
 currently authenticated user has access to - such as
 listing the dashboards or creating a new dashboard.
 
-*   [Data](/rest-api/data)  
+*   [Data](/rest-api/data/)  
 Contains the actions for querying against historical Device
 data across an Application.
 
-*   [Device](/rest-api/device)  
+*   [Device](/rest-api/device/)  
 Contains all the actions that can be performed against a single
 [Device](/devices/overview/) -
 for instance, getting info on a single device or reporting the current
 state of a device.
 
-*   [Devices](/rest-api/devices)  
+*   [Devices](/rest-api/devices/)  
 Contains all of the actions that can be performed against the collection of
 [Devices](/devices/overview/) belonging
 to an Application - such as listing all devices or sending a command to a set
 of devices.
 
-*   [Device Recipe](/rest-api/device-recipe)  
+*   [Device Recipe](/rest-api/device-recipe/)  
 Contains all the actions that can be performed against a single
 [Device Recipe](/devices/device-recipes/), which
 include things like removing a device recipe or creating a device
 from a device recipe.
 
-*   [Device Recipes](/rest-api/device-recipes)  
+*   [Device Recipes](/rest-api/device-recipes/)  
 Contains all the actions that can be performed against the collection of
 [Device Recipes](/devices/device-recipes/) belonging
 to an Application - such as listing recipes or creating a new recipe.
 
-*   [Event](/rest-api/event)  
+*   [Event](/rest-api/event/)  
 Contains all the actions that can be performed against a single
 [Event](/events/overview/), such as commenting on
 or changing the state of an event.
 
-*   [Events](/rest-api/events)  
+*   [Events](/rest-api/events/)  
 Contains all the actions that can be performed against the collection of
 [Events](/events/overview/) belonging
 to an Application - such as listing open events or creating a new event.
 
-*   [Workflow](/rest-api/flow)  
+*   [Workflow](/rest-api/flow/)  
 Contains all the actions that can be performed against a single
 [Workflow](/workflows/overview/), such as enabling or
 disabling a workflow, or triggering a virtual button in the workflow.
 
-*   [Workflows](/rest-api/flows)  
+*   [Workflows](/rest-api/flows/)  
 Contains all the actions that can be performed against the collection of
 [Workflows](/workflows/overview/) belonging
 to an Application - such as listing the workflows or creating a new workflow.
 
-*   [Me](/rest-api/me)  
+*   [Me](/rest-api/me/)  
 Contains the actions for operating against the currently authenticated
 [User](/user-accounts/overview/) such as changing
 the password or linking against external services.
 
-*   [Organization](/rest-api/org)  
+*   [Organization](/rest-api/org/)  
 Contains all the actions that can be performed against a single
 [Organization](/organizations/overview/), things like
 inviting a user to the organization, or modifying the organization.
 
-*   [Organizations](/rest-api/orgs)  
+*   [Organizations](/rest-api/orgs/)  
 Contains all of the actions that can be performed against the set of
 [Organizations](/organizations/overview/) that the
 currently authenticated user has access to - such as
 listing the organizations or creating a new organization.
 
-*   [Organization Invites](/rest-api/org-invites)  
+*   [Organization Invites](/rest-api/org-invites/)  
 Contains all of the actions that can be performed against a
 invitation to an organization, such as accepting the invitation.
 
-*   [Webhook](/rest-api/webhook)  
+*   [Webhook](/rest-api/webhook/)  
 Contains all the actions that can be performed against a single
 [Webhook](/applications/webhooks/), for instance
 modifying the verification settings or removing the webhook.
 
-*   [Webhooks](/rest-api/webhooks)  
+*   [Webhooks](/rest-api/webhooks/)  
 Contains all the actions that can be performed against the collection of
 [Webhooks](/applications/webhooks/) belonging
 to an Application - such as listing the webhooks or creating a new webhook.

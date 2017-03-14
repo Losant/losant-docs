@@ -6,7 +6,7 @@ The webhook trigger will trigger a workflow when the selected webhook receives a
 
 ## Configuration
 
-The configuration for the webhook trigger is relatively simple - just choose a webhook that has been set up for the application as described in the [webhook documentation](/applications/webhooks).
+The configuration for the webhook trigger is relatively simple - just choose a webhook that has been set up for the application as described in the [webhook documentation](/applications/webhooks/).
 
 ![Webhook Trigger Config](/images/workflows/triggers/webhook-trigger-config.png "Webhook Trigger Config")
 

@@ -1,6 +1,6 @@
 # Application API Tokens
 
-Application tokens allow you to interact with a single [application](/applications/overview) at a scope level you define. Using an application token, users can create, read, update or delete any child resource of the parent application – as well as the application itself.
+Application tokens allow you to interact with a single [application](/applications/overview/) at a scope level you define. Using an application token, users can create, read, update or delete any child resource of the parent application – as well as the application itself.
 
 ## Viewing Application Tokens
 
@@ -32,9 +32,9 @@ There are three options for setting the token's scope ...
 
 ![Application Token Permissions](/images/applications/application-token-permissions.png "Application Token Permissions")
 
-**All permissions** allows the token to create, read, update and delete sub-resources of the application, including (but not limited to) [devices](/devices/overview), [device state reports](/devices/state/), [workflows](/workflows/overview), additional application API tokens and the application itself. Losant resources and actions added in the future will automatically be accessible using an "All permissions" token.
+**All permissions** allows the token to create, read, update and delete sub-resources of the application, including (but not limited to) [devices](/devices/overview/), [device state reports](/devices/state/), [workflows](/workflows/overview/), additional application API tokens and the application itself. Losant resources and actions added in the future will automatically be accessible using an "All permissions" token.
 
-**Read only** allows the token to read – but not modify – any application sub-resource. This includes reading (but not reporting) device [state](/devices/state/) and [commands](/devices/commands), as well as [data queries](/rest-api/data/), [devices](/devices/overview), [workflows](/workflows/overview) and the application itself. Future Losant resources' "read" actions, as well as new "read" actions added to existing resources, will automatically be accessible using a "Read only" token.
+**Read only** allows the token to read – but not modify – any application sub-resource. This includes reading (but not reporting) device [state](/devices/state/) and [commands](/devices/commands/), as well as [data queries](/rest-api/data/), [devices](/devices/overview/), [workflows](/workflows/overview/) and the application itself. Future Losant resources' "read" actions, as well as new "read" actions added to existing resources, will automatically be accessible using a "Read only" token.
 
 **Custom ...** allows for selecting specific resource / action combinations from the [Losant REST API](/rest-api/application/) that the token should be allowed to access. Choosing this option reveals a list of all application-specific API calls in the Losant platform, each of which may be individually added to the token's scope. For example, to only allow the querying of device data for use in a third-party dashboard tool, you might select only the checkboxes shown in this screenshot ...
 

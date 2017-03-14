@@ -26,7 +26,7 @@ A "Device ID" is a [device query](/devices/device-queries/) that takes a single 
 
 ![Device ID Context](/images/dashboards/context-deviceId.png "Device ID Context")
 
-*   **Application ID** is the Losant [application](/applications/overview) to which any selected device must belong.
+*   **Application ID** is the Losant [application](/applications/overview/) to which any selected device must belong.
 *   **Default Value** is the device ID to use when no value is provided by the user.
 *   **Validation** is optional; it is a [device query](/devices/device-queries/) that accepts device IDs and/or [tags](/devices/overview/#device-tags) that the variable must match. If both IDs and tags are provided, the variable may match a specific ID, or the tag must be applied to the device. If multiple tags are defined in validation, the device must match **all** tags (or a provided ID). If no validation rules are provided, then any device from the selected application is valid. Note that the default value does not have to match your defined validation rules.
 
@@ -38,7 +38,7 @@ An "Attribute" is a single [device attribute](/devices/overview/#device-attribut
 
 ![Attribute Context](/images/dashboards/context-attribute.png "Attribute Context")
 
-*   **Application ID** is the Losant [application](/applications/overview) from which the attribute must originate.
+*   **Application ID** is the Losant [application](/applications/overview/) from which the attribute must originate.
 *   **Default Value** is the attribute to use when no value is provided by the user.
 *   **Validation** is optional; it is an array of attributes that the user is allowed to select. Every unique attribute from every device within the chosen application will be in the menu. Select one or more of these attributes to limit the user's options; alternatively, by providing no validation, the user may select any attribute from the application. Note that the default value does not have to match your defined validation rules.
 
@@ -121,7 +121,7 @@ Context variables of all types can be used in the dashboard's description and in
 
 A Device ID value can, for example, be used to ...
 
-*   Display data from a specific [device](/devices/overview) within your dashboard blocks
+*   Display data from a specific [device](/devices/overview/) within your dashboard blocks
 *   Highlight one device against an array of devices in [time series graphs](/dashboards/time-series-graph/)
 *   View data from a single device at a time within a [data table](/dashboards/data-table/)
 *   Color-coding [map pins](/dashboards/gps-history/#advanced-pin-style-configuration), [gauges](/dashboards/gauge/#conditional-gauge-colors) and [indicator blocks](/dashboards/indicator/#conditions) when viewing a specific device
@@ -151,8 +151,8 @@ Currently there are no blocks whose returned data depends on a number attribute,
 
 There are a number of possible uses for string attributes:
 
-*   Pass a value to the filter in the [event list](/dashboards/event-list) – or other resource lists.
-*   Change the axis labels in [time series graphs](/dashboards/time-series-graph) or [bar charts](/dashboards/bar-charts).
+*   Pass a value to the filter in the [event list](/dashboards/event-list/) – or other resource lists.
+*   Change the axis labels in [time series graphs](/dashboards/time-series-graph/) or [bar charts](/dashboards/bar-chart/).
 *   Set a URL for the site to display in an [external website block](/dashboards/external-website/).
 *   Send a different device command from the [input controls block](/dashboards/input-controls/#button-triggers).
 *   Define a custom map center in the [GPS history](/dashboards/gps-history/#default-viewport) or [heatmap](/dashboards/gps-heatmap/#default-viewport) blocks

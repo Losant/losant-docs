@@ -20,7 +20,7 @@ All workflows start with a trigger. There are many different triggers and each o
 
 ![Workflow Overview Trigger](/images/workflows/overview-trigger.png "Workflow Overview Trigger")
 
-In this example the trigger is a [device node](/workflows/triggers/device), which will run the payload whenever a device reports its [state](/devices/state). The device trigger places the state that was reported on the payload's data field. When the workflow starts, the payload will look like this:
+In this example the trigger is a [device node](/workflows/triggers/device/), which will run the payload whenever a device reports its [state](/devices/state/). The device trigger places the state that was reported on the payload's data field. When the workflow starts, the payload will look like this:
 
 ```json
 {
@@ -32,7 +32,7 @@ The workflow will then continue with this payload and pass it to the next node, 
 
 ### Temp High - Conditional Node
 
-[Conditional nodes](/workflows/logic/conditional) allow you to branch the workflow based on an [expression](/workflows/accessing-payload-data/#expressions) that evaluates to true or false. If the expression is true, the workflow branches right. If the expression is false, the workflow branches left.
+[Conditional nodes](/workflows/logic/conditional/) allow you to branch the workflow based on an [expression](/workflows/accessing-payload-data/#expressions) that evaluates to true or false. If the expression is true, the workflow branches right. If the expression is false, the workflow branches left.
 
 ![Workflow Overview Conditional](/images/workflows/overview-conditional.png "Workflow Overview Conditional")
 
@@ -46,7 +46,7 @@ Whenever this node is executed it will grab the `data.tempF` value in the payloa
 
 ### Convert ˚F to ˚C - Math Node
 
-[Math nodes](/workflows/logic/math) allow you to write mathematical expressions and store the result anywhere on the payload.
+[Math nodes](/workflows/logic/math/) allow you to write mathematical expressions and store the result anywhere on the payload.
 
 ![Workflow Overview Math](/images/workflows/overview-math.png "Workflow Overview Math")
 
@@ -75,7 +75,7 @@ This payload path will place the result of the math expression on the root of th
 
 ### SMS Node
 
-The [SMS node](/workflows/outputs/sms) allows you to send an SMS message one or more phone numbers. This example demonstrates how to use the newly modified payload in a useful way.
+The [SMS node](/workflows/outputs/sms/) allows you to send an SMS message one or more phone numbers. This example demonstrates how to use the newly modified payload in a useful way.
 
 ![Workflow Overview SMS](/images/workflows/overview-sms.png "Workflow Overview SMS")
 

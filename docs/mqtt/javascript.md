@@ -2,7 +2,7 @@
 
 The Losant JavaScript MQTT Client is a library for Node.js compatible compute modules. The library is open source and <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">available on GitHub</a>.
 
-Below is a basic example demonstrating how to connect, send [state](/devices/state), and subscribe to [commands](/devices/commands).
+Below is a basic example demonstrating how to connect, send [state](/devices/state/), and subscribe to [commands](/devices/commands/).
 
 ```javascript
 var Device = require('losant-mqtt').Device;

@@ -18,7 +18,7 @@ Command names and payloads can be anything. It's entirely up the device and its 
 
 ## Handling Commands
 
-Commands can currently only be received over an [MQTT connection](/mqtt/overview) to Losant. The Losant MQTT clients make connecting and receiving commands very easy for custom devices. All commands contain a name and an optional payload.
+Commands can currently only be received over an [MQTT connection](/mqtt/overview/) to Losant. The Losant MQTT clients make connecting and receiving commands very easy for custom devices. All commands contain a name and an optional payload.
 
 Below is an example of using the Losant Arduino MQTT client to handle a command and turn on an LED.
 

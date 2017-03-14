@@ -51,11 +51,11 @@ var device = new Device({
 device.connect();
 ```
 
-The device ID is obtained by first adding your [device](/devices/overview) to your Losant application. [Access keys](/applications/access-keys) allow you to grant access on a per-device or per-application basis.
+The device ID is obtained by first adding your [device](/devices/overview/) to your Losant application. [Access keys](/applications/access-keys/) allow you to grant access on a per-device or per-application basis.
 
 ## Sending State
 
-Once the device is connected you can begin reporting [state](/devices/state). For this example, the Edison will report the value of a TMP36 temperature sensor every one second.
+Once the device is connected you can begin reporting [state](/devices/state/). For this example, the Edison will report the value of a TMP36 temperature sensor every one second.
 
 ```javascript
 // Reading temperature from analog input.
@@ -80,7 +80,7 @@ setInterval(function() {
 
 ## Handling Commands
 
-[Commands](/devices/commands) allow you to instruct your device to take some kind of action. Commands include a name and an optional payload. Subscribing to commands is done by attaching the `command` event listener.
+[Commands](/devices/commands/) allow you to instruct your device to take some kind of action. Commands include a name and an optional payload. Subscribing to commands is done by attaching the `command` event listener.
 
 ```javascript
 // Attach event listener for commands.

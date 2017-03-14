@@ -180,7 +180,7 @@ This loops the underlying WiFiClientSecure instance and performs the necessary c
 That is all that's required to connect your device to Losant. Next, now we can send and receive data from Losant to put our device to use.
 
 ## Sending State
-[State](/devices/state) represents a snapshot of the device at a point in time. Frequently, a state will be data from a sensor. The [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101) has an onboard accelerometer, which could be the state that gets sent to Losant.
+[State](/devices/state/) represents a snapshot of the device at a point in time. Frequently, a state will be data from a sensor. The [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101) has an onboard accelerometer, which could be the state that gets sent to Losant.
 
 In this example, we will use a <a href="https://www.adafruit.com/product/165" target="_blank">temperature probe</a> connected to the analog input, A0. The state of a device is defined using one or more attributes. A device's state attributes are defined when the device is registered using Losant's web portal. This example will send a state update to Losant every 15 seconds with the "temperature" attribute. You will need to update the device you created earlier to accept this attribute
 
@@ -215,7 +215,7 @@ void loop() {
 Losant uses JSON payloads when reporting state. The above example maps to the JSON object `{ "temperature": value }`. Losant uses the [ArduinoJson](https://github.com/bblanchon/ArduinoJson) library to efficiently build JSON state payloads. The Losant header file automatically includes the ArduinoJson header file, so there's no need to explicitly include it in your sketch.
 
 ## Receiving Commands
-[Commands](/devices/commands) are sent from Losant to your device and act as a way to instruct the device to take some kind of action. Commands include a name and an optional JSON payload.
+[Commands](/devices/commands/) are sent from Losant to your device and act as a way to instruct the device to take some kind of action. Commands include a name and an optional JSON payload.
 
 Let's assume that we had a camera attached to our device and we needed to dynamically update resolution when the camera starts. An example command could be "start recording" with a payload of `{ "resolution": 1080 }`.
 

@@ -2,7 +2,7 @@
 
 The <a href="https://www.raspberrypi.org/" target="\_blank">Raspberry Pi</a> is a very popular compute module commonly used in IoT-related projects. This guide covers how to connect the Raspberry Pi to the Losant Platform.
 
-The example for this guide is a button that is connected to the GPIO on the Raspberry Pi. Whenever the button is pressed, a [state](/devices/state) message will be sent to the platform that can be used to trigger actions. To demonstrate device [commands](/devices/state), there is also an LED connected to GPIO that the platform can turn on and off.
+The example for this guide is a button that is connected to the GPIO on the Raspberry Pi. Whenever the button is pressed, a [state](/devices/state/) message will be sent to the platform that can be used to trigger actions. To demonstrate device [commands](/devices/state/), there is also an LED connected to GPIO that the platform can turn on and off.
 
 The source code for this example is <a href="https://github.com/Losant/example-raspberry-pi" target="\_blank">available on GitHub</a>.
 
@@ -41,13 +41,13 @@ Refer to <a href="https://www.raspberrypi.org/documentation/usage/gpio-plus-and-
 
 ## Add Device to Losant
 
-In Losant, <a href="https://accounts.losant.com/create-account" target="\_blank">create an account</a> and an [application](/applications/overview) if you haven't already.
+In Losant, <a href="https://accounts.losant.com/create-account" target="\_blank">create an account</a> and an [application](/applications/overview/) if you haven't already.
 
-Next, add a [new device](/devices/overview) for the Raspberry Pi. As mentioned before, this example only reports state when the button is pressed. So the only state attribute that's needed is `button`. Since a button usually just has an on/off value, set the data type to `Boolean`.
+Next, add a [new device](/devices/overview/) for the Raspberry Pi. As mentioned before, this example only reports state when the button is pressed. So the only state attribute that's needed is `button`. Since a button usually just has an on/off value, set the data type to `Boolean`.
 
 ![Create Raspberry Device](/images/getting-started/boards/create-raspberry-pi-device.png "Create Raspberry Device")
 
-Finally, create an [access key](/applications/access-keys), which you'll use to authenticate the device's connection.
+Finally, create an [access key](/applications/access-keys/), which you'll use to authenticate the device's connection.
 
 ## Send Button Presses
 
@@ -93,13 +93,13 @@ board.on('ready', function() {
 
 We first create a Losant device and then a Johnny Five board. Johnny Five handles the detection of the button presses, which we simply send to Losant using `sendState`.
 
-Once the states are being sent, [Losant workflows](/workflows/overview) allow you to trigger any number of useful actions. The below workflow will send an SMS message whenever the button is pressed.
+Once the states are being sent, [Losant workflows](/workflows/overview/) allow you to trigger any number of useful actions. The below workflow will send an SMS message whenever the button is pressed.
 
 ![SMS Workflow](/images/getting-started/boards/raspberry-sms-workflow.png "SMS Workflow")
 
 ## Toggle the LED
 
-Along with states, Losant also supports [commands](/devices/commands), which allow you instruct the device to take an action. For this example, the device will watch for a "toggle" command, which will cause it to toggle the LED.
+Along with states, Losant also supports [commands](/devices/commands/), which allow you instruct the device to take an action. For this example, the device will watch for a "toggle" command, which will cause it to toggle the LED.
 
 ```javascript
 board.on('ready', function() {

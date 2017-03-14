@@ -8,7 +8,7 @@ Devices can be added to your application on the `Devices` menu or using the `Add
 
 ![Add Device](/images/devices/add-device.png "Add Device")
 
-When adding a device, you have a choice between creating a device from scratch, or creating a device based off of a [device recipe](/devices/device-recipes).  When creating a device from scratch, all device configuration fields will start off blank.  When creating a device from a recipe, the recipe is used as an initial template for the device, and so the new device will be initially filled in with the configuration from the recipe (which you can override however you would like before actually saving the new device).
+When adding a device, you have a choice between creating a device from scratch, or creating a device based off of a [device recipe](/devices/device-recipes/).  When creating a device from scratch, all device configuration fields will start off blank.  When creating a device from a recipe, the recipe is used as an initial template for the device, and so the new device will be initially filled in with the configuration from the recipe (which you can override however you would like before actually saving the new device).
 
 ![Device Creation Options](/images/devices/device-creation-options.png "Device Creation Options")
 
@@ -47,11 +47,11 @@ Your device's state attributes are one of the most important configuration optio
 
 The above example would work for a thermostat device. It has two attributes. One is named `inside-temp` and one is named `temp-setting`. This device would likely report the `inside-temp` every few minutes and only report `temp-setting` when the user has changed the setting.
 
-Refer to the [device state](/devices/state) documentation for further details about state.
+Refer to the [device state](/devices/state/) documentation for further details about state.
 
 ### Device Tags
 
-Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries) for targeting devices by tag within the platform.
+Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries/) for targeting devices by tag within the platform.
 
 ![Device Tags](/images/devices/device-tags.png "Device Tags")
 
