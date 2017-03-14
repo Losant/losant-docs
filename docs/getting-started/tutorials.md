@@ -4,6 +4,10 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/speech-synthesis-on-the-raspberry-pi-using-node.js" target="_blank">Getting Started With the ESP8266 and DHT22 Sensor</a>
+
+*   <a href="https://www.losant.com/blog/how-to-access-your-raspberry-pis-gpio-over-the-internet" target="_blank">How To Access Your Raspberry Pi's GPIO Over the Internet</a>
+
 *   <a href="https://www.losant.com/blog/speech-synthesis-on-the-raspberry-pi-using-node.js" target="_blank">Speech Synthesis on the Raspberry Pi Using Node.js</a>
 
 *   <a href="https://www.losant.com/blog/how-to-connect-linkedin-and-slack-using-losant" target="_blank">How to Connect LinkedIn and Slack Using Losant</a>
@@ -64,9 +68,15 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## Losant Community Projects
 
-*   <a href="https://help.iotify.io/network-simulator/guides/simulating-connected-vehicle-with-iotify" target="_blank">Simulating a connected vehicle with IoTIFY</a>
+*   <a href="https://www.hackster.io/rorpage/displaying-my-garage-door-status-with-losant-80a984" target="_blank">Displaying My Garage Door Status with Losant</a>
 
-*   <a href="https://help.iotify.io/virtual-lab/smart-trash-iot-with-iotify-and-losant" target="_blank">Smart Trash IoT with IoTIFY and Losant</a>
+*   <a href="https://www.hackster.io/mc-Things/wireless-iot-door-open-closed-sensor-194e46" target="_blank">Wireless IoT Door Open/Closed Sensor</a>
+
+*   <a href="https://www.hackster.io/mc-Things/wireless-temperature-sensor-network-mcthings-losant-e756a9" target="_blank">Wireless Temperature Sensor Network - mcThings & Losant</a>
+
+*   <a href="https://iotify.help/network/connected-vehicle.html" target="_blank">Simulating a connected vehicle with IoTIFY and Losant</a>
+
+*   <a href="https://iotify.help/network/smart-city/waste-mgmt.html" target="_blank">Waste Management with IoTIFY and Losant</a>
 
 *   <a href="https://www.hackster.io/mschaus/soil-moisture-sensor-over-cellular-for-remote-garden-plot-794c1b" target="_blank">Soil Moisture Sensor Over Cellular for Remote Garden Plot</a>
 
