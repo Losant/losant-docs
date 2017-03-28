@@ -150,6 +150,12 @@ pages:
     - Devices: rest-api/devices.md
     - Event: rest-api/event.md
     - Events: rest-api/events.md
+    - Experience Endpoint: rest-api/experience-endpoint.md
+    - Experience Endpoints: rest-api/experience-endpoints.md
+    - Experience Group: rest-api/experience-group.md
+    - Experience Groups: rest-api/experience-groups.md
+    - Experience User: rest-api/experience-user.md
+    - Experience Users: rest-api/experience-users.md
     - Me: rest-api/me.md
     - Organization: rest-api/org.md
     - Organizations: rest-api/orgs.md

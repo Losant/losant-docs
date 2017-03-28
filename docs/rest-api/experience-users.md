@@ -1,23 +1,23 @@
-# Flows Actions
+# Experience Users Actions
 
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+https://api.losant.com/applications/**`APPLICATION_ID`**/experience/users
 
 Below are the various requests that can be performed against the
-Flows resource, as well as the expected
+Experience Users resource, as well as the expected
 parameters and the potential responses.
 
 ## Get
 
-Returns the flows for an application
+Returns the experience users for an application
 
 #### Method And Url
 
-GET https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/users
 
 #### Authentication
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, flows.*, or flows.get.
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceUsers.*, or experienceUsers.get.
 
 #### Request Path Components
 
@@ -29,13 +29,13 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate | name | name |
+| sortField | N | Field to sort the results by. Accepted values are: firstName, lastName, email, id, creationDate, lastLogin | email | email |
 | sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
 | page | N | Which page of results to return | 0 | 0 |
 | perPage | N | How many items to return per page | 1000 | 10 |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*flow |
-| triggerFilter | N | Array of triggers to filter by. See [Workflow Trigger Filter](schemas.md#workflow-trigger-filter) for more details. |  | [Workflow Trigger Filter Example](schemas.md#workflow-trigger-filter-example) |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: firstName, lastName, email |  | email |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*user |
+| experienceGroupId | N | Filter users to those only in the specified group |  | 575ec8687ae143cd83dc4a97 |
 
 #### Request Headers
 
@@ -50,7 +50,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
-    https://api.losant.com/applications/APPLICATION_ID/flows
+    https://api.losant.com/applications/APPLICATION_ID/experience/users
 ```
 <br/>
 
@@ -58,7 +58,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Workflows](schemas.md#workflows) | Collection of flows |
+| 200 | [Experience Users](schemas.md#experience-users) | Collection of experience users |
 
 #### Error Responses
 
@@ -71,16 +71,16 @@ curl -H 'Content-Type: application/json' \
 
 ## Post
 
-Create a new flow for an application
+Create a new experience user for an application
 
 #### Method And Url
 
-POST https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/users
 
 #### Authentication
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Organization, all.User, flows.*, or flows.create.
+all.Application, all.Organization, all.User, experienceUsers.*, or experienceUsers.post.
 
 #### Request Path Components
 
@@ -97,13 +97,18 @@ all.Application, all.Organization, all.User, flows.*, or flows.create.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Workflow Post](schemas.md#workflow-post) schema.  For example, the following would be a
+the [Experience User Post](schemas.md#experience-user-post) schema.  For example, the following would be a
 valid body for this request:
 
 ```json
 {
-  "name": "My New Workflow",
-  "description": "Description of my new workflow"
+  "email": "example@experienceuser.com",
+  "firstName": "Example",
+  "lastName": "Name",
+  "password": "aUserPassword",
+  "userTags": {
+    "customKey": "customValue"
+  }
 }
 ```
 <small><br/></small>
@@ -115,8 +120,8 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"name":"My New Workflow","description":"Description of my new workflow"}' \
-    https://api.losant.com/applications/APPLICATION_ID/flows
+    -d '{"email":"example@experienceuser.com","firstName":"Example","lastName":"Name","password":"aUserPassword","userTags":{"customKey":"customValue"}}' \
+    https://api.losant.com/applications/APPLICATION_ID/experience/users
 ```
 <br/>
 
@@ -124,7 +129,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Workflow](schemas.md#workflow) | Successfully created flow |
+| 201 | [Experience User](schemas.md#experience-user) | Successfully created experience user |
 
 #### Error Responses
 

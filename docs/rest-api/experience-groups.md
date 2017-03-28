@@ -1,23 +1,23 @@
-# Flows Actions
+# Experience Groups Actions
 
-https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+https://api.losant.com/applications/**`APPLICATION_ID`**/experience/groups
 
 Below are the various requests that can be performed against the
-Flows resource, as well as the expected
+Experience Groups resource, as well as the expected
 parameters and the potential responses.
 
 ## Get
 
-Returns the flows for an application
+Returns the experience groups for an application
 
 #### Method And Url
 
-GET https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/groups
 
 #### Authentication
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, flows.*, or flows.get.
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceGroups.*, or experienceGroups.get.
 
 #### Request Path Components
 
@@ -34,8 +34,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | page | N | Which page of results to return | 0 | 0 |
 | perPage | N | How many items to return per page | 1000 | 10 |
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*flow |
-| triggerFilter | N | Array of triggers to filter by. See [Workflow Trigger Filter](schemas.md#workflow-trigger-filter) for more details. |  | [Workflow Trigger Filter Example](schemas.md#workflow-trigger-filter-example) |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*group |
 
 #### Request Headers
 
@@ -50,7 +49,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
-    https://api.losant.com/applications/APPLICATION_ID/flows
+    https://api.losant.com/applications/APPLICATION_ID/experience/groups
 ```
 <br/>
 
@@ -58,7 +57,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Workflows](schemas.md#workflows) | Collection of flows |
+| 200 | [Experience Groups](schemas.md#experience-groups) | Collection of experience groups |
 
 #### Error Responses
 
@@ -71,16 +70,16 @@ curl -H 'Content-Type: application/json' \
 
 ## Post
 
-Create a new flow for an application
+Create a new experience group for an application
 
 #### Method And Url
 
-POST https://api.losant.com/applications/**`APPLICATION_ID`**/flows
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/groups
 
 #### Authentication
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Organization, all.User, flows.*, or flows.create.
+all.Application, all.Organization, all.User, experienceGroups.*, or experienceGroups.post.
 
 #### Request Path Components
 
@@ -97,13 +96,20 @@ all.Application, all.Organization, all.User, flows.*, or flows.create.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Workflow Post](schemas.md#workflow-post) schema.  For example, the following would be a
+the [Experience Group Post](schemas.md#experience-group-post) schema.  For example, the following would be a
 valid body for this request:
 
 ```json
 {
-  "name": "My New Workflow",
-  "description": "Description of my new workflow"
+  "name": "My Group",
+  "experienceUserIds": [
+    "575ed70c7ae143cd83dc4aa9",
+    "675ed70c7ae143cd83dc4aa9"
+  ],
+  "experienceEndpointIds": [
+    "58b9d743cbfafe1be675744b",
+    "58b9d743cbfafe1be675744c"
+  ]
 }
 ```
 <small><br/></small>
@@ -115,8 +121,8 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"name":"My New Workflow","description":"Description of my new workflow"}' \
-    https://api.losant.com/applications/APPLICATION_ID/flows
+    -d '{"name":"My Group","experienceUserIds":["575ed70c7ae143cd83dc4aa9","675ed70c7ae143cd83dc4aa9"],"experienceEndpointIds":["58b9d743cbfafe1be675744b","58b9d743cbfafe1be675744c"]}' \
+    https://api.losant.com/applications/APPLICATION_ID/experience/groups
 ```
 <br/>
 
@@ -124,7 +130,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Workflow](schemas.md#workflow) | Successfully created flow |
+| 201 | [Experience Group](schemas.md#experience-group) | Successfully created experience group |
 
 #### Error Responses
 
