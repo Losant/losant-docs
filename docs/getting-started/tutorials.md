@@ -4,7 +4,11 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
-*   <a href="https://www.losant.com/blog/speech-synthesis-on-the-raspberry-pi-using-node.js" target="_blank">Getting Started With the ESP8266 and DHT22 Sensor</a>
+*   <a href="https://www.losant.com/blog/getting-started-with-chip-and-losant" target="_blank">Getting Started with CHIP and Losant</a>
+
+*   <a href="https://www.losant.com/blog/making-the-esp8266-low-powered-with-deep-sleep" target="_blank">Making the ESP8266 Low-Powered With Deep Sleep</a>
+
+*   <a href="https://www.losant.com/blog/getting-started-with-the-esp8266-and-dht22-sensor" target="_blank">Getting Started With the ESP8266 and DHT22 Sensor</a>
 
 *   <a href="https://www.losant.com/blog/how-to-access-your-raspberry-pis-gpio-over-the-internet" target="_blank">How To Access Your Raspberry Pi's GPIO Over the Internet</a>
 
@@ -67,6 +71,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 *   <a href="https://www.losant.com/blog/how-to-connect-a-particle-photon-to-the-losant-iot-platform" target="_blank">How to connect a Particle Photon to the Losant IoT Platform</a>
 
 ## Losant Community Projects
+
+*   <a href="https://www.hackster.io/firmwareguru/losant-with-seeed-studio-grove-on-msp432-d01e6f" target="_blank">Losant with Seeed Studio Grove on MSP432</a>
 
 *   <a href="https://www.hackster.io/rorpage/displaying-my-garage-door-status-with-losant-80a984" target="_blank">Displaying My Garage Door Status with Losant</a>
 
