@@ -38,12 +38,15 @@ As a general rule, any request that creates, edits or deletes a Losant resource 
 *   Creation, revocation, acceptance or deletion of any [member invitation](/organizations/members/#inviting-new-members)
 *   [Transfer of resources](/organizations/overview/#transferring-resources) to or from the organization, whether the other party is another organization or a [user's Sandbox](/user-accounts/sandbox/)
 *   Creation or deletion of any [application](/applications/overview/) or [dashboard](/dashboards/overview/) owned by the organization, or edits to those resources. This includes application sub-resources, such as:
-    * [Devices](/devices/overview/)
-    * [Workflows](/workflows/overview/)
     * [Access Keys](/applications/access-keys/)
     * [Application API Tokens](/applications/application-tokens/)
+    * [Devices](/devices/overview/)
+    * [Device Recipes](/devices/device-recipes/)
+    * [Experience Endpoints](/experiences/endpoints/)
+    * [Experience Groups](/experiences/groups/)
+    * [Experience Users](/experiences/users/)
     * [Webhooks](/applications/webhooks/)
-    * [Device recipes](/devices/device-recipes/)
+    * [Workflows](/workflows/overview/)
 
 ## What's Not Recorded
 
