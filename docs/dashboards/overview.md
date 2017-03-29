@@ -34,9 +34,25 @@ Most dashboard blocks require an [application](/applications/overview/) from whi
 
 ## Editing Dashboards
 
-Dashboard blocks and be dynamically resized and dragged for the arrangement that most meets your specific needs.
+Dashboard blocks can be resized and rearranged to any layout that fits your needs. To move a block, grab the block's header bar with your mouse and move it around the dashboard. To resize a block, grab its bottom right corner with your mouse and expand or contract it vertically or horizontally.
 
 ![Dashboard Animation](/images/dashboards/overview-animation.gif "Dashboard Animation")
+
+### Edit Block Configuration
+
+Block configuration – the settings that handle the data displayed and the style of its presentation – can be edited any time after initial block creation. To edit a block, hover your mouse over the block's title bar and click the "Edit" icon (gear). This will take you to a screen where the configuration can be changed.
+
+![Dashboard Edit Icon](/images/dashboards/dashboard-block-edit-icon.png "Dashboard Edit Icon")
+
+Each block type is different; check out each type's entry in the documentation for details on editing its respective configuration.
+
+### Clone an Existing Block
+
+If you have multiple blocks that have similar configurations, it may be quicker to start from one of the blocks, make a few edits and then push a new block to your dashboard. In these cases, cloning an existing block can save time.
+
+![Dashboard Clone Button](/images/dashboards/dashboard-block-clone-btn.png "Dashboard Clone Button")
+
+From an existing block's configuration page, click "Clone Block" in the footer. This will take you to a new page where the block's settings can be adjusted. **Note:** The block will not actually be added to the dashboard until you click "Add Block" at the bottom of this page.
 
 ## Display Settings
 
