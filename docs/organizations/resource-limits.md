@@ -21,6 +21,7 @@ Though limits do not directly apply to [applications](/applications/overview/), 
 The following resources limits are strictly enforced. It is not possible to create additional resources within a Sandbox or organization without upgrading:
 
 -   **Devices** - This includes all [device types](/devices/overview/#device-type), regardless of whether they connect to the Losant platform
+-   **Experience Users** - This covers all [experience users](/experiences/users/) that exist within the owned applications
 -   **Organization members** - This includes current members (regardless of their role) and pending - but not expired - invitations
 
 ### Message Throttling
@@ -58,12 +59,13 @@ We also supply a detailed breakdown of the number of payloads by type so that yo
 -   Device connections to and disconnections from the [Losant broker](/mqtt/overview/#the-losant-message-broker)
 -   Workflow [timer triggers](/workflows/triggers/timer/)
 -   Incoming [webhook](/applications/webhooks/) requests
+-   Incoming [experience endpoint](/experiences/endpoints/) requests
 -   Workflow virtual buttons presses, including those triggered by an [Input Controls](/dashboards/input-controls/) block
 -   MQTT inbound and outbound messages (other than those listed above)
 
 **These interactions do NOT count as a payload:**
 
--   Losant [event](/events/overview/) creations and modifications
+-   Losant [event](/applications/events/) creations and modifications
 -   [Data requests](/rest-api/data/), including those made by Losant dashboards and [device data exports](/devices/overview/)
 -   [Webhook replies](/workflows/outputs/webhook-reply/) in workflows
 -   Workflow runs triggered by another workflow
@@ -74,10 +76,12 @@ Other resources within the Losant platform are subject to "soft limits." Though 
 
 Soft-limited resources include:
 
--   [Applications](/applications/overview/)
--   [Dashboards](/dashboards/overview/)
--   [Workflows](/workflows/overview/)
 -   [Access Keys](/applications/access-keys/)
 -   [Application API Tokens](/applications/application-tokens/)
--   [Webhooks](/applications/webhooks/)
+-   [Applications](/applications/overview/)
+-   [Dashboards](/dashboards/overview/)
 -   [Device Recipes](/devices/device-recipes/)
+-   [Experience Endpoints](/experiences/endpoints/)
+-   [Experience Groups](/experiences/groups/)
+-   [Webhooks](/applications/webhooks/)
+-   [Workflows](/workflows/overview/)

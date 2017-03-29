@@ -36,9 +36,8 @@ pages:
     - Access Keys: applications/access-keys.md
     - Application Tokens: applications/application-tokens.md
     - Data Explorer: applications/data-explorer.md
+    - Events: applications/events.md
     - Webhooks: applications/webhooks.md
-- Events:
-    - Overview: events/overview.md
 - Experiences:
     - Overview: experiences/overview.md
     - Endpoints: experiences/endpoints.md
