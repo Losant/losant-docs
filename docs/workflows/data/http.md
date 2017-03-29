@@ -44,7 +44,7 @@ So with the above example, given the following payload:
 
 The node will make a GET request to `https://rrtp.comed.com/api?type=5minutefeed` with no body, but with the header `User-Agent` set to `Losant/568dcdee86985501006360ba`. When the request responds, the workflow will continue with the response on the payload in `data.pricing`, potentially looking like:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -70,7 +70,7 @@ The node will make a GET request to `https://rrtp.comed.com/api?type=5minutefeed
     }
   },
   "applicationId": "568beedeb436ab01007be53d",
-  "applicationName": "Embree"
+  "applicationName": "Embree",
   "triggerId": "f6094780d98111e5883a37908659487f",
   "triggerType": "timer",
   "flowId": "568dcdee86985501006360ba",
