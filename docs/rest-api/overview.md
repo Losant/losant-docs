@@ -140,7 +140,7 @@ Each of the following is a resource on the Losant API, wrapping up functionality
 for a particular item or collection. See each resource documentation page for the
 particular actions that can be performed on that resource.
 
-*   [Application API Token](/rest-api/application-api-token/  
+*   [Application API Token](/rest-api/application-api-token/)  
 Contains all the actions that can be performed against a single
 [API Access Token](/applications/application-tokens/) belonging to an application -
 for instance, getting info on a single token or revoking a token.
