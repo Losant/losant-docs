@@ -39,6 +39,11 @@ pages:
     - Webhooks: applications/webhooks.md
 - Events:
     - Overview: events/overview.md
+- Experiences:
+    - Overview: experiences/overview.md
+    - Endpoints: experiences/endpoints.md
+    - Groups: experiences/groups.md
+    - Users: experiences/users.md
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
@@ -73,11 +78,19 @@ pages:
         - Device: workflows/triggers/device.md
         - On Connect: workflows/triggers/on-connect.md
         - On Disconnect: workflows/triggers/on-disconnect.md
+        - Endpoint: workflows/triggers/endpoint.md
         - Event: workflows/triggers/event.md
         - MQTT: workflows/triggers/mqtt.md
         - Timer: workflows/triggers/timer.md
         - Virtual Button: workflows/triggers/virtual-button.md
         - Webhook: workflows/triggers/webhook.md
+    - Experience:
+        - Authenticate: workflows/experience/authenticate.md
+        - Create User: workflows/experience/create-user.md
+        - Delete User: workflows/experience/delete-user.md
+        - Generate Token: workflows/experience/generate-token.md
+        - Get User: workflows/experience/get-user.md
+        - Update User: workflows/experience/update-user.md
     - Logic:
         - Conditional: workflows/logic/conditional.md
         - Delay: workflows/logic/delay.md
@@ -98,6 +111,7 @@ pages:
     - Data:
         - AWS Lambda: workflows/data/aws-lambda.md
         - Gauge Query: workflows/data/gauge-query.md
+        - Get Device: workflows/data/get-device.md
         - Get Value: workflows/data/get-value.md
         - HTTP: workflows/data/http.md
         - Losant API: workflows/data/losant-api.md
@@ -110,13 +124,14 @@ pages:
         - Debug: workflows/outputs/debug.md
         - Device Command: workflows/outputs/device-command.md
         - Device State: workflows/outputs/device-state.md
-        - Record Event: workflows/outputs/record-event.md
+        - Email: workflows/outputs/email.md
+        - Endpoint Reply: workflows/outputs/endpoint-reply.md
         - HTTP: workflows/outputs/http.md
         - Modify Event: workflows/outputs/modify-event.md
         - MQTT: workflows/outputs/mqtt.md
+        - Record Event: workflows/outputs/record-event.md
         - SendGrid: workflows/outputs/sendgrid.md
         - Slack: workflows/outputs/slack.md
-        - Email: workflows/outputs/email.md
         - SMS: workflows/outputs/sms.md
         - Tweet: workflows/outputs/tweet.md
         - Twilio: workflows/outputs/twilio.md

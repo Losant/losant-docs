@@ -140,7 +140,7 @@ Each of the following is a resource on the Losant API, wrapping up functionality
 for a particular item or collection. See each resource documentation page for the
 particular actions that can be performed on that resource.
 
-*   [Application API Token](/rest-api/application-api-token/  
+*   [Application API Token](/rest-api/application-api-token/)  
 Contains all the actions that can be performed against a single
 [API Access Token](/applications/application-tokens/) belonging to an application -
 for instance, getting info on a single token or revoking a token.
@@ -236,15 +236,34 @@ Contains all the actions that can be performed against the collection of
 [Events](/events/overview/) belonging
 to an Application - such as listing open events or creating a new event.
 
-*   [Workflow](/rest-api/flow/)  
+*   [Experience Endpoint](/rest-api/experience-endpoint/)  
 Contains all the actions that can be performed against a single
-[Workflow](/workflows/overview/), such as enabling or
-disabling a workflow, or triggering a virtual button in the workflow.
+[Experience Endpoint](/experiences/endpoints/), such as updating route
+information.
 
-*   [Workflows](/rest-api/flows/)  
+*   [Experience Endpoints](/rest-api/experience-endpoints/)  
 Contains all the actions that can be performed against the collection of
-[Workflows](/workflows/overview/) belonging
-to an Application - such as listing the workflows or creating a new workflow.
+[Experience Endpoints](/experiences/endpoints/) belonging
+to an Application - such as listing endpoints or creating a new endpoint.
+
+*   [Experience Group](/rest-api/experience-group/)  
+Contains all the actions that can be performed against a single
+[Experience Group](/experiences/groups/), such as updating member information.
+
+*   [Experience Groups](/rest-api/experience-groups/)  
+Contains all the actions that can be performed against the collection of
+[Experience Groups](/experiences/groups/) belonging
+to an Application - such as listing groups or creating a new group.
+
+*   [Experience User](/rest-api/experience-user/)  
+Contains all the actions that can be performed against a single
+[Experience User](/experiences/users/), such as changing their email
+or password.
+
+*   [Experience Users](/rest-api/experience-users/)  
+Contains all the actions that can be performed against the collection of
+[Experience Users](/experiences/users/) belonging
+to an Application - such as listing users or creating a new user.
 
 *   [Me](/rest-api/me/)  
 Contains the actions for operating against the currently authenticated
@@ -275,3 +294,13 @@ modifying the verification settings or removing the webhook.
 Contains all the actions that can be performed against the collection of
 [Webhooks](/applications/webhooks/) belonging
 to an Application - such as listing the webhooks or creating a new webhook.
+
+*   [Workflow](/rest-api/flow/)  
+Contains all the actions that can be performed against a single
+[Workflow](/workflows/overview/), such as enabling or
+disabling a workflow, or triggering a virtual button in the workflow.
+
+*   [Workflows](/rest-api/flows/)  
+Contains all the actions that can be performed against the collection of
+[Workflows](/workflows/overview/) belonging
+to an Application - such as listing the workflows or creating a new workflow.
