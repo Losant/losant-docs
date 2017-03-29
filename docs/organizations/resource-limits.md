@@ -63,7 +63,7 @@ We also supply a detailed breakdown of the number of payloads by type so that yo
 
 **These interactions do NOT count as a payload:**
 
--   Losant [event](/events/overview/) creations and modifications
+-   Losant [event](/applications/events/) creations and modifications
 -   [Data requests](/rest-api/data/), including those made by Losant dashboards and [device data exports](/devices/overview/)
 -   [Webhook replies](/workflows/outputs/webhook-reply/) in workflows
 -   Workflow runs triggered by another workflow

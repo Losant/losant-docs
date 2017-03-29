@@ -1,6 +1,6 @@
 # Record Event Node
 
-The record event node allows a workflow to record an [event](/events/overview/) for the current application.
+The record event node allows a workflow to record an [event](/applications/events/) for the current application.
 
 ![Record Event Node](/images/workflows/outputs/record-event-node.png "Record Event Node")
 

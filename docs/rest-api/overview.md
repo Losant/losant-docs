@@ -228,12 +228,12 @@ to an Application - such as listing recipes or creating a new recipe.
 
 *   [Event](/rest-api/event/)  
 Contains all the actions that can be performed against a single
-[Event](/events/overview/), such as commenting on
+[Event](/applications/events/), such as commenting on
 or changing the state of an event.
 
 *   [Events](/rest-api/events/)  
 Contains all the actions that can be performed against the collection of
-[Events](/events/overview/) belonging
+[Events](/applications/events/) belonging
 to an Application - such as listing open events or creating a new event.
 
 *   [Experience Endpoint](/rest-api/experience-endpoint/)  

@@ -1,6 +1,6 @@
 # Record Event Node
 
-The modify event node allows a workflow to change the state of an existing [event](/events/overview/).
+The modify event node allows a workflow to change the state of an existing [event](/applications/events/).
 
 ![Modify Event Node](/images/workflows/outputs/modify-event-node.png "Modify Event Node")
 
