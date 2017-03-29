@@ -44,6 +44,12 @@ pages:
     - Endpoints: experiences/endpoints.md
     - Groups: experiences/groups.md
     - Users: experiences/users.md
+    - Walkthrough:
+        - Overview: experiences/walkthrough/overview.md
+        - Part 1 - User Registration: experiences/walkthrough/part1.md
+        - Part 2 - Device Registration: experiences/walkthrough/part2.md
+        - Part 3 - Viewing Device Data: experiences/walkthrough/part3.md
+        - Part 4 - Configuring Alerts: experiences/walkthrough/part4.md
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
