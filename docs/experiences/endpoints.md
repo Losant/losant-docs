@@ -8,7 +8,7 @@ An Experience Endpoint is a combination of an HTTP method and a route that, when
 
 Endpoints are listed within the "Endpoints" tab of your application's "Experience" subsection. There is also a list of Endpoints on the Experience overview page, sorted by most times invoked in the last 24 hours.
 
-Click an endpoint's route in the list to view its configuration, make
+Click an endpoint's route in the list to view its configuration, make edits or view workflows associated with the endpoint.
 
 ## Adding an Experience Endpoint
 
