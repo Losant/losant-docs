@@ -16,7 +16,7 @@ The query result will be stored at the [payload path](/workflows/accessing-paylo
 
 ![Get Device Node Result](/images/workflows/data/get-device-node-config-result.png "Get Device Node Result")
 
-In the example above, the workflow will retrieve the device that has the `sigfox_id` tag matching the value at `data.body.device` on the payload. It is only expecting a single device to be returned, and will place the resulting device at `data.losantDevice` with the tags in object form.  For example, the payload after the Get Device node runs might look like the following:
+In the example above, the workflow will retrieve the device that has the `sigfox_id` tag matching the value at `data.body.device` on the payload. It is only expecting a single device to be returned, and will place the resulting device at `data.losantDevice` with the tags in object form. For example, the payload after the Get Device node runs might look like the following:
 
 ```json
 {
