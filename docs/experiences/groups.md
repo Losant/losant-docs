@@ -6,7 +6,7 @@ An Experience Group is a collection of [users](/experiences/users/) and [endpoin
 
 ![Experience Groups](/images/experiences/groups-list.png "Experience Groups")
 
-Groups are listed within the "Groups" tab of your application's "Experience" subsection. Click group's name in the list to view its users and endpoints and to edit its configuration.
+Groups are listed within the "Groups" tab of your application's "Experience" subsection. Click the group's name in the list to view its users and endpoints and to edit its configuration.
 
 ## Adding an Experience Group
 

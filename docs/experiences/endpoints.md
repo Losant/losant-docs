@@ -58,7 +58,7 @@ Endpoint access – the ability of a user to invoke an endpoint with an HTTP req
     * A **query parameter** added to the URL (e.g. `https://my-custom-slug.onlosant.com/my-user?authorization=[my-token]`)
     * An **Authorization HTTP header** with the value `Bearer [my-token]`
     * A **Cookie HTTP header**, if you set a cookie in the user's browser when they originally authenticated
-*  **Only users who are in the following groups...** limits access to signed-in users who are a member of any one of the specified [Experience Groups](/experiences/groups). This is useful for building routes that have special privileges (such as resource editing permissions or Experience administration) that you do not want to provide to your normal population of users. To add a group to the endpoint, select the radio button next to the label and begin typing one or more group names into the input. You may also create new groups directly from this interface.
+*  **Only users who are in the following groups...** limits access to signed-in users who are a member of any one of the specified [Experience Groups](/experiences/groups). This is useful for building routes that have special privileges (such as resource editing permissions or Experience administration) that you do not want to provide to your normal population of users. To add a group to the endpoint, select the radio button next to the label and begin typing one or more group names into the input. You may also create new groups directly from this interface. Simply type the name of a group that does not yet exist.
 
 ### Other Properties
 
@@ -95,4 +95,4 @@ If a command line interface isn't your thing, one of the better (and free) HTTP 
 
 ## Deleting Endpoints
 
-An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on the list page, or by clicking the "Delete" button in the footer of an endpoint's edit page.
+An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on the list page, or by clicking the "Delete" button in the footer of an endpoint's edit page. Deleting an endpoint will automatically remove it from any of its [Experience Groups](/experiences/groups).
