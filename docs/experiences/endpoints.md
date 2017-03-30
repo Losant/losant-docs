@@ -40,10 +40,10 @@ There are a number of rules to consider when building your routes:
 
 *   **A single route may only be used once per method.** However. a route of `/my-route` can be set up with a GET method for one endpoint and a POST method for another endpoint, and both are valid.
 *   **Routes are matched by order of specificity.** The more specific a route, the earlier in the process it is checked when a request comes in. The first route that matches the path in the HTTP request will be invoked. Losant takes care of ordering the routes by specificity for you, based on the rules outlined here.
-*   **Routes can contain string literals, path parameters and wildcards.** For example, given the route `/boats/{boatId}/{captain?}` ...
-    * `boats` is a **string literal**, which is a static route parameter. String literals always take priority over the other parts of a route, meaning `/users/danny` will match before `/users/{name}` if "danny" is included in the `name` spot.
-    * `{boatId}` is a **required path parameter**. If a request is made to `/boats/` without a `{boatId}` after the trailing slash, the request will fail (unless you have also specified a `/boats` route matching that method).
-    * `{captain?}` is an **optional path parameter**; a request to `/boats/123` and `/boats/123/ron` will both succeed and will both invoke the same endpoint, but the latter will include `{captain: "ron"}` as part of the payload passed to your workflow.
+*   **Routes can contain string literals, path parameters and wildcards.** For example, given the route `/devices/{deviceId}/{attribute?}` ...
+    * `devices` is a **string literal**, which is a static route parameter. String literals always take priority over the other parts of a route, meaning `/users/danny` will match before `/users/{name}` if "danny" is included in the `name` spot.
+    * `{deviceId}` is a **required path parameter**. If a request is made to `/devices/` without a `{deviceId}` after the trailing slash, the request will fail (unless you have also specified a `/devices` route matching that method).
+    * `{attribute?}` is an **optional path parameter**; a request to `/devices/123` and `/devices/123/temp` will both succeed and will both invoke the same endpoint, but the latter will include `{"attribute": "temp"}` as part of the payload passed to your workflow.
 *   **Routes must not conflict with each other.** The most common example of routes conflicting is with the use of path parameters at the same priority level; for example, a route of `/{deviceId}` and `/{userId}` will conflict because, behind the scenes, the router does not know if the value in that part of the path is a device ID or a user ID. For this reason, it is a good idea to start your routes with a descriptive string, such as `/devices/{deviceId}` and `/users/{userId}`. If you attempt to create a route that conflicts with another route, you will be alerted of the error.
 *   **Routes can contain wildcards.** Wildcards must be used with care, as they will match any request. A typical use case for a wildcard is if you want to create your own `404 Not Found` HTTP response; in that case, you would configure a route of `/{var*}`, where `var` is whatever the user entered after the first slash in their custom Experience domain.
 
@@ -68,3 +68,15 @@ There are a couple additional properties to set on each endpoint:
 
 *   **Enabled**: Whether this endpoint should accept HTTP requests and issue responses. If the endpoint is not enabled, Losant will automatically issue a response of `404 Not Found - {"error": "No endpoint found for route"}`.
 *   **Description**: A simple description of the endpoint. This is for internal use only; it will never be visible to Experience Users.
+
+## Testing Endpoints
+
+One of the more popular request builders is [curl](https://curl.haxx.se/), a CLI for sending HTTP requests. If you are familiar with curl, chances are you already know how to build requests and test your endpoints.
+
+![Postman](/images/experiences/endpoints-postman.png "Postman")
+
+If a command line interface isn't your thing, one of the better (and free) HTTP request builders is Google Chrome's [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en). The application includes a GUI for building requests for any HTTP method, including payload bodies in JSON format, setting route parameters, defining headers, and everything else you need to test your endpoints.
+
+## Deleting Endpoints
+
+An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on the list page, or by clicking the "Delete" button in the footer of an endpoint's edit page.
