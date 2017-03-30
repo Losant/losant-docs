@@ -14,14 +14,14 @@ In the above example, the workflow will be triggered whenever the "External Comm
 
 ## Payload
 
-The payload for a workflow triggered by a webhook will include all of the information about the triggering request in the `data` field.  This includes the request path, the request method, any request headers, any request query parameters, and the request body. The `path` field will not include the entire path, but only any path after the root path of the webhook. If the request body is JSON and the Content Type is `application/json`, it will be parsed automatically into a JSON object, otherwise the `body` field will be left as a string. In the general case, a webhook workflow payload will look like the following:
+The payload for a workflow triggered by a webhook will include all of the information about the triggering request in the `data` field. This includes the request path, the request method, any request headers, any request query parameters, and the request body. The `path` field will not include the entire path, but only any path after the root path of the webhook.If there is no body present, the value for the body field will be `null`. Otherwise, if the content type is `multipart/form-data`, `application/x-www-form-urlencoded`, or `application/json` and the request body is valid for that content type, it will automatically be parsed into an object. For other content types, such as `text/plain`, the body will be left as a string. In the general case, a webhook workflow payload will look like the following:
 
 ```json
 {
   "time": <time of the trigger>,
   "data": {
     "path": <the path of the request>,
-    "method": <the request method - "post" or "put" or "patch" or "delete" >,
+    "method": <the request method - delete|get|patch|post|put >,
     "headers": <any request headers>,
     "query": <any request query params>,
     "body": <the request body>,
