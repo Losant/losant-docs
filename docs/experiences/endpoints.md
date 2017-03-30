@@ -69,6 +69,21 @@ There are a couple additional properties to set on each endpoint:
 *   **Enabled**: Whether this endpoint should accept HTTP requests and issue responses. If the endpoint is not enabled, Losant will automatically issue a response of `404 Not Found - {"error": "No endpoint found for route"}`.
 *   **Description**: A simple description of the endpoint. This is for internal use only; it will never be visible to Experience Users.
 
+## Endpoints and Workflows
+
+Every endpoint is powered by a [Losant workflow](/workflows/overview/) built by you. The workflow is initiated by an [Endpoint Trigger node](/workflows/triggers/endpoint/) configured to match your endpoint's method and route. From there, you can use any nodes within the workflow editor to parse your user's request, issue a response using an [Endpoint Reply node](/workflows/outputs/endpoint-reply/), and take auxiliary actions (such as [sending data](/workflows/data/http/) to a third party or issuing alerts via [email](/workflows/outputs/email/) or [SMS](/workflows/outputs/sms/)).
+
+![Endpoint Workflow List](/images/experiences/endpoint-workflow-list.png "Endpoint Workflow List")
+
+At the bottom of an endpoint's edit page is a list of all workflows that contain an Endpoint Trigger node that matches that endpoint's method and route. If no such workflows exist, you have the option of creating a workflow that will contain a trigger, a basic reply and a [Debug node](/workflows/outputs/debug/). This can serve as a getting started template for configuring your new endpoint; you simply have to fill in the logic between the trigger and the reply.
+
+### Experience User Nodes
+
+There are a number of nodes built specifically for working with your [Experience Users](/experiences/users/). Using these nodes, you can ...
+*   [Create](/workflows/experience/create-user/), [get](/workflows/experience/get-user/), [update](/workflows/experience/update-user/) or [delete](/workflows/experience/delete-user/) a user
+*   [Check the authentication credentials](/workflows/experience/authenticate/) of a user
+*   [Generate a token](/workflows/experience/generate-token/) for a user of your choosing (if, for example, you are building your own system of authentication)
+
 ## Testing Endpoints
 
 One of the more popular request builders is [curl](https://curl.haxx.se/), a CLI for sending HTTP requests. If you are familiar with curl, chances are you already know how to build requests and test your endpoints.
