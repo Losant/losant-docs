@@ -16,7 +16,7 @@ The [payload path](/workflows/accessing-payload-data/#payload-paths) defines whe
 
 In the above example, the workflow will fetch the value stored under the identifier `storedColor`, and will place that value in the current payload at the path `data.color`. If there is no value stored under `storedColor`, the workflow will place `0` in `data.color` instead. So, in the case that the value `12562` was stored under the `storedColor` identifier and the workflow was executed with the following payload:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": { },
@@ -25,7 +25,7 @@ In the above example, the workflow will fetch the value stored under the identif
   "triggerId": "56c794a06895b00100cbe84c",
   "triggerType": "deviceId",
   "deviceTags": { },
-  "deviceName": "Ranger"
+  "deviceName": "Ranger",
   "globals": { },
   "flowId": "56c794a06895b00100cbe84c",
   "flowName": "Range To Color"
@@ -34,7 +34,7 @@ In the above example, the workflow will fetch the value stored under the identif
 
 The payload after the execution of the get value node would look like:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -45,7 +45,7 @@ The payload after the execution of the get value node would look like:
   "triggerId": "56c794a06895b00100cbe84c",
   "triggerType": "deviceId",
   "deviceTags": { },
-  "deviceName": "Ranger"
+  "deviceName": "Ranger",
   "globals": { },
   "flowId": "56c794a06895b00100cbe84c",
   "flowName": "Range To Color"

@@ -37,6 +37,6 @@ The payload after the execution of the example gauge query node above would look
   "triggerId": "56c794a06895b00100cbe84c",
   "triggerType": "timer",
   "flowId": "56c794a06895b00100cbe84c",
-  "flowName": "Query Data",
+  "flowName": "Query Data"
 }
 ```

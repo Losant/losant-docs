@@ -22,7 +22,7 @@ Finally, we can configure a place to put the result of the API request.  This is
 
 After a successful response for the above request, the payload might look like the following:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -57,7 +57,7 @@ After a successful response for the above request, the payload might look like t
 
 After an error response for the above request, the payload might look like this instead:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
