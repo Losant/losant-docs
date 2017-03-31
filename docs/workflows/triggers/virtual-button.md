@@ -1,18 +1,18 @@
 # Virtual Button Trigger
 
-The virtual button trigger will trigger a workflow when the "virtual button" is pressed.  The common use case of the virtual button is to debug and test workflows, without having to wait for an external trigger of some kind.
+The virtual button trigger will trigger a workflow when the "virtual button" is pressed. The common use case of the virtual button is to debug and test workflows, without having to wait for an external trigger of some kind.
 
 ![Virtual Button Trigger](/images/workflows/triggers/virtual-button-trigger.png "Virtual Button Trigger")
 
 ## Triggering The Workflow
 
-A workflow can be triggered by the virtual button in one of two ways.  Either press the "Trigger Flow!" button in the properties panel for the virtual button node, or press the button on the node itself.
+A workflow can be triggered by the virtual button in one of two ways. Either press the "Trigger Flow!" button in the properties panel for the virtual button node, or press the button on the node itself.
 
 ![Virtual Button Triggering A Flow](/images/workflows/triggers/virtual-button-trigger-buttons.png "Virtual Button Triggering A Flow")
 
 ## Configuration
 
-The virtual button can be configured to have a specific payload sent when the button triggers the workflow.  This payload must be a valid JSON object, and will be placed on the standard `data` field of the payload when the workflow runs.  The payload field can be left empty, in which case an empty object is used as the payload.
+The virtual button can be configured to have a specific payload sent when the button triggers the workflow. This payload must be a valid JSON object, and will be placed on the standard `data` field of the payload when the workflow runs. The payload field can be left empty, in which case an empty object is used as the payload.
 
 ![Virtual Button Trigger Config](/images/workflows/triggers/virtual-button-trigger-config.png "Virtual Button Trigger Config")
 
@@ -20,7 +20,7 @@ In the above example, the workflow will run with the `data` payload of `{"power"
 
 ## Payload
 
-As just discussed, the configuration of the virtual button directly determines what will be included on the payload.  In the general case, a virtual button workflow payload will look like the following:
+As just discussed, the configuration of the virtual button directly determines what will be included on the payload. In the general case, a virtual button workflow payload will look like the following:
 
 ```json
 {

@@ -10,7 +10,7 @@ There are two configuration properties for the JSON encode node - the [payload p
 
 ![JSON Encode Node Config](/images/workflows/logic/json-encode-node-config.png "JSON Encode Node Config")
 
-In the above example, the workflow will encode the value at the `container.jsonObject` path and place the resulting string at the `container.jsonString` path.  So, for example, given the following payload:
+In the above example, the workflow will encode the value at the `container.jsonObject` path and place the resulting string at the `container.jsonString` path. So, for example, given the following payload:
 
 ```json
 {

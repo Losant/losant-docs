@@ -6,7 +6,7 @@ The MQTT trigger will trigger a workflow whenever a message is sent to the confi
 
 ## Configuration
 
-The only configuration needed for this node is the topic name to trigger on.  The node supports valid MQTT topic names.  The topic is not allowed to be a wildcard topic, a MQTT system topic, or a Losant specific topic.
+The only configuration needed for this node is the topic name to trigger on. The node supports valid MQTT topic names. The topic is not allowed to be a wildcard topic, a MQTT system topic, or a Losant specific topic.
 
 ![MQTT Trigger Config](/images/workflows/triggers/mqtt-trigger-config.png "MQTT Trigger Config")
 
@@ -14,7 +14,7 @@ In the above example, the workflow will be triggered whenever any message is pub
 
 ## Payload
 
-The payload will include the payload of the MQTT message on the `data` field, as well as the standard workflow payload information.  Unlike most other triggers, where the value of the `data` field is an object, the value of `data` for the MQTT trigger will be a string.  In the general case, a MQTT workflow payload will look like the following:
+The payload will include the payload of the MQTT message on the `data` field, as well as the standard workflow payload information. Unlike most other triggers, where the value of the `data` field is an object, the value of `data` for the MQTT trigger will be a string. In the general case, a MQTT workflow payload will look like the following:
 
 ```json
 {

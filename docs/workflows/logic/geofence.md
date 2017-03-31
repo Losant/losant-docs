@@ -38,13 +38,13 @@ No matter which type is selected, the field will also accept a [string template]
 
 ![Geofence Node Center Config](/images/workflows/logic/geofence-node-center-config.png "Geofence Node Center Config")
 
-The center point coordinates can be defined the same was as the input coordinates, in any one of the five formats described above.  While in the common case, the center point coordinate values will be static, these fields also support [string templates](/workflows/accessing-payload-data/#string-templates) in case a dynamic center point is needed. Because the common case is a static center point, a map visualization is displayed to help show the real world location of the geofence. In the above example, the center point coordinates are defined statically using decimal degrees.
+The center point coordinates can be defined the same was as the input coordinates, in any one of the five formats described above. While in the common case, the center point coordinate values will be static, these fields also support [string templates](/workflows/accessing-payload-data/#string-templates) in case a dynamic center point is needed. Because the common case is a static center point, a map visualization is displayed to help show the real world location of the geofence. In the above example, the center point coordinates are defined statically using decimal degrees.
 
 ### Radius Configuration
 
 ![Geofence Node Radius Config](/images/workflows/logic/geofence-node-radius-config.png "Geofence Node Radius Config")
 
-The radius of the center point is defined in meters, and must be greater than 0.  If the radius is defined as 0 meters, only an exact match between the center point and input point will count as being "within" the geofence.  In the common case, the radius will be defined as a static value, but the field does support [string templates](/workflows/accessing-payload-data/#string-templates) in case the radius needs to be dynamically defined based upon the current payload. If the radius (and center point) are defined statically, the map visualization will show the extent of the real world location of the geofence. In the above example, the radius is defined as 50 meters, and the map shows what that actually covers in the physical world.
+The radius of the center point is defined in meters, and must be greater than 0. If the radius is defined as 0 meters, only an exact match between the center point and input point will count as being "within" the geofence. In the common case, the radius will be defined as a static value, but the field does support [string templates](/workflows/accessing-payload-data/#string-templates) in case the radius needs to be dynamically defined based upon the current payload. If the radius (and center point) are defined statically, the map visualization will show the extent of the real world location of the geofence. In the above example, the radius is defined as 50 meters, and the map shows what that actually covers in the physical world.
 
 ### Adding Distance or Branch to the Payload
 
@@ -52,7 +52,7 @@ The radius of the center point is defined in meters, and must be greater than 0.
 
 The geofence node has the ability to optionally add the calculated distance between the input and center point to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the geofence node is taken. If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the path. In the above example, the distance between the input and center coordinates will be placed at the `data.distance.work` path.
 
-The node also has the ability to optionally add which branch out of the node was taken to the payload.  If a path is defined, `true` or `false` will be placed at the given path, depending on which branch out of the node is taken. In the above example, the branch taken will be placed at the `data.geobranch.work` path.
+The node also has the ability to optionally add which branch out of the node was taken to the payload. If a path is defined, `true` or `false` will be placed at the given path, depending on which branch out of the node is taken. In the above example, the branch taken will be placed at the `data.geobranch.work` path.
 
  So, for example, given the following payload:
 

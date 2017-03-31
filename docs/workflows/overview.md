@@ -137,25 +137,25 @@ Once a workflow has been deployed, it will take effect immediately.
 
 ## Import / Export
 
-Workflows can be exported to a file, and can later be imported from that file into a workflow in a different (or the same) application.  Exporting a workflow can be done from the main workflow properties panel.
+Workflows can be exported to a file, and can later be imported from that file into a workflow in a different (or the same) application. Exporting a workflow can be done from the main workflow properties panel.
 
 ![Export Workflow](/images/workflows/workflow-export.png "Export Workflow")
 
-There is one option for exporting a workflow, and that is if the values for the global config should be included in the export.  The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
+There is one option for exporting a workflow, and that is if the values for the global config should be included in the export. The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
 
-The most common case when importing a workflow will be importing into a blank workflow - however, Losant also supports importing into a workflow with existing nodes.  In that case, the nodes for the imported workflow are just added alongside the existing nodes.  Importing a workflow can be done right below the export option on the main workflow properties panel.
+The most common case when importing a workflow will be importing into a blank workflow - however, Losant also supports importing into a workflow with existing nodes. In that case, the nodes for the imported workflow are just added alongside the existing nodes. Importing a workflow can be done right below the export option on the main workflow properties panel.
 
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 
-When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application.  So for instance, when importing a workflow across applications, things like a selected device ID on a device trigger will be cleared, since that ID will not exist in the application being imported to.
+When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application. So for instance, when importing a workflow across applications, things like a selected device ID on a device trigger will be cleared, since that ID will not exist in the application being imported to.
 
 ## Workflow Globals
 
-Workflows can have a set of global config keys - which are essentially keys/value pairs added to the payload under the `globals` key whenever the workflow runs.  This is a great place to store configuration values or API keys, especially if they are needed for use in multiple different nodes.  Globals can be accessed through the "Globals" tab of the properties panel.
+Workflows can have a set of global config keys - which are essentially keys/value pairs added to the payload under the `globals` key whenever the workflow runs. This is a great place to store configuration values or API keys, especially if they are needed for use in multiple different nodes. Globals can be accessed through the "Globals" tab of the properties panel.
 
 ![Workflow Globals](/images/workflows/workflow-globals.png "Workflow Globals")
 
-In the above example, there are 3 global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `632-538-0975`).  Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value.  Whenever the workflow runs, the payload will always include these global values.  For the above example, a payload might end up looking like the following:
+In the above example, there are 3 global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `632-538-0975`). Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value. Whenever the workflow runs, the payload will always include these global values. For the above example, a payload might end up looking like the following:
 
 ```json
 {
@@ -184,12 +184,12 @@ And these values will be accessible in any node configuration that expects paylo
 
 ## Workflow Storage
 
-The workflow storage interface lets you view and manipulate the persistent workflow storage.  This is the storage space used by the [Get Value](/workflows/data/get-value/) and [Store Value](/workflows/data/store-value/) nodes.  The storage interface is located under the "Storage" tab in the workflow properties editor.
+The workflow storage interface lets you view and manipulate the persistent workflow storage. This is the storage space used by the [Get Value](/workflows/data/get-value/) and [Store Value](/workflows/data/store-value/) nodes. The storage interface is located under the "Storage" tab in the workflow properties editor.
 
 ![Workflow Storage](/images/workflows/workflow-storage.png "Workflow Storage")
 
-In the top half of the interface, you can add new storage entries or modify existing ones.  Specify the identifier to add (or change), specify the value and the Data Type, and click `Set Value`.  The data type can be `String` (the value is treated as a string), `Number` (the value is treated as a number), or `JSON` (the value is parsed as JSON).  the JSON data type can be used to set complex objects or arrays, or even just `true`/`false`/`null`.
+In the top half of the interface, you can add new storage entries or modify existing ones. Specify the identifier to add (or change), specify the value and the Data Type, and click `Set Value`. The data type can be `String` (the value is treated as a string), `Number` (the value is treated as a number), or `JSON` (the value is parsed as JSON). the JSON data type can be used to set complex objects or arrays, or even just `true`/`false`/`null`.
 
-**NOTE:**  The act of clicking `Set Value` has an immediate affect.  This will change or add the value **immediately**, this is separate from saving/deploying the workflow.
+**NOTE:**  The act of clicking `Set Value` has an immediate affect. This will change or add the value **immediately**, this is separate from saving/deploying the workflow.
 
-In the bottom half of the interface, you can view the values of existing storage identifiers.  In this case, there is one identifier, `storedColor`, and its value is the number `35000` - this identifier was previous set by the Store Value node in a previous run of the above workflow.  This table of values will automatically refresh every 60 seconds, but you can always click the refresh link on the upper right if you want to see the latest values now.  You can also delete values here using the delete button on the right of each row.  **NOTE:** deleting, just like setting or modifying a value, takes effect immediately and is not tied to saving/deploying the workflow.
+In the bottom half of the interface, you can view the values of existing storage identifiers. In this case, there is one identifier, `storedColor`, and its value is the number `35000` - this identifier was previous set by the Store Value node in a previous run of the above workflow. This table of values will automatically refresh every 60 seconds, but you can always click the refresh link on the upper right if you want to see the latest values now. You can also delete values here using the delete button on the right of each row. **NOTE:** deleting, just like setting or modifying a value, takes effect immediately and is not tied to saving/deploying the workflow.

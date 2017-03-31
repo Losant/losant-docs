@@ -6,7 +6,7 @@ The on connect trigger will trigger a workflow whenever one or more devices conn
 
 ## Configuration
 
-The on connect trigger can be configured with one or more specific devices, or a selection of tags (or both).  When a device that matches anything in the selection connects to Losant, the workflow will trigger.  See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The on connect trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection connects to Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
 ![On Connect Trigger Config](/images/workflows/triggers/on-connect-trigger-config.png "On Connect Trigger Config")
 

@@ -14,7 +14,7 @@ In the above example, the workflow will be triggered whenever any device with th
 
 ## Payload
 
-The payload will include the triggering device's state on the `data` field. The payload will only include the attributes currently reported by the device. So for example, if the device has four attributes configured, but only reports state containing one, this payload will only include the one attribute.  In the general case, a device workflow payload will look like the following:
+The payload will include the triggering device's state on the `data` field. The payload will only include the attributes currently reported by the device. So for example, if the device has four attributes configured, but only reports state containing one, this payload will only include the one attribute. In the general case, a device workflow payload will look like the following:
 
 ```json
 {

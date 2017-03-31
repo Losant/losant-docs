@@ -6,7 +6,7 @@ The validate payload node allows a workflow check the current payload against a 
 
 ## Configuration
 
-The validate payload node is configured using a [JSON Schema](http://spacetelescope.github.io/understanding-json-schema/index.html) definition.  The current payload of the workflow is validated against the given JSON schema, and if it passes validation the route on the right out of the node is taken.  If it fails validation, the route on the left out of the node is taken.
+The validate payload node is configured using a [JSON Schema](http://spacetelescope.github.io/understanding-json-schema/index.html) definition. The current payload of the workflow is validated against the given JSON schema, and if it passes validation the route on the right out of the node is taken. If it fails validation, the route on the left out of the node is taken.
 
 ![Validate Payload Example](/images/workflows/logic/validate-payload-example.png "Validate Payload Example")
 
@@ -61,7 +61,7 @@ But this next payload would not pass validation, and so the workflow would take 
 
 ![Validate Payload Errors](/images/workflows/logic/validate-payload-error.png "Validate Payload Errors")
 
-Optionally, any errors from validating the payload can be placed on the payload at a payload path. If this path is provided and there are no errors, the value at the path will be set as an empty array.  If there are in fact errors, it will be an array of error objects. For example, in the "not a number" payload case above, if the error path was set to `data.validationErrors`, the payload after the validation node would look like the following:
+Optionally, any errors from validating the payload can be placed on the payload at a payload path. If this path is provided and there are no errors, the value at the path will be set as an empty array. If there are in fact errors, it will be an array of error objects. For example, in the "not a number" payload case above, if the error path was set to `data.validationErrors`, the payload after the validation node would look like the following:
 
 ```json
 {

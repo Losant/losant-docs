@@ -6,7 +6,7 @@ The mutate node allows a workflow to perform arbitrary changes to the structure 
 
 ## Configuration
 
-Mutate nodes are configured by creating "rules", of which there are 4 types - "Set", "Remove", "Copy", and "Move".  A mutate node can have as many rules as is needed, and the rules are executed in order from the first to last, which means subsequent rules can assume that the changes from previous rules have taken place.
+Mutate nodes are configured by creating "rules", of which there are 4 types - "Set", "Remove", "Copy", and "Move". A mutate node can have as many rules as is needed, and the rules are executed in order from the first to last, which means subsequent rules can assume that the changes from previous rules have taken place.
 
 ![Mutate Node Add A Rule](/images/workflows/logic/mutate-node-add-a-rule.png "Mutate Node Add A Rule")
 
@@ -111,7 +111,7 @@ The payload after execution of the mutate node would look like:
 
 ### The Move Rule
 
-The move rule allows the moving of an existing value at a path in the payload to a new path in the payload. There are two configuration properties, the source path and the destination path.  The source path is a [payload path](/workflows/accessing-payload-data/#payload-paths) defining what field should be the source of the value to move. The destination path is also a [payload path](/workflows/accessing-payload-data/#payload-paths), which defines where to place the moved value.
+The move rule allows the moving of an existing value at a path in the payload to a new path in the payload. There are two configuration properties, the source path and the destination path. The source path is a [payload path](/workflows/accessing-payload-data/#payload-paths) defining what field should be the source of the value to move. The destination path is also a [payload path](/workflows/accessing-payload-data/#payload-paths), which defines where to place the moved value.
 
 ![Mutate Node Move Rule](/images/workflows/logic/mutate-node-move-rule.png "Mutate Node Move Rule")
 

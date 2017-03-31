@@ -14,7 +14,7 @@ In the above example, the workflow will be triggered whenever any event is creat
 
 ## Payload
 
-The payload will include information about the event on the `data` field, as well as the standard workflow payload information.  In the general case, an event workflow payload will look like the following:
+The payload will include information about the event on the `data` field, as well as the standard workflow payload information. In the general case, an event workflow payload will look like the following:
 
 ```json
 {

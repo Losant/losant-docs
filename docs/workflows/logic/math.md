@@ -6,7 +6,7 @@ The math node allows a workflow to perform an arbitrary number of calculations a
 
 ## Configuration
 
-Math nodes are configured by creating "statements", and each statement has two values to configure.  First is the [expression](/workflows/accessing-payload-data/#expressions), which is what is actually evaluated. Second is the result path, which is a [payload path](/workflows/accessing-payload-data/#payload-paths) describing where on the payload the result from evaluating the expression should be stored.  A math node can have an arbitrary number of these "statements", and they are executed in order from first to last - which means that subsequent statements can use the results of previous statements if desired.
+Math nodes are configured by creating "statements", and each statement has two values to configure. First is the [expression](/workflows/accessing-payload-data/#expressions), which is what is actually evaluated. Second is the result path, which is a [payload path](/workflows/accessing-payload-data/#payload-paths) describing where on the payload the result from evaluating the expression should be stored. A math node can have an arbitrary number of these "statements", and they are executed in order from first to last - which means that subsequent statements can use the results of previous statements if desired.
 
 ![Math Node Config](/images/workflows/logic/math-node-config.png "Math Node Config")
 
