@@ -10,13 +10,13 @@ There are three configuration parts for the on change node - defining what paylo
 
 ![On Change Node Example](/images/workflows/logic/on-change-node-example.png "On Change Node Example")
 
-If the payload field being monitored for changes does in fact change between workflow runs, the route on the right out of the on change node is taken.  If the payload field has not changed, the route on the left out of the on change node is taken.  In addition, if this is first time that the field is being monitored (i.e., there is not a previous value to compare against), the route on the left out of the on change node is taken.
+If the payload field being monitored for changes does in fact change between workflow runs, the route on the right out of the on change node is taken. If the payload field has not changed, the route on the left out of the on change node is taken. In addition, if this is first time that the field is being monitored (i.e., there is not a previous value to compare against), the route on the left out of the on change node is taken.
 
 ### Field to monitor
 
 ![On Change Node Field To Monitor](/images/workflows/logic/on-change-node-field-to-monitor.png "On Change Node Field To Monitor")
 
-The field to monitor is a [payload path](/workflows/accessing-payload-data/#payload-paths) to a value in the payload.  In the above example, the value of the field `data.color` in the payload is what will be compared across workflow runs.  If the field does not exist, the value that will be compared against will be `undefined`.
+The field to monitor is a [payload path](/workflows/accessing-payload-data/#payload-paths) to a value in the payload. In the above example, the value of the field `data.color` in the payload is what will be compared across workflow runs. If the field does not exist, the value that will be compared against will be `undefined`.
 
 ### The Type of Change
 
@@ -28,7 +28,7 @@ There are seven different ways that a "change" can be defined, and those can be 
 
 *   Any change
 
-The "Any Change" type is the most commonly used.  The can be used with any data type, or even across data types if the type of data in the field being monitored sometimes changes.  If the value in the field is different in any way from the previous workflow run, it counts as a change.
+The "Any Change" type is the most commonly used. The can be used with any data type, or even across data types if the type of data in the field being monitored sometimes changes. If the value in the field is different in any way from the previous workflow run, it counts as a change.
 
 #### Numerical Comparison
 
@@ -38,7 +38,7 @@ The "Any Change" type is the most commonly used.  The can be used with any data 
 *   Increase of at least - only changes in a positive direction count
 *   Decrease of at least - only changes in a negative direction count
 
-Unlike the "Any Change" type of comparison, the numerical comparison require a threshold value.  This is because these change comparison types calculate the difference between the current value and the previous value, and if the change is greater than the specified threshold, it counts as a change.  As one might expect, the values being compared for these change types must be numbers (or able to be cast to numbers).  If they are not numbers, the "no change" path out of the node is always taken.
+Unlike the "Any Change" type of comparison, the numerical comparison require a threshold value. This is because these change comparison types calculate the difference between the current value and the previous value, and if the change is greater than the specified threshold, it counts as a change. As one might expect, the values being compared for these change types must be numbers (or able to be cast to numbers). If they are not numbers, the "no change" path out of the node is always taken.
 
 #### Percentage Comparison
 
@@ -48,15 +48,15 @@ Unlike the "Any Change" type of comparison, the numerical comparison require a t
 *   Percent increase of at least - only changes in a positive direction count
 *   Percent decrease of at least - only changes in a negative direction count
 
-The percentage comparison types are very similar to the numerical comparison types, except instead of calculating the exact difference between the old and current values, it calculates the percentage difference.  So in the case of percentage comparison, the threshold value is treated as a percentage.  And just like the numerical comparison types, the percentage comparison types expect the values being compares to be numbers. If they are not numbers, the "no change" path out of the node is always taken.
+The percentage comparison types are very similar to the numerical comparison types, except instead of calculating the exact difference between the old and current values, it calculates the percentage difference. So in the case of percentage comparison, the threshold value is treated as a percentage. And just like the numerical comparison types, the percentage comparison types expect the values being compares to be numbers. If they are not numbers, the "no change" path out of the node is always taken.
 
 ### Adding The Previous Value To the Payload
 
 ![On Change Node Previous Value](/images/workflows/logic/on-change-node-previous-value.png "On Change Node Previous Value")
 
-The on change node has the ability to optionally add information about the previous value being compared against to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the previous value and time at which that value ran through the workflow will be placed at that path no matter which branch out of the on change node is taken.  If there is no previous value that was compared against (i.e., this is the first time this field is being checked), then nothing will be added to the payload.  In the above example, the previous value information will be placed at the `data.previousColor` path. So, for example, given the following payload:
+The on change node has the ability to optionally add information about the previous value being compared against to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the previous value and time at which that value ran through the workflow will be placed at that path no matter which branch out of the on change node is taken. If there is no previous value that was compared against (i.e., this is the first time this field is being checked), then nothing will be added to the payload. In the above example, the previous value information will be placed at the `data.previousColor` path. So, for example, given the following payload:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -69,7 +69,7 @@ The on change node has the ability to optionally add information about the previ
 
 The payload after execution of the on change node might look like:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {

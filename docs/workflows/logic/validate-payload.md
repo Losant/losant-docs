@@ -6,13 +6,13 @@ The validate payload node allows a workflow check the current payload against a 
 
 ## Configuration
 
-The validate payload node is configured using a [JSON Schema](http://spacetelescope.github.io/understanding-json-schema/index.html) definition.  The current payload of the workflow is validated against the given JSON schema, and if it passes validation the route on the right out of the node is taken.  If it fails validation, the route on the left out of the node is taken.
+The validate payload node is configured using a [JSON Schema](http://spacetelescope.github.io/understanding-json-schema/index.html) definition. The current payload of the workflow is validated against the given JSON schema, and if it passes validation the route on the right out of the node is taken. If it fails validation, the route on the left out of the node is taken.
 
 ![Validate Payload Example](/images/workflows/logic/validate-payload-example.png "Validate Payload Example")
 
 Here is the full schema from the above screenshot in an easier to read form:
 
-```JSON
+```json
 {
   "type": "object",
   "properties": {
@@ -37,7 +37,7 @@ In the above example, the workflow will follow the route on the right out of the
 
 So the following payload would pass validation, and the workflow would take the route on the right and move on to the math node:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -49,7 +49,7 @@ So the following payload would pass validation, and the workflow would take the 
 
 But this next payload would not pass validation, and so the workflow would take the route on the left - which in the example above goes nowhere, and so the current execution of the workflow would stop:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -61,9 +61,9 @@ But this next payload would not pass validation, and so the workflow would take 
 
 ![Validate Payload Errors](/images/workflows/logic/validate-payload-error.png "Validate Payload Errors")
 
-Optionally, any errors from validating the payload can be placed on the payload at a payload path. If this path is provided and there are no errors, the value at the path will be set as an empty array.  If there are in fact errors, it will be an array of error objects. For example, in the "not a number" payload case above, if the error path was set to `data.validationErrors`, the payload after the validation node would look like the following:
+Optionally, any errors from validating the payload can be placed on the payload at a payload path. If this path is provided and there are no errors, the value at the path will be set as an empty array. If there are in fact errors, it will be an array of error objects. For example, in the "not a number" payload case above, if the error path was set to `data.validationErrors`, the payload after the validation node would look like the following:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {

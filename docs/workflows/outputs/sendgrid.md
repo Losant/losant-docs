@@ -34,7 +34,7 @@ The "To", "CC", and "BCC" addresses for the email can all be independently confi
 
 The SendGrid node can optionally place the response from SendGrid on the current payload for use later in the workflow. The above example node is set to place the response at the [payload path](/workflows/accessing-payload-data/#payload-paths) `sendgridResult`. Below is an example payload after the successful execution of the SendGrid node:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {

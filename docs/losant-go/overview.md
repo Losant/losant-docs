@@ -102,7 +102,7 @@ Ok, let’s make your button do something.  In the following example, you will b
 
 ![Enter Message](/images/losant-go/enter-message.png "Enter Message")
 
-This will pull data from your payload, which was mentioned above.  You can reference data in the payload json using the {{ }}.
+This will pull data from your payload, which was mentioned above.  You can reference data in the payload JSON using the {{ }}.
 
 *5. Click "Deploy Workflow".*
 

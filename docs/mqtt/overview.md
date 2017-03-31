@@ -57,7 +57,7 @@ var client = mqtt.connect('mqtts://broker.losant.com', {
 
 Once authenticated, the Losant message broker can be used for any MQTT communications as long as your custom topics don't overlap the Losant-specific topics. A Losant topic is anything that starts with `losant`.
 
-Messages published to the Losant topics gain access to the full features of the Losant platform, including data collection, visualization, and workflows. In order for Losant to properly parse and understand these messages, a defined json-based payload format must be followed.
+Messages published to the Losant topics gain access to the full features of the Losant platform, including data collection, visualization, and workflows. In order for Losant to properly parse and understand these messages, a defined JSON-based payload format must be followed.
 
 #### Publishing Device State
 
@@ -79,7 +79,7 @@ A [device state](/devices/state/) is likely the most commonly published message.
 }
 ```
 
-When thinking in terms of sensor data, it's very likely you'll have an attribute for each sensor attached to your device. For example, if a device with id `575ecf887ae143cd83dc4aa2` had a temperature sensor, you might report state that has an attribute named "temperature" by publishing to the topic below with the following payload:
+When thinking in terms of sensor data, it's very likely you'll have an attribute for each sensor attached to your device. For example, if a device with ID `575ecf887ae143cd83dc4aa2` had a temperature sensor, you might report state that has an attribute named "temperature" by publishing to the topic below with the following payload:
 
 ###### Topic
 
@@ -115,7 +115,7 @@ When a device publishes data in this format, Losant will automatically store the
 }
 ```
 
-The payload can be any arbitrary JSON value that provides necessary arguments to your command. Commands do not have to be pre-registered with Losant in order for them to be received. What commands your device supports is entirely up to your specific application and your device's firmware. Below is an example command that tells a thermostat associated with the device id `575ecf887ae143cd83dc4aa2` to set itself to a specific temperature - the following payload is published on the topic below, and the device is listening on that topic for command messages:
+The payload can be any arbitrary JSON value that provides necessary arguments to your command. Commands do not have to be pre-registered with Losant in order for them to be received. What commands your device supports is entirely up to your specific application and your device's firmware. Below is an example command that tells a thermostat associated with the device ID `575ecf887ae143cd83dc4aa2` to set itself to a specific temperature - the following payload is published on the topic below, and the device is listening on that topic for command messages:
 
 ###### Topic
 
