@@ -29,6 +29,6 @@ AWS_SECRET_KEY=your_secret AWS_ACCESS_KEY=your_key npm run deploy
 
 *****
 
-Copyright (c) 2016 Losant IoT, Inc
+Copyright (c) 2017 Losant IoT, Inc
 
 <https://www.losant.com>
