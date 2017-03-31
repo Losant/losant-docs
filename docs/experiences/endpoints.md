@@ -26,6 +26,7 @@ This is the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Meth
 
 *   **GET** requests are typically used for retrieving existing resources. A GET request should be repeatable without changing the state of your application and should return the same response body across requests, assuming the underlying data does not change between requests.
 *   **POST** requests allow for a payload to be sent with the request body. Though POST requests are typically used for creating new resources, they can also be used for complex data queries that require more configuration than can be conveyed in route parameters.
+*   **PUT** requests also allow for a payload body; these requests are typically used to overwrite an existing resource.
 *   **PATCH** requests also allow for a payload body; these requests are typically used to merge changes into an existing resource.
 *   **DELETE** requests should only be used to delete resources from your application.
 *   **OPTIONS** requests are typically sent by web browsers prior to making a [cross-origin request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). If you have the "Enable Default CORS Settings" box checked in your Experience Settings, it should not be necessary to set up any OPTIONS requests. However, you may still create your own OPTIONS routes, and any requests matching those routes will override the default settings handled by Losant.
@@ -49,15 +50,12 @@ There are a number of rules to consider when building your routes:
 
 ### Access Control
 
-Endpoint access – the ability of a user to invoke an endpoint with an HTTP request – can be limited a couple different ways ...
+Endpoint access – the ability of a user to invoke an endpoint with an HTTP request – can be configured a few different ways ...
 
 ![Endpoint Access Control](/images/experiences/endpoint-access-control.png "Endpoint Access Control")
 
 *   **All public users** means that anybody, regardless of if they have an Experience User account within your application, no matter if they are currently signed in to their account, can access the endpoint. Public endpoints can be used to allow the retrieval of nonsensitive data; they are also essential to allowing users to sign in to your Experience, as the authentication endpoint must be available to non-signed-in users.
-*   **Any authenticated user** endpoints can be invoked by any of your Experience Users when they are signed in. Their authentication token can be included in the request one of three different ways ...
-    * A **query parameter** added to the URL (e.g. `https://my-custom-slug.onlosant.com/my-user?authorization=[my-token]`)
-    * An **Authorization HTTP header** with the value `Bearer [my-token]`
-    * A **Cookie HTTP header**, if you set a cookie in the user's browser when they originally authenticated
+*   **Any authenticated user** endpoints can be invoked by any of your Experience Users when they are signed in. Their authentication token must be [included in the request](#passing-authorization-tokens).
 *  **Only users who are in the following groups...** limits access to signed-in users who are a member of any one of the specified [Experience Groups](/experiences/groups). This is useful for building routes that have special privileges (such as resource editing permissions or Experience administration) that you do not want to provide to your normal population of users. To add a group to the endpoint, select the radio button next to the label and begin typing one or more group names into the input. You may also create new groups directly from this interface. Simply type the name of a group that does not yet exist.
 
 ### Other Properties
@@ -85,13 +83,30 @@ There are a number of nodes built specifically for working with your [Experience
 *   [Check the authentication credentials](/workflows/experience/authenticate/) of a user
 *   [Generate a token](/workflows/experience/generate-token/) for a user of your choosing (if, for example, you are building your own system of authentication)
 
-## Testing Endpoints
+## Using Endpoints
 
-One of the more popular request builders is [curl](https://curl.haxx.se/), a CLI for sending HTTP requests. If you are familiar with curl, chances are you already know how to build requests and test your endpoints.
+<div class="clearfix">
+  <div style="float: left; width: 200px; margin: 0 10px 24px 0;">
+    <img style="border-width: 5px;" src="/images/experiences/endpoint-workflow.png" alt="Endpoint Workflow" />
+  </div>
+  <p>Using your endpoints is as simple as issuing HTTP requests. When a request is sent to your custom domain, the HTTP method and path are compared against your existing endpoints, and the first one that returns a match fires any workflows with an <a href="/workflows/triggers/endpoint/">Endpoint Trigger Node</a> for that endpoint. If your workflow includes an <a href="/workflows/output/endpoint-reply/">Endpoint Reply Node</a> (and it most definitely should), that request will then receive a response as generated by your workflow.</p>
+</div>
+
+### Passing Authorization Tokens
+
+Once you retrieve an authorization token for an Experience User, that token can be appended to any subsequent HTTP requests that [require authorization](#access-control) one of three different ways:
+
+*   A **query parameter** added to the URL (e.g. `https://my-custom-slug.onlosant.com/my-user?authorization=[my-token]`)
+*   An **Authorization HTTP header** with the value `Bearer [my-token]`
+*   A **Cookie HTTP header** in the format of `authorization=[my-token]` (you can [set a cookie](/workflows/outputs/endpoint-reply/#cookies) in the user's browser when they authenticate)
+
+### Testing Endpoints
+
+One of the more popular tools for issuing HTTP requests is [curl](https://curl.haxx.se/). If you are familiar with curl, chances are you already know how to build requests and test your endpoints.
 
 ![Postman](/images/experiences/endpoints-postman.png "Postman")
 
-If a command line interface isn't your thing, one of the better (and free) HTTP request builders is Google Chrome's [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en). The application includes a GUI for building requests for any HTTP method, including payload bodies in JSON format, setting route parameters, defining headers, and everything else you need to test your endpoints.
+If a command line interface isn't your thing, one of the better (and free) HTTP request builders is Google Chrome's [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en). The application includes a GUI for building requests for any HTTP method, sending payload bodies, setting route parameters, defining headers, and everything else you need to test your endpoints.
 
 ## Deleting Endpoints
 

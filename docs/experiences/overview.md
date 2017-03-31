@@ -1,5 +1,8 @@
 # Experiences
 
+An application's Experience is a means by which you can build a fully functional API allowing users to interact with your connected [devices](/devices/overview/). Set a custom domain to handle requests; configure [endpoints](/experiences/endpoints/) to respond using the power of Losant's [workflow engine](/workflows/overview/); register [users](/experiences/users/) against your application; and protect data access by assigning those users to [groups](/experiences/groups/).
+
+![Experiences Overview](/images/experiences/experiences-overview.png "Experiences Overview")
 
 Experience Users, Endpoints and Groups are subject to account [resource limits](/organizations/resource-limits/), with the latter two being [soft limits](/organizations/resource-limits/#soft-limited-resources) (meaning you may request increases to these limits at potentially zero additional charge). If you need to register additional Experience Users, you will have to upgrade to an [organization](/organizations/overview/).
 
@@ -23,15 +26,23 @@ HTTP requests for your endpoints should then go to `https://[my-custom-slug].onl
 
 ### Bootstrap Your Experience
 
+![Bootstrap Progress](/images/experiences/bootstrap-progress.png "Bootstrap Progress")
+
 Next, Losant must set up a few helper resources within your application:
 
 *   A `/favorite-color/{color?}` [endpoint](/experiences/endpoints/) (and its backing workflow), which demonstrates public endpoints and how to use [path parameters](/experiences/endpoints/#route).
 *   An `/auth` endpoint (and its backing workflow), which is a starter template for [authenticating](/workflows/experience/authenticate) Experience Users and issuing access tokens.
-*   A `/me` endpoint (and its backing workflow), which demonstrates authenticated endpoints.
+*   A `/me` endpoint (and its backing workflow), which demonstrates authenticated endpoints by returning the user who made the request.
 *   A test [Experience User](/experiences/users/) for testing authentication and protected endpoints.
 *   An [Experience Group](/experiences/groups/) with the test user as a member.
 
 All of these resources can be deleted at any time, but note that if your Experience uses any authenticated endpoints, you should at least keep the `/auth` endpoint and workflow (or build a similar one) so that your Experience Users can authenticate and receive a token.
+
+### Test Your Experience
+
+Finally, you'll receive a review of what was created and some instructions for testing your new endpoints. The `/favorite-color`  endpoints are public `GET` routes, so they can be tested by simply visiting the URLs in your browser. Authenticating and retrieving the current user will require more advanced requests, so we provide sample [curl](https://curl.haxx.se/) commands for [testing your endpoints](/experiences/endpoints/#using-endpoints).
+
+**Take note of the random password assigned to your test user.** If you lose this password, you will have to [edit the user](/experiences/users/#required-fields) to reset it.
 
 ## Editing Experience Settings
 
