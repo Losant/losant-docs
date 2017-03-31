@@ -12,7 +12,7 @@ Math nodes are configured by creating "statements", and each statement has two v
 
 In the above example, the workflow will take the value in the `data.voltage` field of the payload, divide it by 80, multiple it by 65535, and store the resulting value in the `data.color` field of the payload. So, for example, given the payload:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -24,7 +24,7 @@ In the above example, the workflow will take the value in the `data.voltage` fie
 
 The payload after execution of the math node would look like:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {

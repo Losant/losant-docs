@@ -38,7 +38,7 @@ Multiple phone numbers can be provided to the Twilio node. The recipient phone n
 
 Optionally, a payload path can be provided to store the results of the SMS message sends. If one is provided, the twilio node will place an array at this path, with one entry per recipient number (it will be in the same order as the recipient numbers as well).  In the case of a successful send to a number, the value will be the object `{ success: true }`.  In the case of an error, the value will be an object of the form `{ error: true, message: 'A message describing the error' }`.  In the case of the node configured in this example, the payload after the node runs might look like the following:
 
-```JSON
+```json
 {
   "data": {
     "power": 73,

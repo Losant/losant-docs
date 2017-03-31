@@ -56,7 +56,7 @@ The percentage comparison types are very similar to the numerical comparison typ
 
 The on change node has the ability to optionally add information about the previous value being compared against to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the previous value and time at which that value ran through the workflow will be placed at that path no matter which branch out of the on change node is taken.  If there is no previous value that was compared against (i.e., this is the first time this field is being checked), then nothing will be added to the payload.  In the above example, the previous value information will be placed at the `data.previousColor` path. So, for example, given the following payload:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -69,7 +69,7 @@ The on change node has the ability to optionally add information about the previ
 
 The payload after execution of the on change node might look like:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {

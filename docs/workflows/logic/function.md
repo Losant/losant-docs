@@ -24,7 +24,7 @@ return { value: "Total Replacement" };
 
 If that was the entire contents of a function node, no matter what the original payload was, the payload after the execution of the function node would always be the object:
 
-```JSON
+```json
 { "value": "Total Replacement" }
 ```
 
@@ -37,7 +37,7 @@ payload.data.oldNumber = payload.oldNumber + 1;
 
 And an example payload of:
 
-```JSON
+```json
 {
   ...
   "data":{
@@ -49,7 +49,7 @@ And an example payload of:
 
 The payload after the execution of that function node would be:
 
-```JSON
+```json
 {
   ...
   "data":{

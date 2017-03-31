@@ -56,7 +56,7 @@ The node also has the ability to optionally add which branch out of the node was
 
  So, for example, given the following payload:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -71,7 +71,7 @@ The node also has the ability to optionally add which branch out of the node was
 
 The payload after execution of the geofence node would look like:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {

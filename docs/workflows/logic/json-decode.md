@@ -12,7 +12,7 @@ There are two configuration properties for the JSON decode node - the [payload p
 
 In the above example, the workflow will decode the string at the `container.jsonString` path and place the resulting object at the `container.jsonObject` path. So, for example, given the following payload:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "container": {
@@ -24,7 +24,7 @@ In the above example, the workflow will decode the string at the `container.json
 
 The payload after execution of the JSON decode node would look like:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "container": {

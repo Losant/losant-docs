@@ -28,7 +28,7 @@ The HTTP node can optionally store the response from the request at an arbitrary
 
 So with the above example, given the following payload:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {},

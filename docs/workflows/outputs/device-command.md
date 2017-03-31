@@ -18,7 +18,7 @@ The command name field supports [string templates](/workflows/accessing-payload-
 
 In the above example, the device command node is sending the command `setHueColor` with a payload.  And given the following payload:
 
-```JSON
+```json
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
@@ -31,7 +31,7 @@ In the above example, the device command node is sending the command `setHueColo
 
 The device command node would send the following command payload with the `setHueColor` command:
 
-```JSON
+```json
 {
   "hue": 1393
 }

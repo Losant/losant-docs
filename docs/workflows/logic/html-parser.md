@@ -30,7 +30,7 @@ For the form that that result will take, there are three possibilities - `Text`,
 
 The `Text` output format would be the following:
 
-```JSON
+```json
 [
   "Item number One",
   "Item number Three"
@@ -39,7 +39,7 @@ The `Text` output format would be the following:
 
 The `XML` output format would be the following:
 
-```JSON
+```json
 [
   "<li id=\"first\" class=\"edge\"><b>Item</b> number <a href=\"/one\">One</a></li>",
   "<li id=\"third\" class=\"edge\"><b>Item</b> number <a href=\"/three\">Three</a></li>"
@@ -48,7 +48,7 @@ The `XML` output format would be the following:
 
 And the `JSON` output format would be the following:
 
-```JSON
+```json
 [
   { "children": [
       { "type": "element",
