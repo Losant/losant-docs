@@ -6,13 +6,13 @@ The webhook reply node allows a workflow to send a reply back to a webhook trigg
 
 ## Configuration
 
-All the standard components of an http response are configurable in the Webhook Reply node - the response code, the body, and the headers.
+All the standard components of an HTTP response are configurable in the Webhook Reply node - the response code, the body, and the headers.
 
 ![Webhook Reply Node Config](/images/workflows/outputs/webhook-reply-node-config.png "Webhook Reply Node Config")
 
 In the above example, the response code is set to `200`, although that field is templatable and so can be configured from the current payload. It is expected to resolve to a valid response code number, and if it does not, the reply will default to a response code of `200`.
 
-The body of the reply can be set either as a [string template](/workflows/accessing-payload-data/#string-templates) or as a [payload path](/workflows/accessing-payload-data/#payload-paths). In the above example, it is a string template that resolves to a string of json. If payload path is chosen and the payload path points to an object, that object is stringified json string for use as the body. The body is allowed to be empty, if no body is desired on the reply.
+The body of the reply can be set either as a [string template](/workflows/accessing-payload-data/#string-templates) or as a [payload path](/workflows/accessing-payload-data/#payload-paths). In the above example, it is a string template that resolves to a string of JSON. If payload path is chosen and the payload path points to an object, that object is stringified as JSON for use as the body. The body is allowed to be empty, if no body is desired on the reply.
 
 ![Webhook Reply Node Header Config](/images/workflows/outputs/webhook-reply-node-header-config.png "Webhook Reply Node Header Config")
 
@@ -24,4 +24,4 @@ The webhook reply node has one optional advanced option - setting the payload pa
 
 ![Webhook Reply Node ReplyId](/images/workflows/outputs/webhook-reply-node-replyid.png "Webhook Reply Node ReplyId")
 
-The reply id path by default is `data.replyId` - which is where a webhook (that expects a reply) places the reply id for the current webhook trigger request. But if for some reason you have moved the replyId to a different part of the payload, or you are using multiple workflows and passing the replyId between them under a different field name, you can set the path to that field here. If there is no reply id at the path given, the webhook reply node does nothing.
+The reply ID path by default is `data.replyId` - which is where a webhook (that expects a reply) places the reply ID for the current webhook trigger request. But if for some reason you have moved the replyId to a different part of the payload, or you are using multiple workflows and passing the replyId between them under a different field name, you can set the path to that field here. If there is no reply ID at the path given, the webhook reply node does nothing.

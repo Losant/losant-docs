@@ -147,7 +147,7 @@ The most common case when importing a workflow will be importing into a blank wo
 
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 
-When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application.  So for instance, when importing a workflow across applications, things like a selected device id on a device trigger will be cleared, since that id will not exist in the application being imported to.
+When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application.  So for instance, when importing a workflow across applications, things like a selected device ID on a device trigger will be cleared, since that ID will not exist in the application being imported to.
 
 ## Workflow Globals
 

@@ -6,7 +6,7 @@ The Update Experience User node allows a workflow to update an existing [Experie
 
 ## Configuration
 
-For finding the user to update, the node can find either by user id or email address - which are both required to be unique within the context of the application, and so will at most match a single user. The node determines if it should find by id or email based on the form of the input (since the id and email addresses have different forms). This field is [templatable](/workflows/accessing-payload-data/#string-templates), and so supports finding a user based on the current workflow payload. The example below is doing exactly that, and is referencing the field `experience.user.id` on the workflow payload.
+For finding the user to update, the node can find either by user ID or email address - which are both required to be unique within the context of the application, and so will at most match a single user. The node determines if it should find by ID or email based on the form of the input (since the ID and email addresses have different forms). This field is [templatable](/workflows/accessing-payload-data/#string-templates), and so supports finding a user based on the current workflow payload. The example below is doing exactly that, and is referencing the field `experience.user.id` on the workflow payload.
 
 ![Update Experience User Node Configuration](/images/workflows/experience/update-user-node-config.png "Update Experience User Node Configuration")
 

@@ -6,13 +6,13 @@ The Get Experience User node allows a workflow to retrieve one or more [Experien
 
 ## Configuration
 
-There are two ways to query for experience users using this node - by user email/id, or by user tags. When querying by email/id, the configuration expects a single value which can be either a user's id or a user's email (the node automatically determines what it is based on the form of the input). This value is is [templatable](/workflows/accessing-payload-data/#string-templates) and so can be pulled off of the current workflow payload.
+There are two ways to query for experience users using this node - by user email/ID, or by user tags. When querying by email/ID, the configuration expects a single value which can be either a user's ID or a user's email (the node automatically determines what it is based on the form of the input). This value is is [templatable](/workflows/accessing-payload-data/#string-templates) and so can be pulled off of the current workflow payload.
 
 When querying by user tags, the configuration expects one or more tag key/value pairs, and *all* of the pairs have to match the user in order for the user to be returned by the query. The same rules apply here that apply to tag queries in the rest of Losant - if a key is provided but no value, any user with that tag key will match (and value will not matter), and if a value is provided but no key, any user with that tag value will match (and key will not matter). The key and value fields here are [templatable](/workflows/accessing-payload-data/#string-templates) as well.
 
 ![Get Experience User Node Configuration](/images/workflows/experience/get-user-node-config.png "Get Experience User Node Configuration")
 
-The query result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) provided in the `Result Path` field. If the query is configured to potentially return multiple users, this will always be an array, even if no users are found. If the query is only returning a single user (which is always the case for email/id queries), this will either be the user object or will be `null`.
+The query result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) provided in the `Result Path` field. If the query is configured to potentially return multiple users, this will always be an array, even if no users are found. If the query is only returning a single user (which is always the case for email/ID queries), this will either be the user object or will be `null`.
 
 ![Get Experience User Node Node Result](/images/workflows/experience/get-user-node-config-result.png "Get Experience User Node Node Result")
 
