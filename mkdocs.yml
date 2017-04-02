@@ -46,9 +46,10 @@ pages:
     - Walkthrough:
         - Overview: experiences/walkthrough/overview.md
         - Part 1 - User Registration: experiences/walkthrough/part1.md
-        - Part 2 - Device Registration: experiences/walkthrough/part2.md
-        - Part 3 - Viewing Device Data: experiences/walkthrough/part3.md
-        - Part 4 - Configuring Alerts: experiences/walkthrough/part4.md
+        - Part 2 - User Authentication: experiences/walkthrough/part2.md
+        - Part 3 - Device Registration: experiences/walkthrough/part3.md
+        - Part 4 - Viewing Device Data: experiences/walkthrough/part4.md
+        - Part 5 - Configuring Alerts: experiences/walkthrough/part5.md
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
