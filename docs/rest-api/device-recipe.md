@@ -35,7 +35,7 @@ all.Application, all.Organization, all.User, deviceRecipe.*, or deviceRecipe.bul
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Device Recipe Bulk Create Post](schemas.md#device-recipe-bulk-create-post) schema.  For example, the following would be a
+the [Device Recipe Bulk Create Post](schemas.md#device-recipe-bulk-create-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -207,7 +207,7 @@ all.Application, all.Organization, all.User, deviceRecipe.*, or deviceRecipe.pat
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Device Recipe Patch](schemas.md#device-recipe-patch) schema.  For example, the following would be a
+the [Device Recipe Patch](schemas.md#device-recipe-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json

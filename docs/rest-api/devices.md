@@ -155,7 +155,7 @@ all.Application, all.Organization, all.User, devices.*, or devices.post.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Device Post](schemas.md#device-post) schema.  For example, the following would be a
+the [Device Post](schemas.md#device-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -234,7 +234,7 @@ all.Application, all.Device, all.Organization, all.User, devices.*, or devices.s
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Multi Device Command](schemas.md#multi-device-command) schema.  For example, the following would be a
+the [Multi Device Command](schemas.md#multi-device-command) schema. For example, the following would be a
 valid body for this request:
 
 ```json

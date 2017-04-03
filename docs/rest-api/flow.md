@@ -250,7 +250,7 @@ all.Application, all.Organization, all.User, flow.*, or flow.patch.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Workflow Patch](schemas.md#workflow-patch) schema.  For example, the following would be a
+the [Workflow Patch](schemas.md#workflow-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -318,7 +318,7 @@ all.Application, all.Organization, all.User, flow.*, or flow.pressVirtualButton.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Virtual Button Press](schemas.md#virtual-button-press) schema.  For example, the following would be a
+the [Virtual Button Press](schemas.md#virtual-button-press) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -387,7 +387,7 @@ all.Application, all.Organization, all.User, flow.*, or flow.setStorageEntry.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Workflow Storage Entry](schemas.md#workflow-storage-entry) schema.  For example, the following would be a
+the [Workflow Storage Entry](schemas.md#workflow-storage-entry) schema. For example, the following would be a
 valid body for this request:
 
 ```json

@@ -95,7 +95,7 @@ all.Organization, all.User, solutions.*, or solutions.post.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Solution Post](schemas.md#solution-post) schema.  For example, the following would be a
+the [Solution Post](schemas.md#solution-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json

@@ -64,7 +64,7 @@ No authentication is required for this endpoint.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Organization Invitation Action](schemas.md#organization-invitation-action) schema.  For example, the following would be a
+the [Organization Invitation Action](schemas.md#organization-invitation-action) schema. For example, the following would be a
 valid body for this request:
 
 ```json

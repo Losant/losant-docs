@@ -84,7 +84,7 @@ all.Organization, all.User, applications.*, or applications.post.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Application Post](schemas.md#application-post) schema.  For example, the following would be a
+the [Application Post](schemas.md#application-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json

@@ -139,7 +139,7 @@ all.Application, all.Organization, all.User, experienceGroup.*, or experienceGro
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Experience Group Patch](schemas.md#experience-group-patch) schema.  For example, the following would be a
+the [Experience Group Patch](schemas.md#experience-group-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json

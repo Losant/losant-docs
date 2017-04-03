@@ -28,7 +28,7 @@ all.SolutionUser, all.User, me.*, or me.addRecentItem.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Recent Item](schemas.md#recent-item) schema.  For example, the following would be a
+the [Recent Item](schemas.md#recent-item) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -88,7 +88,7 @@ all.SolutionUser, all.User, me.*, or me.delete.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [User Credentials](schemas.md#user-credentials) schema.  For example, the following would be a
+the [User Credentials](schemas.md#user-credentials) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -147,7 +147,7 @@ all.SolutionUser, all.User, me.*, or me.disableTwoFactorAuth.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Disable Two Factor Auth](schemas.md#disable-two-factor-auth) schema.  For example, the following would be a
+the [Disable Two Factor Auth](schemas.md#disable-two-factor-auth) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -294,7 +294,7 @@ all.SolutionUser, all.User, me.*, or me.enableTwoFactorAuth.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Enable Two Factor Auth](schemas.md#enable-two-factor-auth) schema.  For example, the following would be a
+the [Enable Two Factor Auth](schemas.md#enable-two-factor-auth) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -454,7 +454,7 @@ all.SolutionUser, all.User, me.*, or me.patch.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Me Patch](schemas.md#me-patch) schema.  For example, the following would be a
+the [Me Patch](schemas.md#me-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -568,7 +568,7 @@ all.SolutionUser, all.User, me.*, or me.transferResources.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Resource Transfer](schemas.md#resource-transfer) schema.  For example, the following would be a
+the [Resource Transfer](schemas.md#resource-transfer) schema. For example, the following would be a
 valid body for this request:
 
 ```json

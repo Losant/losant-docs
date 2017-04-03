@@ -139,7 +139,7 @@ all.Application, all.Organization, all.User, webhook.*, or webhook.patch.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Webhook Patch](schemas.md#webhook-patch) schema.  For example, the following would be a
+the [Webhook Patch](schemas.md#webhook-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json

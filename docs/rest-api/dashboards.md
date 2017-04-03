@@ -84,7 +84,7 @@ all.Organization, all.User, dashboards.*, or dashboards.post.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Dashboard Post](schemas.md#dashboard-post) schema.  For example, the following would be a
+the [Dashboard Post](schemas.md#dashboard-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json

@@ -34,7 +34,7 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Last Value Query](schemas.md#last-value-query) schema.  For example, the following would be a
+the [Last Value Query](schemas.md#last-value-query) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -103,7 +103,7 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Time Series Query](schemas.md#time-series-query) schema.  For example, the following would be a
+the [Time Series Query](schemas.md#time-series-query) schema. For example, the following would be a
 valid body for this request:
 
 ```json

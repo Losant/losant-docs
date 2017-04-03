@@ -133,7 +133,7 @@ all.Organization, all.User, dashboard.*, or dashboard.patch.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Dashboard Patch](schemas.md#dashboard-patch) schema.  For example, the following would be a
+the [Dashboard Patch](schemas.md#dashboard-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -193,7 +193,7 @@ No authentication is required for this endpoint.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Dashboard Context Instance](schemas.md#dashboard-context-instance) schema.  For example, the following would be a
+the [Dashboard Context Instance](schemas.md#dashboard-context-instance) schema. For example, the following would be a
 valid body for this request:
 
 ```json
