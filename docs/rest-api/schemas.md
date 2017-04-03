@@ -9762,11 +9762,11 @@ Schema for a single Solution User
 ```
 
 <br/>
-## User Credentials
+## Solution User Credentials
 
 Schema for the body of a Solution User authentication request
 
-### Schema <a name="user-credentials-schema"></a>
+### Schema <a name="solution-user-credentials-schema"></a>
 
 ```json
 {
@@ -9803,7 +9803,7 @@ Schema for the body of a Solution User authentication request
 
 <small></small>
 
-### Example <a name="user-credentials-example"></a>
+### Example <a name="solution-user-credentials-example"></a>
 
 ```json
 {
