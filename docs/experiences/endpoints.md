@@ -22,14 +22,14 @@ Configuring an endpoint takes a few required fields, each of which has its own u
 
 ### Method
 
-This is the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) the request should match. It is possible to have one route handle multiple HTTP methods, but each method must be configured as a separate endpoint. Currently, we support five different methods:
+This is the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) the request should match. It is possible to have one route handle multiple HTTP methods, but each method must be configured as a separate endpoint. Currently, we support these methods:
 
 *   **GET** requests are typically used for retrieving existing resources. A GET request should be repeatable without changing the state of your application and should return the same response body across requests, assuming the underlying data does not change between requests.
 *   **POST** requests allow for a payload to be sent with the request body. Though POST requests are typically used for creating new resources, they can also be used for complex data queries that require more configuration than can be conveyed in route parameters.
 *   **PUT** requests also allow for a payload body; these requests are typically used to overwrite an existing resource.
 *   **PATCH** requests also allow for a payload body; these requests are typically used to merge changes into an existing resource.
 *   **DELETE** requests should only be used to delete resources from your application.
-*   **OPTIONS** requests are typically sent by web browsers prior to making a [cross-origin request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). If you have the "Enable Default CORS Settings" box checked in your Experience Settings, it should not be necessary to set up any OPTIONS requests. However, you may still create your own OPTIONS routes, and any requests matching those routes will override the default settings handled by Losant.
+*   **OPTIONS** requests are typically sent by web browsers prior to making a [cross-origin request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). If you have the "Enable Default CORS Settings" box checked in your [Experience Settings](/experiences/overview/#editing-experience-settings), it should not be necessary to set up any OPTIONS endpoints. However, you may still create your own OPTIONS routes, and any requests matching those routes will override the default settings handled by Losant.
 
 ![Endpoint Method and Route](/images/experiences/endpoint-method-route.png "Endpoint Method and Route")
 
@@ -39,18 +39,18 @@ The route is the [URL path](https://developer.mozilla.org/en-US/docs/Learn/Commo
 
 There are a number of rules to consider when building your routes:
 
-*   **A single route may only be used once per method.** However. a route of `/my-route` can be set up with a GET method for one endpoint and a POST method for another endpoint, and both are valid.
+*   **A single route may only be used once per method.** However, a route of `/my-route` can be set up with a GET method for one endpoint and a POST method for another endpoint, and both are valid.
 *   **Routes are matched by order of specificity.** The more specific a route, the earlier in the process it is checked when a request comes in. The first route that matches the path in the HTTP request will be invoked. Losant takes care of ordering the routes by specificity for you, based on the rules outlined here.
 *   **Routes can contain string literals, path parameters and wildcards.** For example, given the route `/devices/{deviceId}/{attribute?}` ...
     * `devices` is a **string literal**, which is a static route parameter. String literals always take priority over the other parts of a route, meaning `/users/danny` will match before `/users/{name}` if "danny" is included in the `name` spot.
     * `{deviceId}` is a **required path parameter**. If a request is made to `/devices/` without a `{deviceId}` after the trailing slash, the request will fail (unless you have also specified a `/devices` route matching that method).
     * `{attribute?}` is an **optional path parameter**; a request to `/devices/123` and `/devices/123/temp` will both succeed and will both invoke the same endpoint, but the latter will include `{"attribute": "temp"}` as part of the payload passed to your workflow.
-*   **Routes must not conflict with each other.** The most common example of routes conflicting is with the use of path parameters at the same priority level; for example, a route of `/{deviceId}` and `/{userId}` will conflict because, behind the scenes, the router does not know if the value in that part of the path is a device ID or a user ID. For this reason, it is a good idea to start your routes with a descriptive string, such as `/devices/{deviceId}` and `/users/{userId}`. If you attempt to create a route that conflicts with another route, you will be alerted of the error.
-*   **Routes can contain wildcards.** Wildcards must be used with care, as they will match any request. A typical use case for a wildcard is if you want to create your own `404 Not Found` HTTP response; in that case, you would configure a route of `/{var*}`, where `var` is whatever the user entered after the first slash in their custom Experience domain.
+*   **Routes must not conflict with each other.** The most common example of routes conflicting is with the use of path parameters at the same priority level; for example, a route of `/{deviceId}` and `/{userId}` will conflict because, behind the scenes, the router does not know if the value in that part of the path is a device ID or a user ID. For this reason, it is a good idea to start your routes with a descriptive string literal, such as `/devices/{deviceId}` and `/users/{userId}`. If you attempt to create a route that conflicts with another route, you will be alerted of the error.
+*   **Routes can contain wildcards.** Wildcards must be used with care, as they will match any request. A typical use case for a wildcard is if you want to create your own OPTIONS endpoint, or a custom `404 Not Found` HTTP response; in that case, you would configure a route of `/{var*}`, where `var` is available on the payload with the value of whatever the user entered after the first slash in their custom Experience domain.
 
 ### Access Control
 
-Endpoint access – the ability of a user to invoke an endpoint with an HTTP request – can be configured a few different ways ...
+Endpoint access – the ability of a specific user to invoke an endpoint with an HTTP request – can be configured a few different ways ...
 
 ![Endpoint Access Control](/images/experiences/endpoint-access-control.png "Endpoint Access Control")
 
@@ -73,7 +73,7 @@ Every endpoint is powered by a [Losant workflow](/workflows/overview/) built by 
 
 ![Endpoint Workflow List](/images/experiences/endpoint-workflow-list.png "Endpoint Workflow List")
 
-At the bottom of an endpoint's edit page is a list of all workflows that contain an Endpoint Trigger node that matches that endpoint's method and route. If no such workflows exist, you have the option of creating a starter workflow, which will contain a trigger, a basic reply and a [Debug node](/workflows/outputs/debug/). This serves as a getting started template for configuring your new endpoint; you simply have to fill in the logic between the trigger and the reply.
+At the bottom of an endpoint's edit page is a list of all workflows that contain an Endpoint Trigger node that matches that endpoint's method and route. If no such workflows exist, you have the option of creating a starter workflow, which will contain an [Endpoint Trigger node](/workflows/triggers/endpoint/), an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) and a [Debug node](/workflows/outputs/debug/). This serves as a getting started template for configuring your new endpoint; you simply have to fill in the logic between the trigger and the reply.
 
 ### Experience User Nodes
 
@@ -89,7 +89,7 @@ There are a number of nodes built specifically for working with your [Experience
   <div style="float: left; width: 200px; margin: 0 10px 24px 0;">
     <img style="border-width: 5px;" src="/images/experiences/endpoint-workflow.png" alt="Endpoint Workflow" />
   </div>
-  <p>Using your endpoints is as simple as issuing HTTP requests. When a request is sent to your custom domain, the HTTP method and path are compared against your existing endpoints, and the first one that returns a match fires any workflows with an <a href="/workflows/triggers/endpoint/">Endpoint Trigger Node</a> for that endpoint. If your workflow includes an <a href="/workflows/output/endpoint-reply/">Endpoint Reply Node</a> (and it most definitely should), that request will then receive a response as generated by your workflow.</p>
+  <p>Using your endpoints is as simple as issuing HTTP requests. When a request is sent to your custom domain, the HTTP method and path are compared against your existing endpoints, and the first one that returns a match fires any workflows with an <a href="/workflows/triggers/endpoint/">Endpoint Trigger Node</a> for that endpoint. If your workflow includes an <a href="/workflows/outputs/endpoint-reply/">Endpoint Reply Node</a> (and it most definitely should), that request will then receive a response as generated by your workflow.</p>
 </div>
 
 ### Passing Authorization Tokens
