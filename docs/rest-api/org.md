@@ -142,7 +142,7 @@ all.Organization, all.User, org.*, or org.inviteMember.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Organization Invitation Post](schemas.md#organization-invitation-post) schema.  For example, the following would be a
+the [Organization Invitation Post](schemas.md#organization-invitation-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -208,7 +208,7 @@ all.Organization, all.User, org.*, or org.modifyMember.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Organization Member Patch](schemas.md#organization-member-patch) schema.  For example, the following would be a
+the [Organization Member Patch](schemas.md#organization-member-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -274,7 +274,7 @@ all.Organization, all.User, org.*, or org.patch.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Organization Patch](schemas.md#organization-patch) schema.  For example, the following would be a
+the [Organization Patch](schemas.md#organization-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -563,7 +563,7 @@ all.Organization, all.User, org.*, or org.transferResources.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Resource Transfer](schemas.md#resource-transfer) schema.  For example, the following would be a
+the [Resource Transfer](schemas.md#resource-transfer) schema. For example, the following would be a
 valid body for this request:
 
 ```json

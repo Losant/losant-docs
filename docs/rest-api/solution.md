@@ -139,7 +139,7 @@ all.Organization, all.User, solution.*, or solution.patch.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Solution Patch](schemas.md#solution-patch) schema.  For example, the following would be a
+the [Solution Patch](schemas.md#solution-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json

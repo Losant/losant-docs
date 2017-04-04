@@ -117,7 +117,7 @@ The device state node requires you to select the device to report as - which in 
   "triggerType": "timer",
   "flowId": "56ca2c6ce258b101006a20e4",
   "flowName": "Weather Grabber",
-  globals: {},
+  "globals": {},
   "weather": {
     "body": {
       "latitude": 39.1119359,

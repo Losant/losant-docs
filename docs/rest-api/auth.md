@@ -20,7 +20,7 @@ No authentication is required for this endpoint.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Device Credentials](schemas.md#device-credentials) schema.  For example, the following would be a
+the [Device Credentials](schemas.md#device-credentials) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -72,7 +72,7 @@ No authentication is required for this endpoint.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [User Credentials](schemas.md#user-credentials) schema.  For example, the following would be a
+the [Solution User Credentials](schemas.md#solution-user-credentials) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -124,7 +124,7 @@ No authentication is required for this endpoint.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [User Credentials](schemas.md#user-credentials) schema.  For example, the following would be a
+the [User Credentials](schemas.md#user-credentials) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -175,7 +175,7 @@ No authentication is required for this endpoint.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Github Login](schemas.md#github-login) schema.  For example, the following would be a
+the [Github Login](schemas.md#github-login) schema. For example, the following would be a
 valid body for this request:
 
 ```json

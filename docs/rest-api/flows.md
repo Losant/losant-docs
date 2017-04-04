@@ -97,7 +97,7 @@ all.Application, all.Organization, all.User, flows.*, or flows.create.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Workflow Post](schemas.md#workflow-post) schema.  For example, the following would be a
+the [Workflow Post](schemas.md#workflow-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json

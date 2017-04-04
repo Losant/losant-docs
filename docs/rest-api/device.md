@@ -436,7 +436,7 @@ all.Application, all.Organization, all.User, device.*, or device.patch.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Device Patch](schemas.md#device-patch) schema.  For example, the following would be a
+the [Device Patch](schemas.md#device-patch) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -575,7 +575,7 @@ all.Application, all.Device, all.Organization, all.User, device.*, or device.sen
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Device Command](schemas.md#device-command) schema.  For example, the following would be a
+the [Device Command](schemas.md#device-command) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -649,7 +649,7 @@ all.Application, all.Device, all.Organization, all.User, device.*, or device.sen
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Single or Multiple Device States](schemas.md#single-or-multiple-device-states) schema.  For example, the following would be a
+the [Single or Multiple Device States](schemas.md#single-or-multiple-device-states) schema. For example, the following would be a
 valid body for this request:
 
 ```json

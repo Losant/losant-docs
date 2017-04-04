@@ -84,7 +84,7 @@ all.User, orgs.*, or orgs.post.
 #### Request Body
 
 The body of the request should be serialized JSON that validates against
-the [Organization Post](schemas.md#organization-post) schema.  For example, the following would be a
+the [Organization Post](schemas.md#organization-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json
