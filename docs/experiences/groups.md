@@ -27,7 +27,7 @@ Group configuration takes four parameters:
 
 ### Endpoint Access Control
 
-Note that, if an endpoint is configured to allow **All public users** or **Any authenticated user** in its [access control](http://localhost:8000/experiences/endpoints/#access-control), that setting will override any group configuration applied to the endpoint. To apply group access to an endpoint, the endpoint's access control must first be set to **Only users who are in the following groups...**.
+Note that, if an endpoint is configured to allow **All public users** or **Any authenticated user** in its [access control](/experiences/endpoints/#access-control), that setting will override any group configuration applied to the endpoint. To apply group access to an endpoint, the endpoint's access control must first be set to **Only users who are in the following groups...**.
 
 ## Deleting Groups
 

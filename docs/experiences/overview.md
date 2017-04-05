@@ -31,7 +31,7 @@ HTTP requests for your endpoints should then go to `https://[my-custom-slug].onl
 Next, Losant must set up a few helper resources within your application:
 
 *   A `/favorite-color/{color?}` [endpoint](/experiences/endpoints/) (and its backing workflow), which demonstrates public endpoints and how to use [path parameters](/experiences/endpoints/#route).
-*   An `/auth` endpoint (and its backing workflow), which is a starter template for [authenticating](/workflows/experience/authenticate) Experience Users and [issuing access tokens](/workflows/experience/generate-token/).
+*   An `/auth` endpoint (and its backing workflow), which is a starter template for [authenticating](/workflows/experience/authenticate/) Experience Users and [issuing access tokens](/workflows/experience/generate-token/).
 *   A `/me` endpoint (and its backing workflow), which demonstrates authenticated endpoints by returning the user who made the request.
 *   A test [Experience User](/experiences/users/) for testing authentication and protected endpoints.
 *   An [Experience Group](/experiences/groups/) with the test user as a member.

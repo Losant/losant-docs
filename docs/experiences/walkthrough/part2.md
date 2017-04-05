@@ -21,10 +21,11 @@ curl -H "Content-Type: application/json" -X POST \
   -d '{"email":"test@example.com","password":"my-password"}' \
   https://example.onlosant.com/auth
 ```
+
 ```json
 {
-  "token" : "THE_USER_TOKEN",
-  "user" : { ... }
+  "token": "THE_USER_TOKEN",
+  "user": { ... }
 }
 ```
 
@@ -35,18 +36,18 @@ Using the `/auth` route is the most common way users will authenticate against y
 ![Token Workflow](/images/experiences/walkthrough/part-2/token-workflow.png "Token Workflow")
 
 1. Add a [Generate Token node](/workflows/experience/generate-token/) and insert it after the create user node.
-1. Set the `ID or Email Template` to "{{ data.body.email }}". The Generate Token node works by accepting the ID or email of an existing Experience User and then creates a token for that user.
-1. Set the `Result Path` to "data.newUser.token".
+1. Set the `ID or Email Template` to `{{ data.body.email }}`. The Generate Token node works by accepting the ID or email of an existing Experience User and then creates a token for that user.
+1. Set the `Result Path` to `data.newUser.token`.
 
 As we saw above, the Authenticate node automatically creates a token, however you can use the Generate Token node to create a token whenever you want. This provides a way to implement custom authentication mechanisms if needed. With this, in addition to the `POST /users` endpoint, whenever a new user is registered, the client will be returned the new user object and its token as the result.
 
 ```json
 {
-  "email" : "test@example.com",
-  "firstName" : "Jane",
-  "lastName" : "Smith",
+  "email": "test@example.com",
+  "firstName": "Jane",
+  "lastName": "Smith",
   ...
-  "token" : "THE_USER_TOKEN"
+  "token": "THE_USER_TOKEN"
 }
 ```
 
@@ -57,10 +58,11 @@ curl -H "Content-Type: application/json" -X POST \
   -d '{"email":"test@example.com","password":"my-password"}' \
   https://example.onlosant.com/auth
 ```
+
 ```json
 {
-  "token" : "THE_USER_TOKEN",
-  "user" : { ... }
+  "token": "THE_USER_TOKEN",
+  "user": { ... }
 }
 ```
 
@@ -71,8 +73,9 @@ curl -H "Content-Type: application/json" \
   -H "Authorization: Bearer THE_USER_TOKEN" \
   http://lom-smart-pot.on.structure.works/me
 ```
+
 ```json
-{ "user" : { ... } }
+{ "user": { ... } }
 ```
 
 Requesting authenticated routes is done by providing the token in one of three ways. The example above placed the token in the `Authorization` header. More details can be found on the [endpoint documentation](/experiences/endpoints/#passing-authorization-tokens).

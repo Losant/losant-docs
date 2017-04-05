@@ -56,7 +56,7 @@ Endpoint access – the ability of a specific user to invoke an endpoint with an
 
 *   **All public users** means that anybody, regardless of if they have an Experience User account within your application, no matter if they are currently signed in to their account, can access the endpoint. Public endpoints can be used to allow the retrieval of nonsensitive data; they are also essential to allowing users to sign in to your Experience, as the authentication endpoint must be available to non-signed-in users.
 *   **Any authenticated user** endpoints can be invoked by any of your Experience Users when they are signed in. Their authentication token must be [included in the request](#passing-authorization-tokens).
-*  **Only users who are in the following groups...** limits access to signed-in users who are a member of any one of the specified [Experience Groups](/experiences/groups). This is useful for building routes that have special privileges (such as resource editing permissions or Experience administration) that you do not want to provide to your normal population of users. To add a group to the endpoint, select the radio button next to the label and begin typing one or more group names into the input. You may also create new groups directly from this interface. Simply type the name of a group that does not yet exist.
+*  **Only users who are in the following groups...** limits access to signed-in users who are a member of any one of the specified [Experience Groups](/experiences/groups/). This is useful for building routes that have special privileges (such as resource editing permissions or Experience administration) that you do not want to provide to your normal population of users. To add a group to the endpoint, select the radio button next to the label and begin typing one or more group names into the input. You may also create new groups directly from this interface. Simply type the name of a group that does not yet exist.
 
 ### Other Properties
 
@@ -110,4 +110,4 @@ If a command line interface isn't your thing, one of the better (and free) HTTP 
 
 ## Deleting Endpoints
 
-An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on the list page, or by clicking the "Delete" button in the footer of an endpoint's edit page. Deleting an endpoint will automatically remove it from any of its [Experience Groups](/experiences/groups).
+An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on the list page, or by clicking the "Delete" button in the footer of an endpoint's edit page. Deleting an endpoint will automatically remove it from any of its [Experience Groups](/experiences/groups/).
