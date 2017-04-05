@@ -19,6 +19,3 @@ After a user is registered and logged in, they will register the lōm smart pot 
 
 **Part 4: [Viewing Device Data]()** <br />
 Inside the lōm app, the user can see real-time and historical moisture data about their smart pot. This section covers how to securely get data for a lōm user's devices.
-
-**Part 5: [Configuring Alerts]()** <br />
-The lōm app allows users to configure custom alerts based on the moisture level of their plant. This section shows how to store these alerts and use a Losant workflow to check these alerts in real-time.

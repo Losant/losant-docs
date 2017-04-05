@@ -23,7 +23,7 @@ The first thing we need to do is create the `POST /devices` endpoint that our de
 
 1. Set the `Method` to `POST`.
 1. Set the `Route` to "/devices".
-1. Set the description to anything you want.
+1. Set the `Description` to anything you want.
 1. Set the `Access Control` to `Any authenticated user`.
 
 Unlike the `/users` and `/auth` endpoints, this endpoint requires a valid user token. The lōm app does not require the use of user groups, so any authenticated user is allowed to request this endpoint. User groups allow you to more granularly define access to specific endpoints for subsets of your Experience Users.
