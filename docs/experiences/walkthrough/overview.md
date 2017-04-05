@@ -4,7 +4,7 @@ This guide provides a complete walkthrough for building an end-to-end mobile exp
 
 The example product in this guide is a hypothetical consumer product called lōm (pronounced like "lome"). lōm is a smart pot for house plants that will automatically notify users if the plant requires water.
 
-// TODO: graphic
+![lom banner](/images/experiences/walkthrough/lom-banner.jpg "lom banner")
 
 This guide is split into four main sections:
 
