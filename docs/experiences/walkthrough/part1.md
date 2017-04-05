@@ -1,27 +1,29 @@
 # Part 1 - User Registration
 
-Like most mobile applications, lōm starts by asking the user to create an account. This part of the walkthrough covers how experience users and endpoints can be used to accomplish user registration.
+Like most mobile applications, lōm starts by asking the user to create an account. This part of the walkthrough covers how Experience Users and Endpoints can be used to accomplish user registration.
 
 <img style="width: 450px; margin: 0 auto; display: block;" src="/images/experiences/walkthrough/part-1/create-account.jpg" alt="Create Account" />
 
-Pressing the "Create Account" button on the lōm main screen takes the user to the Create Account screen. This screen asks the user for an email and a password. The client-side code confirms the email is in a proper format and the passwords match. It then performs an experience API endpoint request to create the user.
+In the lōm mobile app, pressing the "Create Account" button on the lōm main screen takes the user to the "Create Account" screen. This screen asks the user for an email and a password. The client-side code confirms the email is in a proper format and the passwords match. It then performs an Experience API Endpoint request to create the user.
 
-The API for lōm follows a typical REST format. This means we'll use a POST against the users collection to create a new user resource.
+The API for lōm follows a typical REST format. This means we'll use a POST request against the `users` collection to create a new user resource.
 
+To accomplish this ourselves, let's create an Experience Endpoint with this route:
 ```
 POST /users
 ```
+This new endpoint will accept `email` and `password` as POST data, like so:
 ```json
 { "email" : "user@example.com", "password" : "the-provided-password" }
 ```
 
-The first thing we have to do is create this endpoint within our application experience.
+To create this endpoint in Losant, the first thing we have to do is create an endpoint within our application Experience.
 
 ![Add Route](/images/experiences/walkthrough/part-1/add-route.png "Add Route")
 
-Click the `Experience` tab on the application menu to manage your application's experience. First-time users will be presented with a guide that will automatically create a basic API. This guide will use some of the auto-generated endpoints, specifically `/auth`, so it's recommended to keep them for now.
+Click the `Experience` tab on the application menu to manage your application's Experience. First-time users will be presented with a guide that will automatically create a basic API. This guide will use some of the auto-generated endpoints, specifically `/auth`, so it's recommended to keep them for now.
 
-On the experience overview page, you'll see an `Add` button on the top-right corner of the endpoints list. Click that to add the new endpoint for user registration.
+On the Experience overview page, you'll see an `Add` button on the top-right corner of the endpoints list. Click `Add` to create the new endpoint for user registration.
 
 ![POST users endpoint](/images/experiences/walkthrough/part-1/endpoint-post-users.png "POST users endpoint")
 
@@ -30,13 +32,13 @@ On the experience overview page, you'll see an `Add` button on the top-right cor
 1. Set the description to anything you'd like.
 1. Set the `Access Control` to `All public users`.
 
-Experience endpoints have three authentication options: all public users, any authenticated user, and users that belong to a specific group. This registration route must be publicly available, since it's used to originally create the user. All other routes within lōm will require authentication.
+Experience endpoints have three authentication options: all public users, any authenticated user, and users that belong to a specific group. Since it's used to originally create the user, this registration route must be publicly available. All other routes within lōm will require authentication.
 
 When done, click the `Create Endpoint` button at the bottom to create this endpoint. You'll now be returned to a list of your endpoints.
 
 ![Endpoint list](/images/experiences/walkthrough/part-1/endpoint-list.png "Endpoint list")
 
-At this point we have the endpoint defined, but there's no logic to run when it's requested. If you were to request it now, Losant will automatically return a 404. In order to give this endpoint some intelligence, we have to create a [workflow](/workflows/overview/). All experience endpoints are backed by workflows using the [Endpoint trigger](/workflows/triggers/endpoint) and [Endpoint reply](/workflows/triggers/endpoint) nodes.
+At this point,  we have the `/users` endpoint defined, but there's no logic to run when it's requested. If you were to request it now, Losant will automatically return a 404. In order to give this endpoint some intelligence, we have to create a [workflow](/workflows/overview/). All experience endpoints are backed by workflows that contain the [Endpoint trigger](/workflows/triggers/endpoint) and [Endpoint reply](/workflows/triggers/endpoint) nodes.
 
 Create a new workflow for this endpoint using the main `Workflows` application menu.
 
@@ -46,20 +48,22 @@ Create a new workflow for this endpoint using the main `Workflows` application m
 
 ![Register Users Workflow Blank](/images/experiences/walkthrough/part-1/users-workflow-blank.png "Register Users Workflow Blank")
 
-Now we have an empty workflow that we can use to power our register users endpoint. The first step is to add an endpoint trigger to the workflow canvas.
+Now we have an empty workflow that we can use to power our `/users` endpoint. The first step is to add an endpoint trigger to the workflow canvas.
 
 ![Register Users Endpoint Trigger](/images/experiences/walkthrough/part-1/users-endpoint-trigger.png "Register Users Endpoint Trigger")
 
 In the trigger's configuration, select the endpoint we just created (i.e. POST /users). This workflow will now run whenever that API endpoint is requested.
 
-For now, let's make a simple workflow that simply returns 200 (OK) whenever anything is requested. We'll also use a [Debug node](/workflows/outputs/debug/) so you can see the format of the data as it comes into the workflow. Add a debug node and an endpoint reply node to the canvas.
+For now, let's make a simple workflow that simply returns 200 (OK) whenever anything is requested. We'll also use a [Debug node](/workflows/outputs/debug/) so you can see the format of the data as it comes into the workflow.
+
+Add a Debug node and an Endpoint Reply node to the canvas.
 
 ![Endpoint Debug](/images/experiences/walkthrough/part-1/endpoint-debug.png "Endpoint Debug")
 
-1. Add a debug node and connect it to the endpoint trigger.
-1. Add an endpoint reply node and connect it to the endpoint trigger.
-1. In the endpoint reply config, set the `Response Code Template` to "200".
-1. In the endpoint reply config, set the `Reply Body` to "OK"
+1. Add a Debug node and connect it to the Endpoint Trigger node.
+1. Add an Endpoint Reply node and connect it to the Endpoint Trigger.
+1. In the Endpoint Reply config, set the `Response Code Template` to "200".
+1. In the Endpoint Reply config, set the `Reply Body` to "OK"
 
 Click the `Deploy Workflow` button to deploy this workflow. You can now request this API endpoint using your favorite API tester, like [Postman](https://www.getpostman.com/) or CURL.
 
@@ -90,7 +94,7 @@ If the user exists, `data.existingUser` will be something other than `null`. Nex
 
 1. Set the `Expression` to "{{ data.existingUser }} === null". If the expression returns true (the user does not exist), the workflow will take the right path. If the expression is false, the workflow will take the left path.
 
-At this point we're ready to return the `409 (Conflict)` back to the client if the user already exists. Add an endpoint reply node and connect it to the left (false) output of the conditional node.
+At this point, we're ready to return the `409 (Conflict)` back to the client if the user already exists. Add an endpoint reply node and connect it to the left (false) output of the conditional node.
 
 ![User Exists Reply](/images/experiences/walkthrough/part-1/user-exists-reply.png "User Exists Reply")
 
@@ -98,13 +102,16 @@ At this point we're ready to return the `409 (Conflict)` back to the client if t
 1. Set the `Reply Body` to { "error" : "Email already exists." }.
 1. Add a `Content-Type` header with the value `application/json`.
 
-At this point we have an API that will properly check that a user exists and will return an error if it does. You can test this by trying to register "test.user@example.com", which is the auto-generated user that was created as part of your application experience's first-time setup.
+This API will properly check that a user exists and will return an error if it does. You can test this by trying to register "test.user@example.com", which is the auto-generated user that was created as part of your application Experience's first-time setup.
+
+Click the `Deploy Workflow` button to deploy this workflow.
 
 ```text
 curl -H "Content-Type: application/json" -X POST \
   -d '{"email":"test.user@example.com","password":"my-password"}' \
   https://example.onlosant.com/users
 ```
+If you make this `curl` request, you should receive this response:
 ```json
 { "error" : "Email already exists." }
 ```
@@ -119,9 +126,9 @@ The last thing to do is actually create the user. Add a [Create User node](/work
 1. Set the `Password Template` to "{{ data.body.password }}".
 1. Set the `Result Path` to "data.newUser".
 
-This node will create the new user inside your application experience. lōm only collects email and password, however experience users also have built-in fields for first and last names. [User tags](/experiences/users/#user-tags) can be used to store any other information specific to your application's users.
+This node will create a new user inside your application Experience. lōm only collects email and password, however, experience users also have built-in fields for first and last names. [User tags](/experiences/users/#user-tags) can be used to store any other information specific to your application's users.
 
-The new user will be put back on the payload at "data.newUser", so we can return it to the client as the result of this API request. Next, add an endpoint reply node and connect it to the create user node.
+The new user will be put back on the payload at "data.newUser", so we can return it to the client as the result of this API request. Next, add an Endpoint Reply node and connect it to the Create User node.
 
 ![Create User Reply](/images/experiences/walkthrough/part-1/create-user-reply.png "Create User Reply")
 
@@ -157,11 +164,11 @@ curl -H "Content-Type: application/json" -X POST \
 }
 ```
 
-Once this route is requested, you can see the new user in the experience user list.
+Once this route is requested successfully, you'll see the new user in the experience user list.
 
 ![User List New User](/images/experiences/walkthrough/part-1/user-list-new-user.png "User List New User")
 
-The next thing we want to do is send our new user a welcome email once they've registered. Add an [Email node](/workflows/outputs/email/) and connect it to the endpoint reply node.
+The next thing we want to do is send our new user a welcome email once they've registered. Add an [Email node](/workflows/outputs/email/) and connect it to the Endpoint Reply node.
 
 ![Welcome Email](/images/experiences/walkthrough/part-1/welcome-email.png "Welcome Email")
 
@@ -172,20 +179,20 @@ The next thing we want to do is send our new user a welcome email once they've r
 
 Now whenever a user registers, they'll receive your friendly welcome email. The built-in email node does have a limit of one message per minute. If you plan on registering a bunch of users, you may want to switch to the [SendGrid node](/workflows/outputs/sendgrid/), which will use your own SendGrid account to send as many emails as you'd like.
 
-The very last step is to add some basic input validation on the incoming data. We want to make sure the client did send us a username and password before doing any other work. If a field is missing, this API will return a [400 (Bad Request)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) back to the client. Add a conditional node directly after the endpoint trigger.
+The very last step is to add some basic input validation on the incoming data. We want to make sure the client did send us a email and password before doing any other work. If a field is missing, this API will return a [400 (Bad Request)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) back to the client. Add a conditional node directly after the endpoint trigger.
 
 ![Validate Input](/images/experiences/walkthrough/part-1/validate-input.png "Validate Input")
 
 1. Set the `Expression` to "{{ data.body.email }} && {{ data.body.password }}". This expression checks that both email and password exist.
 
-You can now connect the right (true) output of the new condition node to the existing get user node, which will now only attempt to run the rest of this workflow if the client actually provided a email and password. To reply with the error, add an endpoint reply to the left (false) output of the conditional node.
+You can now connect the right (true) output of the new Condition node to the existing Get User node, which will now only attempt to run the rest of this workflow if the client actually provided an email and password. To reply with an error, add an Endpoint Reply to the left (false) output of the Conditional node.
 
 ![Bad Request Reply](/images/experiences/walkthrough/part-1/bad-request-reply.png "Bad Request Reply")
 
 1. Set the `Response Code Template` to "400".
 1. Set the `Reply Body` to { "error" : "Email and password fields required." }.
 
-You can now test this endpoint by attempting to register a user with a missing field.
+You can now test this endpoint by attempting to register a user with a missing field. Click the `Deploy Workflow` button to deploy this workflow.
 
 ```text
 curl -H "Content-Type: application/json" -X POST \
@@ -196,6 +203,6 @@ curl -H "Content-Type: application/json" -X POST \
 { "error" : "Email and password fields required." }
 ```
 
-This concludes part 1 of the application experience walkthrough. At this point lōm has a fully functional user registration endpoint. The next part covers how users will login once they've registered.
+This concludes Part 1 of the application experience walkthrough. As of now, lōm has a fully functional user registration endpoint. The next part covers how users will login once they've registered.
 
 **[Continue to Part 2](/experiences/walkthrough/part2/)**: User Authentication
