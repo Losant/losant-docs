@@ -109,7 +109,9 @@ Set the `device` to the following:
 
 This object is what Losant expects when creating a new [Device](/devices/overview/). The `name` field is set to "{{ data.body.deviceName }}", which is what was passed into this endpoint as part of the POST body.
 
-[Device tags](/devices/overview/#device-tags) are used to organize devices and provide a way to easily query them from the Losant API. In this example, we're setting two tags: "owner" and "manufacturerId". By setting the owner tag, we can easily query the Losant API for all devices owned by this user, which we'll see in part 4 of this walkthrough. The manufacturerId tag is not used in this guide, but it's handy to keep around in case you need to map the device back to the underlying ID at a later time.
+[Device tags](/devices/overview/#device-tags) are used to organize devices and provide a way to easily query them from the Losant API. In this example, we're setting two tags: "owner" and "manufacturerId". By setting the owner tag, we can easily query the Losant API for all devices owned by this user, which we'll see in part 4 of this walkthrough. Losant automatically adds the Experience User to the payload on every authenticated request, which is why the current user ID can be obtained at `experience.user.id`.
+
+The manufacturerId tag is not used in this guide, but it's handy to keep around in case you need to map the device back to the underlying ID at a later time.
 
 [Attributes](/devices/state/) describe what kind of data this device will be reporting. For lōm, each device simply reports its moisture as a number.
 
