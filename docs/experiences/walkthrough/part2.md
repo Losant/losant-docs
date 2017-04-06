@@ -4,15 +4,15 @@ In [Part 1](/experiences/walkthrough/part1/) of this guide, we learned how to cr
 
 <img style="width: 225px; margin: 0 auto; display: block;" src="/images/experiences/walkthrough/part-2/main-screen.jpg" alt="Main Screen" />
 
-All authentication against Experience endpoints is done using a token. Each token is specific to a user and grants access to any endpoint that you've specified in the [endpoint configuration](/experiences/endpoints/) or the [user group configuration](/experiences/groups/).
+All authentication against Experience Endpoints is done using a token. Each token is specific to a user and grants access to any endpoint that you've specified in the [endpoint configuration](/experiences/endpoints/) or the [user group configuration](/experiences/groups/).
 
-The process of logging in is to simply check a user's email and password and return a token if they're valid. That token can then be used to request API endpoints on behalf of that user. Losant automatically authorizes a token against endpoints and will return an error (401) back to the client if the token doesn't allow access to an endpoint.
+The process of logging in is to simply check a user's email and password and return a token if they're valid. That token can then be used to request API endpoints on behalf of that user. Losant automatically authorizes a token against endpoints and will return a [401 (Unauthorized)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401) error back to the client if the token doesn't allow access to an endpoint.
 
 The first-time setup automatically creates a `POST /auth` route that we can use to get a user's token. Below is a screenshot of the workflow that is automatically generated.
 
 ![Auth Workflow](/images/experiences/walkthrough/part-2/auth-workflow.png "Auth Workflow")
 
-The `/auth` requires the user's email and password to be sent as POST data. It then uses the [Authenticate node](/workflows/experience/authenticate/) to check if an Experience User has an identical email and password. If the authentication fails, a [401 (Unauthorized)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401) is returned to the client. If the email and password are valid, the token and the user object, both of which are added to the payload by the authenticate node, are returned to the client.
+The `/auth` requires the user's email and password to be sent as POST data. It then uses the [Authenticate node](/workflows/experience/authenticate/) to check if an Experience User has an identical email and password. If the authentication fails, a [401 (Unauthorized)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401) is returned to the client. If the email and password are valid, the token and the user object, both of which are added to the payload by the Authenticate node, are returned to the client.
 
 You can test this by requesting `/auth` using one of the Experience Users you created in Part 1.
 
@@ -35,7 +35,7 @@ Using the `/auth` route is the most common way users will authenticate against y
 
 ![Token Workflow](/images/experiences/walkthrough/part-2/token-workflow.png "Token Workflow")
 
-1. Add a [Generate Token node](/workflows/experience/generate-token/) and insert it after the create user node.
+1. Add a [Generate Token node](/workflows/experience/generate-token/) and insert it after the Create User node.
 1. Set the `ID or Email Template` to `{{ data.body.email }}`. The Generate Token node works by accepting the ID or email of an existing Experience User and then creates a token for that user.
 1. Set the `Result Path` to `data.newUser.token`.
 

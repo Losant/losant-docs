@@ -26,7 +26,7 @@ To create this endpoint in Losant, the first thing we have to do is create an en
 
 Click the `Experience` tab on the application menu to manage your application's Experience. First-time users will be presented with a guide that will automatically create a basic API. This guide will use some of the auto-generated endpoints, specifically `/auth`, so it's recommended to keep them for now.
 
-On the Experience overview page, you'll see an `Add` button on the top-right corner of the endpoints list. Click `Add` to create the new endpoint for user registration.
+On the Experience overview page, you'll see an `Add` button in the top right corner of the endpoints list. Click `Add` to create the new endpoint for user registration.
 
 ![POST users endpoint](/images/experiences/walkthrough/part-1/endpoint-post-users.png "POST users endpoint")
 
@@ -35,7 +35,7 @@ On the Experience overview page, you'll see an `Add` button on the top-right cor
 1. Set the description to anything you'd like.
 1. Set the `Access Control` to `All public users`.
 
-Experience endpoints have three authentication options: all public users, any authenticated user, and users that belong to a specific group. Since it's used to originally create the user, this registration route must be publicly available. All other routes within lōm will require authentication.
+Experience endpoints have three authentication options: all public users, any authenticated user, and users that belong to a specific group. Since it's used to originally create the user, this registration route must be publicly available. All routes within lōm, other than account creation and user login, will require authentication.
 
 When done, click the `Create Endpoint` button at the bottom to create this endpoint. You'll now be returned to a list of your endpoints.
 
@@ -181,7 +181,7 @@ The next thing we want to do is send our new user a welcome email once they've r
 
 Now whenever a user registers, they'll receive your friendly welcome email. The built-in email node does have a limit of one message per minute. If you plan on registering a bunch of users, you may want to switch to the [SendGrid node](/workflows/outputs/sendgrid/), which will use your own SendGrid account to send as many emails as you'd like.
 
-The very last step is to add some basic input validation on the incoming data. We want to make sure the client did send us a email and password before doing any other work. If a field is missing, this API will return a [400 (Bad Request)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) back to the client. Add a conditional node directly after the endpoint trigger.
+The very last step is to add some basic input validation on the incoming data. We want to make sure the client did send us an email and password before doing any other work. If a field is missing, this API will return a [400 (Bad Request)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) back to the client. Add a conditional node directly after the endpoint trigger.
 
 ![Validate Input](/images/experiences/walkthrough/part-1/validate-input.png "Validate Input")
 
@@ -206,6 +206,6 @@ curl -H "Content-Type: application/json" -X POST \
 { "error": "Email and password fields required." }
 ```
 
-This concludes Part 1 of the application experience walkthrough. As of now, lōm has a fully functional user registration endpoint. The next part covers how users will login once they've registered.
+This concludes Part 1 of the application experience walkthrough. As of now, lōm has a fully functional user registration endpoint. The next part covers how users will log in once they've registered.
 
 **[Continue to Part 2](/experiences/walkthrough/part2/)**: User Authentication

@@ -1,6 +1,6 @@
 # Part 4 - Viewing Device Data
 
-In [part 1](/experiences/walkthrough/part1/), [part 2](/experiences/walkthrough/part2/), and [part 3](/experiences/walkthrough/part3/) of this walkthrough we've created an API for our lōm smart plant mobile app that allows users to sign up, log in, and register devices. In this part we're going to add the ability to view a list of devices owned by the current user and cover how to request historical device data.
+In [Part 1](/experiences/walkthrough/part1/), [Part 2](/experiences/walkthrough/part2/), and [Part 3](/experiences/walkthrough/part3/) of this walkthrough we've created an API for our lōm smart plant mobile app that allows users to sign up, log in, and register devices. In this part we're going to add the ability to view a list of devices owned by the current user and cover how to request historical device data.
 
 <img style="width: 450px; margin: 0 auto; display: block;" src="/images/experiences/walkthrough/part-4/device-data.png" alt="Device Data" />
 
@@ -13,7 +13,7 @@ The first endpoint we'll create is `GET /devices`, which will return a list of a
 1. Set the `Description` to anything you want.
 1. Set the `Access Control` to `Any authenticated user`.
 
-Like all endpoints we've created, this one will also need a workflow with a matching endpoint trigger. Next, add a [Get Device](/workflows/data/get-device/) node that we'll use to look up the user's devices.
+Like all endpoints we've created, this one will also need a workflow with a matching endpoint trigger. Next, add a [Get Device node](/workflows/data/get-device/) that we'll use to look up the user's devices.
 
 ![Get Devices](/images/experiences/walkthrough/part-4/get-devices.png "Get Devices")
 
@@ -23,7 +23,7 @@ Like all endpoints we've created, this one will also need a workflow with a matc
 1. Check the `Return tags as an object map instead of an array` checkbox. This changes how tags are returned. It makes them an object map, which is easier to work with in most cases.
 1. Set the `Result Path` to `data.devices`.
 
-In part 3 of this walkthrough, we showed how devices were tagged with the owner when they were created. We can now use this tag to find all devices owned by the user that requested this endpoint. Losant automatically adds the Experience User to the payload whenever an authenticated route is requested, so we can get the user ID at `experience.user.id`.
+In Part 3 of this walkthrough, we showed how devices were tagged with the owner when they were created. We can now use this tag to find all devices owned by the user that requested this endpoint. Losant automatically adds the Experience User to the payload whenever an authenticated route is requested, so we can get the user ID at `experience.user.id`.
 
 ![Experience User](/images/experiences/walkthrough/part-4/experience-user.png "Experience User")
 
@@ -33,10 +33,10 @@ All that's left to do for this endpoint is to reply with the devices we just loo
 
 1. Set the `Response Code Template` to `200`, which is the HTTP status code for OK.
 1. Change the `Reply Body` radio to `Payload Path`.
-1. Change the `Reply Body` to `data.devices`. This is the location on the payload where the get device node put its result. We're going to simply reply with the same value.
+1. Change the `Reply Body` to `data.devices`. This is the location on the payload where the Get Device node put its result. We're going to simply reply with the same value.
 1. Add a `Content-Type` header with the value `application/json`.
 
-At this point, the lōm mobile app can now request all of the devices owned by the currently logged in user. You can test this route by requesting the devices created in part 3 of this walkthrough.
+At this point, the lōm mobile app can now request all of the devices owned by the currently logged-in user. You can test this route by requesting the devices created in Part 3 of this walkthrough.
 
 ```text
 curl -H "Authorization: Bearer USER_TOKEN" \
@@ -89,7 +89,7 @@ Losant automatically parses the route parameters and put them on the payload. In
 
 ![Params Payload](/images/experiences/walkthrough/part-4/params-payload.png "Params Payload")
 
-The next step is to add a conditional node to check that this device has an owner tag that matches the current user.
+The next step is to add a [Conditional node](/workflows/logic/conditional/) to check that this device has an owner tag that matches the current user.
 
 ![Conditional](/images/experiences/walkthrough/part-4/conditional.png "Conditional")
 
@@ -99,9 +99,9 @@ Set the `Expression` to the following:
 {{ data.device }} && {{ data.device.tags.owner.[0] }} === {{ experience.user.id }}
 ```
 
-This expression first checks to see if any device was returned at all. Since this route could be requested with any value as the ID, for example `/devices/not-a-real-value/data`, the result of the get device node could be null. It then checks that the value of the owner tag matches the current Experience User. Since Losant devices can have duplicate values for the same tag, the values are always returned as an array, which is why the syntax is `data.device.tags.owner.[0]`.
+This expression first checks to see if any device was returned at all. Since this route could be requested with any value as the ID, for example `/devices/not-a-real-value/data`, the result of the Get Device node could be `null`. It then checks that the value of the owner tag matches the current Experience User. Since Losant devices can have duplicate values for the same tag, the values are always returned as an array, which is why the syntax is `data.device.tags.owner.[0]`.
 
-If the device can't be found, or the owner tag doesn't match, simply use an endpoint reply node to respond with a 403 (Forbidden).
+If the device can't be found, or the owner tag doesn't match, simply use an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) to respond with a 403 (Forbidden).
 
 If we did get a valid device ID, we can now use the [Time Series node](/workflows/data/time-series/) to request historical data for the device.
 
@@ -113,13 +113,13 @@ If we did get a valid device ID, we can now use the [Time Series node](/workflow
 1. Set the `Resolution` to whatever makes sense for the application. In this example, it will return 24 hours of data with a data point for each 5 minute interval.
 1. Set the `Payload Path for Value` to `data.resultData`.
 
-The time series node provides powerful aggregation support for data that has been reported by your devices. The duration, resolution, and aggregation can all be changed to match your desired result. The last step is to reply with this data using an endpoint reply node.
+The Time Series node provides powerful aggregation support for data that has been reported by your devices. The duration, resolution, and aggregation can all be changed to match your desired result. The last step is to reply with this data using an Endpoint Reply node.
 
 ![Data Reply](/images/experiences/walkthrough/part-4/data-reply.png "Data Reply")
 
-1. Set the `Response Code Template` to `200`, which is the HTTP status code for OK.
+1. Set the `Response Code Template` to `200`, which is the HTTP status code for `OK`.
 1. Change the `Reply Body` radio to `Payload Path`.
-1. Set the `Reply Body` to `data.resultData`. This where the time series node put its result, so this reply is simply sending the result back to the client.
+1. Set the `Reply Body` to `data.resultData`. This where the Time Series node put its result, so this reply is simply sending the result back to the client.
 1. Add a `Content-Type` header with the value `application/json`.
 
 You can now test this endpoint to see data that has been reported by your application's devices.
@@ -147,7 +147,7 @@ curl -H "Authorization: Bearer USER_TOKEN" \
 ]
 ```
 
-The result of this API request will be a data point for each 5 minute interval over the last 24 hours. Since the aggregation in the time series node was set to `MEAN`, the `value` above will be the average. The `count` is the number of data points collected in that 5 minute interval. The `sum` is the value of every point collected in the 5 minute interval added together.
+The result of this API request will be a data point for each five-minute interval over the last 24 hours. Since the aggregation in the Time Series node was set to `MEAN`, the `value` above will be the average. The `count` is the number of data points collected in that five-minute interval. The `sum` is the value of every point collected in the five-minute interval added together.
 
 The lōm mobile app now has an API that supports all required features. Users can sign up, they can log in, they can register devices, they can see a list of their devices, and they can view historical data for each device. This concludes the Losant Application Experience walkthrough. If you have additional questions about experiences, please visit our [forums](https://forums.losant.com).
 
