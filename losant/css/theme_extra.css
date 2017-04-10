@@ -18,26 +18,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Alternate Gothic';
-    src: url('https://cdn2.hubspot.net/hubfs/742943/Fonts/AlternateGothic/urw_-_alternategotno3d-webfont.woff2') format('woff2'),
-         url('https://cdn2.hubspot.net/hubfs/742943/Fonts/AlternateGothic/urw_-_alternategotno3d-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Fira Sans';
-    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.eot');
-    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.eot?#iefix') format('embedded-opentype'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.woff2') format('woff2'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.woff') format('woff'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.ttf') format('truetype'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.svg#FiraSans-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* FONT PATH
  * -------------------------- */
