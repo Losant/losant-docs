@@ -1,8 +1,8 @@
 # Experiences
 
-Up until Losant Experiences, anytime you wanted to build a product, on top of Losant, with its own users and API endpoints, you've had to do this yourself. Usually, this meant writing an API service, implementing all of the user authentication, and hosting the result somewhere, which is a lot of work.
+Building a product on top of Losant usually involves writing an API service, implementing all of the user authentication, and hosting the result somewhere, which is a lot of work. Experiences bring all of this functionality directly inside your Losant application.
 
-Experiences bring all of this functionality directly inside your Losant application. It is a means by which you can build a fully functional API allowing users to interact with your connected [devices](/devices/overview/). Set a custom domain to handle requests; configure [endpoints](/experiences/endpoints/) to respond using the power of Losant's [workflow engine](/workflows/overview/); register [users](/experiences/users/) against your application; and protect data access by assigning those users to [groups](/experiences/groups/). All Experience API Endpoints are powered by workflows inside your Losant application.
+Experiences are a means by which you can build a fully functional API allowing users to interact with your connected [devices](/devices/overview/). Set a custom domain to handle requests; configure [endpoints](/experiences/endpoints/) to respond using the power of Losant's [workflow engine](/workflows/overview/); register [users](/experiences/users/) against your application; and protect data access by assigning those users to [groups](/experiences/groups/). All Experience API Endpoints are powered by workflows inside your Losant application.
 
 ![Experiences Overview](/images/experiences/experiences-overview.png "Experiences Overview")
 
