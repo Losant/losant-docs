@@ -1,12 +1,14 @@
 # Webhooks
 
-Webhooks are defined HTTP endpoints within the Losant Platform that can be used to trigger workflows from external sources.
+Webhooks are defined HTTP endpoints within the Losant Platform that can be used to trigger [workflows](/workflows/overview/) from external sources.
 
 ## Viewing Webhooks
 
 You can view the available webhooks under `Webhooks` in the Application menu bar.
 
 ![Add Webhook](/images/applications/add-webhook.png "Add Webhook")
+
+Click a webhook's name in the list to view its configuration, make edits or view workflows associated with the webhook.
 
 ## Creating a Webhook
 
@@ -62,6 +64,8 @@ When this checkbox is checked, any call against this webhook will generate a `re
 If you no longer need a webhook, you may delete it by clicking the `Delete` icon on the webhook list or by clicking the `Delete Webhook` button on the detail screen.
 
 ![Delete Webhook](/images/applications/delete-webhook.png "Delete Webhook")
+
+When deleting a webhook, you also have the option of deleting any [workflows](/workflows/overview/) triggered by that webhook. Note that this action deletes **any workflow with a [Webhook Trigger Node](/workflows/triggers/webhook/) matching this webhook**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked.
 
 ## Using Webhooks
 

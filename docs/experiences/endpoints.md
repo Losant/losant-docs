@@ -111,3 +111,7 @@ If a command line interface isn't your thing, one of the better (and free) HTTP 
 ## Deleting Endpoints
 
 An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on the list page, or by clicking the "Delete" button in the footer of an endpoint's edit page. Deleting an endpoint will automatically remove it from any of its [Experience Groups](/experiences/groups/).
+
+![Delete Endpoint](/images/experiences/delete-endpoint.png "Delete Endpoint")
+
+When deleting an endpoint, you also have the option of deleting any [workflows](/workflows/overview/) triggered by that endpoint. Note that this action deletes **any workflow with an [Endpoint Trigger Node](/workflows/triggers/endpoint/) matching this endpoint**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked.

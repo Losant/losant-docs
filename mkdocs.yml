@@ -37,6 +37,7 @@ pages:
     - Application Tokens: applications/application-tokens.md
     - Data Explorer: applications/data-explorer.md
     - Events: applications/events.md
+    - Integrations: applications/integrations.md
     - Webhooks: applications/webhooks.md
 - Experiences:
     - Overview: experiences/overview.md
@@ -85,6 +86,7 @@ pages:
         - On Disconnect: workflows/triggers/on-disconnect.md
         - Endpoint: workflows/triggers/endpoint.md
         - Event: workflows/triggers/event.md
+        - Google Pub/Sub: workflows/triggers/google-pub-sub.md
         - MQTT: workflows/triggers/mqtt.md
         - Timer: workflows/triggers/timer.md
         - Virtual Button: workflows/triggers/virtual-button.md
@@ -131,6 +133,7 @@ pages:
         - Device State: workflows/outputs/device-state.md
         - Email: workflows/outputs/email.md
         - Endpoint Reply: workflows/outputs/endpoint-reply.md
+        - Google Pub/Sub: workflows/outputs/google-pub-sub.md
         - HTTP: workflows/outputs/http.md
         - Modify Event: workflows/outputs/modify-event.md
         - MQTT: workflows/outputs/mqtt.md
