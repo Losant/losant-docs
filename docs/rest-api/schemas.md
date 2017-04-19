@@ -248,6 +248,9 @@ Schema for a single Application
         "flowCount": {
           "type": "number"
         },
+        "integrationCount": {
+          "type": "number"
+        },
         "webhookCount": {
           "type": "number"
         }
@@ -334,6 +337,8 @@ Schema for the body of an Application API Token creation request
           "experienceGroups.*",
           "experienceUser.*",
           "experienceUsers.*",
+          "integration.*",
+          "integrations.*",
           "flow.*",
           "flows.*",
           "webhook.*",
@@ -405,8 +410,13 @@ Schema for the body of an Application API Token creation request
           "flow.patch",
           "flow.pressVirtualButton",
           "flow.setStorageEntry",
-          "flows.create",
           "flows.get",
+          "flows.post",
+          "integration.delete",
+          "integration.get",
+          "integration.patch",
+          "integrations.get",
+          "integrations.post",
           "webhook.delete",
           "webhook.get",
           "webhook.patch",
@@ -994,6 +1004,9 @@ Schema for a collection of Applications
               "flowCount": {
                 "type": "number"
               },
+              "integrationCount": {
+                "type": "number"
+              },
               "webhookCount": {
                 "type": "number"
               }
@@ -1131,6 +1144,7 @@ Schema for a single Audit Log entry
         "ExperienceUser",
         "Flow",
         "SolutionUser",
+        "Integration",
         "Webhook"
       ]
     },
@@ -1276,6 +1290,7 @@ Schema for the filter of an audit log query
               "ExperienceUser",
               "Flow",
               "SolutionUser",
+              "Integration",
               "Webhook"
             ]
           },
@@ -1438,6 +1453,7 @@ Schema for a collection of Audit Logs
               "ExperienceUser",
               "Flow",
               "SolutionUser",
+              "Integration",
               "Webhook"
             ]
           },
@@ -6295,17 +6311,18 @@ Schema for a single Workflow
             "type": "string",
             "enum": [
               "deviceId",
-              "deviceTag",
-              "mqttTopic",
-              "webhook",
-              "timer",
-              "event",
-              "virtualButton",
-              "endpoint",
               "deviceIdConnect",
               "deviceIdDisconnect",
+              "deviceTag",
               "deviceTagConnect",
-              "deviceTagDisconnect"
+              "deviceTagDisconnect",
+              "endpoint",
+              "event",
+              "mqttTopic",
+              "integration",
+              "timer",
+              "virtualButton",
+              "webhook"
             ]
           },
           "config": {
@@ -6547,17 +6564,18 @@ Schema for the body of a Workflow modification request
             "type": "string",
             "enum": [
               "deviceId",
-              "deviceTag",
-              "mqttTopic",
-              "webhook",
-              "timer",
-              "event",
-              "virtualButton",
-              "endpoint",
               "deviceIdConnect",
               "deviceIdDisconnect",
+              "deviceTag",
               "deviceTagConnect",
-              "deviceTagDisconnect"
+              "deviceTagDisconnect",
+              "endpoint",
+              "event",
+              "mqttTopic",
+              "integration",
+              "timer",
+              "virtualButton",
+              "webhook"
             ]
           },
           "config": {
@@ -6699,17 +6717,18 @@ Schema for the body of a Workflow creation request
             "type": "string",
             "enum": [
               "deviceId",
-              "deviceTag",
-              "mqttTopic",
-              "webhook",
-              "timer",
-              "event",
-              "virtualButton",
-              "endpoint",
               "deviceIdConnect",
               "deviceIdDisconnect",
+              "deviceTag",
               "deviceTagConnect",
-              "deviceTagDisconnect"
+              "deviceTagDisconnect",
+              "endpoint",
+              "event",
+              "mqttTopic",
+              "integration",
+              "timer",
+              "virtualButton",
+              "webhook"
             ]
           },
           "config": {
@@ -6991,17 +7010,18 @@ Schema for a collection of Workflows
                   "type": "string",
                   "enum": [
                     "deviceId",
-                    "deviceTag",
-                    "mqttTopic",
-                    "webhook",
-                    "timer",
-                    "event",
-                    "virtualButton",
-                    "endpoint",
                     "deviceIdConnect",
                     "deviceIdDisconnect",
+                    "deviceTag",
                     "deviceTagConnect",
-                    "deviceTagDisconnect"
+                    "deviceTagDisconnect",
+                    "endpoint",
+                    "event",
+                    "mqttTopic",
+                    "integration",
+                    "timer",
+                    "virtualButton",
+                    "webhook"
                   ]
                 },
                 "config": {
@@ -7209,6 +7229,749 @@ Schema for the body of a Github login request
 ```
 
 <br/>
+## Integrations
+
+Schema for a single Integrations
+
+### Schema <a name="integrations-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "integrationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "integrationType": {
+      "type": "string",
+      "enum": [
+        "mqtt",
+        "googlePubSub"
+      ]
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1024
+      }
+    },
+    "googlePubSubConfig": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "keyJson": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "projectId",
+        "keyJson"
+      ]
+    },
+    "mqttConfig": {
+      "type": "object",
+      "properties": {
+        "clientId": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "clean": {
+          "type": "boolean"
+        },
+        "port": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "mqtt",
+            "mqtts",
+            "ws",
+            "wss"
+          ]
+        },
+        "host": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "privateKey": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        },
+        "certificate": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        },
+        "caCertificate": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "port",
+        "protocol",
+        "host"
+      ]
+    },
+    "status": {
+      "lastKeepAlive": {
+        "type": [
+          "number"
+        ]
+      },
+      "nextAttempt": {
+        "type": [
+          "number"
+        ]
+      },
+      "connectInfo": {
+        "type": "object",
+        "properties": {
+          "ts": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      },
+      "disconnectInfo": {
+        "type": "object",
+        "properties": {
+          "ts": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="integrations-example"></a>
+
+```json
+{
+  "id": "58ec07f20c747f65243d0d76",
+  "integrationId": "58ec07f20c747f65243d0d76",
+  "applicationId": "575ec8687ae143cd83dc4a97",
+  "creationDate": "2016-06-13T04:00:00.000Z",
+  "lastUpdated": "2016-06-13T04:00:00.000Z",
+  "name": "Example Integrations",
+  "integrationType": "mqtt",
+  "enabled": true,
+  "topics": [
+    "myTopic"
+  ],
+  "mqttConfig": {
+    "clientId": "exampleClientId",
+    "username": "exampleUsername",
+    "password": "examplePassword",
+    "port": 8883,
+    "protocol": "mqtts",
+    "host": "broker.example.com"
+  },
+  "status": {
+    "lastKeepAlive": 1491863679994,
+    "connectInfo": {
+      "ts": 1490629589313
+    },
+    "disconnectInfo": {
+      "ts": 1490629587190,
+      "error": "Keepalive Timeout"
+    }
+  }
+}
+```
+
+<br/>
+## Integrations Patch
+
+Schema for the body of an Integrations modification request
+
+### Schema <a name="integrations-patch-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "integrationType": {
+      "type": "string",
+      "enum": [
+        "mqtt",
+        "googlePubSub"
+      ]
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1024
+      }
+    },
+    "googlePubSubConfig": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "keyJson": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "projectId",
+        "keyJson"
+      ]
+    },
+    "mqttConfig": {
+      "type": "object",
+      "properties": {
+        "clientId": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "clean": {
+          "type": "boolean"
+        },
+        "port": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "mqtt",
+            "mqtts",
+            "ws",
+            "wss"
+          ]
+        },
+        "host": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "privateKey": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        },
+        "certificate": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        },
+        "caCertificate": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "port",
+        "protocol",
+        "host"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="integrations-patch-example"></a>
+
+```json
+{
+  "topics": [
+    "differentTopic"
+  ]
+}
+```
+
+<br/>
+## Integrations Post
+
+Schema for the body of an Integrations creation request
+
+### Schema <a name="integrations-post-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "integrationType": {
+      "type": "string",
+      "enum": [
+        "mqtt",
+        "googlePubSub"
+      ]
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1024
+      }
+    },
+    "googlePubSubConfig": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "keyJson": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "projectId",
+        "keyJson"
+      ]
+    },
+    "mqttConfig": {
+      "type": "object",
+      "properties": {
+        "clientId": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "username": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "clean": {
+          "type": "boolean"
+        },
+        "port": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "mqtt",
+            "mqtts",
+            "ws",
+            "wss"
+          ]
+        },
+        "host": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 1
+        },
+        "privateKey": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        },
+        "certificate": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        },
+        "caCertificate": {
+          "type": "string",
+          "maxLength": 32767,
+          "minLength": 50
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "port",
+        "protocol",
+        "host"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "integrationType"
+  ]
+}
+```
+
+<small></small>
+
+### Example <a name="integrations-post-example"></a>
+
+```json
+{
+  "name": "Example Integrations",
+  "integrationType": "mqtt",
+  "topics": [
+    "myTopic"
+  ],
+  "mqttConfig": {
+    "clientId": "exampleClientId",
+    "username": "exampleUsername",
+    "password": "examplePassword",
+    "port": 8883,
+    "protocol": "mqtts",
+    "host": "broker.example.com"
+  }
+}
+```
+
+<br/>
+## Integrations
+
+Schema for a collection of Integrations
+
+### Schema <a name="integrations-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Integrations",
+        "description": "Schema for a single Integrations",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "integrationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "applicationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024
+          },
+          "integrationType": {
+            "type": "string",
+            "enum": [
+              "mqtt",
+              "googlePubSub"
+            ]
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024
+            }
+          },
+          "googlePubSubConfig": {
+            "type": "object",
+            "properties": {
+              "projectId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024
+              },
+              "keyJson": {
+                "type": "string",
+                "maxLength": 32767,
+                "minLength": 50
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "projectId",
+              "keyJson"
+            ]
+          },
+          "mqttConfig": {
+            "type": "object",
+            "properties": {
+              "clientId": {
+                "type": "string",
+                "maxLength": 1024,
+                "minLength": 1
+              },
+              "username": {
+                "type": "string",
+                "maxLength": 1024,
+                "minLength": 1
+              },
+              "password": {
+                "type": "string",
+                "maxLength": 1024,
+                "minLength": 1
+              },
+              "clean": {
+                "type": "boolean"
+              },
+              "port": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "protocol": {
+                "type": "string",
+                "enum": [
+                  "mqtt",
+                  "mqtts",
+                  "ws",
+                  "wss"
+                ]
+              },
+              "host": {
+                "type": "string",
+                "maxLength": 1024,
+                "minLength": 1
+              },
+              "privateKey": {
+                "type": "string",
+                "maxLength": 32767,
+                "minLength": 50
+              },
+              "certificate": {
+                "type": "string",
+                "maxLength": 32767,
+                "minLength": 50
+              },
+              "caCertificate": {
+                "type": "string",
+                "maxLength": 32767,
+                "minLength": 50
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "port",
+              "protocol",
+              "host"
+            ]
+          },
+          "status": {
+            "lastKeepAlive": {
+              "type": [
+                "number"
+              ]
+            },
+            "nextAttempt": {
+              "type": [
+                "number"
+              ]
+            },
+            "connectInfo": {
+              "type": "object",
+              "properties": {
+                "ts": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "disconnectInfo": {
+              "type": "object",
+              "properties": {
+                "ts": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "integer"
+    },
+    "totalCount": {
+      "type": "integer"
+    },
+    "perPage": {
+      "type": "integer"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "filter": {
+      "type": "string"
+    },
+    "filterField": {
+      "type": "string"
+    },
+    "sortField": {
+      "type": "string"
+    },
+    "sortDirection": {
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="integrations-example"></a>
+
+```json
+{
+  "items": [
+    {
+      "$ref": "#/examples/integrations"
+    }
+  ],
+  "count": 1,
+  "totalCount": 4,
+  "perPage": 1,
+  "page": 0,
+  "sortField": "name",
+  "sortDirection": "asc",
+  "applicationId": "575ec8687ae143cd83dc4a97"
+}
+```
+
+<br/>
 ## Last Value Data
 
 Schema for the result of a last value query
@@ -7398,6 +8161,10 @@ Schema for information about the currently authenticated user
       "type": "string",
       "maxLength": 1024
     },
+    "tokenCutoff": {
+      "type": "string",
+      "format": "date-time"
+    },
     "emailVerified": {
       "type": "boolean"
     },
@@ -7446,6 +8213,9 @@ Schema for information about the currently authenticated user
         "type": "number"
       },
       "flow": {
+        "type": "number"
+      },
+      "integration": {
         "type": "number"
       },
       "webhook": {
@@ -7700,8 +8470,19 @@ Schema for information about the currently authenticated user
                   "type": "number"
                 }
               }
+            },
+            "integration": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "number"
+                }
+              }
             }
           }
+        },
+        "integrationCount": {
+          "type": "number"
         },
         "webhookCount": {
           "type": "number"
@@ -7799,6 +8580,10 @@ Schema for the body of request to modify the current user
       "type": "string",
       "minLength": 8,
       "maxLength": 2048
+    },
+    "tokenCutoff": {
+      "type": "string",
+      "format": "date-time"
     }
   },
   "additionalProperties": false
@@ -8032,6 +8817,9 @@ Schema for a single Organization
       "solution": {
         "type": "number"
       },
+      "integration": {
+        "type": "number"
+      },
       "webhook": {
         "type": "number"
       },
@@ -8176,10 +8964,21 @@ Schema for a single Organization
                   "type": "number"
                 }
               }
+            },
+            "integration": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "number"
+                }
+              }
             }
           }
         },
         "solutionCount": {
+          "type": "number"
+        },
+        "integrationCount": {
           "type": "number"
         },
         "webhookCount": {
@@ -8781,6 +9580,9 @@ Schema for a collection of Organizations
             "solution": {
               "type": "number"
             },
+            "integration": {
+              "type": "number"
+            },
             "webhook": {
               "type": "number"
             },
@@ -8925,10 +9727,21 @@ Schema for a collection of Organizations
                         "type": "number"
                       }
                     }
+                  },
+                  "integration": {
+                    "type": "object",
+                    "patternProperties": {
+                      ".*": {
+                        "type": "number"
+                      }
+                    }
                   }
                 }
               },
               "solutionCount": {
+                "type": "number"
+              },
+              "integrationCount": {
                 "type": "number"
               },
               "webhookCount": {
@@ -9148,6 +9961,14 @@ Schema for the result of a payload count request
       }
     },
     "endpoint": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "type": "number"
+        }
+      }
+    },
+    "integration": {
       "type": "object",
       "patternProperties": {
         ".*": {
