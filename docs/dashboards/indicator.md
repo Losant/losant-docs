@@ -35,6 +35,7 @@ If querying for the last received data point of a boolean attribute for a single
 
 If the boolean attribute is being aggregated – as the result of a query across multiple devices or a larger duration – then all `false` points will be treated as a **0** and all `true` points will be treated as a **1**. Then, the result will return as a **number** representing the following:
 
+*   `FIRST` and `LAST` aggregations will return as `true` or `false`.
 *   `MIN` and `MAX` aggregations will return as `0` (false) or `1` (true).
 *   `MEAN` aggregations will return as a number between 0 and 1 (inclusive), which is the average of all data points across the query.
 *   `SUM` will return as a whole number greater than or equal to 0, which is equal to the number of `true` data points across the query.
@@ -44,7 +45,11 @@ If the boolean attribute is being aggregated – as the result of a query across
 
 When requesting the last received data point of a single device, the result will return as a string.
 
-When requesting aggregated data for such an attribute, **all queries will return as `undefined` except for a `COUNT` aggregation**, which will return as a number representing the total number of data points across the query.
+When requesting aggregated data for such an attribute ...
+
+* `FIRST` and `LAST` aggregations will return the first or last data point collected across the query
+* `COUNT` aggregations will return as a number representing the total number of data points across the query
+* All other queries will return as `undefined`
 
 To expand a condition for editing, simply click the header. You can also choose to expand or collapse all conditions by clicking the link at the top right corner of the section.
 
