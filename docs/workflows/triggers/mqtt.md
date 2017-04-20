@@ -16,7 +16,7 @@ In the above example, the workflow will trigger whenever any message is publishe
 
 ## Payload
 
-The payload will include the payload of the MQTT message on the `data` field, as well as the standard workflow payload information. The `triggerType` will be "mqttTopic" when using the Losant broker, and "subscription" when using one of your integrations.
+The payload will include the MQTT message on the `data` field, as well as the standard workflow payload information. The `triggerType` will be "mqttTopic" when using the Losant broker, and "subscription" when using one of your integrations.
 
 Unlike most other triggers, where the value of the `data` field is an object, the value of `data` for the MQTT trigger will be a string. In the general case, an MQTT workflow payload will look like the following:
 
