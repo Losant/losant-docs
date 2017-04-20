@@ -32,14 +32,14 @@ There are a number of properties that must be defined when setting up the integr
 
 ![Integration MQTT Config](/images/applications/integration-mqtt-config.png "Integration MQTT Config")
 
-* **Protocol, Host and Port:** Select `mqtt://`, `mqtts://`, `ws://` or `wss://` for the **protocol**. The **port number** will change to the default port for each of these protocols, but you may change this if necessary. For the **host**, enter the domain at which the broker is accessed.
+* **Protocol, Host and Port:** Select `mqtt://`, `mqtts://`, `ws://` or `wss://` for the **protocol**. The **port number** will update to the default port for each of these protocols, but you may change this if necessary. For the **host**, enter the domain at which the broker is accessed.
 * **Clean:** Leave this checked to clear any previous session when connecting to the broker; uncheck it to pick up previous session data if it exists.
 * **Client ID:** Enter a client ID if the broker requires one. If you leave this field blank, Losant will automatically assign a client ID, which you may change at any time.
 * **Authentication Method:** There are three options to choose from, some of which require additional fields to be entered ...
     * **None:** Provide no authentication information to the broker.
     * **Username and password:** Authenticate with the broker by providing a `Username` and a `Password`. This is the default authentication method.
     * **Certificate:** If a secure protocol is selected  (`mqtts://` or `wss://`), you can choose to authenticate by certificate, in which case you must provide a `Private Key` and a `Certificate`.  
-* **Topics:** Enter one or more topics to subscribe to from this broker. Any workflows [triggering](/workflows/triggers/mqtt/) off of this integration will fire anytime a message is received on one of these topics. (Note: It is not necessary to subscribe to a topic in order to publish to it in an [MQTT Output Node](/workflows/outputs/mqtt/).)
+* **Topics:** Enter one or more topics to subscribe to from this broker. Any workflows [triggering](/workflows/triggers/mqtt/) off of this integration will fire anytime a message is received on one of these topics. *(Note: It is not necessary to subscribe to a topic in order to publish to it in an [MQTT Output Node](/workflows/outputs/mqtt/).)*
 * **CA Certificate:** If you selected a secure protocol for the connection, you will have the option to enter your own CA certificate. If you use a self-signed certificate or a certificate from a non-standard authority, you must provide the CA certificate from the authority so Losant can properly verify the connection.
 
 ### Google Pub/Sub
@@ -51,12 +51,26 @@ There are three properties that must be defined when setting up the integration.
 ![Integration Google Pub/Sub Config](/images/applications/integration-google-config.png "Integration Google Pub/Sub Config")
 
 * **Project ID:** This is the [ID](https://support.google.com/cloud/answer/6158840) of your Google Cloud Platform project.
-* **Configuration:** A JSON object in the format of a [Service Account Key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys). (The key must have Editor permissions.)
-* **Topics:** Enter one or more topics to subscribe to. Any workflows [triggering](/workflows/triggers/google-pub-sub/) off of this integration will fire anytime a message is received on one of these topics. (Note: It is not necessary to subscribe to a topic in order to publish to it in an [Google Pub/Sub Output Node](/workflows/outputs/google-pub-sub/).)
+* **Configuration:** A JSON object in the format of a [Service Account Key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys). There are a few validation rules on the object's properties; it is recommended you copy the key directly from your Google Cloud account and paste it here. *(Note: The key must have Editor permissions.)*
+* **Topics:** Enter one or more topics to subscribe to. Any workflows [triggering](/workflows/triggers/google-pub-sub/) off of this integration will fire anytime a message is received on one of these topics. *(Note: It is not necessary to subscribe to a topic in order to publish to it in an [Google Pub/Sub Output Node](/workflows/outputs/google-pub-sub/).)*
+
+## Using Integrations
+
+<div class="clearfix">
+  <div style="float: right; max-width: 300px; margin: 0 0px 24px 10px;">
+    <img style="border-width: 5px;" src="/images/applications/integration-example-workflow.png" alt="Integration Example Workflow" />
+  </div>
+  <p>Setting up integrations serves two purposes: triggering workflows and outputting messages. Both of these goals are accomplished using Losant's workflow engine. For more information, check out your integration's corresponding nodes:</p>
+  <ul>
+    <li><a href="/workflows/triggers/mqtt/">MQTT Trigger</a> and <a href="/workflows/outputs/mqtt/">MQTT Output Node</a></li>
+    <li><a href="/workflows/triggers/google-pub-sub/">Google Pub/Sub Trigger</a> and <a href="/workflows/outputs/google-pub-sub/">Google Pub/Sub Output Node</a></li>
+  </ul>
+  <p>Messages received from your integrations count against your <a href="/organizations/resource-limits/#payload-limits">payload limits</a>, so make sure to only subscribe to topics that you are actually using.</p>
+</div>
 
 ## Deleting an Integration
 
-An integration can be deleted by clicking the "Delete" icon next to any user on the list page, or by clicking the "Delete" button in the footer of a user's edit page. Deleting a user will automatically remove him / her from any of their [Experience Groups](/experiences/groups/).
+An integration can be deleted by clicking the "Delete" icon next to any user on the list page, or by clicking the "Delete" button in the footer of an integration's edit page.
 
 ![Delete Integration](/images/applications/delete-integration.png "Delete Integration")
 
