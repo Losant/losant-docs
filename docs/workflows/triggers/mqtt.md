@@ -1,20 +1,24 @@
 # MQTT Trigger
 
-The MQTT trigger will trigger a workflow whenever a message is sent to the configured topic on the Losant MQTT Broker.
+The MQTT trigger will trigger a workflow whenever a message is sent to one of your [MQTT broker integrations](/applications/integrations/#mqtt), or to a topic of your choosing on the [Losant MQTT broker](/mqtt/overview/#the-losant-message-broker).
 
 ![MQTT Trigger](/images/workflows/triggers/mqtt-trigger.png "MQTT Trigger")
 
 ## Configuration
 
-The only configuration needed for this node is the topic name to trigger on. The node supports valid MQTT topic names. The topic is not allowed to be a wildcard topic, a MQTT system topic, or a Losant specific topic.
+When setting up the trigger, you must first choose an MQTT broker. If you select one of your [MQTT broker integrations](/applications/integrations/#mqtt), the workflow will trigger anytime a message is received on one of the integration's configured topics.
+
+You may set up the trigger to work with the default Losant MQTT broker. When doing so, you must also define a single topic on which the workflow should trigger when a message is published to that topic. This must be a [valid MQTT topic](http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices), and furthermore, it cannot be a wildcard topic, an MQTT system topic or a Losant-specific topic.
 
 ![MQTT Trigger Config](/images/workflows/triggers/mqtt-trigger-config.png "MQTT Trigger Config")
 
-In the above example, the workflow will be triggered whenever any message is published on the MQTT topic "legacy/commands".
+In the above example, the workflow will trigger whenever any message is published to the Losant broker on the MQTT topic "alerts/power".
 
 ## Payload
 
-The payload will include the payload of the MQTT message on the `data` field, as well as the standard workflow payload information. Unlike most other triggers, where the value of the `data` field is an object, the value of `data` for the MQTT trigger will be a string. In the general case, a MQTT workflow payload will look like the following:
+The payload will include the payload of the MQTT message on the `data` field, as well as the standard workflow payload information. The `triggerType` will be "mqttTopic" when using the Losant broker, and "subscription" when using one of your integrations.
+
+Unlike most other triggers, where the value of the `data` field is an object, the value of `data` for the MQTT trigger will be a string. In the general case, an MQTT workflow payload will look like the following:
 
 ```json
 {
@@ -38,10 +42,10 @@ For the example workflow above, a specific payload for a triggered workflow migh
   "data": "machineOn",
   "applicationId": "568beedeb436ab01007be53d",
   "applicationName": "Embree",
-  "triggerId": "legacy/commands",
+  "triggerId": "alerts/power",
   "triggerType": "mqttTopic",
   "flowId": "56c74add04d0b50100043381",
-  "flowName": "Command Translator",
+  "flowName": "Power Usage Alert",
   "globals": {}
 }
 ```
