@@ -199,7 +199,7 @@ void handleCommand(LosantCommand *command) {
 }
 ```
 
-The <a href="/mqtt/arduino/" target="_blank">Losant Arduino firmware</a> uses MQTT to communication with devices. Once a MQTT payload is received, `handleCommand` will be called. As you can see, we are looking for a command called `refresh`. If received, it will print `L1` (Line One) and `L2` (Line Two) to the LCD screen. This allows us to easily edit and control what the screen displays with out having to continuously flash the device with new firmware.
+The <a href="/mqtt/arduino/" target="_blank">Losant Arduino firmware</a> uses MQTT to communication with devices. Once an MQTT payload is received, `handleCommand` will be called. As you can see, we are looking for a command called `refresh`. If received, it will print `L1` (Line One) and `L2` (Line Two) to the LCD screen. This allows us to easily edit and control what the screen displays with out having to continuously flash the device with new firmware.
 
 When sending larger payloads, you may have to [change a parameter to allow MQTT to send larger packet sizes.](https://forums.losant.com/t/sending-commands-with-larger-payloads/135)
 
@@ -237,7 +237,7 @@ Lets walkthrough the other nodes and make sure that they are properly configured
 
 ### Timer
 
-A <a href="/workflows/triggers/timer/" target="_blank">Timer</a> node will trigger on a interval you define.
+A <a href="/workflows/triggers/timer/" target="_blank">Timer</a> node will trigger on an interval you define.
 
 ![Workflow Timer](/images/getting-started/losant-iot-dev-kits/lcd-kit/workflow-timer.png "Workflow Timer")
 

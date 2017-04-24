@@ -265,6 +265,16 @@ Contains all the actions that can be performed against the collection of
 [Experience Users](/experiences/users/) belonging
 to an Application - such as listing users or creating a new user.
 
+*   [Integration](/rest-api/integration/)  
+Contains all the actions that can be performed against a single
+[Integration](/devices/integration/), which
+include things like removing an integration or updating integration configuration.
+
+*   [Integrations](/rest-api/integrations/)  
+Contains all the actions that can be performed against the collection of
+[Integrations](/applications/integrations/) belonging
+to an Application - such as listing integrations or creating a new integration.
+
 *   [Me](/rest-api/me/)  
 Contains the actions for operating against the currently authenticated
 [User](/user-accounts/overview/) such as changing

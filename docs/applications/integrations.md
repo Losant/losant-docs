@@ -52,7 +52,7 @@ There are three properties that must be defined when setting up the integration.
 
 * **Project ID:** This is the [ID](https://support.google.com/cloud/answer/6158840) of your Google Cloud Platform project.
 * **Configuration:** A JSON object in the format of a [Service Account Key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys). There are a few validation rules on the object's properties; it is recommended you copy the key directly from your Google Cloud account and paste it here. *(Note: The key must have Editor permissions.)*
-* **Topics:** Enter one or more topics to subscribe to. Any workflows [triggering](/workflows/triggers/google-pub-sub/) off of this integration will fire anytime a message is received on one of these topics. *(Note: It is not necessary to subscribe to a topic in order to publish to it in an [Google Pub/Sub Output Node](/workflows/outputs/google-pub-sub/).)*
+* **Topics:** Enter one or more topics to subscribe to. Any workflows [triggering](/workflows/triggers/google-pub-sub/) off of this integration will fire anytime a message is received on one of these topics. *(Note: It is not necessary to subscribe to a topic in order to publish to it in a [Google Pub/Sub Output Node](/workflows/outputs/google-pub-sub/).)*
 
 ## Using Integrations
 

@@ -16,8 +16,8 @@ The trigger only takes one parameter: a Google Pub/Sub integration that you prev
   "data": <message properties>,
   "applicationId": <id of the current application>,
   "applicationName": <name of the current application>,
-  "triggerId": <id of the integration trigger>,
-  "triggerType": "subscription",
+  "triggerId": <id of the integration>,
+  "triggerType": "integration",
   "flowId": <id of the current workflow>,
   "flowName": <name of the current workflow>,
   "globals": <object of workflow globals>
@@ -45,12 +45,11 @@ For the example workflow above, a specific payload for a triggered workflow migh
     "id": "19916711285",
     "timestamp": 1492710130123,
     "topic": "myGoogleTopic"
-    }
   },
   "applicationId": "568beedeb436ab01007be53d",
   "applicationName": "Embree",
   "triggerId": "56c74add0d3d350100043380",
-  "triggerType": "subscription",
+  "triggerType": "integration",
   "flowId": "56c74add04d0b50100043381",
   "flowName": "Power Usage Alert",
   "globals": {}

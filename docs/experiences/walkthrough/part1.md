@@ -181,7 +181,7 @@ The next thing we want to do is send our new user a welcome email once they've r
 
 Now whenever a user registers, they'll receive your friendly welcome email. The built-in email node does have a limit of one message per minute. If you plan on registering a bunch of users, you may want to switch to the [SendGrid node](/workflows/outputs/sendgrid/), which will use your own SendGrid account to send as many emails as you'd like.
 
-The very last step is to add some basic input validation on the incoming data. We want to make sure the client did send us a email and password before doing any other work. If a field is missing, this API will return a [400 (Bad Request)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) back to the client. Add a conditional node directly after the endpoint trigger.
+The very last step is to add some basic input validation on the incoming data. We want to make sure the client did send us an email and password before doing any other work. If a field is missing, this API will return a [400 (Bad Request)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) back to the client. Add a conditional node directly after the endpoint trigger.
 
 ![Validate Input](/images/experiences/walkthrough/part-1/validate-input.png "Validate Input")
 

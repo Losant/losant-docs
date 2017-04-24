@@ -1,6 +1,6 @@
 # Experience Endpoint Reply Node
 
-The experience endpoint reply node allows a workflow to create and send a HTTP response to an [endpoint](/experiences/endpoints/) HTTP request.
+The experience endpoint reply node allows a workflow to create and send an HTTP response to an [endpoint](/experiences/endpoints/) HTTP request.
 
 ![Endpoint Reply Node](/images/workflows/outputs/endpoint-reply-node.png "Endpoint Reply Node")
 

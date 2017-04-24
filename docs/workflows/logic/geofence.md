@@ -32,7 +32,7 @@ The input coordinates can be defined three different ways:
 *   [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)<br/>
     Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
 
-No matter which type is selected, the field will also accept a [string template](/workflows/accessing-payload-data/#string-templates) for the value. In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an a NMEA string.
+No matter which type is selected, the field will also accept a [string template](/workflows/accessing-payload-data/#string-templates) for the value. In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an NMEA string.
 
 ### Center Point Coordinate Configuration
 

@@ -8,7 +8,7 @@ The Losant Salesforce Builder Kit</a> is an easy way to get up and running with 
 
 In a factory, there are tons of hardware that work together to make a product. Unfortunately, things break, and unexpected problems occur. Ideally, there would be a system in place that will automatically detect a failure and open up a maintenance/support ticket to resolve a problem. Salesforce Service Cloud is a smart, fast support platform with a powerful API. Losant can collect hardware data and trigger actions based on definable rules. In this workshop, we are going to use Salesforce Service Cloud and Losant together to solve this problem.
 
-The device we're building in this workshop contains a button and a LED. When the button is pressed, a <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=cases_home.htm&language=en_US" target="_blank">Salesforce Case</a> will be created. The LED will be controlled by the number of open cases. If there are any open cases, the LED will be lit. If there are no open cases, the LED will be off. This device provides a quick way to create new cases and an easy way to visualize whether or not there are open cases that need to be addressed.
+The device we're building in this workshop contains a button and an LED. When the button is pressed, a <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=cases_home.htm&language=en_US" target="_blank">Salesforce Case</a> will be created. The LED will be controlled by the number of open cases. If there are any open cases, the LED will be lit. If there are no open cases, the LED will be off. This device provides a quick way to create new cases and an easy way to visualize whether or not there are open cases that need to be addressed.
 
 ## 1. Build the Device
 

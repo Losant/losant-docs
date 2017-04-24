@@ -16,14 +16,14 @@ In the above example, the workflow will trigger whenever any message is publishe
 
 ## Payload
 
-The payload will include the MQTT message on the `data` field, as well as the standard workflow payload information. The `triggerType` will be "mqttTopic" when using the Losant broker, and "subscription" when using one of your integrations.
+The payload will include the MQTT message on the `data` field, as well as the standard workflow payload information. The `triggerType` will be "mqttTopic" when using the Losant broker, and "integration" when using one of your integrations.
 
-Unlike most other triggers, where the value of the `data` field is an object, the value of `data` for the MQTT trigger will be a string. In the general case, an MQTT workflow payload will look like the following:
+When triggering from the Losant broker, the value of `data` for the MQTT trigger will be a string (unlike most other triggers, where the value of the `data` field is an object). In the general case, an MQTT workflow payload triggered by the Losant broker will look like the following:
 
 ```json
 {
   "time": <time of the message>,
-  "data": <the mqtt message payload, as a string>,
+  "data": <the mqtt message payload as a string>,
   "applicationId": <id of the current application>,
   "applicationName": <name of the current application>,
   "triggerId": <id of the mqtt trigger>,
@@ -34,7 +34,26 @@ Unlike most other triggers, where the value of the `data` field is an object, th
 }
 ```
 
-For the example workflow above, a specific payload for a triggered workflow might look like this:
+An MQTT workflow payload triggered by a [MQTT broker integration](/applications/integrations/#mqtt) will look like the following:
+
+```json
+{
+  "time": <time of the message>,
+  "data": {
+    "message": <the mqtt message payload as a string>,
+    "topic": <the topic the message was published on>
+  },
+  "applicationId": <id of the current application>,
+  "applicationName": <name of the current application>,
+  "triggerId": <id of the mqtt integration>,
+  "triggerType": "integration",
+  "flowId": <id of the current workflow>,
+  "flowName": <name of the current workflow>,
+  "globals": <object of workflow globals>
+}
+```
+
+For the example workflow above (which is triggered from the Losant broker), a specific payload for a triggered workflow might look like this:
 
 ```json
 {

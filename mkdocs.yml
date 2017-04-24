@@ -179,6 +179,8 @@ pages:
     - Experience Groups: rest-api/experience-groups.md
     - Experience User: rest-api/experience-user.md
     - Experience Users: rest-api/experience-users.md
+    - Integration: rest-api/integration.md
+    - Integrations: rest-api/integrations.md
     - Me: rest-api/me.md
     - Organization: rest-api/org.md
     - Organizations: rest-api/orgs.md

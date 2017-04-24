@@ -135,7 +135,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 *   `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
 *   `{{divide val1 val2}}`: Casts the two values as numbers and divides them.
 *   `{{valueByKey objArray key keyField valueField}}`: Returns the value of `valueField` on the object in the `objArray` whose value for `keyField` matches the value of `key`. The arguments `keyField` and `valueField` are optional, defaulting to the field names `key` and `value`.  If there is no match found, a blank result is returned.
-*   `{{toHtml object}}`: Takes the given object and converts it to a HTML/XML document string. The object must be of the same format that the [HTML Parser node](/workflows/logic/html-parser/) outputs in JSON mode.
+*   `{{toHtml object}}`: Takes the given object and converts it to an HTML/XML document string. The object must be of the same format that the [HTML Parser node](/workflows/logic/html-parser/) outputs in JSON mode.
 *   `{{gpsDistance gpsStr1 gpsStr2}}`: Takes two GPS points and returns the distance between them (in meters).
 *   `{{dashboardUrl id queryParamKey1='queryParamValue1' ...}}`: Creates a link to the dashboard at the given ID (defaults to the current dashboard) and adds the optional query parameters. To pass a nested object of parameters, such as for [dashboard context](/dashboards/context-variables/), include the parameter as ` ctx=(obj key1=value1 key2=value2)`.
 
