@@ -4,6 +4,10 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor" target="_blank">Getting Started with the Raspberry Pi Zero W without a Monitor</a>
+
+*   <a href="https://www.losant.com/blog/getting-started-with-omega2-and-losant" target="_blank">Getting Started with Onion Omega2 and Losant Using Python</a>
+
 *   <a href="https://www.losant.com/blog/getting-started-with-chip-and-losant" target="_blank">Getting Started with CHIP and Losant</a>
 
 *   <a href="https://www.losant.com/blog/making-the-esp8266-low-powered-with-deep-sleep" target="_blank">Making the ESP8266 Low-Powered With Deep Sleep</a>
