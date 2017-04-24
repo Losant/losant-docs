@@ -6,8 +6,6 @@ The debug node allows inspection of the current payload at any point during a wo
 
 ## Configuration
 
-![Debug Node Configuration](/images/workflows/outputs/debug-node-config.png "Debug Node Configuration")
-
 The debug node takes an optional message (a [string template](/workflows/accessing-payload-data/#string-templates)) to include in the debug messages that get displayed. In the above example, the message is "Before Mutate".
 
 The node also allows for only printing a single property from the payload, as defined by a [payload path](/workflows/accessing-payload-data/#payload-paths). If the property is defined in the configuration, and that property does not exist on the payload, the debug output will print `undefined`.
@@ -18,4 +16,6 @@ When a workflow runs through a debug node, the node live streams the current pay
 
 ![Debug Node Workflow Stream](/images/workflows/outputs/debug-node-workflow-stream.png "Debug Node Workflow Stream")
 
-Hovering your mouse over an entry in the debug log will highlight the node that generated the message on the stage.
+Hovering your mouse over an entry in the debug log will highlight the node that generated the message on the stage as well as any previous nodes that were executed in the workflow run.
+
+![Hovered Debug Message](/images/workflows/outputs/debug-hovered.png "Hovered Debug Message")
