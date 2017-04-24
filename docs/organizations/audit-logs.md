@@ -45,6 +45,7 @@ As a general rule, any request that creates, edits or deletes a Losant resource 
     * [Experience Endpoints](/experiences/endpoints/)
     * [Experience Groups](/experiences/groups/)
     * [Experience Users](/experiences/users/)
+    * [Integrations](/applications/integrations/)
     * [Webhooks](/applications/webhooks/)
     * [Workflows](/workflows/overview/)
 

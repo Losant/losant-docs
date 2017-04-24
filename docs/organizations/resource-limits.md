@@ -60,6 +60,7 @@ We also supply a detailed breakdown of the number of payloads by type so that yo
 -   Workflow [timer triggers](/workflows/triggers/timer/)
 -   Incoming [webhook](/applications/webhooks/) requests
 -   Incoming [experience endpoint](/experiences/endpoints/) requests
+-   Incoming [integration](/applications/integrations/) messages
 -   Workflow virtual buttons presses, including those triggered by an [Input Controls](/dashboards/input-controls/) block
 -   MQTT inbound and outbound messages (other than those listed above)
 
@@ -83,5 +84,6 @@ Soft-limited resources include:
 -   [Device Recipes](/devices/device-recipes/)
 -   [Experience Endpoints](/experiences/endpoints/)
 -   [Experience Groups](/experiences/groups/)
+-   [Integrations](/applications/integrations/)
 -   [Webhooks](/applications/webhooks/)
 -   [Workflows](/workflows/overview/)
