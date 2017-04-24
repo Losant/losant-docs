@@ -267,7 +267,7 @@ to an Application - such as listing users or creating a new user.
 
 *   [Integration](/rest-api/integration/)  
 Contains all the actions that can be performed against a single
-[Integration](/devices/integration/), which
+[Integration](/applications/integrations/), which
 include things like removing an integration or updating integration configuration.
 
 *   [Integrations](/rest-api/integrations/)  

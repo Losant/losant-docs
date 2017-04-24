@@ -6,7 +6,7 @@ The Google Pub/Sub trigger will trigger a workflow whenever a message is sent to
 
 ## Configuration
 
-The trigger only takes one parameter: a Google Pub/Sub integration that you previously [created](/applications/integrations/#google-pubsub). Then, assuming the integration is connected, your workflow will trigger anytime a message is received on one of the integration's topics/
+The trigger only takes one parameter: a Google Pub/Sub integration that you previously [created](/applications/integrations/#google-pubsub). Then, assuming the integration is connected, your workflow will trigger anytime a message is received on one of the integration's topics.
 
 ## Payload
 
