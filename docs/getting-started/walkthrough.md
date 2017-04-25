@@ -1,10 +1,13 @@
 # Losant Walkthrough
 
-Don't have a device? No problem! This walkthrough will allow you to experience many of the features Losant provides while building a virtual weather station powered by the <a href="https://darksky.net" target="_blank">Dark Sky API</a>.
+Don't have a device? No problem! This walkthrough will allow you to experience many of the features in Losant by building a weather station dashboard.
 
 ![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
 
-Since all data doesn't come from physical things, Losant does not require that a Losant device map to an actual physical device.  State can be reported to a Losant device through other means - for instance, we are going to use a workflow to gather and report state for a device in this walkthrough in order to store and visualize real weather data.
+In reality, you'll use sensors and hardware to capture the weather information and send that data to Losant. For this walkthrough, instead of real hardware, we can use the <a href="https://darksky.net" target="_blank">Dark Sky API</a> to simulate hardware that sends weather data.
+
+Dark Sky is an API that provides a simple way to acquire weather data. The Dark Sky API is a separate, paid service — you'll have to sign up for an API key (one key per company). With this key, the first 1,000 forecasts per day are free, which is just enough for this walkthrough.
+
 
 ## Step 1: Sign up for Dark Sky API
 
