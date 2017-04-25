@@ -71,6 +71,10 @@ We also supply a detailed breakdown of the number of payloads by type so that yo
 -   [Webhook replies](/workflows/outputs/webhook-reply/) in workflows
 -   Workflow runs triggered by another workflow
 
+## Data Retention
+
+[Device state](/devices/state/), [device connection logs](/devices/overview/#connection-status), and [workflow logs](/rest-api/flow/#get-log-entries) within an application are subject to data retention age limits. Once data is older than the data retention limit, it is deleted. The data retention limit for an application varies depending on the plan level of the owning organization (or if the application is within a user's sandbox). See the [Plans & Pricing](https://www.losant.com/pricing) table for details on the exact retention for each plan. If you need longer term data retention, [contact us](https://www.losant.com/contact-us) for an enterprise plan with customized data retention limits.
+
 ## Soft-Limited Resources
 
 Other resources within the Losant platform are subject to "soft limits." Though organizations and Sandboxes are subject to these limits when creating or transferring resources, you may request increases to these limits at no additional charge.
