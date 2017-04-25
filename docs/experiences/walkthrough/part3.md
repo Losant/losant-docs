@@ -1,6 +1,6 @@
 # Part 3 - Device Registration
 
-In [part 1](/experiences/walkthrough/part1/) and [part 2](/experiences/walkthrough/part2/) of this walkthrough, we've successfully built a custom API for our lōm mobile application that allows users to register and then log in. In this part, we'll create a new API endpoint that allows devices to perform on-demand registration.
+In [Part 1](/experiences/walkthrough/part1/) and [Part 2](/experiences/walkthrough/part2/) of this walkthrough, we successfully built a custom API for our lōm mobile application that allows users to register and then log in. In this part, we'll create a new API endpoint that allows devices to perform on-demand registration.
 
 <img style="width: 225px; margin: 0 auto; display: block;" src="/images/experiences/walkthrough/part-3/add-pot.jpg" alt="Add Smart Pot" />
 
@@ -8,12 +8,12 @@ Pairing a device to the user's account is still one of the most complicated step
 
 1. The lōm device exposes an access point.
 1. The lōm mobile app connects the user's phone to the access point.
-1. The lōm mobile app connects the device to the user's wifi.
+1. The lōm mobile app connects the device to the user's Wi-Fi.
 1. The lōm mobile app sends the user's token to the device.
 1. The device requests a registration endpoint using the user's token.
 1. The registration endpoint creates the device and access key pair.
 1. The device connects directly to Losant's MQTT broker.
-1. The lōm mobile app connects the user's mobile device back to their wifi.
+1. The lōm mobile app connects the user's mobile device back to their Wi-Fi.
 
 As you can see there are a lot of steps involved in pairing a device. This guide will cover details for steps 5 and 6, which involve creating an Experience Endpoint for registration. The other steps are very specific to the actual hardware used and are outside the scope of this guide.
 
@@ -35,7 +35,7 @@ The next thing we need to do is create a workflow that is triggered by this endp
 1. Link the device to the user using [device tags](/devices/overview/#device-tags).
 1. Create an access key pair for the newly created device.
 
-This endpoint will require two fields in its body. One is a custom name provided by the user and the second is a manufacturer ID. This ID can be anything as long as it's unique for each device. A mac address or a Bluetooth ID work well, but it can be any identifier that works for your company. The endpoint will then reply with the new device ID, an access key, and an access secret.
+This endpoint will require two fields in its body. One is a custom name provided by the user and the second is a manufacturer ID. This ID can be anything as long as it's unique for each device. A MAC address or a Bluetooth ID work well, but it can be any identifier that works for your company. The endpoint will then reply with the new device ID, an access key, and an access secret.
 
 ```text
 POST /devices
@@ -66,27 +66,27 @@ Like all endpoint workflows, start by adding an [Endpoint trigger](/workflows/tr
 
 The only required configuration option is to set the `Endpoint Method / Route` to `POST /devices`. This workflow will now trigger whenever the `POST /devices` endpoint is requested.
 
-The next step is to add some basic validation to ensure the client provided the manufacturer ID and the custom device name. Add a conditional node and an endpoint reply to the canvas.
+The next step is to add some basic validation to ensure the client provided the manufacturer ID and the custom device name. Add a [Conditional node](/workflows/logic/conditional/) and an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) to the canvas.
 
 ![Validate Input](/images/experiences/walkthrough/part-3/validate-input.png "Validate Input")
 
-1. Set the `Expression` on the conditional node to `{{ data.body.manufacturerId }} && {{ data.body.deviceName }}`. This will verify that both "manufacturerId" and "deviceName" are present on the POST body.
-1. Set the `Response Code Template` to `401` on the endpoint reply node. 401 is the HTTP status code for a bad request.
+1. Set the `Expression` on the Conditional node to `{{ data.body.manufacturerId }} && {{ data.body.deviceName }}`. This will verify that both "manufacturerId" and "deviceName" are present on the POST body.
+1. Set the `Response Code Template` to `400` on the Endpoint Reply node. 400 is the HTTP status code for `Bad Request`.
 1. Set the `Reply Body` on the endpoint reply node to `{ "error": "manufacturerId and deviceName are required." }`.
 
-Now if a client makes a request against the lōm API to register a device and does not provide all required fields, the API will respond with a 401 (Bad Request).
+Now if a client makes a request against the lōm API to register a device and does not provide all required fields, the API will respond with a 400 (Bad Request).
 
 The next step is to check that the manufacturer ID that was supplied is valid.
 
 ![Validate ID](/images/experiences/walkthrough/part-3/valid-id.png "Validate ID")
 
-Since this check is so specific to each use-case, this workflow simply adds a representative conditional node that will always return true. In practice, this is the place you'd query some collection of valid IDs. What represents a valid ID is entirely up to you. If the ID is invalid, the API simply returns a 401 (Bad Request) back to the user.
+Since this check is so specific to each use-case, this workflow simply adds a representative conditional node that will always return true. In practice, this is the place you'd query some collection of valid IDs. What represents a valid ID is entirely up to you. If the ID is invalid, the API simply returns a 400 (Bad Request) back to the user.
 
-Now we're to the meat of this workflow. The next step is to use the [Losant API](/workflows/data/losant-api/) node to create a new device.
+Now we're to the meat of this workflow. The next step is to use the [Losant API node](/workflows/data/losant-api/) to create a new device.
 
 ![Create Device](/images/experiences/walkthrough/part-3/new-device.png "Create Device")
 
-The Losant API node allows you to manage all resources within your Losant application. In this case, we've used it to create a new Losant device.
+The Losant API node allows you to manage all resources within your Losant application. In this case, we're using it to create a new Losant device.
 
 Set the `Resource and Action` to `Devices: POST`. It's important to note that this `Devices: POST` is not your devices endpoint. This is calling the devices endpoint for [Losant's API](/rest-api/overview/).
 
@@ -143,7 +143,7 @@ The last thing we need to do is reply to the request with the newly created devi
 
 ![Endpoint Reply](/images/experiences/walkthrough/part-3/endpoint-reply.png "Endpoint Reply")
 
-Set the `Response Code Template` to `201`, which is the HTTP status code for created.
+Set the `Response Code Template` to `201`, which is the HTTP status code for `Created`.
 
 Set the `Reply Body` to the following:
 
