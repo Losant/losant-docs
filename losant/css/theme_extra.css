@@ -18,41 +18,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Knockout-30';
-    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.eot');
-    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.eot?#iefix') format('embedded-opentype'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.woff2') format('woff2'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.woff') format('woff'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.ttf') format('truetype'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF30-JuniorWelterwt.svg#Knockout-HTF30-JuniorWelterwt') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Knockout-50';
-    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.eot');
-    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.eot?#iefix') format('embedded-opentype'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.woff2') format('woff2'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.woff') format('woff'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.ttf') format('truetype'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Knockout/Knockout-HTF50-Welterweight.svg#Knockout-HTF50-Welterweight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Fira Sans';
-    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.eot');
-    src: url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.eot?#iefix') format('embedded-opentype'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.woff2') format('woff2'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.woff') format('woff'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.ttf') format('truetype'),
-         url('//cdn2.hubspot.net/hub/742943/hubfs/Website/Fonts/Fira_Sans/FiraSans-Regular.svg#FiraSans-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* FONT PATH
  * -------------------------- */
@@ -1273,12 +1238,12 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Knockout-30', 'helvetica', sans-serif;
+    font-family: 'Alternate Gothic', 'helvetica', sans-serif;
     -webkit-font-smoothing: antialiased;
     color: #284fff;
-    letter-spacing: 2px;
     padding-top: 70px;
     margin-top: -70px;
+    font-weight: normal;
 }
 
 h1 {
@@ -1322,9 +1287,11 @@ a:hover {
  */
 
 .wy-breadcrumbs li {
-    font-family: 'Knockout-30', 'helvetica', sans-serif;
+    font-family: 'Alternate Gothic', 'helvetica', sans-serif;
     -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
+    font-weight:normal;
+    font-size: 14px;
 }
 
 .wy-breadcrumbs li a:visited {
@@ -1691,8 +1658,9 @@ a.button {
   padding: 0 20px;
   color: #F5F4F3;
   text-transform: uppercase;
-  font-family: 'Knockout-30', 'helvetica', sans-serif;
+  font-family: 'Alternate Gothic', 'helvetica', sans-serif;
   height: 33px;
+  font-weight: normal;
   font-size: 16px;
   line-height: 33px;
   letter-spacing: 2px;
