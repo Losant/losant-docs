@@ -1272,6 +1272,9 @@ h4 {
     color: #111a2b;
 }
 
+.rst-content ul, .rst-content ol {font-size: 16px;}
+.rst-content li {margin-bottom: 5px;}
+
 a {
   color: #ff495c;
 }
