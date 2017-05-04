@@ -1427,20 +1427,25 @@ code.cs, code.c {
   color: #333;
 }
 
-
 /*
  * Additions specific to the search functionality provided by MkDocs
  */
 
-#mkdocs-search-results article h3
-{
-    margin-top: 23px;
-    border-top: 1px solid #E1E4E5;
-    padding-top: 24px;
+#mkdocs-search-results {
+  margin-top: 23px;
+  padding-top: 24px;
+}
+
+#mkdocs-search-results article h3 {
+  margin-top: 23px;
+  border-top: 1px solid #E1E4E5;
+  padding-top: 24px;
 }
 
 #mkdocs-search-results article:first-child h3 {
-    border-top: none;
+  margin-top: 0px;
+  padding-top: 0px;
+  border-top: none;
 }
 
 #mkdocs-search-query{

@@ -5,14 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% if page_description %}<meta name="description" content="{{ page_description }}">{% endif %}
-  {% if site_author %}<meta name="author" content="{{ site_author }}">{% endif %}
+  <link rel="shortcut icon" href="/favicon.ico">
   {% block htmltitle %}
-  <title>{% if page_title %}{{ page_title }} | {% endif %}{{ config.extra.site_title }}</title>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.extra.site_title }}</title>
   {% endblock %}
-
-  {% if favicon %}<link rel="shortcut icon" href="{{ favicon }}">
-  {% else %}<link rel="shortcut icon" href="/favicon.ico">{% endif %}
 
   {# CSS #}
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -27,12 +23,12 @@
   <link href="{{ path }}" rel="stylesheet">
   {%- endfor %}
 
-  {% if current_page %}
+  {% if page %}
   <script>
     // Current page data
-    var mkdocs_page_name = "{{ page_title }}";
-    var mkdocs_page_input_path = "{{ current_page.input_path }}";
-    var mkdocs_page_url = "{{ current_page.abs_url }}";
+    var mkdocs_page_name = "{{ page.title }}";
+    var mkdocs_page_input_path = "{{ page.input_path }}";
+    var mkdocs_page_url = "{{ page.abs_url }}";
   </script>
   {% endif %}
   <script src="/js/jquery-2.1.1.min.js"></script>
@@ -75,7 +71,7 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="{{ nav.homepage.abs_url }}" class="icon icon-home"> {{ site_name }}</a>
+        <a href="{{ nav.homepage.abs_url }}" class="icon icon-home"> {{ config.site_name }}</a>
         {% include "searchbox.html" %}
       </div>
 
@@ -96,7 +92,7 @@
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ nav.homepage.abs_url }}">{{ site_name }}</a>
+        <a href="{{ nav.homepage.abs_url }}">{{ config.site_name }}</a>
       </nav>
 
       {# PAGE CONTENT #}
@@ -124,7 +120,7 @@
 
 </body>
 </html>
-{% if current_page and current_page.is_homepage %}
+{% if page and page.is_homepage %}
 <!--
 MkDocs version : {{ mkdocs_version }}
 Build Date UTC : {{ build_date_utc }}

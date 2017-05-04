@@ -13,7 +13,7 @@ using mkdocs for making changes and previewing them.
 To build the Losant documentation yourself, do the following:
 
 *   **Prerequisites**  
-Install Mkdocs. [See Instructions](http://www.mkdocs.org/#installation).
+Install Mkdocs v0.16.3. [See Instructions](http://www.mkdocs.org/#installation).
 
 *   **Run the built in mkdocs webserver**  
 Go to the repo directory, and run `mkdocs serve`. The documentation site
