@@ -36,13 +36,21 @@ For example, say you have a gauge displaying the current outside temperate. The 
 | Significant Digits | 6e+1 | 65    | 64.7   | 64.67   |
 | Floating Point     | 64.7 | 64.67 | 64.670 | 64.6700 |
 
+### Data Type
+
+
+![Gauge Data Type](/images/dashboards/gauge-data-type.png "Gauge Data Type")
+
+The gauge block can display points as a **live stream** (rendering a new value every time a data point hits the platform) or as an **historical** gauge. Each style has its own advantages:
+
+*   **Live stream** gauges provide feedback with more immediacy than historical gauges, as they do not require a dashboard data refresh to populate with new data. If the gauge's data query references multiple devices by ID or tag, the gauge will update anytime any of the devices reports state for the chosen attribute.
+*   **Historical** gauges allow for data to be aggregated according to a number of rules (based on time durations, mathematical functions and the combination of data from multiple sources), and they also allow for [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).
+
 ### Duration
 
 To view current state of your device(s), select "Last received data point". To view an aggregation of your data over a given time period, choose any other value.
 
 ![Gauge Duration](/images/dashboards/gauge-duration.png "Gauge Duration")
-
-Note that, when choosing a value other than "Last received data point", it is necessary to choose an aggregation method in the block data.
 
 ### Block Data
 
@@ -50,11 +58,14 @@ The block data takes five parameters, three of which are required:
 
 ![Gauge Block Data](/images/dashboards/gauge-block-data.png "Gauge Block Data")
 
-* **Label** is the text displayed beneath number / dial representation of your device(s) state. This can be any value, but you will want it to properly represent the data displayed along with it. HTML entities and <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a> are allowed here.
+* **Label** is the text displayed beneath number / dial representation of your device(s) state. This can be any value, but you will want it to properly represent the data displayed along with it. HTML entities and <a href="https://daringfireball.net/projects/markdown/syntax" target="\_blank">Markdown</a> are allowed here.
 * **Device IDS / Tags** is a [device query](/devices/device-queries/) for choosing which devices are displayed within the gauge.
 * **Attribute** is the device attribute whose value will be displayed in the gauge. This attribute must be of the type `Number`. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Color** can only be set when the gauge type is set to "Dial". The color picker defaults to green, but any color may be selected as the default gauge color.
-* **Aggregation Type** is only visible when Duration is set to anything other than "Last received data point", OR when a device tag is supplied in the device query, OR if more than one device ID is supplied within the device query. This determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "MEAN" will average all data points together before displaying within the gauge.
+* **Aggregation Type** determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "MEAN" will average all data points together before displaying within the gauge. This field is only available if "Data Type" is set to "Historical", and any of the following conditions applies:
+    * Duration is set to anything other than "Last received data point"
+    * A device tag is supplied in the device query
+    * More than one device ID is supplied within the device query
 
 ### Conditional Gauge Colors
 

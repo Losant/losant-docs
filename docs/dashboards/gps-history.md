@@ -37,9 +37,11 @@ Optionally, you may set a specific map center and/or zoom level for your map whe
 
 ### Map Style
 
-![GPS History Map Style](/images/dashboards/map-style.png "GPS History Map Style")
+![GPS History Map Style](/images/dashboards/history-map-style.png "GPS History Map Style")
 
-Optionally, you may choose a particular map style. The two current styles available are `Normal` and `Satellite`. Normal is a standard vector map with streets and labels, and will change from a light to a dark style depending on the theme chosen for viewing the dashboard. Satellite uses satellite imagery to display the map with streets and labels overlaid on top - the satellite style does not have themes for light or dark, and will remain the same no matter what theme is chosen for the dashboard.
+Optionally, you may choose a particular map tile set. The two current styles available are `Normal` and `Satellite`. Normal is a standard vector map with streets and labels, and will change from a light to a dark style depending on the theme chosen for viewing the dashboard. Satellite uses satellite imagery to display the map with streets and labels overlaid on top - the satellite style does not have themes for light or dark, and will remain the same no matter what theme is chosen for the dashboard.
+
+You may also include arrows on your history lines to show the direction of movement between your GPS points.
 
 ### Point Display Configuration
 
