@@ -10,12 +10,22 @@ The debug node takes an optional message (a [string template](/workflows/accessi
 
 The node also allows for only printing a single property from the payload, as defined by a [payload path](/workflows/accessing-payload-data/#payload-paths). If the property is defined in the configuration, and that property does not exist on the payload, the debug output will print `undefined`.
 
-## Live Stream
+## Viewing Debug Output
 
-When a workflow runs through a debug node, the node live streams the current payload to the debug tab of the properties panel. As new payloads arrive, they will appear expanded at the top of the list. Multiple debug nodes in a workflow work in concert, so you can see the payload at various stages in the workflow. For instance, here are the payloads from both debug nodes in the above workflow:
+Whenever a workflow runs, and in the process that run passes through one or more debug nodes, the workflow run will be visualized two different ways.
 
-![Debug Node Workflow Stream](/images/workflows/outputs/debug-node-workflow-stream.png "Debug Node Workflow Stream")
+### Debug Panel
 
-Hovering your mouse over an entry in the debug log will highlight the node that generated the message on the stage as well as any previous nodes that were executed in the workflow run.
+Every time a debug node is hit, the timestamp, and payload value will be written as a new message in the Debug tab. New messages appear at the top of the list. If multiple debug nodes are hit as part of a single workflow run, each debug node will get an entry in the panel; this can be helpful in determining how your payload changes over the course of a run.
 
-![Hovered Debug Message](/images/workflows/outputs/debug-hovered.png "Hovered Debug Message")
+![Debug Node Output](/images/workflows/outputs/debug-node-workflow-stream.png "Debug Node Output")
+
+To view that payload's path through the workflow run, hover your mouse over the debug message. You will see the nodes that were part of the run highlight, and the debug node that generated the message will be called out.
+
+### Live Stream
+
+Optionally, you may also enable the Live Debug Stream by clicking the button in the top right corner of the workflow stage. When live streaming is enabled, you will see workflow runs highlight in real time as they fire.
+
+![Debug Node Live Stream](/images/workflows/outputs/debug-live-view.png "Debug Node Live Stream")
+
+Note that, should multiple workflow runs occur per second, some of the runs may not be visualized on the stage. Also, if you have unsaved changes in your workflow, live streams will automatically be disabled until the changes are saved.
