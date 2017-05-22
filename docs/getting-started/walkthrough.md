@@ -40,13 +40,13 @@ The [Dark Sky API](https://darksky.net/dev/docs/forecast) provides a lot of info
 
 When creating the device, make sure `Standalone` is selected as the device type. The `Device Attributes` are important. These are what tell Losant what data this device will be reporting and what Losant will be storing. For the weather device, we'll be storing the following attributes:
 
-* `temp` - the temperature in degrees Fahrenheit.
-* `feels-like` - the apparent temperature with wind chill and humidity accounted for.
 * `dew-point` - the dew point in degrees Fahrenheit.
+* `feels-like` - the apparent temperature with wind chill and humidity accounted for.
 * `humidity` - the relative humidity between 0-1.
-* `wind-speed` - the wind speed in miles per hour.
-* `visibility` - the average visibility in miles.
 * `pressure` - the sea-level air pressure in millibars.
+* `temp` - the temperature in degrees Fahrenheit.
+* `visibility` - the average visibility in miles.
+* `wind-speed` - the wind speed in miles per hour.
 
 Once all the attributes are properly defined, click the `Create Device` button at the bottom of the page.
 
@@ -160,13 +160,13 @@ To pull the value of the temperature out of this payload, we would use the follo
 
 We can then assign values to our various attributes by using the following templates:
 
-* temp : `{{ weather.body.currently.temperature }}`
-* feels-like : `{{ weather.body.currently.apparentTemperature }}`
 * dew-point : `{{ weather.body.currently.dewPoint }}`
+* feels-like : `{{ weather.body.currently.apparentTemperature }}`
 * humidity : `{{ weather.body.currently.humidity }}`
-* wind-speed : `{{ weather.body.currently.windSpeed }}`
-* visibility : `{{ weather.body.currently.visibility }}`
 * pressure : `{{ weather.body.currently.pressure }}`
+* temp : `{{ weather.body.currently.temperature }}`
+* visibility : `{{ weather.body.currently.visibility }}`
+* wind-speed : `{{ weather.body.currently.windSpeed }}`
 
 You can now deploy this workflow and every time the timer triggers, the device state node will publish those state attributes to your device in Losant.
 
