@@ -17,15 +17,15 @@ Your kit should include the following items:
   * 1 button
   * 1 micro-USB cable
 
-## Overview
+## 1. Overview
 
 These instructions are split into three workshops. Each workshop builds on the previous one and adds new functionality to your kit. It is recommended that you complete the workshops in order.
 
-## Environment Setup
+## 2. Environment Setup
 
 The microcontroller included in this kit is programmed using the Arduino tools. Those must be installed by following the <a href="/getting-started/losant-iot-dev-kits/environment-setup/" target="_blank">environment setup instructions</a>.
 
-## Losant Setup
+## 3. Losant Setup
 
 In this section, you’ll register for a Losant account, create your application, and add the device for your builder kit.
 
@@ -82,7 +82,7 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 ![Access Token Popup](/images/getting-started/losant-iot-dev-kits/builder-kit/access-token-popup.png "Access Token Popup")
 
-## Get Workshop Source Code
+## 4. Get Workshop Source Code
 
 Now let's get the firmware you'll be flashing to the device. Download and extract the following zip file to your computer. We'll be editing and opening these files using the Arduino IDE, so put it somewhere convenient.
 
@@ -92,7 +92,7 @@ If you're familiar with git, you can also clone the repository from here:
 
 [https://github.com/Losant/losant-kit-builder-nodemcu](https://github.com/Losant/losant-kit-builder-nodemcu)
 
-## Workshop 1 – Internet Button
+## 5. Workshop 1 – Internet Button
 
 The first workshop creates an Internet button that triggers a Losant Workflow to send yourself an email.
 
@@ -234,15 +234,15 @@ Click the “Deploy Workflow” button and press the hardware button. You should
 
 This completes the first workshop. You’ve successfully created an Internet button that can be used for any number of useful actions. For an extra challenge, try browsing the other output nodes and come up with other actions you can control with your Internet button, such as sending yourself a text message.
 
-## Bonus Workshop - Virtual Light Wall
+## 6. Bonus Workshop - Virtual Light Wall
 
-If you visit [http://lights.mod.bz](http://lights.mod.bz) you'll see a 3x3 grid of squares - that's the "Virtual Light Wall". In this workshop, we're going to make one of those squares light up with a random color and display a message of your choosing whenever you hit your internet button.
+If you visit [http://lights.now.sh](http://lights.now.sh) you'll see a 3x3 grid of squares - that's the "Virtual Light Wall". In this workshop, we're going to make one of those squares light up with a random color and display a message of your choosing whenever you hit your internet button.
 
 Start by adding an HTTP node to your workflow and connecting it to the Conditional node. You may also want to disconnect the Email node so you don't get emails every time you press the button during this workshop.
 
 ![HTTP Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workflow-http-node.png "HTTP Workflow Node")
 
-On the HTTP node configuration properties, change the `Request Method` to `POST` and set the `URL Template` to "http://lights.mod.bz".
+On the HTTP node configuration properties, change the `Request Method` to `POST` and set the `URL Template` to "http://lights.now.sh".
 
 Set the body template to the following:
 
@@ -258,7 +258,7 @@ Click the `Deploy Workflow` button to deploy this workflow. Now whenever you pre
 
 This workshop shows a lot of the power behind workflows. We've completely changed the behavior of our internet button without having to write any code or update the firmware running on the device itself.
 
-## Workshop 2 – Remote Control LED
+## 7. Workshop 2 – Remote Control LED
 
 In the previous workshop, we showed you how to make a physical button do something in the virtual world. In this example, we’re going show how a virtual button can do something in the physical world.
 
@@ -325,7 +325,7 @@ The Serial Monitor will also print a message whenever a command is received.
 
 We’ve now seen the two primary ways devices can communicate with Losant – state and commands. If you link these together, a whole world of possibilities opens up. Imagine having two builder kits where the button on one invokes the toggle command on another via a workflow. This allows us to easily perform machine-to-machine (m2m) communication without the devices even knowing about each other.
 
-## Workshop 3 – Temperature Sensor
+## 8. Workshop 3 – Temperature Sensor
 
 In this workshop, we’re going to add a temperature sensor to your builder kit. We’ll then use Losant’s dashboarding tools to visualize the real-time and historical temperature data.
 
