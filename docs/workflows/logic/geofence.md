@@ -18,27 +18,13 @@ In the above example, there are actually two different geofences. The first chec
 
 ![Geofence Node Input Config](/images/workflows/logic/geofence-node-input-config.png "Geofence Node Input Config")
 
-The input coordinates can be defined three different ways:
-
-*   [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)<br/>
-    Example: `37.33233141,-122.0312186`
-
-*   [Degrees Minutes Seconds](https://en.wikipedia.org/wiki/Degree_(angle)#Subdivisions) (also known as Sexagesimal)<br/>
-    Example: `37°19'56.39"N,122°1'52.38"W`
-
-*   [NMEA GLL](http://www.gpsinformation.org/dale/nmea.htm#GLL)<br/>
-    Example: `$GPGLL,3906.71226,N,8430.74572,W,000653,A,*24`
-
-*   [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)<br/>
-    Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
-
-No matter which type is selected, the field will also accept a [string template](/workflows/accessing-payload-data/#string-templates) for the value. In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an NMEA string.
+The input coordinates can be take any of the forms we support for [GPS device state](/devices/state/#gps-attributes). No matter which form is used, the field will also accept a [string template](/workflows/accessing-payload-data/#string-templates) for the value. In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an NMEA string.
 
 ### Center Point Coordinate Configuration
 
 ![Geofence Node Center Config](/images/workflows/logic/geofence-node-center-config.png "Geofence Node Center Config")
 
-The center point coordinates can be defined the same was as the input coordinates, in any one of the five formats described above. While in the common case, the center point coordinate values will be static, these fields also support [string templates](/workflows/accessing-payload-data/#string-templates) in case a dynamic center point is needed. Because the common case is a static center point, a map visualization is displayed to help show the real world location of the geofence. In the above example, the center point coordinates are defined statically using decimal degrees.
+The center point coordinates can be defined the same was as the input coordinates, in any one of the forms we support for [GPS device state](/devices/state/#gps-attributes). While in the common case, the center point coordinate values will be static, these fields also support [string templates](/workflows/accessing-payload-data/#string-templates) in case a dynamic center point is needed. Because the common case is a static center point, a map visualization is displayed to help show the real world location of the geofence. In the above example, the center point coordinates are defined statically using decimal degrees.
 
 ### Radius Configuration
 

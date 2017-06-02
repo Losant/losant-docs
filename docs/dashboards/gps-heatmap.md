@@ -26,7 +26,7 @@ The physical location of one or multiple devices can be viewed on the GPS Heatma
 
 ![GPS Heatmap Attribute](/images/dashboards/heatmap-attribute.png "GPS Heatmap Attribute")
 
-The selected device(s) must return an attribute of the type `GPS String`. In the **Attribute** dropdown, select the attribute's name to display on the graph. Note that, when displaying multiple devices on the heatmap, each device must return data under the same attribute name, and any device attributes that are not of the `GPS String` type will not be available to choose.
+The selected device(s) must return an attribute of the type [GPS string](/devices/state/#gps-attributes). In the **Attribute** dropdown, select the attribute's name to display on the graph. Note that, when displaying multiple devices on the heatmap, each device must return data under the same attribute name, and any device attributes that are not of the [GPS string](/devices/state/#gps-attributes) type will not be available to choose.
 
 ### Default Viewport
 

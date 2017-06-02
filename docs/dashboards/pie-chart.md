@@ -1,6 +1,6 @@
 # Pie Chart
 
-The Pie Chart block displays proportional data across one or more devices. In the example below, a device's GPS data is being shown as a percentage of time it spends at certain locations.
+The Pie Chart block displays proportional data across one or more devices. In the example below, a device's [GPS data](/devices/state/#gps-attributes) is being shown as a percentage of time it spends at certain locations.
 
 ![Pie Chart](/images/dashboards/pie-example.png "Pie Chart")
 

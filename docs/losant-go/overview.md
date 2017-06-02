@@ -20,7 +20,7 @@ Auto Setup automatically creates the following:
 
 1. Application: Losant Go Mobile App
 2. Workflow: Losant Mobile Workflow
-3. Device: Losant Button with the attribute "buttonPressed" (Number), and location (GPS String)
+3. Device: Losant Button with the attribute "buttonPressed" (Number), and location ([GPS string](/devices/state/#gps-attributes))
 
 <div class="slim-image-container"><img src="/images/losant-go/auto-setup-complete.png" alt="Auto Setup Complete" title="Auto Setup Complete" /></div>
 
@@ -28,7 +28,7 @@ Your mobile device is now set up. You'll just need to login to [https://app.losa
 
 ### Manual Setup
 
-Advanced users can choose Manual Setup to select a pre-existing application and device that you'd like this mobile phone to represent. Your device must have the attributes, "buttonPressed" (Number) and location (GPS String), in order to use it effectively.
+Advanced users can choose Manual Setup to select a pre-existing application and device that you'd like this mobile phone to represent. Your device must have the attributes, "buttonPressed" (Number) and location ([GPS string](/devices/state/#gps-attributes)), in order to use it effectively.
 
 *1. Select manual setup*
 
@@ -46,11 +46,11 @@ Advanced users can choose Manual Setup to select a pre-existing application and 
 
 Tap the Losant Go button to use it.  If the button has successfully communicated with the Losant platform, you will receive a "Success" message on your button.
 
-There is an optional switch under the button that will allow you to send your current gps coordinates.
+There is an optional switch under the button that will allow you to send your current GPS coordinates.
 
 <div class="slim-image-container"><img src="/images/losant-go/go-button.png" alt="Go Button" title="Go Button" /><img src="/images/losant-go/go-button-success.png" alt="Success" title="Success" /></div>
 
-The Losant Go App sends the state "buttonPressed = 1" and your current gps coordinates (optional) to the Losant platform each time the button is pressed.  By default, the button will not do anything except log your payload to a debugging panel. You can view the button activity in Losant by viewing the debug panel.
+The Losant Go App sends the state "buttonPressed = 1" and your current GPS coordinates (optional) to the Losant platform each time the button is pressed.  By default, the button will not do anything except log your payload to a debugging panel. You can view the button activity in Losant by viewing the debug panel.
 
 If your device does not have the attributes "buttonPressed" and "location", the Losant Go app will prompt you with an option to append those attributes to your device.
 
