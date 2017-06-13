@@ -314,3 +314,13 @@ disabling a workflow, or triggering a virtual button in the workflow.
 Contains all the actions that can be performed against the collection of
 [Workflows](/workflows/overview/) belonging
 to an Application - such as listing the workflows or creating a new workflow.
+
+*   [Workflow Version](/rest-api/flow-version/)  
+Contains all the actions that can be performed against a single
+[Workflow Version](/workflows/versioning/), such as enabling or
+disabling a workflow version, or updating the version notes.
+
+*   [Workflow Versions](/rest-api/flow-versions/)  
+Contains all the actions that can be performed against the collection of
+[Workflow Versions](/workflows/overview/) belonging
+to a Workflow - such as listing the versions or creating a new version.

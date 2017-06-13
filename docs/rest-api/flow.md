@@ -112,7 +112,7 @@ curl -H 'Content-Type: application/json' \
 
 ## Get Log Entries
 
-Retrieve the recent log entries about the flows
+Retrieve the recent log entries about runs of this workflow
 
 #### Method And Url
 

@@ -80,6 +80,7 @@ pages:
 - Workflows:
     - Overview: workflows/overview.md
     - Accessing Payload Data: workflows/accessing-payload-data.md
+    - Versioning: workflows/versioning.md
     - Triggers:
         - Device: workflows/triggers/device.md
         - On Connect: workflows/triggers/on-connect.md
@@ -189,6 +190,8 @@ pages:
     - Webhooks: rest-api/webhooks.md
     - Workflow: rest-api/flow.md
     - Workflows: rest-api/flows.md
+    - Workflow Version: rest-api/flow-version.md
+    - Workflow Versions: rest-api/flow-versions.md
     - Schemas: rest-api/schemas.md
 theme_dir: 'losant'
 extra:
