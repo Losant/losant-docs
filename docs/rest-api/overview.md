@@ -322,5 +322,5 @@ disabling a workflow version, or updating the version notes.
 
 *   [Workflow Versions](/rest-api/flow-versions/)  
 Contains all the actions that can be performed against the collection of
-[Workflow Versions](/workflows/overview/) belonging
+[Workflow Versions](/workflows/versioning/) belonging
 to a Workflow - such as listing the versions or creating a new version.
