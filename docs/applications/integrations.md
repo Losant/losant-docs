@@ -54,6 +54,19 @@ There are three properties that must be defined when setting up the integration.
 * **Configuration:** A JSON object in the format of a [Service Account Key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys). There are a few validation rules on the object's properties; it is recommended you copy the key directly from your Google Cloud account and paste it here. *Note: The key should have the Pub/Sub Editor role - roles/pubsub.editor - because it needs to be able to create subscriptions.*
 * **Topics:** Enter one or more topics to subscribe to. Any workflows [triggering](/workflows/triggers/google-pub-sub/) off of this integration will fire anytime a message is received on one of these topics. *Note: It is not necessary to subscribe to a topic in order to publish to it in a [Google Pub/Sub Output Node](/workflows/outputs/google-pub-sub/).*
 
+### Particle
+
+A [Particle](https://www.particle.io/) integration allows you to [trigger workflows](/workflows/triggers/particle/) off of events published from your Particle devices. It also allows you to call a Particle [device function](/workflows/outputs/particle-call/) and receive a response via a workflow.
+
+There are two properties that must be defined when setting up the integration.
+
+![Integration Particle Config](/images/applications/integration-particle-config.png "Integration Particle Config")
+
+* **Access Token:** This is the access token that Losant will use to communicate with Particle. You can get your access token from the "Settings" view in the [Particle IDE](https://build.particle.io).
+* **Event Names:** Enter one or more event names to subscribe to. Any workflows [triggering](/workflows/triggers/particle/) off of this integration will fire anytime a message is received on one of these topics. *Note: It is not necessary to subscribe to an event in order to perform [device function](/workflows/outputs/particle-call/) calls.*
+
+The other three fields in the Particle integration configuration are optional - `Device Name or ID`, `Product Slug or ID`, `Org Slug or ID`. These correspond to the `deviceId`, `product`, and `org` parameters on the underlying Particle [Event Stream](https://docs.particle.io/reference/javascript/#geteventstream) API endpoint.
+
 ## Using Integrations
 
 <div class="clearfix">
