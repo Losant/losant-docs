@@ -130,6 +130,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
     * If `val` is an **object**, returns the number of keys on the object.
     * If `val` is a **string**, returns the length of the string.
     * For everything else, returns `undefined`.
+*   `{{join array separator}}`: Joins the values in the given array as a single string, separated by the given separator. If no separator is given, defaults to `,`.
 *   `{{add val1 val2}}`: Casts the two values as numbers and adds them.
 *   `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
 *   `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
