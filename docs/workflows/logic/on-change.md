@@ -26,29 +26,45 @@ There are seven different ways that a "change" can be defined, and those can be 
 
 ![On Change Node Any Change](/images/workflows/logic/on-change-node-any-change.png "On Change Node Any Change")
 
-*   Any change
+##### Any Change
 
-The "Any Change" type is the most commonly used. The can be used with any data type, or even across data types if the type of data in the field being monitored sometimes changes. If the value in the field is different in any way from the previous workflow run, it counts as a change.
+The `Any Change` type is the most commonly used. The can be used with any data type, or even across data types if the type of data in the field being monitored sometimes changes. If the value in the field is different in any way from the previous workflow run, it counts as a change.
 
 #### Numerical Comparison
 
 ![On Change Node Numerical Change](/images/workflows/logic/on-change-node-numerical-change.png "On Change Node Numerical Change")
 
-*   Change of at least - changes in either direction count
-*   Increase of at least - only changes in a positive direction count
-*   Decrease of at least - only changes in a negative direction count
+Unlike the "Any Change" type of comparison, the numerical comparisons require a threshold value. This is because these change comparison types calculate the difference between the current value and the previous value. As one might expect, the values being compared for these change types must be numbers (or able to be cast to numbers). If they are not numbers, the "no change" path out of the node is always taken.
 
-Unlike the "Any Change" type of comparison, the numerical comparison require a threshold value. This is because these change comparison types calculate the difference between the current value and the previous value, and if the change is greater than the specified threshold, it counts as a change. As one might expect, the values being compared for these change types must be numbers (or able to be cast to numbers). If they are not numbers, the "no change" path out of the node is always taken.
+##### Change Of At Least
+
+The `Change of at least` type will trigger whenever the value to check against has changed by at least the specified threshold vs the previous value that triggered. The previous value is updated only when a value triggers the node.
+
+##### Increase Of At Least
+
+The `Increase of at least` type will trigger whenever the value to check against has increased by at least the specified threshold vs the minimum value since the last time the node triggered. The previous value is updated either when a value triggers the node or when a value is smaller than the currently stored previous value.
+
+##### Decrease Of At Least
+
+The `Decrease of at least` type will trigger whenever the value to check against has decreased by at least the specified threshold vs the maximum value since the last time the node triggered. The previous value is updated either when a value triggers the node or when a value is larger than the currently stored previous value.
 
 #### Percentage Comparison
 
 ![On Change Node Percent Change](/images/workflows/logic/on-change-node-percent-change.png "On Change Node Percent Change")
 
-*   Percent change of at least - changes in either direction count
-*   Percent increase of at least - only changes in a positive direction count
-*   Percent decrease of at least - only changes in a negative direction count
-
 The percentage comparison types are very similar to the numerical comparison types, except instead of calculating the exact difference between the old and current values, it calculates the percentage difference. So in the case of percentage comparison, the threshold value is treated as a percentage. And just like the numerical comparison types, the percentage comparison types expect the values being compares to be numbers. If they are not numbers, the "no change" path out of the node is always taken.
+
+##### Percent Change Of At Least
+
+The `Percent change of at least` type will trigger whenever the value to check against has changed by at least the specified threshold (as a percentage) vs the previous value that triggered. The previous value is updated only when a value triggers the node.
+
+##### Percent Increase Of At Least
+
+The `Percent increase of at least` type will trigger whenever the value to check against has increased by at least the specified threshold (as a percentage) vs the minimum value since the last time the node triggered. The previous value is updated either when a value triggers the node or when a value is smaller than the currently stored previous value.
+
+##### Percent Decrease Of At Least
+
+The `Percent decrease of at least` type will trigger whenever the value to check against has decreased by at least the specified threshold (as a percentage) vs the maximum value since the last time the node triggered. The previous value is updated either when a value triggers the node or when a value is larger than the currently stored previous value.
 
 ### Adding The Previous Value To the Payload
 
