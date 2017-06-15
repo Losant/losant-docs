@@ -48,9 +48,9 @@ Devices may optionally include a `time` to correspond to the data being reported
 *   A string that is recognizable by the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse" target="\_blank">JavaScript Date.parse() method</a> (e.g. `{"time": "2016-10-14T21:16:34" }`)
 *   Negative numbers are treated as relative milliseconds - (e.g. `{"time": -60000 }` is treated as 60 seconds ago).
 
-If the time field is omitted, or if the provided string cannot be parsed, the broker will automatically set it to the current time.
+If the time field is omitted, or if the provided string cannot be parsed, Losant will automatically use the current time instead.
 
-The ability to pass a `time` along with state data is important for two reasons:
+The ability to pass a `time` along with state data is important for three reasons:
 
 #### Batch Reporting
 
@@ -59,6 +59,10 @@ If your use case allows for it, doing so means fewer HTTP requests, your state r
 #### Overwriting Previous States
 
 If a state payload is sent with a timestamp, and that timestamp corresponds to a previously reported state **down to the millisecond**, the new payload will overwrite any attribute values reported within that payload. Any attributes reported on the original payload that are not part of the new payload will remain intact. Note that overwriting device states **will still trigger workflows** that are tied to that device's reporting of state.
+
+#### Reporting Historical State
+
+You can also set a timestamp on a payload in order to report historical state information - for example, if a device is offline when it wants to report a value. When the device comes back online, it can report the state payload with the timestamp of when the value actually occurred. There are some limitations to this, however - Losant will only accept reported state whose timestamp is within the past 30 days. If state is reported which has a timestamp older than 30 days (or more than a day in the future), that state report will be ignored - it will not be recorded, and workflows will not be run.
 
 ## Using State
 
