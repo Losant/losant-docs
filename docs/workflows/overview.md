@@ -137,13 +137,13 @@ Once a workflow has been deployed, it will take effect immediately.
 
 ## Import / Export
 
-Workflows can be exported to a file, and can later be imported from that file into a workflow in a different (or the same) application. Exporting a workflow can be done from the main workflow properties panel.
+Workflows and their [versions](/workflows/versioning/) can be exported either to a file or (if you have [edit permissions](/organizations/members/#member-roles) within the application) to a new workflow. When exporting the workflow to a file, that file can then be imported into another workflow. Exporting a workflow can be done from the dropdown alongside the "Deploy Workflow" button.
 
 ![Export Workflow](/images/workflows/workflow-export.png "Export Workflow")
 
 There is one option for exporting a workflow, and that is if the values for the global config should be included in the export. The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
 
-The most common case when importing a workflow will be importing into a blank workflow - however, Losant also supports importing into a workflow with existing nodes. In that case, the nodes for the imported workflow are just added alongside the existing nodes. Importing a workflow can be done right below the export option on the main workflow properties panel.
+The most common case when importing a workflow will be importing into a blank workflow; however, Losant also supports importing into a workflow with existing nodes. In that case, the nodes for the imported workflow are just added alongside the existing nodes. Importing a workflow can be done in the properties panel of a workflow when viewing its "Develop" version.
 
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 
