@@ -112,42 +112,48 @@ The device state node requires you to select the device to report as - which in 
 
 ```json
 {
-  "time": "2016-02-21T22:37:18.000Z",
+  "time": "2017-06-16T18:12:13.000Z",
   "data": {},
-  "applicationId": "56ca20d6e4b8d40100b7a051",
-  "applicationName": "Weather Station",
-  "triggerId": "8bcb6de0d8ea11e58111f33167c0d92f",
+  "applicationId": "5943e1fe70f8bc0007fcae80",
+  "triggerId": "5943e39c70f8bc0007fcae84-Sy6NhcWmZ",
   "triggerType": "timer",
-  "flowId": "56ca2c6ce258b101006a20e4",
+  "relayId": "5943e39c70f8bc0007fcae84-Sy6NhcWmZ",
+  "relayType": "timer",
+  "flowVersion": "develop",
+  "flowId": "5943e39c70f8bc0007fcae84",
   "flowName": "Weather Grabber",
+  "applicationName": "Weather Station",
   "globals": {},
   "weather": {
     "body": {
       "latitude": 39.1119359,
       "longitude": -84.51254,
       "timezone": "America/New_York",
-      "offset": -5,
+      "offset": -4,
       "currently": {
-        "time": 1456094238,
+        "time": 1497636733,
         "summary": "Clear",
         "icon": "clear-day",
-        "nearestStormDistance": 20,
-        "nearestStormBearing": 107,
+        "nearestStormDistance": 46,
+        "nearestStormBearing": 157,
         "precipIntensity": 0,
         "precipProbability": 0,
-        "temperature": 57.01,
-        "apparentTemperature": 57.01,
-        "dewPoint": 42.04,
-        "humidity": 0.57,
-        "windSpeed": 6.51,
-        "windBearing": 348,
-        "visibility": 7.24,
-        "cloudCover": 0.02,
-        "pressure": 1015.5,
-        "ozone": 341.84
+        "temperature": 86.2,
+        "apparentTemperature": 89.15,
+        "dewPoint": 63.87,
+        "humidity": 0.47,
+        "windSpeed": 3.14,
+        "windGust": 4.82,
+        "windBearing": 79,
+        "visibility": 10,
+        "cloudCover": 0.11,
+        "pressure": 1010.27,
+        "ozone": 299.14,
+        "uvIndex": 11
       },
       ...
-    }
+    },
+    ...
   }
 }
 ```
