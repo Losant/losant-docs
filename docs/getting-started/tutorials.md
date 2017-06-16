@@ -4,6 +4,12 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/how-devices-can-register-themselves-in-losant" target="_blank">How Devices Can Register Themselves in Losant</a>
+
+*   <a href="https://www.losant.com/blog/getting-started-with-aws-iot-and-losant" target="_blank">Getting Started With AWS IoT and Losant</a>
+
+*   <a href="https://www.losant.com/blog/getting-started-with-google-pub-sub-and-losant" target="_blank">Getting Started with Google Pub/Sub and Losant</a>
+
 *   <a href="https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor" target="_blank">Getting Started with the Raspberry Pi Zero W without a Monitor</a>
 
 *   <a href="https://www.losant.com/blog/getting-started-with-omega2-and-losant" target="_blank">Getting Started with Onion Omega2 and Losant Using Python</a>
@@ -75,6 +81,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 *   <a href="https://www.losant.com/blog/how-to-connect-a-particle-photon-to-the-losant-iot-platform" target="_blank">How to connect a Particle Photon to the Losant IoT Platform</a>
 
 ## Losant Community Projects
+
+*   <a href="https://docs.onion.io/omega2-project-book-vol1/smart-plant-p1.html" target="_blank">Smart Plant - Measuring Plant Data</a>
 
 *   <a href="https://www.hackster.io/firmwareguru/losant-with-seeed-studio-grove-on-msp432-d01e6f" target="_blank">Losant with Seeed Studio Grove on MSP432</a>
 
