@@ -62,11 +62,7 @@ Not every property of a workflow can be changed on a per-version basis:
 
 ### Workflow Versions Migrated to a Sandbox
 
-If you [transferred an application](/organizations/transferring-resources/) from an organization to a Sandbox, and that application had one or more workflows with versions, there are a few key points to consider:
-
-*   **You will no longer be able to access these versions** unless you migrate that application back to an organization.
-*   If one of that workflow's versions other than "Develop" is set as the default workflow, **that version will continue to run as the default workflow**. This means that triggers that only fire on the default workflow will continue to run that default workflow, and those runs will generate payloads that count against your [resource limits](/organizations/resource-limits/).
-*   For triggers that can run a specific workflow version, if a version name is passed as part of the payload, **the payload will still trigger the specified version**.
+If you [transferred an application](/organizations/transferring-resources/) from an organization to a Sandbox, and that application had one or more workflows with versions, you will still be able to view the past versions, enable / disable them, set one of the versions as the workflow default, run specific versions as described below, and copy a version's contents to Develop. However, you will not be able to create new workflow versions unless that application is migrated back to an organization.
 
 ## Triggering Specific Versions
 
