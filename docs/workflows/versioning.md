@@ -6,8 +6,8 @@ With workflow versioning, it is possible to save multiple versions of a [Losant 
 
 Workflow versioning is only available within applications owned by an [organization](/organizations/overview/). If you require workflow versioning functionality for one of your [Sandbox](/user-accounts/sandbox/) applications, you will need to migrate that application to an organization.
 
-<div class="slim-image-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QE1MGp2-lao" frameborder="0" allowfullscreen style="border: 20px solid #f5f4f3;"></iframe>
+<div class='embed-container'>
+  <iframe src='https://www.youtube.com/embed/QE1MGp2-lao' frameborder='0' allowfullscreen></iframe>
 </div>
 
 ## Creating Versions
