@@ -145,7 +145,7 @@ Clicking the `Export` option will open a modal, which will allow you to either e
 
 ![Export Modal](/images/workflows/workflow-export-modal.png "Export Modal")
 
-When exporting, you must decide is if the values for the global config should be included in the export. The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
+When exporting, you must decide if the values for the global config should be included in the export. The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
 
 The most common case when importing a workflow will be importing into a blank workflow; however, Losant also supports importing into a workflow with existing nodes. In that case, the nodes for the imported workflow are just added alongside the existing nodes. Importing a workflow can be done in the properties panel when viewing its "Develop" version.
 
