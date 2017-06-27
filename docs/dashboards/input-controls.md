@@ -29,7 +29,7 @@ The block supports inputs of four types, plus a special ["Help Block" component]
 
 ### Dynamic Default Values
 
-By setting dynamic default values for your controls, you can extend the functionality of the Input Controls block to also serve as a series of simple gauges reflecting the last recorded state of your devices. When the block is "locked" in View Mode (the toggle in the top right corner displays an eye), each of the controls that has a dynamic default set will update with a new value every time your dashboard refreshes.
+By setting dynamic default values for your controls, you can extend the functionality of the Input Controls block to also serve as a series of simple gauges reflecting the last recorded state of your devices. When the block is "locked" (the lock/unlock option in the block settings menu), each of the controls that has a dynamic default set will update with a new value every time your dashboard refreshes.
 
 ![Input Controls Dynamic Default](/images/dashboards/input-controls-dynamic-default.png "Input Controls Dynamic Default")
 
@@ -120,20 +120,20 @@ On press of the button, "My First Device" will receive a command named "setColor
 
 **Note:** If you do not define a payload for a Trigger Workflow button, the virtual button's default payload – as set within that button's parent workflow – will be sent when your dashboard button is clicked. If you wish to send a blank payload instead of the default payload, set the payload value to `{}` (opening and closing curly braces with nothing in between).
 
-## View Mode vs. Edit Mode
+## Locked vs. Unlocked
 
-In order to send commands or trigger workflows, you must first switch the Input Controls block from "View Mode" (eye icon) to "Input Mode" (pencil icon).
+In order to send commands or trigger workflows, you must first switch the Input Controls block from "Locked" to "Unlocked".
 
-![View Mode](/images/dashboards/input-controls-view-mode.png "View Mode")
+![Locked](/images/dashboards/input-controls-view-mode.png "Locked")
 
-**When in "View Mode" ...**
+**When in "Locked Mode" ...**
 
 *   Controls with dynamic default values will update as your dashboard data refreshes
 *   Buttons and controls are disabled, preventing user interaction. This is to ensure that a stray mouse press does not trigger an unintentional action.
 
-![Edit Mode](/images/dashboards/input-controls-edit-mode.png "Edit Mode")
+![Unlocked](/images/dashboards/input-controls-edit-mode.png "Unlocked")
 
-**When in "Edit Mode" ...**
+**When in "Unlocked Mode" ...**
 
-*   Controls with dynamic defaults cease to update with dashboard data refreshes. (Dynamic default indicators in the control labels will disappear to indicate this.) This holds true until the block is put back into "View Mode".
+*   Controls with dynamic defaults cease to update with dashboard data refreshes. (Dynamic default indicators in the control labels will disappear to indicate this.) This holds true until the block is put back into "Locked Mode".
 *   Buttons can be pressed and controls can be adjusted, thereby allowing commands to be sent to devices and workflows to be triggered.
