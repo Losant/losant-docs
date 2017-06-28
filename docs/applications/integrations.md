@@ -2,6 +2,12 @@
 
 Integrations are connections to external [MQTT brokers](http://mqtt.org/), [Pub/Sub messaging suppliers](https://cloud.google.com/pubsub/docs/overview) or other third-party web services. These connections can then be used to trigger [workflows](/workflows/overview/) and/or output messages from your application.
 
+## Examples & Tutorials
+
+- [Getting Started with Azure IoT and Losant](https://www.losant.com/blog/getting-started-with-azure-iot-and-losant)
+- [Getting Started with AWS IoT and Losant](https://www.losant.com/blog/getting-started-with-aws-iot-and-losant)
+- [Getting Started with Google Pub/Sub IoT and Losant](https://www.losant.com/blog/getting-started-with-google-pub-sub-and-losant)
+
 ## Viewing Integrations
 
 ![Integrations List](/images/applications/integrations-list.png "Integrations List")
