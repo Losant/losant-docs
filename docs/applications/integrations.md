@@ -4,9 +4,9 @@ Integrations are connections to external [MQTT brokers](http://mqtt.org/), [Pub/
 
 ## Examples & Tutorials
 
-- [Getting Started with Azure IoT and Losant](https://www.losant.com/blog/getting-started-with-azure-iot-and-losant)
-- [Getting Started with AWS IoT and Losant](https://www.losant.com/blog/getting-started-with-aws-iot-and-losant)
-- [Getting Started with Google Pub/Sub IoT and Losant](https://www.losant.com/blog/getting-started-with-google-pub-sub-and-losant)
+- <a href="https://www.losant.com/blog/getting-started-with-azure-iot-and-losant" target="_blank">Getting Started with Azure IoT and Losant</a>
+- <a href="https://www.losant.com/blog/getting-started-with-aws-iot-and-losant" target="_blank">Getting Started with AWS IoT and Losant</a>
+- <a href="https://www.losant.com/blog/getting-started-with-google-pub-sub-and-losant" target="_blank">Getting Started with Google Pub/Sub IoT and Losant</a>
 
 ## Viewing Integrations
 

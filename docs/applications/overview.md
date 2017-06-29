@@ -35,24 +35,24 @@ As a real-time tool, the Communication Log will always begin in an empty state.
 Logs will appear as actions on your Application take place. Logs will show for the following cases:
 
 ### MQTT
-- MQTT Authentication - A log will appear when an [MQTT client](https://docs.losant.com/mqtt/overview/) successfully connects or fails to connect to the [Losant MQTT broker](https://docs.losant.com/mqtt/overview/). 
-- Raw MQTT Messages - MQTT Messages sent or received by the [Losant MQTT broker](https://docs.losant.com/mqtt/overview/) will appear in the log. 
+- MQTT Authentication - A log will appear when an [MQTT client](/mqtt/overview/) successfully connects or fails to connect to the [Losant MQTT broker](/mqtt/overview/). 
+- Raw MQTT Messages - MQTT Messages sent or received by the [Losant MQTT broker](/mqtt/overview/) will appear in the log. 
 
 ### Device
-- Device State - When [devices](https://docs.losant.com/devices/overview/) report [state](https://docs.losant.com/devices/state/), a log will appear.
-- Device Commands - When Losant [sends a device command](https://docs.losant.com/devices/commands/), a log will appear.
-- Device Connection Status - When [devices](https://docs.losant.com/devices/overview/) successfully connect or disconnect from Losant, a log will appear.
+- Device State - When [devices](/devices/overview/) report [state](/devices/state/), a log will appear.
+- Device Commands - When Losant [sends a device command](/devices/commands/), a log will appear.
+- Device Connection Status - When [devices](/devices/overview/) successfully connect or disconnect from Losant, a log will appear.
 
 ### Webooks
-- Webhooks - When a [Webhook](https://docs.losant.com/applications/webhooks/) is triggered, a log will appear. 
-- Webhook Replies - When [Losant](https://docs.losant.com/workflows/outputs/webhook-reply/) [replies to a Webhook](https://docs.losant.com/applications/webhooks/#custom-replies), a log will appear. 
+- Webhooks - When a [Webhook](/applications/webhooks/) is triggered, a log will appear. 
+- Webhook Replies - When [Losant](/workflows/outputs/webhook-reply/) [replies to a Webhook](/applications/webhooks/#custom-replies), a log will appear. 
 
 ### Endpoints
 
-- Endpoint - When a request is made to a Losant [Experience Endpoint](https://docs.losant.com/experiences/endpoints/), a log will appear. 
-- Endpoint Reply - When [Losant replies](https://docs.losant.com/workflows/outputs/endpoint-reply/) to an [Experience Endpoint](https://docs.losant.com/experiences/endpoints/), a log will appear.
+- Endpoint - When a request is made to a Losant [Experience Endpoint](/experiences/endpoints/), a log will appear. 
+- Endpoint Reply - When [Losant replies](/workflows/outputs/endpoint-reply/) to an [Experience Endpoint](/experiences/endpoints/), a log will appear.
 
 ### Integrations
-- Integration Messages - When Losant receives a message from an [Integration](https://docs.losant.com/applications/integrations/), a log will appear. 
+- Integration Messages - When Losant receives a message from an [Integration](/applications/integrations/), a log will appear. 
 
 
