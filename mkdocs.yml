@@ -60,23 +60,24 @@ pages:
 - Dashboards:
     - Overview: dashboards/overview.md
     - Context Variables: dashboards/context-variables.md
-    - Time Series Graph: dashboards/time-series-graph.md
-    - GPS Heatmap: dashboards/gps-heatmap.md
-    - GPS History: dashboards/gps-history.md
-    - Gauge: dashboards/gauge.md
-    - Pie Chart: dashboards/pie-chart.md
+    - Application List: dashboards/application-list.md
     - Bar Chart: dashboards/bar-chart.md
-    - Input Controls: dashboards/input-controls.md
+    - Dashboard List: dashboards/dashboard-list.md
     - Data Table: dashboards/data-table.md
     - Device Connection Log: dashboards/device-connection-log.md
-    - Event List: dashboards/event-list.md
-    - Indicator: dashboards/indicator.md
-    - Open Event Indicator: dashboards/open-event-indicator.md
-    - External Website: dashboards/external-website.md
     - Device List: dashboards/device-list.md
+    - Event List: dashboards/event-list.md
+    - External Website: dashboards/external-website.md
+    - Gauge: dashboards/gauge.md
+    - GPS Heatmap: dashboards/gps-heatmap.md
+    - GPS History: dashboards/gps-history.md
+    - Indicator: dashboards/indicator.md
+    - Input Controls: dashboards/input-controls.md
+    - Open Event Indicator: dashboards/open-event-indicator.md
+    - Pie Chart: dashboards/pie-chart.md
+    - Section Header: dashboards/section-header.md
+    - Time Series Graph: dashboards/time-series-graph.md
     - Workflow List: dashboards/workflow-list.md
-    - Application List: dashboards/application-list.md
-    - Dashboard List: dashboards/dashboard-list.md
 - Workflows:
     - Overview: workflows/overview.md
     - Accessing Payload Data: workflows/accessing-payload-data.md
