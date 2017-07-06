@@ -11,7 +11,7 @@ Available in the Python Package Index: `pip install losant-rest`
 *   Ruby with <a href="https://github.com/Losant/losant-rest-ruby" target="_blank">losant-rest-ruby</a>  
 Available in RubyGems: `gem install losant_rest`
 
-Of course, if you are working in a language not listed above, the API is reasonably easy to use directly - if your language has a good HTTP request library and a good JSON library, you should be able to make any API request you need to using the documentation here.
+Of course, if you are working in a language not listed above, the API is reasonably easy to use directly - if your language has a good HTTP request library and a good JSON library, you should be able to make any API request you need using the documentation here.
 
 All of the documentation and examples here are aimed at making direct HTTP requests against the Losant API, using curl examples whenever possible. If you plan on using one of the wrapping libraries listed above, the documentation in those repositories will be a much more useful place to learn how to use the particular library.
 
