@@ -102,6 +102,7 @@ pages:
         - Get User: workflows/experience/get-user.md
         - Update User: workflows/experience/update-user.md
     - Logic:
+        - Array: workflows/logic/array.md
         - Conditional: workflows/logic/conditional.md
         - Delay: workflows/logic/delay.md
         - Function: workflows/logic/function.md
@@ -110,6 +111,7 @@ pages:
         - JSON Decode: workflows/logic/json-decode.md
         - JSON Encode: workflows/logic/json-encode.md
         - Latch: workflows/logic/latch.md
+        - Loop: workflows/logic/loop.md
         - Math: workflows/logic/math.md
         - Mutate: workflows/logic/mutate.md
         - On Change: workflows/logic/on-change.md
