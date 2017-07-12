@@ -58,3 +58,9 @@ Logs will appear as actions on your Application take place. Logs will show for t
 ### Integrations
 
 - Integration Messages - When Losant receives a message from an [Integration](/applications/integrations/), a log will appear.
+
+## Application Globals
+
+![Application Globals](/images/applications/application-globals.png "Application Globals")
+
+Application globals are a set of key/value pairs that are accessible inside of any workflow in the current application. This is a great place to store application wide configuration that is used across multiple workflows, like phone numbers or API keys. Any values configured here are accessible under the globals object on the payload in a workflow run. Application globals can be overridden within a workflow by defining a different value at the same key in the globals for that specific workflow. You can read more about workflow globals [here](/workflows/overview/#workflow-globals).

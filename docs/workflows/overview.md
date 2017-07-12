@@ -159,6 +159,8 @@ Workflow versions can have a set of global config keys - which are essentially k
 
 ![Workflow Globals](/images/workflows/workflow-globals.png "Workflow Globals")
 
+In addition, any [Application Globals](/applications/overview/#application-globals) configured in the application will be accessible here as well. Any application level globals can also be overridden at the workflow level by creating a workflow global with the same key name.
+
 In the above example, there are three global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `632-538-0975`). Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value. Whenever the workflow runs, the payload will always include these global values. For the above example, a payload might end up looking like the following:
 
 ```json
