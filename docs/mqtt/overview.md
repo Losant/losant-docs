@@ -61,7 +61,7 @@ Messages published to the Losant topics gain access to the full features of the 
 
 #### Publishing Device State
 
-A [device state](/devices/state/) is likely the most commonly published message. When thinking in terms of sensor data, the device state is typically the value of one or more sensors. Note that the `time` property is optional, but that [reporting a time with state](/devices/state/#including-timestamps) can be beneficial depending on your use case.
+A [device state](/devices/state/) is likely the most commonly published message. When thinking in terms of sensor data, the device state is typically the value of one or more sensors. The most important, and only required, property of the device state payload is `data`, which is an object where the keys are device attribute names and the values are the values for those attributes. The `time` property is optional - when it is not included, Losant assumes that the reported state is for the current time. [Reporting a timestamp](/devices/state/#including-timestamps) can be beneficial, however, depending on your use case. The `flowVersion` property is also optional - when set, this property will control what version will be run of any workflows triggered by the payload. When not included, the `default` versions of any triggering workflows will be run. You can read more about workflow versions and the `flowVersion` property [here](/workflows/versioning/#triggering-specific-versions).
 
 ###### Topic
 
@@ -71,11 +71,12 @@ A [device state](/devices/state/) is likely the most commonly published message.
 
 ```json
 {
-  "time" : { "$date" : "<ISO Date String>" },
   "data" : {
-    "attribute-name" : "attribute-value",
-    "attribute-name" : "attribute-value"
-  }
+    "an_attribute_name": "an_attribute_value",
+    "another_attribute_name": "another_attribute_value"
+  },
+  "time": <Optional Timestamp>,
+  "flowVersion": <Optional Workflow Version Name>
 }
 ```
 
@@ -89,10 +90,10 @@ When thinking in terms of sensor data, it's very likely you'll have an attribute
 
 ```json
 {
-  "time" : { "$date" : "2015-11-04T19:42:06.710Z" },
-  "data" : {
-    "temperature" : 72
-  }
+  "data": {
+    "temperature": 72
+  },
+  "time": { "$date": "2016-11-04T19:42:06.710Z" },
 }
 ```
 

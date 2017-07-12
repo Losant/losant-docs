@@ -4,6 +4,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/getting-started-with-mongoose-os-esp8266-and-losant" target="_blank">Getting Started with Mongoose OS, ESP8266, and Losant</a>
+
 *   <a href="https://www.losant.com/blog/getting-started-with-azure-iot-and-losant" target="_blank">Getting Started with Azure IoT and Losant</a>
 
 *   <a href="https://www.losant.com/blog/how-devices-can-register-themselves-in-losant" target="_blank">How Devices Can Register Themselves in Losant</a>

@@ -145,7 +145,7 @@ Clicking the `Export` option will open a modal, which will allow you to either e
 
 ![Export Modal](/images/workflows/workflow-export-modal.png "Export Modal")
 
-When exporting, you must decide is if the values for the global config should be included in the export. The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
+When exporting, you must decide if the values for the global config should be included in the export. The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
 
 The most common case when importing a workflow will be importing into a blank workflow; however, Losant also supports importing into a workflow with existing nodes. In that case, the nodes for the imported workflow are just added alongside the existing nodes. Importing a workflow can be done in the properties panel when viewing its "Develop" version.
 
@@ -158,6 +158,8 @@ When importing a workflow, configuration values that were specific to the applic
 Workflow versions can have a set of global config keys - which are essentially keys/value pairs added to the payload under the `globals` key whenever the workflow runs. This is a great place to store configuration values or API keys, especially if they are needed for use in multiple different nodes. Globals can be accessed through the "Globals" tab in the right dock.
 
 ![Workflow Globals](/images/workflows/workflow-globals.png "Workflow Globals")
+
+In addition, any [Application Globals](/applications/overview/#application-globals) configured in the application will be accessible here as well. Any application level globals can also be overridden at the workflow level by creating a workflow global with the same key name.
 
 In the above example, there are three global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `632-538-0975`). Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value. Whenever the workflow runs, the payload will always include these global values. For the above example, a payload might end up looking like the following:
 
