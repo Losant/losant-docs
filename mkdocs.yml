@@ -102,6 +102,7 @@ pages:
         - Get User: workflows/experience/get-user.md
         - Update User: workflows/experience/update-user.md
     - Logic:
+        - Array: workflows/logic/array.md
         - Conditional: workflows/logic/conditional.md
         - Delay: workflows/logic/delay.md
         - Function: workflows/logic/function.md
