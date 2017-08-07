@@ -6,6 +6,8 @@ The External Website block allows you to display some other web page or status b
 
 ## Configuration
 
-The block only takes one parameter: a URL to display. The web page returned by the URL is displayed within an `<iframe>` and you can interact with it like any other web page. Note, however, that complex pages displayed within this block may act or display in unexpected ways. While it is unlikely to cause issues with the dashboard as a whole, it can possibly make interactions with your other components more difficult.
+The block only takes one parameter: a URL to display. This URL **must** be served over HTTPS.
+
+The web page returned by the URL is displayed within an `<iframe>` and you can interact with it like any other web page. Note, however, that complex pages displayed within this block may act or display in unexpected ways. While it is unlikely to cause issues with the dashboard as a whole, it can possibly make interactions with your other components more difficult.
 
 ![External Website Config](/images/dashboards/external-config.png "External Website Config")
