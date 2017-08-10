@@ -36,7 +36,6 @@ pages:
     - Access Keys: applications/access-keys.md
     - Application Tokens: applications/application-tokens.md
     - Data Explorer: applications/data-explorer.md
-    - Data Tables: applications/data-tables.md
     - Events: applications/events.md
     - Integrations: applications/integrations.md
     - Webhooks: applications/webhooks.md
@@ -79,6 +78,8 @@ pages:
     - Section Header: dashboards/section-header.md
     - Time Series Graph: dashboards/time-series-graph.md
     - Workflow List: dashboards/workflow-list.md
+- Data Tables:
+    - Overview: data-tables/overview.md
 - Workflows:
     - Overview: workflows/overview.md
     - Accessing Payload Data: workflows/accessing-payload-data.md
