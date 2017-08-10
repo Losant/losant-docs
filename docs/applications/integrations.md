@@ -89,7 +89,7 @@ The other three fields in the Particle integration configuration are optional - 
 
 ## Deleting an Integration
 
-An integration can be deleted by clicking the "Delete" icon next to any user on the list page, or by clicking the "Delete" button in the footer of an integration's edit page.
+An integration can be deleted by clicking the "Delete" icon next to any item on the list page, or by clicking the "Delete" button in the footer of an integration's edit page.
 
 ![Delete Integration](/images/applications/delete-integration.png "Delete Integration")
 
