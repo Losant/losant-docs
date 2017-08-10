@@ -1,4 +1,4 @@
-# Update Device Node
+# Device: Update Node
 
 The Update Device node allows a workflow to update an existing [Device](/devices/overview/) inside the current application, and optionally add the updated device to the current workflow payload.
 

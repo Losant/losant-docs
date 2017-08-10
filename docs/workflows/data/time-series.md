@@ -1,4 +1,4 @@
-# Time Series Node
+# Data: Time Series Node
 
 The time series query node allows a workflow to query recent state across a time period for one or more devices for a specific attribute.
 

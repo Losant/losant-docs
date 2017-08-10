@@ -36,6 +36,7 @@ pages:
     - Access Keys: applications/access-keys.md
     - Application Tokens: applications/application-tokens.md
     - Data Explorer: applications/data-explorer.md
+    - Data Tables: applications/data-tables.md
     - Events: applications/events.md
     - Integrations: applications/integrations.md
     - Webhooks: applications/webhooks.md
@@ -87,6 +88,7 @@ pages:
         - On Connect: workflows/triggers/on-connect.md
         - On Disconnect: workflows/triggers/on-disconnect.md
         - Endpoint: workflows/triggers/endpoint.md
+        - Data Table: workflows/triggers/data-table.md
         - Event: workflows/triggers/event.md
         - Google Pub/Sub: workflows/triggers/google-pub-sub.md
         - MQTT: workflows/triggers/mqtt.md
@@ -122,18 +124,22 @@ pages:
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
         - AWS Lambda: workflows/data/aws-lambda.md
-        - Create Device: workflows/data/create-device.md
-        - Gauge Query: workflows/data/gauge-query.md
-        - Get Device: workflows/data/get-device.md
-        - Get Value: workflows/data/get-value.md
+        - Data Gauge Query: workflows/data/gauge-query.md
+        - Data Time Series: workflows/data/time-series.md
+        - Device Create: workflows/data/create-device.md
+        - Device Get: workflows/data/get-device.md
+        - Device Update: workflows/data/update-device.md
         - HTTP: workflows/data/http.md
         - Losant API: workflows/data/losant-api.md
         - MongoDB: workflows/data/mongo.md
         - Redis: workflows/data/redis.md
         - Salesforce Cases: workflows/data/salesforce-cases.md
-        - Store Value: workflows/data/store-value.md
-        - Time Series: workflows/data/time-series.md
-        - Update Device: workflows/data/update-device.md
+        - Storage Get Value: workflows/data/get-value.md
+        - Storage Set Value: workflows/data/store-value.md
+        - Table Insert Row: workflows/data/table-insert-row.md
+        - Table Get Rows: workflows/data/table-get-rows.md
+        - Table Update Row: workflows/data/table-update-row.md
+        - Table Delete Row: workflows/data/table-delete-row.md
     - Outputs:
         - Debug: workflows/outputs/debug.md
         - Device Command: workflows/outputs/device-command.md
@@ -175,6 +181,10 @@ pages:
     - Dashboard: rest-api/dashboard.md
     - Dashboards: rest-api/dashboards.md
     - Data: rest-api/data.md
+    - Data Table: rest-api/data-table.md
+    - Data Tables: rest-api/data-tables.md
+    - Data Table Row: rest-api/data-table-row.md
+    - Data Table Rows: rest-api/data-table-rows.md
     - Device Recipe: rest-api/device-recipe.md
     - Device Recipes: rest-api/device-recipes.md
     - Device: rest-api/device.md

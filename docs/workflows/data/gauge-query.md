@@ -1,4 +1,4 @@
-# Gauge Query Node
+# Data: Gauge Query Node
 
 The gauge query node allows a workflow to query and aggregate state data for one or more devices for a specific attribute.
 

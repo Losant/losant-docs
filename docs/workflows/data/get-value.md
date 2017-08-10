@@ -1,4 +1,4 @@
-# Get Value Node
+# Storage: Get Value Node
 
 The get value node allows a workflow to retrieve a value stored in a previous run of the workflow by the [store value node](/workflows/data/store-value/). Stored values can also be viewed and manipulated using the [workflow storage tab](/workflows/overview/#workflow-storage).
 

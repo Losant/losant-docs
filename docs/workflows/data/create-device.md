@@ -1,4 +1,4 @@
-# Create Device Node
+# Device: Create Node
 
 The Create Device node allows a workflow to create a new [Device](/devices/overview/) inside the current application, and optionally add the new device to the current workflow payload.
 

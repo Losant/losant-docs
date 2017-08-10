@@ -6,6 +6,58 @@ Below are the various requests that can be performed against the
 Flow resource, as well as the expected
 parameters and the potential responses.
 
+## Clear Storage Entries
+
+Clear all storage entries
+
+#### Method And Url
+
+DELETE https://api.losant.com/applications/**`APPLICATION_ID`**/flows/**`FLOW_ID`**/storage
+
+#### Authentication
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, flow.*, or flow.clearStorageEntries.
+
+#### Request Path Components
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+| FLOW_ID | ID associated with the flow | 575ed18f7ae143cd83dc4aa6 |
+
+#### Request Headers
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+#### Curl Example
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X DELETE \
+    https://api.losant.com/applications/APPLICATION_ID/flows/FLOW_ID/storage
+```
+<br/>
+
+#### Successful Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Workflow Storage Entries](schemas.md#workflow-storage-entries) | The current storage entries |
+
+#### Error Responses
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if flow was not found |
+
+<br/>
+
 ## Delete
 
 Deletes a flow
@@ -210,7 +262,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Workflow Storage Entries](schemas.md#workflow-storage-entries) | The stored values |
+| 200 | [Workflow Storage Entries](schemas.md#workflow-storage-entries) | The current storage entries |
 
 #### Error Responses
 

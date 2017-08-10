@@ -253,6 +253,9 @@ Schema for a single Application
         "deviceCount": {
           "type": "number"
         },
+        "dataTableCount": {
+          "type": "number"
+        },
         "deviceRecipeCount": {
           "type": "number"
         },
@@ -348,6 +351,8 @@ Schema for the body of an Application API Token creation request
           "applicationKey.*",
           "applicationKeys.*",
           "data.*",
+          "dataTable.*",
+          "dataTables.*",
           "device.*",
           "deviceRecipe.*",
           "deviceRecipes.*",
@@ -384,6 +389,19 @@ Schema for the body of an Application API Token creation request
           "applicationKeys.post",
           "data.lastValueQuery",
           "data.timeSeriesQuery",
+          "dataTable.addColumn",
+          "dataTable.delete",
+          "dataTable.get",
+          "dataTable.patch",
+          "dataTable.removeColumn",
+          "dataTableRow.delete",
+          "dataTableRow.get",
+          "dataTableRow.patch",
+          "dataTableRows.get",
+          "dataTableRows.post",
+          "dataTableRows.query",
+          "dataTables.get",
+          "dataTables.post",
           "device.delete",
           "device.export",
           "device.get",
@@ -429,6 +447,7 @@ Schema for the body of an Application API Token creation request
           "experienceUsers.get",
           "experienceUsers.post",
           "flow.delete",
+          "flow.clearStorageEntries",
           "flow.get",
           "flow.getStorageEntries",
           "flow.log",
@@ -1086,6 +1105,9 @@ Schema for a collection of Applications
               "deviceCount": {
                 "type": "number"
               },
+              "dataTableCount": {
+                "type": "number"
+              },
               "deviceRecipeCount": {
                 "type": "number"
               },
@@ -1236,6 +1258,7 @@ Schema for a single Audit Log entry
       "enum": [
         "ApiToken",
         "ApplicationKey",
+        "DataTable",
         "Device",
         "DeviceRecipe",
         "Event",
@@ -1382,6 +1405,7 @@ Schema for the filter of an audit log query
             "enum": [
               "ApiToken",
               "ApplicationKey",
+              "DataTable",
               "Device",
               "DeviceRecipe",
               "Event",
@@ -1545,6 +1569,7 @@ Schema for a collection of Audit Logs
             "enum": [
               "ApiToken",
               "ApplicationKey",
+              "DataTable",
               "Device",
               "DeviceRecipe",
               "Event",
@@ -2780,6 +2805,773 @@ Schema for a collection of Dashboards
   "page": 0,
   "sortField": "name",
   "sortDirection": "asc"
+}
+```
+
+<br/>
+## Data Table
+
+Schema for a single Data Table
+
+### Schema <a name="data-table-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "dataTableId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    },
+    "columns": {
+      "type": "array",
+      "items": {
+        "title": "Data Table Column",
+        "description": "Schema for a single Data Table Column",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+          },
+          "dataType": {
+            "type": "string",
+            "enum": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          },
+          "constraint": {
+            "type": "string",
+            "enum": [
+              "unique",
+              "required",
+              "optional"
+            ]
+          },
+          "defaultValue": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "dataType",
+          "constraint"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 50
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-example"></a>
+
+```json
+{
+  "id": "596e6ce831761df4231708f1",
+  "dataTableId": "596e6ce831761df4231708f1",
+  "applicationId": "575ec8687ae143cd83dc4a97",
+  "creationDate": "2016-06-13T04:00:00.000Z",
+  "lastUpdated": "2016-06-13T04:00:00.000Z",
+  "name": "My Data Table",
+  "columns": [
+    {
+      "name": "myColumn1",
+      "dataType": "string",
+      "defaultValue": "aDefault"
+    }
+  ]
+}
+```
+
+<br/>
+## Data Table Column
+
+Schema for a single Data Table Column
+
+### Schema <a name="data-table-column-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+    },
+    "dataType": {
+      "type": "string",
+      "enum": [
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "constraint": {
+      "type": "string",
+      "enum": [
+        "unique",
+        "required",
+        "optional"
+      ]
+    },
+    "defaultValue": {
+      "type": [
+        "string",
+        "number",
+        "boolean"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "dataType",
+    "constraint"
+  ],
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-column-example"></a>
+
+```json
+{
+  "name": "myOptionalColumn",
+  "dataType": "string",
+  "constraint": "optional",
+  "defaultValue": "aDefault"
+}
+```
+
+<br/>
+## Data Table Patch
+
+Schema for the body of a Data Table modification request
+
+### Schema <a name="data-table-patch-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-patch-example"></a>
+
+```json
+{
+  "name": "My Updated Data Table"
+}
+```
+
+<br/>
+## Data Table Post
+
+Schema for the body of a Data Table creation request
+
+### Schema <a name="data-table-post-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    },
+    "columns": {
+      "type": "array",
+      "items": {
+        "title": "Data Table Column",
+        "description": "Schema for a single Data Table Column",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+          },
+          "dataType": {
+            "type": "string",
+            "enum": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          },
+          "constraint": {
+            "type": "string",
+            "enum": [
+              "unique",
+              "required",
+              "optional"
+            ]
+          },
+          "defaultValue": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "dataType",
+          "constraint"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 50
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-post-example"></a>
+
+```json
+{
+  "name": "My Data Table",
+  "columns": [
+    {
+      "name": "myColumn1",
+      "dataType": "string",
+      "constraint": "unique"
+    }
+  ]
+}
+```
+
+<br/>
+## Data Table Query
+
+Schema for a data table query
+
+### Schema <a name="data-table-query-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "$and": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/dataTableQuery"
+      }
+    },
+    "$or": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/dataTableQuery"
+      }
+    }
+  },
+  "patternProperties": {
+    "^[0-9a-zA-Z_-]{1,255}$": {
+      "oneOf": [
+        {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "$eq": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            },
+            "$ne": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            },
+            "$gt": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            },
+            "$lt": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            },
+            "$gte": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            },
+            "$lte": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-query-example"></a>
+
+```json
+{
+  "$or": [
+    {
+      "myCol1": {
+        "$ne": 0
+      }
+    },
+    {
+      "myCol2": 5
+    }
+  ]
+}
+```
+
+<br/>
+## Data Table Row
+
+Schema for a single Data Table Row
+
+### Schema <a name="data-table-row-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "patternProperties": {
+    "^[0-9a-zA-Z_-]{1,255}$": {
+      "type": [
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-row-example"></a>
+
+```json
+{
+  "id": "596fbb703fc088453872e609",
+  "creationDate": "2016-06-13T04:00:00.000Z",
+  "lastUpdated": "2016-06-13T04:00:00.000Z",
+  "myColumn": "myValue"
+}
+```
+
+<br/>
+## Data Table Row Insert/Update
+
+Schema for inserting or updating a data table row
+
+### Schema <a name="data-table-row-insert/update-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "patternProperties": {
+    "^[0-9a-zA-Z_-]{1,255}$": {
+      "type": [
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-row-insert/update-example"></a>
+
+```json
+{
+  "myColumn1": "myValue"
+}
+```
+
+<br/>
+## Data Table Rows
+
+Schema for a collection of Data Table Rows
+
+### Schema <a name="data-table-rows-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Data Table Row",
+        "description": "Schema for a single Data Table Row",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "patternProperties": {
+          "^[0-9a-zA-Z_-]{1,255}$": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "integer"
+    },
+    "totalCount": {
+      "type": "integer"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "offset": {
+      "type": "integer"
+    },
+    "sortColumn": {
+      "type": "string"
+    },
+    "sortDirection": {
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "dataTableId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-rows-example"></a>
+
+```json
+{
+  "items": [
+    {
+      "id": "596fbb703fc088453872e609",
+      "creationDate": "2016-06-13T04:00:00.000Z",
+      "lastUpdated": "2016-06-13T04:00:00.000Z",
+      "myColumn": "myValue"
+    }
+  ],
+  "count": 1,
+  "totalCount": 4,
+  "offset": 0,
+  "limit": 1,
+  "sortColumn": "myColumn1",
+  "sortDirection": "asc",
+  "dataTableId": "596e6ce831761df4231708f1",
+  "applicationId": "575ec8687ae143cd83dc4a97"
+}
+```
+
+<br/>
+## Data Tables
+
+Schema for a collection of Data Tables
+
+### Schema <a name="data-tables-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Data Table",
+        "description": "Schema for a single Data Table",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "dataTableId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "applicationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 32767
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "title": "Data Table Column",
+              "description": "Schema for a single Data Table Column",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                },
+                "dataType": {
+                  "type": "string",
+                  "enum": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ]
+                },
+                "constraint": {
+                  "type": "string",
+                  "enum": [
+                    "unique",
+                    "required",
+                    "optional"
+                  ]
+                },
+                "defaultValue": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "dataType",
+                "constraint"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 50
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "integer"
+    },
+    "totalCount": {
+      "type": "integer"
+    },
+    "perPage": {
+      "type": "integer"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "filter": {
+      "type": "string"
+    },
+    "filterField": {
+      "type": "string"
+    },
+    "sortField": {
+      "type": "string"
+    },
+    "sortDirection": {
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="data-tables-example"></a>
+
+```json
+{
+  "items": [
+    {
+      "id": "596e6ce831761df4231708f1",
+      "dataTableId": "596e6ce831761df4231708f1",
+      "applicationId": "575ec8687ae143cd83dc4a97",
+      "creationDate": "2016-06-13T04:00:00.000Z",
+      "lastUpdated": "2016-06-13T04:00:00.000Z",
+      "name": "My Data Table",
+      "columns": [
+        {
+          "name": "myColumn1",
+          "dataType": "string",
+          "defaultValue": "aDefault"
+        }
+      ]
+    }
+  ],
+  "count": 1,
+  "totalCount": 4,
+  "perPage": 1,
+  "page": 0,
+  "sortField": "name",
+  "sortDirection": "asc",
+  "applicationId": "575ec8687ae143cd83dc4a97"
 }
 ```
 
@@ -6429,6 +7221,7 @@ Schema for a single Workflow
           "type": {
             "type": "string",
             "enum": [
+              "dataTable",
               "deviceId",
               "deviceIdConnect",
               "deviceIdDisconnect",
@@ -6714,6 +7507,7 @@ Schema for the body of a Workflow modification request
           "type": {
             "type": "string",
             "enum": [
+              "dataTable",
               "deviceId",
               "deviceIdConnect",
               "deviceIdDisconnect",
@@ -6869,6 +7663,7 @@ Schema for the body of a Workflow creation request
           "type": {
             "type": "string",
             "enum": [
+              "dataTable",
               "deviceId",
               "deviceIdConnect",
               "deviceIdDisconnect",
@@ -7161,6 +7956,7 @@ Schema for a single Workflow Version
           "type": {
             "type": "string",
             "enum": [
+              "dataTable",
               "deviceId",
               "deviceIdConnect",
               "deviceIdDisconnect",
@@ -7359,6 +8155,7 @@ Schema for the body of a Workflow Version creation request
           "type": {
             "type": "string",
             "enum": [
+              "dataTable",
               "deviceId",
               "deviceIdConnect",
               "deviceIdDisconnect",
@@ -7548,6 +8345,7 @@ Schema for a collection of Workflow Versions
                 "type": {
                   "type": "string",
                   "enum": [
+                    "dataTable",
                     "deviceId",
                     "deviceIdConnect",
                     "deviceIdDisconnect",
@@ -7793,6 +8591,7 @@ Schema for a collection of Workflows
                 "type": {
                   "type": "string",
                   "enum": [
+                    "dataTable",
                     "deviceId",
                     "deviceIdConnect",
                     "deviceIdDisconnect",
@@ -9119,6 +9918,9 @@ Schema for information about the currently authenticated user
       "dashboard": {
         "type": "number"
       },
+      "datatable": {
+        "type": "number"
+      },
       "device": {
         "type": "number"
       },
@@ -9279,6 +10081,9 @@ Schema for information about the currently authenticated user
         "dashCount": {
           "type": "number"
         },
+        "dataTableCount": {
+          "type": "number"
+        },
         "deviceCount": {
           "type": "number"
         },
@@ -9314,6 +10119,14 @@ Schema for information about the currently authenticated user
               }
             },
             "mqttIn": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "number"
+                }
+              }
+            },
+            "dataTable": {
               "type": "object",
               "patternProperties": {
                 ".*": {
@@ -9718,6 +10531,9 @@ Schema for a single Organization
       "dashboard": {
         "type": "number"
       },
+      "datatable": {
+        "type": "number"
+      },
       "device": {
         "type": "number"
       },
@@ -9770,6 +10586,9 @@ Schema for a single Organization
         "dashCount": {
           "type": "number"
         },
+        "dataTableCount": {
+          "type": "number"
+        },
         "deviceCount": {
           "type": "number"
         },
@@ -9808,6 +10627,14 @@ Schema for a single Organization
               }
             },
             "mqttIn": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "number"
+                }
+              }
+            },
+            "dataTable": {
               "type": "object",
               "patternProperties": {
                 ".*": {
@@ -10481,6 +11308,9 @@ Schema for a collection of Organizations
             "dashboard": {
               "type": "number"
             },
+            "datatable": {
+              "type": "number"
+            },
             "device": {
               "type": "number"
             },
@@ -10533,6 +11363,9 @@ Schema for a collection of Organizations
               "dashCount": {
                 "type": "number"
               },
+              "dataTableCount": {
+                "type": "number"
+              },
               "deviceCount": {
                 "type": "number"
               },
@@ -10571,6 +11404,14 @@ Schema for a collection of Organizations
                     }
                   },
                   "mqttIn": {
+                    "type": "object",
+                    "patternProperties": {
+                      ".*": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "dataTable": {
                     "type": "object",
                     "patternProperties": {
                       ".*": {
@@ -10811,6 +11652,14 @@ Schema for the result of a payload count request
       }
     },
     "mqttIn": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "type": "number"
+        }
+      }
+    },
+    "dataTable": {
       "type": "object",
       "patternProperties": {
         ".*": {
