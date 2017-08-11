@@ -1,6 +1,7 @@
 {
   "name": "losant-docs",
   "scripts": {
+    "start": "mkdocs serve",
     "gzip": "find site -type f -exec gzip '{}' \\; -exec mv '{}.gz' '{}' \\;",
     "gunzip": "find site -type f -exec gunzip -S \"\" -f '{}' \\;",
     "predeploy": "mkdocs build --clean",
