@@ -4,6 +4,8 @@ Data tables allow for the storage of arbitrary data within your applications. Th
 
 A list of your application's data tables can be reached by clicking the "Data Tables" tab in your application menu bar.
 
+![Data Table List](/images/data-tables/data-table-list.png "Data Table List")
+
 ## Creating a Data Table
 
 To create a data table, click the "Add Table" button in the top right corner of your application's data table list.
@@ -13,6 +15,10 @@ A data table's configuration consists of:
 *  **Name** - The table's name. This field is required, though the name of the table itself has no effect on its functionality.
 *  **Description** - This is an optional, longer description of the table.
 *  **Columns** - Though columns are optional, a table without columns is effectively useless. More information about [column definition](#table-columns) is below.
+
+![Data Table Name and Description](/images/data-tables/data-table-name-desc.png "Data Table Name and Description")
+
+Once your configuration is complete, click the "Add Data Table" button in the page's footer.
 
 ## Table Columns
 
@@ -37,11 +43,13 @@ Every table automatically has the following columns, whose values per row are au
 
 When defining a column, you must set its data type as one of the following:
 
-*   **String** columns can contain any [string](https://en.wikipedia.org/wiki/String_(computer_science) as its cells' values.
+*   **String** columns can contain any [string](https://en.wikipedia.org/wiki/String_(computer_science)) as its cells' values.
 *   **Number** means the column's values must be any rational number.
 *   **Boolean** columns must contain values of either `true` or `false`.
 
 The one exception to the data type rules is that, if the column's constraint is defined as `optional` (see below), a cell within a column of any data type may also have its value explicitly set to `null`.
+
+![Data Table Columns](/images/data-tables/data-table-columns.png "Data Table Columns")
 
 ### Column Constraints
 
@@ -59,6 +67,8 @@ For optional columns, you may also define a **default value** for the column. If
 
 A table's name and description may be changed at any time without any adverse effect on the table and its data. Columns can also be added or removed at any time; however, these actions can lead to undesirable results.
 
+![Data Table Edit Button](/images/data-tables/data-table-edit-btn.png "Data Table Edit Button")
+
 ### Adding a Column
 
 Adding a column to your table is not a dangerous action, but there are a few things to note when doing so:
@@ -71,7 +81,9 @@ Adding a column to your table is not a dangerous action, but there are a few thi
 
 You will receive a warning if you attempt to remove a column from your table, as doing so will have the following consequences on your application:
 
-*   **All data for the column to be deleted**, even if you immediately add a new column with the same name, data type and constraint. This data cannot be recovered.
+![Data Table Column Delete Warning](/images/data-tables/data-table-col-delete-warning.png "Data Table Column Delete Warning")
+
+*   **All data for the column will be deleted**, even if you immediately add a new column with the same name, data type and constraint. This data cannot be recovered.
 *   Any [Table Get Rows](/workflows/data/table-get-rows/) nodes that query against the removed column **will throw errors** in your workflows, as the query is invalid if the column no longer exists.
 *   Any workflows inserting or updating rows with values defined for the removed column will continue to function normally; values for the removed column will simply be ignored.
 
@@ -83,9 +95,13 @@ To view the data within your table, click a table's name within the list of your
 
 By default, your table displays up to 1,000 rows per page, sorted by creation date with the most recent row at the top. You may change the sort field or the sort direction by clicking the arrows alongside each column's name. Just like with querying, all columns are sortable.
 
+![Data Table Sorting](/images/data-tables/data-table-sort.png "Data Table Sorting")
+
 ### Adding a Row
 
 To manually add a row to a data table, click the "Add Row" button in the top right corner of the table browsing interface. This will open an editor pane alongside the table where values can be added for each column. Then, click the "Add Row" button at the bottom of the pane to insert the row into the table.
+
+![Data Table Add Row](/images/data-tables/data-table-add-row.png "Data Table Add Row")
 
 **Note:** Depending on the values entered for the row and the table's current sort / [query](#querying-table-rows) rules, your new row may not be immediately visible after it is added.
 
@@ -94,6 +110,8 @@ Alternatively, any users will add their table rows programmatically using the [T
 ### Editing a Row
 
 You may edit any table row by clicking the row ID in the table browsing interface. This will bring up an editor pane, similar to [adding a row](#adding-a-row) but with the row's current values filled in. The same validation rules around data types and column constraints apply when editing a row; for example, if editing a uniquely constrained string column, the new value must also be unique within the table. (Once the edit is complete, the original value will be available for use in other table columns.)
+
+![Data Table Update Row](/images/data-tables/data-table-update-row.png "Data Table Update Row")
 
 You may also use the [Table Update Row](/workflows/data/table-update-row/) node to update a row using a workflow.
 
@@ -109,6 +127,8 @@ Once a row has been deleted, any [uniquely constrained](#column-constraints) val
 
 To filter your table rows based on the data within them, you may add a query within the table browsing interface. To add a query, click the "Edit" icon in the filter box above the table; similarly, to clear filter results, click the "Remove" icon in the filter box.
 
+![Data Table Edit Query](/images/data-tables/data-table-edit-query.png "Data Table Edit Query")
+
 At the top of the query builder, select a query mode to start filtering your rows.
 
 ### Any / All Queries
@@ -120,11 +140,15 @@ Two of the options – `Match any of the following` and `Match all of the follow
 *   **String** and **Boolean** data types can be compared for equality or `null` value checks.
 *   **Number** data types can be compared for equality, or greater than or less than comparisons against a value you define. They may also be checked against `null` value status.
 
+![Data Table Simple Query](/images/data-tables/data-table-simple-query.png "Data Table Simple Query")
+
 Queries built in `Match any ...` mode will return rows where any of the defined lines return `true` for the row. In `Match all ...` mode, only rows where every line returns `true` will be included in the query.
 
 ### Advanced Queries
 
 If you'd like to build an advanced query, you may choose the `Advanced` option in the mode selector. Losant uses a syntax similar to [MongoDB's find() syntax](https://docs.mongodb.com/manual/reference/method/db.collection.find/).
+
+![Data Table Advanced Query](/images/data-tables/data-table-advanced-query.png "Data Table Advanced Query")
 
 Valid logical operators include:
 
