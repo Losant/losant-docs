@@ -6,9 +6,13 @@ The get device node allows a workflow to retrieve one or more [devices](/devices
 
 ## Configuration
 
-There are two ways to query for devices using this node - by device ID, or by tags. When querying by device ID, the configuration expects a single device ID, which is [templatable](/workflows/accessing-payload-data/#string-templates) and so can be pulled off of the current workflow payload. When querying by device tags, the configuration expects one or more tag key/value pairs, and *all* of the pairs have to match the device in order for the device to be returned by the query. The same rules apply here that apply to tag queries in the rest of Losant - if a key is provided but no value, any device with that tag key will match (and value will not matter), and if a value is provided but no key, any device with that tag value will match (and key will not matter). The key and value fields here are [templatable](/workflows/accessing-payload-data/#string-templates) as well.
+There are three ways to query for devices using this node - by device ID, device name, or by tags. Any and all fields are [templatable](/workflows/accessing-payload-data/#string-templates) and can be pulled off of the current workflow payload.
 
-When querying by tags, you also have the option of just returning the first device match (if you know that there should only be a single device), or return an array of devices that match. For querying by device ID, there will at most be a single device that matches, so the return will never be an array.
+- When querying by device ID, the configuration expects a single device ID.
+- When querying by device name, only a full and exact match on the device name will yield a single result.
+- When querying by device tags, the configuration expects one or more tag key/value pairs, and **all** of the pairs have to match the device in order for the device to be returned by the query. The same rules apply here that apply to tag queries in the rest of Losant - if a key is provided but no value, any device with that tag key will match (and value will not matter), and if a value is provided but no key, any device with that tag value will match (and key will not matter).
+
+When querying by device ID or device name, there will at most be a single device that matches, so the return will never be an array. When querying by tags, you have the option of just returning the first device match (if you know that there should only be a single device), but can also return an array of devices that match.
 
 ![Get Device Node Configuration](/images/workflows/data/get-device-node-config.png "Get Device Node Configuration")
 
@@ -42,8 +46,3 @@ In the example above, the workflow will retrieve the device that has the `sigfox
   ...
 }
 ```
-
-
-
-
-
