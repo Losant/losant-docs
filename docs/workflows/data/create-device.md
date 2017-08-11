@@ -61,7 +61,6 @@ For instance, given the example node configuration in the screenshots above, thi
 }
 ```
 
-
 And again, given the example above, this is a possible result for a failed creation with a blank name:
 
 ```json
