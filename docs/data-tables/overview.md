@@ -2,6 +2,8 @@
 
 Data tables allow for the storage of arbitrary data within your applications. This data can then be edited, queried or deleted either directly through the table interface or through a Losant [workflow](/workflows/overview/).
 
+The amount of data (in bytes) that can be stored in your application's data tables is a [hard-limited resource](/organizations/resource-limits/#hard-limited-resources).
+
 A list of your application's data tables can be reached by clicking the "Data Tables" tab in your application menu bar.
 
 ![Data Table List](/images/data-tables/data-table-list.png "Data Table List")
