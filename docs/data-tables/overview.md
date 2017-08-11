@@ -22,9 +22,9 @@ Once your configuration is complete, click the "Add Data Table" button in the pa
 
 ## Table Columns
 
-You may define as many as 100 columns per table in addition to the default columns listed below.
+You may define as many as 100 columns per table in addition to the [default columns](#default-columns) listed below.
 
-A column's name, which is the unique identifier against which data will be added and queried, must meet the following rules:
+The **column name**, which is the unique identifier against which data will be added and queried, must meet the following rules:
 
 *   Must be 1 to 255 characters.
 *   May only consist of uppercase letters, lowercase letters, numbers, underscores (\_) and hyphens (-).
@@ -47,7 +47,7 @@ When defining a column, you must set its data type as one of the following:
 *   **Number** means the column's values must be any rational number.
 *   **Boolean** columns must contain values of either `true` or `false`.
 
-The one exception to the data type rules is that, if the column's constraint is defined as `optional` (see below), a cell within a column of any data type may also have its value explicitly set to `null`.
+The one exception to the data type rules is that, if the column's [constraint](#column-constraints) is defined as `optional` (see below), a cell within a column of any data type may also have its value explicitly set to `null`.
 
 ![Data Table Columns](/images/data-tables/data-table-columns.png "Data Table Columns")
 
@@ -67,13 +67,15 @@ For optional columns, you may also define a **default value** for the column. If
 
 A table's name and description may be changed at any time without any adverse effect on the table and its data. Columns can also be added or removed at any time; however, these actions can lead to undesirable results.
 
+To edit the properties of an existing table, click the "Edit Table" button in the top right corner of the table.
+
 ![Data Table Edit Button](/images/data-tables/data-table-edit-btn.png "Data Table Edit Button")
 
 ### Adding a Column
 
 Adding a column to your table is not a dangerous action, but there are a few things to note when doing so:
 
-*   Any rows that existed before the creation of the new column will have `null` values set for that column. The value can be changed at any time, but the new value must validate against the column's data type and constraint.
+*   Any rows that existed before the creation of the new column will have `null` values set for that column, even if the new column has the `Unique` or `Required` constraint. The value can be changed at any time, but the new value must validate against the column's data type and constraint.
 *   If you define a default value for the column, the default will only be applied to new rows; existing table rows will not retroactively get the default value for the new column.
 *   Adding a column of the same name as a previously deleted column **will not restore data** from the deleted column, even if the new column's data type and constraint also match the deleted column.
 
@@ -93,7 +95,7 @@ To view the data within your table, click a table's name within the list of your
 
 ### Sorting Data
 
-By default, your table displays up to 1,000 rows per page, sorted by creation date with the most recent row at the top. You may change the sort field or the sort direction by clicking the arrows alongside each column's name. Just like with querying, all columns are sortable.
+By default, your table displays up to 1,000 rows per page, sorted by creation date with the most recently created row at the top. You may change the sort field or the sort direction by clicking the arrows alongside each column's name.
 
 ![Data Table Sorting](/images/data-tables/data-table-sort.png "Data Table Sorting")
 
@@ -103,9 +105,9 @@ To manually add a row to a data table, click the "Add Row" button in the top rig
 
 ![Data Table Add Row](/images/data-tables/data-table-add-row.png "Data Table Add Row")
 
-**Note:** Depending on the values entered for the row and the table's current sort / [query](#querying-table-rows) rules, your new row may not be immediately visible after it is added.
+**Note:** Depending on the values entered for the row and the table's current [sort](#sorting-data) / [query](#querying-table-rows) rules, your new row may not be immediately visible after it is added.
 
-Alternatively, any users will add their table rows programmatically using the [Table Insert Row](/workflows/data/table-insert-row/) node.
+Alternatively, you may add table rows through a workflow using the [Table Insert Row](/workflows/data/table-insert-row/) node.
 
 ### Editing a Row
 
@@ -117,11 +119,9 @@ You may also use the [Table Update Row](/workflows/data/table-update-row/) node 
 
 ### Deleting a Row
 
-To delete a table row, select a row as if to [edit its contents](#editing-a-row) and click the "Delete Row" button in the editor pane.
+To delete a table row, select a row as if to [edit its contents](#editing-a-row) and click the "Delete Row" button in the editor pane. Once a row has been deleted, any [uniquely constrained](#column-constraints) values within the row will be available for other rows to use.
 
 You may also use the [Table Delete Row](/workflows/data/table-delete-row/) node to delete a row using a workflow.
-
-Once a row has been deleted, any [uniquely constrained](#column-constraints) values within the row will be available for other rows to use.
 
 ## Querying Table Data
 
@@ -129,16 +129,14 @@ To filter your table rows based on the data within them, you may add a query wit
 
 ![Data Table Edit Query](/images/data-tables/data-table-edit-query.png "Data Table Edit Query")
 
-At the top of the query builder, select a query mode to start filtering your rows.
-
 ### Any / All Queries
 
-Two of the options – `Match any of the following` and `Match all of the following` – provide an interface for building single comparisons per column. Each of your columns can be queried by certain operators depending on the column type ...
+At the top of the query builder is a select box to choose your query mode. Two of the options – `Match any of the following ...` and `Match all of the following ...` – provide an interface for building single comparisons per column. Each of your columns can be queried by certain operators depending on the column type ...
 
-*   **id** columns can only be tested for equality against a valid Losant ID.
+*   **id** columns can only be tested for equality or inequality against a valid Losant ID.
 *   **createdAt** and **updatedAt** columns can be tested against dates that are equal to, not equal to, or before or after a provided date.
-*   **String** and **Boolean** data types can be compared for equality or `null` value checks.
-*   **Number** data types can be compared for equality, or greater than or less than comparisons against a value you define. They may also be checked against `null` value status.
+*   **String** and **Boolean** data types can be compared for equality, inequality or `null` value checks.
+*   **Number** data types can be compared for equality, inequality, or greater than or less than comparisons against a value you define. They may also be checked against `null` value status.
 
 ![Data Table Simple Query](/images/data-tables/data-table-simple-query.png "Data Table Simple Query")
 
@@ -146,7 +144,7 @@ Queries built in `Match any ...` mode will return rows where any of the defined 
 
 ### Advanced Queries
 
-If you'd like to build an advanced query, you may choose the `Advanced` option in the mode selector. Losant uses a syntax similar to [MongoDB's find() syntax](https://docs.mongodb.com/manual/reference/method/db.collection.find/).
+If you'd like to build an advanced query, you may choose the `Advanced` option in the mode selector. Losant uses a query language similar to [MongoDB's find() syntax](https://docs.mongodb.com/manual/reference/method/db.collection.find/).
 
 ![Data Table Advanced Query](/images/data-tables/data-table-advanced-query.png "Data Table Advanced Query")
 
