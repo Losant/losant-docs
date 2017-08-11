@@ -23,6 +23,7 @@ The following resources limits are strictly enforced. It is not possible to crea
 -   **Devices** - This includes all [device types](/devices/overview/#device-type), regardless of whether they connect to the Losant platform
 -   **Experience Users** - This covers all [experience users](/experiences/users/) that exist within the owned applications
 -   **Organization members** - This includes current members (regardless of their role) and pending - but not expired - invitations
+-   **Data Table storage** - This is amount of data (in bytes) that can be stored across all of the account's data tables
 
 ### Message Throttling
 
@@ -70,6 +71,7 @@ We also supply a detailed breakdown of the number of payloads by type so that yo
 -   [Data requests](/rest-api/data/), including those made by Losant dashboards and [device data exports](/devices/overview/)
 -   [Webhook replies](/workflows/outputs/webhook-reply/) in workflows
 -   Workflow runs triggered by another workflow
+-   [Data table](/data-tables/overview/) row insertions, deletions, edits and queries
 
 ## Data Retention
 
@@ -85,6 +87,7 @@ Soft-limited resources include:
 -   [Application API Tokens](/applications/application-tokens/)
 -   [Applications](/applications/overview/)
 -   [Dashboards](/dashboards/overview/)
+-   [Data Tables](/data-tables/overview/)
 -   [Device Recipes](/devices/device-recipes/)
 -   [Experience Endpoints](/experiences/endpoints/)
 -   [Experience Groups](/experiences/groups/)
