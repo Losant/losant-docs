@@ -14,7 +14,7 @@ To add a rule to a mutate node, select the type of rule desired, and press the "
 
 ### The Set Rule
 
-The set rule allows the setting of a value at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). There are two configuration properties: the value template and the destination path. The value template takes a [string template](/workflows/accessing-payload-data/#string-templates), and so can reference other payload values if needed. The destination path field is a [payload path](/workflows/accessing-payload-data/#payload-paths), which defines where the new value should be placed on the payload.
+The set rule allows the setting of a value at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). There are two configuration properties: the value template and the destination path. The value template by default takes a [string template](/workflows/accessing-payload-data/#string-templates), and so can reference other payload values if needed. The destination path field is a [payload path](/workflows/accessing-payload-data/#payload-paths), which defines where the new value should be placed on the payload. The value template field can also take a [JSON template](/workflows/accessing-payload-data/#json-templates) if the `Treat value as JSON` checkbox is checked - in which case the value is expected to render to valid json, which will then be parsed and placed on the workflow payload. This is an easy way to get numbers or booleans onto the workflow payload.
 
 ![Mutate Node Set Rule](/images/workflows/logic/mutate-node-set-rule.png "Mutate Node Set Rule")
 
