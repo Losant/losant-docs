@@ -14,7 +14,21 @@ When configuring the connection, you must provide a Mongo [Connection String URI
 
 ![MongoDB Node Operation](/images/workflows/data/mongodb-node-operation.png "MongoDB Node Operation")
 
-Next you will need to choose the operation that will be performed against the database. Currently the node has support for the operations [Count](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#count), [Distinct](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#distinct), [Find](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#find), [FindOne](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne), [Insert](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insert), and [Remove](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#remove).
+Next you will need to choose the operation that will be performed against the database. Currently the node has support for the following operations:
+
+* [Count](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#count)
+* [Delete Many](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#deleteMany)
+* [Delete One](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#deleteOne)
+* [Distinct](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#distinct)
+* [Find](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#find)
+* [Find One](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne)
+* [Insert](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insert)
+* [Insert Many](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insertMany)
+* [Insert One](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insertOne)
+* [Remove](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#remove)
+* [Update](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#update)
+* [Update Many](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#updateMany)
+* [Update One](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#updateOne)
 
 ![MongoDB Node Arguments](/images/workflows/data/mongodb-node-arguments.png "MongoDB Node Arguments")
 
