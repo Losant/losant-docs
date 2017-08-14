@@ -124,6 +124,8 @@ On press of the button, "My First Device" will receive a command named "setColor
 
 In order to send commands or trigger workflows, you must first switch the Input Controls block from "Locked" to "Unlocked".
 
+In the block configuration, you have the option of setting the default mode of the block; this is the mode the block will be in when first displayed to the user.
+
 ![Locked](/images/dashboards/input-controls-view-mode.png "Locked")
 
 **When in "Locked Mode" ...**

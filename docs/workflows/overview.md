@@ -198,4 +198,8 @@ In the top half of the interface, you can add new storage entries or modify exis
 
 **NOTE:**  The act of clicking `Set Value` has an immediate effect **across all workflow versions**. This will change or add the value immediately; this is separate from saving/deploying the workflow.
 
-In the bottom half of the interface, you can view the values of existing storage identifiers. In this case, there is one identifier, `storedColor`, and its value is the number `35000`. This identifier was previous set by the Store Value node in a previous run of the above workflow. This table of values will automatically refresh every 60 seconds, but you can always click the refresh link on the upper right if you want to see the latest values now. You can also delete values here using the delete button on the right of each row. **NOTE:** Deleting, just like setting or modifying a value, takes effect immediately and is not tied to saving/deploying the workflow.
+In the bottom half of the interface, you can view the values of existing storage identifiers. In this case, there is one identifier, `storedColor`, and its value is the number `35000`. This identifier was previous set by the Store Value node in a previous run of the above workflow. This table of values will automatically refresh every 60 seconds, but you can always click the refresh link on the upper right if you want to see the latest values now.
+
+You can also delete values individually by using the delete button on the right of each row, or wholesale by clicking the "Clear All Entries" button at the bottom of the table.
+
+**NOTE:** Deleting, just like setting or modifying a value, takes effect immediately and is not tied to saving/deploying the workflow.
