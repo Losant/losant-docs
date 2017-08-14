@@ -16,7 +16,7 @@ For "JSON Template", the input must be a [JSON template string](/workflows/acces
 
 ![Update Device Node Individual Fields](/images/workflows/data/update-device-node-individual-fields.png "Update Device Node Individual Fields")
 
-For "Individual Fields", the most common method to use and the one shown in the example above, the device is broken into multiple fields that can be filled in using individual [string templates](/workflows/accessing-payload-data/#string-templates). In this case, none of the fields are required - leaving a field blank will just not updated that field on the device. In the example above, the node is just changing the description on the device and leaving the other fields alone.
+For "Individual Fields", the most common method to use and the one shown in the example above, the device is broken into multiple fields that can be filled in using individual [string templates](/workflows/accessing-payload-data/#string-templates). In this case, none of the fields are required - leaving a field blank will just not update that field on the device. In the example above, the node is just changing the description on the device and leaving the other fields alone.
 
 ![Update Device Node Attribute Configuration](/images/workflows/data/update-device-node-attr-config.png "Update Device Node Attribute Configuration")
 

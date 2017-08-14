@@ -43,7 +43,7 @@ For instance, given the example node configuration in the screenshots above, thi
 }
 ```
 
-And again, given the example above, this is a possible result for a failed row insertion where the phone number field is required to be unique by the data table, and the given phone number already exists in another row::
+And again, given the example above, this is a possible result for a failed row insertion where the phone number field is required to be unique by the data table, and the given phone number already exists in another row:
 
 ```json
 {
