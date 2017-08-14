@@ -1,39 +1,32 @@
 # Validate Payload Node
 
-The validate payload node allows a workflow check the current payload against a JSON schema, and branch depending on if the payload passes validation or not.
+The validate payload node allows a workflow check the part or all of current payload against a JSON schema, and branch depending on if the payload passes validation or not.
 
 ![Validate Payload Node](/images/workflows/logic/validate-payload-node.png "Validate Payload Node")
 
 ## Configuration
 
-The validate payload node is configured using a [JSON Schema](http://spacetelescope.github.io/understanding-json-schema/index.html) definition. The current payload of the workflow is validated against the given JSON schema, and if it passes validation the route on the right out of the node is taken. If it fails validation, the route on the left out of the node is taken.
+The validate payload node is configured using a [JSON Schema](http://spacetelescope.github.io/understanding-json-schema/index.html) definition. A part of or all of the current payload of the workflow is validated against the given JSON schema, and if it passes validation the route on the right out of the node is taken. If it fails validation, the route on the left out of the node is taken.
 
 ![Validate Payload Example](/images/workflows/logic/validate-payload-example.png "Validate Payload Example")
 
-Here is the full schema from the above screenshot in an easier to read form:
+In the above example, the node is validating the `data` property of the payload against a scheme. Here is the full schema from the above screenshot in an easier to read form:
 
 ```json
 {
   "type": "object",
   "properties": {
-    "data": {
-      "type": "object",
-      "properties": {
-        "voltage": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 5
-        }
-      },
-      "required": [
-        "voltage"
-      ]
+    "voltage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
     }
-  }
+  },
+  "required": ["voltage"]
 }
 ```
 
-In the above example, the workflow will follow the route on the right out of the validate payload node and proceed to the math node only if the payload has a `data.voltage` field which has a number between 0 and 5.
+The workflow will follow the route on the right out of the validate payload node and proceed to the math node only if the payload has a `data.voltage` field whose value is a number between 0 and 5.
 
 So the following payload would pass validation, and the workflow would take the route on the right and move on to the math node:
 
