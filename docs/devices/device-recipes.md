@@ -1,22 +1,30 @@
 # Device Recipes
 
-A device recipe in Losant is a template (or 'recipe') for creating devices.  If you have many devices that are the same or very similar, you can use device recipes to make creating those devices in Losant much easier.
+A device recipe is a template (or 'recipe') for creating devices. If you have many devices that are the same or very similar, you can use device recipes to make creating those devices much easier.
+
+Device recipes can be found under the `Devices` dropdown menu in your application's subnavigation.
+
+![Device Recipe Overview](/images/devices/device-recipe-overview.png "Device Recipe Overview")
 
 ## Adding a Device Recipe
 
-Device recipes can be added to your application on the `Recipes` page in an application.
+From the Device Recipes page, click the "Add Recipe" button in the top right corner.
 
 ![Add Device Recipe](/images/devices/add-device-recipe.png "Add Device Recipe")
 
 ## Device Recipe Configuration
 
-A device recipe is configured in much the same way as a device - all of the settings and fields that are available when [creating or editing a device](/devices/overview/#device-configuration) are also available when creating or editing a device recipe. The only additional properties are a simple name and description for the recipe itself.
+A device recipe requires a name, and you may optionally provide a description of the recipe. Beyond that, all of the settings and fields that are available when [creating or editing a device](/devices/overview/#device-configuration) are also available when creating or editing a device recipe.
 
-A device created from a recipe copies all of the properties and configuration of the recipe to the new device being created.  One additional tag will be added to the new device - a tag with the name `DeviceRecipe` and the value being the name of the recipe used to create this device.  You can remove or modify this tag if desired, it is only added to help with device organization.
+When creating a recipe, you may either import a previously [exported recipe](#recipe-import-export), or you may manually configure the device settings. If taking the latter path, you will be able to configure the recipe's finer details after choosing a name and initially creating the recipe.
 
-One important thing to note is that modifying a device recipe does *not* modify devices previously created using that recipe.  A recipe acts as a template only - once a device is created, it is an independent item with no actual link back to recipe used to create it.
+![Device Recipe Creation Mode](/images/devices/device-recipe-creation-mode.png "Device Recipe Creation Mode")
 
-### Recipe Import / Export
+A device created from a recipe copies all of the properties and configuration of the recipe to the new device being created.  One additional tag will be added to the new device - a tag with the name `DeviceRecipe` and the value being the name of the recipe used to create this device. You can remove or modify this tag if desired, it is only added to help with device organization.
+
+**NOTE:** Modifying a device recipe does *not* modify devices previously created using that recipe. A recipe acts as a template only; once a device is created, it is an independent item with no actual link back to recipe used to create it.
+
+## Recipe Import / Export
 
 Recipes can be exported and saved to a file using the "Export" button on the recipe edit page. Exported recipes can then be imported when creating a new recipe (instead of creating a recipe from scratch). This can be useful for sharing recipes with other users (or even just sharing recipes across applications).
 
