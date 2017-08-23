@@ -25,3 +25,11 @@ The Losant IoT Moisture Sensor Kit includes all of the hardware and software req
 The Losant IoT Door Sensor Kit includes all of the hardware and software required to build an internet powered door or window sensor. Be instantly notified by text, email, Slack, or many others as soon as your door is opened. Easily visualize your door activity to see when it was opened and at what times.
 
 [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/)
+
+## LCD Kit
+
+![LCD Kit](/images/getting-started/losant-iot-dev-kits/lcd-kit/weather-station.jpg "LCD Kit")
+
+The Losant IoT LCD Kit includes all of the hardware and software required to build an internet powered LCD display. The kit also includes a bonus temperature sensor and the step-by-step instructions guide you through building an indoor/output temperature display.
+
+[Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/)
