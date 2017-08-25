@@ -1,34 +1,30 @@
 # Getting Started with the Raspberry Pi
 
-The <a href="https://www.raspberrypi.org/" target="\_blank">Raspberry Pi</a> is a very popular compute module commonly used in IoT-related projects. This guide covers how to connect the Raspberry Pi to the Losant Platform.
+The <a href="https://www.raspberrypi.org/" target="\_blank">Raspberry Pi</a> is a very popular compute module commonly used in IoT-related projects. This guide covers how to connect the Raspberry Pi to the Losant IoT Platform.
 
-The example for this guide is a button that is connected to the GPIO on the Raspberry Pi. Whenever the button is pressed, a [state](/devices/state/) message will be sent to the platform that can be used to trigger actions. To demonstrate device [commands](/devices/state/), there is also an LED connected to GPIO that the platform can turn on and off.
+![Raspberry Pi Image](/images/getting-started/boards/raspberry-pi.jpg "Raspberry Pi Image")
 
-The source code for this example is <a href="https://github.com/Losant/example-raspberry-pi" target="\_blank">available on GitHub</a>.
+The example for this guide is a button that is connected to a GPIO pin on the Raspberry Pi. Whenever the button is pressed, a [state](/devices/state/) message will be sent to Losant that can be used to [trigger actions](/workflows/overview/). To demonstrate device [commands](/devices/commands/), there is also an LED connected to a GPIO pin that Losant can turn on and off from the cloud.
 
-## Install Node.js on the Raspberry Pi
-
-We're going to use the <a href="https://github.com/Losant/losant-mqtt-js" target="\_blank">Losant JavaScript MQTT Client</a> to connect the Raspberry Pi to the Losant Platform. Follow the instructions <a href="https://www.losant.com/blog/how-to-install-nodejs-on-raspberry-pi" target="\_blank">on our blog</a> to install Node.js.
+The source code for this example is <a href="https://github.com/Losant/example-raspberry-pi-python" target="\_blank">available on GitHub</a>.
 
 ## Install Dependencies
 
-After a lot of research, we have found <a href="http://johnny-five.io/" target="\_blank">Johnny Five</a> to be the best library for working with the Raspberry Pi GPIO. It's very well maintained and works with the most recent versions of Node.js. Combined with the excellent <a href="https://github.com/rwaldron/johnny-five/blob/master/docs/raspi-io.md" target="\_blank">raspi-io</a> module, we can easily read and write to the Raspberry Pi's GPIO.
+Since Python comes pre-installed on Raspberry Pis, we are going to use Python for this example. If you are not a Python user, here are some great alternatives:  
+
+* <a href="http://johnny-five.io/" target="\_blank">Node.js - Johnny Five</a>  
+* <a href="https://gobot.io/" target="\_blank">Golang - GoBot</a>
+
+First, we need to install the Python package manager: [pip](https://pip.pypa.io/en/stable/). Or if you have it already, you can skip this command.
 
 ```sh
-$ npm install --save johnny-five raspi-io losant-mqtt
+$ sudo apt-get install python-pip
 ```
 
-Your package.json should look something like this:
+Next, to connect to Losant, we need to install the [Losant Python library](https://github.com/Losant/losant-mqtt-python). Also, we need to install [gpiozero](http://gpiozero.readthedocs.io/en/stable/installing.html), which is a library that provides an interface to GPIO devices with Raspberry Pi.
 
-```json
-{
-  ...
-  "dependencies": {
-    "johnny-five": "^0.9.26",
-    "raspi-io": "^5.3.0",
-    "losant-mqtt": "^1.0.3"
-  }
-}
+```sh
+$ sudo pip install losant-mqtt gpiozero
 ```
 
 ## Wiring
@@ -36,8 +32,6 @@ Your package.json should look something like this:
 The next step is to attach the LED and the button to the Raspberry Pi. The wiring here is pretty straightforward. The LED is attached to GPIO pin 23, and the button is attached to GPIO 21.
 
 ![Wiring](/images/getting-started/boards/raspberry-wiring.jpg "Wiring")
-
-Refer to <a href="https://www.raspberrypi.org/documentation/usage/gpio-plus-and-raspi2/" target="\_blank">this documentation</a> for the GPIO numbering on the Raspberry Pi.
 
 ## Add Device to Losant
 
@@ -49,49 +43,79 @@ Next, add a [new device](/devices/overview/) for the Raspberry Pi. As mentioned 
 
 Finally, create an [access key](/applications/access-keys/), which you'll use to authenticate the device's connection.
 
-## Send Button Presses
+## Code
 
-Now we need the Raspberry Pi to connect to Losant and begin sending state. Fortunately Johnny Five and the Losant MQTT Client make this simple.
+Now let's write the firmware for the device. Create a file called `index.py`. In that file, include this code:
 
-```javascript
-var five = require('johnny-five');
-var raspi = require('raspi-io');
+```python
+import json
+from gpiozero import LED, Button # Import GPIO library: https://gpiozero.readthedocs.io/en/stable/
+from time import sleep
+from losantmqtt import Device # Import Losant library: https://github.com/Losant/losant-mqtt-python
 
-var Device = require('losant-mqtt').Device;
+led_gpio = 23
+button_gpio = 21
 
-// Construct Losant device.
-var device = new Device({
-  id: 'my-device-id',
-  key: 'my-access-key',
-  secret: 'my-access-secret'
-});
+led = LED(led_gpio)
+button = Button(button_gpio)
 
-// Connect the device to Losant.
-device.connect();
+# Construct Losant device
+device = Device("my-device-id", "my-app-access-key", "my-app-access-secret")
 
-var board = new five.Board({
-  io: new raspi()
-});
+def on_command(device, command):
+    print(command["name"] + " command received.")
 
+    # Listen for the gpioControl. This name configured in Losant
+    if command["name"] == "toggle":
+        # toggle the LED
+        led.toggle()
 
-board.on('ready', function() {
+def sendDeviceState():
+    device.send_state({"button": True})
 
-  // LED connected to GPIO pin 23.
-  var led = new five.Led('GPIO23');
+# Listen for commands.
+device.add_event_observer("command", on_command)
 
-  // Button connected to GPIO 21.
-  var button = new five.Button('GPIO21');
+print("Listening for device commands")
 
-  // When the button is pressed.
-  button.on('down', function() {
+button.when_pressed = sendDeviceState # Send device state when button is pressed
 
-    // Send state to Losant.
-    device.sendState({ button: true });
-  });
-});
+# Connect to Losant and leave the connection open
+device.connect(blocking=True)
 ```
 
-We first create a Losant device and then a Johnny Five board. Johnny Five handles the detection of the button presses, which we simply send to Losant using `sendState`.
+In `index.py`, we initialize the libraries, setup GPIO, and create a Losant `device`. When creating a device, you give it `my-device-id`, `my-access-key`, and `my-access-secret`. You have already obtained these values from Losant.
+
+You can run the firmware like so:
+
+```sh
+$ python index.py
+```
+
+For understanding, let's walkthrough the other bits of code.
+
+## Send Button Presses
+
+We need a way to "listen" for a button press. When the button is pressed, we need to sent state to Losant. This state will contain the attribute `button` and the value of `True`.
+
+To do this, we can use gpiozero. First, we set up a [`Button`](http://gpiozero.readthedocs.io/en/stable/api_input.html#button).
+
+```python
+button = Button(button_gpio)
+```
+
+Next, we can define a function to be called when the button is pressed.
+
+```python
+def sendDeviceState():
+    device.send_state({"button": True})
+```
+
+`Button` has a [`when_pressed`](http://gpiozero.readthedocs.io/en/stable/api_input.html#gpiozero.Button.wait_for_press) property that will call a function you define when the button is pressed. We can do that like so:
+
+```python
+button.when_pressed = sendDeviceState # Send device state when button is pressed
+```
 
 Once the states are being sent, [Losant workflows](/workflows/overview/) allow you to trigger any number of useful actions. The below workflow will send an SMS message whenever the button is pressed.
 
@@ -101,35 +125,37 @@ Once the states are being sent, [Losant workflows](/workflows/overview/) allow y
 
 Along with states, Losant also supports [commands](/devices/commands/), which allow you instruct the device to take an action. For this example, the device will watch for a "toggle" command, which will cause it to toggle the LED.
 
-```javascript
-board.on('ready', function() {
+First, we set up an [`LED`](http://gpiozero.readthedocs.io/en/stable/api_output.html#led).
 
-  // LED connected to GPIO pin 23.
-  var led = new five.Led('GPIO23');
-
-  // Button connected to GPIO 21.
-  var button = new five.Button('GPIO21');
-
-  // When the button is pressed.
-  button.on('down', function() {
-
-    // Send state to Losant.
-    device.sendState({ button: true });
-  });
-
-  // Hook the command event listener.
-  device.on('command', function(command) {
-    if(command.name === 'toggle') {
-      led.toggle();
-    }
-  });
-});
+```python
+led = LED(led_gpio)
 ```
 
-The relevant code has been added to the board's ready callback. To listen for commands, the Losant device will emit the 'command' event whenever one is received from the platform. If the command's name is "toggle" the LED is toggled.
+The Losant `device` can be configured to call a function when a command from Losant is received. Next, we need to define that function.
+
+To listen for commands, the Losant device will emit the 'command' event whenever one is received from the platform. If the command's name is "toggle" the LED is toggled.
+
+```python
+def on_command(device, command):
+    print(command["name"] + " command received.")
+
+    # Listen for the gpioControl. This name configured in Losant
+    if command["name"] == "toggle":
+        # toggle the LED
+        led.toggle()
+```
+
+Finally, we can tell the Losant `device` to use this `on_command` function.
+
+```python
+# Listen for commands.
+device.add_event_observer("command", on_command)
+```
 
 A typical way to send commands is by using a Losant workflow. Below is an example that will send the "toggle" command whenever a virtual button is pressed.
 
 ![Command Workflow](/images/getting-started/boards/raspberry-commands.png "Command Workflow")
 
 Whenever the button on the above workflow is clicked, it will send a command with the name "toggle" to the connected Raspberry Pi.
+
+Now, you are up and running with the Raspberry Pi and the Losant IoT platform. For more ideas, check out the [Losant Blog](https://www.losant.com/blog) or [Tutorials and Projects](/getting-started/tutorials/).
