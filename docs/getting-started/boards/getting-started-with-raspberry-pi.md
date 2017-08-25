@@ -57,7 +57,7 @@ led_gpio = 23
 button_gpio = 21
 
 led = LED(led_gpio)
-button = Button(button_gpio)
+button = Button(button_gpio, pull_up=False)
 
 # Construct Losant device
 device = Device("my-device-id", "my-app-access-key", "my-app-access-secret")
@@ -71,6 +71,7 @@ def on_command(device, command):
         led.toggle()
 
 def sendDeviceState():
+    print("Sending Device State")
     device.send_state({"button": True})
 
 # Listen for commands.
