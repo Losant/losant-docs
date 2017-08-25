@@ -94,6 +94,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## Losant Community Projects
 
+*   <a href="https://www.hackster.io/sylvain-demortier/sigfox-connected-basketball-hoop-47091c" target="_blank">Sigfox Connected Basketball Hoop</a>
+
 *   <a href="https://www.hackster.io/schoonology/internet-connected-popcorn-popper-db0166" target="_blank">Internet-connected Popcorn Popper</a>
 
 *   <a href="https://docs.onion.io/omega2-project-book-vol1/smart-plant-p1.html" target="_blank">Smart Plant - Measuring Plant Data</a>
