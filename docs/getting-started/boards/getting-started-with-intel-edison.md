@@ -1,6 +1,6 @@
 # Getting Started with the Intel Edison
 
-The <a href="http://www.intel.com/content/www/us/en/do-it-yourself/edison.html" target="_blank">Intel Edison</a> is a very capable compute module that runs Linux. It's an idea IoT device because it has built-in WiFi and Bluetooth connectivity. This guide will cover how to connect an Intel Edison to the Losant Developer Platform.
+The <a href="http://www.intel.com/content/www/us/en/do-it-yourself/edison.html" target="_blank">Intel Edison</a> is a very capable compute module that runs Linux. It's an ideal IoT device because it has built-in WiFi and Bluetooth connectivity. This guide will cover how to connect an Intel Edison to the Losant Developer Platform.
 
 ## Setup the Edison and XDK
 
