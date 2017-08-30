@@ -16,7 +16,7 @@ Your kit should include the following items:
 
 ## 1. Environment Setup
 
-The NodeMCU included in this kit is programmed using the <a href="mongoose-os.com" target="\_blank">Mongoose OS</a> toolchain.
+The NodeMCU included in this kit is programmed using the <a href="https://mongoose-os.com" target="\_blank">Mongoose OS</a> toolchain.
 
 ### Install USB Drivers
 
