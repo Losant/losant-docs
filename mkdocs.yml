@@ -126,6 +126,7 @@ pages:
         - Mutate: workflows/logic/mutate.md
         - On Change: workflows/logic/on-change.md
         - Random Number: workflows/logic/random-number.md
+        - String: workflows/logic/string.md
         - Switch: workflows/logic/switch.md
         - Throttle: workflows/logic/throttle.md
         - Time Range: workflows/logic/time-range.md
