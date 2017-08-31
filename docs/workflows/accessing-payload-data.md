@@ -43,9 +43,9 @@ Payload paths are dot-separated references to object properties, such as `foo.ba
 
 **Square brackets** wrapped around a property name can be used in a handful of cases:
 
-*   **Accessing an array value by index**. e.g. `data.anArray.[0]` returns the first value in the array at that path.
-*   Accessing a specific character of a string by index. e.g. `data.aString.[1]` returns the second letter of the string at that path.
-*   Escaping payload properties that have spaces or other special characters. e.g. `data.[a silly property name]`.
+* **Accessing an array value by index**. e.g. `data.anArray.[0]` returns the first value in the array at that path.
+* **Accessing a specific character of a string by index**. e.g. `data.aString.[1]` returns the second letter of the string at that path.
+* **Escaping payload properties that have spaces or other special characters**. e.g. `data.[a silly property name]`.
 
 ### Examples
 
@@ -84,8 +84,8 @@ Areas within the app that call for a string template do not necessarily have to 
 
 String templates appear in a number of use places within the Losant Platform; in all cases, they serve one of two purposes:
 
-*   **Referencing payload values**, such as for setting state in the [Device State node](/workflows/outputs/device-state/)
-*   **Formatting values for output**, such as in the [GPS History block's tooltip](/dashboards/gps-history/) or the [SMS node's message](/workflows/outputs/sms/).
+* **Referencing payload values**, such as for setting state in the [Device State node](/workflows/outputs/device-state/)
+* **Formatting values for output**, such as in the [GPS History block's tooltip](/dashboards/gps-history/) or the [SMS node's message](/workflows/outputs/sms/).
 
 ### Escaping HTML
 
@@ -97,58 +97,59 @@ It is possible to wrap string templates in a [block helper](http://handlebarsjs.
 
 In addition to the [built-in Handlebars helpers](http://handlebarsjs.com/builtin_helpers.html), Losant provides a number of other helpers for use in string templates. If you have an idea for a new helper, please let us know about it in our [forums](https://forums.losant.com).
 
-*   `{{#eq p1 p2}}`: Returns true if `p1` and `p2` are equal by shallow comparison.
-*   `{{#ne p1 p2}}`: Returns true if `p1` and `p2` are not equal.
-*   `{{#gt p1 p2}}`: Returns true if `p1` is greater than `p2`.
-*   `{{#gte p1 p2}}`: Returns true if `p1` is greater than or equal to `p2`.
-*   `{{#lt p1 p2}}`: Returns true if `p1` is less than `p2`.
-*   `{{#lte p1 p2}}`: Returns true if `p1` is less than or equal to `p2`.
-*   `{{#match str regExpStr}}`: Returns true if `str` matches the regular expression `regExpStr`.
+* `{{#eq p1 p2}}`: Returns true if `p1` and `p2` are equal by shallow comparison.
+* `{{#ne p1 p2}}`: Returns true if `p1` and `p2` are not equal.
+* `{{#gt p1 p2}}`: Returns true if `p1` is greater than `p2`.
+* `{{#gte p1 p2}}`: Returns true if `p1` is greater than or equal to `p2`.
+* `{{#lt p1 p2}}`: Returns true if `p1` is less than `p2`.
+* `{{#lte p1 p2}}`: Returns true if `p1` is less than or equal to `p2`.
+* `{{#match str regExpStr}}`: Returns true if `str` matches the regular expression `regExpStr`.
 
 ### Format Helpers
 
 Handlebars helpers can also mutate a given value in place and print the result. Losant provides the following formatting helpers:
 
-*   `{{format val formatStr}}`:
-    * If `val` is a **number**, returns the number in the [D3 format](https://github.com/d3/d3-format#locale_format) matching the `formatStr` parameter (default ',.6').
-    * If `val` is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the `formatStr` parameter (default 'L LTS').
-    * If `val` is an **object**, returns the stringified object and ignores the `formatStr` parameter.
-    * For **all other formats**, `val` is returned as a string without mutation.
-*   `{{formatDate val formatStr}}`: Casts the given value as a date, and then formats it using the `formatStr` parameter (default 'L LTS').
-*   `{{formatDateRelative date relativeTo}}`: Outputs a relative date value (such as "5 minutes ago").  Date is calculated relative to the `relativeTo` parameter, which defaults to the current time when not set.
-*   `{{lower str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) to all lowercase characters.
-*   `{{upper str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to all uppercase characters.
-*   `{{encodeURI str}}`: Returns `str` as an [encoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
-*   `{{encodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
-*   `{{decodeURI str}}`: Returns `str` as a [decoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
-*   `{{decodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent).
-*   `{{jsonEncode val}}`: Returns `val` [stringified](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
-*   `{{encodeBase64 val}}`: Treats `val` as a string, and returns the [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64) version of that string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
-*   `{{decodeBase64 val}}`: Treats `val` as a [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64), and returns a decoded string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
-*   `{{length val}}`:
-    * If `val` is an **array**, returns the number of items in the array.
-    * If `val` is an **object**, returns the number of keys on the object.
-    * If `val` is a **string**, returns the length of the string.
-    * For everything else, returns `undefined`.
-*   `{{join array separator}}`: Joins the values in the given array as a single string, separated by the given separator. If no separator is given, defaults to `,`.
-*   `{{add val1 val2}}`: Casts the two values as numbers and adds them.
-*   `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
-*   `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
-*   `{{divide val1 val2}}`: Casts the two values as numbers and divides them.
-*   `{{valueByKey objArray key keyField valueField}}`: Returns the value of `valueField` on the object in the `objArray` whose value for `keyField` matches the value of `key`. The arguments `keyField` and `valueField` are optional, defaulting to the field names `key` and `value`.  If there is no match found, a blank result is returned.
-*   `{{toHtml object}}`: Takes the given object and converts it to an HTML/XML document string. The object must be of the same format that the [HTML Parser node](/workflows/logic/html-parser/) outputs in JSON mode.
-*   `{{gpsDistance gpsStr1 gpsStr2}}`: Takes two [GPS points](/devices/state/#gps-attributes) and returns the distance between them (in meters).
-*   `{{dashboardUrl id queryParamKey1='queryParamValue1' ...}}`: Creates a link to the dashboard at the given ID (defaults to the current dashboard) and adds the optional query parameters. To pass a nested object of parameters, such as for [dashboard context](/dashboards/context-variables/), include the parameter as ` ctx=(obj key1=value1 key2=value2)`.
+* `{{add val1 val2}}`: Casts the two values as numbers and adds them.
+* `{{divide val1 val2}}`: Casts the two values as numbers and divides them.
+* `{{dashboardUrl id queryParamKey1='queryParamValue1' ...}}`: Creates a link to the dashboard at the given ID (defaults to the current dashboard) and adds the optional query parameters. To pass a nested object of parameters, such as for [dashboard context](/dashboards/context-variables/), include the parameter as `ctx=(obj key1=value1 key2=value2)`.
+* `{{decodeBase64 val}}`: Treats `val` as a [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64), and returns a decoded string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
+* `{{decodeURI str}}`: Returns `str` as a [decoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
+* `{{decodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent).
+* `{{encodeBase64 val}}`: Treats `val` as a string, and returns the [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64) version of that string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
+* `{{encodeURI str}}`: Returns `str` as an [encoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
+* `{{encodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
+* `{{format val formatStr}}`:
+  * If `val` is a **number**, returns the number in the [D3 format](https://github.com/d3/d3-format#locale_format) matching the `formatStr` parameter (default ',.6').
+  * If `val` is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the `formatStr` parameter (default 'L LTS').
+  * If `val` is an **object**, returns the stringified object and ignores the `formatStr` parameter.
+  * For **all other formats**, `val` is returned as a string without mutation.
+* `{{formatDate val formatStr}}`: Casts the given value as a date, and then formats it using the `formatStr` parameter (default 'L LTS').
+* `{{formatDateRelative date relativeTo}}`: Outputs a relative date value (such as "5 minutes ago").  Date is calculated relative to the `relativeTo` parameter, which defaults to the current time when not set.
+* `{{gpsDistance gpsStr1 gpsStr2}}`: Takes two [GPS points](/devices/state/#gps-attributes) and returns the distance between them (in meters).
+* `{{join array separator}}`: Joins the values in the given array as a single string, separated by the given separator. If no separator is given, defaults to `,`.
+* `{{jsonEncode val}}`: Returns `val` [stringified](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+* `{{length val}}`:
+  * If `val` is an **array**, returns the number of items in the array.
+  * If `val` is an **object**, returns the number of keys on the object.
+  * If `val` is a **string**, returns the length of the string.
+  * For everything else, returns `undefined`.
+* `{{lower str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) to all lowercase characters.
+* `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
+* `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
+* `{{toHtml object}}`: Takes the given object and converts it to an HTML/XML document string. The object must be of the same format that the [HTML Parser node](/workflows/logic/html-parser/) outputs in JSON mode.
+* `{{trim str}}`: Returns `str` with all whitespace [trimmed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) from the start and end.
+* `{{upper str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to all uppercase characters.
+* `{{valueByKey objArray key keyField valueField}}`: Returns the value of `valueField` on the object in the `objArray` whose value for `keyField` matches the value of `key`. The arguments `keyField` and `valueField` are optional, defaulting to the field names `key` and `value`.  If there is no match found, a blank result is returned.
 
 ### Iterating Over Arrays and Objects
 
 One very useful feature of string templates is the ability to [iterate](http://handlebarsjs.com/builtin_helpers.html#iteration) over arrays and objects using the `{{#each}}` block helper. When doing so, a few variables become available to the user in the context of the loop:
 
-*   For arrays, `{{@index}}` returns a number corresponding to the index of the current item in the loop. One possible use of this value is to know how many times the loop has executed, and to stop executing additional code within the loop based on this value.
-*   For objects, `{{@key}}` returns the name of the current key. You can use this to execute a different string template based on the current item in the loop.
-*   For both arrays and object, `{{this}}` represents the current item in the loop; or, put another way, the value at `{{anArray.[@index]}}` or `{{anObject.[@key]}}`.
+* For arrays, `{{@index}}` returns a number corresponding to the index of the current item in the loop. One possible use of this value is to know how many times the loop has executed, and to stop executing additional code within the loop based on this value.
+* For objects, `{{@key}}` returns the name of the current key. You can use this to execute a different string template based on the current item in the loop.
+* For both arrays and objects, `{{this}}` represents the current item in the loop; or, put another way, the value at `{{anArray.[@index]}}` or `{{anObject.[@key]}}`.
 
-### Examples
+### String Template Examples
 
 Using our example object from above, let's see what each of these string templates would print ...
 
@@ -232,69 +233,69 @@ Below are lists of operators, keywords and functions supported in expressions. I
 
 Expressions support the following operators:
 
-*   `+` (addition)
-*   `-` (subtraction)
-*   `*` (multiplication)
-*   `/` (division)
-*   `%` (modulus)
-*   `^` (exponentiation)
-*   `==` (loose equality)
-*   `===` (strict equality)
-*   `!=` (loose inequality)
-*   `!==` (strict inequality)
-*   `>` (greater than)
-*   `<` (less than)
-*   `>=` (greater than or equal)
-*   `<=` (less than or equal)
-*   `&&` (boolean 'and')
-*   `||` (boolean 'or')
-*   `!` (boolean 'not')
+* `+` (addition)
+* `-` (subtraction)
+* `*` (multiplication)
+* `/` (division)
+* `%` (modulus)
+* `^` (exponentiation)
+* `==` (loose equality)
+* `===` (strict equality)
+* `!=` (loose inequality)
+* `!==` (strict inequality)
+* `>` (greater than)
+* `<` (less than)
+* `>=` (greater than or equal)
+* `<=` (less than or equal)
+* `&&` (boolean 'and')
+* `||` (boolean 'or')
+* `!` (boolean 'not')
 
 ### Supported Keywords
 
 Expressions have support for strings and numbers, as well as the following special keywords:
 
-*   `true` (boolean true)
-*   `false` (boolean false)
-*   `null` (JSON null)
-*   `undefined` (JSON undefined)
-*   `E` (e, approximately 2.718)
-*   `PI` (π, approximately 3.14159)
+* `true` (boolean true)
+* `false` (boolean false)
+* `null` (JSON null)
+* `undefined` (JSON undefined)
+* `E` (e, approximately 2.718)
+* `PI` (π, approximately 3.14159)
 
 ### Supported Functions
 
 Expressions also support the following functions:
 
-*   `sin` (computes the sine of a number)
-*   `cos` (computes the cosine of a number)
-*   `tan` (computes the tangent of a number)
-*   `asin` (computes the arcsine of a number)
-*   `acos` (computes the arccosine of a number)
-*   `atan` (computes the arctangent of a number)
-*   `sinh` (computes the hyperbolic sine of a number)
-*   `cosh` (computes the hyperbolic cosine of a number)
-*   `tanh` (computes the hyperbolic tangent of a number)
-*   `asinh` (computes the hyperbolic arcsine of a number)
-*   `acosh` (computes the hyperbolic arccosine of a number)
-*   `atanh` (computes the hyperbolic arctangent of a number)
-*   `atan2` (computes the arctangent of the two variables y and x)
-*   `sqrt` (computes the square root of a number)
-*   `log` (computes the natural logarithm of a number)
-*   `log10` (computes the base 10 logarithm of a number)
-*   `abs` (computes the absolute value of a number)
-*   `ceil` (computes the smallest integer greater than or equal to a number)
-*   `floor` (computes the largest integer less than or equal to a number)
-*   `round` (rounds a number to the nearest integer)
-*   `trunc` (truncates any fractional digits of a number)
-*   `exp` (computes e raised to the power of the given number)
-*   `pow` (raises a number to the power of a second number)
-*   `length` (computes the length of an array, object, or string)
+* `sin` (computes the sine of a number)
+* `cos` (computes the cosine of a number)
+* `tan` (computes the tangent of a number)
+* `asin` (computes the arcsine of a number)
+* `acos` (computes the arccosine of a number)
+* `atan` (computes the arctangent of a number)
+* `sinh` (computes the hyperbolic sine of a number)
+* `cosh` (computes the hyperbolic cosine of a number)
+* `tanh` (computes the hyperbolic tangent of a number)
+* `asinh` (computes the hyperbolic arcsine of a number)
+* `acosh` (computes the hyperbolic arccosine of a number)
+* `atanh` (computes the hyperbolic arctangent of a number)
+* `atan2` (computes the arctangent of the two variables y and x)
+* `sqrt` (computes the square root of a number)
+* `log` (computes the natural logarithm of a number)
+* `log10` (computes the base 10 logarithm of a number)
+* `abs` (computes the absolute value of a number)
+* `ceil` (computes the smallest integer greater than or equal to a number)
+* `floor` (computes the largest integer less than or equal to a number)
+* `round` (rounds a number to the nearest integer)
+* `trunc` (truncates any fractional digits of a number)
+* `exp` (computes e raised to the power of the given number)
+* `pow` (raises a number to the power of a second number)
+* `length` (computes the length of an array, object, or string)
 
-### Examples
+### Expression Examples
 
 With the provided functions, keywords and operators, it is possible to build very complex expressions, such as ...
 
-```
+```javascript
 sin({{ data.distance }}) >= 0.25 * PI && ({{ data.open }} !== undefined || !{{ data.closed }})
 ```
 
@@ -333,22 +334,22 @@ In a few places within the Losant Platform – such as the [Input Controls block
 
 JSON templates can take any of the following formats (or a combination thereof):
 
-*   Valid, static JSON. e.g. `{"foo": "bar"}`, `[1,2,3]` or `null`
-*   JSON containing block helpers around keys, values or both. e.g. `{ {{#if foo}}"bar": "bat"{{else}}"baz": "bub"{{/if}} }`
-*   JSON containing string helpers for keys or values. e.g. `{"month": "{{format date 'MMMM'}}" }`
-*   Standard handlebars payload references, e.g. `{{data.nestedObject.nestedArray.[1]}}`
+* Valid, static JSON. e.g. `{"foo": "bar"}`, `[1,2,3]` or `null`
+* JSON containing block helpers around keys, values or both. e.g. `{ {{#if foo}}"bar": "bat"{{else}}"baz": "bub"{{/if}} }`
+* JSON containing string helpers for keys or values. e.g. `{"month": "{{format date 'MMMM'}}" }`
+* Standard handlebars payload references, e.g. `{{data.nestedObject.nestedArray.[1]}}`
 
 Your entire input will run through Handlebars and the Losant-provided helpers. **After evaluation, the result must be valid JSON.** Because of this, there are a few things to keep in mind when using string templates within your JSON templates:
 
-*   Any string value being output by a string template should be wrapped in double quotes, like so: `{ "foo": "{{data.aStringProp}}" }`.
-*   Any boolean or number value being output by a string template should **not** be wrapped in quotes, unless you want the value passed as a string: `{ "foo": {{data.aNumberProp}} }`.
-*   Any objects or arrays being referenced by a string helper should always use the `jsonEncode` Handlebars helper to ensure that all string values are wrapped in quotes and all objects print as valid JSON, and should be wrapped in triple curly braces to prevent escaping of characters: `{ "anObject": {{{jsonEncode data.anObjectProp}}} }` or `{ "anArray": {{{jsonEncode data.anArrayProp}}} }`.
+* Any string value being output by a string template should be wrapped in double quotes, like so: `{ "foo": "{{data.aStringProp}}" }`.
+* Any boolean or number value being output by a string template should **not** be wrapped in quotes, unless you want the value passed as a string: `{ "foo": {{data.aNumberProp}} }`.
+* Any objects or arrays being referenced by a string helper should always use the `jsonEncode` Handlebars helper to ensure that all string values are wrapped in quotes and all objects print as valid JSON, and should be wrapped in triple curly braces to prevent escaping of characters: `{ "anObject": {{{jsonEncode data.anObjectProp}}} }` or `{ "anArray": {{{jsonEncode data.anArrayProp}}} }`.
 
-### Examples
+### JSON Template Examples
 
 Again, given our example object above, these JSON templates will evaluate as follows ...
 
-```javascript
+```handlebars
 { "foo": "bar", "staticNumber" : 66 }
 // { "foo": "bar", "staticNumber" : 66 }
 
