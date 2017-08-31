@@ -1,6 +1,6 @@
 # On Connect Trigger
 
-The on connect trigger will trigger a workflow whenever one or more devices connect to the Losant platform.
+The on connect trigger will trigger a workflow whenever one or more devices connect to the Losant Platform.
 
 ![On Connect Trigger](/images/workflows/triggers/on-connect-trigger.png "On Connect Trigger")
 

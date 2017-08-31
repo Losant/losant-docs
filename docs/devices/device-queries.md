@@ -1,6 +1,6 @@
 # Device Queries
 
-Many features within the Losant platform require users to provide a list of devices to interact with. For example:
+Many features within the Losant Platform require users to provide a list of devices to interact with. For example:
 
 * Dashboard blocks can visualize data from one or many devices
 * Workflows can trigger commands to one or more devices
@@ -27,7 +27,7 @@ You may provide just a single ID to interact with one device, or you may provide
 
 ![Device Queries One or Many](/images/devices/device-query-one-or-many.png "Device Queries One or Many")
 
-Some components in the Losant platform only accept one device at a time, in which case you will only be able to select one device.
+Some components in the Losant Platform only accept one device at a time, in which case you will only be able to select one device.
 
 ![Device Query One Device](/images/devices/device-query-one-device.png "Device Query One Device")
 

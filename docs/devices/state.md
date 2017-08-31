@@ -1,6 +1,6 @@
 # Device State
 
-Device state is one of the core communication and data components of the Losant platform. A device's state represents a snapshot of the device at some point in time. For example, if the device has a temperature sensor, it might report the temperature every minute of so. Losant stores every state request and makes them available in visualizations and workflow triggers.
+Device state is one of the core communication and data components of the Losant Platform. A device's state represents a snapshot of the device at some point in time. For example, if the device has a temperature sensor, it might report the temperature every minute of so. Losant stores every state request and makes them available in visualizations and workflow triggers.
 
 ![Device State](/images/devices/state-diagram.png "Device State")
 
@@ -10,7 +10,7 @@ State is defined as one or more attributes. Typically an attribute maps to a sin
 
 ![Device Attributes](/images/devices/device-attributes.png "Device Attributes")
 
-Losant supports and understands a built-in set of data types for device attributes. These include `String`, `Number`, <span id="gps-attributes">`GPS String`</span>, and `Boolean`. If you specify a state attribute as one data type and report something different, the Losant platform will attempt to convert the incoming data type into the one specified. Values for a string attribute have a maximum size of 65KB.
+Losant supports and understands a built-in set of data types for device attributes. These include `String`, `Number`, <span id="gps-attributes">`GPS String`</span>, and `Boolean`. If you specify a state attribute as one data type and report something different, the Losant Platform will attempt to convert the incoming data type into the one specified. Values for a string attribute have a maximum size of 65KB.
 
 GPS attributes must be reported in one of four ways:
 
@@ -30,7 +30,7 @@ Attributes can be added and removed from a device at any time. If you change the
 
 ## Reporting State
 
-A device can report state as often as needed, as long as it's within the Losant platform's [rate limitations](/organizations/resource-limits/#message-throttling). Devices are not required to report all attributes every time. For example, a thermostat might report the `inside-temp` attribute every few minutes, but only report the `temp-setting` attribute when the user changes it.
+A device can report state as often as needed, as long as it's within the Losant Platform's [rate limitations](/organizations/resource-limits/#message-throttling). Devices are not required to report all attributes every time. For example, a thermostat might report the `inside-temp` attribute every few minutes, but only report the `temp-setting` attribute when the user changes it.
 
 [Standalone](/devices/overview/#device-type) or [Gateway](/devices/overview/#device-type) devices typically report state over an MQTT or REST connection. The Losant MQTT clients make it easy to form MQTT connections and report state to Losant. If your device only reports state every few minutes or every few hours, then the REST interface likely makes more sense so it doesn't have to maintain a persistent connection.
 

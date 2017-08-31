@@ -20,7 +20,7 @@ Your kit should include the following items:
 
 ## What We're Building
 
-The widget we're building in this workshop includes a button, a light sensor (photoresistor), and an LED. We'll use the button to trigger actions in the virtual world, graph the value of the light sensor over time, and remotely control the LED from the web. This workshop is self-guided and provides detailed instructions, but feel free to explore other ways to use your device. You have full access to the Losant platform to build anything you'd like.
+The widget we're building in this workshop includes a button, a light sensor (photoresistor), and an LED. We'll use the button to trigger actions in the virtual world, graph the value of the light sensor over time, and remotely control the LED from the web. This workshop is self-guided and provides detailed instructions, but feel free to explore other ways to use your device. You have full access to the Losant Platform to build anything you'd like.
 
 ## Build the Widget
 
@@ -94,7 +94,7 @@ Next, add a device to the application to represent our Photon-powered widget.
 
 Once everything is configured, click the `Create Device` button at the top-right on the screen.
 
-Next, create a webhook that the Particle cloud can use to send published events to the Losant platform.
+Next, create a webhook that the Particle cloud can use to send published events to the Losant Platform.
 
 ![Webhook Menu](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/webhook-menu.png "Webhook Menu")
 

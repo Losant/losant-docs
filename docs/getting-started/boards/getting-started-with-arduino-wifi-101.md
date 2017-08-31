@@ -35,7 +35,7 @@ The next library is ArduinoJson. Repeat the same process again, and install the 
 ![Install ArduinoJson](/images/getting-started/losant-iot-dev-kits/environment-setup/install-arduinojson.png "Install ArduinoJson")
 
 ## Install Losant MQTT Client
-The [Losant Arduino MQTT Client](https://github.com/Losant/losant-mqtt-arduino) makes it easy to connect your Arduino-based devices to the Losant platform.
+The [Losant Arduino MQTT Client](https://github.com/Losant/losant-mqtt-arduino) makes it easy to connect your Arduino-based devices to the Losant Platform.
 
 Download a zip of the library from the following URL:
 
@@ -64,7 +64,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ### Generate An Access Key
 
-Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
+Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant Platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
 
 ![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
@@ -99,7 +99,7 @@ WiFiSSLClient wifiClient;
 // Create an instance of a Losant device.
 LosantDevice device(LOSANT_DEVICE_ID);
 
-// Connects to WiFi and then to the Losant platform.
+// Connects to WiFi and then to the Losant Platform.
 void connect() {
 
   // Connect to WiFi.
@@ -169,7 +169,7 @@ Most of this code is boilerplate [WiFi 101 connection logic](https://www.arduino
 device.connectSecure(wifiClient, LOSANT_ACCESS_KEY, LOSANT_ACCESS_SECRET);
 ```
 
-This line uses the WiFiClientSecure instance to connect your device to the Losant platform. The access key and access secret can be obtained through Losant's web portal.
+This line uses the WiFiClientSecure instance to connect your device to the Losant Platform. The access key and access secret can be obtained through Losant's web portal.
 
 ```arduino
 device.loop()
@@ -221,7 +221,7 @@ Let's assume that we had a camera attached to our device and we needed to dynami
 
 ```arduino
 // Command callback function. Invoked whenever this device receives
-// a command from the Losant platform.
+// a command from the Losant Platform.
 void handleCommand(LosantCommand *command) {
   Serial.print("Command received: ");
   Serial.println(command->name);

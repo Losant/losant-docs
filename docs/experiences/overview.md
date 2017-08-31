@@ -20,7 +20,7 @@ The first step in working with Experiences is to choose a custom endpoint slug, 
 
 *   Must be at least 4 characters
 *   May only contain lowercase letters, numbers, hyphens (-) and underscores (\_)
-*   Must be unique across the entire Losant platform
+*   Must be unique across the entire Losant Platform
 *   Cannot be a commonly used Internet subdomain, such as "webmail" or "cpanel"
 *   Cannot be profane (these are subject to change by Losant without notice)
 
