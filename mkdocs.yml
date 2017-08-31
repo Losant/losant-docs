@@ -10,21 +10,6 @@ extra:
     - Builder Kit Nodevember Instructions
     - _
 pages:
-# Redirects
-- _: getting-started/what-is-structure.md
-- _: events/overview.md
-- _: limits/overview.md
-- _: losant-sdks/arduino.md
-- _: losant-sdks/javascript.md
-- _: structure-sdks/arduino.md
-- _: structure-sdks/javascript.md
-- _: workflows/outputs/virtual-device.md
-
-# Hidden pages
-- Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
-- Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
-
-# Normal Nav
 - Getting Started:
     - What is Losant: getting-started/what-is-losant.md
     - Losant Walkthrough: getting-started/walkthrough.md
@@ -233,3 +218,17 @@ pages:
     - Workflow Version: rest-api/flow-version.md
     - Workflow Versions: rest-api/flow-versions.md
     - Schemas: rest-api/schemas.md
+
+# Redirects
+- _: getting-started/what-is-structure.md
+- _: events/overview.md
+- _: limits/overview.md
+- _: losant-sdks/arduino.md
+- _: losant-sdks/javascript.md
+- _: structure-sdks/arduino.md
+- _: structure-sdks/javascript.md
+- _: workflows/outputs/virtual-device.md
+
+# Hidden pages
+- Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
+- Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md

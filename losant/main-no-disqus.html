@@ -71,7 +71,7 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="{{ nav.homepage.abs_url }}" class="icon icon-home"> {{ config.site_name }}</a>
+        <a href="/" class="icon icon-home">{{ config.site_name }}</a>
         {% include "searchbox.html" %}
       </div>
 
@@ -92,7 +92,7 @@
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ nav.homepage.abs_url }}">{{ config.site_name }}</a>
+        <a href="/">{{ config.site_name }}</a>
       </nav>
 
       {# PAGE CONTENT #}
@@ -115,9 +115,3 @@
   </div>
 </body>
 </html>
-{% if page and page.is_homepage %}
-<!--
-MkDocs version : {{ mkdocs_version }}
-Build Date UTC : {{ build_date_utc }}
--->
-{% endif %}
