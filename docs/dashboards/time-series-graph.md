@@ -20,11 +20,11 @@ The time series graph can display points as a **live stream** (rendering a point
 
 ### Duration and Resolution
 
-The duration and resolution fields allow you to configure how far into the past to view and how to group the data together. The available resolutions will change based on what you specify for the duration. For example, when you choose 30 days of data, the smallest resolution available is 60 minutes. This is because smaller resolutions result in more data points, and too much data can't be graphed by the browser and is hard to understand by the viewer.
+In your block configuration, you must set a default **duration** and **resolution** for the time series graph. These fields allow you to configure how far into the past to view and how to group the data together. The available resolutions will change based on what you specify for the duration. For example, when you choose 30 days of data, the smallest resolution available is 60 minutes. This is because smaller resolutions result in more data points, and too much data can't be graphed by the browser and is hard to understand by the viewer.
 
 The resolution and the aggregator specified in the block data section work together in order to generate a data point. For example, if the resolution is 60 minutes and the aggregator is `MEAN`, Losant will average all of the data together in 60-minute increments to create a single point on the graph.
 
-Note that if **live stream** is selected as the data type, the "resolution" selector will disappear.
+Note that if **live stream** is selected as the data type, the "resolution" selector will disappear from the block configuration.
 
 ### Block Data
 
@@ -49,3 +49,13 @@ There are also a handful of parameters that only affect the graph's display prop
 *   <strong><a href="https://www.mathsisfun.com/data/cumulative-tables-graphs.html" target="\_blank">Cumulative</a></strong>, when checked, means that the point graphed at any given time is the sum of that point plus all previous points that are currently displayed.
 *  **Y Axis Label** is an optional label to apply to the Y Axis. If provided, this will draw a new axis for this series; however, if any two axes labels, minimums and maximums all match, only one of the two axes will be drawn on the graph. If left blank, the default left axis is used for the series.
 *  **Y Axis Min** and **Y Axis Max** are user-defined caps at the bottom and top of the chart, respectively. Data for the series will be graphed on this scale. If you choose not to define a minimum or maximum value, the time series graph will automatically define a scale based on the data set it is currently rendering for the data series.
+
+## Changing Graph Time Ranges
+
+If your time series graph is displaying **historical** data, it is possible to change the graph's duration and resolution while viewing the dashboard. This allows for a quick glimpse of the data from your time series graph at different time range settings without having to edit your block configuration.
+
+To change your graph's duration and/or resolution, click the time selector in the top right corner of the block. This will display a dropdown with other time range options. (Your resolution may automatically change to a new value if its current value is not valid given a new duration.)
+
+![Time Series Runtime Config](/images/dashboards/time-series-graph-runtime-config.png "Time Series Runtime Config")
+
+After selecting a new time range, click **Update** to change your graph to the new time selection. **Note:** This will not change the block's default configuration; if you leave the dashboard and return, the graph will reset to the defaults you chose in the block configuration.
