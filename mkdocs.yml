@@ -1,5 +1,14 @@
-site_name: Documentation
+site_name: Losant Documentation
 site_url: https://docs.losant.com
+theme_dir: 'losant'
+strict: true
+markdown_extensions:
+  - meta
+extra:
+  hidden:
+    - Builder Kit Feather Instructions
+    - Builder Kit Nodevember Instructions
+    - _
 pages:
 - Getting Started:
     - What is Losant: getting-started/what-is-losant.md
@@ -8,8 +17,6 @@ pages:
         - Overview: getting-started/losant-iot-dev-kits/overview.md
         - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
         - Builder Kit Instructions: getting-started/losant-iot-dev-kits/builder-kit.md
-        - Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
-        - Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
         - Builder Kit Particle Instructions: getting-started/losant-iot-dev-kits/builder-kit-particle.md
         - Builder Kit Salesforce Instructions: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
         - Moisture Sensor Kit Instructions: getting-started/losant-iot-dev-kits/moisture-sensor-kit.md
@@ -211,7 +218,17 @@ pages:
     - Workflow Version: rest-api/flow-version.md
     - Workflow Versions: rest-api/flow-versions.md
     - Schemas: rest-api/schemas.md
-theme_dir: 'losant'
-extra:
-  site_title: 'Losant Documentation'
-  hidden: ['Builder Kit Feather Instructions', 'Builder Kit Nodevember Instructions']
+
+# Redirects
+- _: getting-started/what-is-structure.md
+- _: events/overview.md
+- _: limits/overview.md
+- _: losant-sdks/arduino.md
+- _: losant-sdks/javascript.md
+- _: structure-sdks/arduino.md
+- _: structure-sdks/javascript.md
+- _: workflows/outputs/virtual-device.md
+
+# Hidden pages
+- Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
+- Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md

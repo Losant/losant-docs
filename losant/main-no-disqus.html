@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/favicon.ico">
   {% block htmltitle %}
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.extra.site_title }}</title>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.site_name }}</title>
   {% endblock %}
 
   {# CSS #}
@@ -71,7 +71,7 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="{{ nav.homepage.abs_url }}" class="icon icon-home"> {{ config.site_name }}</a>
+        <a href="/" class="icon icon-home">{{ config.site_name }}</a>
         {% include "searchbox.html" %}
       </div>
 
@@ -92,7 +92,7 @@
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ nav.homepage.abs_url }}">{{ config.site_name }}</a>
+        <a href="/">{{ config.site_name }}</a>
       </nav>
 
       {# PAGE CONTENT #}
@@ -111,18 +111,7 @@
 	  {% endblock %}
         </div>
       </div>
-
     </section>
-
   </div>
-
-{% include "versions.html" %}
-
 </body>
 </html>
-{% if page and page.is_homepage %}
-<!--
-MkDocs version : {{ mkdocs_version }}
-Build Date UTC : {{ build_date_utc }}
--->
-{% endif %}
