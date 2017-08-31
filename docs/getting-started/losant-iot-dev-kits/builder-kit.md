@@ -116,7 +116,7 @@ For this workshop, you’ll need to attach the NodeMCU and button to the breadbo
 
 ### Flash the Firmware
 
-Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the [environment setup](/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port) for instructions on properly configuring the device port.
+Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the [environment setup](/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port) for instructions on properly configuring the device port.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop-1-internet-button/workshop-1-internet-button.ino`. Edit the following variables at the top of the file.
 

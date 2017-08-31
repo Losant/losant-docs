@@ -148,13 +148,13 @@ If you're familiar with git, you can also clone the repository from here:
 
 ## 10. Flash the Firmware
 
-**If you are doing this workshop at home, you will need to make sure your <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">environment is set up correctly</a>. If you're at the Dreamforce workshop, your workstation is already properly setup. **
+**If you are doing this workshop at home, you will need to make sure your <a href="/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port" target="_blank">environment is set up correctly</a>. If you're at the Dreamforce workshop, your workstation is already properly setup. **
 
 Let's open the Arduino IDE by clicking the shortcut on the Desktop.
 
 ![Open Arduino IDE](/images/getting-started/losant-iot-dev-kits/builder-kit-salesforce/open-arduino.gif "Open Arduino IDE")
 
-Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the <a href="/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port" target="_blank">environment setup</a> for instructions on properly configuring the device port.
+Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the <a href="/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port" target="_blank">environment setup</a> for instructions on properly configuring the device port.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to the builder kit source code and open the file `workshop/workshop.ino`. At the Dreamforce workshop, the source code is located on the Desktop. Edit the following variables at the top of the file.
 
