@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/favicon.ico">
   {% block htmltitle %}
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.extra.site_title }}</title>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.site_name }}</title>
   {% endblock %}
 
   {# CSS #}
@@ -111,13 +111,8 @@
 	  {% endblock %}
         </div>
       </div>
-
     </section>
-
   </div>
-
-{% include "versions.html" %}
-
 </body>
 </html>
 {% if page and page.is_homepage %}

@@ -1,3 +1,9 @@
+{% if page and page.meta and page.meta.redirect %}
+<html>
+  <head><meta http-equiv="refresh" content="0;URL={{page.meta.redirect | first}}"></head>
+  <body></body>
+</html>
+{% else %}
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -7,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/favicon.ico">
   {% block htmltitle %}
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.extra.site_title }}</title>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.site_name }}</title>
   {% endblock %}
 
   {# CSS #}
@@ -133,13 +139,8 @@
 	  {% endblock %}
         </div>
       </div>
-
     </section>
-
   </div>
-
-{% include "versions.html" %}
-
 </body>
 </html>
 {% if page and page.is_homepage %}
@@ -147,4 +148,5 @@
 MkDocs version : {{ mkdocs_version }}
 Build Date UTC : {{ build_date_utc }}
 -->
+{% endif %}
 {% endif %}
