@@ -63,8 +63,8 @@ pages:
     - Application List: dashboards/application-list.md
     - Bar Chart: dashboards/bar-chart.md
     - Dashboard List: dashboards/dashboard-list.md
-    - Data Table: dashboards/data-table.md
     - Device Connection Log: dashboards/device-connection-log.md
+    - Device State Table: dashboards/device-state-table.md
     - Device List: dashboards/device-list.md
     - Event List: dashboards/event-list.md
     - External Website: dashboards/external-website.md
