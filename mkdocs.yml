@@ -221,6 +221,7 @@ pages:
 
 # Redirects
 - _: getting-started/what-is-structure.md
+- _: dashboards/data-table.md
 - _: events/overview.md
 - _: limits/overview.md
 - _: losant-sdks/arduino.md
