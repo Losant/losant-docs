@@ -1,0 +1,1 @@
+redirect: /mqtt/javascript/

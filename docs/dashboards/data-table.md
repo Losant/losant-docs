@@ -1,0 +1,1 @@
+redirect: /dashboards/device-state-table/
