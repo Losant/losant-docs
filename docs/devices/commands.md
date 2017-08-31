@@ -33,7 +33,7 @@ Commands can currently only be received over an [MQTT connection](/mqtt/overview
 Below is an example of using the Losant Arduino MQTT client to handle a command and turn on an LED.
 
 ```arduino
-// Called whenever the device receives a command from the Losant platform.
+// Called whenever the device receives a command from the Losant Platform.
 void handleCommand(LosantCommand *command) {
   Serial.print("Command received: ");
   Serial.println(command->name);

@@ -1,6 +1,6 @@
 # Losant Salesforce Builder Kit Instructions
 
-The Losant Salesforce Builder Kit</a> is an easy way to get up and running with the Losant IoT developer platform and <a href="https://www.salesforce.com/products/service-cloud/overview/" target="_blank">Salesforce Service Cloud</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
+The Losant Salesforce Builder Kit</a> is an easy way to get up and running with the Losant IoT developer platform and <a href="https://www.salesforce.com/products/service-cloud/overview/" target="_blank">Salesforce Service Cloud</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/kit-complete.jpg "Builder Kit")
 
@@ -120,7 +120,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ## 8. Generate An Access Key
 
-Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
+Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant Platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
 
 ![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
@@ -250,7 +250,7 @@ The next step is to create a Salesforce Case whenever the button is pressed. Add
 
 You may notice that all the fields have "template" in their labels. Many workflow nodes, including the Salesforce Cases node, support what Losant calls a <a href="/workflows/overview/#template-fields-and-payload-paths" target="_blank">template field</a>. Template fields allow you to reference variables in the payload by surrounding them in double curly braces. For example `My devices name is {{ deviceName }}` would pull the `deviceName` variable from the payload and put it in that string. This step doesn't require the use of templates, but they are important to understand because nearly all complex solutions make use of them. For example, if your device was reporting the temperature of a piece of manufacturing equipment, you could use a template to put the actual temperature value in the subject or description of a newly created Salesforce case.
 
-**To configure this node, provide your Salesforce username, password, and security token in the first three fields.** These are required so the Losant platform can properly authenticate to the Salesforce API in order to perform actions.
+**To configure this node, provide your Salesforce username, password, and security token in the first three fields.** These are required so the Losant Platform can properly authenticate to the Salesforce API in order to perform actions.
 
 Next, **set the `Salesforce Case Action` to `Create`. Enter "New" as the status, "Web" as the origin, and enter any subject you'd like.**
 

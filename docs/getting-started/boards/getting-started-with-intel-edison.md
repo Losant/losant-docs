@@ -1,6 +1,6 @@
 # Getting Started with the Intel Edison
 
-The <a href="http://www.intel.com/content/www/us/en/do-it-yourself/edison.html" target="_blank">Intel Edison</a> is a very capable compute module that runs Linux. It's an ideal IoT device because it has built-in WiFi and Bluetooth connectivity. This guide will cover how to connect an Intel Edison to the Losant Developer Platform.
+The <a href="http://www.intel.com/content/www/us/en/do-it-yourself/edison.html" target="_blank">Intel Edison</a> is a very capable compute module that runs Linux. It's an ideal IoT device because it has built-in WiFi and Bluetooth connectivity. This guide will cover how to connect an Intel Edison to the Losant IoT Platform.
 
 ## Setup the Edison and XDK
 
@@ -14,7 +14,7 @@ Be sure to enable the `Intel XDK IoT Edition` in the options. At the time of thi
 
 ## Programming the Edison
 
-Create a new project using the Intel XDK. Losant provides an open source <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">JavaScript MQTT Client</a> that can be used to easily connect the Edison to the Losant platform.
+Create a new project using the Intel XDK. Losant provides an open source <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">JavaScript MQTT Client</a> that can be used to easily connect the Edison to the Losant Platform.
 
 Add the `losant-mqtt` module to the package.json dependencies.
 

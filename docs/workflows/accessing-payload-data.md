@@ -82,7 +82,7 @@ Payload paths **do not accept variables** within the path definition; the paths 
 
 Areas within the app that call for a string template do not necessarily have to include a variable; it is perfectly acceptable to put a static string value in place of a template.
 
-String templates appear in a number of use places within the Losant platform; in all cases, they serve one of two purposes:
+String templates appear in a number of use places within the Losant Platform; in all cases, they serve one of two purposes:
 
 *   **Referencing payload values**, such as for setting state in the [Device State node](/workflows/outputs/device-state/)
 *   **Formatting values for output**, such as in the [GPS History block's tooltip](/dashboards/gps-history/) or the [SMS node's message](/workflows/outputs/sms/).
@@ -329,7 +329,7 @@ pow({{data.aNumberProp}}, {{data.aFalsyProp}}) === 1 // true
 
 ## JSON Templates
 
-In a few places within the Losant platform – such as the [Input Controls block](/dashboards/input-controls/) and [Losant API node](/workflows/data/losant-api/), it is necessary to construct JSON objects from other data. In these instances we use **JSON templates**.
+In a few places within the Losant Platform – such as the [Input Controls block](/dashboards/input-controls/) and [Losant API node](/workflows/data/losant-api/), it is necessary to construct JSON objects from other data. In these instances we use **JSON templates**.
 
 JSON templates can take any of the following formats (or a combination thereof):
 

@@ -1,6 +1,6 @@
 # On Disconnect Trigger
 
-The on disconnect trigger will trigger a workflow whenever one or more devices disconnect from the Losant platform.
+The on disconnect trigger will trigger a workflow whenever one or more devices disconnect from the Losant Platform.
 
 ![On Disconnect Trigger](/images/workflows/triggers/on-disconnect-trigger.png "On Disconnect Trigger")
 

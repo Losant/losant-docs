@@ -1,6 +1,6 @@
 # Organizations
 
-Organizations allow users to unlock the full potential of the Losant platform by allowing multiple [members](/organizations/members/) to collaborate on shared [applications](/applications/overview/) and [dashboards](/dashboards/overview/). Additionally, organizations have significantly higher limits than [Sandboxes](/user-accounts/sandbox/) on [devices](/devices/overview/), [payload counts](/organizations/resource-limits/#payload-limits) and data retention periods, as well as additional platform support options.
+Organizations allow users to unlock the full potential of the Losant Platform by allowing multiple [members](/organizations/members/) to collaborate on shared [applications](/applications/overview/) and [dashboards](/dashboards/overview/). Additionally, organizations have significantly higher limits than [Sandboxes](/user-accounts/sandbox/) on [devices](/devices/overview/), [payload counts](/organizations/resource-limits/#payload-limits) and data retention periods, as well as additional platform support options.
 
 You can see all the organizations that you are a member of on the <a href="https://app.losant.com/#/organizations" target="\_blank">organization listing page</a> page, which can be found in the menu under your name on the top right of the screen.
 

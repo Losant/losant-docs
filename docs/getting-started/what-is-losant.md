@@ -8,7 +8,7 @@ If you don't have a device, but still want to experience many of the features Lo
 
 ## Device Connectivity
 
-Losant provides device connectivity using open and industry standards like [MQTT](/mqtt/overview/) and [REST](/rest-api/overview/). This allows any custom device to connect to the Losant platform using tools and libraries available for almost any environment.
+Losant provides device connectivity using open and industry standards like [MQTT](/mqtt/overview/) and [REST](/rest-api/overview/). This allows any custom device to connect to the Losant Platform using tools and libraries available for almost any environment.
 
 ![Communication Diagram](/images/getting-started/communication-diagram.png "Communication Diagram")
 
