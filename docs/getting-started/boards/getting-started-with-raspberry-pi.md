@@ -1,6 +1,6 @@
 # Getting Started with the Raspberry Pi
 
-The <a href="https://www.raspberrypi.org/" target="\_blank">Raspberry Pi</a> is a very popular compute module commonly used in IoT-related projects. This guide covers how to connect the Raspberry Pi to the Losant IoT Platform.
+The <a href="https://www.raspberrypi.org/" target="\_blank">Raspberry Pi</a> is a very popular compute module commonly used in IoT-related projects. This guide covers how to connect the Raspberry Pi to the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>.
 
 ![Raspberry Pi Image](/images/getting-started/boards/raspberry-pi.jpg "Raspberry Pi Image")
 

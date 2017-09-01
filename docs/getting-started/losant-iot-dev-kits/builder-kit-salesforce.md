@@ -1,6 +1,6 @@
 # Losant Salesforce Builder Kit Instructions
 
-The Losant Salesforce Builder Kit</a> is an easy way to get up and running with the Losant IoT developer platform and <a href="https://www.salesforce.com/products/service-cloud/overview/" target="_blank">Salesforce Service Cloud</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
+The Losant Salesforce Builder Kit is an easy way to get up and running with the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a> and <a href="https://www.salesforce.com/products/service-cloud/overview/" target="_blank">Salesforce Service Cloud</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/kit-complete.jpg "Builder Kit")
 
