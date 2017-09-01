@@ -1,5 +1,9 @@
 {% extends "main-no-disqus.html" %}
 
+{% block htmltitle %}
+  <title>Search | {{ config.site_name }}</title>
+{% endblock %}
+
 {% block extrahead %}
   <script>var base_url = '{{ base_url }}';</script>
   <script data-main="/mkdocs/js/search.js" src="/mkdocs/js/require.js"></script>

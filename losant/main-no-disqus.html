@@ -5,24 +5,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block htmltitle %}{% include "title.html" %}{% endblock %}
+
   <link rel="shortcut icon" href="/favicon.ico">
-  {% block htmltitle %}
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.site_name }}</title>
-  {% endblock %}
-
-  {# CSS #}
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://app.losant.com/fonts/font-declarations.css" type="text/css" />
   <link rel="stylesheet" href="/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="/css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/highlight.css" type="text/css" />
   {%- for path in extra_css %}
-  <link href="{{ path }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ path }}" type="text/css" />
   {%- endfor %}
-
   {% if page %}
   <script>
     // Current page data
@@ -51,15 +45,11 @@
       e.parentNode.insertBefore(n, e);
     })(document,"script","hs-analytics",300000);
   </script>
-
   {%- block extrahead %} {% endblock %}
-
   {%- for path in extra_javascript %}
   <script src="{{ path }}"></script>
   {%- endfor %}
-
 </head>
-
 <body class="wy-body-for-nav" role="document">
   <div class="row header sticky">
     <div class="nav-logo col-xs-3">
