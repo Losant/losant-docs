@@ -1,0 +1,8 @@
+  <title>
+    {%- if page -%}
+      {%- if page.title %}{{ page.title }} | {% endif -%}
+      {%- for doc in page.ancestors | reverse %}{{ doc.title }} | {% endfor -%}
+    {%- endif -%}
+
+    {{ config.site_name -}}
+  </title>
