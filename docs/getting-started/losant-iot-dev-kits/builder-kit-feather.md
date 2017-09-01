@@ -1,6 +1,6 @@
 # Losant Feather Builder Kit Instructions
 
-The <a href="https://store.losant.com/products/losant-builder-kit" target="\_blank">Losant Builder Kit</a> is an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
+The <a href="https://store.losant.com/products/losant-builder-kit" target="\_blank">Losant Builder Kit</a> is an easy way to get up and running with the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit/builder-kit.jpg "Builder Kit")
 

@@ -1,24 +1,25 @@
 # Getting Started with the Arduino WiFi 101 Shield
 
-This guide demonstrates how to connect to <a href="https://www.losant.com" target="\_blank">Losant</a> to Arduino Hardware using the <a href="https://www.arduino.cc/en/Main/ArduinoWiFiShield101" target="\_blank">Arduino WiFi 101 Shield</a>.
+This guide demonstrates how to connect Arduino hardware using the <a href="https://www.arduino.cc/en/Main/ArduinoWiFiShield101" target="\_blank">Arduino WiFi 101 Shield</a> to the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>.
 
 ## Supported Boards
+
 The [Losant library](https://github.com/Losant/losant-mqtt-arduino) and dependencies are supported on a wide variety of Arduino boards, including:
 
-  - [Arduino Zero](https://www.arduino.cc/en/Main/ArduinoBoardZero)
-  - [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101)
+* [Arduino Zero](https://www.arduino.cc/en/Main/ArduinoBoardZero)
+* [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101)
 
-### Not Supported:
+### Not Supported
 
-- [Arduino Uno](https://www.arduino.cc/en/Main/ArduinoBoardUno) - Currently the Uno does not have enough memory to support both the WiFi 101 Shield and Losant libraries.
+* [Arduino Uno](https://www.arduino.cc/en/Main/ArduinoBoardUno) - Currently the Uno does not have enough memory to support both the WiFi 101 Shield and Losant libraries.
 
 ## Configuring the Arduino IDE
+
 Follow the specific instructions for your Arduino board to properly configure the Arduino IDE.
 
-
-
 ## Install Dependencies
-To successfully use the Wifi Sheild, the <a href="https://www.arduino.cc/en/Reference/WiFi101" target="\_blank">WiFi 101 library</a> is needed. The Losant MQTT Client requires two libraries to be installed: [PubSubClient](https://github.com/knolleary/pubsubclient) and [ArduinoJson](https://github.com/bblanchon/ArduinoJson). All of these libraries can be installed using the Arduino Library Manager.
+
+To successfully use the Wifi Shield, the <a href="https://www.arduino.cc/en/Reference/WiFi101" target="\_blank">WiFi 101 library</a> is needed. The Losant MQTT Client requires two libraries to be installed: [PubSubClient](https://github.com/knolleary/pubsubclient) and [ArduinoJson](https://github.com/bblanchon/ArduinoJson). All of these libraries can be installed using the Arduino Library Manager.
 
 ![Manage Libraries](https://cdn2.hubspot.net/hubfs/742943/Website/Landing_Pages/Builder_Kit_Instructions/manage-libraries.png?noresize=true "Manage Libraries")
 
@@ -35,6 +36,7 @@ The next library is ArduinoJson. Repeat the same process again, and install the 
 ![Install ArduinoJson](/images/getting-started/losant-iot-dev-kits/environment-setup/install-arduinojson.png "Install ArduinoJson")
 
 ## Install Losant MQTT Client
+
 The [Losant Arduino MQTT Client](https://github.com/Losant/losant-mqtt-arduino) makes it easy to connect your Arduino-based devices to the Losant Platform.
 
 Download a zip of the library from the following URL:
@@ -50,6 +52,7 @@ You can now use the library by adding the following include statement to your sk
 ```arduino
 #include <Losant.h>
 ```
+
 ### Create a Device In Losant
 
 We need to register your device with the platform. Log in, Click the `Add Device` button on the top right or select `Add Device` from the Devices dropdown.
@@ -77,6 +80,7 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 ![Access Token Popup](/images/getting-started/losant-iot-dev-kits/builder-kit/access-token-popup.png "Access Token Popup")
 
 ## Connecting to Losant
+
 Connecting to Losant with the Arduino WiFi 101 Shield involves two steps. The first is to connect the shield to the WiFi network, and the second is to connect your device to Losant. Lets create a new sketch in Arduino:
 
 ```arduino
@@ -180,6 +184,7 @@ This loops the underlying WiFiClientSecure instance and performs the necessary c
 That is all that's required to connect your device to Losant. Next, now we can send and receive data from Losant to put our device to use.
 
 ## Sending State
+
 [State](/devices/state/) represents a snapshot of the device at a point in time. Frequently, a state will be data from a sensor. The [Arduino 101](https://www.arduino.cc/en/Main/ArduinoBoard101) has an onboard accelerometer, which could be the state that gets sent to Losant.
 
 In this example, we will use a <a href="https://www.adafruit.com/product/165" target="_blank">temperature probe</a> connected to the analog input, A0. The state of a device is defined using one or more attributes. A device's state attributes are defined when the device is registered using Losant's web portal. This example will send a state update to Losant every 15 seconds with the "temperature" attribute. You will need to update the device you created earlier to accept this attribute
@@ -215,6 +220,7 @@ void loop() {
 Losant uses JSON payloads when reporting state. The above example maps to the JSON object `{ "temperature": value }`. Losant uses the [ArduinoJson](https://github.com/bblanchon/ArduinoJson) library to efficiently build JSON state payloads. The Losant header file automatically includes the ArduinoJson header file, so there's no need to explicitly include it in your sketch.
 
 ## Receiving Commands
+
 [Commands](/devices/commands/) are sent from Losant to your device and act as a way to instruct the device to take some kind of action. Commands include a name and an optional JSON payload.
 
 Let's assume that we had a camera attached to our device and we needed to dynamically update resolution when the camera starts. An example command could be "start recording" with a payload of `{ "resolution": 1080 }`.
@@ -248,4 +254,5 @@ void setup() {
 What command names are supported and what the payloads include is entirely up to your device firmware and your specific application needs.
 
 ## Additional Examples
+
 For additional Arduino examples, please refer to the [examples](https://github.com/Losant/losant-mqtt-arduino/tree/master/examples) folder of the [Losant Arduino MQTT Client](https://github.com/Losant/losant-mqtt-arduino) repository.
