@@ -92,9 +92,9 @@ pages:
     - Accessing Payload Data: workflows/accessing-payload-data.md
     - Versioning: workflows/versioning.md
     - Triggers:
-        - Device: workflows/triggers/device.md
-        - On Connect: workflows/triggers/on-connect.md
-        - On Disconnect: workflows/triggers/on-disconnect.md
+        - Device State: workflows/triggers/device.md
+        - Device Connect: workflows/triggers/on-connect.md
+        - Device Disconnect: workflows/triggers/on-disconnect.md
         - Endpoint: workflows/triggers/endpoint.md
         - Data Table: workflows/triggers/data-table.md
         - Event: workflows/triggers/event.md

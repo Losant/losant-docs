@@ -1,14 +1,14 @@
-# Device Trigger
+# Device: State Trigger
 
-The device trigger will trigger a workflow whenever one or more devices report state.
+The device state trigger will trigger a workflow whenever one or more devices report state.
 
-![Device Trigger](/images/workflows/triggers/device-trigger.png "Device Trigger")
+![Device State Trigger](/images/workflows/triggers/device-trigger.png "Device State Trigger")
 
 ## Configuration
 
-The device trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection reports state, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The device state trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection reports state, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
-![Device Trigger Config](/images/workflows/triggers/device-trigger-config.png "Device Trigger Config")
+![Device State Trigger Config](/images/workflows/triggers/device-trigger-config.png "Device State Trigger Config")
 
 In the above example, the workflow will be triggered whenever any device with the `floor` tag set to `2` reports state, as well as whenever devices `FM00000001A` or `FM00000002A` report.
 
