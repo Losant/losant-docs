@@ -6,7 +6,7 @@ The device state trigger will trigger a workflow whenever one or more devices re
 
 ## Configuration
 
-The device state trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection reports state, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The device state trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection reports [state](devices/state/), the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
 ![Device State Trigger Config](/images/workflows/triggers/device-trigger-config.png "Device State Trigger Config")
 
@@ -14,7 +14,7 @@ In the above example, the workflow will be triggered whenever any device with th
 
 ## Payload
 
-The payload will include the triggering device's state on the `data` field. The payload will only include the attributes currently reported by the device. So for example, if the device has four attributes configured, but only reports state containing one, this payload will only include the one attribute. In the general case, a device workflow payload will look like the following:
+The payload will include the triggering device's state on the `data` field. The payload will only include the attributes currently reported by the device. So for example, if the device has four attributes configured, but only reports state containing one, this payload will only include the one attribute. In the general case, a device state workflow payload will look like the following:
 
 ```json
 {

@@ -95,6 +95,7 @@ pages:
         - Device State: workflows/triggers/device.md
         - Device Connect: workflows/triggers/on-connect.md
         - Device Disconnect: workflows/triggers/on-disconnect.md
+        - Device Inactive: workflows/triggers/on-inactivity.md
         - Endpoint: workflows/triggers/endpoint.md
         - Data Table: workflows/triggers/data-table.md
         - Event: workflows/triggers/event.md
