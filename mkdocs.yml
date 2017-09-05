@@ -137,6 +137,7 @@ pages:
         - Device Create: workflows/data/create-device.md
         - Device Get: workflows/data/get-device.md
         - Device Update: workflows/data/update-device.md
+        - Device Delete: workflows/data/delete-device.md
         - HTTP: workflows/data/http.md
         - Losant API: workflows/data/losant-api.md
         - MongoDB: workflows/data/mongo.md
