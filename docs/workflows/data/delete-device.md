@@ -21,11 +21,7 @@ For instance, given the example node configuration in the screenshots above, thi
 ```json
 {
   "data": {
-    "body": {
-      "externalId": "myExternalSystemId",
-      "name": "myDevice"
-      ...
-    },
+    "deviceId": "589de7d2a1975a00017b227f",
     "losantDevice": true
     ...
   },
