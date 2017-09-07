@@ -122,7 +122,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Application Key](schemas.md#application-key) | Successfully created applicationKey |
+| 201 | [Application Key Post Response](schemas.md#application-key-post-response) | Successfully created applicationKey |
 
 #### Error Responses
 
