@@ -33,3 +33,11 @@ The Losant IoT Door Sensor Kit includes all of the hardware and software require
 The Losant IoT LCD Kit includes all of the hardware and software required to build an internet powered LCD display. The kit also includes a bonus temperature sensor and the step-by-step instructions guide you through building an indoor/output temperature display.
 
 [Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/)
+
+## Motion Sensor Kit
+
+![Motion Sensor Kit](/images/getting-started/losant-iot-dev-kits/motion-sensor/motion-sensor-header.jpg "Motion Sensor Kit")
+
+The Losant Motion Sensor Kit includes everything required to build the perfect virtual security guard. These instructions provide a step-by-step overview to assemble and configure your motion sensor to alert you via SMS or email when motion is detected.
+
+[Buy Now](https://store.losant.com/products/motion-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/motion-sensor-kit/)
