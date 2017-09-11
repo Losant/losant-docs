@@ -30,7 +30,7 @@ The Losant IoT Door Sensor Kit includes all of the hardware and software require
 
 ![LCD Kit](/images/getting-started/losant-iot-dev-kits/lcd-kit/weather-station.jpg "LCD Kit")
 
-The Losant IoT LCD Kit includes all of the hardware and software required to build an internet powered LCD display. The kit also includes a bonus temperature sensor and the step-by-step instructions guide you through building an indoor/output temperature display.
+The Losant IoT LCD Kit includes all of the hardware and software required to build an internet-powered LCD display. The kit also includes a bonus temperature sensor and the step-by-step instructions guide you through building an indoor/output temperature display.
 
 [Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/)
 
