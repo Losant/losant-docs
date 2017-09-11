@@ -38,6 +38,11 @@ Mongoose OS comes with a [CLI Tool](https://hyper.is/) called `mos`. The `mos` C
 
 To install the `mos` tool, follow the [instructions in the Mongoose OS documentation](https://mongoose-os.com/software.html).
 
+Once you download the `mos` tool, make sure you have the latest version:
+
+```sh
+$ mos update latest
+```
 
 ## 2. Losant Setup
 
@@ -113,69 +118,80 @@ In this step, we're going to connect the PIR sensor to the NodeMCU. Below is the
 
 ## 5. Flash the Firmware
 
-In this step, we are going to program the NodeMCU. 
+In this step, we are going to program the NodeMCU.
 
 ### Get Motion Sensor Firmware
 
 Now let's get the firmware you'll be flashing to the device. Download and extract the following zip file to your computer.
 
-[https://github.com/Losant/losant-mqtt-mongoose-os/archive/master.zip](https://github.com/Losant/losant-mqtt-mongoose-os/archive/master.zip)
+[https://github.com/Losant/losant-mongoose-motion-sensor/archive/master.zip](https://github.com/Losant/losant-mongoose-motion-sensor/archive/master.zip)
 
 If you're familiar with git, you can also clone the repository from here:
 
-[https://github.com/Losant/losant-mqtt-mongoose-os](https://github.com/Losant/losant-mqtt-mongoose-os)
+[https://github.com/Losant/losant-mongoose-motion-sensor](https://github.com/Losant/losant-mongoose-motion-sensor)
 
-The main file of the application is located in `fs/init.js`: 
+The main file of the application is located in `fs/init.js`:
 
 <script src="https://gist.github.com/LosantGists/a6f2f0c5139ddaa5e79a23f90c031976.js"></script>
 
-Every 2 seconds the firmware is publishing the state `{ "movement": <value> }` to Losant. This value will be `1` or `true` when movement is present and `0` or `false` in the other cases. 
+Every 2 seconds the firmware is publishing the state `{ "movement": <value> }` to Losant. This value will be `1` or `true` when movement is present and `0` or `false` in the other cases.
 
 ### Flashing
 
 **Connect the NodeMCU dev kit to USB.**
 
 Open a terminal and navigate to the workshop code:
-```
+
+```sh
 $ cd /location/to/losant-mqtt-mongoose-os
 ```
 
 Build and flash the firmware:
-```
+
+```sh
 $ mos build --arch esp8266 && mos flash
 ```
 
 Configure WiFi:
+
+```sh
+$ mos wifi WIFI_SSID WIFI_PASSWORD
 ```
-$ mos wifi WIFI_SSID WIFI_PASSWORD 
-```
+
 You must replace the following values:
-  - WIFI_SSID
-  - WIFI_PASSWORD
+
+* WIFI_SSID
+* WIFI_PASSWORD
 
 Configure MQTT connection to Losant:
-```
+
+```sh
 $ mos config-set mqtt.client_id=LOSANT_DEVICE_ID \
   mqtt.user=LOSANT_ACCESS_KEY \
-  mqtt.pass=LOSANT_ACCESS_SECRET
-```  
+  mqtt.pass=LOSANT_ACCESS_SECRET \
+  device.id=LOSANT_DEVICE_ID
+```
+
 You have already obtained the `LOSANT_DEVICE_ID`, `LOSANT_ACCESS_KEY`, and `LOSANT_ACCESS_SECRET`.
 
-Now that we've configured WiFi and the Losant credentials, our device should be connected and ready to go. In the next section, we will talk about the many ways to debug and verify that your device is connected. 
+Now that we've configured WiFi and the Losant credentials, our device should be connected and ready to go. In the next section, we will talk about the many ways to debug and verify that your device is connected.
 
 ### Verify
-Mongoose OS has the ability stream the logs from the device via serial to the terminal. These logs will display all the `print` information in our firmware, and helpful Mongoose OS logs. To stream logs to the terminal: 
 
-```
+Mongoose OS has the ability stream the logs from the device via serial to the terminal. These logs will display all the `print` information in our firmware, and helpful Mongoose OS logs. To stream logs to the terminal:
+
+```sh
 $ mos console
 ```
+
 ![Mos Console](/images/getting-started/losant-iot-dev-kits/motion-sensor/mos-console.png "Mos Console")
 
 Mongoose OS also has a web UI where you can monitor logs, flash devices, and update the firmware with a web-based IDE.
 
 ![Mos UI](/images/getting-started/losant-iot-dev-kits/motion-sensor/mos-ui.gif "Mos UI")
 To open up the mos web UI:
-```
+
+```sh
 $ mos
 ```
 
@@ -211,13 +227,13 @@ In the workflow, you also have the ability to see the payload flow, in realtime,
 
 ![Live Payload](/images/getting-started/losant-iot-dev-kits/motion-sensor/live-payload.png "Live Payload")
 
-Now, you can visualize the payloads in the workflow like so: 
+Now, you can visualize the payloads in the workflow like so:
 
 ![Debug Gif](/images/getting-started/losant-iot-dev-kits/motion-sensor/debug.gif "Conditional Gif")
 
 Next, we need to read the `movement` and act on it. For this, we can use a [Latch node](/workflows/logic/latch/), which is a conditional type of node.
 
-Latches work very similarly to conditional nodes, but only allow the true path to be executed once (latched). The true path can only be executed again if a reset condition is met (unlatched). 
+Latches work very similarly to conditional nodes, but only allow the true path to be executed once (latched). The true path can only be executed again if a reset condition is met (unlatched).
 
 We use a Latch node here because we don't want to get an email or SMS every time the sensor reports a `movement` - remember that the device is reporting every 2 seconds. We only want to be alerted once when movement happens and then only alerted again if new movement was discovered. We will only unlatch this node if the `movement` goes back to false to indicate that we didn't see movement anymore. At that point, it's safe to alert us again when our sensor sees movement.
 
@@ -245,7 +261,7 @@ Next, add a time-series block.
 
 ![Add Time](/images/getting-started/losant-iot-dev-kits/motion-sensor/add-time.png "Add Time")
 
-Next, you'll be able to configure the block settings. Give the block a header and choose your application. We'll be displaying historical data. 
+Next, you'll be able to configure the block settings. Give the block a header and choose your application. We'll be displaying historical data.
 
 ![Time Settings](/images/getting-started/losant-iot-dev-kits/motion-sensor/time-settings.png "Time Settings")
 
@@ -261,9 +277,7 @@ Now, you can add more blocks to your dashboard to complete your virtual security
 
 ![Full Dashboard](/images/getting-started/losant-iot-dev-kits/motion-sensor/dashboard.png "Full Dashboard")
 
-And with that, your motion sensor kit is now ready to go. 
-
-
+And with that, your motion sensor kit is now ready to go.
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-motion-sensor-kit" data-text="Green thumb activated! Just installed my @LosantHQ  #IoT motion sensor kit" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
