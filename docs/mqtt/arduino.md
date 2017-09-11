@@ -33,7 +33,7 @@ void toggle() {
   digitalWrite(LED_PIN, ledState ? HIGH : LOW);
 }
 
-// Called whenever the device receives a command from the Losant platform.
+// Called whenever the device receives a command from the Losant Platform.
 void handleCommand(LosantCommand *command) {
   Serial.print("Command received: ");
   Serial.println(command->name);
@@ -67,7 +67,7 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
 
   // Register the command handler to be called when a command is received
-  // from the Losant platform.
+  // from the Losant Platform.
   device.onCommand(&handleCommand);
 
   connect();

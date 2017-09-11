@@ -44,13 +44,13 @@ Advanced users can choose Manual Setup to select a pre-existing application and 
 
 ## Using the Button
 
-Tap the Losant Go button to use it.  If the button has successfully communicated with the Losant platform, you will receive a "Success" message on your button.
+Tap the Losant Go button to use it.  If the button has successfully communicated with the Losant Platform, you will receive a "Success" message on your button.
 
 There is an optional switch under the button that will allow you to send your current GPS coordinates.
 
 <div class="slim-image-container"><img src="/images/losant-go/go-button.png" alt="Go Button" title="Go Button" /><img src="/images/losant-go/go-button-success.png" alt="Success" title="Success" /></div>
 
-The Losant Go App sends the state "buttonPressed = 1" and your current GPS coordinates (optional) to the Losant platform each time the button is pressed.  By default, the button will not do anything except log your payload to a debugging panel. You can view the button activity in Losant by viewing the debug panel.
+The Losant Go App sends the state "buttonPressed = 1" and your current GPS coordinates (optional) to the Losant Platform each time the button is pressed.  By default, the button will not do anything except log your payload to a debugging panel. You can view the button activity in Losant by viewing the debug panel.
 
 If your device does not have the attributes "buttonPressed" and "location", the Losant Go app will prompt you with an option to append those attributes to your device.
 

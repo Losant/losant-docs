@@ -1,0 +1,1 @@
+redirect: /applications/events/

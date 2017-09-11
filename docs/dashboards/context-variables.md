@@ -95,7 +95,7 @@ There are a number of places within dashboards where, using [Markdown](https://d
 *   [Popup templates](/dashboards/gps-history/#popup-style-configuration) in GPS history blocks.
 *   [Help blocks](/dashboards/input-controls/#help-blocks) within input controls blocks.
 *   [Condition labels](/dashboards/indicator/#conditions) in indicator blocks.
-*   Header and cell templates in [data tables](/dashboards/data-table/).
+*   Header and cell templates in [device state tables](/dashboards/device-state-table/).
 
 The URLs can be manually constructed; or, there is a [Handlebars helper](/workflows/accessing-payload-data/#string-templates) to make it easier to build these links.
 
@@ -123,7 +123,7 @@ A Device ID value can, for example, be used to ...
 
 *   Display data from a specific [device](/devices/overview/) within your dashboard blocks
 *   Highlight one device against an array of devices in [time series graphs](/dashboards/time-series-graph/)
-*   View data from a single device at a time within a [data table](/dashboards/data-table/)
+*   View data from a single device at a time within a [device state tables](/dashboards/device-state-table/)
 *   Color-coding [map pins](/dashboards/gps-history/#advanced-pin-style-configuration), [gauges](/dashboards/gauge/#conditional-gauge-colors) and [indicator blocks](/dashboards/indicator/#conditions) when viewing a specific device
 
 ### Attributes
@@ -134,7 +134,7 @@ Changing attributes in context can allow users to ...
 
 *   Change the attribute to compare other values against in a [pie chart](/dashboards/pie-chart/)
 *   [Graph](/dashboards/time-series-graph/) one changing attribute at a time from multiple devices
-*   Bold or otherwise highlight a column in a [data table](/dashboards/data-table/)
+*   Bold or otherwise highlight a column in a [device state table](/dashboards/device-state-table/)
 
 ### Numbers
 

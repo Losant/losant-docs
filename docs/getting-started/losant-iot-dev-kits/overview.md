@@ -6,7 +6,7 @@ The Losant IoT Developer Kits provide all of the hardware and software required 
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit/builder-kit.jpg "Builder Kit")
 
-The Losant IoT Builder Kit is an easy way to get up and running with the Losant IoT Developer Platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
+The Losant IoT Builder Kit is an easy way to get up and running with the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
 
 [Buy Now](https://store.losant.com/products/losant-builder-kit) | [Instructions](/getting-started/losant-iot-dev-kits/builder-kit/)
 
@@ -25,3 +25,11 @@ The Losant IoT Moisture Sensor Kit includes all of the hardware and software req
 The Losant IoT Door Sensor Kit includes all of the hardware and software required to build an internet powered door or window sensor. Be instantly notified by text, email, Slack, or many others as soon as your door is opened. Easily visualize your door activity to see when it was opened and at what times.
 
 [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/)
+
+## LCD Kit
+
+![LCD Kit](/images/getting-started/losant-iot-dev-kits/lcd-kit/weather-station.jpg "LCD Kit")
+
+The Losant IoT LCD Kit includes all of the hardware and software required to build an internet powered LCD display. The kit also includes a bonus temperature sensor and the step-by-step instructions guide you through building an indoor/output temperature display.
+
+[Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/)

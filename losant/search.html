@@ -1,12 +1,15 @@
 {% extends "main-no-disqus.html" %}
 
+{% block htmltitle %}
+  <title>Search | {{ config.site_name }}</title>
+{% endblock %}
+
 {% block extrahead %}
   <script>var base_url = '{{ base_url }}';</script>
   <script data-main="/mkdocs/js/search.js" src="/mkdocs/js/require.js"></script>
 {% endblock %}
 
 {% block content %}
-
   <h1 id="search">Search Results</h1>
 
   <form id="content_search" action="search.html">
@@ -17,5 +20,4 @@
   <div id="mkdocs-search-results">
     <p>Searching...</p>
   </div>
-
 {% endblock %}

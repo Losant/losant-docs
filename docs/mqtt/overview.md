@@ -1,6 +1,6 @@
 # MQTT Protocol
 
-<a href="http://mqtt.org" target="\_blank">MQTT</a> is a lightweight communication protocol targeted at embedded devices with limited connectivity. MQTT is the preferred communication mechanism between your devices and the Losant platform. Currently, Losant has MQTT Clients
+<a href="http://mqtt.org" target="\_blank">MQTT</a> is a lightweight communication protocol targeted at embedded devices with limited connectivity. MQTT is the preferred communication mechanism between your devices and the Losant Platform. Currently, Losant has MQTT Clients
 that easily wrap up the communication between Losant and a device for the following languages:
 
 *   Arduino with <a href="https://github.com/Losant/losant-mqtt-arduino" target="\_blank">losant-mqtt-arduino</a>  
@@ -40,7 +40,7 @@ The Losant Message Broker can be reached using several transports.
 
 ### Authentication
 
-Losant requires the client ID, username, and password fields be correctly set on all MQTT connect calls. `client id` must be set to a valid device ID that is already registered with the Losant platform. `username` must be set to a Losant access key. `password` must be set to a Losant access secret. Access keys can be obtained through your [application settings](/applications/access-keys/).
+Losant requires the client ID, username, and password fields be correctly set on all MQTT connect calls. `client id` must be set to a valid device ID that is already registered with the Losant Platform. `username` must be set to a Losant access key. `password` must be set to a Losant access secret. Access keys can be obtained through your [application settings](/applications/access-keys/).
 
 For example, below is a connect call using the <a href="https://github.com/mqttjs/MQTT.js" target="\_blank">Node.js MQTT client</a>
 
@@ -57,7 +57,7 @@ var client = mqtt.connect('mqtts://broker.losant.com', {
 
 Once authenticated, the Losant message broker can be used for any MQTT communications as long as your custom topics don't overlap the Losant-specific topics. A Losant topic is anything that starts with `losant`.
 
-Messages published to the Losant topics gain access to the full features of the Losant platform, including data collection, visualization, and workflows. In order for Losant to properly parse and understand these messages, a defined JSON-based payload format must be followed.
+Messages published to the Losant topics gain access to the full features of the Losant Platform, including data collection, visualization, and workflows. In order for Losant to properly parse and understand these messages, a defined JSON-based payload format must be followed.
 
 #### Publishing Device State
 

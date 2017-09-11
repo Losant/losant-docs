@@ -99,15 +99,36 @@ You can manage the access control for a dashboard on the settings page for the d
 
 ![Dashboard Access Control](/images/dashboards/dashboard-access-control.png "Dashboard Access Control")
 
-## Embedding Blocks in Other Sites
+## Embedding In Other Sites
 
-If your dashboard has been set to `public`, you may embed any of your dashboard blocks into a third-party site. To get an embed code, hover over your dashboard block and click the `<>` icon in the block header.
+You may wish to display your Losant dashboard, or a collection of blocks from one or more dashboards, into another web page. Losant provides some JavaScript snippets that make it easy to embed these resources into an HTML document.
 
-This will display a modal where you can set the block's `width`, `height` and `theme` properties. For your width and height, make sure to enter a valid CSS length attribute (`%`, `px`, `em`, `vw`, etc.).
-
-![Embed Block Modal Checkbox](/images/dashboards/embed-block-modal.png "Embed Block Modal")
-
-NOTE: The following blocks will not display any data on public dashboards or to non-authorized users when embedded:
+**NOTE:** The following blocks will not display any data on public dashboards or to non-authorized users when embedded:
 
 *   `Application List`
 *   `Dashboard List`
+
+### Embedding Entire Dashboards
+
+From your dashboard's settings page, click "Embed Dashboard" in the left column. This will bring you to a page where you can configure your embed options, such as:
+
+*   **Width** in CSS units (default: 100%)
+*   **Height** in CSS units (default: the height of dashboard currently)
+*   **Theme** (default: Light)
+*   **Fetch Data Every ...** (default: current dashboard setting)
+
+![Embed Dashboard](/images/dashboards/dashboard-embed.png "Embed Dashboard")
+
+This will generate a code snippet, which you can drop into any HTML document at the place where you want the embedded dashboard to appear.
+
+An embedded dashboard only include the dashboard's blocks, not its title, configuration buttons or Losant header and footer. The image below is a screenshot of a dashboard, where the sections crossed out would not appear if the dashboard were embedded.
+
+![Dashboard Embed Diff](/images/dashboards/dashboard-embed-diff.png "Dashboard Embed Diff")
+
+### Embedding Single Blocks
+
+You may only embed a single block if your [dashboard's access control](#dashboard-access-control) has been set to `public`. To get an embed code, hover over your dashboard block and click the `<>` icon in the block header.
+
+![Embed Block Modal Checkbox](/images/dashboards/embed-block-modal.png "Embed Block Modal")
+
+This will display a modal where you can set the block's `width`, `height` and `theme` properties. For your width and height, make sure to enter a valid CSS length attribute (`%`, `px`, `em`, `vw`, etc.).

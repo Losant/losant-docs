@@ -1,6 +1,6 @@
 # What is Losant?
 
-Losant is an easy-to-use and powerful developer platform designed to help you quickly and securely build complex connected solutions. Losant uses open communication standards like REST and MQTT to provide connectivity from one to millions of devices. Losant provides powerful data collection, aggregation, and visualization features to help understand and quantify vast amounts of sensor data. Losant's drag-and-drop workflow editor allows you to trigger actions, notifications, and machine-to-machine communication without programming.
+Losant is an easy-to-use and powerful enterprise IoT platform designed to help you quickly and securely build complex connected solutions. Losant uses open communication standards like REST and MQTT to provide connectivity from one to millions of devices. Losant provides powerful data collection, aggregation, and visualization features to help understand and quantify vast amounts of sensor data. Losant's drag-and-drop workflow editor allows you to trigger actions, notifications, and machine-to-machine communication without programming.
 
 ![Overview Diagram](/images/getting-started/overview-diagram.png "Overview Diagram")
 
@@ -8,7 +8,7 @@ If you don't have a device, but still want to experience many of the features Lo
 
 ## Device Connectivity
 
-Losant provides device connectivity using open and industry standards like [MQTT](/mqtt/overview/) and [REST](/rest-api/overview/). This allows any custom device to connect to the Losant platform using tools and libraries available for almost any environment.
+Losant provides device connectivity using open and industry standards like [MQTT](/mqtt/overview/) and [REST](/rest-api/overview/). This allows any custom device to connect to the Losant Platform using tools and libraries available for almost any environment.
 
 ![Communication Diagram](/images/getting-started/communication-diagram.png "Communication Diagram")
 
