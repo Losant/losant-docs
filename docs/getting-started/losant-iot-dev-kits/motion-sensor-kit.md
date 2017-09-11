@@ -109,7 +109,7 @@ In this step, we're going to connect the PIR sensor to the NodeMCU. Below is the
 
 ![Wiring Diagram](/images/getting-started/losant-iot-dev-kits/motion-sensor/wiring-diagram.png "Wiring Diagram")
 
-If you are not familiar with a breadboard, [here is a primer](https://www.losant.com/blog/how-to-use-a-breadboard). 
+If you are not familiar with a breadboard, [here is a primer](https://www.losant.com/blog/how-to-use-a-breadboard).
 
 1. Push the NodeMCU into terminals 1-15 on either side of the center line, which are columns `b` and `i`. The USB port should be facing away from the breadboard.
 1. Use a female-to-male jump wire to connect the Ground terminal on the PIR sensor to the GND pin on the NodeMCU `a9`.
@@ -198,7 +198,7 @@ To open up the mos web UI:
 $ mos
 ```
 
-On the other end, if you go to your [application overview](applications/overview/) page in Losant, you'll see the [communication log](/applications/overview/#communication-log). This gives you a ton of helpful information about what's happening in your application. Here you will be able to see successful connections:
+On the other end, if you go to your [application overview](/applications/overview/) page in Losant, you'll see the [communication log](/applications/overview/#communication-log). This gives you a ton of helpful information about what's happening in your application. Here you will be able to see successful connections:
 
 ![Communication log](/images/getting-started/losant-iot-dev-kits/motion-sensor/losant-iot-communication-log-success.png "Communication log")
 
