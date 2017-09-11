@@ -4,6 +4,10 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 
 ## From The Losant Blog
 
+*   <a href="https://www.losant.com/blog/using-iot-and-machine-learning-for-industrial-predictive-maintenance" target="_blank">Using IoT and Machine Learning for Industrial Predictive Maintenance</a>
+
+*   <a href="https://www.losant.com/blog/keep-an-eye-on-your-fridge-with-a-photon-photocell-tmp36-and-buzzer" target="_blank">Keep an Eye on Your Fridge with a Photon, Photocell, TMP36 and Buzzer</a>
+
 *   <a href="https://www.losant.com/blog/detecting-motion-using-a-pir-sensor-esp8266-and-mongoose-os" target="_blank">Detecting Motion Using a PIR Sensor, ESP8266, and Mongoose OS</a>
 
 *   <a href="https://www.losant.com/blog/how-to-build-a-slackbot-with-no-code-using-losant-and-microsoft-bot-framework" target="_blank">How to Build a Slackbot with No Code using Losant and Microsoft Bot Framework</a>
@@ -89,6 +93,8 @@ Below is a listing of various projects and tutorials about how to use Losant wit
 *   <a href="https://www.losant.com/blog/how-to-connect-a-particle-photon-to-the-losant-iot-platform" target="_blank">How to connect a Particle Photon to the Losant IoT Platform</a>
 
 ## Losant Community Projects
+
+*   <a href="https://www.hackster.io/sylvain-demortier/sigfox-connected-basketball-hoop-47091c" target="_blank">Sigfox Connected Basketball Hoop</a>
 
 *   <a href="https://www.hackster.io/schoonology/internet-connected-popcorn-popper-db0166" target="_blank">Internet-connected Popcorn Popper</a>
 

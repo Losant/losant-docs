@@ -1,20 +1,20 @@
-# On Connect Trigger
+# Device: Connect Trigger
 
-The on connect trigger will trigger a workflow whenever one or more devices connect to the Losant platform.
+The device connect trigger will trigger a workflow whenever one or more devices connect to the Losant Platform.
 
-![On Connect Trigger](/images/workflows/triggers/on-connect-trigger.png "On Connect Trigger")
+![Device Connect Trigger](/images/workflows/triggers/on-connect-trigger.png "Device Connect Trigger")
 
 ## Configuration
 
-The on connect trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection connects to Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The device connect trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection connects to Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
-![On Connect Trigger Config](/images/workflows/triggers/on-connect-trigger-config.png "On Connect Trigger Config")
+![Device Connect Trigger Config](/images/workflows/triggers/on-connect-trigger-config.png "Device Connect Trigger Config")
 
 In the above example, the workflow will be triggered whenever any device that has a `location` tag connects to Losant.
 
 ## Payload
 
-The payload will have an empty object on the standard data field, since there is no useful data to report other than the fact the device connected. In the general case, an on connect workflow payload will look like the following:
+The payload will have an empty object on the standard data field, since there is no useful data to report other than the fact the device connected. In the general case, a device connect workflow payload will look like the following:
 
 ```json
 {

@@ -20,7 +20,7 @@ All workflows start with a trigger. There are many different triggers and each o
 
 ![Workflow Overview Trigger](/images/workflows/overview-trigger.png "Workflow Overview Trigger")
 
-In this example the trigger is a [Device node](/workflows/triggers/device/), which will run the payload whenever a device reports its [state](/devices/state/). The device trigger places the state that was reported on the payload's data field. When the workflow starts, the payload will look like this:
+In this example the trigger is a [Device State node](/workflows/triggers/device/), which will run the payload whenever a device reports its [state](/devices/state/). The device state trigger places the state that was reported on the payload's data field. When the workflow starts, the payload will look like this:
 
 ```json
 {
@@ -151,7 +151,7 @@ The most common case when importing a workflow will be importing into a blank wo
 
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 
-When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application. So for instance, when importing a workflow across applications, things like a selected device ID on a device trigger will be cleared, since that ID will not exist in the application being imported to.
+When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application. So for instance, when importing a workflow across applications, things like a selected device ID on a device state trigger will be cleared, since that ID will not exist in the application being imported to.
 
 ## Workflow Globals
 

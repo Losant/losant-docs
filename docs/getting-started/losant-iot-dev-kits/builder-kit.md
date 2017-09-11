@@ -1,6 +1,6 @@
 # Losant Builder Kit Instructions
 
-The <a href="https://store.losant.com/products/losant-builder-kit" target="\_blank">Losant Builder Kit</a> is an easy way to get up and running with the Losant IoT developer platform. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant platform.
+The <a href="https://store.losant.com/products/losant-builder-kit" target="\_blank">Losant Builder Kit</a> is an easy way to get up and running with the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/kit-complete.jpg "Builder Kit")
 
@@ -70,7 +70,7 @@ Click the `Create Device` button. The screen will change and show the device’s
 
 ### Generate An Access Key
 
-Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
+Now we need to generate an [access key](/applications/access-keys/) so your device can authenticate against the Losant Platform. Select `Security` from the application menu bar, and then `Device Access Keys` from the left navigation. Then click `Add Access Key`.
 
 ![Access Keys](/images/getting-started/losant-iot-dev-kits/builder-kit/access-keys.png "Access Keys")
 
@@ -116,7 +116,7 @@ For this workshop, you’ll need to attach the NodeMCU and button to the breadbo
 
 ### Flash the Firmware
 
-Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the [environment setup](/getting-started/losant-iot-dev-kits/environment-setup#configure-device-usb-port) for instructions on properly configuring the device port.
+Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the [environment setup](/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port) for instructions on properly configuring the device port.
 
 With the Arduino IDE, use the `File -> Open` menu to navigate to where you downloaded and extracted the builder kit source code and open the file `workshop-1-internet-button/workshop-1-internet-button.ino`. Edit the following variables at the top of the file.
 
@@ -355,7 +355,7 @@ After the upload completes, the Serial Monitor will print the temperature every 
 
 ![Temp Serial Output](/images/getting-started/losant-iot-dev-kits/builder-kit/temp-serial-output.png "Temp Serial Output")
 
-This firmware is publishing state every 15 seconds to the Losant platform. The state includes the tempF and tempC attributes that we defined back when the device was added. This is also why we had to add the Conditional Workflow node to the Internet button (Workshop 1). Without the Conditional, you’d get an email every time the device published temperature, which is likely not what you want.
+This firmware is publishing state every 15 seconds to the Losant Platform. The state includes the tempF and tempC attributes that we defined back when the device was added. This is also why we had to add the Conditional Workflow node to the Internet button (Workshop 1). Without the Conditional, you’d get an email every time the device published temperature, which is likely not what you want.
 
 ### Build a Dashboard
 

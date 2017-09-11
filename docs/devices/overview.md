@@ -14,7 +14,7 @@ When adding a device, you have a choice between creating a device from scratch, 
 
 ## Device Configuration
 
-Properly configuring devices is an important step to ensuring proper communication between your device and the Losant platform.
+Properly configuring devices is an important step to ensuring proper communication between your device and the Losant Platform.
 
 ### Device Type
 
@@ -22,7 +22,7 @@ Properly configuring devices is an important step to ensuring proper communicati
 
 The first thing to configure is the type of device.  This is not about the actual physical
 type of the device, but more about how you expect the device to connect and report state
-to the Losant platform.  There are 3 categories, but in most cases you will be choosing
+to the Losant Platform.  There are 3 categories, but in most cases you will be choosing
 the first, `Standalone`.
 
 *   **Standalone**  
@@ -51,7 +51,7 @@ Refer to the [device state](/devices/state/) documentation for further details a
 
 ### Device Tags
 
-Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries/) for targeting devices by tag within the platform.
+Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant Platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries/) for targeting devices by tag within the platform.
 
 ![Device Tags](/images/devices/device-tags.png "Device Tags")
 
@@ -75,7 +75,7 @@ Whenever a device is disconnected the log will contain the reason and the number
 
 ### Debugging
 
-Losant provides several tools on the device page to help debug communication between your device and the Losant platform.
+Losant provides several tools on the device page to help debug communication between your device and the Losant Platform.
 
 #### Recent Device States
 

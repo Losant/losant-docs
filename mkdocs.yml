@@ -1,5 +1,14 @@
-site_name: Documentation
+site_name: Losant Documentation
 site_url: https://docs.losant.com
+theme_dir: 'losant'
+strict: true
+markdown_extensions:
+  - meta
+extra:
+  hidden:
+    - Builder Kit Feather Instructions
+    - Builder Kit Nodevember Instructions
+    - _
 pages:
 - Getting Started:
     - What is Losant: getting-started/what-is-losant.md
@@ -8,8 +17,6 @@ pages:
         - Overview: getting-started/losant-iot-dev-kits/overview.md
         - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
         - Builder Kit Instructions: getting-started/losant-iot-dev-kits/builder-kit.md
-        - Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
-        - Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
         - Builder Kit Particle Instructions: getting-started/losant-iot-dev-kits/builder-kit-particle.md
         - Builder Kit Salesforce Instructions: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
         - Moisture Sensor Kit Instructions: getting-started/losant-iot-dev-kits/moisture-sensor-kit.md
@@ -64,8 +71,8 @@ pages:
     - Application List: dashboards/application-list.md
     - Bar Chart: dashboards/bar-chart.md
     - Dashboard List: dashboards/dashboard-list.md
-    - Data Table: dashboards/data-table.md
     - Device Connection Log: dashboards/device-connection-log.md
+    - Device State Table: dashboards/device-state-table.md
     - Device List: dashboards/device-list.md
     - Event List: dashboards/event-list.md
     - External Website: dashboards/external-website.md
@@ -86,9 +93,10 @@ pages:
     - Accessing Payload Data: workflows/accessing-payload-data.md
     - Versioning: workflows/versioning.md
     - Triggers:
-        - Device: workflows/triggers/device.md
-        - On Connect: workflows/triggers/on-connect.md
-        - On Disconnect: workflows/triggers/on-disconnect.md
+        - Device State: workflows/triggers/device.md
+        - Device Connect: workflows/triggers/on-connect.md
+        - Device Disconnect: workflows/triggers/on-disconnect.md
+        - Device Inactive: workflows/triggers/on-inactivity.md
         - Endpoint: workflows/triggers/endpoint.md
         - Data Table: workflows/triggers/data-table.md
         - Event: workflows/triggers/event.md
@@ -120,6 +128,7 @@ pages:
         - Mutate: workflows/logic/mutate.md
         - On Change: workflows/logic/on-change.md
         - Random Number: workflows/logic/random-number.md
+        - String: workflows/logic/string.md
         - Switch: workflows/logic/switch.md
         - Throttle: workflows/logic/throttle.md
         - Time Range: workflows/logic/time-range.md
@@ -131,6 +140,7 @@ pages:
         - Device Create: workflows/data/create-device.md
         - Device Get: workflows/data/get-device.md
         - Device Update: workflows/data/update-device.md
+        - Device Delete: workflows/data/delete-device.md
         - HTTP: workflows/data/http.md
         - Losant API: workflows/data/losant-api.md
         - MongoDB: workflows/data/mongo.md
@@ -212,7 +222,18 @@ pages:
     - Workflow Version: rest-api/flow-version.md
     - Workflow Versions: rest-api/flow-versions.md
     - Schemas: rest-api/schemas.md
-theme_dir: 'losant'
-extra:
-  site_title: 'Losant Documentation'
-  hidden: ['Builder Kit Feather Instructions', 'Builder Kit Nodevember Instructions']
+
+# Redirects
+- _: getting-started/what-is-structure.md
+- _: dashboards/data-table.md
+- _: events/overview.md
+- _: limits/overview.md
+- _: losant-sdks/arduino.md
+- _: losant-sdks/javascript.md
+- _: structure-sdks/arduino.md
+- _: structure-sdks/javascript.md
+- _: workflows/outputs/virtual-device.md
+
+# Hidden pages
+- Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
+- Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md

@@ -1,20 +1,20 @@
-# On Disconnect Trigger
+# Device: Disconnect Trigger
 
-The on disconnect trigger will trigger a workflow whenever one or more devices disconnect from the Losant platform.
+The device disconnect trigger will trigger a workflow whenever one or more devices disconnect from the Losant Platform.
 
-![On Disconnect Trigger](/images/workflows/triggers/on-disconnect-trigger.png "On Disconnect Trigger")
+![Device Disconnect Trigger](/images/workflows/triggers/on-disconnect-trigger.png "Device Disconnect Trigger")
 
 ## Configuration
 
-The on disconnect trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection disconnects from Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The device disconnect trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection disconnects from Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
-![On Disconnect Trigger Config](/images/workflows/triggers/on-disconnect-trigger-config.png "On Disconnect Trigger Config")
+![Device Disconnect Trigger Config](/images/workflows/triggers/on-disconnect-trigger-config.png "Device Disconnect Trigger Config")
 
 In the above example, the workflow will be triggered whenever any device that has a `location` tag disconnects from Losant.
 
 ## Payload
 
-The payload will have various information on the data field about the connection that was terminated. In the general case, an on disconnect workflow payload will look like the following:
+The payload will have various information on the data field about the connection that was terminated. In the general case, a device disconnect workflow payload will look like the following:
 
 ```json
 {

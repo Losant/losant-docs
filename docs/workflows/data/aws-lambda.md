@@ -16,7 +16,13 @@ In the example above, the node is configured to pull the AWS Access Key from `gl
 
 ![AWS Lambda Node Config](/images/workflows/data/aws-lambda-node-config.png "AWS Lambda Node Config")
 
-Next to configure are what particular Lambda function to call, and what to hand it as the data. The function to call can take a [string template](/workflows/accessing-payload-data/#string-templates), so the value can be pulled off the payload - but in the example above, the function is hard-coded to `userNumberLookup`. The second field, the "Argument Source Path", can either be left blank or it can take a [payload path](/workflows/accessing-payload-data/#payload-paths). When blank, the entire current payload is handed to the Lambda function. When an Argument Source Path is defined, that value at that path is evaluated against the payload and the result is what is handed to the Lambda function. In the example above, the entire current payload will be handed to the `userNumberLookup` call.
+Next to configure are what particular Lambda function to call, and what to hand it as the data. The function to call can take a [string template](/workflows/accessing-payload-data/#string-templates), so the value can be pulled off the payload - but in the example above, the function is hard-coded to `userNumberLookup`. For configuring the data to send to the function, there are three possible options:
+
+* **Workflow Payload**: with this option, the entire current workflow payload is sent as the data to the lambda call.
+* **Payload Path**: with this option, you must provide a [payload path](/workflows/accessing-payload-data/#payload-paths), and the value at that path on the current payload is sent as the data to the lambda call.
+* **JSON Template**: with this option, you must provide a [JSON template](/workflows/accessing-payload-data/#json-templates), and the result of that template is sent as the data to the lambda call.
+
+In the example above, `Workflow Payload` is selected, so the entire current payload will be handed to the `userNumberLookup` call.
 
 ![AWS Lambda Node Output](/images/workflows/data/aws-lambda-node-output.png "AWS Lambda Node Output")
 

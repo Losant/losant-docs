@@ -1,6 +1,6 @@
 # Table: Update Row Node
 
-The Data Table Update Row node allows a workflow to update an existing row in a [Data Table](/data-table/overview/) inside the current application, and optionally add the updated row to the current workflow payload.
+The Data Table Update Row node allows a workflow to update an existing row in a [Data Table](/data-tables/overview/) inside the current application, and optionally add the updated row to the current workflow payload.
 
 ![Table Update Row Node](/images/workflows/data/table-update-row-node.png "Table Update Row Node")
 
