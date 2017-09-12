@@ -4,6 +4,7 @@ Integrations are connections to external [MQTT brokers](http://mqtt.org/), [Pub/
 
 ## Examples & Tutorials
 
+- <a href="https://www.losant.com/blog/how-to-integrate-particle-with-losant" target="_blank">How to Integrate Particle with Losant</a>
 - <a href="https://www.losant.com/blog/getting-started-with-azure-iot-and-losant" target="_blank">Getting Started with Azure IoT and Losant</a>
 - <a href="https://www.losant.com/blog/getting-started-with-aws-iot-and-losant" target="_blank">Getting Started with AWS IoT and Losant</a>
 - <a href="https://www.losant.com/blog/getting-started-with-google-pub-sub-and-losant" target="_blank">Getting Started with Google Pub/Sub IoT and Losant</a>
@@ -72,6 +73,8 @@ There are two properties that must be defined when setting up the integration.
 * **Event Names:** Enter one or more event names to subscribe to. Any workflows [triggering](/workflows/triggers/particle/) off of this integration will fire anytime a message is received on one of these topics. If you append a `*`, the event name will be treated as a prefix match - so any events that start with the given name will match. In addition, an event name of just `*` will subscribe to all events. *Note: It is not necessary to subscribe to an event in order to perform [device function](/workflows/outputs/particle-call/) calls.*
 
 The other three fields in the Particle integration configuration are optional - `Device Name or ID`, `Product Slug or ID`, `Org Slug or ID`. These correspond to the `deviceId`, `product`, and `org` parameters on the underlying Particle [Event Stream](https://docs.particle.io/reference/javascript/#geteventstream) API endpoint. When the `deviceId` field is left blank, Losant will use the special keyword `mine` when connecting to Particle, to ensure that Losant only subscribes to events for your devices (as opposed to subscribing to the public events of any Particle device).
+
+For a step-by-step walkthrough, please read the article <a href="https://www.losant.com/blog/how-to-integrate-particle-with-losant" target="_blank">How to Integrate Particle with Losant</a>.
 
 ## Using Integrations
 
