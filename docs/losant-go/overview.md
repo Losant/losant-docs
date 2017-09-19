@@ -1,5 +1,8 @@
 # Losant Go App Overview
 
+**UPDATE: September 1, 2017:**  
+We’ve discontinued this product. If you would like to replicate some of the features of Losant Go, you can check out our [Kiln](https://www.losant.com/iot-platform/kiln-iot-custom-experiences) product.
+
 The Losant Go app works by turning your mobile phone into a Losant device. You can then trigger workflows to do any number of amazing things whenever you push the button.
 
 ## Application Setup
