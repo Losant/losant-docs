@@ -130,7 +130,7 @@ Now let's get the firmware you'll be flashing to the device. Download and extrac
 
 [https://github.com/Losant/losant-kit-lcd/archive/master.zip](https://github.com/Losant/losant-kit-lcd/archive/master.zip)
 
-If you're familiar with git, you can also clone the repository from here:
+If you're familiar with Git, you can also clone the repository from here:
 
 [https://github.com/Losant/losant-kit-lcd](https://github.com/Losant/losant-kit-lcd)
 

@@ -80,7 +80,7 @@ Now let's get the firmware you'll be flashing to the device. Download and extrac
 
 [https://github.com/Losant/losant-kit-moisture/archive/master.zip](https://github.com/Losant/losant-kit-moisture/archive/master.zip)
 
-If you're familiar with git, you can also clone the repository from here:
+If you're familiar with Git, you can also clone the repository from here:
 
 [https://github.com/Losant/losant-kit-moisture](https://github.com/Losant/losant-kit-moisture)
 
@@ -92,7 +92,7 @@ In this step we're going to to connect the moisture sensor and the LED to the mi
 
 ![Wiring Diagram](/images/getting-started/losant-iot-dev-kits/moisture-sensor/wiring-diagram.png "Wiring Diagram")
 
-1. Push the microcontroller into terminals 1-15 on either side of the center line, which are rows `b` and `i`. The USB port should be facing away from the breadboard.
+1. Push the microcontroller into terminals 1-15 on either side of the center line, which are columns `b` and `i`. The USB port should be facing away from the breadboard.
 1. Connect the GND pin on the microcontroller `a2` to the negative rail with a jump wire. The color of the jump wire doesn't matter.
 1. Insert the LED into terminals `d22` and `d23`. Ensure the positive lead on the LED (the longer one) is in terminal `d22`.
 1. Connect the negative rail to the negative lead on the LED `c23` with the resistor.
@@ -145,7 +145,7 @@ Insert the moisture sensor roughly halfway to two thirds into your plant's soil.
 
 ![Moisture Sensors](/images/getting-started/losant-iot-dev-kits/moisture-sensor/moisture-sensors.jpg "Moisture Sensors")
 
-## 7. Setup Alerts
+## 7. Set Up Alerts
 
 Now that real moisture data is flowing into Losant, we can set up our alerts to be notified by SMS and email whenever the moisture level reaches a certain value. We're also going to send a command back to the board to turn on the LED, just in case you missed the alert. For this, we're going to use [Losant Workflows](/workflows/overview/).
 
