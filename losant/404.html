@@ -10,7 +10,42 @@
 
 {% block content %}
   <div>
-    <h1>404 Error</h1>
-    Sorry, page not found.
+    <h1 style="text-transform:uppercase;">4<span style="text-transform:lowercase;">o</span>4 - Thing Not Found</h1>
+    <p>
+      We're happy that you're here – not <strong>here</strong> at this page exactly,
+      but here at Losant's documentation. So let's get you pointed in the right direction.
+    </p>
+    <p>
+      You can <a id="404searchLink" href="/search.html">search</a> the documentation to find something specific,
+      or you can read an overview of the <a href="/getting-started/what-is-losant/">Losant Enterprise IoT Platform</a>.
+      Perhaps you want to read about some Losant <a href="/getting-started/tutorials/">tutorials and projects</a>, or
+      you want to run through the <a href="/getting-started/walkthrough/">Losant Walkthrough</a>.
+    </p>
+    <p>
+      Of course, you can always go start working with the Losant platform directly! Click the
+      links below to start building for free today.
+    </p>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p style="margin-bottom:10px">
+          <a style="display:inline-block; vertical-align:middle; text-align:center; width: 100%" href="https://accounts.losant.com/create-account?utm_campaign=Docs&amp;utm_source=Docs" class="button">
+            Sign In
+          </a>
+        </p>
+        <p>
+          <a style="color: #333; background-color: #fff; border-color: #ccc; display:inline-block; vertical-align:middle; text-align:center; width: 100%" href="https://accounts.losant.com/create-account?utm_campaign=Docs&amp;utm_source=Docs" class="button">
+            Create An Account
+          </a>
+        </p>
+      </div>
+    </div>
   </div>
+  <script>
+    $(document).ready(function() {
+      var searchTerm = window.location.pathname.replace('/', '');
+      searchTerm = searchTerm.replace('.html', '');
+      searchTerm = searchTerm.replace(/\//, ' ');
+      $("#404searchLink").attr("href", "/search.html?q="+encodeURIComponent(searchTerm));
+    })
+  </script>
 {% endblock %}
