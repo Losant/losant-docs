@@ -1,7 +1,11 @@
 {% extends "main-no-disqus.html" %}
 
 {% block htmltitle %}
-  <title>Not Found | {{ config.site_name }}</title>
+  <title>404 Not Found | {{ config.site_name }}</title>
+{% endblock %}
+
+{% block breadcrumbs %}
+<li>&raquo; 404 Not Found</li>
 {% endblock %}
 
 {% block content %}

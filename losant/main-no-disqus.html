@@ -89,7 +89,24 @@
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
         <div class="rst-content">
-          {%- include "breadcrumbs.html" %}
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ul class="wy-breadcrumbs">
+              <li><a href="/" style="padding:0px">Docs</a></li>
+              {% block breadcrumbs %}
+                {%- if page %}
+                  {%- for doc in page.ancestors %}
+                    {%- if doc.link %}
+                      <li>&raquo; <a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+                    {%- else %}
+                      <li>&raquo; {{ doc.title }}</li>
+                    {%- endif %}
+                  {%- endfor %}
+                  <li>&raquo; {{ page.title }}</li>
+                {%- endif %}
+              {% endblock %}
+            </ul>
+            <hr/>
+          </div>
           <div role="main">
             <div class="section">
               {%- block content %}
