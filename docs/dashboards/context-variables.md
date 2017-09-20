@@ -1,3 +1,5 @@
+description: Learn how to manipulate Losant dashboards by setting global context variables to control data queries and visualizations.
+
 # Context Variables
 
 Dashboards can take a series of "context variables" for changing not only what data to display within your blocks, but also how to display that data on a per-block basis. This makes it possible to set up a common dashboard that can display data specific to any device or attribute.
@@ -143,7 +145,7 @@ Changing attributes in context can allow users to ...
 Currently there are no blocks whose returned data depends on a number attribute, but there are many ways in which a block's appearance can be altered using a number variable, such as:
 
 *   Minimum and maximum values can be defined on the axes of [time series graphs](/dashboards/time-series-graph/) and [bar charts](/dashboards/bar-chart/), as well as the bounds of a [gauge block](/dashboards/gauge/).
-*   Ranges on [input control blocks](/dashboards/input-controls/#range-inputs) can also have minimums, maximums and default values defined by number context variables.
+*   Ranges on [input control blocks](/dashboards/input-controls/#range-sliders) can also have minimums, maximums and default values defined by number context variables.
 
 ### Strings
 

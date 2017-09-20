@@ -1,3 +1,5 @@
+description: Send commands to your devices and fire workflows directly from a configurable Losant dashboard block. Read more.
+
 # Input Controls
 
 The Input Controls block allows you to send commands to devices, or to trigger workflows, directly from a dashboard. The block includes various input components to allow for configuring the payloads sent with those commands or triggers, and those components can also be configured to show the current state of your devices.
@@ -41,17 +43,17 @@ When setting a **dynamic default value**, you must define the following values f
 * **Attribute**: The attribute whose last reported value should be returned.
 * **Aggregation**: If necessary (such as when two or more devices or at least one device tag is selected), the method by which the multiple results returned by the query should be reduced to a single value.
 
-### Range Inputs
+### Range Sliders
 
-Range inputs allow for the setting of **number** values. When configuring the input, it is necessary to define the range's minimum, maximum and default values, as well as the step size (the size of each "tick" in the range slider).
+Range sliders allow for the setting of **number** values. When configuring the input, it is necessary to define the range's minimum, maximum and default values, as well as the step size (the size of each "tick" in the range slider).
 
 ![Range Input](/images/dashboards/input-controls-range-input.png "Range Input")
 
 From the dashboard, the input's knob can be dragged left or right to set the numerical value to be sent in the payload. The area to the left of the knob will appear in the color selected during configuration.
 
-### Toggle Inputs
+### Toggle Switches
 
-Toggle inputs allow for the setting of **boolean** values (true or false). The default value must be set.
+Toggle switches allow for the setting of **boolean** values (true or false). The default value must be set.
 
 ![Toggle Input](/images/dashboards/input-controls-toggle-input.png "Toggle Input")
 
@@ -64,6 +66,16 @@ Text inputs allow for the setting of arbitrary values, usually as a **string**. 
 ![Text Input](/images/dashboards/input-controls-text-input.png "Text Input")
 
 From the dashboard, enter some text within the text input field to use within your payload or command name.
+
+### Dropdown Selectors
+
+Dropdowns allow for setting text values in your payload, but unlike a text input, the user's options are limited to an array of values specified in the block. When configuring the block, you may choose "no value" as the default, or you may choose one of your configured options.
+
+![Dropdown](/images/dashboards/input-controls-dropdown.png "Dropdown")
+
+For each option, a "value" is required; this is the actual value that will be rendered out in your payload. You may optionally set a label for each value, which reflects how that value will be depicted in the dropdown. If no label is set, the option's value will serve as the label.
+
+If the dropdown's value is set by a [dynamic default](#dynamic-default-values), and the current value is not one of your configured options, the option will automatically be added to the dropdown and will be selected by default.
 
 ### Button Triggers
 
