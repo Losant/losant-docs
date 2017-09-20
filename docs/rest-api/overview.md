@@ -1,3 +1,5 @@
+description: An overview of the Losant REST API, which provides a powerful interface to all aspects of the Losant Enterprise IoT Platform. Learn more.
+
 # Losant REST API
 
 Losant is powered by a full REST API that provides access to nearly every feature. The Losant front-end web application itself is built on top of this API, and so almost all the data and functionality in the front end is available through the API itself. In fact, the front-end uses the open-source <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a> JavaScript client to communicate with the Losant API. If JavaScript is not your language of choice, no need to worry! We have easy to use libraries for a number of different languages:
