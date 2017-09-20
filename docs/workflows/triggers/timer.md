@@ -1,3 +1,5 @@
+description: Learn how to use a Timer Trigger to automatically run a Losant workflow at scheduled intervals.
+
 # Timer Trigger
 
 The timer trigger will trigger a workflow on a scheduled interval.
@@ -6,11 +8,15 @@ The timer trigger will trigger a workflow on a scheduled interval.
 
 ## Configuration
 
-The timer trigger can be configured in two different ways - by a simple interval number and unit, or by a cron configuration string. When configuring a simple interval, the unit can be "Seconds", "Minutes", "Hours", or "Days". The interval can be any positive number that evaluates to at least 1 second and less than 1 year (fractional intervals are allowed). When configuring using a cron string, it must be valid cron syntax. The base cron spec is supported, and in addition the non-standard `/`, `@yearly`, `@monthly`, `@weekly`, `@daily`, and `@hourly` syntax is supported. The non-standard `L`, `W`, `#`, `?`, `@reboot`, and `@annually` syntax is not supported.
+The timer trigger can be configured in three different ways:
+
+* **Simple Interval**: Configure the timer to fire after a repeating period of time. Configured by using an amount and a unit - the unit can be "Seconds", "Minutes", "Hours", or "Days". The interval can be any positive number that evaluates to at least 1 second and less than 1 year (fractional intervals are allowed).
+* **Simple Schedule**: Configure the timer to fire based on a simple daily schedule. Select the days of the week, and the time of day that the timer should fire.
+* **Advanced**: Configure the timer to fire using a valid cron string. The base cron spec is supported, and in addition the non-standard `/`, `@yearly`, `@monthly`, `@weekly`, `@daily`, and `@hourly` syntax is supported. The non-standard `L`, `W`, `#`, `?`, `@reboot`, and `@annually` syntax is not supported.
 
 ![Timer Trigger Config](/images/workflows/triggers/timer-trigger-config.png "Timer Trigger Config")
 
-In the above example, the workflow will be triggered every 5 minutes.
+In the above example, the timer is configured using `Simple Interval`, and is set so that the timer will fire every 5 minutes.
 
 ## Payload
 
@@ -19,7 +25,7 @@ Unlike most other triggers, there is no special data included in the payload for
 ```json
 {
   "time": <time of the trigger>,
-  "data": <the mqtt message payload, as a string>,
+  "data": {},
   "applicationId": <id of the current application>,
   "applicationName": <name of the current application>,
   "triggerId": <id of the timer trigger>,
