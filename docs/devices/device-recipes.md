@@ -67,8 +67,10 @@ Widget Alpha,Device For Bob,Texas,
 Widget 2.0,,Cincy,Plain ESP8266
 ```
 
+You also have the option of creating a unique [access key](/applications/access-keys/) for each device as part of creation. If you check this box, the result of the bulk creation contain a a newly generated access key and corresponding secret for each created device.
+
 After bulk device creation (in both the simple or the CSV case) you will be presented with a table of the created device information, along with the option to download the created device information as a CSV file.  The resulting information will include all of the information from the original CSV, plus any blank cells filled in with the values actually used for that device (such as generated device names, etc..).  In addition, there is a `losantDeviceId` column added, which holds the ids of the newly created devices. If there are any errors in creating any of the devices, those errors will be in a special `creationErrors` column of the result - if that column is blank, then the device for that row was created successfully.
 
 ![Bulk Device Result](/images/devices/bulk-create-result.png "Bulk Device Result")
 
-In the above example result, all 3 devices were created successfully.  The `creationErrors` column is blank for all three devices, and all three have a `losantDeviceId`.  In addition, you can see how the name was auto-generated for the second device as `Builder Kit Widget 0000`, and the `board` tag was filled in with the default recipe value for the first device.
+In the above example result, all 3 devices were created successfully.  The `creationErrors` column is blank for all three devices, and all three have a `losantDeviceId`. You can also see how the name was auto-generated for the second device as `Builder Kit Widget 0000`, and the `board` tag was filled in with the default recipe value for the first device. Finally, because we choose to create a unique key and secret for each device, there are `losantDeviceKey` and `losantDeviceSecret` columns with the key and secret for each device it its respective row.
