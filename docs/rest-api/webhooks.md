@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Webhooks resource of the Losant API. Learn more.
+
 # Webhooks Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/webhooks

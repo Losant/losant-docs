@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Device Recipe resource of the Losant API. Learn more.
+
 # Device Recipe Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes/**`DEVICE_RECIPE_ID`**

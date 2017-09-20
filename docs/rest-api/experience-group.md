@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Experience Group resource of the Losant API. Learn more.
+
 # Experience Group Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/experience/groups/**`EXPERIENCE_GROUP_ID`**

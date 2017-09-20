@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Me resource of the Losant API. Learn more.
+
 # Me Actions
 
 https://api.losant.com/me

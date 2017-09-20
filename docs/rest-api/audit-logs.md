@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Audit Logs resource of the Losant API. Learn more.
+
 # Audit Logs Actions
 
 https://api.losant.com/orgs/**`ORG_ID`**/audit-logs

@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Experience Users resource of the Losant API. Learn more.
+
 # Experience Users Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/experience/users

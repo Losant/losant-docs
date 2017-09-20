@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Data Tables resource of the Losant API. Learn more.
+
 # Data Tables Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/data-tables

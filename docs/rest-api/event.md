@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Event resource of the Losant API. Learn more.
+
 # Event Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/events/**`EVENT_ID`**

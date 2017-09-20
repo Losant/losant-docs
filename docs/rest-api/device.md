@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Device resource of the Losant API. Learn more.
+
 # Device Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**

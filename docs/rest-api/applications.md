@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Applications resource of the Losant API. Learn more.
+
 # Applications Actions
 
 https://api.losant.com/applications

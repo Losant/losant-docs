@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Flows resource of the Losant API. Learn more.
+
 # Flows Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/flows

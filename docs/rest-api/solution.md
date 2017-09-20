@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Solution resource of the Losant API. Learn more.
+
 # Solution Actions
 
 https://api.losant.com/orgs/**`ORG_ID`**/solutions/**`SOLUTION_ID`**

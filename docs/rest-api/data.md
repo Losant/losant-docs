@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Data resource of the Losant API. Learn more.
+
 # Data Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/data

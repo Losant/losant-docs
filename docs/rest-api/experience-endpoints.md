@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Experience Endpoints resource of the Losant API. Learn more.
+
 # Experience Endpoints Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/experience/endpoints

@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Dashboards resource of the Losant API. Learn more.
+
 # Dashboards Actions
 
 https://api.losant.com/dashboards

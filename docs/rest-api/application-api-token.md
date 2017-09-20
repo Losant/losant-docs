@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Application Api Token resource of the Losant API. Learn more.
+
 # Application Api Token Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/tokens/**`API_TOKEN_ID`**

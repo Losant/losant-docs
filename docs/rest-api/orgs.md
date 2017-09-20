@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Orgs resource of the Losant API. Learn more.
+
 # Orgs Actions
 
 https://api.losant.com/orgs

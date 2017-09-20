@@ -1,3 +1,5 @@
+description: A detailed look at the various REST actions supported by the Integration resource of the Losant API. Learn more.
+
 # Integration Actions
 
 https://api.losant.com/applications/**`APPLICATION_ID`**/integrations/**`INTEGRATION_ID`**
