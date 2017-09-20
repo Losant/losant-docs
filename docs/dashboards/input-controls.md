@@ -22,10 +22,10 @@ On the edit screen, all controls can be resized and rearranged within the input 
 
 The block supports inputs of four types, plus a special ["Help Block" component](#help-blocks). The four inputs share a few common attributes:
 
-*   **Label**: All controls require a label attribute.
-*   **Color**: Controls other than text inputs can optionally be given a custom color.
-*   **Template ID:** Controls other than buttons are automatically assigned a Template ID, which can be used when constructing your command / workflow payloads. You may change this ID if you wish.
-*   **Default Value:** Controls other than buttons all get a default value, and optionally, each control can have its default value set by a device data query.
+* **Label**: All controls require a label attribute.
+* **Color**: Controls other than text inputs can optionally be given a custom color.
+* **Template ID:** Controls other than buttons are automatically assigned a Template ID, which can be used when constructing your command / workflow payloads. You may change this ID if you wish.
+* **Default Value:** Controls other than buttons all get a default value, and optionally, each control can have its default value set by a device data query.
 
 ### Dynamic Default Values
 
@@ -37,9 +37,9 @@ Any control that has a dynamic default set is marked with an icon in the control
 
 When setting a **dynamic default value**, you must define the following values for your data query:
 
-*   **Device IDs / Tags**: A list of devices and/or tags to query for state data.
-*   **Attribute**: The attribute whose last reported value should be returned.
-*   **Aggregation**: If necessary (such as when two or more devices or at least one device tag is selected), the method by which the multiple results returned by the query should be reduced to a single value.
+* **Device IDs / Tags**: A list of devices and/or tags to query for state data.
+* **Attribute**: The attribute whose last reported value should be returned.
+* **Aggregation**: If necessary (such as when two or more devices or at least one device tag is selected), the method by which the multiple results returned by the query should be reduced to a single value.
 
 ### Range Inputs
 
@@ -73,12 +73,12 @@ Buttons are responsible for triggering device commands or workflows when clicked
 
 If you'd like your button press to trigger a [device command](/devices/commands/), select the **Send Device Command** radio button. This will display two required input fields:
 
-*   **Device IDs / Tags**: A [device query](/devices/device-queries/) for which device(s) should receive the command. Note that the only available devices are the ones within the block's currently selected application.
-*   **Command Name**: The command that should be sent to the device(s). The field may be set with a static value (e.g. `setColor`), or with a Mustache-wrapped Template ID for a text input (e.g. `{{text-0}}`).
+* **Device IDs / Tags**: A [device query](/devices/device-queries/) for which device(s) should receive the command. Note that the only available devices are the ones within the block's currently selected application.
+* **Command Name**: The command that should be sent to the device(s). The field may be set with a static value (e.g. `setColor`), or with a Mustache-wrapped Template ID for a text input (e.g. `{{text-0}}`).
 
 If your button should trigger a [workflow](/workflows/overview/), select the **Trigger Workflow** radio button. This will display one required input field:
 
-*   **Workflow Virtual Button**: In order to trigger a workflow, you must have at least one workflow within the selected application, and at least one [virtual button](/workflows/triggers/virtual-button/) within that workflow. This input will display all virtual buttons across all of the application's workflows, from which one must be selected to trigger when the button is pressed.
+* **Workflow Virtual Button**: In order to trigger a workflow, you must have at least one workflow within the selected application, and at least one [virtual button](/workflows/triggers/virtual-button/) within that workflow. This input will display all virtual buttons across all of the application's workflows, from which one must be selected to trigger when the button is pressed.
 
 ![Select Virtual Button](/images/dashboards/input-controls-trigger-workflow.png "Select Virtual Button")
 
@@ -130,12 +130,13 @@ In the block configuration, you have the option of setting the default mode of t
 
 **When in "Locked Mode" ...**
 
-*   Controls with dynamic default values will update as your dashboard data refreshes
-*   Buttons and controls are disabled, preventing user interaction. This is to ensure that a stray mouse press does not trigger an unintentional action.
+* Controls with dynamic default values will update as your dashboard data refreshes
+* Buttons and controls are disabled, preventing user interaction. This is to ensure that a stray mouse press does not trigger an unintentional action.
 
 ![Unlocked](/images/dashboards/input-controls-edit-mode.png "Unlocked")
 
 **When in "Unlocked Mode" ...**
 
-*   Controls with dynamic defaults cease to update with dashboard data refreshes. (Dynamic default indicators in the control labels will disappear to indicate this.) This holds true until the block is put back into "Locked Mode".
-*   Buttons can be pressed and controls can be adjusted, thereby allowing commands to be sent to devices and workflows to be triggered.
+* Controls with dynamic defaults cease to update with dashboard data refreshes. (Dynamic default indicators in the control labels will disappear to indicate this.) This holds true until the block is put back into "Locked Mode".
+* Buttons can be pressed and controls can be adjusted, thereby allowing commands to be sent to devices and workflows to be triggered.
+* If the default mode of the block is "Unlocked", dynamic defaults will load once, on the initial dashboard load.
