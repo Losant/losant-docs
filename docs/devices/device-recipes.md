@@ -1,3 +1,5 @@
+description: Learn about how device recipes can give you the power to create devices in bulk for your Losant application.
+
 # Device Recipes
 
 A device recipe is a template (or 'recipe') for creating devices. If you have many devices that are the same or very similar, you can use device recipes to make creating those devices much easier.
