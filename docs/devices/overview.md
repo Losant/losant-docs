@@ -1,6 +1,8 @@
+description: Learn more about configuring internet-connected devices in the Losant platform.
+
 # Devices
 
-A device in Losant is a single thing or widget. A device could be car, thermostat, smart bulb, or any kind of custom gadget. Devices can contain many sensors or attached peripherals.
+A device in Losant is a single thing or widget. A device could be a car, thermostat, smart bulb, or any kind of custom gadget. Devices can contain many sensors or attached peripherals.
 
 ## Adding a Device
 
@@ -22,22 +24,20 @@ Properly configuring devices is an important step to ensuring proper communicati
 
 The first thing to configure is the type of device.  This is not about the actual physical
 type of the device, but more about how you expect the device to connect and report state
-to the Losant Platform.  There are 3 categories, but in most cases you will be choosing
-the first, `Standalone`.
+to the Losant Platform.  There are three categories ...
 
 *   **Standalone**  
-A standalone device is your normal everyday type of device.  It is allowed to connect
-directly to Losant and report its own state.
+A standalone device is your normal everyday type of device. It is allowed to connect
+directly to Losant and report its own state. In most cases, this is the device type you will choose.
 
 *   **Gateway**  
 A gateway device is a device that connects to Losant and reports both its own state and the
-state of other devices - i.e., other devices that use this device as a "gateway".  Gateways
+state of other devices - i.e., other devices that use this device as a "gateway". Gateways
 are extremely useful for helping to report the state of non-internet connected devices to Losant - such as Bluetooth sensors.
 
 *   **Peripheral**  
-A peripheral device does not connect directly to Losant - instead they report their
-state to a gateway device, and that gateway pushes that state to Losant.  When choosing
-peripheral as the device type, there are two options. You can either choose to let the device report state through any gateway in the application (which is useful for devices that move through the range of multiple gateways), or you can choose to only allow reporting through a specific gateway (useful for static or directly connected devices).
+A peripheral device does not connect directly to Losant - instead it reports its
+state to a gateway device (which is connected to the internet), and that gateway pushes the peripheral's state to Losant. When choosing peripheral as the device type, there are two options. You can either choose to let the device report state through any gateway in the application (which is useful for devices that move through the range of multiple gateways), or you can choose to only allow reporting through a specific gateway (useful for static or directly connected devices).
 
 ### Device Attributes
 
@@ -63,7 +63,7 @@ Once the device is added and successfully connected to Losant, there are several
 
 ### Connection Status
 
-The current connection status of your device is always available at the top of the device page.  For peripheral type devices, the connection status of the gateway device it is configured to use is displayed.
+The current connection status of your device is always available beneath the device page's subnavigation. For peripheral type devices, the connection status of the gateway device it is configured to use is displayed.
 
 ![Connection Status](/images/devices/connection-status.png "Connection Status")
 
@@ -71,7 +71,7 @@ For Standalone and Gateway type devices, you can also view a log of recent devic
 
 ![Connection Log](/images/devices/connection-log.png "Connection Log")
 
-Whenever a device is disconnected the log will contain the reason and the number of messages sent and received during the connected period. Typically messages sent correspond to state updates and message received correspond to commands.
+Whenever a device is disconnected the log will contain the reason and the number of messages sent and received during the connected period. Typically messages sent correspond to [state updates](/devices/state/) and messages received correspond to [commands](/devices/commands/). The list will automatically update as new connection events come in.
 
 ### Debugging
 
@@ -79,11 +79,11 @@ Losant provides several tools on the device page to help debug communication bet
 
 #### Recent Device States
 
-To debug whether or not your device is sending state to Losant, you can use the `Recent Device States` log under the debug section of the device page.
+To debug whether your device is sending state to Losant, you can use the `Recent Device States` log under the debug section of the device page.
 
 ![Recent Device States](/images/devices/state-log.png "Recent Device States")
 
-This list will display the most recent 10 states published to Losant by this device. It displays the raw JSON data that represents a state request. This list will automatically update once a minute, but you can force a refresh at any time by clicking the `Refresh` button on the bottom right.
+This list will display the 25 most recent states published to Losant by this device. It displays the raw JSON data that represents a state request. This list will automatically update as new state requests come in.
 
 #### Force State
 
@@ -117,6 +117,16 @@ Timestamp,ISO Date,location,temperature
 ![Delete Device Data](/images/devices/data-deletion.png "Delete Device Data")
 
 In the case where you no longer want the data for a device or you want to clear out old incorrect data, you can do so with the "Delete Device Data" form under the data section of the device page. This will remove either all data for the device or data for a specific time range that you select - state data for attributes, connection log history, and command history. Data deletion may take a few seconds to propagate through the system, but cannot be reversed or undone, so do not press this button lightly!
+
+## Device Communication Log
+
+The device communication log is similar to the [application communication log](/applications/overview/#communication-log) in that is displays a real-time stream of events; it differs from the application log in that these events are specific to the device currently being viewed, instead of across the application as a whole. A number of different events will display within the log, such as:
+
+- State reports for the device, whether they come via the device itself through the [Losant broker](/mqtt/overview/#the-losant-message-broker), via a [workflow](/workflows/overview/) or through the [Losant REST API](/rest-api/device/#send-state).
+- [Commands](/devices/commands/) sent to the device, sent via any of the channels mentioned above.
+- Device connection, disconnection and authentication events. For peripheral devices, the log will display these events for the peripheral's gateway.
+
+Arbitrary topics the device publishes to or is subscribed to will not display within the device communication log.
 
 ## Exporting Devices
 

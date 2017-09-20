@@ -63,7 +63,8 @@ pages:
     - Device State: devices/state.md
     - Device Commands: devices/commands.md
     - Device Queries: devices/device-queries.md
-    - Gateways and Peripherals : devices/gateways-peripherals.md
+    - Gateways and Peripherals: devices/gateways-peripherals.md
+    - Simulator: devices/simulator.md
     - Device Recipes: devices/device-recipes.md
 - Dashboards:
     - Overview: dashboards/overview.md

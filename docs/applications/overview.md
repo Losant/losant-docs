@@ -1,3 +1,5 @@
+description: Applications are the basic scoping mechanism within the Losant platform. Learn more about creating and managing applications.
+
 # Applications
 
 All [devices](/devices/overview/) and [workflows](/workflows/overview/) belong to a single application. Users can have multiple applications as needed. [Dashboards](/dashboards/overview/) do not belong to an application since a single dashboard can contain graphs and blocks for several different applications.
@@ -24,15 +26,11 @@ Applications can be deleted on the settings page. Deleting an application cannot
 
 ## Communication Log
 
-The Communication Log is a real-time log that will display helpful information about various aspects of your Losant Application. It's most useful for debugging purposes.
+The Communication Log is a real-time log that displays helpful information about various aspects of your Losant application. It's most useful for debugging purposes.
 
 ![Communication Log](/images/applications/communication-log-full.png "Communication Log")
 
-As a real-time tool, the Communication Log will always begin in an empty state.
-
-![Communication Log](/images/applications/communication-log-empty.png "Communication Log")
-
-Logs will appear as actions on your Application take place. Logs will show for the following cases:
+As a real-time tool, the Communication Log will always begin in an empty state. Logs will appear as actions on your application take place. Logs will show for the following cases:
 
 ### MQTT
 
@@ -63,4 +61,4 @@ Logs will appear as actions on your Application take place. Logs will show for t
 
 ![Application Globals](/images/applications/application-globals.png "Application Globals")
 
-Application globals are a set of key/value pairs that are accessible inside of any workflow in the current application. This is a great place to store application wide configuration that is used across multiple workflows, like phone numbers or API keys. Any values configured here are accessible under the globals object on the payload in a workflow run. Application globals can be overridden within a workflow by defining a different value at the same key in the globals for that specific workflow. You can read more about workflow globals [here](/workflows/overview/#workflow-globals).
+Application globals are a set of key/value pairs that are accessible inside of any workflow in the current application. This is a great place to store application-wide configuration that is used across multiple workflows, like phone numbers or API keys. Any values configured here are accessible under the globals object on the payload in a workflow run. Application globals can be overridden within a workflow by defining a different value at the same key in the globals for that specific workflow. You can read more about workflow globals [here](/workflows/overview/#workflow-globals).
