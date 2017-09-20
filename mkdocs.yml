@@ -224,12 +224,14 @@ pages:
     - Schemas: rest-api/schemas.md
 
 # Redirects
+- _: getting-started/losant-iot-dev-kits/builder-kit-nodemcu.md
 - _: getting-started/what-is-structure.md
 - _: dashboards/data-table.md
 - _: events/overview.md
 - _: limits/overview.md
 - _: losant-sdks/arduino.md
 - _: losant-sdks/javascript.md
+- _: mqtt.md
 - _: structure-sdks/arduino.md
 - _: structure-sdks/javascript.md
 - _: workflows/outputs/virtual-device.md
