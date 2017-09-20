@@ -1,3 +1,5 @@
+description: Send commands to your devices and fire workflows directly from a configurable Losant dashboard block. Read more.
+
 # Input Controls
 
 The Input Controls block allows you to send commands to devices, or to trigger workflows, directly from a dashboard. The block includes various input components to allow for configuring the payloads sent with those commands or triggers, and those components can also be configured to show the current state of your devices.

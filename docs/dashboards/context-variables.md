@@ -1,3 +1,5 @@
+description: Learn how to manipulate Losant dashboards by setting global context variables to control data queries and visualizations.
+
 # Context Variables
 
 Dashboards can take a series of "context variables" for changing not only what data to display within your blocks, but also how to display that data on a per-block basis. This makes it possible to set up a common dashboard that can display data specific to any device or attribute.
