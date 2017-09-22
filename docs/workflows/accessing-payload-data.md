@@ -198,7 +198,7 @@ Using our example object from above, let's see what each of these string templat
 {{#gt data.aNumberProp 40}}First number is greater{{/gt}}
 => First number is greater
 
-{{#lte data.aNumberProp 10}}Second number is greater{{/gt}}
+{{#lte data.aNumberProp 10}}Second number is greater{{/lte}}
 => (prints nothing)
 
 {{#eq data.aStringProp 'hello world'}}Equal!{{else}}Not equal{{/eq}}
@@ -211,7 +211,7 @@ Using our example object from above, let's see what each of these string templat
 {{format data.aDecimal ',.5'}} => 1,234.6
 {{encodeURIComponent data.aStringProp}} => Hello%20world
 
-{{#eq (format data.aJavascriptDateObject 'MMMM') 'September'}}Ba de ya!{{else}}Play something else{{/if}}
+{{#eq (format data.aJavascriptDateObject 'MMMM') 'September'}}Ba de ya!{{else}}Play something else{{/eq}}
 => Ba de ya!
 ```
 
