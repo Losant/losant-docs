@@ -10,7 +10,7 @@ The device simulator can be reached from the device's overview page, by clicking
 
 ## Connection Manager
 
-The device simulator works by establishing a connection between [Losant broker](/mqtt/overview/#the-losant-message-broker) and your web browser, authenticating the browser as the device itself. The simulator's connection status is displayed in the connection manager's header.
+The device simulator works by establishing a connection between the [Losant broker](/mqtt/overview/#the-losant-message-broker) and your web browser, authenticating the browser as the device itself. The simulator's connection status is displayed in the connection manager's header.
 
 To get started, paste any [access key and secret](/applications/access-keys/) that is scoped to your device into the connection manager's input fields and click the "Connect" button. If authentication succeeds, the simulator will connect.
 
