@@ -1,8 +1,12 @@
+description: Looking for resources beyond basic Losant documentation? Read on for a list of useful Losant tutorials and projects.
+
 # Tutorials And Projects
 
 Below is a listing of various projects and tutorials about how to use Losant with various devices or to accomplish various tasks - everything from smart thermometers to SMS bots.  If you are just getting started and trying to figure out just what is possible with Losant, this list has lots of great ideas.  As people continue to do cool things with Losant, this list will keep growing - if you have done something interesting with Losant and written about it, feel free to let us know and we will add it here!
 
 ## From The Losant Blog
+
+*   <a href="https://www.losant.com/blog/cloud-plc-communication-using-modbus-tcp" target="_blank">Innovative Cloud PLC Communication Using Modbus TCP/IP and Losant</a>
 
 *   <a href="https://www.losant.com/blog/using-iot-and-machine-learning-for-industrial-predictive-maintenance" target="_blank">Using IoT and Machine Learning for Industrial Predictive Maintenance</a>
 
