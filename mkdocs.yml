@@ -152,7 +152,7 @@ pages:
         - Table Insert Row: workflows/data/table-insert-row.md
         - Table Get Rows: workflows/data/table-get-rows.md
         - Table Update Row: workflows/data/table-update-row.md
-        - Table Delete Row: workflows/data/table-delete-row.md
+        - Table Delete Rows: workflows/data/table-delete-row.md
     - Outputs:
         - Debug: workflows/outputs/debug.md
         - Device Command: workflows/outputs/device-command.md
