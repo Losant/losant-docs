@@ -18,6 +18,12 @@ The body of the reply can be set either as a [string template](/workflows/access
 
 Arbitrary headers can also be set on the reply. Both the header name and value fields are templatable, so they are configurable based on the payload. In the example above, only one header field is set - `Content-Type` is set to `application\json`. This is set because the body of the reply is JSON. This will probably be the most common header to set - Losant does not try an automatically determine the content type of the body of the reply.
 
+### Notes About Security
+
+- Webhook replies allow a limited set of values for the `Content-Type` header: `application/json`, `application/xml`, `text/plain`, `text/xml` and `text/csv`.
+- To prevent cross-site scripting attacks, `Cookie` headers are stripped out of webhook requests as these could potentially contain Losant user auth tokens; therefore they are also not available in the webhook replies.
+- Losant automatically sets protective values for the following headers, none of which can be overridden in a webhook reply: `X-Content-Type-Options`, `Content-Security-Policy` and `X-XSS-Protection`.
+
 ## Advanced Options
 
 The webhook reply node has one optional advanced option - setting the payload path to the `replyId`.
