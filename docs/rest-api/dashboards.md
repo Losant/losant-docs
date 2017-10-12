@@ -19,7 +19,7 @@ GET https://api.losant.com/dashboards
 #### Authentication
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Organization, all.SolutionUser, all.SolutionUser.read, all.User, dashboards.*, or dashboards.get.
+all.Organization, all.Organization.read, all.SolutionUser, all.SolutionUser.read, all.User, all.User.read, dashboards.*, or dashboards.get.
 
 #### Request Query Parameters
 
