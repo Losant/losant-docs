@@ -4,10 +4,10 @@ Integrations are connections to external [MQTT brokers](http://mqtt.org/), [Pub/
 
 ## Examples & Tutorials
 
-- <a href="https://www.losant.com/blog/how-to-integrate-particle-with-losant" target="_blank">How to Integrate Particle with Losant</a>
-- <a href="https://www.losant.com/blog/getting-started-with-azure-iot-and-losant" target="_blank">Getting Started with Azure IoT and Losant</a>
-- <a href="https://www.losant.com/blog/getting-started-with-aws-iot-and-losant" target="_blank">Getting Started with AWS IoT and Losant</a>
-- <a href="https://www.losant.com/blog/getting-started-with-google-pub-sub-and-losant" target="_blank">Getting Started with Google Pub/Sub IoT and Losant</a>
+* <a href="https://www.losant.com/blog/how-to-integrate-particle-with-losant" target="_blank">How to Integrate Particle with Losant</a>
+* <a href="https://www.losant.com/blog/getting-started-with-azure-iot-and-losant" target="_blank">Getting Started with Azure IoT and Losant</a>
+* <a href="https://www.losant.com/blog/getting-started-with-aws-iot-and-losant" target="_blank">Getting Started with AWS IoT and Losant</a>
+* <a href="https://www.losant.com/blog/getting-started-with-google-pub-sub-and-losant" target="_blank">Getting Started with Google Pub/Sub IoT and Losant</a>
 
 ## Viewing Integrations
 
@@ -45,7 +45,7 @@ There are a number of properties that must be defined when setting up the integr
 * **Authentication Method:** There are three options to choose from, some of which require additional fields to be entered ...
     * **None:** Provide no authentication information to the broker.
     * **Username and password:** Authenticate with the broker by providing a `Username` and a `Password`. This is the default authentication method.
-    * **Certificate:** If a secure protocol is selected  (`mqtts://` or `wss://`), you can choose to authenticate by certificate, in which case you must provide a `Private Key` and a `Certificate`.  
+    * **Certificate:** If a secure protocol is selected (`mqtts://` or `wss://`), you can choose to authenticate by certificate, in which case you must provide a `Private Key` and a `Certificate`.
 * **Topics:** Enter one or more topics to subscribe to from this broker. Any workflows [triggering](/workflows/triggers/mqtt/) off of this integration will fire anytime a message is received on one of these topics. *(Note: It is not necessary to subscribe to a topic in order to publish to it in an [MQTT Output Node](/workflows/outputs/mqtt/).)*
 * **CA Certificate:** If you selected a secure protocol for the connection, you will have the option to enter your own CA certificate. If you use a self-signed certificate or a certificate from a non-standard authority, you must provide the CA certificate from the authority so Losant can properly verify the connection.
 

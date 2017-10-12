@@ -26,8 +26,8 @@ The block data takes two parameters:
 
 ![GPS History Block Data](/images/dashboards/gps-history-block-data.png "GPS History Block Data")
 
-*   **Device IDS / Tags** is a [device query](/devices/device-queries/) for choosing which devices are displayed on the map.
-*   **Attribute** is the device attribute that contains the location data. The attribute must be of type [GPS string](/devices/state/#gps-attributes), and any attribute reported by the selected devices that is not of the [GPS string](/devices/state/#gps-attributes) type will not be available to choose. If displaying multiple devices on the map via tags or multiple IDs, each device must provide the same attribute name.
+* **Device IDS / Tags** is a [device query](/devices/device-queries/) for choosing which devices are displayed on the map.
+* **Attribute** is the device attribute that contains the location data. The attribute must be of type [GPS string](/devices/state/#gps-attributes), and any attribute reported by the selected devices that is not of the [GPS string](/devices/state/#gps-attributes) type will not be available to choose. If displaying multiple devices on the map via tags or multiple IDs, each device must provide the same attribute name.
 
 ### Default Viewport
 
@@ -68,16 +68,16 @@ a red marker for the starting (oldest) point of a series, and a green marker for
 
 When using the advanced mode, the following variables are available for you to use in the icon template:
 
-*   `isFirstPoint` - True if this is the first (oldest) data point in the series.
-*   `isLastPoint` - True if this is the last (most recent) data point in the series.
-*   `index` - Index of the current data point in the series.
-*   `deviceName` - Name of the device that generated this data point.
-*   `deviceId` - Id of the device that generated this data point.
-*   `deviceTags` - The tags (as an object) of the device that generated this data point.
-*   `latitude` - Latitude of the current data point.
-*   `longitude` - Longitude of the current data point.
-*   `time` - Time of the current data point.
-*   `data.<attributeName>` - Value of given attribute at this data point.
+* `isFirstPoint` - True if this is the first (oldest) data point in the series.
+* `isLastPoint` - True if this is the last (most recent) data point in the series.
+* `index` - Index of the current data point in the series.
+* `deviceName` - Name of the device that generated this data point.
+* `deviceId` - Id of the device that generated this data point.
+* `deviceTags` - The tags (as an object) of the device that generated this data point.
+* `latitude` - Latitude of the current data point.
+* `longitude` - Longitude of the current data point.
+* `time` - Time of the current data point.
+* `data.<attributeName>` - Value of given attribute at this data point.
 
 #### Popup Style Configuration
 
@@ -92,13 +92,13 @@ an empty string for a point, no popup will appear when clicking the map pin for 
 
 The following variables are available for you to use in the popup template:
 
-*   `isFirstPoint` - True if this is the first (oldest) data point in the series.
-*   `isLastPoint` - True if this is the last (most recent) data point in the series.
-*   `index` - Index of the current data point in the series.
-*   `deviceName` - Name of the device that generated this data point.
-*   `deviceId` - Id of the device that generated this data point.
-*   `deviceTags` - The tags (as an object) of the device that generated this data point.
-*   `latitude` - Latitude of the current data point.
-*   `longitude` - Longitude of the current data point.
-*   `time` - Time of the current data point.
-*   `data.<attributeName>` - Value of given attribute at this data point.
+* `isFirstPoint` - True if this is the first (oldest) data point in the series.
+* `isLastPoint` - True if this is the last (most recent) data point in the series.
+* `index` - Index of the current data point in the series.
+* `deviceName` - Name of the device that generated this data point.
+* `deviceId` - Id of the device that generated this data point.
+* `deviceTags` - The tags (as an object) of the device that generated this data point.
+* `latitude` - Latitude of the current data point.
+* `longitude` - Longitude of the current data point.
+* `time` - Time of the current data point.
+* `data.<attributeName>` - Value of given attribute at this data point.

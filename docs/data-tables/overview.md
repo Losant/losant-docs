@@ -14,9 +14,9 @@ To create a data table, click the "Add Table" button in the top right corner of 
 
 A data table's configuration consists of:
 
-*  **Name** - The table's name. This field is required, though the name of the table itself has no effect on its functionality.
-*  **Description** - This is an optional, longer description of the table.
-*  **Columns** - Though columns are optional, a table without columns is effectively useless. More information about [column definition](#table-columns) is below.
+* **Name** - The table's name. This field is required, though the name of the table itself has no effect on its functionality.
+* **Description** - This is an optional, longer description of the table.
+* **Columns** - Though columns are optional, a table without columns is effectively useless. More information about [column definition](#table-columns) is below.
 
 ![Data Table Name and Description](/images/data-tables/data-table-name-desc.png "Data Table Name and Description")
 
@@ -28,26 +28,26 @@ You may define as many as 100 columns per table in addition to the [default colu
 
 The **column name**, which is the unique identifier against which data will be added and queried, must meet the following rules:
 
-*   Must be 1 to 255 characters.
-*   May only consist of uppercase letters, lowercase letters, numbers, underscores (\_) and hyphens (-).
-*   Must be unique within the table; the same column name cannot be used twice.
-*   Must not conflict with any of the default column names listed below.
+* Must be 1 to 255 characters.
+* May only consist of uppercase letters, lowercase letters, numbers, underscores (\_) and hyphens (-).
+* Must be unique within the table; the same column name cannot be used twice.
+* Must not conflict with any of the default column names listed below.
 
 ### Default Columns
 
 Every table automatically has the following columns, whose values per row are auto-generated:
 
-*   **id** is a Losant-generated alphanumeric ID for the row. This value cannot be changed.
-*   **createdAt** is the time at which the row was inserted into the table. This timestamp will never change.
-*   **updatedAt** is the last time the row was updated. If the row has never been updated, this will be equal to the timestamp in the `createdAt` column; otherwise, the timestamp will reflect the last time the row was edited.
+* **id** is a Losant-generated alphanumeric ID for the row. This value cannot be changed.
+* **createdAt** is the time at which the row was inserted into the table. This timestamp will never change.
+* **updatedAt** is the last time the row was updated. If the row has never been updated, this will be equal to the timestamp in the `createdAt` column; otherwise, the timestamp will reflect the last time the row was edited.
 
 ### Column Data Types
 
 When defining a column, you must set its data type as one of the following:
 
-*   **String** columns can contain any [string](https://en.wikipedia.org/wiki/String_(computer_science)) as its cells' values.
-*   **Number** means the column's values must be any rational number.
-*   **Boolean** columns must contain values of either `true` or `false`.
+* **String** columns can contain any [string](https://en.wikipedia.org/wiki/String_(computer_science)) as its cells' values.
+* **Number** means the column's values must be any rational number.
+* **Boolean** columns must contain values of either `true` or `false`.
 
 The one exception to the data type rules is that, if the column's [constraint](#column-constraints) is defined as `optional` (see below), a cell within a column of any data type may also have its value explicitly set to `null`.
 
@@ -57,9 +57,9 @@ The one exception to the data type rules is that, if the column's [constraint](#
 
 Every column requires one of three constraints be defined:
 
-*   **Unique** requires the value to be unique across all rows in your data table. Attempting to add or update a row where the value for this column matches the value in another row, the action will fail.
-*   **Required** means a value other than `null` must be supplied for this column. (For string data types, empty strings are OK.) Failing to provide a value will cause the addition / edit to fail.
-*  **Optional** puts no constraints on the value entered for the column, so long as the value's data type matches the type defined for the column.
+* **Unique** requires the value to be unique across all rows in your data table. Attempting to add or update a row where the value for this column matches the value in another row, the action will fail.
+* **Required** means a value other than `null` must be supplied for this column. (For string data types, empty strings are OK.) Failing to provide a value will cause the addition / edit to fail.
+* **Optional** puts no constraints on the value entered for the column, so long as the value's data type matches the type defined for the column.
 
 ### Default Values
 
@@ -77,9 +77,9 @@ To edit the properties of an existing table, click the "Edit Table" button in th
 
 Adding a column to your table is not a dangerous action, but there are a few things to note when doing so:
 
-*   Any rows that existed before the creation of the new column will have `null` values set for that column, even if the new column has the `Unique` or `Required` constraint. The value can be changed at any time, but the new value must validate against the column's data type and constraint.
-*   If you define a default value for the column, the default will only be applied to new rows; existing table rows will not retroactively get the default value for the new column.
-*   Adding a column of the same name as a previously deleted column **will not restore data** from the deleted column, even if the new column's data type and constraint also match the deleted column.
+* Any rows that existed before the creation of the new column will have `null` values set for that column, even if the new column has the `Unique` or `Required` constraint. The value can be changed at any time, but the new value must validate against the column's data type and constraint.
+* If you define a default value for the column, the default will only be applied to new rows; existing table rows will not retroactively get the default value for the new column.
+* Adding a column of the same name as a previously deleted column **will not restore data** from the deleted column, even if the new column's data type and constraint also match the deleted column.
 
 ### Removing a Column
 
@@ -87,9 +87,9 @@ You will receive a warning if you attempt to remove a column from your table, as
 
 ![Data Table Column Delete Warning](/images/data-tables/data-table-col-delete-warning.png "Data Table Column Delete Warning")
 
-*   **All data for the column will be deleted**, even if you immediately add a new column with the same name, data type and constraint. This data cannot be recovered.
-*   Any [Table Get Rows](/workflows/data/table-get-rows/) nodes that query against the removed column **will throw errors** in your workflows, as the query is invalid if the column no longer exists.
-*   Any workflows inserting or updating rows with values defined for the removed column will continue to function normally; values for the removed column will simply be ignored.
+* **All data for the column will be deleted**, even if you immediately add a new column with the same name, data type and constraint. This data cannot be recovered.
+* Any [Table Get Rows](/workflows/data/table-get-rows/) nodes that query against the removed column **will throw errors** in your workflows, as the query is invalid if the column no longer exists.
+* Any workflows inserting or updating rows with values defined for the removed column will continue to function normally; values for the removed column will simply be ignored.
 
 ## Working with Table Data
 
@@ -135,10 +135,10 @@ To filter your table rows based on the data within them, you may add a query wit
 
 At the top of the query builder is a select box to choose your query mode. Two of the options – `Match any of the following ...` and `Match all of the following ...` – provide an interface for building single comparisons per column. Each of your columns can be queried by certain operators depending on the column type ...
 
-*   **id** columns can only be tested for equality or inequality against a valid Losant ID.
-*   **createdAt** and **updatedAt** columns can be tested against dates that are equal to, not equal to, or before or after a provided date.
-*   **String** and **Boolean** data types can be compared for equality, inequality or `null` value checks.
-*   **Number** data types can be compared for equality, inequality, or greater than or less than comparisons against a value you define. They may also be checked against `null` value status.
+* **id** columns can only be tested for equality or inequality against a valid Losant ID.
+* **createdAt** and **updatedAt** columns can be tested against dates that are equal to, not equal to, or before or after a provided date.
+* **String** and **Boolean** data types can be compared for equality, inequality or `null` value checks.
+* **Number** data types can be compared for equality, inequality, or greater than or less than comparisons against a value you define. They may also be checked against `null` value status.
 
 ![Data Table Simple Query](/images/data-tables/data-table-simple-query.png "Data Table Simple Query")
 
@@ -152,17 +152,17 @@ If you'd like to build an advanced query, you may choose the `Advanced` option i
 
 Valid logical operators include:
 
-*   [$or](https://docs.mongodb.com/manual/reference/operator/query/or/) for "Match any" queries
-*   [$and](https://docs.mongodb.com/manual/reference/operator/query/and/) for "Match all" queries
+* [$or](https://docs.mongodb.com/manual/reference/operator/query/or/) for "Match any" queries
+* [$and](https://docs.mongodb.com/manual/reference/operator/query/and/) for "Match all" queries
 
 Valid comparison operators include:
 
-*   [$eq](https://docs.mongodb.com/manual/reference/operator/query/eq/) for equality checks (`===`)
-*   [$ne](https://docs.mongodb.com/manual/reference/operator/query/ne/) for inequality checks (`!==`)
-*   [$gt](https://docs.mongodb.com/manual/reference/operator/query/gt/) for greater than checks (`>`)
-*   [$gte](https://docs.mongodb.com/manual/reference/operator/query/gte/) for greater than or equal to checks (`>=`)
-*   [$lt](https://docs.mongodb.com/manual/reference/operator/query/lt/) for less than checks (`<`)
-*   [$lte](https://docs.mongodb.com/manual/reference/operator/query/lte/) for less than or equal to checks (`<=`)
+* [$eq](https://docs.mongodb.com/manual/reference/operator/query/eq/) for equality checks (`===`)
+* [$ne](https://docs.mongodb.com/manual/reference/operator/query/ne/) for inequality checks (`!==`)
+* [$gt](https://docs.mongodb.com/manual/reference/operator/query/gt/) for greater than checks (`>`)
+* [$gte](https://docs.mongodb.com/manual/reference/operator/query/gte/) for greater than or equal to checks (`>=`)
+* [$lt](https://docs.mongodb.com/manual/reference/operator/query/lt/) for less than checks (`<`)
+* [$lte](https://docs.mongodb.com/manual/reference/operator/query/lte/) for less than or equal to checks (`<=`)
 
 ## Deleting a Data Table
 

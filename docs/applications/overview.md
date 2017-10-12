@@ -12,9 +12,9 @@ There are a few places within the platform from which an application can be crea
 
 When creating an application, you will be asked for three pieces of information:
 
--   **Application Name:** You are required to name your new application. The name can be changed at any time.
--   **Description:** Optionally, you may also provide a more detailed description of the application.
--   **Owner:** The application must be scoped to your personal [Sandbox](/user-accounts/sandbox/) or to an [organization](/organizations/overview/) for which you have the [Editor role](/organizations/members/#member-roles). The owner can be changed at a later date only if you have Administrator permissions for the parent organization (or Sandbox).
+* **Application Name:** You are required to name your new application. The name can be changed at any time.
+* **Description:** Optionally, you may also provide a more detailed description of the application.
+* **Owner:** The application must be scoped to your personal [Sandbox](/user-accounts/sandbox/) or to an [organization](/organizations/overview/) for which you have the [Editor role](/organizations/members/#member-roles). The owner can be changed at a later date only if you have Administrator permissions for the parent organization (or Sandbox).
 
 ![Create Application Form](/images/applications/create-application-form.png "Create Application Form")
 
@@ -34,28 +34,28 @@ As a real-time tool, the Communication Log will always begin in an empty state. 
 
 ### MQTT
 
-- MQTT Authentication - A log will appear when an [MQTT client](/mqtt/overview/) successfully connects or fails to connect to the [Losant MQTT broker](/mqtt/overview/).
-- Raw MQTT Messages - MQTT Messages sent or received by the [Losant MQTT broker](/mqtt/overview/) will appear in the log.
+* MQTT Authentication - A log will appear when an [MQTT client](/mqtt/overview/) successfully connects or fails to connect to the [Losant MQTT broker](/mqtt/overview/).
+* Raw MQTT Messages - MQTT Messages sent or received by the [Losant MQTT broker](/mqtt/overview/) will appear in the log.
 
 ### Device
 
-- Device State - When [devices](/devices/overview/) report [state](/devices/state/), a log will appear.
-- Device Commands - When Losant [sends a device command](/devices/commands/), a log will appear.
-- Device Connection Status - When [devices](/devices/overview/) successfully connect or disconnect from Losant, a log will appear.
+* Device State - When [devices](/devices/overview/) report [state](/devices/state/), a log will appear.
+* Device Commands - When Losant [sends a device command](/devices/commands/), a log will appear.
+* Device Connection Status - When [devices](/devices/overview/) successfully connect or disconnect from Losant, a log will appear.
 
 ### Webhooks
 
-- Webhooks - When a [Webhook](/applications/webhooks/) is triggered, a log will appear.
-- Webhook Replies - When [Losant](/workflows/outputs/webhook-reply/) [replies to a Webhook](/applications/webhooks/#custom-replies), a log will appear.
+* Webhooks - When a [Webhook](/applications/webhooks/) is triggered, a log will appear.
+* Webhook Replies - When [Losant](/workflows/outputs/webhook-reply/) [replies to a Webhook](/applications/webhooks/#custom-replies), a log will appear.
 
 ### Endpoints
 
-- Endpoint - When a request is made to a Losant [Experience Endpoint](/experiences/endpoints/), a log will appear.
-- Endpoint Reply - When [Losant replies](/workflows/outputs/endpoint-reply/) to an [Experience Endpoint](/experiences/endpoints/), a log will appear.
+* Endpoint - When a request is made to a Losant [Experience Endpoint](/experiences/endpoints/), a log will appear.
+* Endpoint Reply - When [Losant replies](/workflows/outputs/endpoint-reply/) to an [Experience Endpoint](/experiences/endpoints/), a log will appear.
 
 ### Integrations
 
-- Integration Messages - When Losant receives a message from an [Integration](/applications/integrations/), a log will appear.
+* Integration Messages - When Losant receives a message from an [Integration](/applications/integrations/), a log will appear.
 
 ## Application Globals
 

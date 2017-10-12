@@ -285,7 +285,7 @@ And with that, your motion sensor kit is now ready to go. If you need some extra
 1. Add a [Streaming Gauge Block](/dashboards/gauge/) to your dashboard to see a real time feed.
 1. Configure an alert if movement happens between specific time intervals with the [Time Range Node](/workflows/logic/time-range/).
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-motion-sensor-kit" data-text="Green thumb activated! Just installed my @LosantHQ  #IoT motion sensor kit" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-motion-sensor-kit" data-text="Green thumb activated! Just installed my @LosantHQ #IoT motion sensor kit" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 Don't stop now! Losant has several kits available.

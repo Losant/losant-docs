@@ -58,15 +58,15 @@ When you're finished, check the `I have copied my application token to a safe pl
 
 To temporarily deactivate an application API token ...
 
-*   Click the checkbox alongside the token in the list view, OR
-*   From the token's detail page, select the "Inactive" radio button under the "Status" label and save the token.
+* Click the checkbox alongside the token in the list view, OR
+* From the token's detail page, select the "Inactive" radio button under the "Status" label and save the token.
 
 ![Delete Token](/images/applications/delete-token.png "Delete Token")
 
 If a token has expired, is no longer needed or is thought to have been compromised, you may permanently delete it by:
 
-*   Clicking on the `Delete` icon in the token list, OR
-*   Clicking the `Delete Application Token` button on the token's detail page
+* Clicking on the `Delete` icon in the token list, OR
+* Clicking the `Delete Application Token` button on the token's detail page
 
 ## Using API Tokens
 

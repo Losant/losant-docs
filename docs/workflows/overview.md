@@ -38,7 +38,7 @@ The workflow will then continue with this payload and pass it to the next node.
 
 This node doesn't modify the payload, but it is using a value in the payload to make a decision. In short, the [expression](/workflows/accessing-payload-data/#expressions) in the Conditional node allows for testing the truthiness of a condition against a payload property. In this example, the expression is:
 
-```
+```handlebars
 {{ data.tempF }} > 75
 ```
 
@@ -52,7 +52,7 @@ Whenever this node is executed it will grab the `data.tempF` value in the payloa
 
 Each math node supports multiple statements, but this example is only using one. Each statement includes the actual expression and a [payload path](/workflows/accessing-payload-data/#payload-paths) of where to store the result. For this example, the expression is:
 
-```
+```handlebars
 ( {{ data.tempF }} - 32 ) / 1.8
 ```
 
@@ -60,7 +60,7 @@ Just like with the Conditional node, you can reference values from the payload i
 
 The second part of each math expression is a [payload path](/workflows/accessing-payload-data/#payload-paths) to store the result. In this example the payload path is:
 
-```
+```text
 degreesCelsius
 ```
 
@@ -81,7 +81,7 @@ The [SMS node](/workflows/outputs/sms/) allows you to send an SMS message one or
 
 The SMS node supports [string templates](/workflows/accessing-payload-data/#string-templates). But unlike evaluating to a boolean for the Conditional node, or a number for the Math node, the SMS node uses the that value to create a custom message that contains a value from the payload.
 
-```
+```handlebars
 Temperature warning. Temperature now at {{ degreesCelsius }} deg C!
 ```
 
@@ -196,7 +196,7 @@ The workflow storage interface lets you view and manipulate the persistent workf
 
 In the top half of the interface, you can add new storage entries or modify existing ones. Specify the identifier to add (or change), specify the value and the Data Type, and click `Set Value`. The data type can be `String` (the value is treated as a string), `Number` (the value is treated as a number), or `JSON` (the value is parsed as JSON). The JSON data type can be used to set complex objects or arrays, or even just `true`/`false`/`null`.
 
-**NOTE:**  The act of clicking `Set Value` has an immediate effect **across all workflow versions**. This will change or add the value immediately; this is separate from saving/deploying the workflow.
+**NOTE:** The act of clicking `Set Value` has an immediate effect **across all workflow versions**. This will change or add the value immediately; this is separate from saving/deploying the workflow.
 
 In the bottom half of the interface, you can view the values of existing storage identifiers. In this case, there is one identifier, `storedColor`, and its value is the number `35000`. This identifier was previous set by the Store Value node in a previous run of the above workflow. This table of values will automatically refresh every 60 seconds, but you can always click the refresh link on the upper right if you want to see the latest values now.
 

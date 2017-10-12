@@ -259,13 +259,13 @@ No, sorry, the API key in the above screenshot won't work.
 
 Click the HTTP node to configure it. There are two important configuration options for the HTTP node. The first is the URL and the second is where to store the result. The URL will be Dark Sky's API endpoint:
 
-```
+```text
 https://api.darksky.net/forecast/APIKEY/LATITUDE,LONGITUDE
 ```
 
 The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Dark Sky. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. <a href="http://mygeoposition.com" target="_blank">MyGeoPosition.com</a> is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Losant's headquarters if you'd like to use these:
 
-```
+```text
 https://api.darksky.net/forecast/APIKEY/39.1119359,-84.51254
 ```
 
@@ -309,7 +309,7 @@ Now that we have all the data, we need to format it and send it to the device. F
 
 As seen earlier, we need to send the device `L1` and `L2`. In this node we can configure a JSON payload that contains both:
 
-```
+```json
 {
   "L1": "{{ time }}      {{ weather.body.currently.temperature }}",
   "L2": "{{weather.body.currently.summary}} "
@@ -326,13 +326,13 @@ Once you deploy, after one minute, you should see the weather information being 
 
 ![Kit Complete](/images/getting-started/losant-iot-dev-kits/lcd-kit/kit-complete.jpg "Kit Complete")
 
-## 7. What's next?
+## 7. What's Next?
 
 This workflow is just a starting point. Losant can connect this device to many different outputs and other 3rd-party services. As an additional challenge, see if you can figure out how to Slack a message to your office whenever it gets to hot.
 
 Since the firmware accepts line one and line two, you can send it any data for all different types of projects!
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/lcd-kit" data-text="Just installed my @LosantHQ  #IoT LCD kit" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/lcd-kit" data-text="Just installed my @LosantHQ #IoT LCD kit" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 Don't stop now! Losant has several kits available.

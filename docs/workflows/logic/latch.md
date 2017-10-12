@@ -18,11 +18,11 @@ There are a number of outputs that can optionally be configured on the latch nod
 
 ![Latch Node Outputs](/images/workflows/logic/latch-node-outputs.png "Latch Node Outputs")
 
-*   **Path for result of Latch Expression** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place the result of evaluating the latch expression at that path on the payload.
-*   **Path for result of Reset Expression** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place the result of evaluating the reset expression at that path on the payload.
-*   **Path for prior latch state** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place `true` or `false` at that path on the payload depending on if the latch node was latched when entering the latch node.
-*   **Path for current latch state** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place `true` or `false` at that path on the payload depending on if the latch node is now latched upon exiting the node.
-*   **Path for branch taken** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place `true` or `false` at that path on the payload depending on which branch out of the latch node was taken.
+* **Path for result of Latch Expression** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place the result of evaluating the latch expression at that path on the payload.
+* **Path for result of Reset Expression** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place the result of evaluating the reset expression at that path on the payload.
+* **Path for prior latch state** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place `true` or `false` at that path on the payload depending on if the latch node was latched when entering the latch node.
+* **Path for current latch state** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place `true` or `false` at that path on the payload depending on if the latch node is now latched upon exiting the node.
+* **Path for branch taken** takes a [payload path](/workflows/accessing-payload-data/#payload-paths) and will place `true` or `false` at that path on the payload depending on which branch out of the latch node was taken.
 
 ## Advanced Options
 

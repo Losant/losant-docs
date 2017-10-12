@@ -18,7 +18,6 @@ Once you have found the device / tag you would like to add to your query, either
 
 ![Device Query Select](/images/devices/device-query-select.png "Device Query Select")
 
-
 ## Querying by Devices
 
 When creating a device, you are prompted to give your new device a name; and immediately after creation, that device is assigned an ID by Losant. When searching for a device to add to your query, you may enter any part of the device's name or ID to find it.

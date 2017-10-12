@@ -192,13 +192,13 @@ Drag two Conditional nodes onto the canvas and connect them to the Debug node.
 
 Set the expression of the left conditional node to check for the "light-level" event:
 
-```
+```handlebars
 {{ data.body.event }} === "light-level"
 ```
 
 Set the expression of the right Conditional node to check for the "button-pressed" event:
 
-```
+```handlebars
 {{ data.body.event }} === "button-pressed"
 ```
 

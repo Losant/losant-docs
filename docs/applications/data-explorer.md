@@ -14,14 +14,14 @@ There are a handful of controls available for building a data query and for expl
 <img src="/images/applications/data-explorer-time-controls.png" alt="Data Controls" title="Data Controls" style="max-width:600px; margin: 0 auto 20px; display: block;" />
 </div>
 
-*   **A - Start**: Controls the start of the time range of the data to display.
-*   **B - End**: Controls the end of the time range of the data to display.
-*   **C - Back**: Moves the time range back by the current time range duration.  For example, if you are looking at a three-hour time range, this will move the time range into the past by three hours.
-*   **D - Forward**: Moves the time range forward by the current time range duration.
-*   **E - Now**: Moves the "End" time to the current time, and "Start" time to "now minus the current time range duration".
-*   **F - Devices / Tags**: A [device query](/devices/device-queries/#querying-by-devices) for selecting which devices to return data against. All attributes from each device that matches the query will be returned; however, the format of the returned data (and whether data even can be returned) will change depending on each attribute's type and the selected aggregation method.
-*   **G - Aggregation**:  The aggregator function to use for accumulating the data into the selected resolution.  Defaults to MEAN (i.e., the average of all the values in a resolution window). If NONE is selected in the "Aggregation" dropdown, then all data points within the selected time range will be returned for each device. "Resolution" does not apply to unaggregated data, so that dropdown will disappear.
-*   **H - Resolution**: The size of the aggregation window, which determines how many points will be displayed for a time range.  For example, a three-hour time range at five-minute resolution would have 36 data points - one for each five-minute period in those three hours.
+* **A - Start**: Controls the start of the time range of the data to display.
+* **B - End**: Controls the end of the time range of the data to display.
+* **C - Back**: Moves the time range back by the current time range duration. For example, if you are looking at a three-hour time range, this will move the time range into the past by three hours.
+* **D - Forward**: Moves the time range forward by the current time range duration.
+* **E - Now**: Moves the "End" time to the current time, and "Start" time to "now minus the current time range duration".
+* **F - Devices / Tags**: A [device query](/devices/device-queries/#querying-by-devices) for selecting which devices to return data against. All attributes from each device that matches the query will be returned; however, the format of the returned data (and whether data even can be returned) will change depending on each attribute's type and the selected aggregation method.
+* **G - Aggregation**: The aggregator function to use for accumulating the data into the selected resolution. Defaults to MEAN (i.e., the average of all the values in a resolution window). If NONE is selected in the "Aggregation" dropdown, then all data points within the selected time range will be returned for each device. "Resolution" does not apply to unaggregated data, so that dropdown will disappear.
+* **H - Resolution**: The size of the aggregation window, which determines how many points will be displayed for a time range. For example, a three-hour time range at five-minute resolution would have 36 data points - one for each five-minute period in those three hours.
 
 ## Graphs Tab
 
@@ -33,10 +33,10 @@ Hovering your mouse over the main graph will display a tooltip with the exact va
 
 The Graphs Tab, as well as the individual attributes within the tab, have a handful of configuration settings:
 
-*   **A - Graph Type**: Segments can be displayed as a line graph, a bar chart or an area chart. This can be set as the default across all selected attributes, and that default setting can be overridden per attribute.
-*   **B - Y Axis Domain**: Leave the min and max inputs blank to automatically calculate the graph size based on the data returned. However, if you'd like to set a custom min and/or max data range, enter a numeric value in the input(s). These values can also be overridden per attribute.
-*   **C - Toggle Visibility**: Toggle the eyeball icon to display or hide the given attribute in the main graph.
-*   **D - Color**: Each attribute is automatically assigned a color, but that color can be overridden by the user.
+* **A - Graph Type**: Segments can be displayed as a line graph, a bar chart or an area chart. This can be set as the default across all selected attributes, and that default setting can be overridden per attribute.
+* **B - Y Axis Domain**: Leave the min and max inputs blank to automatically calculate the graph size based on the data returned. However, if you'd like to set a custom min and/or max data range, enter a numeric value in the input(s). These values can also be overridden per attribute.
+* **C - Toggle Visibility**: Toggle the eyeball icon to display or hide the given attribute in the main graph.
+* **D - Color**: Each attribute is automatically assigned a color, but that color can be overridden by the user.
 
 To change graph settings for a single attribute, click the gear icon in the top right corner of the attribute box. This will display a dropdown menu for editing that attribute's settings.
 

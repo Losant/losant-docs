@@ -242,7 +242,7 @@ And with that, your moisture sensor kit is now ready to go. If you made your das
 
 If you've purchased multiple moisture sensors to monitor more than one plant, you can simply add all of them to the same application. Here's the public dashboard of the [Losant office plants](https://app.losant.com/#/dashboards/56f0918f2d198e01002b05d4). You can see how one application and one dashboard can support multiple devices. Some workflow tweaks will be required to support more than one sensor, but I'll leave that as a challenge to you.
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-moisture-sensor-kit" data-text="Green thumb activated! Just installed my @LosantHQ  #IoT moisture sensor kit" data-size="large">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-moisture-sensor-kit" data-text="Green thumb activated! Just installed my @LosantHQ #IoT moisture sensor kit" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 Don't stop now! Losant has several kits available.

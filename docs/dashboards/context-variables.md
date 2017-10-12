@@ -28,9 +28,9 @@ A "Device ID" is a [device query](/devices/device-queries/) that takes a single 
 
 ![Device ID Context](/images/dashboards/context-deviceId.png "Device ID Context")
 
-*   **Application ID** is the Losant [application](/applications/overview/) to which any selected device must belong.
-*   **Default Value** is the device ID to use when no value is provided by the user.
-*   **Validation** is optional; it is a [device query](/devices/device-queries/) that accepts device IDs and/or [tags](/devices/overview/#device-tags) that the variable must match. If both IDs and tags are provided, the variable may match a specific ID, or the tag must be applied to the device. If multiple tags are defined in validation, the device must match **all** tags (or a provided ID). If no validation rules are provided, then any device from the selected application is valid. Note that the default value does not have to match your defined validation rules.
+* **Application ID** is the Losant [application](/applications/overview/) to which any selected device must belong.
+* **Default Value** is the device ID to use when no value is provided by the user.
+* **Validation** is optional; it is a [device query](/devices/device-queries/) that accepts device IDs and/or [tags](/devices/overview/#device-tags) that the variable must match. If both IDs and tags are provided, the variable may match a specific ID, or the tag must be applied to the device. If multiple tags are defined in validation, the device must match **all** tags (or a provided ID). If no validation rules are provided, then any device from the selected application is valid. Note that the default value does not have to match your defined validation rules.
 
 If a device ID is used in a query with an attribute that is not defined on the device, the block that is referencing the variable will fail to load.
 
@@ -40,9 +40,9 @@ An "Attribute" is a single [device attribute](/devices/overview/#device-attribut
 
 ![Attribute Context](/images/dashboards/context-attribute.png "Attribute Context")
 
-*   **Application ID** is the Losant [application](/applications/overview/) from which the attribute must originate.
-*   **Default Value** is the attribute to use when no value is provided by the user.
-*   **Validation** is optional; it is an array of attributes that the user is allowed to select. Every unique attribute from every device within the chosen application will be in the menu. Select one or more of these attributes to limit the user's options; alternatively, by providing no validation, the user may select any attribute from the application. Note that the default value does not have to match your defined validation rules.
+* **Application ID** is the Losant [application](/applications/overview/) from which the attribute must originate.
+* **Default Value** is the attribute to use when no value is provided by the user.
+* **Validation** is optional; it is an array of attributes that the user is allowed to select. Every unique attribute from every device within the chosen application will be in the menu. Select one or more of these attributes to limit the user's options; alternatively, by providing no validation, the user may select any attribute from the application. Note that the default value does not have to match your defined validation rules.
 
 The attribute can be of any type (`Number`, `GPS`, etc.) but certain attribute types will fail to display in a number of block configurations. (For example, data for a `String` attribute cannot be displayed on a time series graph for most aggregation types.)
 
@@ -52,9 +52,9 @@ A "Number" variable is simply a number: positive or negative, whole or decimal. 
 
 ![Number Context](/images/dashboards/context-number.png "Number Context")
 
-*   **Default Value** is the number to use when no value is provided by the user. If min and/or max are defined, the default value **must match** the validation rules.
-*   **Min** is an optional minimum value (inclusive) that the user can set in the variable.
-*   **Max** is an optional maximum value (inclusive) that the user can set in the variable.
+* **Default Value** is the number to use when no value is provided by the user. If min and/or max are defined, the default value **must match** the validation rules.
+* **Min** is an optional minimum value (inclusive) that the user can set in the variable.
+* **Max** is an optional maximum value (inclusive) that the user can set in the variable.
 
 ### Strings
 
@@ -62,8 +62,8 @@ A "Number" variable is simply a number: positive or negative, whole or decimal. 
 
 ![String Context](/images/dashboards/context-string.png "String Context")
 
-*   **Default Value** is the string to use when no value is provided by the user.
-*   **Validation** is an optional [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) that, when set, the user's input for the variable must match. Note that the default value does not have to match the validation.
+* **Default Value** is the string to use when no value is provided by the user.
+* **Validation** is an optional [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) that, when set, the user's input for the variable must match. Note that the default value does not have to match the validation.
 
 ## Setting Context Variables
 
@@ -93,11 +93,11 @@ These URLs are valid so long as the context variable's name remains the same, an
 
 There are a number of places within dashboards where, using [Markdown](https://daringfireball.net/projects/markdown/syntax) and [Handlebars templates](http://handlebarsjs.com), you may create a custom link tag:
 
-*   The dashboard's description, which is defined under your dashboard's settings menu.
-*   [Popup templates](/dashboards/gps-history/#popup-style-configuration) in GPS history blocks.
-*   [Help blocks](/dashboards/input-controls/#help-blocks) within input controls blocks.
-*   [Condition labels](/dashboards/indicator/#conditions) in indicator blocks.
-*   Header and cell templates in [device state tables](/dashboards/device-state-table/).
+* The dashboard's description, which is defined under your dashboard's settings menu.
+* [Popup templates](/dashboards/gps-history/#popup-style-configuration) in GPS history blocks.
+* [Help blocks](/dashboards/input-controls/#help-blocks) within input controls blocks.
+* [Condition labels](/dashboards/indicator/#conditions) in indicator blocks.
+* Header and cell templates in [device state tables](/dashboards/device-state-table/).
 
 The URLs can be manually constructed; or, there is a [Handlebars helper](/workflows/accessing-payload-data/#string-templates) to make it easier to build these links.
 
@@ -117,47 +117,47 @@ Any variable whose value is not set by the user will return its default value wh
 
 Context variables of all types can be used in the dashboard's description and in each block's title. Additionally, each variable type can be used a number of different ways throughout a dashboard's configuration ...
 
-### Device IDs
+### Using Device IDs
 
 ![Device ID Context Use](/images/dashboards/context-use-deviceId.png "Device ID Context Use")
 
 A Device ID value can, for example, be used to ...
 
-*   Display data from a specific [device](/devices/overview/) within your dashboard blocks
-*   Highlight one device against an array of devices in [time series graphs](/dashboards/time-series-graph/)
-*   View data from a single device at a time within a [device state tables](/dashboards/device-state-table/)
-*   Color-coding [map pins](/dashboards/gps-history/#advanced-pin-style-configuration), [gauges](/dashboards/gauge/#conditional-gauge-colors) and [indicator blocks](/dashboards/indicator/#conditions) when viewing a specific device
+* Display data from a specific [device](/devices/overview/) within your dashboard blocks
+* Highlight one device against an array of devices in [time series graphs](/dashboards/time-series-graph/)
+* View data from a single device at a time within a [device state tables](/dashboards/device-state-table/)
+* Color-coding [map pins](/dashboards/gps-history/#advanced-pin-style-configuration), [gauges](/dashboards/gauge/#conditional-gauge-colors) and [indicator blocks](/dashboards/indicator/#conditions) when viewing a specific device
 
-### Attributes
+### Using Attributes
 
 ![Attribute Context Use](/images/dashboards/context-use-attribute.png "Attribute Context Use")
 
 Changing attributes in context can allow users to ...
 
-*   Change the attribute to compare other values against in a [pie chart](/dashboards/pie-chart/)
-*   [Graph](/dashboards/time-series-graph/) one changing attribute at a time from multiple devices
-*   Bold or otherwise highlight a column in a [device state table](/dashboards/device-state-table/)
+* Change the attribute to compare other values against in a [pie chart](/dashboards/pie-chart/)
+* [Graph](/dashboards/time-series-graph/) one changing attribute at a time from multiple devices
+* Bold or otherwise highlight a column in a [device state table](/dashboards/device-state-table/)
 
-### Numbers
+### Using Numbers
 
 ![Number Context Use](/images/dashboards/context-use-number.png "Number Context Use")
 
 Currently there are no blocks whose returned data depends on a number attribute, but there are many ways in which a block's appearance can be altered using a number variable, such as:
 
-*   Minimum and maximum values can be defined on the axes of [time series graphs](/dashboards/time-series-graph/) and [bar charts](/dashboards/bar-chart/), as well as the bounds of a [gauge block](/dashboards/gauge/).
-*   Ranges on [input control blocks](/dashboards/input-controls/#range-sliders) can also have minimums, maximums and default values defined by number context variables.
+* Minimum and maximum values can be defined on the axes of [time series graphs](/dashboards/time-series-graph/) and [bar charts](/dashboards/bar-chart/), as well as the bounds of a [gauge block](/dashboards/gauge/).
+* Ranges on [input control blocks](/dashboards/input-controls/#range-sliders) can also have minimums, maximums and default values defined by number context variables.
 
-### Strings
+### Using Strings
 
 ![String Context Use](/images/dashboards/context-use-string.png "String Context Use")
 
 There are a number of possible uses for string attributes:
 
-*   Pass a value to the filter in the [event list](/dashboards/event-list/) – or other resource lists.
-*   Change the axis labels in [time series graphs](/dashboards/time-series-graph/) or [bar charts](/dashboards/bar-chart/).
-*   Set a URL for the site to display in an [external website block](/dashboards/external-website/).
-*   Send a different device command from the [input controls block](/dashboards/input-controls/#button-triggers).
-*   Define a custom map center in the [GPS history](/dashboards/gps-history/#default-viewport) or [heatmap](/dashboards/gps-heatmap/#default-viewport) blocks
+* Pass a value to the filter in the [event list](/dashboards/event-list/) – or other resource lists.
+* Change the axis labels in [time series graphs](/dashboards/time-series-graph/) or [bar charts](/dashboards/bar-chart/).
+* Set a URL for the site to display in an [external website block](/dashboards/external-website/).
+* Send a different device command from the [input controls block](/dashboards/input-controls/#button-triggers).
+* Define a custom map center in the [GPS history](/dashboards/gps-history/#default-viewport) or [heatmap](/dashboards/gps-heatmap/#default-viewport) blocks
 
 ## Deleting Context Variables
 

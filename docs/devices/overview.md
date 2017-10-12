@@ -10,7 +10,7 @@ Devices can be added to your application on the `Devices` menu or using the `Add
 
 ![Add Device](/images/devices/add-device.png "Add Device")
 
-When adding a device, you have a choice between creating a device from scratch, or creating a device based off of a [device recipe](/devices/device-recipes/).  When creating a device from scratch, all device configuration fields will start off blank.  When creating a device from a recipe, the recipe is used as an initial template for the device, and so the new device will be initially filled in with the configuration from the recipe (which you can override however you would like before actually saving the new device).
+When adding a device, you have a choice between creating a device from scratch, or creating a device based off of a [device recipe](/devices/device-recipes/). When creating a device from scratch, all device configuration fields will start off blank. When creating a device from a recipe, the recipe is used as an initial template for the device, and so the new device will be initially filled in with the configuration from the recipe (which you can override however you would like before actually saving the new device).
 
 ![Device Creation Options](/images/devices/device-creation-options.png "Device Creation Options")
 
@@ -22,22 +22,16 @@ Properly configuring devices is an important step to ensuring proper communicati
 
 ![Device Type](/images/devices/device-type.png "Device Type")
 
-The first thing to configure is the type of device.  This is not about the actual physical
+The first thing to configure is the type of device. This is not about the actual physical
 type of the device, but more about how you expect the device to connect and report state
-to the Losant Platform.  There are three categories ...
+to the Losant Platform. There are three categories ...
 
-*   **Standalone**  
-A standalone device is your normal everyday type of device. It is allowed to connect
-directly to Losant and report its own state. In most cases, this is the device type you will choose.
-
-*   **Gateway**  
-A gateway device is a device that connects to Losant and reports both its own state and the
-state of other devices - i.e., other devices that use this device as a "gateway". Gateways
-are extremely useful for helping to report the state of non-internet connected devices to Losant - such as Bluetooth sensors.
-
-*   **Peripheral**  
-A peripheral device does not connect directly to Losant - instead it reports its
-state to a gateway device (which is connected to the internet), and that gateway pushes the peripheral's state to Losant. When choosing peripheral as the device type, there are two options. You can either choose to let the device report state through any gateway in the application (which is useful for devices that move through the range of multiple gateways), or you can choose to only allow reporting through a specific gateway (useful for static or directly connected devices).
+* **Standalone**  
+  A standalone device is your normal everyday type of device. It is allowed to connect directly to Losant and report its own state. In most cases, this is the device type you will choose.
+* **Gateway**  
+  A gateway device is a device that connects to Losant and reports both its own state and the state of other devices - i.e., other devices that use this device as a "gateway". Gateways are extremely useful for helping to report the state of non-internet connected devices to Losant - such as Bluetooth sensors.
+* **Peripheral**  
+  A peripheral device does not connect directly to Losant - instead it reports its state to a gateway device (which is connected to the internet), and that gateway pushes the peripheral's state to Losant. When choosing peripheral as the device type, there are two options. You can either choose to let the device report state through any gateway in the application (which is useful for devices that move through the range of multiple gateways), or you can choose to only allow reporting through a specific gateway (useful for static or directly connected devices).
 
 ### Device Attributes
 
@@ -101,7 +95,7 @@ The `Send Device Command` form under the debug section of the device page allows
 
 ![Request Data Export](/images/devices/data-export.png "Request Data Export")
 
-You can request a CSV export of the state data that Losant has for your device using the "Request Data Export" form under the data section of the device page.  This will generate a CSV file of the state data for your device and send you an email when the generation is complete. The email includes a link which will allow you to download the generated file (the link is time sensitive and will only work for 24 hours). The generated csv will have a timestamp column (where the timestamp will be represented as milliseconds since epoch), an ISO Date column (where the time is represented in human readable form), as well as columns for any attributes of your device. Each row will represent one reported state for the device.  The following is an example export for a device with a "location" and a "temperature" attribute:
+You can request a CSV export of the state data that Losant has for your device using the "Request Data Export" form under the data section of the device page. This will generate a CSV file of the state data for your device and send you an email when the generation is complete. The email includes a link which will allow you to download the generated file (the link is time sensitive and will only work for 24 hours). The generated csv will have a timestamp column (where the timestamp will be represented as milliseconds since epoch), an ISO Date column (where the time is represented in human readable form), as well as columns for any attributes of your device. Each row will represent one reported state for the device. The following is an example export for a device with a "location" and a "temperature" attribute:
 
 ```csv
 Timestamp,ISO Date,location,temperature
@@ -122,9 +116,9 @@ In the case where you no longer want the data for a device or you want to clear 
 
 The device communication log is similar to the [application communication log](/applications/overview/#communication-log) in that is displays a real-time stream of events; it differs from the application log in that these events are specific to the device currently being viewed, instead of across the application as a whole. A number of different events will display within the log, such as:
 
-- State reports for the device, whether they come via the device itself through the [Losant broker](/mqtt/overview/#the-losant-message-broker), via a [workflow](/workflows/overview/) or through the [Losant REST API](/rest-api/device/#send-state).
-- [Commands](/devices/commands/) sent to the device, sent via any of the channels mentioned above.
-- Device connection, disconnection and authentication events. For peripheral devices, the log will display these events for the peripheral's gateway.
+* State reports for the device, whether they come via the device itself through the [Losant broker](/mqtt/overview/#the-losant-message-broker), via a [workflow](/workflows/overview/) or through the [Losant REST API](/rest-api/device/#send-state).
+* [Commands](/devices/commands/) sent to the device, sent via any of the channels mentioned above.
+* Device connection, disconnection and authentication events. For peripheral devices, the log will display these events for the peripheral's gateway.
 
 Arbitrary topics the device publishes to or is subscribed to will not display within the device communication log.
 

@@ -8,12 +8,12 @@ An organization can have multiple members, with limits on members and pending in
 
 There are three levels of organization membership:
 
-*   **Viewer**: A member with the Viewer role can see the contents of an organization, including all applications and dashboards owned by that organization, but can not change or modify anything about those applications, dashboards, or the organization itself. This extends into any application as well - with the Viewer role, a user can see devices and workflows inside an org-owned application, but will not be able to modify them.
-*   **Editor**: A member with the Editor role can do everything a member with the Viewer role can do, plus ...
+* **Viewer**: A member with the Viewer role can see the contents of an organization, including all applications and dashboards owned by that organization, but can not change or modify anything about those applications, dashboards, or the organization itself. This extends into any application as well - with the Viewer role, a user can see devices and workflows inside an org-owned application, but will not be able to modify them.
+* **Editor**: A member with the Editor role can do everything a member with the Viewer role can do, plus ...
     * Modify applications or dashboards owned by the organization
     * Create new applications or dashboards in that organization
     * Create or modify sub-resources within the org-owned application (e.g. devices, workflows)
-*   **Administrator**: At all times, an organization is required to have one member with the Administrator role. A member with the Administrator role can do everything a member with the Editor role can do, plus ...
+* **Administrator**: At all times, an organization is required to have one member with the Administrator role. A member with the Administrator role can do everything a member with the Editor role can do, plus ...
     * Modify and manage the organization itself (name, description, billing plan)
     * Manage organization membership (invite / remove members and change member roles)
     * [Transfer resources](/organizations/transferring-resources/) to or from the organization, into or out of their own [Sandbox](/user-accounts/sandbox/) or any organization where they are also an administrator.
@@ -52,8 +52,8 @@ Any pending or expired invitation can be renewed by clicking the `Renew` link. T
 
 You may leave an organization at any time by clicking the `Leave Organization` button on the organization overview screen, **except** under the following circumstances:
 
-1.   You are an Administrator of the organization, AND
-2.   There are no other Administrators for the organization
+1. You are an Administrator of the organization, AND
+1. There are no other Administrators for the organization
 
 In those circumstances, you will have to change the permission of an existing organization member to `Administrator`, and then you may depart the organization.
 

@@ -8,14 +8,14 @@ As you perform these workshops, if you run into any issues, please refer to the 
 
 Your kit should include the following items:
 
-  * 1 [NodeMCU v1.0](http://nodemcu.com/index_en.html) dev kit microcontroller <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="\_blank">(View board schematic)</a>
-  * 1 solderless breadboard
-  * 8 jump wires
-  * 2 resistors
-  * 1 LED
-  * 1 TMP36 temperature sensor
-  * 1 button
-  * 1 micro-USB cable
+* 1 [NodeMCU v1.0](http://nodemcu.com/index_en.html) dev kit microcontroller <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="\_blank">(View board schematic)</a>
+* 1 solderless breadboard
+* 8 jump wires
+* 2 resistors
+* 1 LED
+* 1 TMP36 temperature sensor
+* 1 button
+* 1 micro-USB cable
 
 ## 1. Overview
 
@@ -96,7 +96,7 @@ If you're familiar with Git, you can also clone the repository from here:
 
 The first workshop creates an Internet button that triggers a Losant Workflow to send yourself an email.
 
-### Wiring
+### Workshop 1 Wiring
 
 ***Disconnect the NodeMCU dev kit from USB.***
 
@@ -114,7 +114,7 @@ For this workshop, you’ll need to attach the NodeMCU and button to the breadbo
 
 ![Workshop 1 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-1-wiring-image.jpg "Workshop 1 Wiring Image")
 
-### Flash the Firmware
+### Flash the Workshop 1 Firmware
 
 Plug the NodeMCU back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. Refer to the [environment setup](/getting-started/losant-iot-dev-kits/environment-setup/#configure-device-usb-port) for instructions on properly configuring the device port.
 
@@ -142,7 +142,7 @@ Upload the firmware to the device by clicking the `Upload` button or the `Sketch
 
 If you see an error in the Arduino IDE's output window, refer to the ones below for common solutions.
 
-```
+```c
 #include <ESP8266WiFi.h>
                          ^
 compilation terminated.
@@ -151,7 +151,7 @@ exit status 1
 
 This means the board is not installed or properly setup. Refer to the [Arduino Setup](/getting-started/losant-iot-dev-kits/environment-setup/#configure-arduino-ide) step of the environment setup instructions to install the board and configure the Arduino IDE to use it.
 
-```
+```text
 error: espcomm_open failed
 error: espcomm_upload_mem failed
 ```
@@ -264,7 +264,7 @@ In the previous workshop, we showed you how to make a physical button do somethi
 
 Losant supports two major communication mechanisms – [states](/devices/state/) and [commands](/devices/commands/). You already saw how state works in the previous example. Commands allow you to send actions to the device. In this workshop, we’re going to send a “toggle” command that will turn on and off an LED.
 
-### Wiring
+### Workshop 2 Wiring
 
 ***Disconnect the NodeMCU from USB.***
 
@@ -272,14 +272,13 @@ Each workshop builds on the previous one, so if you completed the first workshop
 
 ![Workshop 2 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-diagram.png "Workshop 2 Wiring Diagram")
 
-
 1. Add the LED so the positive lead (the longer one) is in terminal e19 and the negative lead is in e20.
 1. Connect the positive lead of the LED from terminal c19 to D2 on the NodeMCU (terminal a13) with a jump wire.
 1. Connect the negative lead of the LED from terminal c20 to the negative rail with a resistor.
 
 ![Workshop 2 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-image.jpg "Workshop 2 Wiring Image")
 
-### Flash the Firmware
+### Flash the Workshop 2 Firmware
 
 Plug the NodeMCU back into USB.
 
@@ -329,14 +328,13 @@ We’ve now seen the two primary ways devices can communicate with Losant – st
 
 In this workshop, we’re going to add a temperature sensor to your builder kit. We’ll then use Losant’s dashboarding tools to visualize the real-time and historical temperature data.
 
-### Wiring
+### Workshop 3 Wiring
 
 ***Disconnect the NodeMCU from USB.***
 
 Just like the previous workshop, keep everything you've already wired and add these new components.
 
 ![Workshop 3 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-3-wiring-diagram.png "Workshop 3 Wiring Diagram")
-
 
 1. Add the tmp36 temperature sensor to terminals e22, e23, and e24. It’s ***VERY IMPORTANT*** that the sensor is oriented the right way with the flat side facing the bottom of the board – towards column a.
 1. Connect the rightmost lead (a24) of the temperature sensor to the negative rail using a jump wire.
@@ -345,7 +343,7 @@ Just like the previous workshop, keep everything you've already wired and add th
 
 ![Workshop 3 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-3-wiring-image.jpg "Workshop 3 Wiring Image")
 
-### Flash the Firmware
+### Flash the Workshop 3 Firmware
 
 Plug the NodeMCU back into USB. Open the file workshop-3-temp.ino. Just as in the previous two workshops, edit the top of the file to set the WiFi and Losant credentials. You can use the same values as the previous two workshops.
 

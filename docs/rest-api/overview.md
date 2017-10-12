@@ -4,14 +4,16 @@ description: An overview of the Losant REST API, which provides a powerful inter
 
 Losant is powered by a full REST API that provides access to nearly every feature. The Losant front-end web application itself is built on top of this API, and so almost all the data and functionality in the front end is available through the API itself. In fact, the front-end uses the open-source <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a> JavaScript client to communicate with the Losant API. If JavaScript is not your language of choice, no need to worry! We have easy to use libraries for a number of different languages:
 
-*   JavaScript with <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a>  
-Available in Node Package Manager: `npm install losant-rest`  
-<br/>
-*   Python with <a href="https://github.com/Losant/losant-rest-python" target="_blank">losant-rest-python</a>  
-Available in the Python Package Index: `pip install losant-rest`  
-<br/>
-*   Ruby with <a href="https://github.com/Losant/losant-rest-ruby" target="_blank">losant-rest-ruby</a>  
-Available in RubyGems: `gem install losant_rest`
+* JavaScript with <a href="https://github.com/Losant/losant-rest-js" target="_blank">losant-rest-js</a>  
+  Available in Node Package Manager: `npm install losant-rest`  
+  <br/>
+
+* Python with <a href="https://github.com/Losant/losant-rest-python" target="_blank">losant-rest-python</a>  
+  Available in the Python Package Index: `pip install losant-rest`  
+  <br/>
+
+* Ruby with <a href="https://github.com/Losant/losant-rest-ruby" target="_blank">losant-rest-ruby</a>  
+  Available in RubyGems: `gem install losant_rest`
 
 Of course, if you are working in a language not listed above, the API is reasonably easy to use directly - if your language has a good HTTP request library and a good JSON library, you should be able to make any API request you need using the documentation here.
 
@@ -99,7 +101,7 @@ curl -H 'Content-Type: application/json' \
 #   }
 # }
 ```
-<small><br/></small>
+
 ### Device-Based Authentication
 
 Unlike authenticating as a user, a device authenticated against the API receives a very limited set of permissions. An authenticated device receives an api access token with the scope `all.Device`, and so can access any endpoints that accept the authentication scope `all.Device`. For example, an authenticated device can read information about itself ([Device Get](/rest-api/device/#get), [Devices Get](/rest-api/devices/#get)),
@@ -135,215 +137,129 @@ curl -H 'Content-Type: application/json' \
 # Example device state push result
 # { "success": true }
 ```
-<small><br/></small>
+
 ### Resources
 
 Each of the following is a resource on the Losant API, wrapping up functionality
 for a particular item or collection. See each resource documentation page for the
 particular actions that can be performed on that resource.
 
-*   [Application API Token](/rest-api/application-api-token/)  
-Contains all the actions that can be performed against a single
-[API Access Token](/applications/application-tokens/) belonging to an application -
-for instance, getting info on a single token or revoking a token.
+* [Application API Token](/rest-api/application-api-token/)  
+  Contains all the actions that can be performed against a single [API Access Token](/applications/application-tokens/) belonging to an application - for instance, getting info on a single token or revoking a token.
 
-*   [Application API Tokens](/rest-api/application-api-tokens/)  
-Contains all of the actions that can be performed against the collection of
-[API Access Tokens](/applications/application-tokens/) belonging to an Application -
-such as listing all tokens or creating a new token.
+* [Application API Tokens](/rest-api/application-api-tokens/)  
+  Contains all of the actions that can be performed against the collection of [API Access Tokens](/applications/application-tokens/) belonging to an Application - such as listing all tokens or creating a new token.
 
-*   [Application Key](/rest-api/application-key/)  
-Contains all the actions that can be performed against a single
-[Application Key](/applications/access-keys/) -
-for instance, getting info on a single key or revoking a key.
+* [Application Key](/rest-api/application-key/)  
+  Contains all the actions that can be performed against a single [Application Key](/applications/access-keys/) - for instance, getting info on a single key or revoking a key.
 
-*   [Application Keys](/rest-api/application-keys/)  
-Contains all of the actions that can be performed against the collection of
-[Application Keys](/applications/access-keys/) belonging
-to an Application - such as listing all keys or creating a new key.
+* [Application Keys](/rest-api/application-keys/)  
+  Contains all of the actions that can be performed against the collection of [Application Keys](/applications/access-keys/) belonging to an Application - such as listing all keys or creating a new key.
 
-*   [Application](/rest-api/application/)  
-Contains all of the actions that can be performed against a single
-[Application](/applications/overview/),
-which include things like getting info on an application or
-modifying an application.
+* [Application](/rest-api/application/)  
+  Contains all of the actions that can be performed against a single [Application](/applications/overview/), which include things like getting info on an application or modifying an application.
 
-*   [Applications](/rest-api/applications/)  
-Contains all of the actions that can be performed against the set of
-[Applications](/applications/overview/) that the
-currently authenticated user has access to - such as
-listing the applications or creating a new application.
+* [Applications](/rest-api/applications/)  
+  Contains all of the actions that can be performed against the set of [Applications](/applications/overview/) that the currently authenticated user has access to - such as listing the applications or creating a new application.
 
-*   [Audit Log](/rest-api/audit-log/)  
-Contains all of the actions that can be performed against a single
-[Audit Log](/organizations/audit-logs/) that belongs to an organization -
-such as viewing a log.
+* [Audit Log](/rest-api/audit-log/)  
+  Contains all of the actions that can be performed against a single [Audit Log](/organizations/audit-logs/) that belongs to an organization - such as viewing a log.
 
-*   [Audit Logs](/rest-api/audit-logs/)  
-Contains all of the actions that can be performed against the set of
-[Audit Logs](/organizations/audit-logs/) that belong to an organization -
-such as listing the logs.
+* [Audit Logs](/rest-api/audit-logs/)  
+  Contains all of the actions that can be performed against the set of [Audit Logs](/organizations/audit-logs/) that belong to an organization - such as listing the logs.
 
-*   [Auth](/rest-api/auth/)  
-Contains the actions used for authenticating against the api, either as a
-user or as a device. The result of authentication calls contain the api access
-token needed for authenticated calls - see the examples for more details.
+* [Auth](/rest-api/auth/)  
+  Contains the actions used for authenticating against the api, either as a user or as a device. The result of authentication calls contain the api access token needed for authenticated calls - see the examples for more details.
 
-*   [Dashboard](/rest-api/dashboard/)  
-Contains all of the actions that can be performed against a single
-[Dashboard](/dashboards/overview/),
-which include things like getting info on a dashboard or
-modifying a dashboard.
+* [Dashboard](/rest-api/dashboard/)  
+  Contains all of the actions that can be performed against a single [Dashboard](/dashboards/overview/), which include things like getting info on a dashboard or modifying a dashboard.
 
-*   [Dashboards](/rest-api/dashboards/)  
-Contains all of the actions that can be performed against the set of
-[Dashboards](/dashboards/overview/) that the
-currently authenticated user has access to - such as
-listing the dashboards or creating a new dashboard.
+* [Dashboards](/rest-api/dashboards/)  
+  Contains all of the actions that can be performed against the set of [Dashboards](/dashboards/overview/) that the currently authenticated user has access to - such as listing the dashboards or creating a new dashboard.
 
-*   [Data](/rest-api/data/)  
-Contains the actions for querying against historical Device
-data across an Application.
+* [Data](/rest-api/data/)  
+  Contains the actions for querying against historical Device data across an Application.
 
-*   [Data Table](/rest-api/data-table/)  
-Contains all the actions that can be performed against a single
-[Data Table](/data-tables/overview/) -
-for instance, getting info on a single data table or modifying the columns
-of a data table.
+* [Data Table](/rest-api/data-table/)  
+  Contains all the actions that can be performed against a single [Data Table](/data-tables/overview/) - for instance, getting info on a single data table or modifying the columns of a data table.
 
-*   [Data Tables](/rest-api/data-tables/)  
-Contains all of the actions that can be performed against the collection of
-[Data Tables](/data-tables/overview/) belonging
-to an Application - such as listing all data tables or creating a new data table.
+* [Data Tables](/rest-api/data-tables/)  
+  Contains all of the actions that can be performed against the collection of [Data Tables](/data-tables/overview/) belonging to an Application - such as listing all data tables or creating a new data table.
 
-*   [Data Table Row](/rest-api/data-table-row/)  
-Contains all the actions that can be performed against a single
-row inside of a [Data Table](/data-tables/overview/) -
-for instance, getting the contents of a row, or modifying a row.
+* [Data Table Row](/rest-api/data-table-row/)  
+  Contains all the actions that can be performed against a single row inside of a [Data Table](/data-tables/overview/) - for instance, getting the contents of a row, or modifying a row.
 
-*   [Data Table Rows](/rest-api/data-table-rows/)  
-Contains all of the actions that can be performed against the collection of
-rows that make up a [Data Table](/data-tables/overview/) - such as querying for
-rows in that table, or adding a new row to the table.
+* [Data Table Rows](/rest-api/data-table-rows/)  
+  Contains all of the actions that can be performed against the collection of rows that make up a [Data Table](/data-tables/overview/) - such as querying for rows in that table, or adding a new row to the table.
 
-*   [Device](/rest-api/device/)  
-Contains all the actions that can be performed against a single
-[Device](/devices/overview/) -
-for instance, getting info on a single device or reporting the current
-state of a device.
+* [Device](/rest-api/device/)  
+  Contains all the actions that can be performed against a single [Device](/devices/overview/) - for instance, getting info on a single device or reporting the current state of a device.
 
-*   [Devices](/rest-api/devices/)  
-Contains all of the actions that can be performed against the collection of
-[Devices](/devices/overview/) belonging
-to an Application - such as listing all devices or sending a command to a set
-of devices.
+* [Devices](/rest-api/devices/)  
+  Contains all of the actions that can be performed against the collection of [Devices](/devices/overview/) belonging to an Application - such as listing all devices or sending a command to a set of devices.
 
-*   [Device Recipe](/rest-api/device-recipe/)  
-Contains all the actions that can be performed against a single
-[Device Recipe](/devices/device-recipes/), which
-include things like removing a device recipe or creating a device
-from a device recipe.
+* [Device Recipe](/rest-api/device-recipe/)  
+  Contains all the actions that can be performed against a single [Device Recipe](/devices/device-recipes/), which include things like removing a device recipe or creating a device from a device recipe.
 
-*   [Device Recipes](/rest-api/device-recipes/)  
-Contains all the actions that can be performed against the collection of
-[Device Recipes](/devices/device-recipes/) belonging
-to an Application - such as listing recipes or creating a new recipe.
+* [Device Recipes](/rest-api/device-recipes/)  
+  Contains all the actions that can be performed against the collection of [Device Recipes](/devices/device-recipes/) belonging to an Application - such as listing recipes or creating a new recipe.
 
-*   [Event](/rest-api/event/)  
-Contains all the actions that can be performed against a single
-[Event](/applications/events/), such as commenting on
-or changing the state of an event.
+* [Event](/rest-api/event/)  
+  Contains all the actions that can be performed against a single [Event](/applications/events/), such as commenting on or changing the state of an event.
 
-*   [Events](/rest-api/events/)  
-Contains all the actions that can be performed against the collection of
-[Events](/applications/events/) belonging
-to an Application - such as listing open events or creating a new event.
+* [Events](/rest-api/events/)  
+  Contains all the actions that can be performed against the collection of [Events](/applications/events/) belonging to an Application - such as listing open events or creating a new event.
 
-*   [Experience Endpoint](/rest-api/experience-endpoint/)  
-Contains all the actions that can be performed against a single
-[Experience Endpoint](/experiences/endpoints/), such as updating route
-information.
+* [Experience Endpoint](/rest-api/experience-endpoint/)  
+  Contains all the actions that can be performed against a single [Experience Endpoint](/experiences/endpoints/), such as updating route information.
 
-*   [Experience Endpoints](/rest-api/experience-endpoints/)  
-Contains all the actions that can be performed against the collection of
-[Experience Endpoints](/experiences/endpoints/) belonging
-to an Application - such as listing endpoints or creating a new endpoint.
+* [Experience Endpoints](/rest-api/experience-endpoints/)  
+  Contains all the actions that can be performed against the collection of [Experience Endpoints](/experiences/endpoints/) belonging to an Application - such as listing endpoints or creating a new endpoint.
 
-*   [Experience Group](/rest-api/experience-group/)  
-Contains all the actions that can be performed against a single
-[Experience Group](/experiences/groups/), such as updating member information.
+* [Experience Group](/rest-api/experience-group/)  
+  Contains all the actions that can be performed against a single [Experience Group](/experiences/groups/), such as updating member information.
 
-*   [Experience Groups](/rest-api/experience-groups/)  
-Contains all the actions that can be performed against the collection of
-[Experience Groups](/experiences/groups/) belonging
-to an Application - such as listing groups or creating a new group.
+* [Experience Groups](/rest-api/experience-groups/)  
+  Contains all the actions that can be performed against the collection of [Experience Groups](/experiences/groups/) belonging to an Application - such as listing groups or creating a new group.
 
-*   [Experience User](/rest-api/experience-user/)  
-Contains all the actions that can be performed against a single
-[Experience User](/experiences/users/), such as changing their email
-or password.
+* [Experience User](/rest-api/experience-user/)  
+  Contains all the actions that can be performed against a single [Experience User](/experiences/users/), such as changing their email or password.
 
-*   [Experience Users](/rest-api/experience-users/)  
-Contains all the actions that can be performed against the collection of
-[Experience Users](/experiences/users/) belonging
-to an Application - such as listing users or creating a new user.
+* [Experience Users](/rest-api/experience-users/)  
+  Contains all the actions that can be performed against the collection of [Experience Users](/experiences/users/) belonging to an Application - such as listing users or creating a new user.
 
-*   [Integration](/rest-api/integration/)  
-Contains all the actions that can be performed against a single
-[Integration](/applications/integrations/), which
-include things like removing an integration or updating integration configuration.
+* [Integration](/rest-api/integration/)  
+  Contains all the actions that can be performed against a single [Integration](/applications/integrations/), which include things like removing an integration or updating integration configuration.
 
-*   [Integrations](/rest-api/integrations/)  
-Contains all the actions that can be performed against the collection of
-[Integrations](/applications/integrations/) belonging
-to an Application - such as listing integrations or creating a new integration.
+* [Integrations](/rest-api/integrations/)  
+  Contains all the actions that can be performed against the collection of [Integrations](/applications/integrations/) belonging to an Application - such as listing integrations or creating a new integration.
 
-*   [Me](/rest-api/me/)  
-Contains the actions for operating against the currently authenticated
-[User](/user-accounts/overview/) such as changing
-the password or linking against external services.
+* [Me](/rest-api/me/)  
+  Contains the actions for operating against the currently authenticated [User](/user-accounts/overview/) such as changing the password or linking against external services.
 
-*   [Organization](/rest-api/org/)  
-Contains all the actions that can be performed against a single
-[Organization](/organizations/overview/), things like
-inviting a user to the organization, or modifying the organization.
+* [Organization](/rest-api/org/)  
+  Contains all the actions that can be performed against a single [Organization](/organizations/overview/), things like inviting a user to the organization, or modifying the organization.
 
-*   [Organizations](/rest-api/orgs/)  
-Contains all of the actions that can be performed against the set of
-[Organizations](/organizations/overview/) that the
-currently authenticated user has access to - such as
-listing the organizations or creating a new organization.
+* [Organizations](/rest-api/orgs/)  
+  Contains all of the actions that can be performed against the set of [Organizations](/organizations/overview/) that the currently authenticated user has access to - such as listing the organizations or creating a new organization.
 
-*   [Organization Invites](/rest-api/org-invites/)  
-Contains all of the actions that can be performed against a
-invitation to an organization, such as accepting the invitation.
+* [Organization Invites](/rest-api/org-invites/)  
+  Contains all of the actions that can be performed against a invitation to an organization, such as accepting the invitation.
 
-*   [Webhook](/rest-api/webhook/)  
-Contains all the actions that can be performed against a single
-[Webhook](/applications/webhooks/), for instance
-modifying the verification settings or removing the webhook.
+* [Webhook](/rest-api/webhook/)  
+  Contains all the actions that can be performed against a single [Webhook](/applications/webhooks/), for instance modifying the verification settings or removing the webhook.
 
-*   [Webhooks](/rest-api/webhooks/)  
-Contains all the actions that can be performed against the collection of
-[Webhooks](/applications/webhooks/) belonging
-to an Application - such as listing the webhooks or creating a new webhook.
+* [Webhooks](/rest-api/webhooks/)  
+  Contains all the actions that can be performed against the collection of [Webhooks](/applications/webhooks/) belonging to an Application - such as listing the webhooks or creating a new webhook.
 
-*   [Workflow](/rest-api/flow/)  
-Contains all the actions that can be performed against a single
-[Workflow](/workflows/overview/), such as enabling or
-disabling a workflow, or triggering a virtual button in the workflow.
+* [Workflow](/rest-api/flow/)  
+  Contains all the actions that can be performed against a single [Workflow](/workflows/overview/), such as enabling or disabling a workflow, or triggering a virtual button in the workflow.
 
-*   [Workflows](/rest-api/flows/)  
-Contains all the actions that can be performed against the collection of
-[Workflows](/workflows/overview/) belonging
-to an Application - such as listing the workflows or creating a new workflow.
+* [Workflows](/rest-api/flows/)  
+  Contains all the actions that can be performed against the collection of[Workflows](/workflows/overview/) belonging to an Application - such as listing the workflows or creating a new workflow.
 
-*   [Workflow Version](/rest-api/flow-version/)  
-Contains all the actions that can be performed against a single
-[Workflow Version](/workflows/versioning/), such as enabling or
-disabling a workflow version, or updating the version notes.
+* [Workflow Version](/rest-api/flow-version/)  
+  Contains all the actions that can be performed against a single [Workflow Version](/workflows/versioning/), such as enabling or disabling a workflow version, or updating the version notes.
 
-*   [Workflow Versions](/rest-api/flow-versions/)  
-Contains all the actions that can be performed against the collection of
-[Workflow Versions](/workflows/versioning/) belonging
-to a Workflow - such as listing the versions or creating a new version.
+* [Workflow Versions](/rest-api/flow-versions/)  
+  Contains all the actions that can be performed against the collection of [Workflow Versions](/workflows/versioning/) belonging to a Workflow - such as listing the versions or creating a new version.

@@ -22,8 +22,8 @@ There are a number of fields that can be set for a user, some of which are requi
 
 ![Required User Fields](/images/experiences/user-required-fields.png "Required User Fields")
 
-*   **Email Address**: This must be a valid email address, and it must unique across your application. It is possible to register Experience Users with the same email address across multiple applications, but each user will count against your [resource limits](/organizations/resource-limits/).
-*   **Password**: A user's password must be at least 8 characters long. When creating a user, this field must be set; when updating a user, it is not necessary to assign the user a new password unless you have checked the "Change password?" box.
+* **Email Address**: This must be a valid email address, and it must unique across your application. It is possible to register Experience Users with the same email address across multiple applications, but each user will count against your [resource limits](/organizations/resource-limits/).
+* **Password**: A user's password must be at least 8 characters long. When creating a user, this field must be set; when updating a user, it is not necessary to assign the user a new password unless you have checked the "Change password?" box.
 
 The combination of these two values is what your Experience Users will use to [authenticate](/workflows/experience/authenticate/) against your application.
 
@@ -31,8 +31,8 @@ The combination of these two values is what your Experience Users will use to [a
 
 ![Optional User Fields](/images/experiences/user-optional-fields.png "Optional User Fields")
 
-*   **First Name** and **Last Name**: The user's first and last names. These can be any string, or they can be left blank. You may also set one but not the other.
-*   **Group IDs**: Any [Experience Groups](/experiences/groups/) the user should be a member of. Note that it is possible to create new groups directly from this interface, with the edited user automatically being added to the group. Simply type the name of a group that does not yet exist.
+* **First Name** and **Last Name**: The user's first and last names. These can be any string, or they can be left blank. You may also set one but not the other.
+* **Group IDs**: Any [Experience Groups](/experiences/groups/) the user should be a member of. Note that it is possible to create new groups directly from this interface, with the edited user automatically being added to the group. Simply type the name of a group that does not yet exist.
 
 ### User Tags
 
@@ -40,9 +40,9 @@ The combination of these two values is what your Experience Users will use to [a
 
 Tags allow for the storing of arbitrary data against any Experience User. Tags are useful for:
 
-*   Storing additional profile information, such as phone number or street address
-*   Categorizing users into groups
-*   Mapping Experience Users to other services, such as Facebook or Twitter, by storing their third-party IDs
+* Storing additional profile information, such as phone number or street address
+* Categorizing users into groups
+* Mapping Experience Users to other services, such as Facebook or Twitter, by storing their third-party IDs
 
 A tag's key may only include uppercase and lowercase letters; numbers; and hyphens (-) and underscores (\_). A tag's value can be any arbitrary string. A key may only be set once per user; you may not, for example, store the variable `facebookId` as two separate values for one user.
 

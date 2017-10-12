@@ -24,12 +24,12 @@ Configuring an endpoint takes a few required fields, each of which has its own u
 
 This is the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) the request should match. It is possible to have one route handle multiple HTTP methods, but each method must be configured as a separate endpoint. Currently, we support these methods:
 
-*   **GET** requests are typically used for retrieving existing resources. A GET request should be repeatable without changing the state of your application and should return the same response body across requests, assuming the underlying data does not change between requests.
-*   **POST** requests allow for a payload to be sent with the request body. Though POST requests are typically used for creating new resources, they can also be used for complex data queries that require more configuration than can be conveyed in route parameters.
-*   **PUT** requests also allow for a payload body; these requests are typically used to overwrite an existing resource.
-*   **PATCH** requests also allow for a payload body; these requests are typically used to merge changes into an existing resource.
-*   **DELETE** requests should only be used to delete resources from your application.
-*   **OPTIONS** requests are typically sent by web browsers prior to making a [cross-origin request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). If you have the "Enable Default CORS Settings" box checked in your [Experience Settings](/experiences/overview/#editing-experience-settings), it should not be necessary to set up any OPTIONS endpoints. However, you may still create your own OPTIONS routes, and any requests matching those routes will override the default settings handled by Losant.
+* **GET** requests are typically used for retrieving existing resources. A GET request should be repeatable without changing the state of your application and should return the same response body across requests, assuming the underlying data does not change between requests.
+* **POST** requests allow for a payload to be sent with the request body. Though POST requests are typically used for creating new resources, they can also be used for complex data queries that require more configuration than can be conveyed in route parameters.
+* **PUT** requests also allow for a payload body; these requests are typically used to overwrite an existing resource.
+* **PATCH** requests also allow for a payload body; these requests are typically used to merge changes into an existing resource.
+* **DELETE** requests should only be used to delete resources from your application.
+* **OPTIONS** requests are typically sent by web browsers prior to making a [cross-origin request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). If you have the "Enable Default CORS Settings" box checked in your [Experience Settings](/experiences/overview/#editing-experience-settings), it should not be necessary to set up any OPTIONS endpoints. However, you may still create your own OPTIONS routes, and any requests matching those routes will override the default settings handled by Losant.
 
 ![Endpoint Method and Route](/images/experiences/endpoint-method-route.png "Endpoint Method and Route")
 
@@ -39,14 +39,14 @@ The route is the [URL path](https://developer.mozilla.org/en-US/docs/Learn/Commo
 
 There are a number of rules to consider when building your routes:
 
-*   **A single route may only be used once per method.** However, a route of `/my-route` can be set up with a GET method for one endpoint and a POST method for another endpoint, and both are valid.
-*   **Routes are matched by order of specificity.** The more specific a route, the earlier in the process it is checked when a request comes in. The first route that matches the path in the HTTP request will be invoked. Losant takes care of ordering the routes by specificity for you, based on the rules outlined here.
-*   **Routes can contain string literals, path parameters and wildcards.** For example, given the route `/devices/{deviceId}/{attribute?}` ...
+* **A single route may only be used once per method.** However, a route of `/my-route` can be set up with a GET method for one endpoint and a POST method for another endpoint, and both are valid.
+* **Routes are matched by order of specificity.** The more specific a route, the earlier in the process it is checked when a request comes in. The first route that matches the path in the HTTP request will be invoked. Losant takes care of ordering the routes by specificity for you, based on the rules outlined here.
+* **Routes can contain string literals, path parameters and wildcards.** For example, given the route `/devices/{deviceId}/{attribute?}` ...
     * `devices` is a **string literal**, which is a static route parameter. String literals always take priority over the other parts of a route, meaning `/users/danny` will match before `/users/{name}` if "danny" is included in the `name` spot.
     * `{deviceId}` is a **required path parameter**. If a request is made to `/devices/` without a `{deviceId}` after the trailing slash, the request will fail (unless you have also specified a `/devices` route matching that method).
     * `{attribute?}` is an **optional path parameter**; a request to `/devices/123` and `/devices/123/temp` will both succeed and will both invoke the same endpoint, but the latter will include `{"attribute": "temp"}` as part of the payload passed to your workflow.
-*   **Routes must not conflict with each other.** The most common example of routes conflicting is with the use of path parameters at the same priority level; for example, a route of `/{deviceId}` and `/{userId}` will conflict because, behind the scenes, the router does not know if the value in that part of the path is a device ID or a user ID. For this reason, it is a good idea to start your routes with a descriptive string literal, such as `/devices/{deviceId}` and `/users/{userId}`. If you attempt to create a route that conflicts with another route, you will be alerted of the error.
-*   **Routes can contain wildcards.** Wildcards must be used with care, as they will match any request. A typical use case for a wildcard is if you want to create your own OPTIONS endpoint, or a custom `404 Not Found` HTTP response; in that case, you would configure a route of `/{var*}`, where `var` is available on the payload with the value of whatever the user entered after the first slash in their custom Experience domain.
+* **Routes must not conflict with each other.** The most common example of routes conflicting is with the use of path parameters at the same priority level; for example, a route of `/{deviceId}` and `/{userId}` will conflict because, behind the scenes, the router does not know if the value in that part of the path is a device ID or a user ID. For this reason, it is a good idea to start your routes with a descriptive string literal, such as `/devices/{deviceId}` and `/users/{userId}`. If you attempt to create a route that conflicts with another route, you will be alerted of the error.
+* **Routes can contain wildcards.** Wildcards must be used with care, as they will match any request. A typical use case for a wildcard is if you want to create your own OPTIONS endpoint, or a custom `404 Not Found` HTTP response; in that case, you would configure a route of `/{var*}`, where `var` is available on the payload with the value of whatever the user entered after the first slash in their custom Experience domain.
 
 ### Access Control
 
@@ -54,9 +54,9 @@ Endpoint access – the ability of a specific user to invoke an endpoint with an
 
 ![Endpoint Access Control](/images/experiences/endpoint-access-control.png "Endpoint Access Control")
 
-*   **All public users** means that anybody, regardless of if they have an Experience User account within your application, no matter if they are currently signed in to their account, can access the endpoint. Public endpoints can be used to allow the retrieval of nonsensitive data; they are also essential to allowing users to sign in to your Experience, as the authentication endpoint must be available to non-signed-in users.
-*   **Any authenticated user** endpoints can be invoked by any of your Experience Users when they are signed in. Their authentication token must be [included in the request](#passing-authorization-tokens).
-*  **Only users who are in the following groups...** limits access to signed-in users who are a member of any one of the specified [Experience Groups](/experiences/groups/). This is useful for building routes that have special privileges (such as resource editing permissions or Experience administration) that you do not want to provide to your normal population of users. To add a group to the endpoint, select the radio button next to the label and begin typing one or more group names into the input. You may also create new groups directly from this interface. Simply type the name of a group that does not yet exist.
+* **All public users** means that anybody, regardless of if they have an Experience User account within your application, no matter if they are currently signed in to their account, can access the endpoint. Public endpoints can be used to allow the retrieval of nonsensitive data; they are also essential to allowing users to sign in to your Experience, as the authentication endpoint must be available to non-signed-in users.
+* **Any authenticated user** endpoints can be invoked by any of your Experience Users when they are signed in. Their authentication token must be [included in the request](#passing-authorization-tokens).
+* **Only users who are in the following groups...** limits access to signed-in users who are a member of any one of the specified [Experience Groups](/experiences/groups/). This is useful for building routes that have special privileges (such as resource editing permissions or Experience administration) that you do not want to provide to your normal population of users. To add a group to the endpoint, select the radio button next to the label and begin typing one or more group names into the input. You may also create new groups directly from this interface. Simply type the name of a group that does not yet exist.
 
 ### Other Properties
 
@@ -64,8 +64,8 @@ There are a couple additional properties to set on each endpoint:
 
 ![Other Endpoint Props](/images/experiences/endpoint-other-props.png "Other Endpoint Props")
 
-*   **Enabled**: Whether this endpoint should accept HTTP requests and issue responses. If the endpoint is not enabled, Losant will automatically issue a response of `404 Not Found - {"error": "No endpoint found for route"}`.
-*   **Description**: A simple description of the endpoint. This is for internal use only; it will never be visible to Experience Users.
+* **Enabled**: Whether this endpoint should accept HTTP requests and issue responses. If the endpoint is not enabled, Losant will automatically issue a response of `404 Not Found - {"error": "No endpoint found for route"}`.
+* **Description**: A simple description of the endpoint. This is for internal use only; it will never be visible to Experience Users.
 
 ## Endpoints and Workflows
 
@@ -79,9 +79,9 @@ At the bottom of an endpoint's edit page is a list of all workflows that contain
 
 There are a number of nodes built specifically for working with your [Experience Users](/experiences/users/). Using these nodes, you can ...
 
-*   [Create](/workflows/experience/create-user/), [get](/workflows/experience/get-user/), [update](/workflows/experience/update-user/) or [delete](/workflows/experience/delete-user/) a user
-*   [Check the authentication credentials](/workflows/experience/authenticate/) of a user
-*   [Generate a token](/workflows/experience/generate-token/) for a user of your choosing (if, for example, you are building your own system of authentication)
+* [Create](/workflows/experience/create-user/), [get](/workflows/experience/get-user/), [update](/workflows/experience/update-user/) or [delete](/workflows/experience/delete-user/) a user
+* [Check the authentication credentials](/workflows/experience/authenticate/) of a user
+* [Generate a token](/workflows/experience/generate-token/) for a user of your choosing (if, for example, you are building your own system of authentication)
 
 ## Using Endpoints
 
@@ -96,9 +96,9 @@ There are a number of nodes built specifically for working with your [Experience
 
 Once you retrieve an authorization token for an Experience User, that token can be appended to any subsequent HTTP requests that [require authorization](#access-control) one of three different ways:
 
-*   A **query parameter** added to the URL (e.g. `https://my-custom-slug.onlosant.com/my-user?authorization=[my-token]`)
-*   An **Authorization HTTP header** with the value `Bearer [my-token]`
-*   A **Cookie HTTP header** in the format of `authorization=[my-token]` (you can [set a cookie](/workflows/outputs/endpoint-reply/#cookies) in the user's browser when they authenticate)
+* A **query parameter** added to the URL (e.g. `https://my-custom-slug.onlosant.com/my-user?authorization=[my-token]`)
+* An **Authorization HTTP header** with the value `Bearer [my-token]`
+* A **Cookie HTTP header** in the format of `authorization=[my-token]` (you can [set a cookie](/workflows/outputs/endpoint-reply/#cookies) in the user's browser when they authenticate)
 
 ### Testing Endpoints
 

@@ -6,7 +6,7 @@ The Delete Device node allows a workflow to remove a [Device](/devices/overview/
 
 ## Configuration
 
-To find the device to delete, the node requires the device ID. This field is  [templatable](/workflows/accessing-payload-data/#string-templates), and so supports finding a device based on the current workflow payload.
+To find the device to delete, the node requires the device ID. This field is [templatable](/workflows/accessing-payload-data/#string-templates), and so supports finding a device based on the current workflow payload.
 
 This node can only delete one device at a time, so the return value from the template must be a single device ID.
 

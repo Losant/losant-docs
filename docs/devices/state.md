@@ -14,17 +14,14 @@ Losant supports and understands a built-in set of data types for device attribut
 
 GPS attributes must be reported in one of four ways:
 
-*   [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)  
-Example: `37.33233141,-122.0312186`
-
-*   [Degrees Minutes Seconds](https://en.wikipedia.org/wiki/Degree_(angle)#Subdivisions) (also known as Sexagesimal)  
-Example: `37°19'56.39"N,122°1'52.38"W`
-
-*   [NMEA GLL](http://www.gpsinformation.org/dale/nmea.htm#GLL)  
-Example: `$GPGLL,3906.71226,N,8430.74572,W,000653,A,*24`
-
-*   [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)  
-Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
+* [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)  
+  Example: `37.33233141,-122.0312186`
+* [Degrees Minutes Seconds](https://en.wikipedia.org/wiki/Degree_(angle)#Subdivisions) (also known as Sexagesimal)  
+  Example: `37°19'56.39"N,122°1'52.38"W`
+* [NMEA GLL](http://www.gpsinformation.org/dale/nmea.htm#GLL)  
+  Example: `$GPGLL,3719.940,N,12201.873,S,225444,A,*1C`
+* [NMEA GGA](http://www.gpsinformation.org/dale/nmea.htm#GGA)  
+  Example: `$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47`
 
 Attributes can be added and removed from a device at any time. If you change the data type of an existing attribute, the previous data for that attribute will be lost. This is because Losant won't be able to aggregate data of two different data types for the same attribute.
 
@@ -36,17 +33,17 @@ A device can report state as often as needed, as long as it's within the Losant 
 
 [Peripheral](/devices/overview/#device-type) devices do not connect to Losant or report their own state. A gateway device generally reports the state of a peripheral device on behalf of that peripheral.
 
-Workflows can also report state for any type of device using the [Device State](/workflows/outputs/device-state/) node.  In addition, when authenticated against the Losant API as a user, the [Device Post State](/rest-api/device/#post-state) API endpoint can be used to record state for any type of device.
+Workflows can also report state for any type of device using the [Device State](/workflows/outputs/device-state/) node. In addition, when authenticated against the Losant API as a user, the [Device Post State](/rest-api/device/#post-state) API endpoint can be used to record state for any type of device.
 
 ### Including Timestamps
 
 Devices may optionally include a `time` to correspond to the data being reported. If provided, the time can be provided in a number of different formats.
 
-*   <a href="https://docs.mongodb.org/manual/reference/mongodb-extended-json" target="\_blank">EJSON format</a> (e.g. `{"time": { "$date" : "<ISO Date String>" } }`)
-*   Seconds since the <a href="https://en.wikipedia.org/wiki/Unix_time" target="\_blank">Unix Epoch</a> (e.g. `{"time": 1476479740 }`)
-*   Milliseconds since the Unix Epoch (e.g. `{"time": 1476479740543 }`)
-*   A string that is recognizable by the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse" target="\_blank">JavaScript Date.parse() method</a> (e.g. `{"time": "2016-10-14T21:16:34" }`)
-*   Negative numbers are treated as relative milliseconds - (e.g. `{"time": -60000 }` is treated as 60 seconds ago).
+* <a href="https://docs.mongodb.org/manual/reference/mongodb-extended-json" target="\_blank">EJSON format</a> (e.g. `{"time": { "$date" : "<ISO Date String>" } }`)
+* Seconds since the <a href="https://en.wikipedia.org/wiki/Unix_time" target="\_blank">Unix Epoch</a> (e.g. `{"time": 1476479740 }`)
+* Milliseconds since the Unix Epoch (e.g. `{"time": 1476479740543 }`)
+* A string that is recognizable by the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse" target="\_blank">JavaScript Date.parse() method</a> (e.g. `{"time": "2016-10-14T21:16:34" }`)
+* Negative numbers are treated as relative milliseconds - (e.g. `{"time": -60000 }` is treated as 60 seconds ago).
 
 If the time field is omitted, or if the provided string cannot be parsed, Losant will automatically use the current time instead.
 

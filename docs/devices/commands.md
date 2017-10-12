@@ -50,6 +50,7 @@ device.onCommand(&handleCommand);
 ```
 
 If you wish to send a payload with your commands, that value can be accessed and passed on to your handlers as well.
+
 ```arduino
 void handleCommand(LosantCommand *command) {
   JsonObject& payload = *command->payload;
@@ -59,6 +60,7 @@ void handleCommand(LosantCommand *command) {
 ```
 
 Note: If you are sending payloads of even moderate size, and your commands are failing to reach your microcontroller, it may be necessary to adjust the MQTT's maximum packet size. Add the following line in your sketch:
+
 ```arduino
 #define MQTT_MAX_PACKET_SIZE 256
 ```

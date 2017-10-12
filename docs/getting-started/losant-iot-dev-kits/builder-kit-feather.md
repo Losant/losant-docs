@@ -96,7 +96,7 @@ If you're familiar with git, you can also clone the repository from here:
 
 The first workshop creates an Internet button that triggers a Losant Workflow to send yourself an email.
 
-### Wiring
+### Workshop 1 Wiring
 
 ***Disconnect the Adafruit Feather microcontroller from USB.***
 
@@ -114,7 +114,7 @@ For this workshop, you’ll need to attach the Adafruit Feather Huzzah and butto
 
 ![Workshop 1 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-1-wiring-image.png "Workshop 1 Wiring Image")
 
-### Flash the Firmware
+### Flash the Workshop 1 Firmware
 
 Plug the Adafruit Feather microcontroller back into USB. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If the device does not show up, please review the [Environment Setup](/getting-started/losant-iot-dev-kits/environment-setup/) guide.
 
@@ -222,7 +222,7 @@ In the previous workshop, we showed you how to make a physical button do somethi
 
 Losant supports two major communication mechanisms – [states](/devices/state/) and [commands](/devices/commands/). You already saw how state works in the previous example. Commands allow you to send actions to the device. In this workshop, we’re going to send a “toggle” command that will turn on and off an LED.
 
-### Wiring
+### Workshop 2 Wiring
 
 ***Disconnect the Adafruit Feather microcontroller from USB.***
 
@@ -230,14 +230,13 @@ Each workshop builds on the previous one, so if you completed the first workshop
 
 ![Workshop 2 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-2-wiring-diagram.png "Workshop 2 Wiring Diagram")
 
-
 1. Add the LED so the positive lead (the longer one) is in terminal d20 and the negative lead is in d21.
 1. Connect the positive lead of the LED to GPIO 12 on the Feather (terminal j9) with a jump wire.
 1. Connect the negative lead of the LED from terminal c21 to the negative rail with a resistor.
 
 ![Workshop 2 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-2-wiring-image.png "Workshop 2 Wiring Image")
 
-### Flash the Firmware
+### Flash the Workshop 2 Firmware
 
 Plug the Adafruit Feather microcontroller back into USB.
 
@@ -287,7 +286,7 @@ We’ve now seen the two primary ways devices can communicate with Losant – st
 
 In this workshop, we’re going to add a temperature sensor to your builder kit. We’ll then use Losant’s dashboarding tools to visualize the real-time and historical temperature data.
 
-### Wiring
+### Workshop 3 Wiring
 
 ***Disconnect the Adafruit Feather microcontroller from USB.***
 
@@ -296,7 +295,6 @@ The wiring for this step is slightly complicated because the Feather’s analog 
 Just like the previous workshop, keep everything you've already wired and add these new components.
 
 ![Workshop 3 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-3-wiring-diagram.png "Workshop 3 Wiring Diagram")
-
 
 1. Add the tmp36 temperature sensor to terminals e23, e24, and e25. It’s ***VERY IMPORTANT*** that the sensor is oriented the right way with the flat side facing the bottom of the board – towards column a.
 1. Connect the rightmost lead (c25) of the temperature sensor to the negative rail using a resistor.
@@ -309,7 +307,7 @@ Just like the previous workshop, keep everything you've already wired and add th
 
 ![Workshop 3 Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit/workshop-3-wiring-image.jpg "Workshop 3 Wiring Image")
 
-### Flash the Firmware
+### Flash the Workshop 3 Firmware
 
 Plug the Adafruit Feather microcontroller back into USB. Open the file workshop-3-temp.ino. Just as in the previous two workshops, edit the top of the file to set the WiFi and Losant credentials. You can use the same values as the previous two workshops.
 

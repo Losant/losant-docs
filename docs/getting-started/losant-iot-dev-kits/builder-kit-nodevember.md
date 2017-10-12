@@ -36,7 +36,6 @@ Your kit should include the following items:
 
 ![TMP36](/images/getting-started/losant-iot-dev-kits/builder-kit-nodevember/tmp36.jpg "TMP36")
 
-
 * 1 [Micro USB cable](https://www.amazon.com/AmazonBasics-USB-Male-Micro-Cable/dp/B01EK87T9M)
 
 ## Overview
@@ -48,7 +47,8 @@ These instructions are split into three workshops. Each workshop builds on the p
 The microcontroller included in this kit is configured using the Arduino tools. In this workshop, you will not have to do any programming. In this workshop, we have already pre-configured the device to accept JSON commands via Serial. <a href="https://www.arduino.cc/en/Reference/Serial" target="_blank">Serial</a> is just a communication protocol that allows us to send and receive information from a device. Generally, serial output is used as a simple logging mechanism.W Also, we will need to install USB drivers to communicate with the microcontroller.
 
 ### Install Arduino IDE
-Download and install the latest version of the Arduino IDE by following the instructions at:<br />
+
+Download and install the latest version of the Arduino IDE by following the instructions at:  
 <a href="https://www.arduino.cc/en/Main/Software" target="_blank">https://www.arduino.cc/en/Main/Software</a>
 
 ### Install USB Drivers
@@ -69,7 +69,7 @@ On Mac, the above link downloads a disk image. Double-click the file to mount it
 
 The first workshop creates an Internet button that triggers a Losant Workflow to send yourself an email.
 
-### Wiring
+### Workshop 1 Wiring
 
 ***Disconnect the NodeMCU dev kit from USB.***
 
@@ -148,7 +148,7 @@ This will cause a popup to appear with your access tokens. Losant ***DOES NOT***
 
 Now that you have a device configured in Losant, we can configure our internet button to connect to WiFi and Losant. The JSON command to configure this device looks like the following:
 
-```
+```json
 {
   "losant-config-wifi-ssid": "<Wifi SSID>",
   "losant-config-wifi-pass": "<Wifi Password>",
@@ -166,7 +166,7 @@ If interested, this builder kit has another set of <a href="/getting-started/los
 ### Update Serial Port
 
 Now, let's open up the Arduino IDE, plug in your device, and setup our device. First, you
-will need to update Arduino's serial port. The Arduino IDE needs to know which USB device to communicate with.  Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If it is not there, check to make sure you have installed the <a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">USB drivers</a>.
+will need to update Arduino's serial port. The Arduino IDE needs to know which USB device to communicate with. Make sure the device shows up under the Arduino IDE's `Tools -> Port` menu and it's selected. If it is not there, check to make sure you have installed the <a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">USB drivers</a>.
 
 ![Update Serial Port](/images/getting-started/losant-iot-dev-kits/builder-kit-nodevember/serial-uart.png "Update Serial Port")
 
@@ -200,7 +200,7 @@ Every time the button is pressed, the firmware is publishing the state `{ "butto
 
 In come cases, it may be helpful to reset the device. There is a JSON command called `losant-config-clear` that will wipe the configuration to its initial state.
 
-```
+```json
 { "losant-config-clear" : true }
 ```
 
@@ -302,14 +302,13 @@ In the previous workshop, we showed you how to make a physical button do somethi
 
 Losant supports two major communication mechanisms – [states](/devices/state/) and [commands](/devices/commands/). You already saw how state works in the previous example. Commands allow you to send actions to the device. In this workshop, we’re going to send a “toggle” command that will turn on and off an LED.
 
-### Wiring
+### Workshop 2 Wiring
 
 ***Disconnect the NodeMCU from USB.***
 
 Each workshop builds on the previous one, so if you completed the first workshop, it is not necessary to disconnect any components from your breadboard. We will simply add an LED and connect it to the NodeMCU.
 
 ![Workshop 2 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-diagram.png "Workshop 2 Wiring Diagram")
-
 
 1. Add the LED so the positive lead (the longer one) is in terminal c19 and the negative lead is in c20.
 1. Connect the positive lead of the LED to D2 on the NodeMCU (terminal a13) with a jump wire.
@@ -355,14 +354,13 @@ We’ve now seen the two primary ways devices can communicate with Losant – st
 
 In this workshop, we’re going to add a temperature sensor to your builder kit. We’ll then use Losant’s dashboarding tools to visualize the real-time and historical temperature data.
 
-### Wiring
+### Workshop 3 Wiring
 
 ***Disconnect the NodeMCU from USB.***
 
 Just like the previous workshop, keep everything you've already wired and add these new components.
 
 ![Workshop 3 Wiring Diagram](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-3-wiring-diagram.png "Workshop 3 Wiring Diagram")
-
 
 1. Add the tmp36 temperature sensor to terminals e22, e23, and e24. It’s ***VERY IMPORTANT*** that the sensor is oriented the right way with the flat side facing the bottom of the board – towards column a.
 1. Connect the rightmost lead (a24) of the temperature sensor to the negative rail using a jump wire.
@@ -377,7 +375,7 @@ Plug the NodeMCU back into USB. You may have noticed that there was a configurat
 
 To update config, send this command to the device via serial:
 
-```
+```json
 { "losant-config-tmp" : true }
 ```
 

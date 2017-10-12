@@ -65,7 +65,7 @@ Within the dashboard settings menu, there are a couple options for changing the 
 
 ## Auto Refreshing
 
-Dashboards by default will automatically refresh the data every 60 seconds. You can pause the refreshing at any time by clicking the pause button at the top of the dashboard. You can also force the dashboard to refresh by clicking the refresh button.  You can also control the refresh interval under the settings for the dashboard.
+Dashboards by default will automatically refresh the data every 60 seconds. You can pause the refreshing at any time by clicking the pause button at the top of the dashboard. You can also force the dashboard to refresh by clicking the refresh button. You can also control the refresh interval under the settings for the dashboard.
 
 <img style="width: 440px; margin: 0 auto; display: block;" src="/images/dashboards/overview-refresh-button.png" alt="Refresh Button" />
 
@@ -92,7 +92,7 @@ Dashboards have a three levels of access:
 
 * **Private** dashboards are only accessible to you, or members of your organization if it is an organization-owned dashboard.
 * **Public** dashboards can be seen by anyone who has the dashboard URL, regardless of whether that person is logged in to a Losant account. This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone. Do not make your dashboard public if it contains any private or sensitive data.
-* **Password-protected** dashboards allow anyone with the URL and a global password set by you to view the dashboard.  This adds some protection to your dashboard, while still making it easy to share with people who do not have Losant accounts.
+* **Password-protected** dashboards allow anyone with the URL and a global password set by you to view the dashboard. This adds some protection to your dashboard, while still making it easy to share with people who do not have Losant accounts.
 
 You can manage the access control for a dashboard on the settings page for the dashboard:
 

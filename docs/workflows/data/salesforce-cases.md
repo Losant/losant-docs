@@ -14,9 +14,9 @@ Most people choose to store these three values in their [workflow globals](/work
 
 ![Salesforce Credentials](/images/workflows/data/salesforce-credentials.png "Salesforce Credentials")
 
-*   **Salesforce Username**: Required. This is your username for authenticating against the Salesforce API.
-*   **Salesforce Password**: Required. This is your password for authenticating against the Salesforce API.
-*   **Security Token**: This may be required depending on your Salesforce account settings. [Read more about security tokens](https://developer.salesforce.com/forums?id=906F00000009B2zIAE).
+* **Salesforce Username**: Required. This is your username for authenticating against the Salesforce API.
+* **Salesforce Password**: Required. This is your password for authenticating against the Salesforce API.
+* **Security Token**: This may be required depending on your Salesforce account settings. [Read more about security tokens](https://developer.salesforce.com/forums?id=906F00000009B2zIAE).
 
 ### Case Action Configuration
 
@@ -28,59 +28,59 @@ Before filling out the rest of this section, users must first choose a **Salesfo
 
 Search existing records against the parameters provided and return the result. Records must match ALL provided parameters to be returned. Leave a parameter blank to exclude it from the query.
 
-*   **Record ID**: An ID for a single record. If included, the request will return a maximum of one record.
-*   **Status**: Default options are "New", "Working", "Escalated" or "Closed"
-*   **Case Origin**: Default options are "Phone", "Email" or "Web"
+* **Record ID**: An ID for a single record. If included, the request will return a maximum of one record.
+* **Status**: Default options are "New", "Working", "Escalated" or "Closed"
+* **Case Origin**: Default options are "Phone", "Email" or "Web"
 
 #### Count
 
 Return the number of records that match these parameters. Records must match ALL provided parameters to be returned. Leave a parameter blank to exclude it from the query.
 
-*   **Status**: Default options are "New", "Working", "Escalated" or "Closed"
-*   **Case Origin**: Default options are "Phone", "Email" or "Web"
+* **Status**: Default options are "New", "Working", "Escalated" or "Closed"
+* **Case Origin**: Default options are "Phone", "Email" or "Web"
 
 #### Create
 
 Create a new case record. All provided fields will be added to the record. Leave a field blank to exclude it from the record for now; any parameter can always be added or updated later.
 
-*   **Status**: Required. The status of the case, such as "New," "Closed," or "Escalated".
-*   **Case Origin**: Required. The source of the case, such as "Email", "Phone", or "Web".
-*   **Subject**: The subject of the case. Limit: 255 characters.
-*   **Description**: A text description of the case. Limit 32KB.
-*   **Contact ID**: ID of the associated Contact.
-*   **Account ID**: ID of the account associated with this case.
-*   **Type**: The type of case, such as "Feature Request" or "Question".
-*   **Case Reason**: The reason why the case was created, such as "Instructions not clear", or "User didn’t attend training".
-*   **Web Name**: The name that was entered when the case was created.
-*   **Web Email**: The email address that was entered when the case was created.
-*   **Web Phone**: The phone number that was entered when the case was created.
-*   **Web Company**: The company name that was entered when the case was created.
-*   **Priority**: The importance or urgency of the case, such as "High", "Medium", or "Low".
+* **Status**: Required. The status of the case, such as "New," "Closed," or "Escalated".
+* **Case Origin**: Required. The source of the case, such as "Email", "Phone", or "Web".
+* **Subject**: The subject of the case. Limit: 255 characters.
+* **Description**: A text description of the case. Limit 32KB.
+* **Contact ID**: ID of the associated Contact.
+* **Account ID**: ID of the account associated with this case.
+* **Type**: The type of case, such as "Feature Request" or "Question".
+* **Case Reason**: The reason why the case was created, such as "Instructions not clear", or "User didn’t attend training".
+* **Web Name**: The name that was entered when the case was created.
+* **Web Email**: The email address that was entered when the case was created.
+* **Web Phone**: The phone number that was entered when the case was created.
+* **Web Company**: The company name that was entered when the case was created.
+* **Priority**: The importance or urgency of the case, such as "High", "Medium", or "Low".
 
 #### Destroy
 
 Remove a case record.
 
-*   **Record ID**: Required. The ID of the record to destroy.
+* **Record ID**: Required. The ID of the record to destroy.
 
 #### Update
 
 Update a case record. Leave a parameter blank to leave its current value unchanged.
 
-*   **Record ID**: Required. The ID of the record to update.
-*   **Status**: The status of the case, such as "New," "Closed," or "Escalated".
-*   **Case Origin**: The source of the case, such as "Email", "Phone", or "Web".
-*   **Subject**: The subject of the case. Limit: 255 characters.
-*   **Description**: A text description of the case. Limit 32KB.
-*   **Contact ID**: ID of the associated Contact.
-*   **Account ID**: ID of the account associated with this case.
-*   **Type**: The type of case, such as "Feature Request" or "Question".
-*   **Case Reason**: The reason why the case was created, such as "Instructions not clear", or "User didn’t attend training".
-*   **Web Name**: The name that was entered when the case was created.
-*   **Web Email**: The email address that was entered when the case was created.
-*   **Web Phone**: The phone number that was entered when the case was created.
-*   **Web Company**: The company name that was entered when the case was created.
-*   **Priority**: The importance or urgency of the case, such as "High", "Medium", or "Low".
+* **Record ID**: Required. The ID of the record to update.
+* **Status**: The status of the case, such as "New," "Closed," or "Escalated".
+* **Case Origin**: The source of the case, such as "Email", "Phone", or "Web".
+* **Subject**: The subject of the case. Limit: 255 characters.
+* **Description**: A text description of the case. Limit 32KB.
+* **Contact ID**: ID of the associated Contact.
+* **Account ID**: ID of the account associated with this case.
+* **Type**: The type of case, such as "Feature Request" or "Question".
+* **Case Reason**: The reason why the case was created, such as "Instructions not clear", or "User didn’t attend training".
+* **Web Name**: The name that was entered when the case was created.
+* **Web Email**: The email address that was entered when the case was created.
+* **Web Phone**: The phone number that was entered when the case was created.
+* **Web Company**: The company name that was entered when the case was created.
+* **Priority**: The importance or urgency of the case, such as "High", "Medium", or "Low".
 
 ### Storing The Response
 
