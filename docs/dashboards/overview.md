@@ -10,9 +10,9 @@ A dashboard can be created at any time from the `Dashboards` dropdown in the sit
 
 When creating a dashboard, you'll be asked for three pieces of information:
 
--   **Dashboard Name:** You are required to name your new dashboard. The name can be changed at any time.
--   **Description:** Optionally, you may also provide a more detailed description of the application.
--   **Owner:** The dashboard must be scoped to your personal [Sandbox](/user-accounts/sandbox/) or to an [organization](/organizations/overview/) for which you have the [Editor role](/organizations/members/#member-roles). The owner can be changed at a later date only if you have Administrator permissions for the parent organization (or Sandbox).
+* **Dashboard Name:** You are required to name your new dashboard. The name can be changed at any time.
+* **Description:** Optionally, you may also provide a more detailed description of the application.
+* **Owner:** The dashboard must be scoped to your personal [Sandbox](/user-accounts/sandbox/) or to an [organization](/organizations/overview/) for which you have the [Editor role](/organizations/members/#member-roles). The owner can be changed at a later date only if you have Administrator permissions for the parent organization (or Sandbox).
 
 Note that, should you choose to make your dashboard public, the name and description **will be visible** to those users.
 
@@ -58,8 +58,8 @@ From an existing block's configuration page, click "Clone Block" in the footer. 
 
 Within the dashboard settings menu, there are a couple options for changing the dashboard's display style ...
 
-*   **Dark Theme** flips the color scheme to a much darker style. This is stored as a user-level preference, so switching to the dark theme on one dashboard will cause other dashboards you visit to also be displayed in the dark theme until you disable the setting.
-*   **Fullscreen** hides the Losant header and footer and expands the dashboard to fit the screen's dimensions. Not all devices support this feature (smartphones and most tablets specifically), and if your device does not allow fullscreen display, this option will not be visible.
+* **Dark Theme** flips the color scheme to a much darker style. This is stored as a user-level preference, so switching to the dark theme on one dashboard will cause other dashboards you visit to also be displayed in the dark theme until you disable the setting.
+* **Fullscreen** hides the Losant header and footer and expands the dashboard to fit the screen's dimensions. Not all devices support this feature (smartphones and most tablets specifically), and if your device does not allow fullscreen display, this option will not be visible.
 
 <img style="width: 341px; margin: 0 auto; display: block;" src="/images/dashboards/dashboard-display-settings.png" alt="Dashboard Display Options" />
 
@@ -81,7 +81,7 @@ It is also possible to jump backward and forward in time simply by clicking the 
 
 A few things to note when viewing past dashboard states:
 
-*  **The following dashboard blocks do not update** when viewing a past dashboard state (meaning, they continue to reflect the "as of now" state of the block): Input Controls, Event List, Device List, Workflow List, Application List, Dashboard List, External Website
+* **The following dashboard blocks do not update** when viewing a past dashboard state (meaning, they continue to reflect the "as of now" state of the block): Input Controls, Event List, Device List, Workflow List, Application List, Dashboard List, External Website
 * When viewing a past state, the dashboard will cease to refresh data on a regular basis.
 * **Each individual block will honor its specific duration settings** regardless of the selected date. For example, when viewing 10:00am on June 1, 2016, a Time Series Graph configured to show the last hour of data will display data from 9:00am to 10:00am of that same date. Meanwhile, a Gauge Block set to display a mean aggregation of data collected over the past four hours will show the aggregated value of its attribute as collected from 6:00am to 10:00am that morning.
 * If you attempt to go forward in time past the current date/time, the dashboard will automatically revert to displaying "Now" data and the ability to go forward from that point will be disabled.
@@ -90,10 +90,9 @@ A few things to note when viewing past dashboard states:
 
 Dashboards have a three levels of access:
 
--   **Private** dashboards are only accessible to you, or members of your organization if it is an organization-owned
-dashboard.
--   **Public** dashboards can be seen by anyone who has the dashboard URL, regardless of whether that person is logged in to a Losant account. This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone. Do not make your dashboard public if it contains any private or sensitive data.
--   **Password-protected** dashboards allow anyone with the URL and a global password set by you to view the dashboard.  This adds some protection to your dashboard, while still making it easy to share with people who do not have Losant accounts.
+* **Private** dashboards are only accessible to you, or members of your organization if it is an organization-owned dashboard.
+* **Public** dashboards can be seen by anyone who has the dashboard URL, regardless of whether that person is logged in to a Losant account. This is great for sharing public data, but remember that any data exposed in a public dashboard is *public* and is accessible by anyone. Do not make your dashboard public if it contains any private or sensitive data.
+* **Password-protected** dashboards allow anyone with the URL and a global password set by you to view the dashboard.  This adds some protection to your dashboard, while still making it easy to share with people who do not have Losant accounts.
 
 You can manage the access control for a dashboard on the settings page for the dashboard:
 
@@ -105,17 +104,17 @@ You may wish to display your Losant dashboard, or a collection of blocks from on
 
 **NOTE:** The following blocks will not display any data on public dashboards or to non-authorized users when embedded:
 
-*   `Application List`
-*   `Dashboard List`
+* `Application List`
+* `Dashboard List`
 
 ### Embedding Entire Dashboards
 
 From your dashboard's settings page, click "Embed Dashboard" in the left column. This will bring you to a page where you can configure your embed options, such as:
 
-*   **Width** in CSS units (default: 100%)
-*   **Height** in CSS units (default: the height of dashboard currently)
-*   **Theme** (default: Light)
-*   **Fetch Data Every ...** (default: current dashboard setting)
+* **Width** in CSS units (default: 100%)
+* **Height** in CSS units (default: the height of dashboard currently)
+* **Theme** (default: Light)
+* **Fetch Data Every ...** (default: current dashboard setting)
 
 ![Embed Dashboard](/images/dashboards/dashboard-embed.png "Embed Dashboard")
 
@@ -132,3 +131,13 @@ You may only embed a single block if your [dashboard's access control](#dashboar
 ![Embed Block Modal Checkbox](/images/dashboards/embed-block-modal.png "Embed Block Modal")
 
 This will display a modal where you can set the block's `width`, `height` and `theme` properties. For your width and height, make sure to enter a valid CSS length attribute (`%`, `px`, `em`, `vw`, etc.).
+
+## Email Reports
+
+You also have the option to email a report based on a dashboard at a recurring interval. You can do this under the "Email Reports" section in the dashboard settings:
+
+![Email Report Settings](/images/dashboards/email-report-settings.png "Email Report Settings")
+
+You can configure a set of email addresses to receive a PDF report of the dashboard at a regular interval. Choose a time of day and the days of the week to send the report, and you can also configure the subject and message of the email. In the above example, the report will be emailed every Thursday at 10:10am central time to myemail@example.com. The resulting email will include a link to a PDF report of the dashboard at that time, similar to the example below:
+
+<img style="border-top: 0px; border-bottom: 0px" src="/images/dashboards/email-report-example.png" alt="Email Report Example" title="Email Report Example" />
