@@ -9644,11 +9644,11 @@ Schema for the body of a Github login request
 ```
 
 <br/>
-## Integrations
+## Integration
 
-Schema for a single Integrations
+Schema for a single Integration
 
-### Schema <a name="integrations-schema"></a>
+### Schema <a name="integration-schema"></a>
 
 ```json
 {
@@ -9854,7 +9854,7 @@ Schema for a single Integrations
 
 <small></small>
 
-### Example <a name="integrations-example"></a>
+### Example <a name="integration-example"></a>
 
 ```json
 {
@@ -9891,11 +9891,11 @@ Schema for a single Integrations
 ```
 
 <br/>
-## Integrations Patch
+## Integration Patch
 
-Schema for the body of an Integrations modification request
+Schema for the body of an Integration modification request
 
-### Schema <a name="integrations-patch-schema"></a>
+### Schema <a name="integration-patch-schema"></a>
 
 ```json
 {
@@ -10045,7 +10045,7 @@ Schema for the body of an Integrations modification request
 
 <small></small>
 
-### Example <a name="integrations-patch-example"></a>
+### Example <a name="integration-patch-example"></a>
 
 ```json
 {
@@ -10056,11 +10056,11 @@ Schema for the body of an Integrations modification request
 ```
 
 <br/>
-## Integrations Post
+## Integration Post
 
-Schema for the body of an Integrations creation request
+Schema for the body of an Integration creation request
 
-### Schema <a name="integrations-post-schema"></a>
+### Schema <a name="integration-post-schema"></a>
 
 ```json
 {
@@ -10214,7 +10214,7 @@ Schema for the body of an Integrations creation request
 
 <small></small>
 
-### Example <a name="integrations-post-example"></a>
+### Example <a name="integration-post-example"></a>
 
 ```json
 {
@@ -10249,8 +10249,8 @@ Schema for a collection of Integrations
     "items": {
       "type": "array",
       "items": {
-        "title": "Integrations",
-        "description": "Schema for a single Integrations",
+        "title": "Integration",
+        "description": "Schema for a single Integration",
         "type": "object",
         "properties": {
           "id": {
