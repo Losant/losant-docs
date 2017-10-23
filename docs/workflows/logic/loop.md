@@ -8,7 +8,7 @@ The loop node allows for iterating over values on your payload, or for performin
 
 The loop node itself takes two properties, both of which are required:
 
-*   **Loop Source Path** is the payload path to the item over which to iterate. Depending on the type of value found at this path, the loop node will behave slightly differently ...
+* **Loop Source Path** is the payload path to the item over which to iterate. Depending on the type of value found at this path, the loop node will behave slightly differently ...
     * For [**arrays**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the loop node will run one iteration for each value in the array.
     * For [**objects**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), the loop node will iterate over the object's top-level keys. (Note: Order of the object keys is not guaranteed while iterating.)
     * For [**numbers**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), the loop will run the number of times specified by the absolute value of the number rounded up to the nearest integer.

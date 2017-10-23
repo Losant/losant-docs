@@ -24,7 +24,6 @@ Optionally you can provide a payload path in the "Result Path" field so that the
 
 For instance, given the example node configuration in the screenshots above, this is a possible result for a successful row update:
 
-
 ```json
 {
   "data": {

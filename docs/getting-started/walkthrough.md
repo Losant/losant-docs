@@ -8,7 +8,6 @@ In reality, you'll use sensors and hardware to capture the weather information a
 
 Dark Sky is an API that provides a simple way to acquire weather data. The Dark Sky API is a separate, paid service — you'll have to sign up for an API key (one key per company). With this key, the first 1,000 forecasts per day are free, which is just enough for this walkthrough.
 
-
 ## Step 1: Sign up for Dark Sky API
 
 <a href="https://darksky.net/dev/register" target="_blank">Signing up</a> for the Dark Sky API is extremely simple and only requires an email address. Once you sign up you'll be provided an API key. Keep this handy for future steps. This API key gives you 1,000 requests free each day, which is more than enough for this application.
@@ -30,7 +29,7 @@ You can name your application whatever you would like - in this case we have cal
 
 ## Step 3: Add the Device
 
-Now that we have an application we need a [device](/devices/overview/) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu.  Choose `Create Blank Device` on the following screen, since we want to create from a blank device.
+Now that we have an application we need a [device](/devices/overview/) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu. Choose `Create Blank Device` on the following screen, since we want to create from a blank device.
 
 ![Add Device](/images/getting-started/walkthrough/add-device.png "Add Device")
 
@@ -78,13 +77,13 @@ You'll see a few extra nodes on the below workflow. The `Virtual Button` node wa
 
 Click the HTTP node to configure it. There are two important configuration options for the HTTP node. The first is the URL and the second is where to store the result. The URL will be Dark Sky's API endpoint:
 
-```
+```text
 https://api.darksky.net/forecast/APIKEY/LATITUDE,LONGITUDE
 ```
 
 The `APIKEY` should be replaced by the key you obtained in step 1 after registering for Dark Sky. The `LATITUDE` and `LONGITUDE` are the coordinates, in decimal degrees, of the location to request. <a href="http://mygeoposition.com" target="_blank">MyGeoPosition.com</a> is a neat tool to get these coordinates if you don't have them handy. Here's the coordinates of Losant's headquarters if you'd like to use these:
 
-```
+```text
 https://api.darksky.net/forecast/APIKEY/39.1119359,-84.51254
 ```
 
@@ -160,7 +159,7 @@ The device state node requires you to select the device to report as - which in 
 
 To pull the value of the temperature out of this payload, we would use the following template:
 
-```
+```handlebars
 {{ weather.body.currently.temperature }}
 ```
 

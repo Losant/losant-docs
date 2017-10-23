@@ -12,16 +12,17 @@ parameters and the potential responses.
 
 Returns the organizations associated with the current user
 
-#### Method And Url
+### Method And Url <a name="get-method-url"></a>
 
 GET https://api.losant.com/orgs
 
-#### Authentication
+### Authentication <a name="get-authentication"></a>
+
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
 all.User, all.User.read, orgs.*, or orgs.get.
 
-#### Request Query Parameters
+### Request Query Parameters <a name="get-query-params"></a>
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
@@ -33,13 +34,13 @@ all.User, all.User.read, orgs.*, or orgs.get.
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*org |
 | summaryExclude | N | List of summary fields to exclude from org summaries |  | payloadCount |
 
-#### Request Headers
+### Request Headers <a name="get-headers"></a>
 
 | Name | Required | Description | Default |
 | ---- | -------- | ----------- | ------- |
 | Authorization | Y | The token for authenticating the request, prepended with Bearer | |
 
-#### Curl Example
+### Curl Example <a name="get-curl-example"></a>
 
 ```bash
 curl -H 'Content-Type: application/json' \
@@ -48,42 +49,40 @@ curl -H 'Content-Type: application/json' \
     -X GET \
     https://api.losant.com/orgs
 ```
-<br/>
 
-#### Successful Responses
+### Successful Responses <a name="get-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 200 | [Organizations](schemas.md#organizations) | Collection of organizations |
 
-#### Error Responses
+### Error Responses <a name="get-error-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 
-<br/>
-
 ## Post
 
 Create a new organization
 
-#### Method And Url
+### Method And Url <a name="post-method-url"></a>
 
 POST https://api.losant.com/orgs
 
-#### Authentication
+### Authentication <a name="post-authentication"></a>
+
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
 all.User, orgs.*, or orgs.post.
 
-#### Request Headers
+### Request Headers <a name="post-headers"></a>
 
 | Name | Required | Description | Default |
 | ---- | -------- | ----------- | ------- |
 | Authorization | Y | The token for authenticating the request, prepended with Bearer | |
 
-#### Request Body
+### Request Body <a name="post-body"></a>
 
 The body of the request should be serialized JSON that validates against
 the [Organization Post](schemas.md#organization-post) schema. For example, the following would be a
@@ -95,9 +94,8 @@ valid body for this request:
   "description": "Description of my new organization"
 }
 ```
-<small><br/></small>
 
-#### Curl Example
+### Curl Example <a name="post-curl-example"></a>
 
 ```bash
 curl -H 'Content-Type: application/json' \
@@ -107,19 +105,15 @@ curl -H 'Content-Type: application/json' \
     -d '{"name":"My New Organization","description":"Description of my new organization"}' \
     https://api.losant.com/orgs
 ```
-<br/>
 
-#### Successful Responses
+### Successful Responses <a name="post-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 201 | [Organization](schemas.md#organization) | Successfully created organization |
 
-#### Error Responses
+### Error Responses <a name="post-error-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
-
-<br/>
-

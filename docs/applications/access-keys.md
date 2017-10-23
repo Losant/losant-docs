@@ -30,15 +30,15 @@ After you've saved your access key and secret, check the `I have copied my app s
 
 To temporarily deactivate an access key ...
 
-*   Click the checkbox alongside the access key in the list view, OR
-*   From the access key's detail page, select the "Inactive" radio button under the "Status" label and save the key.
+* Click the checkbox alongside the access key in the list view, OR
+* From the access key's detail page, select the "Inactive" radio button under the "Status" label and save the key.
 
 ![Delete Key](/images/applications/delete-key.png "Delete Key")
 
 If an access key is no longer needed, or you believe it has been compromised, you may permanently delete it by:
 
-*   Clicking on the `Delete` icon in the access key list, OR
-*   Clicking the `Delete Access Key` button on the access key's detail page
+* Clicking on the `Delete` icon in the access key list, OR
+* Clicking the `Delete Access Key` button on the access key's detail page
 
 ## Using Access Keys
 

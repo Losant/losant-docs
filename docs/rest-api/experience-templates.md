@@ -1,44 +1,44 @@
-description: A detailed look at the various REST actions supported by the Solution Users resource of the Losant API. Learn more.
+description: A detailed look at the various REST actions supported by the Experience Templates resource of the Losant API. Learn more.
 
-# Solution Users Actions
+# Experience Templates Actions
 
-https://api.losant.com/orgs/**`ORG_ID`**/solutions/**`SOLUTION_ID`**/users
+https://api.losant.com/applications/**`APPLICATION_ID`**/experience/templates
 
 Below are the various requests that can be performed against the
-Solution Users resource, as well as the expected
+Experience Templates resource, as well as the expected
 parameters and the potential responses.
 
 ## Get
 
-Returns the users for the solution
+Returns the experience templates for an application
 
 ### Method And Url <a name="get-method-url"></a>
 
-GET https://api.losant.com/orgs/**`ORG_ID`**/solutions/**`SOLUTION_ID`**/users
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/templates
 
 ### Authentication <a name="get-authentication"></a>
 
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Organization, all.Organization.read, all.User, all.User.read, solutionUsers.*, or solutionUsers.get.
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceTemplates.*, or experienceTemplates.get.
 
 ### Request Path Components <a name="get-path-components"></a>
 
 | Path Component | Description | Example |
 | -------------- | ----------- | ------- |
-| ORG_ID | ID associated with the organization | 575ed6e87ae143cd83dc4aa8 |
-| SOLUTION_ID | ID associated with the solution | 57955788124b37010084c053 |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 
 ### Request Query Parameters <a name="get-query-params"></a>
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: email, firstName, lastName, id, creationDate, lastLogin | email | email |
+| sortField | N | Field to sort the results by. Accepted values are: id, creationDate, name | name | name |
 | sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
 | page | N | Which page of results to return | 0 | 0 |
 | perPage | N | How many items to return per page | 1000 | 10 |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: email, firstName, lastName |  | email |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | email*address |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*template |
+| templateType | N | Filter templates to those only of the given type. Accepted values are: page, layout, component |  | page |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -53,41 +53,41 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
-    https://api.losant.com/orgs/ORG_ID/solutions/SOLUTION_ID/users
+    https://api.losant.com/applications/APPLICATION_ID/experience/templates
 ```
 
 ### Successful Responses <a name="get-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Solution Users](schemas.md#solution-users) | Collection of solution users |
+| 200 | [Experience Templates](schemas.md#experience-templates) | Collection of experience templates |
 
 ### Error Responses <a name="get-error-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if application was not found |
 
 ## Post
 
-Create a new solution user
+Create a new experience template for an application
 
 ### Method And Url <a name="post-method-url"></a>
 
-POST https://api.losant.com/orgs/**`ORG_ID`**/solutions/**`SOLUTION_ID`**/users
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/templates
 
 ### Authentication <a name="post-authentication"></a>
 
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Organization, all.User, solutionUsers.*, or solutionUsers.post.
+all.Application, all.Organization, all.User, experienceTemplates.*, or experienceTemplates.post.
 
 ### Request Path Components <a name="post-path-components"></a>
 
 | Path Component | Description | Example |
 | -------------- | ----------- | ------- |
-| ORG_ID | ID associated with the organization | 575ed6e87ae143cd83dc4aa8 |
-| SOLUTION_ID | ID associated with the solution | 57955788124b37010084c053 |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 
 ### Request Headers <a name="post-headers"></a>
 
@@ -98,20 +98,17 @@ all.Organization, all.User, solutionUsers.*, or solutionUsers.post.
 ### Request Body <a name="post-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Solution User Post](schemas.md#solution-user-post) schema. For example, the following would be a
+the [Experience Template Post](schemas.md#experience-template-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json
 {
-  "email": "example@solutionuser.com",
-  "firstName": "Example",
-  "lastName": "Name",
-  "password": "aUserPassword",
-  "accessRestrictions": {
-    "dashboardIds": [
-      "575ece2b7ae143cd83dc4a9b",
-      "575ece2b7ae143cd83dc4a9c"
-    ]
+  "name": "My Page Template",
+  "templateType": "page",
+  "body": "<p>{{data}}</p>",
+  "layoutId": "59cc5cad8246c6caed4b16c2",
+  "templateTags": {
+    "customKey": "customValue"
   }
 }
 ```
@@ -123,18 +120,19 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"email":"example@solutionuser.com","firstName":"Example","lastName":"Name","password":"aUserPassword","accessRestrictions":{"dashboardIds":["575ece2b7ae143cd83dc4a9b","575ece2b7ae143cd83dc4a9c"]}}' \
-    https://api.losant.com/orgs/ORG_ID/solutions/SOLUTION_ID/users
+    -d '{"name":"My Page Template","templateType":"page","body":"<p>{{data}}</p>","layoutId":"59cc5cad8246c6caed4b16c2","templateTags":{"customKey":"customValue"}}' \
+    https://api.losant.com/applications/APPLICATION_ID/experience/templates
 ```
 
 ### Successful Responses <a name="post-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Solution User](schemas.md#solution-user) | Successfully created solution user |
+| 201 | [Experience Template](schemas.md#experience-template) | Successfully created experience template |
 
 ### Error Responses <a name="post-error-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if application was not found |

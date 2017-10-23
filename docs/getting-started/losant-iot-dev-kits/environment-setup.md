@@ -3,7 +3,8 @@
 All Losant IoT Developer Kits use an ESP8266 based WiFi development board. Before you can flash the required firmware to these devices, you must setup your environment with the proper development tools. The below instructions will walk you through installing all necessary 3rd party tools. These instructions only need to be followed once, and the same environment can be used for all Losant IoT developer kits.
 
 ## Install Arduino IDE
-Download and install v1.8.0 of the Arduino IDE by following the instructions at:<br />
+
+Download and install v1.8.0 of the Arduino IDE by following the instructions at:  
 <a href="https://www.arduino.cc/en/Main/Software" target="_blank">https://www.arduino.cc/en/Main/Software</a>
 
 If you already have the Arduino IDE installed, it is strongly recommend that you ***download and install 1.8.0***. There have been issues with previous versions not working correctly.

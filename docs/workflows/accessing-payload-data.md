@@ -119,12 +119,12 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 * `{{encodeURI str}}`: Returns `str` as an [encoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
 * `{{encodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
 * `{{format val formatStr}}`:
-  * If `val` is a **number**, returns the number in the [D3 format](https://github.com/d3/d3-format#locale_format) matching the `formatStr` parameter (default ',.6').
-  * If `val` is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the `formatStr` parameter (default 'L LTS').
-  * If `val` is an **object**, returns the stringified object and ignores the `formatStr` parameter.
-  * For **all other formats**, `val` is returned as a string without mutation.
+    * If `val` is a **number**, returns the number in the [D3 format](https://github.com/d3/d3-format#locale_format) matching the `formatStr` parameter (default ',.6').
+    * If `val` is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the `formatStr` parameter (default 'L LTS').
+    * If `val` is an **object**, returns the stringified object and ignores the `formatStr` parameter.
+    * For **all other formats**, `val` is returned as a string without mutation.
 * `{{formatDate val formatStr}}`: Casts the given value as a date, and then formats it using the `formatStr` parameter (default 'L LTS').
-* `{{formatDateRelative date relativeTo}}`: Outputs a relative date value (such as "5 minutes ago").  Date is calculated relative to the `relativeTo` parameter, which defaults to the current time when not set.
+* `{{formatDateRelative date relativeTo}}`: Outputs a relative date value (such as "5 minutes ago"). Date is calculated relative to the `relativeTo` parameter, which defaults to the current time when not set.
 * `{{gpsDistance gpsStr1 gpsStr2}}`: Takes two [GPS points](/devices/state/#gps-attributes) and returns the distance between them (in meters).
 * `{{join array separator}}`: Joins the values in the given array as a single string, separated by the given separator. If no separator is given, defaults to `,`.
 * `{{jsonEncode val}}`: Returns `val` [stringified](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
@@ -139,7 +139,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 * `{{toHtml object}}`: Takes the given object and converts it to an HTML/XML document string. The object must be of the same format that the [HTML Parser node](/workflows/logic/html-parser/) outputs in JSON mode.
 * `{{trim str}}`: Returns `str` with all whitespace [trimmed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) from the start and end.
 * `{{upper str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to all uppercase characters.
-* `{{valueByKey objArray key keyField valueField}}`: Returns the value of `valueField` on the object in the `objArray` whose value for `keyField` matches the value of `key`. The arguments `keyField` and `valueField` are optional, defaulting to the field names `key` and `value`.  If there is no match found, a blank result is returned.
+* `{{valueByKey objArray key keyField valueField}}`: Returns the value of `valueField` on the object in the `objArray` whose value for `keyField` matches the value of `key`. The arguments `keyField` and `valueField` are optional, defaulting to the field names `key` and `value`. If there is no match found, a blank result is returned.
 
 ### Iterating Over Arrays and Objects
 

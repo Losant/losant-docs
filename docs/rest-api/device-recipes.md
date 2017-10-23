@@ -12,22 +12,23 @@ parameters and the potential responses.
 
 Returns the device recipes for an application
 
-#### Method And Url
+### Method And Url <a name="get-method-url"></a>
 
 GET https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes
 
-#### Authentication
+### Authentication <a name="get-authentication"></a>
+
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
 all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, deviceRecipes.*, or deviceRecipes.get.
 
-#### Request Path Components
+### Request Path Components <a name="get-path-components"></a>
 
 | Path Component | Description | Example |
 | -------------- | ----------- | ------- |
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 
-#### Request Query Parameters
+### Request Query Parameters <a name="get-query-params"></a>
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
@@ -38,13 +39,13 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my * recipe |
 
-#### Request Headers
+### Request Headers <a name="get-headers"></a>
 
 | Name | Required | Description | Default |
 | ---- | -------- | ----------- | ------- |
 | Authorization | Y | The token for authenticating the request, prepended with Bearer | |
 
-#### Curl Example
+### Curl Example <a name="get-curl-example"></a>
 
 ```bash
 curl -H 'Content-Type: application/json' \
@@ -53,49 +54,47 @@ curl -H 'Content-Type: application/json' \
     -X GET \
     https://api.losant.com/applications/APPLICATION_ID/device-recipes
 ```
-<br/>
 
-#### Successful Responses
+### Successful Responses <a name="get-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 200 | [Device Recipes](schemas.md#device-recipes) | Collection of device recipes |
 
-#### Error Responses
+### Error Responses <a name="get-error-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 | 404 | [Error](schemas.md#error) | Error if application was not found |
 
-<br/>
-
 ## Post
 
 Create a new device recipe for an application
 
-#### Method And Url
+### Method And Url <a name="post-method-url"></a>
 
 POST https://api.losant.com/applications/**`APPLICATION_ID`**/device-recipes
 
-#### Authentication
+### Authentication <a name="post-authentication"></a>
+
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
 all.Application, all.Organization, all.User, deviceRecipes.*, or deviceRecipes.post.
 
-#### Request Path Components
+### Request Path Components <a name="post-path-components"></a>
 
 | Path Component | Description | Example |
 | -------------- | ----------- | ------- |
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 
-#### Request Headers
+### Request Headers <a name="post-headers"></a>
 
 | Name | Required | Description | Default |
 | ---- | -------- | ----------- | ------- |
 | Authorization | Y | The token for authenticating the request, prepended with Bearer | |
 
-#### Request Body
+### Request Body <a name="post-body"></a>
 
 The body of the request should be serialized JSON that validates against
 the [Device Recipe Post](schemas.md#device-recipe-post) schema. For example, the following would be a
@@ -122,9 +121,8 @@ valid body for this request:
   "deviceClass": "standalone"
 }
 ```
-<small><br/></small>
 
-#### Curl Example
+### Curl Example <a name="post-curl-example"></a>
 
 ```bash
 curl -H 'Content-Type: application/json' \
@@ -134,20 +132,16 @@ curl -H 'Content-Type: application/json' \
     -d '{"name":"My New Device Recipe","deviceName":"Future device name","description":"Description of my new device recipe","deviceDescription":"Future device description","tags":[{"key":"TagKey","value":"TagValue"}],"attributes":[{"name":"voltage","dataType":"number"}],"deviceClass":"standalone"}' \
     https://api.losant.com/applications/APPLICATION_ID/device-recipes
 ```
-<br/>
 
-#### Successful Responses
+### Successful Responses <a name="post-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 201 | [Device Recipe](schemas.md#device-recipe) | Successfully created device recipe |
 
-#### Error Responses
+### Error Responses <a name="post-error-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 | 404 | [Error](schemas.md#error) | Error if application was not found |
-
-<br/>
-

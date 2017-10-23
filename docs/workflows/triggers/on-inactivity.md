@@ -43,7 +43,7 @@ For the example workflow above, a specific payload for a triggered workflow migh
 {
   "time": Fri Feb 19 2016 17:26:00 GMT-0500 (EST),
   "data": {
-    "lastActivity":  Fri Feb 19 2016 16:26:00 GMT-0500 (EST),
+    "lastActivity": Fri Feb 19 2016 16:26:00 GMT-0500 (EST),
     "inactivitySeconds": 7200
   },
   "applicationId": "568beedeb436ab01007be53d",

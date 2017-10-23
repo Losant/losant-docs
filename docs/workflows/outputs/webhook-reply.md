@@ -20,9 +20,8 @@ Arbitrary headers can also be set on the reply. Both the header name and value f
 
 ### Notes About Security
 
-- Webhook replies allow a limited set of values for the `Content-Type` header: `application/json`, `application/xml`, `text/plain`, `text/xml` and `text/csv`.
-- To prevent cross-site scripting attacks, `Cookie` headers are stripped out of webhook requests as these could potentially contain Losant user auth tokens; therefore they are also not available in the webhook replies.
-- Losant automatically sets protective values for the following headers, none of which can be overridden in a webhook reply: `X-Content-Type-Options`, `Content-Security-Policy` and `X-XSS-Protection`.
+* Webhook replies allow a limited set of values for the `Content-Type` header: `application/json`, `application/xml`, `text/plain`, `text/xml` and `text/csv`. If no `Content-Type` is set, or an invalid `Content-Type` is set, the `Content-Type` of the response will be set to `application/json`.
+* Losant automatically sets protective values for the following headers, none of which can be overridden in a webhook reply: `X-Content-Type-Options`, `Content-Security-Policy` and `X-XSS-Protection`.
 
 ## Advanced Options
 

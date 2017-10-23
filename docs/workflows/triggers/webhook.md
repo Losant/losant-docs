@@ -73,3 +73,7 @@ The curl command that triggered the flow with the above example payload looked l
 ```bash
 curl -H 'Content-Type: application/json' -X POST -d '{"value":"30"}' https://triggers.losant.com/webhooks/jk1NopMpgQHyqQQn1Ax6tpPjEkb/transition/up?location=52
 ```
+
+### Notes About Security
+
+To prevent cross-site scripting attacks, the `Cookie` header is stripped out of incoming webhook requests. This is because the `triggers.losant.com` domain is shared across all webhooks, and so cookies could unintentionally leak sensitive information. If you need to use cookies, [Experience Endpoints](/experiences/endpoints/) will allow you to do so in a more secure manner, since domains for Experience Endpoints are application specific.

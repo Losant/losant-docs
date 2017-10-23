@@ -16,8 +16,8 @@ In the event that a duration other than "Last received data point" is selected, 
 
 For each query, there are two variables returned, which can be accessed via Handlebars [string templates](/workflows/accessing-payload-data/#string-templates) and [expressions](/workflows/accessing-payload-data/#expressions):
 
-*   `value-i`, which is the result of the query if a result is returned. Depending on the query's construction and the attribute type, the result's type can take one of many forms. (See below.)
-*   `time-i`, which is a [JavaScript Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) representing the time the value was reported. If the value is being aggregated, this will always be equal to the dashboard's last refresh time; otherwise, it will be equal to the time the queried device last reported state.
+* `value-i`, which is the result of the query if a result is returned. Depending on the query's construction and the attribute type, the result's type can take one of many forms. (See below.)
+* `time-i`, which is a [JavaScript Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) representing the time the value was reported. If the value is being aggregated, this will always be equal to the dashboard's last refresh time; otherwise, it will be equal to the time the queried device last reported state.
 
 In the two examples above, `i` represents the index of the query. The full variable name is printed along with each query configuration.
 
@@ -35,11 +35,11 @@ If querying for the last received data point of a boolean attribute for a single
 
 If the boolean attribute is being aggregated – as the result of a query across multiple devices or a larger duration – then all `false` points will be treated as a **0** and all `true` points will be treated as a **1**. Then, the result will return as a **number** representing the following:
 
-*   `FIRST` and `LAST` aggregations will return as `true` or `false`.
-*   `MIN` and `MAX` aggregations will return as `0` (false) or `1` (true).
-*   `MEAN` aggregations will return as a number between 0 and 1 (inclusive), which is the average of all data points across the query.
-*   `SUM` will return as a whole number greater than or equal to 0, which is equal to the number of `true` data points across the query.
-*   `COUNT` will return as a whole number greater than or equal to 0, which is equal to the total number of data points across the query.
+* `FIRST` and `LAST` aggregations will return as `true` or `false`.
+* `MIN` and `MAX` aggregations will return as `0` (false) or `1` (true).
+* `MEAN` aggregations will return as a number between 0 and 1 (inclusive), which is the average of all data points across the query.
+* `SUM` will return as a whole number greater than or equal to 0, which is equal to the number of `true` data points across the query.
+* `COUNT` will return as a whole number greater than or equal to 0, which is equal to the total number of data points across the query.
 
 ### GPS and String Attributes
 
@@ -67,9 +67,9 @@ You may set as many conditions to test the result against as you wish. New condi
 
 Each condition takes three parameters:
 
-*   **Expression**: The [expression](/workflows/accessing-payload-data/#expressions) to evaluate. All of your query values (e.g. `{{value-0}}` and `{{value-1}}`) and times (e.g. `{{time-0}}` and `{{time-1}}`), as well as the `{{lastUpdated}}` variable, are available to compare against one another or against a static value.
-*   **Label**: The text to display within the indicator block. This field is optional, and may include [string templates](/workflows/accessing-payload-data/#string-templates) formatting your query variables as well as [Markdown](http://commonmark.org/help/). The color of the text will automatically switch between black and white depending on the block's chosen background color.
-*   **Color**: The background color of the indicator block. Default is green.
+* **Expression**: The [expression](/workflows/accessing-payload-data/#expressions) to evaluate. All of your query values (e.g. `{{value-0}}` and `{{value-1}}`) and times (e.g. `{{time-0}}` and `{{time-1}}`), as well as the `{{lastUpdated}}` variable, are available to compare against one another or against a static value.
+* **Label**: The text to display within the indicator block. This field is optional, and may include [string templates](/workflows/accessing-payload-data/#string-templates) formatting your query variables as well as [Markdown](http://commonmark.org/help/). The color of the text will automatically switch between black and white depending on the block's chosen background color.
+* **Color**: The background color of the indicator block. Default is green.
 
 ## Default Condition
 

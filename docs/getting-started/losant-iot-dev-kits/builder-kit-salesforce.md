@@ -16,14 +16,14 @@ For this workshop, you’ll need to attach the NodeMCU, button, and LED to the b
 
 Your kit should include the following items:
 
-  * 1 <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="_blank">NodeMCU v1.0</a> dev kit microcontroller
-  * 1 solderless breadboard
-  * 8 jump wires
-  * 2 resistors
-  * 1 LED
-  * 1 TMP36 temperature sensor
-  * 1 button
-  * 1 micro-USB cable
+* 1 <a href="https://github.com/nodemcu/nodemcu-devkit-v1.0" target="_blank">NodeMCU v1.0</a> dev kit microcontroller
+* 1 solderless breadboard
+* 8 jump wires
+* 2 resistors
+* 1 LED
+* 1 TMP36 temperature sensor
+* 1 button
+* 1 micro-USB cable
 
 ### Wiring
 
@@ -45,7 +45,6 @@ Your kit should include the following items:
 Your device should look very similar to this:
 
 ![Salesforce Workshop Wiring Image](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/workshop-2-wiring-image.jpg "Salesforce Workshop Wiring Image")
-
 
 ## 2. Salesforce Setup
 
@@ -180,7 +179,7 @@ Upload the firmware to the device by clicking the `Upload` button or the `Sketch
 
 If you see an error in the Arduino IDE's output window, refer to the ones below for common solutions.
 
-```
+```c
 #include <ESP8266WiFi.h>
                          ^
 compilation terminated.
@@ -189,7 +188,7 @@ exit status 1
 
 This means the board is not installed or properly setup. Refer to the [Arduino Setup](/getting-started/losant-iot-dev-kits/environment-setup/#configure-arduino-ide) step of the environment setup instructions to install the board and configure the Arduino IDE to use it.
 
-```
+```text
 error: espcomm_open failed
 error: espcomm_upload_mem failed
 ```
@@ -210,7 +209,7 @@ It’s now time to go into Losant and make use of this data.
 
 [Workflows](/workflows/overview/) in Losant allow you to easily perform actions based on various triggers. In this workshop, our trigger will be a device state. Whenever the button is pressed, the device publishes a state message to Losant that we can use to trigger an action – for example, opening a ticket in Salesforce Service Cloud.
 
-**Create a new workflow and name it “Internet Button.”**
+### Create a new workflow and name it “Internet Button.”
 
 ![Create Workflow](/images/getting-started/losant-iot-dev-kits/builder-kit/create-workflow.png "Create Workflow")
 
@@ -236,8 +235,8 @@ After the workflow has been deployed, you can press the device button to see the
 
 What the Debug node outputs is what Losant calls a “workflow payload.” This is the data that flows through the workflow. Workflow nodes can change the payload, validate values, and perform many other operations. In this example, the payload includes the state that was published.
 
-```text
-{ "data" : { "button" : true }}
+```json
+{ "data" : { "button": true } }
 ```
 
 If you have an empty data field that does not include the button value, the typical cause is the button attribute defined on the device does not exactly match "button" (all lowercase). Go back to your device page and double-check that it matches exactly. If it does not, simply change the attribute's name and save the device. The button field should then automatically start showing up.
@@ -288,7 +287,7 @@ As you can see, the result is now available on the payload at `data.result.count
 
 **Set the `Expression` field to:**
 
-```text
+```handlebars
 {{ data.result.count }} > 0
 ```
 

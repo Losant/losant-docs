@@ -38,13 +38,12 @@ For example, say you have a gauge displaying the current outside temperate. The 
 
 ### Data Type
 
-
 ![Gauge Data Type](/images/dashboards/gauge-data-type.png "Gauge Data Type")
 
 The gauge block can display points as a **live stream** (rendering a new value every time a data point hits the platform) or as an **historical** gauge. Each style has its own advantages:
 
-*   **Live stream** gauges provide feedback with more immediacy than historical gauges, as they do not require a dashboard data refresh to populate with new data. If the gauge's data query references multiple devices by ID or tag, the gauge will update anytime any of the devices reports state for the chosen attribute.
-*   **Historical** gauges allow for data to be aggregated according to a number of rules (based on time durations, mathematical functions and the combination of data from multiple sources), and they also allow for [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).
+* **Live stream** gauges provide feedback with more immediacy than historical gauges, as they do not require a dashboard data refresh to populate with new data. If the gauge's data query references multiple devices by ID or tag, the gauge will update anytime any of the devices reports state for the chosen attribute.
+* **Historical** gauges allow for data to be aggregated according to a number of rules (based on time durations, mathematical functions and the combination of data from multiple sources), and they also allow for [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).
 
 ### Duration
 

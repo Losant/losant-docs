@@ -26,11 +26,11 @@ If none of the predefined tiers will meet the needs of your new organization, or
 
 After choosing a plan, you will fill out the following information to complete the organization creation. All of these can be changed at a later time:
 
--   **Name:** The name of the organization. This will be visible to all members of the organization.
--   **Icon Color:** This is simply to help identify your organization in lists of applications, dashboards and other organizations. The letters within the icon are a derivative of the organization name. The color can be changed by clicking the icon. Note that this icon is never visible to the public.
--   **Description:** An optional description of the organization.
--   **Billing Email Address:** Defaults to your user's email address.
--   **Payment Info:** The credit card that will be billed for this new organization on a recurring basis. The first charge will be placed immediately on organization creation; this charge is for the upcoming billing period.
+* **Name:** The name of the organization. This will be visible to all members of the organization.
+* **Icon Color:** This is simply to help identify your organization in lists of applications, dashboards and other organizations. The letters within the icon are a derivative of the organization name. The color can be changed by clicking the icon. Note that this icon is never visible to the public.
+* **Description:** An optional description of the organization.
+* **Billing Email Address:** Defaults to your user's email address.
+* **Payment Info:** The credit card that will be billed for this new organization on a recurring basis. The first charge will be placed immediately on organization creation; this charge is for the upcoming billing period.
 
 ![Organization Setup](/images/organizations/organization-creation-inputs.png "Organization Setup")
 
@@ -62,16 +62,16 @@ You may also delete the organization from this screen by clicking the `Delete Or
 
 Deleting an organization will:
 
--   Delete all applications tied to the organization, including all sub-resources under those applications (devices, workflows, etc.)
--   Delete all data tied to those applications and their sub-resources.
--   Delete all dashboards tied to the organization.
--   Nullify any pending organization invitations.
--   Cancel the organization's billing plan, meaning the credit card on file will no longer get billed after the final invoice (if charges exist). If the account has a credit, that amount will be applied back to the credit card on file.
+* Delete all applications tied to the organization, including all sub-resources under those applications (devices, workflows, etc.)
+* Delete all data tied to those applications and their sub-resources.
+* Delete all dashboards tied to the organization.
+* Nullify any pending organization invitations.
+* Cancel the organization's billing plan, meaning the credit card on file will no longer get billed after the final invoice (if charges exist). If the account has a credit, that amount will be applied back to the credit card on file.
 
 Deleting an organization will **NOT**:
 
--   Delete or otherwise affect the Losant accounts of any organization member, including those members' Sandbox resources or resources tied to other organizations
--   Cancel any outstanding debt for provided services.
+* Delete or otherwise affect the Losant accounts of any organization member, including those members' Sandbox resources or resources tied to other organizations
+* Cancel any outstanding debt for provided services.
 
 ### Usage
 

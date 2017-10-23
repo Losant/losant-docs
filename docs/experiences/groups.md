@@ -20,10 +20,10 @@ From the Groups list page, click "Add Group" in the top right corner. This will 
 
 Group configuration takes four parameters:
 
-*   **Name** is simply the name of the group; it is for display purposes only and in no way affects the group's functionality, nor is it ever exposed to your users. The field is required.
-*   **Description** is a longer description of the group. Similar to the name, it is only for display purposes.
-*   **Users** is an array of users to include in the group. Any user who is not in the group will not have access to the endpoints in the group.
-*   **Endpoints** is an array of endpoints to include in the group. Only users in the group will have access to these endpoints.
+* **Name** is simply the name of the group; it is for display purposes only and in no way affects the group's functionality, nor is it ever exposed to your users. The field is required.
+* **Description** is a longer description of the group. Similar to the name, it is only for display purposes.
+* **Users** is an array of users to include in the group. Any user who is not in the group will not have access to the endpoints in the group.
+* **Endpoints** is an array of endpoints to include in the group. Only users in the group will have access to these endpoints.
 
 ### Endpoint Access Control
 

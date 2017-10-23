@@ -38,9 +38,9 @@ Like with applications, a list of dashboards belonging to the `Source` and the `
 
 Consider the example above: We are transferring the application "Water Tanks" and the dashboard "Water Tanks & Chemical Levels" from a Sandbox to an organization. This transfer will have the following consequences:
 
--   The Sandbox's "Daily Overview" dashboard will have 14 functioning blocks and two broken blocks after the transfer, because those two blocks depend on the "Water Tanks" application, which is being transferred out of the Sandbox.
--   The "Water Tanks & Chemical Levels" dashboard, which is being transferred to the organization, will have five functioning blocks and three broken blocks after the transfer. The five blocks will continue to function because their dependent application ("Water Tanks") is being transferred with the dashboard; the other three blocks will break because their applications are not being transferred.
--   The Sandbox's "My Great Dashboard" is unaffected because none of its blocks reference the "Water Tanks" application.
+* The Sandbox's "Daily Overview" dashboard will have 14 functioning blocks and two broken blocks after the transfer, because those two blocks depend on the "Water Tanks" application, which is being transferred out of the Sandbox.
+* The "Water Tanks & Chemical Levels" dashboard, which is being transferred to the organization, will have five functioning blocks and three broken blocks after the transfer. The five blocks will continue to function because their dependent application ("Water Tanks") is being transferred with the dashboard; the other three blocks will break because their applications are not being transferred.
+* The Sandbox's "My Great Dashboard" is unaffected because none of its blocks reference the "Water Tanks" application.
 
 ### Completing the Transfer
 

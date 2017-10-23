@@ -34,7 +34,7 @@ Test scripts allow for reporting state for your device's attributes on a regular
 
 ![Simulator Test Script](/images/devices/simulator-test-script.png "Simulator Test Script")
 
-### Configuration
+### Test Script Configuration
 
 You will see a section for each of your device's attributes within the test script configuration panel. For each attribute, you have three top-level options:
 
@@ -60,7 +60,7 @@ Individual state reports may also be submitted whenever the simulator is connect
 
 Submitting an individual state report is useful for testing data anomalies; for example, if a test script is reporting "normal" values on a regular basis, you can submit a single state report with "irregular" data in the middle of a script run to see how your workflows respond.
 
-### Configuration
+### Single State Configuration
 
 Each of your device's attributes will be displayed within the configuration panel, along with inputs that are respective of the attribute types. A value may be supplied for any or all attributes, though just like with the test scripts, each value must validate against the attribute type.
 

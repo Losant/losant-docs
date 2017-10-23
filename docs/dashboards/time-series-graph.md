@@ -8,15 +8,14 @@ The time series graph allows you to display historical data across one or more d
 
 There are a number of configuration options for the graph as a whole, as well as its individual series.
 
-
 ### Data Type
 
 ![Time Series Settings](/images/dashboards/time-series-settings.png "Time Series Settings")
 
 The time series graph can display points as a **live stream** (rendering a point on the graph as soon as the data hits the platform) or as an **historical** graph. Each style has its own advantages:
 
-*   **Live stream** graphs provide feedback with more immediacy than historical graphs, as they do not require a dashboard data refresh to populate with new data. If a graph segment references multiple devices by ID or tag, a point will be rendered on the graph for that segment anytime any of the devices reports state for the chosen attribute.
-*   **Historical** graphs allow for data to be aggregated according to a number of rules (based on time ranges, mathematical functions and the combination of data from multiple sources), and they also allow for [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).
+* **Live stream** graphs provide feedback with more immediacy than historical graphs, as they do not require a dashboard data refresh to populate with new data. If a graph segment references multiple devices by ID or tag, a point will be rendered on the graph for that segment anytime any of the devices reports state for the chosen attribute.
+* **Historical** graphs allow for data to be aggregated according to a number of rules (based on time ranges, mathematical functions and the combination of data from multiple sources), and they also allow for [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).
 
 ### Duration and Resolution
 
@@ -36,19 +35,19 @@ To add a new segment to the graph, click the "Add Segment" button at bottom of t
 
 There are a number of configuration options for each series:
 
-*   **Device IDs / Tags** is a [device query](/devices/device-queries/) for selecting the device(s) that should be part of the query. At least one ID or one tag is required.
-*   **Attribute** is the single [device state attribute](/devices/state/) to graph in the series. The data type of the state attribute must be set to Number or Boolean to be properly visualized.
-*   **Aggregation** is the aggregator applied to the series based on the chosen devices and resolution. The above example has the resolution set to 20 minutes. This means if weather data is being reported once every five minutes, each data point on the graph will be the average of four readings. Note that if **live stream** is chosen for the graph's data type, this option will disappear.
+* **Device IDs / Tags** is a [device query](/devices/device-queries/) for selecting the device(s) that should be part of the query. At least one ID or one tag is required.
+* **Attribute** is the single [device state attribute](/devices/state/) to graph in the series. The data type of the state attribute must be set to Number or Boolean to be properly visualized.
+* **Aggregation** is the aggregator applied to the series based on the chosen devices and resolution. The above example has the resolution set to 20 minutes. This means if weather data is being reported once every five minutes, each data point on the graph will be the average of four readings. Note that if **live stream** is chosen for the graph's data type, this option will disappear.
 
 There are also a handful of parameters that only affect the graph's display properties and not the raw data returned by the series configuration:
 
-*   **Series Label** is the label to apply to the data series in the graph's legend and tooltip.
-*   **Color** is the color used to represent the data in the chart. These are automatically assigned as series are added, but each can be overridden.
-*   **Display As** is the graph type. "Line" is the default, but series may also be displayed as bar charts or area charts.
-*   **Line Weight** is the thickness of the line applied to the series. If "Bar" is selected for the display style, this option is disabled.
-*   <strong><a href="https://www.mathsisfun.com/data/cumulative-tables-graphs.html" target="\_blank">Cumulative</a></strong>, when checked, means that the point graphed at any given time is the sum of that point plus all previous points that are currently displayed.
-*  **Y Axis Label** is an optional label to apply to the Y Axis. If provided, this will draw a new axis for this series; however, if any two axes labels, minimums and maximums all match, only one of the two axes will be drawn on the graph. If left blank, the default left axis is used for the series.
-*  **Y Axis Min** and **Y Axis Max** are user-defined caps at the bottom and top of the chart, respectively. Data for the series will be graphed on this scale. If you choose not to define a minimum or maximum value, the time series graph will automatically define a scale based on the data set it is currently rendering for the data series.
+* **Series Label** is the label to apply to the data series in the graph's legend and tooltip.
+* **Color** is the color used to represent the data in the chart. These are automatically assigned as series are added, but each can be overridden.
+* **Display As** is the graph type. "Line" is the default, but series may also be displayed as bar charts or area charts.
+* **Line Weight** is the thickness of the line applied to the series. If "Bar" is selected for the display style, this option is disabled.
+* <strong><a href="https://www.mathsisfun.com/data/cumulative-tables-graphs.html" target="\_blank">Cumulative</a></strong>, when checked, means that the point graphed at any given time is the sum of that point plus all previous points that are currently displayed.
+* **Y Axis Label** is an optional label to apply to the Y Axis. If provided, this will draw a new axis for this series; however, if any two axes labels, minimums and maximums all match, only one of the two axes will be drawn on the graph. If left blank, the default left axis is used for the series.
+* **Y Axis Min** and **Y Axis Max** are user-defined caps at the bottom and top of the chart, respectively. Data for the series will be graphed on this scale. If you choose not to define a minimum or maximum value, the time series graph will automatically define a scale based on the data set it is currently rendering for the data series.
 
 ## Changing Graph Time Ranges
 
