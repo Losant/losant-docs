@@ -243,7 +243,7 @@ Plug the Adafruit Feather microcontroller back into USB.
 
 Open the file `workshop-2-led.ino` with the Arduino IDE. Just like in the first workshop, you’ll have to edit the WiFi and credentials fields. You can use the same values from the previous workshop.
 
-Just like before, make sure the Serial Monitor is open and upload the sketch to the Feather microcontroller. On some Windows machines, we've noticed you have to re-select the board and port whenever you open a new file. Make sure these are properly set under the `Tools -> Board menu and Tools -> Port` menu.
+Just like before, make sure the Serial Monitor is open and upload the sketch to the Feather microcontroller. On some Windows machines, we've noticed you have to re-select the board and port whenever you open a new file. Make sure these are properly set under the `Tools -> Board` menu and `Tools -> Port` menu.
 
 ![Upload Workshop 2](/images/getting-started/losant-iot-dev-kits/builder-kit/upload-workshop-2.png "Upload Workshop 2")
 
