@@ -65,6 +65,63 @@ curl -H 'Content-Type: application/json' \
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 
+## Change Password
+
+Changes the current user&#x27;s password and optionally logs out all other sessions
+
+### Method And Url <a name="changePassword-method-url"></a>
+
+PATCH https://api.losant.com/me/changePassword
+
+### Authentication <a name="changePassword-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.SolutionUser, all.User, me.*, or me.changePassword.
+
+### Request Headers <a name="changePassword-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Request Body <a name="changePassword-body"></a>
+
+The body of the request should be serialized JSON that validates against
+the [Change Password](schemas.md#change-password) schema. For example, the following would be a
+valid body for this request:
+
+```json
+{
+  "newPassword": "yourNewPassword",
+  "password": "yourCurrentPassword",
+  "invalidateExistingTokens": true
+}
+```
+
+### Curl Example <a name="changePassword-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X PATCH \
+    -d '{"newPassword":"yourNewPassword","password":"yourCurrentPassword","invalidateExistingTokens":true}' \
+    https://api.losant.com/me/changePassword
+```
+
+### Successful Responses <a name="changePassword-successful-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Authenticated User](schemas.md#authenticated-user) | A new, valid, auth token (potentially all previous tokens are now invalid) |
+
+### Error Responses <a name="changePassword-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+
 ## Delete
 
 Deletes the current user

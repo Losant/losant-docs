@@ -264,16 +264,19 @@ Schema for a single Application
         "eventCount": {
           "type": "number"
         },
+        "experienceDomainCount": {
+          "type": "number"
+        },
         "experienceEndpointCount": {
           "type": "number"
         },
         "experienceGroupCount": {
           "type": "number"
         },
-        "experienceTemplateCount": {
+        "experienceUserCount": {
           "type": "number"
         },
-        "experienceUserCount": {
+        "experienceViewCount": {
           "type": "number"
         },
         "flowCount": {
@@ -286,6 +289,35 @@ Schema for a single Application
           "type": "number"
         }
       }
+    },
+    "ftueTracking": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+          },
+          "version": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "skipped",
+              "completed"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "version",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 100
     }
   }
 }
@@ -364,14 +396,16 @@ Schema for the body of an Application API Token creation request
           "devices.*",
           "event.*",
           "events.*",
+          "experienceDomain.*",
+          "experienceDomains.*",
           "experienceEndpoint.*",
           "experienceEndpoints.*",
           "experienceGroup.*",
           "experienceGroups.*",
-          "experienceTemplate.*",
-          "experienceTemplates.*",
           "experienceUser.*",
           "experienceUsers.*",
+          "experienceView.*",
+          "experienceViews.*",
           "integration.*",
           "integrations.*",
           "flow.*",
@@ -437,6 +471,11 @@ Schema for the body of an Application API Token creation request
           "events.mostRecentBySeverity",
           "events.patch",
           "events.post",
+          "experienceDomain.delete",
+          "experienceDomain.get",
+          "experienceDomain.patch",
+          "experienceDomains.get",
+          "experienceDomains.post",
           "experienceEndpoint.delete",
           "experienceEndpoint.get",
           "experienceEndpoint.patch",
@@ -448,16 +487,16 @@ Schema for the body of an Application API Token creation request
           "experienceGroup.patch",
           "experienceGroups.get",
           "experienceGroups.post",
-          "experienceTemplate.delete",
-          "experienceTemplate.get",
-          "experienceTemplate.patch",
-          "experienceTemplates.get",
-          "experienceTemplates.post",
           "experienceUser.delete",
           "experienceUser.get",
           "experienceUser.patch",
           "experienceUsers.get",
           "experienceUsers.post",
+          "experienceView.delete",
+          "experienceView.get",
+          "experienceView.patch",
+          "experienceViews.get",
+          "experienceViews.post",
           "flow.delete",
           "flow.clearStorageEntries",
           "flow.get",
@@ -1009,6 +1048,35 @@ Schema for the body of an Application modification request
           "json"
         ]
       }
+    },
+    "ftueTracking": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+          },
+          "version": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "skipped",
+              "completed"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "version",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 100
     }
   },
   "additionalProperties": false
@@ -1218,16 +1286,19 @@ Schema for a collection of Applications
               "eventCount": {
                 "type": "number"
               },
+              "experienceDomainCount": {
+                "type": "number"
+              },
               "experienceEndpointCount": {
                 "type": "number"
               },
               "experienceGroupCount": {
                 "type": "number"
               },
-              "experienceTemplateCount": {
+              "experienceUserCount": {
                 "type": "number"
               },
-              "experienceUserCount": {
+              "experienceViewCount": {
                 "type": "number"
               },
               "flowCount": {
@@ -1240,6 +1311,35 @@ Schema for a collection of Applications
                 "type": "number"
               }
             }
+          },
+          "ftueTracking": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^[0-9a-zA-Z_-]{1,255}$"
+                },
+                "version": {
+                  "type": "number"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "skipped",
+                    "completed"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "version",
+                "status"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
           }
         }
       }
@@ -1369,9 +1469,10 @@ Schema for a single Audit Log entry
         "Device",
         "DeviceRecipe",
         "Event",
+        "ExperienceDomain",
         "ExperienceEndpoint",
         "ExperienceGroup",
-        "ExperienceTemplate",
+        "ExperienceView",
         "ExperienceUser",
         "Flow",
         "SolutionUser",
@@ -1517,9 +1618,10 @@ Schema for the filter of an audit log query
               "Device",
               "DeviceRecipe",
               "Event",
+              "ExperienceDomain",
               "ExperienceEndpoint",
               "ExperienceGroup",
-              "ExperienceTemplate",
+              "ExperienceView",
               "ExperienceUser",
               "Flow",
               "SolutionUser",
@@ -1682,9 +1784,10 @@ Schema for a collection of Audit Logs
               "Device",
               "DeviceRecipe",
               "Event",
+              "ExperienceDomain",
               "ExperienceEndpoint",
               "ExperienceGroup",
-              "ExperienceTemplate",
+              "ExperienceView",
               "ExperienceUser",
               "Flow",
               "SolutionUser",
@@ -1945,6 +2048,56 @@ Schema for the successful response when authenticating a User
 {
   "userId": "575ed70c7ae143cd83dc4aa9",
   "token": "token_to_use_for_authenticating_subsequent_requests"
+}
+```
+
+<br/>
+## Change Password
+
+Schema for the body of a request to change the current user&#x27;s password
+
+### Schema <a name="change-password-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "twoFactorCode": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 2048
+    },
+    "newPassword": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 2048
+    },
+    "invalidateExistingTokens": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "password",
+    "newPassword"
+  ],
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="change-password-example"></a>
+
+```json
+{
+  "newPassword": "yourNewPassword",
+  "password": "yourCurrentPassword",
+  "invalidateExistingTokens": true
 }
 ```
 
@@ -3742,6 +3895,77 @@ Schema for a collection of Data Table Rows
 ```
 
 <br/>
+## Data Table Export
+
+Schema for the body of a data table export
+
+### Schema <a name="data-table-export-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 1024
+    },
+    "query": {
+      "$ref": "#/definitions/dataTableQuery"
+    },
+    "queryOptions": {
+      "type": "object",
+      "properties": {
+        "sortDirection": {
+          "type": "string",
+          "enum": [
+            "desc",
+            "asc"
+          ]
+        },
+        "limit": {
+          "type": "number"
+        },
+        "sortColumn": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-export-example"></a>
+
+```json
+{
+  "email": "email@example.com",
+  "query": {
+    "$or": [
+      {
+        "myCol1": {
+          "$ne": 0
+        }
+      },
+      {
+        "myCol2": 5
+      }
+    ]
+  },
+  "queryOptions": {
+    "limit": 10000
+  }
+}
+```
+
+<br/>
 ## Data Tables
 
 Schema for a collection of Data Tables
@@ -4748,6 +4972,35 @@ Schema for the result of a bulk Device creation request
 ```
 
 <br/>
+## Device Recipe Bulk Create Enqueue
+
+Schema for the result of a bulk Device creation request when creating more than 750 devices
+
+### Schema <a name="device-recipe-bulk-create-enqueue-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "jobQueued": {
+      "type": "boolean"
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="device-recipe-bulk-create-enqueue-example"></a>
+
+```json
+{
+  "jobQueued": true
+}
+```
+
+<br/>
 ## Device Recipe Bulk Create Post
 
 Schema for the body of a bulk Device creation request
@@ -4770,6 +5023,11 @@ Schema for the body of a bulk Device creation request
     },
     "makeUniqueKeySecret": {
       "type": "boolean"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 1024
     }
   },
   "additionalProperties": false,
@@ -6314,6 +6572,266 @@ Schema for a collection of Events
 ```
 
 <br/>
+## Experience Domain
+
+Schema for a single Experience Domain
+
+### Schema <a name="experience-domain-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "experienceDomainId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sslCert": {
+      "type": "string",
+      "maxLength": 32767,
+      "minLength": 50
+    },
+    "sslBundle": {
+      "type": "string",
+      "maxLength": 32767,
+      "minLength": 50
+    },
+    "domainName": {
+      "type": "string",
+      "maxLength": 1024,
+      "minLength": 3
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="experience-domain-example"></a>
+
+```json
+{
+  "id": "58c1de6c8f812590d8e82980",
+  "experienceDomainId": "58c1de6c8f812590d8e82980",
+  "applicationId": "575ec8687ae143cd83dc4a97",
+  "creationDate": "2016-06-13T04:00:00.000Z",
+  "lastUpdated": "2016-06-13T04:00:00.000Z",
+  "domainName": "my.example.domain.com"
+}
+```
+
+<br/>
+## Experience Domain Patch
+
+Schema for the body of an Experience Domain modification request
+
+### Schema <a name="experience-domain-patch-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "sslKey": {
+      "type": "string",
+      "maxLength": 32767,
+      "minLength": 50
+    },
+    "sslCert": {
+      "type": "string",
+      "maxLength": 32767,
+      "minLength": 50
+    },
+    "sslBundle": {
+      "type": "string",
+      "maxLength": 32767,
+      "minLength": 50
+    },
+    "domainName": {
+      "type": "string",
+      "maxLength": 1024,
+      "minLength": 3
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="experience-domain-patch-example"></a>
+
+```json
+{
+  "domainName": "my.example.domain.com",
+  "sslCert": "MY_SSL_CERTIFICATE",
+  "sslKey": "MY_SSL_KEY"
+}
+```
+
+<br/>
+## Experience Domain Post
+
+Schema for the body of an Experience Domain creation request
+
+### Schema <a name="experience-domain-post-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "sslKey": {
+      "type": "string",
+      "maxLength": 32767,
+      "minLength": 50
+    },
+    "sslCert": {
+      "type": "string",
+      "maxLength": 32767,
+      "minLength": 50
+    },
+    "sslBundle": {
+      "type": "string",
+      "maxLength": 32767,
+      "minLength": 50
+    },
+    "domainName": {
+      "type": "string",
+      "maxLength": 1024,
+      "minLength": 3
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "domainName"
+  ]
+}
+```
+
+<small></small>
+
+### Example <a name="experience-domain-post-example"></a>
+
+```json
+{
+  "domainName": "my.example.domain.com",
+  "sslCert": "MY_SSL_CERTIFICATE",
+  "sslKey": "MY_SSL_KEY"
+}
+```
+
+<br/>
+## Experience Domains
+
+Schema for a collection of Experience Domains
+
+### Schema <a name="experience-domains-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Experience Domain",
+        "description": "Schema for a single Experience Domain",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "experienceDomainId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "applicationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sslCert": {
+            "type": "string",
+            "maxLength": 32767,
+            "minLength": 50
+          },
+          "sslBundle": {
+            "type": "string",
+            "maxLength": 32767,
+            "minLength": 50
+          },
+          "domainName": {
+            "type": "string",
+            "maxLength": 1024,
+            "minLength": 3
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "integer"
+    },
+    "totalCount": {
+      "type": "integer"
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="experience-domains-example"></a>
+
+```json
+{
+  "items": [
+    {
+      "id": "58c1de6c8f812590d8e82980",
+      "experienceDomainId": "58c1de6c8f812590d8e82980",
+      "applicationId": "575ec8687ae143cd83dc4a97",
+      "creationDate": "2016-06-13T04:00:00.000Z",
+      "lastUpdated": "2016-06-13T04:00:00.000Z",
+      "domainName": "my.example.domain.com"
+    }
+  ],
+  "count": 1,
+  "totalCount": 1,
+  "applicationId": "575ec8687ae143cd83dc4a97"
+}
+```
+
+<br/>
 ## Experience Endpoint
 
 Schema for a single Experience Endpoint
@@ -6375,6 +6893,17 @@ Schema for a single Experience Endpoint
         "authenticated",
         "group"
       ]
+    },
+    "endpointTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
     },
     "experienceGroups": {
       "type": "array",
@@ -6464,6 +6993,17 @@ Schema for the body of an Experience Endpoint modification request
         "group"
       ]
     },
+    "endpointTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
+    },
     "experienceGroupIds": {
       "type": "array",
       "items": {
@@ -6532,6 +7072,17 @@ Schema for the body of an Experience Endpoint creation request
         "authenticated",
         "group"
       ]
+    },
+    "endpointTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
     },
     "experienceGroupIds": {
       "type": "array",
@@ -6692,6 +7243,17 @@ Schema for a collection of Experience Endpoints
               "group"
             ]
           },
+          "endpointTags": {
+            "type": "object",
+            "patternProperties": {
+              "^[0-9a-zA-Z_-]{1,255}$": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 255
+              }
+            },
+            "additionalProperties": false
+          },
           "experienceGroups": {
             "type": "array",
             "items": {
@@ -6840,6 +7402,17 @@ Schema for a single Experience Group
         "pattern": "^[A-Fa-f\\d]{24}$"
       },
       "maxItems": 1000
+    },
+    "groupTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
     }
   }
 }
@@ -6904,6 +7477,17 @@ Schema for the body of an Experience Group modification request
         "pattern": "^[A-Fa-f\\d]{24}$"
       },
       "maxItems": 1000
+    },
+    "groupTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false
@@ -6964,6 +7548,17 @@ Schema for the body of an Experience Group creation request
         "pattern": "^[A-Fa-f\\d]{24}$"
       },
       "maxItems": 1000
+    },
+    "groupTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
@@ -7054,6 +7649,17 @@ Schema for a collection of Experience Groups
               "pattern": "^[A-Fa-f\\d]{24}$"
             },
             "maxItems": 1000
+          },
+          "groupTags": {
+            "type": "object",
+            "patternProperties": {
+              "^[0-9a-zA-Z_-]{1,255}$": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 255
+              }
+            },
+            "additionalProperties": false
           }
         }
       }
@@ -7116,401 +7722,6 @@ Schema for a collection of Experience Groups
         "58b9d743cbfafe1be675744b",
         "58b9d743cbfafe1be675744c"
       ]
-    }
-  ],
-  "count": 1,
-  "totalCount": 4,
-  "perPage": 1,
-  "page": 0,
-  "sortField": "name",
-  "sortDirection": "asc",
-  "applicationId": "575ec8687ae143cd83dc4a97"
-}
-```
-
-<br/>
-## Experience Template
-
-Schema for a single Experience Template
-
-### Schema <a name="experience-template-schema"></a>
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "pattern": "^[A-Fa-f\\d]{24}$"
-    },
-    "experienceTemplateId": {
-      "type": "string",
-      "pattern": "^[A-Fa-f\\d]{24}$"
-    },
-    "applicationId": {
-      "type": "string",
-      "pattern": "^[A-Fa-f\\d]{24}$"
-    },
-    "creationDate": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "lastUpdated": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "name": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 255
-    },
-    "description": {
-      "type": "string",
-      "maxLength": 32767
-    },
-    "templateType": {
-      "type": "string",
-      "enum": [
-        "layout",
-        "page",
-        "component"
-      ]
-    },
-    "layoutId": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "pattern": "^[A-Fa-f\\d]{24}$"
-    },
-    "body": {
-      "type": "string",
-      "maxLength": 131072,
-      "minLength": 1
-    },
-    "templateTags": {
-      "type": "object",
-      "patternProperties": {
-        "^[0-9a-zA-Z_-]{1,255}$": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 255
-        }
-      },
-      "additionalProperties": false
-    }
-  }
-}
-```
-
-<small></small>
-
-### Example <a name="experience-template-example"></a>
-
-```json
-{
-  "id": "59cc5c628246c6caed4b16c1",
-  "experienceTemplateId": "59cc5c628246c6caed4b16c1",
-  "applicationId": "575ec8687ae143cd83dc4a97",
-  "creationDate": "2016-06-13T04:00:00.000Z",
-  "lastUpdated": "2016-06-13T04:00:00.000Z",
-  "name": "My Page Template",
-  "templateType": "page",
-  "body": "<p>{{data}}</p>",
-  "layoutId": "59cc5cad8246c6caed4b16c2",
-  "templateTags": {
-    "customKey": "customValue"
-  }
-}
-```
-
-<br/>
-## Experience Template Patch
-
-Schema for the body of an Experience Template modification request
-
-### Schema <a name="experience-template-patch-schema"></a>
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 255
-    },
-    "description": {
-      "type": "string",
-      "maxLength": 32767
-    },
-    "layoutId": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "pattern": "^[A-Fa-f\\d]{24}$"
-    },
-    "body": {
-      "type": "string",
-      "maxLength": 131072,
-      "minLength": 1
-    },
-    "templateTags": {
-      "type": "object",
-      "patternProperties": {
-        "^[0-9a-zA-Z_-]{1,255}$": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 255
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}
-```
-
-<small></small>
-
-### Example <a name="experience-template-patch-example"></a>
-
-```json
-{
-  "body": "New Content! <p>{{newData}}</p>",
-  "templateTags": {
-    "customKey": "newCustomValue"
-  }
-}
-```
-
-<br/>
-## Experience Template Post
-
-Schema for the body of an Experience Template creation request
-
-### Schema <a name="experience-template-post-schema"></a>
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 255
-    },
-    "description": {
-      "type": "string",
-      "maxLength": 32767
-    },
-    "templateType": {
-      "type": "string",
-      "enum": [
-        "layout",
-        "page",
-        "component"
-      ]
-    },
-    "layoutId": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "pattern": "^[A-Fa-f\\d]{24}$"
-    },
-    "body": {
-      "type": "string",
-      "maxLength": 131072,
-      "minLength": 1
-    },
-    "templateTags": {
-      "type": "object",
-      "patternProperties": {
-        "^[0-9a-zA-Z_-]{1,255}$": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 255
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false,
-  "required": [
-    "name",
-    "templateType",
-    "body"
-  ]
-}
-```
-
-<small></small>
-
-### Example <a name="experience-template-post-example"></a>
-
-```json
-{
-  "name": "My Page Template",
-  "templateType": "page",
-  "body": "<p>{{data}}</p>",
-  "layoutId": "59cc5cad8246c6caed4b16c2",
-  "templateTags": {
-    "customKey": "customValue"
-  }
-}
-```
-
-<br/>
-## Experience Templates
-
-Schema for a collection of Experience Templates
-
-### Schema <a name="experience-templates-schema"></a>
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "items": {
-      "type": "array",
-      "items": {
-        "title": "Experience Template",
-        "description": "Schema for a single Experience Template",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "pattern": "^[A-Fa-f\\d]{24}$"
-          },
-          "experienceTemplateId": {
-            "type": "string",
-            "pattern": "^[A-Fa-f\\d]{24}$"
-          },
-          "applicationId": {
-            "type": "string",
-            "pattern": "^[A-Fa-f\\d]{24}$"
-          },
-          "creationDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "lastUpdated": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 255
-          },
-          "description": {
-            "type": "string",
-            "maxLength": 32767
-          },
-          "templateType": {
-            "type": "string",
-            "enum": [
-              "layout",
-              "page",
-              "component"
-            ]
-          },
-          "layoutId": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "pattern": "^[A-Fa-f\\d]{24}$"
-          },
-          "body": {
-            "type": "string",
-            "maxLength": 131072,
-            "minLength": 1
-          },
-          "templateTags": {
-            "type": "object",
-            "patternProperties": {
-              "^[0-9a-zA-Z_-]{1,255}$": {
-                "type": "string",
-                "minLength": 1,
-                "maxLength": 255
-              }
-            },
-            "additionalProperties": false
-          }
-        }
-      }
-    },
-    "count": {
-      "type": "integer"
-    },
-    "totalCount": {
-      "type": "integer"
-    },
-    "perPage": {
-      "type": "integer"
-    },
-    "page": {
-      "type": "integer"
-    },
-    "filter": {
-      "type": "string"
-    },
-    "filterField": {
-      "type": "string"
-    },
-    "sortField": {
-      "type": "string"
-    },
-    "sortDirection": {
-      "type": "string",
-      "enum": [
-        "asc",
-        "desc"
-      ]
-    },
-    "applicationId": {
-      "type": "string",
-      "pattern": "^[A-Fa-f\\d]{24}$"
-    },
-    "templateType": {
-      "type": "string",
-      "enum": [
-        "layout",
-        "page",
-        "component"
-      ]
-    }
-  }
-}
-```
-
-<small></small>
-
-### Example <a name="experience-templates-example"></a>
-
-```json
-{
-  "items": [
-    {
-      "id": "59cc5c628246c6caed4b16c1",
-      "experienceTemplateId": "59cc5c628246c6caed4b16c1",
-      "applicationId": "575ec8687ae143cd83dc4a97",
-      "creationDate": "2016-06-13T04:00:00.000Z",
-      "lastUpdated": "2016-06-13T04:00:00.000Z",
-      "name": "My Page Template",
-      "templateType": "page",
-      "body": "<p>{{data}}</p>",
-      "layoutId": "59cc5cad8246c6caed4b16c2",
-      "templateTags": {
-        "customKey": "customValue"
-      }
     }
   ],
   "count": 1,
@@ -7947,6 +8158,411 @@ Schema for a collection of Experience Users
       "lastName": "Name",
       "avatarUrl": "https://example.avatar.url/is_here.png",
       "userTags": {
+        "customKey": "customValue"
+      }
+    }
+  ],
+  "count": 1,
+  "totalCount": 4,
+  "perPage": 1,
+  "page": 0,
+  "sortField": "name",
+  "sortDirection": "asc",
+  "applicationId": "575ec8687ae143cd83dc4a97"
+}
+```
+
+<br/>
+## Experience View
+
+Schema for a single Experience View
+
+### Schema <a name="experience-view-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "experienceViewId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    },
+    "viewType": {
+      "type": "string",
+      "enum": [
+        "layout",
+        "page",
+        "component"
+      ]
+    },
+    "layoutId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "layoutName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "body": {
+      "type": "string",
+      "maxLength": 131072,
+      "minLength": 1
+    },
+    "viewTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="experience-view-example"></a>
+
+```json
+{
+  "id": "59cc5c628246c6caed4b16c1",
+  "experienceViewId": "59cc5c628246c6caed4b16c1",
+  "applicationId": "575ec8687ae143cd83dc4a97",
+  "creationDate": "2016-06-13T04:00:00.000Z",
+  "lastUpdated": "2016-06-13T04:00:00.000Z",
+  "name": "My Page View",
+  "viewType": "page",
+  "body": "<p>{{data}}</p>",
+  "layoutId": "59cc5cad8246c6caed4b16c2",
+  "viewTags": {
+    "customKey": "customValue"
+  }
+}
+```
+
+<br/>
+## Experience View Patch
+
+Schema for the body of an Experience View modification request
+
+### Schema <a name="experience-view-patch-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    },
+    "layoutId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "body": {
+      "type": "string",
+      "maxLength": 131072,
+      "minLength": 1
+    },
+    "viewTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+```
+
+<small></small>
+
+### Example <a name="experience-view-patch-example"></a>
+
+```json
+{
+  "body": "New Content! <p>{{newData}}</p>",
+  "viewTags": {
+    "customKey": "newCustomValue"
+  }
+}
+```
+
+<br/>
+## Experience View Post
+
+Schema for the body of an Experience View creation request
+
+### Schema <a name="experience-view-post-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 32767
+    },
+    "viewType": {
+      "type": "string",
+      "enum": [
+        "layout",
+        "page",
+        "component"
+      ]
+    },
+    "layoutId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "body": {
+      "type": "string",
+      "maxLength": 131072,
+      "minLength": 1
+    },
+    "viewTags": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "viewType",
+    "body"
+  ]
+}
+```
+
+<small></small>
+
+### Example <a name="experience-view-post-example"></a>
+
+```json
+{
+  "name": "My Page View",
+  "viewType": "page",
+  "body": "<p>{{data}}</p>",
+  "layoutId": "59cc5cad8246c6caed4b16c2",
+  "viewTags": {
+    "customKey": "customValue"
+  }
+}
+```
+
+<br/>
+## Experience Views
+
+Schema for a collection of Experience Views
+
+### Schema <a name="experience-views-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Experience View",
+        "description": "Schema for a single Experience View",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "experienceViewId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "applicationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 32767
+          },
+          "viewType": {
+            "type": "string",
+            "enum": [
+              "layout",
+              "page",
+              "component"
+            ]
+          },
+          "layoutId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "layoutName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "body": {
+            "type": "string",
+            "maxLength": 131072,
+            "minLength": 1
+          },
+          "viewTags": {
+            "type": "object",
+            "patternProperties": {
+              "^[0-9a-zA-Z_-]{1,255}$": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 255
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "integer"
+    },
+    "totalCount": {
+      "type": "integer"
+    },
+    "perPage": {
+      "type": "integer"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "filter": {
+      "type": "string"
+    },
+    "filterField": {
+      "type": "string"
+    },
+    "sortField": {
+      "type": "string"
+    },
+    "sortDirection": {
+      "type": "string",
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "viewType": {
+      "type": "string",
+      "enum": [
+        "layout",
+        "page",
+        "component"
+      ]
+    }
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="experience-views-example"></a>
+
+```json
+{
+  "items": [
+    {
+      "id": "59cc5c628246c6caed4b16c1",
+      "experienceViewId": "59cc5c628246c6caed4b16c1",
+      "applicationId": "575ec8687ae143cd83dc4a97",
+      "creationDate": "2016-06-13T04:00:00.000Z",
+      "lastUpdated": "2016-06-13T04:00:00.000Z",
+      "name": "My Page View",
+      "viewType": "page",
+      "body": "<p>{{data}}</p>",
+      "layoutId": "59cc5cad8246c6caed4b16c2",
+      "viewTags": {
         "customKey": "customValue"
       }
     }
@@ -10741,16 +11357,19 @@ Schema for information about the currently authenticated user
       "devicerecipe": {
         "type": "number"
       },
+      "experiencedomain": {
+        "type": "number"
+      },
       "experienceendpoint": {
         "type": "number"
       },
       "experiencegroup": {
         "type": "number"
       },
-      "experiencetemplate": {
+      "experienceuser": {
         "type": "number"
       },
-      "experienceuser": {
+      "experienceview": {
         "type": "number"
       },
       "flow": {
@@ -10907,16 +11526,19 @@ Schema for information about the currently authenticated user
         "deviceRecipeCount": {
           "type": "number"
         },
+        "experienceDomainCount": {
+          "type": "number"
+        },
         "experienceEndpointCount": {
           "type": "number"
         },
         "experienceGroupCount": {
           "type": "number"
         },
-        "experienceTemplateCount": {
+        "experienceUserCount": {
           "type": "number"
         },
-        "experienceUserCount": {
+        "experienceViewCount": {
           "type": "number"
         },
         "flowCount": {
@@ -11360,16 +11982,19 @@ Schema for a single Organization
       "devicerecipe": {
         "type": "number"
       },
+      "experiencedomain": {
+        "type": "number"
+      },
       "experienceendpoint": {
         "type": "number"
       },
       "experiencegroup": {
         "type": "number"
       },
-      "experiencetemplate": {
+      "experienceuser": {
         "type": "number"
       },
-      "experienceuser": {
+      "experienceview": {
         "type": "number"
       },
       "flow": {
@@ -11418,16 +12043,19 @@ Schema for a single Organization
         "deviceRecipeCount": {
           "type": "number"
         },
+        "experienceDomainCount": {
+          "type": "number"
+        },
         "experienceEndpointCount": {
           "type": "number"
         },
         "experienceGroupCount": {
           "type": "number"
         },
-        "experienceTemplateCount": {
+        "experienceUserCount": {
           "type": "number"
         },
-        "experienceUserCount": {
+        "experienceViewCount": {
           "type": "number"
         },
         "flowCount": {
@@ -12143,16 +12771,19 @@ Schema for a collection of Organizations
             "devicerecipe": {
               "type": "number"
             },
+            "experiencedomain": {
+              "type": "number"
+            },
             "experienceendpoint": {
               "type": "number"
             },
             "experiencegroup": {
               "type": "number"
             },
-            "experiencetemplate": {
+            "experienceuser": {
               "type": "number"
             },
-            "experienceuser": {
+            "experienceview": {
               "type": "number"
             },
             "flow": {
@@ -12201,16 +12832,19 @@ Schema for a collection of Organizations
               "deviceRecipeCount": {
                 "type": "number"
               },
+              "experienceDomainCount": {
+                "type": "number"
+              },
               "experienceEndpointCount": {
                 "type": "number"
               },
               "experienceGroupCount": {
                 "type": "number"
               },
-              "experienceTemplateCount": {
+              "experienceUserCount": {
                 "type": "number"
               },
-              "experienceUserCount": {
+              "experienceViewCount": {
                 "type": "number"
               },
               "flowCount": {
@@ -13138,6 +13772,10 @@ Schema for a single Solution User
       "type": "string",
       "format": "url"
     },
+    "tokenCutoff": {
+      "type": "string",
+      "format": "date-time"
+    },
     "accessRestrictions": {
       "type": "object",
       "properties": {
@@ -13293,6 +13931,10 @@ Schema for the body of a Solution User modification request
       "minLength": 52,
       "maxLength": 52
     },
+    "tokenCutoff": {
+      "type": "string",
+      "format": "date-time"
+    },
     "accessRestrictions": {
       "type": "object",
       "properties": {
@@ -13378,6 +14020,10 @@ Schema for the body of a Solution User creation request
       "type": "string",
       "minLength": 52,
       "maxLength": 52
+    },
+    "tokenCutoff": {
+      "type": "string",
+      "format": "date-time"
     },
     "accessRestrictions": {
       "type": "object",
@@ -13517,6 +14163,10 @@ Schema for a collection of Solution Users
           "avatarUrl": {
             "type": "string",
             "format": "url"
+          },
+          "tokenCutoff": {
+            "type": "string",
+            "format": "date-time"
           },
           "accessRestrictions": {
             "type": "object",

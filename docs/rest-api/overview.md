@@ -228,6 +228,12 @@ particular actions that can be performed on that resource.
 * [Experience Users](/rest-api/experience-users/)  
   Contains all the actions that can be performed against the collection of [Experience Users](/experiences/users/) belonging to an Application - such as listing users or creating a new user.
 
+* [Experience View](/rest-api/experience-view/)  
+  Contains all the actions that can be performed against a single [Experience View](/experiences/views/), such as modifying the body template.
+
+* [Experience Views](/rest-api/experience-views/)  
+  Contains all the actions that can be performed against the collection of [Experience Views](/experiences/views/) belonging to an Application - such as listing views or creating a new view.
+
 * [Integration](/rest-api/integration/)  
   Contains all the actions that can be performed against a single [Integration](/applications/integrations/), which include things like removing an integration or updating integration configuration.
 

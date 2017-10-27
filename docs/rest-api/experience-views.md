@@ -1,26 +1,26 @@
-description: A detailed look at the various REST actions supported by the Experience Templates resource of the Losant API. Learn more.
+description: A detailed look at the various REST actions supported by the Experience Views resource of the Losant API. Learn more.
 
-# Experience Templates Actions
+# Experience Views Actions
 
-https://api.losant.com/applications/**`APPLICATION_ID`**/experience/templates
+https://api.losant.com/applications/**`APPLICATION_ID`**/experience/views
 
 Below are the various requests that can be performed against the
-Experience Templates resource, as well as the expected
+Experience Views resource, as well as the expected
 parameters and the potential responses.
 
 ## Get
 
-Returns the experience templates for an application
+Returns the experience views for an application
 
 ### Method And Url <a name="get-method-url"></a>
 
-GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/templates
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/views
 
 ### Authentication <a name="get-authentication"></a>
 
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceTemplates.*, or experienceTemplates.get.
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceViews.*, or experienceViews.get.
 
 ### Request Path Components <a name="get-path-components"></a>
 
@@ -32,13 +32,13 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: id, creationDate, name | name | name |
+| sortField | N | Field to sort the results by. Accepted values are: id, creationDate, name, lastUpdated | name | name |
 | sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
 | page | N | Which page of results to return | 0 | 0 |
 | perPage | N | How many items to return per page | 1000 | 10 |
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*template |
-| templateType | N | Filter templates to those only of the given type. Accepted values are: page, layout, component |  | page |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*view |
+| viewType | N | Filter views to those only of the given type. Accepted values are: page, layout, component |  | page |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -53,14 +53,14 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
-    https://api.losant.com/applications/APPLICATION_ID/experience/templates
+    https://api.losant.com/applications/APPLICATION_ID/experience/views
 ```
 
 ### Successful Responses <a name="get-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Experience Templates](schemas.md#experience-templates) | Collection of experience templates |
+| 200 | [Experience Views](schemas.md#experience-views) | Collection of experience views |
 
 ### Error Responses <a name="get-error-responses"></a>
 
@@ -71,17 +71,17 @@ curl -H 'Content-Type: application/json' \
 
 ## Post
 
-Create a new experience template for an application
+Create a new experience view for an application
 
 ### Method And Url <a name="post-method-url"></a>
 
-POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/templates
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/views
 
 ### Authentication <a name="post-authentication"></a>
 
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Organization, all.User, experienceTemplates.*, or experienceTemplates.post.
+all.Application, all.Organization, all.User, experienceViews.*, or experienceViews.post.
 
 ### Request Path Components <a name="post-path-components"></a>
 
@@ -98,16 +98,16 @@ all.Application, all.Organization, all.User, experienceTemplates.*, or experienc
 ### Request Body <a name="post-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Experience Template Post](schemas.md#experience-template-post) schema. For example, the following would be a
+the [Experience View Post](schemas.md#experience-view-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json
 {
-  "name": "My Page Template",
-  "templateType": "page",
+  "name": "My Page View",
+  "viewType": "page",
   "body": "<p>{{data}}</p>",
   "layoutId": "59cc5cad8246c6caed4b16c2",
-  "templateTags": {
+  "viewTags": {
     "customKey": "customValue"
   }
 }
@@ -120,15 +120,15 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"name":"My Page Template","templateType":"page","body":"<p>{{data}}</p>","layoutId":"59cc5cad8246c6caed4b16c2","templateTags":{"customKey":"customValue"}}' \
-    https://api.losant.com/applications/APPLICATION_ID/experience/templates
+    -d '{"name":"My Page View","viewType":"page","body":"<p>{{data}}</p>","layoutId":"59cc5cad8246c6caed4b16c2","viewTags":{"customKey":"customValue"}}' \
+    https://api.losant.com/applications/APPLICATION_ID/experience/views
 ```
 
 ### Successful Responses <a name="post-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Experience Template](schemas.md#experience-template) | Successfully created experience template |
+| 201 | [Experience View](schemas.md#experience-view) | Successfully created experience view |
 
 ### Error Responses <a name="post-error-responses"></a>
 

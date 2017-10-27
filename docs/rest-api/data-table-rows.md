@@ -8,6 +8,83 @@ Below are the various requests that can be performed against the
 Data Table Rows resource, as well as the expected
 parameters and the potential responses.
 
+## Export
+
+Request an export of the data table&#x27;s data
+
+### Method And Url <a name="export-method-url"></a>
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/data-tables/**`DATA_TABLE_ID`**/rows/export
+
+### Authentication <a name="export-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, dataTableRows.*, or dataTableRows.export.
+
+### Request Path Components <a name="export-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+| DATA_TABLE_ID | ID associated with the data table | 575ed78e7ae143cd83dc4aab |
+
+### Request Headers <a name="export-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Request Body <a name="export-body"></a>
+
+The body of the request should be serialized JSON that validates against
+the [Data Table Export](schemas.md#data-table-export) schema. For example, the following would be a
+valid body for this request:
+
+```json
+{
+  "email": "email@example.com",
+  "query": {
+    "$or": [
+      {
+        "myCol1": {
+          "$ne": 0
+        }
+      },
+      {
+        "myCol2": 5
+      }
+    ]
+  },
+  "queryOptions": {
+    "limit": 10000
+  }
+}
+```
+
+### Curl Example <a name="export-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X POST \
+    https://api.losant.com/applications/APPLICATION_ID/data-tables/DATA_TABLE_ID/rows/export
+```
+
+### Successful Responses <a name="export-successful-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | If request was successfully queued |
+
+### Error Responses <a name="export-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if data table was not found |
+
 ## Get
 
 Returns the rows for a data table
