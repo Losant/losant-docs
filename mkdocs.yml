@@ -211,6 +211,8 @@ pages:
     - Experience Groups: rest-api/experience-groups.md
     - Experience User: rest-api/experience-user.md
     - Experience Users: rest-api/experience-users.md
+    - Experience View: rest-api/experience-view.md
+    - Experience Views: rest-api/experience-views.md
     - Integration: rest-api/integration.md
     - Integrations: rest-api/integrations.md
     - Me: rest-api/me.md

@@ -65,6 +65,7 @@ curl -H 'Content-Type: application/json' \
 | Code | Type | Description |
 | ---- | ---- | ----------- |
 | 201 | [Device Recipe Bulk Create](schemas.md#device-recipe-bulk-create) | If devices were successfully created |
+| 202 | [Device Recipe Bulk Create Enqueue](schemas.md#device-recipe-bulk-create-enqueue) | If devices were enqueued to be created |
 
 ### Error Responses <a name="bulkCreate-error-responses"></a>
 
