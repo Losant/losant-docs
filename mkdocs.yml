@@ -52,6 +52,7 @@ pages:
     - Endpoints: experiences/endpoints.md
     - Groups: experiences/groups.md
     - Users: experiences/users.md
+    - Views: experiences/views.md
     - Walkthrough:
         - Overview: experiences/walkthrough/overview.md
         - Part 1 - User Registration: experiences/walkthrough/part1.md
