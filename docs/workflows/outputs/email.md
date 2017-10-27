@@ -1,6 +1,6 @@
 # Email Node
 
-The email node allows a workflow to send emails using Losant provided email delivery. NOTE: This node is rate limited to one email per minute, and is limited to a maximum of 5 recipients per email. If more frequent emails or more advanced recipient configuration is required, please use the [SendGrid node](/workflows/outputs/sendgrid/).
+The email node allows a workflow to send emails using Losant provided email delivery. NOTE: This node is rate limited to one email every minute per workflow (bursts of up to 10 allowed), and is limited to a maximum of 5 recipients per email. If more frequent emails or more advanced recipient configuration is required, please use the [SendGrid node](/workflows/outputs/sendgrid/).
 
 ![Email Node](/images/workflows/outputs/email-node.png "Email Node")
 
