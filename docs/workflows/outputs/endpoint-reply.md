@@ -50,7 +50,7 @@ In the case of a `custom` reply, remember to set the `Content-Type` header - Los
 Losant does automatically add certain other headers to the reply, if they are not set explicitly in the header configuration for the reply:
 
 * [Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security): If the request came in over SSL, this header will be automatically added to the reply with the value `max-age=31536000`.
-* [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control): This header is by default added to the reply with the value `no-cache, no-store, must-revalidate`.
+* [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control): This header is added by default to the reply with the value `no-cache, no-store, must-revalidate`.
 * [Pragma](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Pragma): This header will be added by default with the value `no-cache`.
 * [X-Content-Type-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options): This header will be added by default with the value `nosniff`.
 * [X-XSS-Protection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection): This header will be added by default with the value `1; mode=block`.
