@@ -1,20 +1,20 @@
 # Experiences
 
-Building a product on top of Losant usually involves writing an API service, implementing all of the user authentication, and hosting the result somewhere, which is a lot of work. Experiences bring all of this functionality directly inside your Losant application.
+Building a product on top of Losant would normally involve writing an API service, implementing user authentication, building and serving a front-end interface, and hosting all of the above somewhere – which is a lot of work! Experiences bring all of this functionality directly inside your Losant application.
 
-Experiences are a means by which you can build a fully functional API allowing users to interact with your connected [devices](/devices/overview/). Set a custom domain to handle requests; configure [endpoints](/experiences/endpoints/) to respond using the power of Losant's [workflow engine](/workflows/overview/); register [users](/experiences/users/) against your application; and protect data access by assigning those users to [groups](/experiences/groups/). All Experience API Endpoints are powered by workflows inside your Losant application.
+Experiences are a means by which you can build a fully functional web interface, allowing users to interact with your connected [devices](/devices/overview/). Set a subdomain at which your [custom views](/experiences/views/) can live; return [user-specific dashboards](/experiences/views/#dashboard-pages) with content that is specifically relevant to them; configure [endpoints](/experiences/endpoints/) to respond to requests using the power of Losant's [workflow engine](/workflows/overview/); register [users](/experiences/users/) against your application; and protect data access by assigning your users to [groups](/experiences/groups/).
 
-![Experiences Overview](/images/experiences/experiences-overview.png "Experiences Overview")
+![Experiences Overview](/images/experiences/overview-overview.png "Experiences Overview")
 
-Experience Users, Endpoints and Groups are subject to account [resource limits](/organizations/resource-limits/), with the latter two being [soft limits](/organizations/resource-limits/#soft-limited-resources) (meaning you may request increases to these limits at potentially zero additional charge). If you need to register additional Experience Users, you will have to upgrade to an [organization](/organizations/overview/).
+Experience Users, Endpoints, Groups and Views are subject to account [resource limits](/organizations/resource-limits/), with all but the Users being [soft limits](/organizations/resource-limits/#soft-limited-resources) (meaning you may request increases to these limits at potentially zero additional charge). If you need to register additional Experience Users, you will have to upgrade to an [organization](/organizations/overview/).
 
 ## Initial Setup
 
-There are a few steps to go through before you can start building Experiences within your application. If your Sandbox or organization lacks the number of free workflows, users, endpoints or groups to bootstrap a new Experience, you will be unable to proceed. You will have to request soft limit increases or upgrade your account.
+New applications Experiences must first go through a short bootstrapping process before you can begin using the features.
 
 ### Choose a Slug
 
-![Bootstrap Slug](/images/experiences/bootstrap-slug.png "Bootstrap Slug")
+![Bootstrap Slug](/images/experiences/overview-choose-slug.png "Bootstrap Slug")
 
 The first step in working with Experiences is to choose a custom endpoint slug, which is the subdomain at which your endpoint requests will live. Your slug defaults to your application ID, but it can be changed to a custom subdomain that meets these requirements:
 
@@ -22,35 +22,45 @@ The first step in working with Experiences is to choose a custom endpoint slug, 
 * May only contain lowercase letters, numbers, hyphens (-) and underscores (\_)
 * Must be unique across the entire Losant Platform
 * Cannot be a commonly used Internet subdomain, such as "webmail" or "cpanel"
-* Cannot be profane (these are subject to change by Losant without notice)
+* Cannot be profane (slugs violating this rule are subject to change without notice)
 
 HTTP requests for your endpoints should then go to `https://[my-custom-slug].onlosant.com/[my-endpoint]`. You may change the slug at any time, but doing so after you are receiving traffic can be [dangerous](#editing-experience-settings).
 
 ### Bootstrap Your Experience
 
-![Bootstrap Progress](/images/experiences/bootstrap-progress.png "Bootstrap Progress")
+After choosing a slug, you'll have the option of setting up some example resources to get you started. This step can be skipped on a per-application basis, though we recommend completing it as a great starting point for building out a full experience.u
 
-Next, Losant must set up a few helper resources within your application:
+![Bootstrap Choose](/images/experiences/overview-choose-bootstrap.png "Bootstrap Choose")
 
-* A `/favorite-color/{color?}` [endpoint](/experiences/endpoints/) (and its backing workflow), which demonstrates public endpoints and how to use [path parameters](/experiences/endpoints/#route).
-* An `/auth` endpoint (and its backing workflow), which is a starter template for [authenticating](/workflows/experience/authenticate/) Experience Users and [issuing access tokens](/workflows/experience/generate-token/).
-* A `/me` endpoint (and its backing workflow), which demonstrates authenticated endpoints by returning the user who made the request.
+If you choose to create the helper resources, Losant will automatically add the following to your application:
+
+* A `/login` [endpoint](/experiences/endpoints/), its backing [workflow](/workflows/overview/) (which handles the actual authentication and routing), and the [page](/experiences/views/#pages) to render when the endpoint is requested.
+* A `/` (root) endpoint, its backing workflow (which handles routing signed-out users back to the login page), and the page to render when it is requested.
+* The [layout](/experiences/views/#layouts) and [components](/experiences/views/#components) necessary to render the pages listed above.
 * A test [Experience User](/experiences/users/) for testing authentication and protected endpoints.
 * An [Experience Group](/experiences/groups/) with the test user as a member.
 
-All of these resources can be deleted at any time, but note that if your Experience uses any authenticated endpoints, you should at least keep the `/auth` endpoint and workflow (or build a similar one) so that your Experience Users can authenticate and receive a token.
+![Bootstrap Progress](/images/experiences/overview-progress.png "Bootstrap Progress")
+
+The sample resources utilize a placeholder brand and a layout wrapped in [Twitter Bootstrap](https://getbootstrap.com/docs/3.3/), a popular front-end framework whose stylesheets and script files are available on a content delivery network. You are free to continuing using this framework to build out your experience, or to swap it with another of your choosing (or no framework at all).
+
+All of these resources can be deleted at any time, but note that doing so may temporarily break your Experience until your workflows can be reconfigured to account for any deleted pages, layouts and endpoints.
 
 ### Test Your Experience
 
-Finally, you'll receive a review of what was created and some instructions for testing your new endpoints. The `/favorite-color`  endpoints are public `GET` routes, so they can be tested by simply visiting the URLs in your browser. Authenticating and retrieving the current user will require more advanced requests, so we provide sample [curl](https://curl.haxx.se/) commands for [testing your endpoints](/experiences/endpoints/#using-endpoints).
+Finally, if you chose to create the sample resources, you'll receive instructions for testing your new endpoints and views. Click the link provided on the summary screen, which should redirect you to your new login page. Sign in with the provided credentials and you will then see the placeholder home page.
+
+![Bootstrap Review](/images/experiences/overview-review.png "Bootstrap Review")
 
 **Take note of the random password assigned to your test user.** If you lose this password, you will have to [edit the user](/experiences/users/#required-fields) to reset it.
+
+If you chose to skip the resource creation step, the modal will simply dismiss when you set your slug.
 
 ## Editing Experience Settings
 
 Your Experience settings can be updated at any time, but **be warned!** Making changes to any of these settings can have devastating effects if your Experience is in active use by public or signed-in users.
 
-![Edit Experience Settings](/images/experiences/settings-fields.png "Edit Experience Settings")
+![Edit Experience Settings](/images/experiences/experience-settings.png "Edit Experience Settings")
 
 Experience settings can be changed under the "Settings" tab of your application's "Experience" subsection. There are two attributes that can be edited on this page:
 

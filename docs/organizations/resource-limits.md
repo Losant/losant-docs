@@ -91,6 +91,7 @@ Soft-limited resources include:
 * [Device Recipes](/devices/device-recipes/)
 * [Experience Endpoints](/experiences/endpoints/)
 * [Experience Groups](/experiences/groups/)
+* [Experience Views](/experiences/views/)
 * [Integrations](/applications/integrations/)
 * [Webhooks](/applications/webhooks/)
 * [Workflows](/workflows/overview/)
