@@ -1,6 +1,6 @@
 # JWT Decode
 
-The JWT Decode node allows a workflow to decode a JSON Web Token on the payload.
+The JWT Decode node allows a workflow to decode a [JSON Web Token](https://jwt.io/) on the payload.
 
 ![JWT Decode Node](/images/workflows/logic/jwt-decode-node.png "JWT Decode Node")
 

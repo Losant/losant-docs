@@ -6,7 +6,7 @@ The JWT Create node allows a workflow to create a [JSON Web Token](https://jwt.i
 
 ## Configuration
 
-JWT Create node configuration requires at least a `JSON Template` object, `Secret Template` and an `Algorithm Type`. The JSON template can be given as a path from the payload or a JSON template object, both should resolve to an object. The secret template can either be a payload template path, or the secret itself. The default alogithm type is `HS256`, see the list below for all algorithms.
+JWT Create node configuration requires at least a `JSON Template` object, `Secret Template` and an `Algorithm Type`. The JSON template can be given as a path from the payload or a JSON template object, both should resolve to an object. The secret template can either be a payload template path, or the secret key itself. The default alogithm type is `HS256`, see the list below for all algorithms.
 
 ![JWT Create Node Config](/images/workflows/logic/jwt-create-node-config.png "JWT Create Node Config")
 
