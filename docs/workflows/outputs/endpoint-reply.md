@@ -14,7 +14,7 @@ If you choose `Custom`, you have full control over the response code and body of
 
 ![Endpoint Reply Node Custom Config](/images/workflows/outputs/endpoint-reply-node-custom-config.png "Endpoint Reply Node Custom Config")
 
-In the above example, the response code is set to `200`, although that field is [templatable](/workflows/accessing-payload-data/#string-templates) and so can be configured from the current payload. It is expected to resolve to a valid response code number, and if it does not, the reply will default to a response code of `200`.
+In the above example, the response code is set to `200`, although that field is [templatable](/workflows/accessing-payload-data/#string-templates) and so can be configured from the current payload. It is expected to resolve to a [valid response code number](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), and if it does not, the reply will default to a response code of `200`.
 
 The body of the reply can be set either as a [string template](/workflows/accessing-payload-data/#string-templates) or as a [payload path](/workflows/accessing-payload-data/#payload-paths). In the above example, it is a string template that resolves to a string of JSON. If payload path is chosen and the payload path points to an object, that object is stringified JSON string for use as the body. The body is allowed to be empty, if no body is desired on the reply.
 
@@ -31,13 +31,13 @@ To do this, you choose what page to render (this field does accept templates), a
 * **JSON Template**: The value is expected to be a [JSON template string](/workflows/accessing-payload-data/#json-templates) that will be parsed into an object, and that object will be places at `pageData` in the page render context.
 * **Full Payload**: The entire current payload will be placed at `pageData` in the page render context.
 
-In all cases, there is a significant amount of data is is available in a page render [by default](/experiences/views/#data-that-is-always-provided). The above only changes the `pageData` variable on that basic context object.
+In all cases, there is a significant amount of data available in a page render [by default](/experiences/views/#data-that-is-always-provided). The above only changes the `pageData` variable on that basic context object.
 
 ### Redirect Response
 
 ![Endpoint Reply Node Redirect Config](/images/workflows/outputs/endpoint-reply-node-redirect-config.png "Endpoint Reply Node Redirect Config")
 
-If you need to redirect the request to some other url, the redirect response type makes that easy. In the case of a redirect response, there are only two choices for response code - 301 (permanent redirect), or 302 (temporary redirect). In addition, instead of providing a response body, you provide a URL to redirect to. The URL can be set either as a [string template](/workflows/accessing-payload-data/#string-templates) or as a [payload path](/workflows/accessing-payload-data/#payload-paths), and can either be an absolute URL or a relative one.
+If you need to redirect the request to some other URL, the redirect response type makes that easy. In the case of a redirect response, there are only two choices for response code - 301 (permanent redirect), or 302 (temporary redirect). In addition, instead of providing a response body, you provide a URL to redirect to. The URL can be set either as a [string template](/workflows/accessing-payload-data/#string-templates) or as a [payload path](/workflows/accessing-payload-data/#payload-paths), and can either be an absolute URL or a relative one.
 
 ### Headers
 
