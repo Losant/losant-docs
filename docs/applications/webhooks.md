@@ -73,3 +73,7 @@ You can easily trigger a webhook for testing purposes right on the Webhook edit 
 ![Test Webhook](/images/applications/test-webhook.png "Test Webhook")
 
 You can fill in an optional path with query params, choose the request method, and fill in an optional JSON request body. Clicking `Send Test Request` will trigger the Webhook just like an actual request against that Webhook's URL would - triggering any workflows linked to this Webhook with the provided request information.
+
+### Webhook Throttling
+
+Webhook requests are limited to 30 calls in a 15-second window (or, on average, two per second) per webhook. This matches the limiting that occurs when sending [messages over MQTT](/organizations/resource-limits/#message-throttling). If you exceed this limit, the webhook will respond with a 429 "Over rate limit, request throttled" error.
