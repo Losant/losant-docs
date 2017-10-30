@@ -44,7 +44,7 @@ This will fill in the standard new device form with the defaults from the chosen
 
 ### Bulk Device Creation
 
-To create many devices at once using a device recipe, you will want to use bulk creation - which is available as an option next to each recipe on the device recipe listing page.
+To create many devices at once using a device recipe, you will want to use bulk creation - which is available as an option next to each recipe on the device recipe listing page. If the number of devices you are creating is more than 750 then instead of navigating to a page with a table of the output of the generation, you will receive an email with a link to download a CSV with the results of the generation. This CSV contains the same fields as the results page shown below.
 
 ![Bulk Device Link](/images/devices/bulk-create-devices-button.png "Bulk Device Link")
 

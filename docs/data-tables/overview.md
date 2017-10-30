@@ -164,6 +164,14 @@ Valid comparison operators include:
 * [$lt](https://docs.mongodb.com/manual/reference/operator/query/lt/) for less than checks (`<`)
 * [$lte](https://docs.mongodb.com/manual/reference/operator/query/lte/) for less than or equal to checks (`<=`)
 
+## Exporting a Data Table
+
+![Data Table Export](/images/data-tables/data-table-export.png "Data Table Export")
+
+You can request a CSV export of a data table using the "Export..." button in the top right corner of the table. This will generate a CSV file of the data table and send you an email when the export is complete. The email includes a link which will allow you to download the generated file (the link is time sensitive and will only work for 7 days). This request can only be made 1 every 5 minutes per data table.
+
+![Data Table Export Form](/images/data-tables/data-table-export-email.png "Data Table Export Form")
+
 ## Deleting a Data Table
 
 To delete a data table, click the "Delete" icon next to any table on the list page, or by clicking the "Delete" button in the footer of a data table's edit page.
