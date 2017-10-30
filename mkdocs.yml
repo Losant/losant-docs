@@ -124,6 +124,9 @@ pages:
         - HTML/XML Parser: workflows/logic/html-parser.md
         - JSON Decode: workflows/logic/json-decode.md
         - JSON Encode: workflows/logic/json-encode.md
+        - JWT Create: workflows/logic/jwt-create.md
+        - JWT Decode: workflows/logic/jwt-decode.md
+        - JWT Verify: workflows/logic/jwt-verify.md
         - Latch: workflows/logic/latch.md
         - Loop: workflows/logic/loop.md
         - Math: workflows/logic/math.md
