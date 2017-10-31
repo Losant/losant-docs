@@ -28,7 +28,7 @@ To do this, you choose what page to render (this field does accept templates), a
 
 * **None**: No custom data will be made available during the render. This means the `pageData` variable in the page render context will not exist.
 * **Payload Path**: The value at the given [payload path](/workflows/accessing-payload-data/#payload-paths) will be placed at `pageData` in the page render context.
-* **JSON Template**: The value is expected to be a [JSON template string](/workflows/accessing-payload-data/#json-templates) that will be parsed into an object, and that object will be places at `pageData` in the page render context.
+* **JSON Template**: The value is expected to be a [JSON template](/workflows/accessing-payload-data/#json-templates) which will be the object placed placed at `pageData` in the page render context.
 * **Full Payload**: The entire current payload will be placed at `pageData` in the page render context.
 
 In all cases, there is a significant amount of data available in a page render [by default](/experiences/views/#data-that-is-always-provided). The above only changes the `pageData` variable on that basic context object.
