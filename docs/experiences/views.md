@@ -20,7 +20,7 @@ Views are built as a combination of HTML and [Handlebars templates](http://handl
 
 ## Layouts
 
-Layouts are "wrappers" in which pages are rendered. Most application experiences will only use a couple layouts, as most customizations to a layout that would be applied on a per-page basis can be accomplished using [`{{section}}` tags](#section-tags).
+Layouts are "wrappers" in which pages are rendered. Most application experiences will only use a couple of layouts, as most customizations to a layout that would be applied on a per-page basis can be accomplished using [`{{section}}` tags](#section-tags).
 
 ### Configuration
 
@@ -52,7 +52,7 @@ To include **default section content** to render in the event that neither the c
 {{#section "mySectionName"}}Default Content{{/section}}.
 ```
 
-The section's contents is then defined in subsequent pages and their components using a [`{{#fillSection}}` tag](#fillsection-tags).
+The section's content is then defined in subsequent pages and their components using a [`{{#fillSection}}` tag](#fillsection-tags).
 
 ### Using Layouts
 
@@ -62,7 +62,7 @@ Layouts are optional within your application experience. However, if you choose 
 
 ### Example Layout
 
-A layout includes common elements that are used in all web pages you are rendering within your experience; for example, a typical should include the following:
+A layout includes common elements that are used in all web pages you are rendering within your experience; for example, a typical layout should include the following:
 
 *   Your `<!doctype html>` declaration
 *   The HTML `<head>` as well as any common `<script>` and `<link>` (stylesheet) tags
@@ -201,7 +201,7 @@ Given a `{{section "mySectionName"}}` tag defined within a layout, its contents 
 When working with `{{#fillSection}}` tags, keep the following rules in mind:
 
 *   `{{#fillSection}}` tags may be placed within [pages](#pages), or within [components](#components) that are called within those pages. If a component is referenced directly from a [layout](#layouts), its `{{#fillSection}}` declarations (and any `{{#fillSection}}` declarations from components referenced by that component) will be ignored.
-*   When multiple `{{#fillSection}}` tags attempt to set the content of the same `{{section}}` (as in, when both a page and a component reference the same section name in a `{{#fillSection}}` declaration), the last declaration the renderer sees is the one that will populate the `{{section}}`. For this reason, it is a good idea to put a `{{#fillSection}}` tag at the bottom of your page's content to ensure it is no overridden by any child component (unless, of course, that is the desired behavior).
+*   When multiple `{{#fillSection}}` tags attempt to set the content of the same `{{section}}` (as in, when both a page and a component reference the same section name in a `{{#fillSection}}` declaration), the last declaration the renderer sees is the one that will populate the `{{section}}`. For this reason, it is a good idea to put a `{{#fillSection}}` tag at the bottom of your page's content to ensure it is not overridden by any child component (unless, of course, that is the desired behavior).
 
 ### Using Components
 
