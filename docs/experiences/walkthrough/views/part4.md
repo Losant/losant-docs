@@ -101,7 +101,7 @@ There are a few things to note about our new component:
 Now, similar to how we did for our [login page](/experiences/walkthrough/views/part2/), let's create a single workflow for handling both GET and POST requests to our "/create-account" route. Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
 
 1. `Name` the workflow `Endpoint /create-account`.
-1. [Download the workflow](https://gist.github.com/LosantGists/49a7ae48e99160acf0556ae8577f9017/archive/e5ba8e2fc5b4a48195c4def1e0f2fa26737e3a1f.zip) and uncompress the zip, then [import the file](/workflows/overview/#import-export) `experience-create-account.flow` into your new workflow.
+1. [Download the workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/d35d69fa/user-registration/endpoint-create-account.flow), then [import the file](/workflows/overview/#import-export) `experience-create-account.flow` into your new workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /create-account` and `GET /create-account` you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Create Account` page](#page-create-account).
 
