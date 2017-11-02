@@ -1,22 +1,22 @@
 # Experience Views Walkthrough
 
-This guide provides a complete walkthrough for using Experience Views to build a custom web interface for your end users. This guide starts with a detailed explanation of the pages that are auto-generated when you create a new experience. This guide then expands on those example pages with additional functionality that may be common in most web experiences.
+This guide provides a complete walkthrough for using [Experience Views](/experiences/views/) to build a custom web interface for your end users. This guide starts with a detailed explanation of the pages that are auto-generated when you create a new experience. This guide then expands on those example pages with additional functionality that may be common in most web experiences.
 
 ![Screenshot](/images/experiences/walkthrough/views/screenshot.png "Example Experience Screenshot")
 
-This guide is split into four main sections:
+This guide is split into five main sections:
 
 **Part 1 - [Page Layout](/experiences/walkthrough/views/part1/)**  
-orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
+This section covers the Page Layout, which includes elements common too all pages, like the header and footer.
 
 **Part 2 - [Log In Page](/experiences/walkthrough/views/part2/)**  
-orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
+The Log In page provides a way for your Experience Users to log in to your custom experience. This covers forms and how to send data back to a Losant workflow from a custom page.
 
 **Part 3 - [Home Page](/experiences/walkthrough/views/part3/)**  
-orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
+Once your Experience Users are logged in, they are redirected to your home page. This section describes how to prevent unauthenticated users from accessing pages and how to create custom content.
 
 **Part 4 - [User Registration](/experiences/walkthrough/views/part4/)**  
-orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
+This section expands your custom experience to allow users to sign up and register themselves.
 
 **Part 5 - [User Profile](/experiences/walkthrough/views/part5/)**  
-orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
+This section describes how to build a page that allows your Experience Users to edit their own profiles.
