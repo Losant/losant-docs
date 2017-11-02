@@ -1,4 +1,4 @@
-# Part 4 - User Registration
+# User Registration
 
 In this step, we'll add the ability for non-registered users to sign up for an account within our application experience.
 
@@ -36,7 +36,7 @@ First we'll create a new page to render when this endpoint is requested. Click t
 
 1. `Name` the page `Create Account`.
 1. Add a description if you would like; the field is optional and does not affect the page as it is presented to your experience users.
-1. Select your [previously created layout](/experiences/walkthrough/views/part1/) for the page's Layout.
+1. Select your [previously created layout](/experiences/walkthrough/views/page-layout/) for the page's Layout.
 1. Choose `Custom` for the `Page Type`.
 1. Drop the snippet below in for the page's `Content`.
 
@@ -98,7 +98,7 @@ There are a few things to note about our new component:
 
 ## Create the Workflow
 
-Now, similar to how we did for our [login page](/experiences/walkthrough/views/part2/), let's create a single workflow for handling both GET and POST requests to our "/create-account" route. Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
+Now, similar to how we did for our [login page](/experiences/walkthrough/views/log-in-page/), let's create a single workflow for handling both GET and POST requests to our "/create-account" route. Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
 
 1. `Name` the workflow `Endpoint /create-account`.
 1. [Download the workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/d35d69fa/user-registration/endpoint-create-account.flow), then [import the file](/workflows/overview/#import-export) `experience-create-account.flow` into your new workflow.
@@ -107,9 +107,9 @@ Now, similar to how we did for our [login page](/experiences/walkthrough/views/p
 
 As a general overview, this workflow handles the following:
 
-*   If a user visits `/create-account`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new "Create Account" page – unless the user is already logged in, in which case they are [redirected](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [home page](/experiences/walkthrough/views/part3/).
+*   If a user visits `/create-account`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new "Create Account" page – unless the user is already logged in, in which case they are [redirected](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [home page](/experiences/walkthrough/views/home-page/).
 *   When that user submits the "Create Account" form, we [validate](/workflows/logic/validate-payload/) that they have submitted all fields correctly. Then, we check to make sure we do not already have an experience user with the same email address already tied to the application. If either of these checks fail, we re-render the "Create Account" page with an error message.
-*   If [account creation](/workflows/experience/create-user/) is successful, we [generate an auth token](/workflows/experience/generate-token/), set it as a [cookie](/workflows/outputs/endpoint-reply/#cookies) and [redirect the user](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [home page](/experiences/walkthrough/views/part3/).
+*   If [account creation](/workflows/experience/create-user/) is successful, we [generate an auth token](/workflows/experience/generate-token/), set it as a [cookie](/workflows/outputs/endpoint-reply/#cookies) and [redirect the user](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [home page](/experiences/walkthrough/views/home-page/).
 
 There is a comment on each workflow node describing its function in more detail.
 
@@ -119,7 +119,7 @@ Finally, let's give our experience visitors a way to reach our new "Create Accou
 
 <h3 id="page-edits-log-in" style="text-transform: none"><span style="text-transform: uppercase">Page Edits:</span> Log In</h3>
 
-First, let's add a snippet to our ["Log In" page](/experiences/walkthrough/views/part2/) that will serve as a lead-in to account creation. Copy the snippet below and paste it beneath the closing `</form>` tag:
+First, let's add a snippet to our ["Log In" page](/experiences/walkthrough/views/log-in-page/) that will serve as a lead-in to account creation. Copy the snippet below and paste it beneath the closing `</form>` tag:
 
 ```hbs
 <hr>
@@ -129,7 +129,7 @@ First, let's add a snippet to our ["Log In" page](/experiences/walkthrough/views
 
 <h3 id="component-edits-userindicator" style="text-transform: none"><span style="text-transform: uppercase">Component Edits:</span> userIndicator</h3>
 
-Let's also update our site navigation to include a link to the account creation page, but only when the user is not signed in. To do that, we'll add a line to our ["userIndicator" component](/experiences/walkthrough/views/part1/). Add the following line immediately after our "Log In" link:
+Let's also update our site navigation to include a link to the account creation page, but only when the user is not signed in. To do that, we'll add a line to our ["userIndicator" component](/experiences/walkthrough/views/page-layout/). Add the following line immediately after our "Log In" link:
 
 ```hbs
 <li><a href="/create-account">Create Account</a></li>
@@ -137,6 +137,4 @@ Let's also update our site navigation to include a link to the account creation 
 
 ## Review
 
-This concludes Part 4, in which we've added the ability for experience visitors to register for an account and start accessing parts of the experience that were previously open only to logged-in visitors. In Part 5, we'll make it possible for our visitors to manage their accounts.
-
-Continue to [**Part 5 - User Profile**](/experiences/walkthrough/views/part5/)
+This concludes this tutorial, in which we've added the ability for experience visitors to register for an account and start accessing parts of the experience that were previously open only to logged-in visitors. Next, we'll build on top of what we've done here to [allow users to edit their profiles](/experiences/walkthrough/views/user-profile/).
