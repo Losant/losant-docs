@@ -101,15 +101,17 @@ There are a few things to note about our new component:
 Now, similar to how we did for our [login page](/experiences/walkthrough/views/part2/), let's create a single workflow for handling both GET and POST requests to our "/create-account" route. Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
 
 1. `Name` the workflow `Endpoint /create-account`.
-1. [Import](/workflows/overview/#import-export) the workflow content, available below.
+1. [Download the workflow](https://gist.github.com/LosantGists/49a7ae48e99160acf0556ae8577f9017/archive/e5ba8e2fc5b4a48195c4def1e0f2fa26737e3a1f.zip) and uncompress the zip, then [import the file](/workflows/overview/#import-export) `experience-create-account.flow` into your new workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /create-account` and `GET /create-account` you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Create Account` page](#page-create-account).
 
-There is a comment on each workflow node describing its function, as a general overview, this workflow handles the following:
+As a general overview, this workflow handles the following:
 
 *   If a user visits `/create-account`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new "Create Account" page – unless the user is already logged in, in which case they are [redirected](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [home page](/experiences/walkthrough/views/part3/).
 *   When that user submits the "Create Account" form, we [validate](/workflows/logic/validate-payload/) that they have submitted all fields correctly. Then, we check to make sure we do not already have an experience user with the same email address already tied to the application. If either of these checks fail, we re-render the "Create Account" page with an error message.
 *   If [account creation](/workflows/experience/create-user/) is successful, we [generate an auth token](/workflows/experience/generate-token/), set it as a [cookie](/workflows/outputs/endpoint-reply/#cookies) and [redirect the user](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [home page](/experiences/walkthrough/views/part3/).
+
+There is a comment on each workflow node describing its function in more detail.
 
 ## Link to the Feature
 
