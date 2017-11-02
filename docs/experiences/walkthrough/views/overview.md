@@ -6,17 +6,17 @@ This guide provides a complete walkthrough for using Experience Views to build a
 
 This guide is split into four main sections:
 
-**Part 1: [Page Layout](/experiences/walkthrough/views/part1/)**  
+**Part 1 - [Page Layout](/experiences/walkthrough/views/part1/)**  
 orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
 
-**Part 2: [Log In Page](/experiences/walkthrough/views/part2/)**  
+**Part 2 - [Log In Page](/experiences/walkthrough/views/part2/)**  
 orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
 
-**Part 3: [Home Page](/experiences/walkthrough/views/part3/)**  
+**Part 3 - [Home Page](/experiences/walkthrough/views/part3/)**  
 orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
 
-**Part 4: [User Registration](/experiences/walkthrough/views/part4/)**  
+**Part 4 - [User Registration](/experiences/walkthrough/views/part4/)**  
 orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
 
-**Part 4: [User Profile](/experiences/walkthrough/views/part5/)**  
+**Part 5 - [User Profile](/experiences/walkthrough/views/part5/)**  
 orem ipsum dolor sit amet, possit eirmod ei per. Mea saperet legendos ad, zril libris assueverit ex mel. Eum probo patrioque ut, ex sed dicant iisque. Consulatu liberavisse cu vix, eu commodo appetere abhorreant sea. Ius ut mutat idque. Affert consul vel no.
