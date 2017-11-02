@@ -61,11 +61,19 @@ pages:
         - Part 4 - Viewing Device Data: experiences/walkthrough/part4.md
     - Views Walkthrough:
         - Overview: experiences/walkthrough/views/overview.md
+<<<<<<< HEAD
         - Part 1 - Page Layout: experiences/walkthrough/views/page-layout.md
         - Part 2 - Log In Page: experiences/walkthrough/views/log-in-page.md
         - Part 3 - Home Page: experiences/walkthrough/views/home-page.md
         - Part 4 - User Registration: experiences/walkthrough/views/part4.md
         - Part 5 - User Profile: experiences/walkthrough/views/part5.md
+=======
+        - Page Layout: experiences/walkthrough/views/page-layout.md
+        - Log In Page: experiences/walkthrough/views/log-in-page.md
+        - Home Page: experiences/walkthrough/views/home-page.md
+        - User Registration: experiences/walkthrough/views/user-registration.md
+        - User Profile: experiences/walkthrough/views/user-profile.md
+>>>>>>> 7ce18cda89a5d27eb2b1983e9d6b6b2d37a584ea
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
