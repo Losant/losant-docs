@@ -113,7 +113,7 @@ If we did get a valid device ID, we can now use the [Time Series node](/workflow
 1. Set the `Resolution` to whatever makes sense for the application. In this example, it will return 24 hours of data with a data point for each 5 minute interval.
 1. Set the `Payload Path for Value` to `data.resultData`.
 
-The Time Series node provides powerful aggregation support for data that has been reported by your devices. The duration, resolution, and aggregation can all be changed to match your desired result. The last step is to reply with this data using an Endpoint Reply node.
+The [Time Series node](/workflows/data/time-series/) provides powerful aggregation support for data that has been reported by your devices. The duration, resolution, and aggregation can all be changed to match your desired result. The last step is to reply with this data using an [Endpoint Reply node](/workflows/outputs/endpoint-reply/).
 
 ![Data Reply](/images/experiences/walkthrough/part-4/data-reply.png "Data Reply")
 
