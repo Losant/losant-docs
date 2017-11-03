@@ -76,4 +76,4 @@ You can fill in an optional path with query params, choose the request method, a
 
 ### Webhook Throttling
 
-Webhook requests are limited to 30 calls in a 15-second window (or, on average, two per second) per webhook. This matches the limiting that occurs when sending [messages over MQTT](/organizations/resource-limits/#message-throttling). If you exceed this limit, the webhook will respond with a 429 "Over rate limit, request throttled" error.
+Webhook requests are limited to 100 calls in a 10-second window (or, on average, 10 per second) per webhook. If you exceed this limit, the webhook will respond with a 429 "Over rate limit, request throttled" error.
