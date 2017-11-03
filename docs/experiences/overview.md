@@ -28,7 +28,7 @@ HTTP requests for your endpoints should then go to `https://[my-custom-slug].onl
 
 ### Bootstrap Your Experience
 
-After choosing a slug, you'll have the option of setting up some example resources to get you started. This step can be skipped on a per-application basis, though we recommend completing it as a great starting point for building out a full experience.u
+After choosing a slug, you'll have the option of setting up some example resources to get you started. This step can be skipped on a per-application basis, though we recommend completing it as a great starting point for building out a full experience.
 
 ![Bootstrap Choose](/images/experiences/overview-choose-bootstrap.png "Bootstrap Choose")
 
