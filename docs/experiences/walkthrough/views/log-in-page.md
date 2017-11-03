@@ -1,6 +1,6 @@
-# Part 1 - Log In Page
+# Part 2 - Log In Page
 
-In the [previous section](/experiences/walkthrough/views/page-layout/) of this walkthrough, you learned how to create a layout. This section will cover how to create a log in page that will be rendered in that layout. This page will allow your Experience Users to log in and make authenticated requests to other pages within your experience.
+In the [previous part](/experiences/walkthrough/views/page-layout/) of this walkthrough, you learned how to create a layout. This part covers how to create a log in page that will be rendered in that layout. This page will allow your Experience Users to log in and make authenticated requests to other pages within your experience.
 
 ![Log In Page Screenshot](/images/experiences/walkthrough/views/log-in-page/screenshot.png "Log In Page Screenshot")
 
@@ -97,7 +97,7 @@ Start by creating an empty workflow using the main "Workflows" application menu.
 
 ![Workflow Menu](/images/experiences/walkthrough/views/log-in-page/workflow-menu.png "Workflow Menu")
 
-First, <a href="https://cdn.rawgit.com/Losant/experience-views-walkthrough/2fdf26db/log-in-page/endpoint-login.flow" target="_blank">download the example workflow</a> and [import it](https://docs.losant.com/workflows/overview/#import-export) into your newly created workflow.
+First, <a href="https://cdn.rawgit.com/Losant/experience-views-walkthrough/2fdf26db/log-in-page/endpoint-login.flow" target="_blank">download the example workflow</a> and [import it](/workflows/overview/#import-export) into your newly created workflow.
 
 ![Workflow](/images/experiences/walkthrough/views/log-in-page/workflow.png "Workflow")
 
