@@ -28,7 +28,7 @@ This endpoint is responsible for handling form submissions from the "Edit Profil
 1. Set the `Route` to `/edit-profile`.
 1. Change the `Access Control` to `All public users`.
 
-Same as before, save this route back out to the endpoints list to make another one.
+Same as before, save this route and back out to the endpoints list to make another one.
 
 <h3 id="get-change-password" style="text-transform: none">GET /change-password</h3>
 
@@ -52,34 +52,15 @@ Now that all the endpoints have been created, let's move on to creating our new 
 
 ![Add Page](/images/experiences/walkthrough/views/user-registration/add-page.png "Add Page")
 
-<h3 id="page-create-account" style="text-transform: none"><span style="text-transform: uppercase">Page:</span> Create Account</h3>
+<h3 id="page-edit-profile" style="text-transform: none"><span style="text-transform: uppercase">Page:</span> Edit Profile</h3>
 
-First we'll create a new page to render when the `/edit-profile` endpoint is requested. From here, users can change their name and email address. Click "Views" in the left column to return to your Experience Views list., then click the "Add" button in the "Pages" list.
+First we'll create a new page to render when the `/edit-profile` endpoint is requested. From here, users can change their name and email address. Click "Views" in the left column to return to your Experience Views list, then click the "Add" button in the "Pages" list.
 
 1. `Name` the page `Edit Profile`.
 1. Add a description if you would like; the field is optional and does not affect the page as it is presented to your experience users.
 1. Select your [previously created layout](/experiences/walkthrough/views/page-layout/) for the page's `Layout`.
 1. Choose `Custom` for the `Page Type`.
-1. Drop the snippet below in for the page's `Content`.
-
-```hbs
-{{#fillSection "metaDescription"}}This is an example edit profile page for your application experience.{{/fillSection}}
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-      <div class="well">
-        <p>
-          This is an example of a profile edit page. From here, your experience users can manage their account - changing their name or email address.
-        </p>
-      </div>
-      {{#if request.query.success}}
-        {{component "successAlert" "Profile updated."}}
-      {{/if}}
-      {{component "profileForm"}}
-    </div>
-  </div>
-</div>
-```
+1. Copy **[this snippet](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-profile/page-edit-profile.hbs)** and paste it for the page's `Content`.
 
 Once the page is ready, click "Create Page" to save your work.
 
@@ -90,95 +71,27 @@ Now, we'll add a page where users can change their password. They will have to e
 1. `Name` this new page `Change Password`.
 1. Select the [same `Layout`](/experiences/walkthrough/views/page-layout/) as for your other pages.
 1. Choose `Custom` for the `Page Type`.
-1. Drop the snippet below in for the page's `Content`.
+1. Copy **[this code](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-profile/page-change-password.hbs)** to serve as the page's `Content`.
 
-```hbs
-{{#fillSection "metaDescription"}}This is an example change password page for your application experience.{{/fillSection}}
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-      <div class="well">
-        <p>
-          This is an example of a change password page. An experience user must enter his/her current password and a new password to complete the request.
-        </p>
-      </div>
-      {{#if pageData.passwordError}}
-        {{component "errorAlert" pageData.passwordError}}
-      {{else}}
-        {{#if request.query.success}}
-          {{component "successAlert" "Password changed."}}
-        {{/if}}
-      {{/if}}
-      <form method="post">
-        <div class="form-group">
-          <label for="password">Current Password</label>
-          <input required minlength="8" maxlength="255" type="password" class="form-control" id="password" name="password" placeholder="Your current login credentials">
-        </div>
-        <div class="form-group">
-          <label for="newPassword">New Password</label>
-          <input required minlength="8" maxlength="255" type="password" class="form-control" id="newPassword" name="newPassword" placeholder="At least 8 characters">
-        </div>
-        <button type="submit" class="btn btn-success">Update Password</button>
-      </form>
-    </div>
-  </div>
-</div>
-```
-
-<h3 id="component-successAlert" style="text-transform: none"><span style="text-transform: uppercase">Component:</span> successAlert</h3>
+<h3 id="component-successalert" style="text-transform: none"><span style="text-transform: uppercase">Component:</span> successAlert</h3>
 
 We're referencing a new component in each of our newly created pages. This component is a simple confirmation box for telling the user that his/her profile changes were successful.
 
 Return to the "Views" page one more time, then click the "Add" button in the "Components" list.
 
 1. `Name` the component `successAlert`.
-1. Drop the snippet below in for the page's `Content`.
-
-```hbs
-<div class="alert alert-success">
-  {{.}}
-</div>
-```
+1. Use **[this snippet](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-profile/component-success-alert.hbs)** for the component's `Content`.
 
 This component is almost identical to our `errorAlert` component, except it will display in <span style="font-weight: bold; color:#3c763d">friendly green</span> instead of <span style="font-weight: bold; color:#a94442">scary red</span>.
 
 <h3 id="component-profileform" style="text-transform: none"><span style="text-transform: uppercase">Component:</span> profileForm</h3>
 
-Finally, we'll tweak the `profileForm` component we [created for user registration](/user-registration/#component-profileform) so we can reuse the component in our "Edit Profile" page.
+Finally, we'll tweak the `profileForm` component we [created for user registration](/experiences/walkthrough/views/user-registration/#component-profileform) so we can reuse the component in our "Edit Profile" page.
 
 1. Navigate to the `profileForm` component from your list of components.
-1. **Replace** its `Content` with the snippet below.
+1. Replace its `Content` with **[this snippet](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-profile/component-profile-form.hbs)**.
 
-```hbs
-{{#if pageData.profileError}}
-  {{component "errorAlert" pageData.profileError}}
-{{/if}}
-<form method="post">
-  <div class="form-group">
-    <label for="firstName">First name</label>
-    <input autofocus minlength="1" maxlength="255" value="{{ pageData.firstName }}" type="text" class="form-control" name="firstName" id="firstName" placeholder="e.g. Jane">
-  </div>
-  <div class="form-group">
-    <label for="lastName">Last name</label>
-    <input autofocus minlength="1" maxlength="255" required value="{{ pageData.lastName }}" type="text" class="form-control" name="lastName" id="lastName" placeholder="e.g. Doe">
-  </div>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input required value="{{ pageData.email }}" type="email" class="form-control" name="email" id="email" placeholder="e.g. test.user@example.com">
-  </div>
-  {{#eq request.path "/create-account"}}
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input required minlength="8" maxlength="255" type="password" class="form-control" id="password" name="password" placeholder="At least 8 characters">
-    </div>
-    <button type="submit" class="btn btn-success">Create My Account</button>
-  {{else}}
-    <button type="submit" class="btn btn-success">Update My Profile</button>
-  {{/eq}}
-</form>
-```
-
-We're making one significant change to the component, which can be seen just above the closing `</form>` tag: If the component is being called from the `/edit-profile` route, we are excluding the password input from the form and changing the text of the submit button. We do this by checking against the current route in the `{{#eq request.path "/create-account"}}` block helper.
+We're making one significant change to the component, which can be seen just above the closing `</form>` tag: If the component is being called from the `/edit-profile` route, we are excluding the password input from the form and changing the text of the submit button. We do this by checking against the current route in the `{{#eq request.path "/create-account"}}` block helper and condionally rendering one bit of content or the other based on the route.
 
 ## Create the Workflows
 
@@ -192,7 +105,7 @@ Click the "Workflows" dropdown at the top of the page, and select "New Workflow"
 
 1. `Name` the workflow `Endpoint /edit-profile` and click the "Create Workflow" button.
 1. [Download the workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/9bc72bcb/user-profile/endpoint-edit-profile.flow), then [import the file](/workflows/overview/#import-export) `endpoint-edit-profile.flow` into your new workflow.
-1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /edit-profile` and `GET /edit-profile` you created [above](#create-the-endpoints).
+1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /edit-profile` and `GET /edit-profile` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Edit Profile` page](#page-edit-profile).
 
 As a general overview, this workflow handles the following:
@@ -211,13 +124,13 @@ Now let's create a workflow allowing our logged-in users to update their passwor
 
 1. `Name` the workflow `Endpoint /change-password` and click the "Create Workflow" button.
 1. [Download the workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/be441619/user-profile/endpoint-change-password.flow), then [import the file](/workflows/overview/#import-export) `endpoint-change-password.flow` into your new workflow.
-1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /change-password` and `GET /change-password` you created [above](#create-the-endpoints).
+1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /change-password` and `GET /change-password` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Change Password` page](#page-change-password).
 
 As a general overview, this workflow handles the following:
 
 * If a user visits `/change-password`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Change Password` page – unless the user is not logged in, in which case we [redirect](/workflows/outputs/endpoint-reply/#redirect-response) them to the [Log In page](/experiences/walkthrough/views/log-in-page/).
-* When that user submits the `Change Password` form, we [validate](/workflows/logic/validate-payload/) that they have submitted an old and a valid new password. Then, we try [authenticating](/workflows/experience/authenticate/) using the old password provided by the user. If any of those checks fail, we re-render the `Change Password` page with an error message.
+* When that user submits the `Change Password` form, we [validate](/workflows/logic/validate-payload/) that they have submitted valid old and new passwords. Then, we try [authenticating](/workflows/experience/authenticate/) using the old password provided by the user. If any of those checks fail, we re-render the `Change Password` page with an error message.
 * If authentication succeeds, we [change the user's password](/workflows/experience/update-user/) and display a confirmation message.
 
 There is a comment on each workflow node describing its function in more detail.
@@ -244,6 +157,8 @@ Navigate to the `userIndicator` component from the "Components" list. In the `Co
 <li><a href="/edit-profile">Edit Profile</a></li>
 <li><a href="/change-password">Change Password</a></li>
 ```
+
+Alternatively, you can copy **[this content](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-profile/component-user-indicator.hbs)** and overwrite the entire `userIndicator` component.
 
 Now, a signed-in user can access the `/edit-profile` and `/change-password` links from their contextual menu.
 
