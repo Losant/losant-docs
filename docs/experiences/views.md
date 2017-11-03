@@ -20,7 +20,7 @@ Views are built as a combination of HTML and [Handlebars templates](http://handl
 
 ## Layouts
 
-Layouts are "wrappers" in which pages are rendered. Most application experiences will only use a couple of layouts, as most customizations to a layout that would be applied on a per-page basis can be accomplished using [`{{section}}` tags](#section-tags).
+Layouts are "wrappers" in which pages are rendered. Most application experiences will only use a couple of layouts, as most customizations to a layout that would be applied on a per-page basis can be accomplished using [`{{section}}` helpers](#section-helpers).
 
 ### Configuration
 
@@ -30,15 +30,15 @@ A layout takes the following configuration options:
 
 *   **Name:** The name of the layout. This is required and it must be unique across your application.
 *   **Description:** An optional description of the layout. This is never displayed to end users.
-*   **Content:** The combination of markup and Handlebars tags used to render the layout. This can include [`{{section}}` tags](#section-tags) and [components](#components), and it must include one [`{{page}}` tag](#the-page-tag).
+*   **Content:** The combination of markup and Handlebars helpers used to render the layout. This can include [`{{section}}` helpers](#section-helpers) and [components](#components), and it must include one [`{{page}}` helper](#the-page-helper).
 
-<h4 id="the-page-tag">The <span style="text-transform:none;">{{page}}</span> Tag</h4>
+<h4 id="the-page-helper">The <span style="text-transform:none;">{{page}}</span> Helper</h4>
 
-Your layout **must** include a single `{{page}}` tag somewhere within it. Wherever the tag is included is where the [Experience Page](#pages) using the layout will be rendered.
+Your layout **must** include a single `{{page}}` helper somewhere within it. Wherever the helper is included is where the [Experience Page](#pages) using the layout will be rendered.
 
-<h4 id="section-tags"><span style="text-transform:none;">{{section}}</span> Tags</h4>
+<h4 id="section-helpers"><span style="text-transform:none;">{{section}}</span> Helpers</h4>
 
-Your layout may optionally include multiple `{{section}}` tags, which are blocks within the layout whose contents may be filled in by the page referencing the layout, or by components used within the page.
+Your layout may optionally include multiple `{{section}}` helpers, which are blocks within the layout whose contents may be filled in by the page referencing the layout, or by components used within the page.
 
 A section is defined as such, where "mySectionName" is a unique name within the layout:
 
@@ -52,7 +52,7 @@ To include **default section content** to render in the event that neither the c
 {{#section "mySectionName"}}Default Content{{/section}}.
 ```
 
-The section's content is then defined in subsequent pages and their components using a [`{{#fillSection}}` tag](#fillsection-tags).
+The section's content is then defined in subsequent pages and their components using a [`{{#fillSection}}` helper](#fillsection-helpers).
 
 ### Using Layouts
 
@@ -81,7 +81,7 @@ Here is an example of everything a layout should include:
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Stylesheets should be included in the head, and they must be served from a third-party CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- we can add per-page styles using a {{#fillSection}} tag within a page -->
+    <!-- we can add per-page styles using a {{#fillSection}} helper within a page -->
     {{section "pageStyles"}}
   </head>
   <body>
@@ -112,14 +112,14 @@ A page takes the following configuration options:
 
 *   **Name:** The name of the page. This is required and it must be unique across your application.
 *   **Description:** An optional description of the page. This is never displayed to end users.
-*   **Layout:** The layout in which this page should be rendered. If you do not provide a layout, the page will be rendered without one (in which case you should choose "Custom" for your page type and, in the page content, provide a `doctype` and other tags necessary to render HTML in a browser.) If you choose a layout, your page will render at the location of [the `{{page}}` tag](#the-page-tag) within the layout.
+*   **Layout:** The layout in which this page should be rendered. If you do not provide a layout, the page will be rendered without one (in which case you should choose "Custom" for your page type and, in the page content, provide a `doctype` and other tags necessary to render HTML in a browser.) If you choose a layout, your page will render at the location of [the `{{page}}` helper](#the-page-helper) within the layout.
 *   **Page Type:** Choose either "Custom" or "Dashboard". More info on each page type is available below.
 
 #### Custom Pages
 
 ![Page Custom Configuration](/images/experiences/views-page-custom-config.png "Page Custom Configuration")
 
-Custom pages are configured much the same way [layouts](#layouts) and [components](#components) are: by providing a mix of HTML and [Handlebars](http://handlebarsjs.com) to reference the data passed down to the page. You may include any [view components](#components) within your page content, in addition to providing [`{{#fillSection}}` tags](#fillsection-tags) for setting the contents of [`{{section}}` tags](#section-tags) defined within a [layout](#layouts).
+Custom pages are configured much the same way [layouts](#layouts) and [components](#components) are: by providing a mix of HTML and [Handlebars](http://handlebarsjs.com) to reference the data passed down to the page. You may include any [view components](#components) within your page content, in addition to providing [`{{#fillSection}}` helpers](#fillsection-helpers) for setting the contents of [`{{section}}` helpers](#section-helpers) defined within a [layout](#layouts).
 
 #### Dashboard Pages
 
@@ -129,7 +129,7 @@ The "Dashboard" page type makes it easy to render any dashboard that is also own
 
 A dashboard page takes the following additional configuration options:
 
-*   **Dashboard:** The dashboard to render. This can be a specific dashboard or a Handlebars tag referencing a dashboard ID in the [context](#referencing-context) provided to your page.
+*   **Dashboard:** The dashboard to render. This can be a specific dashboard or a Handlebars helper referencing a dashboard ID in the [context](#referencing-context) provided to your page.
 *   **Time:** The time (in [Unix time](https://en.wikipedia.org/wiki/Unix_time)) to render each block at. This can either be a specific time or a reference to a context property. Providing no time will default the dashboard to the current time. (Read more about [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).)
 *   **Theme:** Whether to render the dashboard in the "Light" or "Dark" theme.
 *   **Context:** The [context variables](/dashboards/context-variables/) to pass down to the dashboard. If you chose a specific dashboard, you will see all the context variables defined for the dashboard and will have the option of setting a value for each. If you referenced an ID from the page's context, you must defined each key and value you wish to pass down. In both cases, the value can be a static value or a reference to a page context property.
@@ -153,7 +153,7 @@ Given the [example layout](#example-layout) defined above, a typical [custom pag
   This Is My Page Title
 {{/fillSection}}
 
-<!-- this content will populate the {{page}} tag within the layout -->
+<!-- this content will populate the {{page}} helper within the layout -->
 <div class="content">
   <h1>Hello there, {{experience.user.firstName}}!</h1>
   <p>You have access to the following devices:</p>
@@ -184,13 +184,13 @@ Components take the following properties:
 
 *   **Name:** The name of the component. This is required and it must be unique across your application.
 *   **Description:** An optional description of the component. This is never displayed to end users.
-*   **Content:** The combination of markup and Handlebars tags used to render the component. This can include [`{{#fillSection}}` tags](#fillsection-tags) as well as other components.
+*   **Content:** The combination of markup and Handlebars helpers used to render the component. This can include [`{{#fillSection}}` helpers](#fillsection-helpers) as well as other components.
 
-<h4 id="fillsection-tags"><span style="text-transform:none;">{{#fillSection}}</span> Tags</h4>
+<h4 id="fillsection-helpers"><span style="text-transform:none;">{{#fillSection}}</span> Helpers</h4>
 
-The contents of any [`{{section}}` tag](#section-tags) defined within a layout can be filled by including a `{{#fillSection}}` block helper within a page (or a component referenced within a page). The tag can be placed anywhere within that view, and its contents are removed from the rendering flow of the view and pushed to the layout. You can see examples of `{{#fillSection}}` tags being used in the [example page](#example-page) and [example layout](#example-layout) provided above.
+The contents of any [`{{section}}` helper](#section-helpers) defined within a layout can be filled by including a `{{#fillSection}}` block helper within a page (or a component referenced within a page). The helper can be placed anywhere within that view, and its contents are removed from the rendering flow of the view and pushed to the layout. You can see examples of `{{#fillSection}}` helpers being used in the [example page](#example-page) and [example layout](#example-layout) provided above.
 
-Given a `{{section "mySectionName"}}` tag defined within a layout, its contents would be populated by including the following in your page or component:
+Given a `{{section "mySectionName"}}` helper defined within a layout, its contents would be populated by including the following in your page or component:
 
 ```hbs
 {{#fillSection "mySectionName"}}
@@ -198,14 +198,14 @@ Given a `{{section "mySectionName"}}` tag defined within a layout, its contents 
 {{/fillSection}}
 ```
 
-When working with `{{#fillSection}}` tags, keep the following rules in mind:
+When working with `{{#fillSection}}` helpers, keep the following rules in mind:
 
-*   `{{#fillSection}}` tags may be placed within [pages](#pages), or within [components](#components) that are called within those pages. If a component is referenced directly from a [layout](#layouts), its `{{#fillSection}}` declarations (and any `{{#fillSection}}` declarations from components referenced by that component) will be ignored.
-*   When multiple `{{#fillSection}}` tags attempt to set the content of the same `{{section}}` (as in, when both a page and a component reference the same section name in a `{{#fillSection}}` declaration), the last declaration the renderer sees is the one that will populate the `{{section}}`. For this reason, it is a good idea to put a `{{#fillSection}}` tag at the bottom of your page's content to ensure it is not overridden by any child component (unless, of course, that is the desired behavior).
+*   `{{#fillSection}}` helpers may be placed within [pages](#pages), or within [components](#components) that are called within those pages. If a component is referenced directly from a [layout](#layouts), its `{{#fillSection}}` declarations (and any `{{#fillSection}}` declarations from components referenced by that component) will be ignored.
+*   When multiple `{{#fillSection}}` helpers attempt to set the content of the same `{{section}}` (as in, when both a page and a component reference the same section name in a `{{#fillSection}}` declaration), the last declaration the renderer sees is the one that will populate the `{{section}}`. For this reason, it is a good idea to put a `{{#fillSection}}` helper at the bottom of your page's content to ensure it is not overridden by any child component (unless, of course, that is the desired behavior).
 
 ### Using Components
 
-Components can be included within [layouts](#layouts), [pages](#pages) and other components. To render a component with the name "componentName", place the following tag where you would like the component to render:
+Components can be included within [layouts](#layouts), [pages](#pages) and other components. To render a component with the name "componentName", place the following helper where you would like the component to render:
 
 ```hbs
 {{component "myComponentName"}}
