@@ -53,19 +53,19 @@ pages:
     - Groups: experiences/groups.md
     - Users: experiences/users.md
     - Views: experiences/views.md
+    - Views Walkthrough:
+        - Overview: experiences/walkthrough/views/overview.md
+        - Part 1 - Page Layout: experiences/walkthrough/views/page-layout.md
+        - Part 2 - Log In Page: experiences/walkthrough/views/log-in-page.md
+        - Part 3 - Home Page: experiences/walkthrough/views/home-page.md
+        - Part 4 - User Registration: experiences/walkthrough/views/user-registration.md
+        - Part 5 - User Profile: experiences/walkthrough/views/user-profile.md
     - API Walkthrough:
         - Overview: experiences/walkthrough/overview.md
         - Part 1 - User Registration: experiences/walkthrough/part1.md
         - Part 2 - User Authentication: experiences/walkthrough/part2.md
         - Part 3 - Device Registration: experiences/walkthrough/part3.md
         - Part 4 - Viewing Device Data: experiences/walkthrough/part4.md
-    - Views Walkthrough:
-        - Overview: experiences/walkthrough/views/overview.md
-        - Page Layout: experiences/walkthrough/views/page-layout.md
-        - Log In Page: experiences/walkthrough/views/log-in-page.md
-        - Home Page: experiences/walkthrough/views/home-page.md
-        - User Registration: experiences/walkthrough/views/user-registration.md
-        - User Profile: experiences/walkthrough/views/user-profile.md
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
