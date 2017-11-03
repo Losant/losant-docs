@@ -44,23 +44,7 @@ First we'll create a new page to render when this endpoint is requested. Click t
 1. Add a description if you would like; the field is optional and does not affect the page as it is presented to your experience users.
 1. Select your [previously created layout](/experiences/walkthrough/views/page-layout/) for the page's `Layout`.
 1. Choose `Custom` for the `Page Type`.
-1. Drop the snippet below in for the page's `Content`.
-
-```hbs
-{{#fillSection "metaDescription"}}This is an example account creation page for your application experience.{{/fillSection}}
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-      <div class="well">
-        <p>
-          This is an example account creation page. If you wish to allow users to self-register in your experience, you can start by copying this page.
-        </p>
-      </div>
-      {{component "profileForm"}}
-    </div>
-  </div>
-</div>
-```
+1. Copy **[this snippet](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-registration/page-create-account.hbs)** and paste it in for the page's `Content`.
 
 Once the page is ready, click "Create Page" to save your work.
 
@@ -69,36 +53,11 @@ Once the page is ready, click "Create Page" to save your work.
 We included a new component in our new Create Account page, which will serve as the form for collecting new user data. Create the component by returning to the Experience Views list and clicking the "Add" button in the "Components" list.
 
 1. `Name` the component `profileForm`.
-1. Copy the snippet below and use it for the component's `Content`.
-
-```hbs
-{{#if pageData.profileError}}
-  {{component "errorAlert" pageData.profileError}}
-{{/if}}
-<form method="post">
-  <div class="form-group">
-    <label for="firstName">First name</label>
-    <input autofocus minlength="1" maxlength="255" value="{{ pageData.firstName }}" type="text" class="form-control" name="firstName" id="firstName" placeholder="e.g. Jane">
-  </div>
-  <div class="form-group">
-    <label for="lastName">Last name</label>
-    <input autofocus minlength="1" maxlength="255" required value="{{ pageData.lastName }}" type="text" class="form-control" name="lastName" id="lastName" placeholder="e.g. Doe">
-  </div>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input required value="{{ pageData.email }}" type="email" class="form-control" name="email" id="email" placeholder="e.g. test.user@example.com">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input required minlength="8" maxlength="255" type="password" class="form-control" id="password" name="password" placeholder="At least 8 characters">
-  </div>
-  <button type="submit" class="btn btn-success">Create My Account</button>
-</form>
-```
+1. Copy **[this snippet](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-registration/component-profile-form.hbs)** and paste it for the component's `Content`.
 
 There are a few things to note about our new component:
 
-* We're setting a number of [form validation](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) attributes on our inputs, including marking all fields as required and setting minimum and maximum lengths. This will block malformed account creation requests before the form ever submits. Not all browsers support this functionality, so we must also check these values within our workflow.
+* We're setting a number of [HTML5 form validation attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) on our inputs, including marking all fields as required and setting minimum and maximum lengths. This will block malformed account creation requests before the form ever submits. Not all browsers support this functionality, so we must also check these values within our workflow.
 * There is an instance of our "errorAlert" component at the top of this component, which we will use to render an error should account creation fail.
 * In the event that account creation does fail, we will repopulate as many fields as we have data for, except the user's new password.
 
@@ -131,7 +90,9 @@ Finally, let's give our experience visitors a way to reach our new "Create Accou
 
 <h3 id="page-edits-log-in" style="text-transform: none"><span style="text-transform: uppercase">Page Edits:</span> Log In</h3>
 
-First, let's add a snippet to our ["Log In" page](/experiences/walkthrough/views/log-in-page/) that will serve as a lead-in to account creation. Copy the snippet below and paste it beneath the closing `</form>` tag:
+First, let's edit our ["Log In" page](/experiences/walkthrough/views/log-in-page/) to add a section that will serve as a lead-in to account creation. Copy **[this snippet](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-registration/page-log-in.hbs)** and use it to overwrite our current "Log In" page content.
+
+We've added these few lines just above the closing `</form>` tag. This renders the call to action below our submit button.
 
 ```hbs
 <hr>
@@ -146,6 +107,8 @@ Let's also update our site navigation to include a link to the account creation 
 ```hbs
 <li><a href="/create-account">Create Account</a></li>
 ```
+
+Alternatively, you can copy **[the full component](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-registration/component-user-indicator.hbs)** and paste it as the new content of `userIndicator`.
 
 ## Review
 
