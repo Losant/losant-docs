@@ -51,6 +51,18 @@ Device tags allow you to group and organize your devices. Tags are defined as ke
 
 In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` or `color=red` to find the specific devices.
 
+## Cloning an Existing Device
+
+Once you've created a device you can clone it to create a copy with the same configuration. From the original device page, click "Clone Device" in the footer. This will create the new device and take you to its page where its configuration can be adjusted.
+
+![Device Clone Button](/images/devices/device-clone-button.png "Device Clone Button")
+
+If the original device has any unsaved changes, you'll be presented with the following modal so you can decide whether you want to apply the changes to the original device, the new device, or both devices:
+
+![Device Clone Modal](/images/devices/device-clone-dirty-modal.png "Device Clone Modal")
+
+**Note:** If you have a large number of devices that share similar configurations, it may be more convenient to [create a recipe](/devices/device-recipes/) for these devices.
+
 ## Device Management
 
 Once the device is added and successfully connected to Losant, there are several useful pieces of information available on the device page.
