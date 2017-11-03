@@ -117,7 +117,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 * `{{decodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent).
 * `{{encodeBase64 val}}`: Treats `val` as a string, and returns the [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64) version of that string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
 * `{{encodeURI str}}`: Returns `str` as an [encoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
-* `{{encodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
+* `{{encodeURIComponent str}}`: Returns `str` as an [encoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
 * `{{format val formatStr}}`:
     * If `val` is a **number**, returns the number in the [D3 format](https://github.com/d3/d3-format#locale_format) matching the `formatStr` parameter (default ',.6').
     * If `val` is a [**JavaScript Date object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), returns the date in the [Moment.js format](http://momentjs.com/docs/#/displaying/format/) matching the `formatStr` parameter (default 'L LTS').
