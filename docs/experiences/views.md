@@ -22,15 +22,15 @@ Views are built as a combination of HTML and [Handlebars templates](http://handl
 
 Layouts are "wrappers" in which pages are rendered. Most application experiences will only use a couple of layouts, as most customizations to a layout that would be applied on a per-page basis can be accomplished using [`{{section}}` helpers](#section-helpers).
 
-### Configuration
+### Layout Configuration
 
 ![Layout Configuration](/images/experiences/views-layout-config.png "Layout Configuration")
 
 A layout takes the following configuration options:
 
-*   **Name:** The name of the layout. This is required and it must be unique across your application.
-*   **Description:** An optional description of the layout. This is never displayed to end users.
-*   **Content:** The combination of markup and Handlebars helpers used to render the layout. This can include [`{{section}}` helpers](#section-helpers) and [components](#components), and it must include one [`{{page}}` helper](#the-page-helper).
+* **Name:** The name of the layout. This is required and it must be unique across your application.
+* **Description:** An optional description of the layout. This is never displayed to end users.
+* **Content:** The combination of markup and Handlebars helpers used to render the layout. This can include [`{{section}}` helpers](#section-helpers) and [components](#components), and it must include one [`{{page}}` helper](#the-page-helper).
 
 <h4 id="the-page-helper">The <span style="text-transform:none;">{{page}}</span> Helper</h4>
 
@@ -64,10 +64,10 @@ Layouts are optional within your application experience. However, if you choose 
 
 A layout includes common elements that are used in all web pages you are rendering within your experience; for example, a typical layout should include the following:
 
-*   Your `<!doctype html>` declaration
-*   The HTML `<head>` as well as any common `<script>` and `<link>` (stylesheet) tags
-*   Your opening and closing `<body>` tags
-*   Common UI elements that do not change per page, such as your header and footer
+* Your `<!doctype html>` declaration
+* The HTML `<head>` as well as any common `<script>` and `<link>` (stylesheet) tags
+* Your opening and closing `<body>` tags
+* Common UI elements that do not change per page, such as your header and footer
 
 Here is an example of everything a layout should include:
 
@@ -104,16 +104,16 @@ Here is an example of everything a layout should include:
 
 Pages are the fundamental Experience View type; without a page, it is impossible to render a custom user interface on top of your application data. You can have a single page for every [endpoint](/experiences/endpoints/) in your application, or you can define pages that are used as templates for rendering specific types of data (e.g. a list of resources).
 
-### Configuration
+### Page Configuration
 
 ![Page Base Configuration](/images/experiences/views-page-base-config.png "Page Base Configuration")
 
 A page takes the following configuration options:
 
-*   **Name:** The name of the page. This is required and it must be unique across your application.
-*   **Description:** An optional description of the page. This is never displayed to end users.
-*   **Layout:** The layout in which this page should be rendered. If you do not provide a layout, the page will be rendered without one (in which case you should choose "Custom" for your page type and, in the page content, provide a `doctype` and other tags necessary to render HTML in a browser.) If you choose a layout, your page will render at the location of [the `{{page}}` helper](#the-page-helper) within the layout.
-*   **Page Type:** Choose either "Custom" or "Dashboard". More info on each page type is available below.
+* **Name:** The name of the page. This is required and it must be unique across your application.
+* **Description:** An optional description of the page. This is never displayed to end users.
+* **Layout:** The layout in which this page should be rendered. If you do not provide a layout, the page will be rendered without one (in which case you should choose "Custom" for your page type and, in the page content, provide a `doctype` and other tags necessary to render HTML in a browser.) If you choose a layout, your page will render at the location of [the `{{page}}` helper](#the-page-helper) within the layout.
+* **Page Type:** Choose either "Custom" or "Dashboard". More info on each page type is available below.
 
 #### Custom Pages
 
@@ -129,18 +129,18 @@ The "Dashboard" page type makes it easy to render any dashboard that is also own
 
 A dashboard page takes the following additional configuration options:
 
-*   **Dashboard:** The dashboard to render. This can be a specific dashboard or a Handlebars helper referencing a dashboard ID in the [context](#referencing-context) provided to your page.
-*   **Time:** The time (in [Unix time](https://en.wikipedia.org/wiki/Unix_time)) to render each block at. This can either be a specific time or a reference to a context property. Providing no time will default the dashboard to the current time. (Read more about [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).)
-*   **Theme:** Whether to render the dashboard in the "Light" or "Dark" theme.
-*   **Context:** The [context variables](/dashboards/context-variables/) to pass down to the dashboard. If you chose a specific dashboard, you will see all the context variables defined for the dashboard and will have the option of setting a value for each. If you referenced an ID from the page's context, you must defined each key and value you wish to pass down. In both cases, the value can be a static value or a reference to a page context property.
+* **Dashboard:** The dashboard to render. This can be a specific dashboard or a Handlebars helper referencing a dashboard ID in the [context](#referencing-context) provided to your page.
+* **Time:** The time (in [Unix time](https://en.wikipedia.org/wiki/Unix_time)) to render each block at. This can either be a specific time or a reference to a context property. Providing no time will default the dashboard to the current time. (Read more about [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).)
+* **Theme:** Whether to render the dashboard in the "Light" or "Dark" theme.
+* **Context:** The [context variables](/dashboards/context-variables/) to pass down to the dashboard. If you chose a specific dashboard, you will see all the context variables defined for the dashboard and will have the option of setting a value for each. If you referenced an ID from the page's context, you must defined each key and value you wish to pass down. In both cases, the value can be a static value or a reference to a page context property.
 
 ### Using Pages
 
 In order to use a page, you must do the following:
 
-1.   Define an [Experience Endpoint](/experiences/endpoints/) for your users to visit.
-2.   Build a [workflow](/workflows/overview/) to handle the endpoint request and issue a response. (You can do this [automatically](/experiences/endpoints/#endpoints-and-workflows) from the endpoint's edit page.)
-3.   Choose "Experience Page" as the "Reply Type" in the [Endpoint Reply node](/workflows/outputs/endpoint-reply/#reply-type) and select your page as the one to render for the user.
+1. Define an [Experience Endpoint](/experiences/endpoints/) for your users to visit.
+1. Build a [workflow](/workflows/overview/) to handle the endpoint request and issue a response. (You can do this [automatically](/experiences/endpoints/#endpoints-and-workflows) from the endpoint's edit page.)
+1. Choose "Experience Page" as the "Reply Type" in the [Endpoint Reply node](/workflows/outputs/endpoint-reply/#reply-type) and select your page as the one to render for the user.
 
 In the Endpoint Reply node, you may optionally [construct a `pageData` object](/workflows/outputs/endpoint-reply/#reply-type) to supply to the page. Note that there are a number of context properties [available automatically](#data-that-is-always-provided), in addition to the `pageData` you may provide through the workflow.
 
@@ -176,15 +176,15 @@ Given the [example layout](#example-layout) defined above, a typical [custom pag
 
 Components are snippets of HTML and Handlebars that can be used within your layouts, pages or other components. Often components are invoked multiple times per page – such as when iterating over a list of items – but they can also be used simply as a means of cleaning up your code (for example, creating a component housing your experience's navigation code and referencing it one time in your layout).
 
-### Configuration
+### Component Configuration
 
 ![Component Configuration](/images/experiences/views-component-config.png "Component Configuration")
 
 Components take the following properties:
 
-*   **Name:** The name of the component. This is required and it must be unique across your application.
-*   **Description:** An optional description of the component. This is never displayed to end users.
-*   **Content:** The combination of markup and Handlebars helpers used to render the component. This can include [`{{#fillSection}}` helpers](#fillsection-helpers) as well as other components.
+* **Name:** The name of the component. This is required and it must be unique across your application.
+* **Description:** An optional description of the component. This is never displayed to end users.
+* **Content:** The combination of markup and Handlebars helpers used to render the component. This can include [`{{#fillSection}}` helpers](#fillsection-helpers) as well as other components.
 
 <h4 id="fillsection-helpers"><span style="text-transform:none;">{{#fillSection}}</span> Helpers</h4>
 
@@ -200,8 +200,8 @@ Given a `{{section "mySectionName"}}` helper defined within a layout, its conten
 
 When working with `{{#fillSection}}` helpers, keep the following rules in mind:
 
-*   `{{#fillSection}}` helpers may be placed within [pages](#pages), or within [components](#components) that are called within those pages. If a component is referenced directly from a [layout](#layouts), its `{{#fillSection}}` declarations (and any `{{#fillSection}}` declarations from components referenced by that component) will be ignored.
-*   When multiple `{{#fillSection}}` helpers attempt to set the content of the same `{{section}}` (as in, when both a page and a component reference the same section name in a `{{#fillSection}}` declaration), the last declaration the renderer sees is the one that will populate the `{{section}}`. For this reason, it is a good idea to put a `{{#fillSection}}` helper at the bottom of your page's content to ensure it is not overridden by any child component (unless, of course, that is the desired behavior).
+* `{{#fillSection}}` helpers may be placed within [pages](#pages), or within [components](#components) that are called within those pages. If a component is referenced directly from a [layout](#layouts), its `{{#fillSection}}` declarations (and any `{{#fillSection}}` declarations from components referenced by that component) will be ignored.
+* When multiple `{{#fillSection}}` helpers attempt to set the content of the same `{{section}}` (as in, when both a page and a component reference the same section name in a `{{#fillSection}}` declaration), the last declaration the renderer sees is the one that will populate the `{{section}}`. For this reason, it is a good idea to put a `{{#fillSection}}` helper at the bottom of your page's content to ensure it is not overridden by any child component (unless, of course, that is the desired behavior).
 
 ### Using Components
 

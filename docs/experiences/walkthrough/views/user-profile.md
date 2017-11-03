@@ -73,9 +73,9 @@ First we'll create a new page to render when the `/edit-profile` endpoint is req
         </p>
       </div>
       {{#if request.query.success}}
-      	{{component "successAlert" "Profile updated."}}
-     	{{/if}}
-			{{component "profileForm"}}
+        {{component "successAlert" "Profile updated."}}
+      {{/if}}
+      {{component "profileForm"}}
     </div>
   </div>
 </div>
@@ -109,7 +109,7 @@ Now, we'll add a page where users can change their password. They will have to e
           {{component "successAlert" "Password changed."}}
         {{/if}}
       {{/if}}
-			<form method="post">
+      <form method="post">
         <div class="form-group">
           <label for="password">Current Password</label>
           <input required minlength="8" maxlength="255" type="password" class="form-control" id="password" name="password" placeholder="Your current login credentials">
@@ -197,9 +197,9 @@ Click the "Workflows" dropdown at the top of the page, and select "New Workflow"
 
 As a general overview, this workflow handles the following:
 
-*   If a user visits `/edit-profile`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Edit Profile` page – unless the user is not logged in, in which case we [redirect](/workflows/outputs/endpoint-reply/#redirect-response) them to the [Log In page](/experiences/walkthrough/views/log-in-page/).
-*   When that user submits the `Edit Profile` form, we [validate](/workflows/logic/validate-payload/) that they have submitted all fields correctly. Then, we attempt to make the update. (It could fail if, for example, the user attempts to change their email address to one that is already registered to another experience user.) If either of these operations fail, we re-render the `Edit Profile` page with an error message.
-*   If the [user update](/workflows/experience/update-user/) is successful, we [redirect the user](/workflows/outputs/endpoint-reply/#redirect-response) to the same URL with a `success=true` query parameter. The presence of this on the URL tells us if we should show our [`successAlert` component](#component-successalert).
+* If a user visits `/edit-profile`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Edit Profile` page – unless the user is not logged in, in which case we [redirect](/workflows/outputs/endpoint-reply/#redirect-response) them to the [Log In page](/experiences/walkthrough/views/log-in-page/).
+* When that user submits the `Edit Profile` form, we [validate](/workflows/logic/validate-payload/) that they have submitted all fields correctly. Then, we attempt to make the update. (It could fail if, for example, the user attempts to change their email address to one that is already registered to another experience user.) If either of these operations fail, we re-render the `Edit Profile` page with an error message.
+* If the [user update](/workflows/experience/update-user/) is successful, we [redirect the user](/workflows/outputs/endpoint-reply/#redirect-response) to the same URL with a `success=true` query parameter. The presence of this on the URL tells us if we should show our [`successAlert` component](#component-successalert).
 
 There is a comment on each workflow node describing its function in more detail.
 
@@ -216,9 +216,9 @@ Now let's create a workflow allowing our logged-in users to update their passwor
 
 As a general overview, this workflow handles the following:
 
-*   If a user visits `/change-password`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Change Password` page – unless the user is not logged in, in which case we [redirect](/workflows/outputs/endpoint-reply/#redirect-response) them to the [Log In page](/experiences/walkthrough/views/log-in-page/).
-*   When that user submits the `Change Password` form, we [validate](/workflows/logic/validate-payload/) that they have submitted an old and a valid new password. Then, we try [authenticating](/workflows/experience/authenticate/) using the old password provided by the user. If any of those checks fail, we re-render the `Change Password` page with an error message.
-*   If authentication succeeds, we [change the user's password](/workflows/experience/update-user/) and display a confirmation message.
+* If a user visits `/change-password`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Change Password` page – unless the user is not logged in, in which case we [redirect](/workflows/outputs/endpoint-reply/#redirect-response) them to the [Log In page](/experiences/walkthrough/views/log-in-page/).
+* When that user submits the `Change Password` form, we [validate](/workflows/logic/validate-payload/) that they have submitted an old and a valid new password. Then, we try [authenticating](/workflows/experience/authenticate/) using the old password provided by the user. If any of those checks fail, we re-render the `Change Password` page with an error message.
+* If authentication succeeds, we [change the user's password](/workflows/experience/update-user/) and display a confirmation message.
 
 There is a comment on each workflow node describing its function in more detail.
 

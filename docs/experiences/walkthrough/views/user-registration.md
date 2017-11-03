@@ -98,9 +98,9 @@ We included a new component in our new Create Account page, which will serve as 
 
 There are a few things to note about our new component:
 
-*   We're setting a number of [form validation](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) attributes on our inputs, including marking all fields as required and setting minimum and maximum lengths. This will block malformed account creation requests before the form ever submits. Not all browsers support this functionality, so we must also check these values within our workflow.
-*   There is an instance of our "errorAlert" component at the top of this component, which we will use to render an error should account creation fail.
-*   In the event that account creation does fail, we will repopulate as many fields as we have data for, except the user's new password.
+* We're setting a number of [form validation](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) attributes on our inputs, including marking all fields as required and setting minimum and maximum lengths. This will block malformed account creation requests before the form ever submits. Not all browsers support this functionality, so we must also check these values within our workflow.
+* There is an instance of our "errorAlert" component at the top of this component, which we will use to render an error should account creation fail.
+* In the event that account creation does fail, we will repopulate as many fields as we have data for, except the user's new password.
 
 ## Create the Workflow
 
@@ -117,9 +117,9 @@ Now, similar to how we did for our [login page](/experiences/walkthrough/views/l
 
 As a general overview, this workflow handles the following:
 
-*   If a user visits `/create-account`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Create Account` page – unless the user is already logged in, in which case they are [redirected](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [Home page](/experiences/walkthrough/views/home-page/).
-*   When that user submits the `Create Account` form, we [validate](/workflows/logic/validate-payload/) that they have submitted all fields correctly. Then, we check to make sure we do not already have an experience user with the same email address already tied to the application. If either of these checks fail, we re-render the `Create Account` page with an error message.
-*   If [account creation](/workflows/experience/create-user/) is successful, we [generate an auth token](/workflows/experience/generate-token/), set it as a [cookie](/workflows/outputs/endpoint-reply/#cookies) and [redirect the user](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [home page](/experiences/walkthrough/views/home-page/).
+* If a user visits `/create-account`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Create Account` page – unless the user is already logged in, in which case they are [redirected](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [Home page](/experiences/walkthrough/views/home-page/).
+* When that user submits the `Create Account` form, we [validate](/workflows/logic/validate-payload/) that they have submitted all fields correctly. Then, we check to make sure we do not already have an experience user with the same email address already tied to the application. If either of these checks fail, we re-render the `Create Account` page with an error message.
+* If [account creation](/workflows/experience/create-user/) is successful, we [generate an auth token](/workflows/experience/generate-token/), set it as a [cookie](/workflows/outputs/endpoint-reply/#cookies) and [redirect the user](/workflows/outputs/endpoint-reply/#redirect-response) to our experience [home page](/experiences/walkthrough/views/home-page/).
 
 There is a comment on each workflow node describing its function in more detail.
 
