@@ -41,7 +41,7 @@ When done, click the `Create Endpoint` button at the bottom to create this endpo
 
 ![Endpoint list](/images/experiences/walkthrough/part-1/endpoint-list.png "Endpoint list")
 
-At this point,  we have the `/users` endpoint defined, but there's no logic to run when it's requested. If you were to request it now, Losant will automatically return a 404. In order to give this endpoint some intelligence, we have to create a [workflow](/workflows/overview/). All experience endpoints are backed by workflows that contain the [Endpoint trigger node](/workflows/triggers/endpoint/) and [Endpoint reply](/workflows/outputs/endpoint-reply/) nodes.
+At this point,  we have the `/users` endpoint defined, but there's no logic to run when it's requested. If you were to request it now, Losant will automatically return a 404. In order to give this endpoint some intelligence, we have to create a [workflow](/workflows/overview/). All experience endpoints are backed by workflows that contain the [Endpoint trigger node](/workflows/triggers/endpoint/) and [Endpoint Reply node](/workflows/outputs/endpoint-reply/).
 
 Create a new workflow for this endpoint using the main `Workflows` application menu.
 
@@ -59,12 +59,12 @@ In the trigger's configuration, select the endpoint we just created (i.e. POST /
 
 For now, let's make a simple workflow that simply returns 200 (OK) whenever anything is requested. We'll also use a [Debug node](/workflows/outputs/debug/) so you can see the format of the data as it comes into the workflow.
 
-Add a Debug node and an Endpoint Reply node to the canvas.
+Add a [Debug node](/workflow/outputs/debug/) and an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) to the canvas.
 
 ![Endpoint Debug](/images/experiences/walkthrough/part-1/endpoint-debug.png "Endpoint Debug")
 
 1. Add a Debug node and connect it to the Endpoint Trigger node.
-1. Add an Endpoint Reply node and connect it to the Endpoint Trigger.
+1. Add an Endpoint Reply node and connect it to the Endpoint Trigger node.
 1. In the Endpoint Reply config, set the `Response Code Template` to `200`.
 1. In the Endpoint Reply config, set the `Reply Body` to `OK`
 
@@ -97,7 +97,7 @@ If the user exists, `data.existingUser` will be something other than `null`. Nex
 
 1. Set the `Expression` to `{{ data.existingUser }} === null`. If the expression returns true (the user does not exist), the workflow will take the right path. If the expression is false, the workflow will take the left path.
 
-At this point, we're ready to return the `409 (Conflict)` back to the client if the user already exists. Add an endpoint reply node and connect it to the left (false) output of the conditional node.
+At this point, we're ready to return the `409 (Conflict)` back to the client if the user already exists. Add an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) and connect it to the left (false) output of the conditional node.
 
 ![User Exists Reply](/images/experiences/walkthrough/part-1/user-exists-reply.png "User Exists Reply")
 
@@ -133,7 +133,7 @@ The last thing to do is actually create the user. Add a [Create User node](/work
 
 This node will create a new user inside your application Experience. lōm only collects email and password, however, experience users also have built-in fields for first and last names. [User tags](/experiences/users/#user-tags) can be used to store any other information specific to your application's users.
 
-The new user will be put back on the payload at `data.newUser`, so we can return it to the client as the result of this API request. Next, add an Endpoint Reply node and connect it to the Create User node.
+The new user will be put back on the payload at `data.newUser`, so we can return it to the client as the result of this API request. Next, add an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) and connect it to the Create User node.
 
 ![Create User Reply](/images/experiences/walkthrough/part-1/create-user-reply.png "Create User Reply")
 
@@ -170,7 +170,7 @@ Once this route is requested successfully, you'll see the new user in the experi
 
 ![User List New User](/images/experiences/walkthrough/part-1/user-list-new-user.png "User List New User")
 
-The next thing we want to do is send our new user a welcome email once they've registered. Add an [Email node](/workflows/outputs/email/) and connect it to the Endpoint Reply node.
+The next thing we want to do is send our new user a welcome email once they've registered. Add an [Email node](/workflows/outputs/email/) and connect it to the [Endpoint Reply node](/workflows/outputs/endpoint-reply/).
 
 ![Welcome Email](/images/experiences/walkthrough/part-1/welcome-email.png "Welcome Email")
 

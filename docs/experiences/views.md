@@ -56,7 +56,7 @@ The section's content is then defined in subsequent pages and their components u
 
 ### Using Layouts
 
-Layouts are chosen as an optional property of an Experience Page, though a page's layout can be overridden within the [Endpoint Reply workflow node](/workflows/outputs/endpoint-reply/) on a per-endpoint-request basis.
+Layouts are chosen as an optional property of an Experience Page, though a page's layout can be overridden within the [Endpoint Reply node](/workflows/outputs/endpoint-reply/) on a per-endpoint-request basis.
 
 Layouts are optional within your application experience. However, if you choose not to define a layout for any page, that page should include all the necessary markup to properly render a web page (your `doctype` declaration, etc.).
 
