@@ -21,8 +21,8 @@ To build the Losant documentation yourself, do the following:
 ## Deploying
 
 ```bash
-npm install
-AWS_SECRET_KEY=your_secret AWS_ACCESS_KEY=your_key npm run deploy
+yarn
+AWS_SECRET_KEY=your_secret AWS_ACCESS_KEY=your_key yarn deploy
 ```
 
 *****
