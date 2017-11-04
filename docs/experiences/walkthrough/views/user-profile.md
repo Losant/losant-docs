@@ -123,7 +123,7 @@ Now let's create a workflow allowing our logged-in users to update their passwor
 ![Change Password Workflow](/images/experiences/walkthrough/views/user-profile/change-password-workflow.png "Change Password Workflow")
 
 1. `Name` the workflow `Endpoint /change-password` and click the "Create Workflow" button.
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/d4abbf2a/user-profile/endpoint-change-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-change-password.flow` into your new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/f5d531da/user-profile/endpoint-change-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-change-password.flow` into your new workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /change-password` and `GET /change-password` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Change Password` page](#page-change-password).
 
