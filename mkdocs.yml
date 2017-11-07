@@ -60,6 +60,7 @@ pages:
         - Part 3 - Home Page: experiences/walkthrough/views/home-page.md
         - Part 4 - User Registration: experiences/walkthrough/views/user-registration.md
         - Part 5 - User Profile: experiences/walkthrough/views/user-profile.md
+        - Part 6 - Forgot Password: experiences/walkthrough/views/forgot-password.md
     - API Walkthrough:
         - Overview: experiences/walkthrough/overview.md
         - Part 1 - User Registration: experiences/walkthrough/part1.md
