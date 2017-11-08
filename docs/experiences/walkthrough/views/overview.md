@@ -15,8 +15,8 @@ The Log In page provides a way for your Experience Users to log in to your custo
 **Part 3: [Home Page](/experiences/walkthrough/views/home-page/)**  
 Once your Experience Users are logged in, they are redirected to your home page. This section describes how to prevent unauthenticated users from accessing pages and how to create custom content.
 
-**Part 4 - [User Registration](/experiences/walkthrough/views/user-registration/)**  
+**Part 4: [User Registration](/experiences/walkthrough/views/user-registration/)**  
 This section expands your custom experience to allow users to sign up and register themselves.
 
-**Part 5 - [User Profile](/experiences/walkthrough/views/user-profile/)**  
+**Part 5: [User Profile](/experiences/walkthrough/views/user-profile/)**  
 This section describes how to build a page that allows your Experience Users to edit their own profiles and change their passwords.

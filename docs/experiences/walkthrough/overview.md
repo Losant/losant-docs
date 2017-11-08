@@ -1,4 +1,4 @@
-# Experience Walkthrough
+# API Walkthrough
 
 This guide provides a complete walkthrough for building an end-to-end mobile experience for an example connected product. A Losant [application experience](/experiences/overview/) provides everything required to build a product on top of our platform, including user management and custom API endpoints.
 
