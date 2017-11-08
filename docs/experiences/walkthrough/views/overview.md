@@ -20,3 +20,6 @@ This section expands your custom experience to allow users to sign up and regist
 
 **Part 5: [User Profile](/experiences/walkthrough/views/user-profile/)**  
 This section describes how to build a page that allows your Experience Users to edit their own profiles and change their passwords.
+
+**Part 6: [Forgot Password](/experiences/walkthrough/views/forgot-password/)**  
+This section describes how to build a flow allowing users who have forgotten their passwords to reset them via email.

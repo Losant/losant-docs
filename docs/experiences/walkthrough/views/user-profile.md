@@ -6,7 +6,7 @@ In a [previous step](/experiences/walkthrough/views/user-registration/), we adde
 
 ## Create the Endpoints
 
-We'll be adding four endpoints: two for profile management and two for password changing.
+We'll be adding four endpoints: two for profile management and two for password changing. From your experience overview page, click "Endpoints" in the left column, then click "Add Endpoint" in the top right corner.
 
 ![Add Endpoint](/images/experiences/walkthrough/views/user-registration/add-endpoint.png "Add Endpoint")
 
@@ -48,7 +48,7 @@ This endpoint is responsible for handling form submissions from the "Change Pass
 
 ## Create the Views
 
-Now that all the endpoints have been created, let's move on to creating our new views. We'll be creating two new pages; making one new component; and editing a component we created in a previous step.
+Now that all the endpoints have been created, let's move on to creating our new views. We'll be creating two new pages; making one new component; and editing a component we created in a previous step. Click "Views" in the left column to return to your Experience Views list.
 
 ![Add Page](/images/experiences/walkthrough/views/user-registration/add-page.png "Add Page")
 
@@ -95,7 +95,9 @@ We're making one significant change to the component, which can be seen just abo
 
 ## Create the Workflows
 
-Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow.
+Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow. Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
+
+![Add Workflow](/images/experiences/walkthrough/views/user-registration/add-workflow.png "Add Workflow")
 
 ### Edit Profile Workflow
 
