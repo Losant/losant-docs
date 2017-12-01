@@ -68,7 +68,7 @@ Now, similar to how we did for our [login page](/experiences/walkthrough/views/l
 ![Add Workflow](/images/experiences/walkthrough/views/user-registration/add-workflow.png "Add Workflow")
 
 1. `Name` the workflow `Endpoint /create-account` and click the "Create Workflow" button.
-1. [Download the workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/d35d69fa/user-registration/endpoint-create-account.flow), then [import the file](/workflows/overview/#import-export) `endpoint-create-account.flow` into your new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/d35d69fa/user-registration/endpoint-create-account.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-create-account.flow` into your new workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /create-account` and `GET /create-account` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Create Account` page](#page-create-account).
 
