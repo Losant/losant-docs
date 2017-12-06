@@ -14,7 +14,7 @@ Losant supports and understands a built-in set of data types for device attribut
 
 GPS attributes must be reported in one of four ways:
 
-* [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees)  
+* [Decimal Degrees](https://en.wikipedia.org/wiki/Decimal_degrees) (latitude, longitude)
   Example: `37.33233141,-122.0312186`
 * [Degrees Minutes Seconds](https://en.wikipedia.org/wiki/Degree_(angle)#Subdivisions) (also known as Sexagesimal)  
   Example: `37°19'56.39"N,122°1'52.38"W`
