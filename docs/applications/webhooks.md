@@ -34,6 +34,8 @@ You can also choose to verify as a Facebook webhook. In the case of Facebook, yo
 
 Twilio does not actually require verification, but requires a very specific response in order for Twilio not to consider it an error - a TwiML XML response. Selecting the Twilio option tells Losant to reply with a body that Twilio expects (an empty TwiML response) so that the webhook call does not look like an error to Twilio.
 
+Alexa skills must verify that each request to the skill is from an Alexa. This type of webhook will verify that each request to the webhook has valid headers `Signature`, `SignatureCertChainUrl`, and `Timestamp`. The timestamp must show the request is no older than 150 seconds (2 minutes and 30 seconds). For more information on how to host an Alexa custom skill check out this <a href="https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html" target="_blank">site.</a>
+
 By default, the option of "No Verification" is selected for a webhook. In this case, while there is no need for a verification code, we do allow you to specify the response code that Losant should respond with on when it receives a webhook request. By default this is `200`, but can be changed to whatever response code is expected by the system sending the web request.
 
 If there are other webhook verification systems that you would like Losant to support, please <a href="https://forums.losant.com/" target="_blank">let us know</a>.
