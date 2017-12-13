@@ -43,6 +43,10 @@ Choose a resource to edit and an action to take. Currently the node supports the
 
 The available options here will change depending on the selected resource and action. For example, if the selected action creates or updates a resource then a request body is required that contains the new or updated resource. Some actions require a dataset ID, some require both a dataset ID and a table ID, and some require neither. There are also some options that are only relevant to a specific resource and action, such as the "include hidden datasets" option when "Datasets: List" is selected.
 
+![Example request config](/images/workflows/data/google-big-query-request-config.png "Example Request Config")
+
+In the example above, the selected resource and action value is "Tabledata: List" and the relevant configuration is being shown.
+
 ### Result
 
 Specify a payload path at which to place the results. This may be optional depending on the selected resource and action. If the request succeeds but no result is returned by BigQuery (for example, when deleting a resource)  the result will be `{ success: true }`.
