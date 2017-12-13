@@ -1,4 +1,4 @@
-# GCP Pub/Sub
+# GCP Pub/Sub Node
 
 The GCP (Google Cloud Platform) Pub/Sub node allows a workflow to publish a message to one of your [Google Pub/Sub integrations](/applications/integrations/#google-pubsub) on a topic of your choosing.
 

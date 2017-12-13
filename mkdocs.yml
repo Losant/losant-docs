@@ -110,7 +110,7 @@ pages:
         - Endpoint: workflows/triggers/endpoint.md
         - Data Table: workflows/triggers/data-table.md
         - Event: workflows/triggers/event.md
-        - Google Pub/Sub: workflows/triggers/google-pub-sub.md
+        - GCP Pub/Sub: workflows/triggers/google-pub-sub.md
         - MQTT: workflows/triggers/mqtt.md
         - Particle: workflows/triggers/particle.md
         - Timer: workflows/triggers/timer.md
