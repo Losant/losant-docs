@@ -16,7 +16,9 @@ New applications Experiences must first go through a short bootstrapping process
 
 ![Bootstrap Slug](/images/experiences/overview-choose-slug.png "Bootstrap Slug")
 
-The first step in working with Experiences is to choose a custom endpoint slug, which is the subdomain at which your endpoint requests will live. Your slug defaults to your application ID, but it can be changed to a custom subdomain that meets these requirements:
+The first step in working with Experiences is to choose a custom endpoint slug, which is the subdomain at which your endpoint requests will live. It is here that endpoint requests can be **securely** received and responded to. After initial setup, you may also configure one or more full [domains](/experiences/domains/) for handling endpoint requests.
+
+Your slug defaults to your application ID, but it can be changed to a custom subdomain that meets these requirements:
 
 * Must be at least 4 characters
 * May only contain lowercase letters, numbers, hyphens (-) and underscores (\_)
@@ -24,7 +26,9 @@ The first step in working with Experiences is to choose a custom endpoint slug, 
 * Cannot be a commonly used Internet subdomain, such as "webmail" or "cpanel"
 * Cannot be profane (slugs violating this rule are subject to change without notice)
 
-HTTP requests for your endpoints should then go to `https://[my-custom-slug].onlosant.com/[my-endpoint]`. You may change the slug at any time, but doing so after you are receiving traffic can be [dangerous](#editing-experience-settings).
+HTTP requests for your endpoints should then go to `https://[my-custom-slug].onlosant.com/[my-endpoint]`.
+
+You may [change the slug](/experiences/domains/#editing-the-endpoint-slug) at any time, but doing so after you are receiving traffic can cause **breaking changes** within your experience.
 
 ### Bootstrap Your Experience
 
@@ -58,14 +62,9 @@ If you chose to skip the resource creation step, the modal will simply dismiss w
 
 ## Editing Experience Settings
 
-Your Experience settings can be updated at any time, but **be warned!** Making changes to any of these settings can have devastating effects if your Experience is in active use by public or signed-in users.
+Experience settings can be changed under the "Settings" tab of your application's "Experience" subsection. There is currently one attribute that can be changed across the application experience: the **Default CORS Settings**.
 
-![Edit Experience Settings](/images/experiences/experience-settings.png "Edit Experience Settings")
-
-Experience settings can be changed under the "Settings" tab of your application's "Experience" subsection. There are two attributes that can be edited on this page:
-
-* **Endpoint Slug** is the custom subdomain at which your application's endpoints live. **Changing this will break all incoming traffic to your Experience** until your users can migrate their requests to the new domain.
-* **Enable Default CORS Settings**, when checked, automatically responds appropriately to [OPTIONS requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) emitted by web browsers that are sending [asynchronous requests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests) directly to your Experience Endpoints. Disabling this checkbox would cause asynchronous requests to your endpoints to fail; enabling it is less dangerous, but it would allow [cross-origin request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) to any endpoint for which you have not set up an OPTIONS route.
+When checked, [OPTIONS requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) emitted by web browsers sending [asynchronous requests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests) directly to your Experience Endpoints will automatically receive an appropriate response. Disabling this checkbox would cause asynchronous requests to your endpoints to fail; enabling it is less dangerous, but it would allow [cross-origin requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) to any endpoint for which you have not set up an OPTIONS route. By default, the checkbox is selected.
 
 ### Invalidating Access Tokens
 
