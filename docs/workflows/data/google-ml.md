@@ -2,6 +2,8 @@
 
 The GCP (Google Cloud Platform) ML node allows a workflow to send data to [Google ML](https://cloud.google.com/ml-engine/docs/technical-overview) and store the resulting predictions on the workflow payload.
 
+![GCP ML Node](/images/workflows/data/google-ml-node.png "GCP ML Node")
+
 ## Prerequisites
 
 If you're new to Google ML, TensorFlow, or machine learning in general, you may want to take some time to look through the following resources:
@@ -10,8 +12,6 @@ If you're new to Google ML, TensorFlow, or machine learning in general, you may 
 - [Machine learning workflow](https://cloud.google.com/ml-engine/docs/ml-solutions-overview)
 - [Machine learning resources](https://cloud.google.com/ml-engine/docs/machine-learning-resources)
 - [Sample applications](https://cloud.google.com/ml-engine/docs/samples)
-
-![GCP ML Node](/images/workflows/data/google-ml-node.png "GCP ML Node")
 
 ## Configuration
 
