@@ -208,6 +208,12 @@ particular actions that can be performed on that resource.
 * [Events](/rest-api/events/)  
   Contains all the actions that can be performed against the collection of [Events](/applications/events/) belonging to an Application - such as listing open events or creating a new event.
 
+* [Experience Domain](/rest-api/experience-domain/)  
+  Contains all the actions that can be performed against a single [Experience Domain](/experiences/domains/), such as updating SSL certificate information.
+
+* [Experience Domains](/rest-api/experience-domains/)  
+  Contains all the actions that can be performed against the collection of [Experience Domains](/experiences/domains/) belonging to an Application - such as listing domains or creating a new domain.
+
 * [Experience Endpoint](/rest-api/experience-endpoint/)  
   Contains all the actions that can be performed against a single [Experience Endpoint](/experiences/endpoints/), such as updating route information.
 

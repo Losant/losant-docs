@@ -219,6 +219,8 @@ pages:
     - Devices: rest-api/devices.md
     - Event: rest-api/event.md
     - Events: rest-api/events.md
+    - Experience Domain: rest-api/experience-domain.md
+    - Experience Domains: rest-api/experience-domains.md
     - Experience Endpoint: rest-api/experience-endpoint.md
     - Experience Endpoints: rest-api/experience-endpoints.md
     - Experience Group: rest-api/experience-group.md
