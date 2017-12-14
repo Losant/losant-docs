@@ -12,7 +12,7 @@ The HTTP node can be configured with all the common properties of an HTTP reques
 
 ![HTTP Node Basic Configuration](/images/workflows/data/http-node-basic-configuration.png "HTTP Node Basic Configuration")
 
-The first part of configuring the node is selecting the method of the HTTP request - choosing between "GET", "POST", "PUT", and "DELETE". Next is the URL to actually make the request at - this field supports static URLs or [string templates](/workflows/accessing-payload-data/#string-templates). The third basic part of setting up an HTTP node is configuring the body - which is actually not allowed for "GET" and "DELETE" requests. For "POST" and "PUT" requests, however, the body is optional and supports standard [JSON templates](/workflows/accessing-payload-data/#json-templates). In the above example, the node is making a "GET" request to the URL `https://rrtp.comed.com/api?type=5minutefeed`.
+The first part of configuring the node is selecting the method of the HTTP request - choosing between "GET", "POST", "PUT", and "DELETE". Next is the URL to actually make the request at - this field supports static URLs or [string templates](/workflows/accessing-payload-data/#string-templates). The third basic part of setting up an HTTP node is deciding wheather to `Disable SSL Verification?`. In the given example the SSL certificate will still be verified by the request and if it is invalid will return an error. However, if this box was checked it would **not** ensure that the SSL certificate is valid. The fourth basic part of setting up an HTTP node is configuring the body - which is actually not allowed for "GET" and "DELETE" requests. For "POST" and "PUT" requests, however, the body is optional and supports standard [JSON templates](/workflows/accessing-payload-data/#json-templates). In the above example, the node is making a "GET" request to the URL `https://rrtp.comed.com/api?type=5minutefeed`.
 
 ### Header Configuration
 
@@ -37,7 +37,7 @@ So with the above example, given the following payload:
   "triggerId": "f6094780d98111e5883a37908659487f",
   "triggerType": "timer",
   "flowId": "568dcdee86985501006360ba",
-  "flowName": "Electricity Pricing Data",
+  "flowName": "HTTP NODE",
   "globals": { }
 }
 ```
@@ -74,7 +74,7 @@ The node will make a GET request to `https://rrtp.comed.com/api?type=5minutefeed
   "triggerId": "f6094780d98111e5883a37908659487f",
   "triggerType": "timer",
   "flowId": "568dcdee86985501006360ba",
-  "flowName": "Electricity Pricing Data",
+  "flowName": "HTTP NODE",
   "globals": { }
 }
 ```

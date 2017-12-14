@@ -24,7 +24,7 @@ A unique URL is generated for every webhook and can found on the `Edit Webhook` 
 
 ## Webhook Verification
 
-Certain third party services, such Facebook, require webhooks to be verified before use. Generally this involves the webhook responding with a particular response or response code to a particular kind of query. Losant currently has support for verifying a webhook against Facebook, Fitbit, or Twilio:
+Certain third party services, such Facebook, require webhooks to be verified before use. Generally this involves the webhook responding with a particular response or response code to a particular kind of query. Losant currently has support for verifying a webhook against Alexa, Facebook, Fitbit, or Twilio:
 
 ![Fitbit Webhook Verification](/images/applications/fitbit-webhook-verification.png "Fitbit Webhook Verification")
 
@@ -33,6 +33,8 @@ In the example above, the webhook is configured for Fitbit verification with the
 You can also choose to verify as a Facebook webhook. In the case of Facebook, you provide your own verification code - on Facebook's side, it is called a `Verify Token`. What you provide to Facebook as the Verify Token and what you provide to Losant as the Verification Code can be anything, as long as they match. You can read more about Facebook webhook verification <a href="https://developers.facebook.com/docs/graph-api/webhooks" target="_blank">here</a>.
 
 Twilio does not actually require verification, but requires a very specific response in order for Twilio not to consider it an error - a TwiML XML response. Selecting the Twilio option tells Losant to reply with a body that Twilio expects (an empty TwiML response) so that the webhook call does not look like an error to Twilio.
+
+Alexa skills must verify that each request to the skill is from an Alexa. This type of webhook will verify that each request to the webhook has valid headers `Signature`, `SignatureCertChainUrl`, and `Timestamp`. The timestamp must show the request is no older than 150 seconds (2 minutes and 30 seconds). For more information on how to host an Alexa custom skill check out this <a href="https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html" target="_blank">site.</a>
 
 By default, the option of "No Verification" is selected for a webhook. In this case, while there is no need for a verification code, we do allow you to specify the response code that Losant should respond with on when it receives a webhook request. By default this is `200`, but can be changed to whatever response code is expected by the system sending the web request.
 
@@ -60,7 +62,7 @@ If you no longer need a webhook, you may delete it by clicking the `Delete` icon
 
 ![Delete Webhook](/images/applications/delete-webhook.png "Delete Webhook")
 
-When deleting a webhook, you also have the option of deleting any [workflows](/workflows/overview/) triggered by that webhook. Note that this action deletes **any workflow with a [Webhook Trigger Node](/workflows/triggers/webhook/) matching this webhook**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked.
+When deleting a webhook, you also have the option of deleting any [workflows](/workflows/overview/) triggered by that webhook. Note that this action deletes **any workflow with a [Webhook Trigger Node](/workflows/triggers/webhook/) matching this webhook**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked. 
 
 ## Using Webhooks
 
@@ -72,7 +74,7 @@ You can easily trigger a webhook for testing purposes right on the Webhook edit 
 
 ![Test Webhook](/images/applications/test-webhook.png "Test Webhook")
 
-You can fill in an optional path with query params, choose the request method, and fill in an optional JSON request body. Clicking `Send Test Request` will trigger the Webhook just like an actual request against that Webhook's URL would - triggering any workflows linked to this Webhook with the provided request information.
+In the example above, you can fill in an optional path with query params, choose the request method, and the body (if provided) must be valid JSON. Clicking `Send Test Request` will trigger the Webhook just like an actual request against that Webhook's URL would - triggering any workflows linked to this Webhook with the provided request information.
 
 ### Webhook Throttling
 
