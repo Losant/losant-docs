@@ -534,3 +534,88 @@ a.login-button {
 /* responsive embed */
 .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 24px; }
 .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* ==========================================================================
+  Home Page
+  ========================================================================== */
+
+
+
+.docs-sections .primary,
+.docs-sections .secondary {
+
+}
+
+.docs-sections a,
+.docs-sections a:hover {
+  text-decoration: none;
+  color: #111a2b;
+}
+
+.docs-sections .content {
+  text-align: center;
+  background-color: #f5f4f3;
+  padding: 20px;
+  margin-bottom: 25px;
+  min-height: 145px;
+}
+
+.docs-sections .content:hover{
+  background-color: #dcdcdc;
+}
+
+.docs-sections img.icon {
+  height: 100px !important;
+  border: none;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.docs-sections h2 {
+  color: #ff495c;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.docs-sections .content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .docs-sections img.icon {
+    float: left;
+  }
+
+  .docs-sections .content h2,
+  .docs-sections .content p {
+    text-align: left;
+    margin-left: 120px;
+  }
+
+  .docs-sections .content h2 {
+    padding-top: 0;
+    margin-top: 10px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .docs-sections .primary {
+    clear:  both;
+  }
+
+  .docs-sections .secondary {
+    width: 50%;
+    float: left;
+  }
+
+  .docs-sections .secondary:nth-child(even) {
+    padding-left: 12px;
+  }
+
+  .docs-sections .secondary:nth-child(odd) {
+    clear: both;
+    padding-right: 12px;
+  }
