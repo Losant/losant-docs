@@ -62,3 +62,9 @@ As a real-time tool, the Communication Log will always begin in an empty state. 
 ![Application Globals](/images/applications/application-globals.png "Application Globals")
 
 Application globals are a set of key/value pairs that are accessible inside of any workflow in the current application. This is a great place to store application-wide configuration that is used across multiple workflows, like phone numbers or API keys. Any values configured here are accessible under the globals object on the payload in a workflow run. Application globals can be overridden within a workflow by defining a different value at the same key in the globals for that specific workflow. You can read more about workflow globals [here](/workflows/overview/#workflow-globals).
+
+## Application Archive
+
+![Application Archive](/images/applications/application-archive.png "Application Archive")
+
+Application archive is a way to backup an application's devices data on either Amazon S3 or Google Cloud Storage. The archive configuration allows you to specify which devices data should be backed up. After the devices data becomes older than 30 days, the application will create a directory that is the date of the data (31 days ago) and a CSV per device within that directory. Those CSV files will be named by the applicationId, deviceId, and the start and end time of the data contained in the file. In order to configure archiving for AWS, `Bucket`, `Region`, `Access Key ID` and `Secret Access Key` are required. In order to configure archiving from Google Cloud Storage, `Bucket`, `Project ID`, and `Account Key (JSON)` are required. Both have one optional field, `Directory Inside the Bucket`, which specifies a directory for archivals to go, if the files should not be appended to the top level directory.
