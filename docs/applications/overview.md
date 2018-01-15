@@ -67,4 +67,19 @@ Application globals are a set of key/value pairs that are accessible inside of a
 
 ![Application Archive](/images/applications/application-archive.png "Application Archive")
 
-Application archive is a way to backup an application's devices data on either Amazon S3 or Google Cloud Storage. The archive configuration allows you to specify which devices data should be backed up. After the devices data becomes older than 30 days, the application will create a directory that is the date of the data (31 days ago) and a CSV per device within that directory. Those CSV files will be named by the applicationId, deviceId, and the start and end time of the data contained in the file. In order to configure archiving for AWS, `Bucket`, `Region`, `Access Key ID` and `Secret Access Key` are required. In order to configure archiving from Google Cloud Storage, `Bucket`, `Project ID`, and `Account Key (JSON)` are required. Both have one optional field, `Directory Inside the Bucket`, which specifies a directory for archivals to go, if the files should not be appended to the top level directory.
+Application archive is a way to save a copy of an application's devices data on either Amazon S3 or Google Cloud Storage. The archive configuration allows you to specify which devices data should be backed up. After the devices data becomes older than 30 days, the application will create a directory that is the date of the data (31 days ago) and a CSV per device within that directory. The reason we wait for the data to be older than 30 days, is because a user can [overwrite the state](/devices/state/#overwriting-previous-state) until the data is older than 30 days. Those CSV files will be named by the applicationId, deviceId, and the start and end time of the data contained in the file. An example directory and file would be
+```
+losant-bucket/2017-12-03T00:00:00.000Z/568beedeb436ab01007be53d-568bf74a1ff37b0100f5123e-1512259200000-1512345599999.csv
+```
+In order to configure archiving for AWS, `Bucket`, `Region`, `Access Key ID` and `Secret Access Key` are required. In order to configure archiving from Google Cloud Storage, `Bucket`, `Project ID`, and `Account Key (JSON)` are required. Both have one optional field, `Directory Inside the Bucket`, which specifies a directory for archivals to go, if the files should not be appended to the top level directory.
+
+The generated CSV will have an ID column which is the ID of the device, a timestamp column (where the timestamp will be represented as milliseconds since epoch), an ISO Date column (where the time is represented in human readable form), as well as columns for any attributes of your device. The following is an example of a CSV:
+
+```csv
+id,Timestamp,ISO Date,Current,On,Inuse
+"568bf74a1ff37b0100f5123e",1512259242342,"2017-12-03T00:00:42.342Z",21.666666666666668,1,1
+"568bf74a1ff37b0100f5123e",1512259302424,"2017-12-03T00:01:42.424Z",21.733333333333334,1,1
+"568bf74a1ff37b0100f5123e",1512259362505,"2017-12-03T00:02:42.505Z",21.8,1,1
+"568bf74a1ff37b0100f5123e",1512259422586,"2017-12-03T00:03:42.586Z",21.866666666666667,1,1
+"568bf74a1ff37b0100f5123e",1512259482697,"2017-12-03T00:04:42.697Z",21.933333333333334,1,1
+```
