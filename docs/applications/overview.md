@@ -86,7 +86,7 @@ losant-bucket/2017-12-03T00:00:00.000Z/568beedeb436ab01007be53d-568bf74a1ff37b01
 Each CSV will have an ID column (for the device ID), a timestamp column (where the timestamp will be represented as a [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) in milliseconds), an [ISO Date](https://en.wikipedia.org/wiki/ISO_8601) column (where the time is represented in human-readable form), as well as a column for each [attribute](/devices/overview/#device-attributes) on your device. The following is an example of a CSV:
 
 ```csv
-id,Timestamp,ISO Date,Current,On,Inuse
+"ID","Timestamp","ISO Date","Current","On","Inuse"
 "568bf74a1ff37b0100f5123e",1512259242342,"2017-12-03T00:00:42.342Z",21.666666666666668,1,1
 "568bf74a1ff37b0100f5123e",1512259302424,"2017-12-03T00:01:42.424Z",21.733333333333334,1,1
 "568bf74a1ff37b0100f5123e",1512259362505,"2017-12-03T00:02:42.505Z",21.8,1,1
