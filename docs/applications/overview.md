@@ -68,7 +68,7 @@ Application globals are a set of key/value pairs that are accessible inside of a
 ![Application Archive](/images/applications/application-archive.png "Application Archive")
 
 Application archive is a way to save a copy of an application's devices data on either Amazon S3 or Google Cloud Storage. The archive configuration allows you to specify which devices data should be backed up. After the devices data becomes older than 30 days, the application will create a directory that is the date of the data (31 days ago) and a CSV per device within that directory. The reason we wait for the data to be older than 30 days, is because a user can [overwrite the state](/devices/state/#overwriting-previous-state) until the data is older than 30 days. Those CSV files will be named by the applicationId, deviceId, and the start and end time of the data contained in the file. An example directory and file would be
-```
+```text
 losant-bucket/2017-12-03T00:00:00.000Z/568beedeb436ab01007be53d-568bf74a1ff37b0100f5123e-1512259200000-1512345599999.csv
 ```
 In order to configure archiving for AWS, `Bucket`, `Region`, `Access Key ID` and `Secret Access Key` are required. In order to configure archiving from Google Cloud Storage, `Bucket`, `Project ID`, and `Account Key (JSON)` are required. Both have one optional field, `Directory Inside the Bucket`, which specifies a directory for archivals to go, if the files should not be appended to the top level directory.
