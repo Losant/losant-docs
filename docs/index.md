@@ -3,21 +3,12 @@
 We're happy you're here! Getting familiar with the Losant product is easy. Get started below.
 
 <div class="docs-sections">
-  <div class="walk-through secondary">
+  <div class="walk-through primary">
     <a href="/getting-started/walkthrough/">
       <div class="content">
         <img src="/images/walkthrough-icon.svg" class="icon" alt="Walkthrough Icon" />
         <h2>Walkthrough</h2>
         <p>Jump right in and get the basics of using the Losant platform.</p>
-      </div>
-    </a>
-  </div>
-  <div class="university secondary">
-    <a href="/university/overview/">
-      <div class="content">
-        <img src="/images/university-icon.svg" class="icon" alt="University Icon" />
-        <h2>University</h2>
-        <p>Get in-depth team learning with Losant University.</p>
       </div>
     </a>
   </div>
@@ -55,12 +46,19 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
       <p>The basics of connecting Losant and MQTT.</p>
     </div>
   </div>
-  <div class="what-is-losant primary">
+  <div class="what-is-losant secondary">
     <a href="/getting-started/what-is-losant/">
       <div class="content">
         <img src="/images/losant-icon.svg" class="icon" alt="Losant Icon" />
         <h2>What is Losant?</h2>
-        <p>Losant is an easy-to-use and powerful enterprise IoT platform designed to help you quickly and securely build complex connected solutions. Learn more here.</p>
+        <p>Losant is an easy-to-use and powerful enterprise IoT platform.</p>
+      </div>
+    </a>
+  </div>
+  <div class="what-is-losant secondary">
+    <a href="/getting-started/what-is-losant/">
+      <div class="content">
+        <h2 class="button">Sign Up</h2>
       </div>
     </a>
   </div>

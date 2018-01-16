@@ -611,11 +611,11 @@ a.login-button {
     float: left;
   }
 
-  .docs-sections .secondary:nth-child(even) {
+  .docs-sections .secondary:nth-child(odd) {
     padding-left: 12px;
   }
 
-  .docs-sections .secondary:nth-child(odd) {
+  .docs-sections .secondary:nth-child(even) {
     clear: both;
     padding-right: 12px;
   }
