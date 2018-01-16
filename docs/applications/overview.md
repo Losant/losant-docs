@@ -62,3 +62,34 @@ As a real-time tool, the Communication Log will always begin in an empty state. 
 ![Application Globals](/images/applications/application-globals.png "Application Globals")
 
 Application globals are a set of key/value pairs that are accessible inside of any workflow in the current application. This is a great place to store application-wide configuration that is used across multiple workflows, like phone numbers or API keys. Any values configured here are accessible under the globals object on the payload in a workflow run. Application globals can be overridden within a workflow by defining a different value at the same key in the globals for that specific workflow. You can read more about workflow globals [here](/workflows/overview/#workflow-globals).
+
+## Application Archive
+
+![Application Archive](/images/applications/application-archive.png "Application Archive")
+
+Application archive is a way to save a copy of an application's device data on either [Amazon S3](https://aws.amazon.com/s3/) or [Google Cloud Storage](https://cloud.google.com/storage/). The archive configuration allows you to specify which devices' data should be backed up. After the data becomes older than 30 days, the application will create a directory for the archived date and a CSV for each device within that directory.
+
+The reason we wait for the data to be older than 30 days is because device state data can be [overwritten](/devices/state/#overwriting-previous-state) until the data is older than 30 days.
+
+### Configuration
+
+In order to configure archiving for AWS, `Bucket`, `Region`, `Access Key ID` and `Secret Access Key` are required. In order to configure archiving from Google Cloud Storage, `Bucket`, `Project ID`, and `Account Key (JSON)` are required. Both have one optional field, `Directory Inside the Bucket`, which specifies a directory for archivals to go; if left unset, the files will be appended to the top-level directory.
+
+### Generated CSV
+
+Each generated CSV file will be placed within a directory named by the human-readable timestamp of the archived date. The files themselves will be named by the applicationId, deviceId, and the start and end time of the data contained in the file. An example directory and file would be:
+
+```text
+losant-bucket/2017-12-03T00:00:00.000Z/568beedeb436ab01007be53d-568bf74a1ff37b0100f5123e-1512259200000-1512345599999.csv
+```
+
+Each CSV will have an ID column (for the device ID), a timestamp column (where the timestamp will be represented as a [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) in milliseconds), an [ISO Date](https://en.wikipedia.org/wiki/ISO_8601) column (where the time is represented in human-readable form), as well as a column for each [attribute](/devices/overview/#device-attributes) on your device. The following is an example of a CSV:
+
+```csv
+"ID","Timestamp","ISO Date","Current","On","Inuse"
+"568bf74a1ff37b0100f5123e",1512259242342,"2017-12-03T00:00:42.342Z",21.666666666666668,1,1
+"568bf74a1ff37b0100f5123e",1512259302424,"2017-12-03T00:01:42.424Z",21.733333333333334,1,1
+"568bf74a1ff37b0100f5123e",1512259362505,"2017-12-03T00:02:42.505Z",21.8,1,1
+"568bf74a1ff37b0100f5123e",1512259422586,"2017-12-03T00:03:42.586Z",21.866666666666667,1,1
+"568bf74a1ff37b0100f5123e",1512259482697,"2017-12-03T00:04:42.697Z",21.933333333333334,1,1
+```
