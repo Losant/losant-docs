@@ -50,3 +50,98 @@ In the example above, the selected resource and action value is "Tabledata: List
 ### Result
 
 Specify a payload path at which to place the results. This may be optional depending on the selected resource and action. If the request succeeds but no result is returned by BigQuery (for example, when deleting a resource)  the result will be `{ success: true }`.
+
+## Query Request Format
+
+The expected format for the Query Request JSON Template section depends on the selected Resource and Action value. Below you'll find example JSON templates for operations that require them.
+
+### Jobs: Query
+
+Requests must match [the structure outlined here](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#request-body). Properties that are marked as "[Output-only]" do not need to be included in the request (id, kind, etag, etc.) An example request is shown below:
+
+```json
+{
+  "maxResults": 10,
+  "query": "SELECT * FROM [my_dataset.my_database] WHERE id = '{{data.recordId}}' LIMIT 10"
+}
+```
+
+### Datasets: Insert / Update / Patch
+
+Requests must match [the structure outlined here](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#resource). Properties that are marked as "[Output-only]" do not need to be included in the request (id, kind, etag, etc.) An example request is shown below:
+
+```json
+{
+  "datasetReference": {
+    "projectId": "my-project-id-1234",
+    "datasetId": "my_dataset"
+  },
+  "friendlyName": "My dataset",
+  "description": "A description of the dataset"
+}
+```
+
+### Tables: Insert / Update / Patch
+
+Requests must match [the structure outlined here](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource-representations). Properties that are marked as "[Output-only]" do not need to be included in the request (id, kind, etag, etc.) An example request is shown below:
+
+```json
+{
+  "tableReference": {
+    "projectId": "my-project-id-1234",
+    "datasetId": "my_dataset",
+    "tableId": "my_table"
+  },
+  "friendlyName": "My table",
+  "description": "A description of the table",
+  "schema": {
+    "fields": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "mode": "REQUIRED",
+        "description": "The record ID"
+      },
+      {
+        "name": "created_on",
+        "type": "DATETIME",
+        "mode": "REQUIRED",
+        "description": "The date & time when the record was created"
+      },
+      {
+        "name": "is_public",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE",
+        "description": "Set to true if the record is public"
+      }
+    ]
+  },
+}
+```
+
+### Tabledata: Insert All
+
+Requests must match [the structure outlined here](https://cloud.google.com/bigquery/docs/reference/rest/v2/tabledata/insertAll#request-body). Properties that are marked as "[Output-only]" do not need to be included in the request (id, kind, etag, etc.) An example request is shown below:
+
+```json
+{
+  "rows": [
+    {
+      "json": {
+        "id": 1,
+        "created_on": "2018-01-17 15:36:22",
+        "is_public": true
+      }
+    },
+    {
+      "json": {
+        "id": {{data.recordId}},
+        "created_on": "{{format data.recordCreatedOn 'YYYY-MM-DD HH:mm:ss'}}",
+        "is_public": {{data.recordIsPublic}}
+      }
+    }
+  ]
+}
+```
+
+Note that the format of each key's value under "json" depends on the field type - in our example above, we're inserting data into the example table shown in the previous section, so `id` and `is_public` **are not** quoted because their types are `INTEGER` and `BOOLEAN`, respectively, while `created_on` **is** quoted.
