@@ -236,7 +236,7 @@ A component can also be a one-time use snippet that is called directly from a la
 ```hbs
 <hr />
 <div class="footer">
-  &copy; 2017. All rights reserved.
+  &copy; 2018. All rights reserved.
 </div>
 ```
 
