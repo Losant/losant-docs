@@ -56,9 +56,11 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
     </a>
   </div>
   <div class="what-is-losant secondary">
-    <a href="/getting-started/what-is-losant/">
+    <a href="https://accounts.losant.com/create-account" target="_blank">
       <div class="content">
+        <img src="/images/sign-up-icon.svg" class="icon" alt="Sign Up Icon" />
         <h2 class="button">Sign Up</h2>
+        <p>Start building for free.</p>
       </div>
     </a>
   </div>
