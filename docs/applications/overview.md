@@ -73,7 +73,37 @@ The reason we wait for the data to be older than 30 days is because device state
 
 ### Configuration
 
-In order to configure archiving for AWS, `Bucket`, `Region`, `Access Key ID` and `Secret Access Key` are required. In order to configure archiving from Google Cloud Storage, `Bucket`, `Project ID`, and `Account Key (JSON)` are required. Both have one optional field, `Directory Inside the Bucket`, which specifies a directory for archivals to go; if left unset, the files will be appended to the top-level directory.
+In order to configure archiving for AWS, `Bucket`, `Region`, `Access Key ID` and `Secret Access Key` are required. In order to configure archiving from Google Cloud Storage, `Bucket`, `Project ID`, and `Account Key (JSON)` are required. Both have one optional field, `Directory Inside the Bucket`, which specifies a directory for archival files to go; if left unset, the files will be appended to the top-level directory.
+
+### Permissions
+
+Before setting up your configuration to archive, make sure that your 3rd party user has the correct permissions. For Google Cloud Services, create a service account with `ObjectCreator` and `ObjectViewer` permissions, which are the minimal permissions. For Amazon S3 archival, set the user's IAM Policy to the following guidelines, such that `bucketname` is replaced with the actual bucket name:
+
+```
+{
+    "Version": "YYYY-MM-DD",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:getBucketAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucketname"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucketname/*"
+            ]
+        }
+    ]
+}
+```
 
 ### Generated CSV
 
