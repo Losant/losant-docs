@@ -129,10 +129,10 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 * `{{join array separator}}`: Joins the values in the given array as a single string, separated by the given separator. If no separator is given, defaults to `,`.
 * `{{jsonEncode val}}`: Returns `val` [stringified](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
 * `{{length val}}`:
-  * If `val` is an **array**, returns the number of items in the array.
-  * If `val` is an **object**, returns the number of keys on the object.
-  * If `val` is a **string**, returns the length of the string.
-  * For everything else, returns `undefined`.
+    * If `val` is an **array**, returns the number of items in the array.
+    * If `val` is an **object**, returns the number of keys on the object.
+    * If `val` is a **string**, returns the length of the string.
+    * For everything else, returns `undefined`.
 * `{{lower str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) to all lowercase characters.
 * `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
 * `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
