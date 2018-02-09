@@ -9,6 +9,7 @@ extra:
     - Builder Kit Feather Instructions
     - Builder Kit Nodevember Instructions
     - _
+    - Home
 pages:
 - Home: index.md
 - Getting Started:
