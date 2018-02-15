@@ -1,6 +1,8 @@
 # Moisture Sensor Kit Instructions
 
-The <a href="https://store.losant.com/products/losant-moisture-sensor-kit" target="_blank">Losant Moisture Sensor Kit</a> includes everything required to keep your plants watered and happy. These instructions provide a step-by-step overview to build and configure your moisture sensor to alert you via SMS or email when your plant needs attention.
+*We’ve officially closed the Losant store and have deprecated our Losant kits. The good news is that you can still find components to create your own kits through other suppliers; we’d recommend [Adafruit](https://www.adafruit.com/product/3314). We’re spending more time polishing our platform, and as hardware continues to evolve, we’ll admit we’re not the best source for securing developer kits. You can still find instructions on how to use existing kits in the documentation section of our website. And though we will no longer provide support for individual kit questions, there is a ton of information in the Losant [forums](https://forums.losant.com/).*
+
+The Losant Moisture Sensor Kit includes everything required to keep your plants watered and happy. These instructions provide a step-by-step overview to build and configure your moisture sensor to alert you via SMS or email when your plant needs attention.
 
 ![Moisture Sensor](/images/getting-started/losant-iot-dev-kits/moisture-sensor/moisture-sensor-header.jpg "Moisture Sensor")
 
@@ -244,10 +246,3 @@ If you've purchased multiple moisture sensors to monitor more than one plant, yo
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://store.losant.com/products/losant-moisture-sensor-kit" data-text="Green thumb activated! Just installed my @LosantHQ #IoT moisture sensor kit" data-size="large">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-Don't stop now! Losant has several kits available.
-
-1. Losant Builder Kit ( [Buy Now](https://store.losant.com/products/losant-builder-kit) | [Instructions](/getting-started/losant-iot-dev-kits/builder-kit/) )
-1. Moisture Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-moisture-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/moisture-sensor-kit/) )
-1. Door Sensor Kit ( [Buy Now](https://store.losant.com/products/losant-door-sensor-kit) | [Instructions](/getting-started/losant-iot-dev-kits/door-sensor-kit/) )
-1. LCD Kit ( [Buy Now](https://store.losant.com/products/lcd-kit) | [Instructions](/getting-started/losant-iot-dev-kits/lcd-kit/) )
