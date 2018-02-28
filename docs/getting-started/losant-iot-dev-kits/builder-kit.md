@@ -1,6 +1,10 @@
 # Losant Builder Kit Instructions
 
-*We’ve officially closed the Losant store and have deprecated our Losant kits. The good news is that you can still find components to create your own kits through other suppliers; we’d recommend [Adafruit](https://www.adafruit.com/product/3314). We’re spending more time polishing our platform, and as hardware continues to evolve, we’ll admit we’re not the best source for securing developer kits. You can still find instructions on how to use existing kits in the documentation section of our website. And though we will no longer provide support for individual kit questions, there is a ton of information in the Losant [forums](https://forums.losant.com/).*
+*We’ve officially closed the Losant store and have deprecated our Losant kits. The good news is that you can still find components to create your own kits through other suppliers; we’d recommend [Adafruit](https://www.adafruit.com/).*
+
+*You can still find instructions on how to use existing kits in the documentation section of our website. And though we will no longer provide support for individual kit questions, since we based our kits on off-the-shelf components, there are plenty of other places to find help.*
+
+*IoT is evolving rapidly. Our developer kits offered a limited introduction to solving problems with IoT. We believe the best way to start building an IoT solution for your business is with a [proof of concept](https://www.losant.com/proof-of-concept).*
 
 The Losant Builder Kit is an easy way to get up and running with the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
 
