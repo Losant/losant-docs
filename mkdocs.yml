@@ -246,6 +246,8 @@ pages:
 
 # Redirects
 - _: getting-started/losant-iot-dev-kits/builder-kit-nodemcu.md
+- _: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
+- _: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
 - _: getting-started/what-is-structure.md
 - _: dashboards/data-table.md
 - _: events/overview.md
