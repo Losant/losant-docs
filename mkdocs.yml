@@ -6,8 +6,6 @@ markdown_extensions:
   - meta
 extra:
   hidden:
-    - Builder Kit Feather Instructions
-    - Builder Kit Nodevember Instructions
     - _
     - Home
 pages:
@@ -248,6 +246,7 @@ pages:
 - _: getting-started/losant-iot-dev-kits/builder-kit-nodemcu.md
 - _: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
 - _: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
+- _: getting-started/losant-iot-dev-kits/builder-kit-feather.md
 - _: getting-started/what-is-structure.md
 - _: dashboards/data-table.md
 - _: events/overview.md
@@ -258,7 +257,3 @@ pages:
 - _: structure-sdks/arduino.md
 - _: structure-sdks/javascript.md
 - _: workflows/outputs/virtual-device.md
-
-# Hidden pages
-- Builder Kit Feather Instructions: getting-started/losant-iot-dev-kits/builder-kit-feather.md
-- Builder Kit Nodevember Instructions: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
