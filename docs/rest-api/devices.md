@@ -94,6 +94,7 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 | perPage | N | How many items to return per page | 1000 | 10 |
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my * device |
+| deviceClass | N | Filter the devices by the given device class. Accepted values are: standalone, gateway, peripheral, floating, edgeCompute |  | standalone |
 | tagFilter | N | Array of tag pairs to filter by. See [Device Tag Filter](schemas.md#device-tag-filter) for more details. |  | [Device Tag Filter Example](schemas.md#device-tag-filter-example) |
 
 ### Request Headers <a name="get-headers"></a>

@@ -115,10 +115,12 @@ valid body for this request:
   "attributes": [
     "voltage"
   ],
-  "deviceTags": {
-    "key": "floor",
-    "value": "8"
-  }
+  "deviceTags": [
+    {
+      "key": "floor",
+      "value": "8"
+    }
+  ]
 }
 ```
 
@@ -129,7 +131,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"end":0,"duration":600000,"resolution":300000,"aggregation":"MEAN","attributes":["voltage"],"deviceTags":{"key":"floor","value":"8"}}' \
+    -d '{"end":0,"duration":600000,"resolution":300000,"aggregation":"MEAN","attributes":["voltage"],"deviceTags":[{"key":"floor","value":"8"}]}' \
     https://api.losant.com/applications/APPLICATION_ID/data/time-series-query
 ```
 
