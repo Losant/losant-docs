@@ -67,7 +67,7 @@ Application globals are a set of key/value pairs that are accessible inside of a
 
 ![Application Archive](/images/applications/application-archive.png "Application Archive")
 
-Application archive is a way to save a copy of an application's device data on either [Amazon S3](https://aws.amazon.com/s3/) or [Google Cloud Storage](https://cloud.google.com/storage/). The archive configuration allows you to specify which devices' data should be backed up. After the data becomes older than 30 days, the application will create a directory for the archived date and a CSV for each device within that directory.
+Application archive is a way to save a copy of an application's device data on either [Amazon S3](https://aws.amazon.com/s3/) or [Google Cloud Storage](https://cloud.google.com/storage/). The archive configuration allows you to specify which devices' data should be backed up. After the data becomes older than 30 days, the application will create a directory for the archived date and a CSV for each device within that directory. After your archive configuration has been set you will also have the option to backfill your archive. This will dump all the data we have for the archival devices into your archive location. There is also a `Test Archive` button which will immediately enqueue a job to archive data from 31 days ago.
 
 The reason we wait for the data to be older than 30 days is because device state data can be [overwritten](/devices/state/#overwriting-previous-state) until the data is older than 30 days.
 
