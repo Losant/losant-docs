@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Generate Experience User Token Node.
+
 # Generate Experience User Token Node
 
-The Generate Experience User Token node allows a workflow to create a token for an [Experience User](/experiences/users/) that can be used for authorized requests against [Experience Endpoints](/experiences/endpoints/).
+The Generate Experience User Token Node allows a workflow to create a token for an [Experience User](/experiences/users/) that can be used for authorized requests against [Experience Endpoints](/experiences/endpoints/).
 
 ![Generate Experience User Token Node](/images/workflows/experience/generate-token-node.png "Generate Experience User Token Node")
 
 ## Configuration
 
-There are three configuration settings for the generate token node - what user to generate the token for, how long the token should eb valid for, and where the token should be placed on the current workflow payload.
+There are three configuration settings for the Generate Experience User Token Node - what user to generate the token for, how long the token should eb valid for, and where the token should be placed on the current workflow payload.
 
 ![Generate Experience User Token Node Configuration](/images/workflows/experience/generate-token-node-config.png "Generate Experience User Token Node Configuration")
 

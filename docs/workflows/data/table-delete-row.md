@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Table: Delete Rows Node.
+
 # Table: Delete Rows Node
 
-The Data Table Delete Rows node allows a workflow to delete one or more existing rows from a [Data Table](/data-tables/overview/) inside the current application.
+The Data Table: Delete Rows Node allows a workflow to delete one or more existing rows from a [Data Table](/data-tables/overview/) inside the current application.
 
 ![Table Delete Rows Node](/images/workflows/data/table-delete-rows-node.png "Table Delete Rows Node")
 

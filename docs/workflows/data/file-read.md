@@ -1,4 +1,6 @@
-description: Learn more about reading a file in an Edge Workflow.
+flowclass: Edge 1.0.0
+description: Learn more about the Losant File: Read Node.
+
 # File Read
 
 The File Read Node allows you to read a file from disk on your [link](Edge Compute device). This node is *only* available on your edge device.

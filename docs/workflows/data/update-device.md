@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Device: Update Node.
+
 # Device: Update Node
 
-The Update Device node allows a workflow to update an existing [Device](/devices/overview/) inside the current application, and optionally add the updated device to the current workflow payload.
+The Update Device Node allows a workflow to update an existing [Device](/devices/overview/) inside the current application, and optionally add the updated device to the current workflow payload.
 
 ![Update Device Node](/images/workflows/data/update-device-node.png "Update Device Node")
 
@@ -10,7 +13,7 @@ To find the device to update, the node requires the device ID. This field is [te
 
 ![Update Device Node Configuration](/images/workflows/data/update-device-node-config.png "Update Device Node Configuration")
 
-There are three different ways to configure input data for the update device node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the device being updated, while the third choice is the more common option for simple situations.
+There are three different ways to configure input data for the Device: Update Node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the device being updated, while the third choice is the more common option for simple situations.
 
 For "JSON Template", the input must be a [JSON template string](/workflows/accessing-payload-data/#json-templates) that can be parsed into a JSON object that validates against the [Device Patch](/rest-api/schemas/#device-patch) schema. For "Payload Path", the input must be a [payload path](/workflows/accessing-payload-data/#payload-paths) that points to an object on the current workflow payload that, again, validates against the [Device Patch](/rest-api/schemas/#device-patch) schema.
 

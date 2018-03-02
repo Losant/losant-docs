@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant API Node.
+
 # Losant API Node
 
-The Losant API node allows a workflow to make requests (allowing both querying and modification) against the Losant API easily for any resource under the current application.
+The Losant API Node allows a workflow to make requests (allowing both querying and modification) against the Losant API easily for any resource under the current application.
 
 ![Losant API Node](/images/workflows/data/losant-api-node.png "Losant API Node")
 
 ## Configuration
 
-There are three configuration sections for the Losant API node - selecting the request to make, configuring the parameters for that request, and determining where to store the result.
+There are three configuration sections for the Losant API Node - selecting the request to make, configuring the parameters for that request, and determining where to store the result.
 
 ![Losant API Node Resource Selection](/images/workflows/data/losant-api-node-resource-selection.png "Losant API Node Resource Selection")
 

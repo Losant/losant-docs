@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Table: Update Row Node.
+
 # Table: Update Row Node
 
-The Data Table Update Row node allows a workflow to update an existing row in a [Data Table](/data-tables/overview/) inside the current application, and optionally add the updated row to the current workflow payload.
+The Data Table: Update Row Node allows a workflow to update an existing row in a [Data Table](/data-tables/overview/) inside the current application, and optionally add the updated row to the current workflow payload.
 
 ![Table Update Row Node](/images/workflows/data/table-update-row-node.png "Table Update Row Node")
 
@@ -10,7 +13,7 @@ To find the row to update, the node requires both a data table to be selected, a
 
 ![Table Update Row Node Configuration](/images/workflows/data/table-update-row-node-config.png "Table Update Row Node Configuration")
 
-There are three different ways to configure input data for the update row node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the row being updated, while the third choice is the more common option for simple situations.
+There are three different ways to configure input data for the Table: Update Row Node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the row being updated, while the third choice is the more common option for simple situations.
 
 For "JSON Template", the input must be a [JSON template string](/workflows/accessing-payload-data/#json-templates) that can be parsed into a JSON object that validates against the [Data Table Row Insert/Update](/rest-api/schemas/#data-table-row-insertupdate) schema. For "Payload Path", the input must be a [payload path](/workflows/accessing-payload-data/#payload-paths) that points to an object on the current workflow payload that, again, validates against the [Data Table Row Insert/Update](/rest-api/schemas/#data-table-row-insertupdate) schema. In both of these cases, this means it must be an object where the keys of the objects are the column names of the data table, and the value for each key is the value for that column in the new row. Columns that are not specified will retain their current values on the row.
 

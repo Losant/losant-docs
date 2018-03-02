@@ -105,9 +105,10 @@ pages:
     - Overview: data-tables/overview.md
 - Workflows:
     - Overview: workflows/overview.md
+    - Cloud Workflows: workflows/cloud-workflows.md
+    - Edge Workflows: workflows/edge-workflows.md
     - Accessing Payload Data: workflows/accessing-payload-data.md
     - Versioning: workflows/versioning.md
-    - Edge Workflows: workflows/edge-workflows.md
     - Triggers:
         - Data Table: workflows/triggers/data-table.md
         - Device Command: workflows/triggers/device-command.md

@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Device: Delete Node.
+
 # Device: Delete Node
 
-The Delete Device node allows a workflow to remove a [Device](/devices/overview/) inside the current application.
+The Delete Device Node allows a workflow to remove a [Device](/devices/overview/) inside the current application.
 
 ![Delete Device Node](/images/workflows/data/delete-device-node.png "Delete Device Node")
 

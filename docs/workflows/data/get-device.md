@@ -1,3 +1,6 @@
+flowclass: Cloud
+description: Learn more about the Losant Device: Get Node.
+
 # Device: Get Node
 
 The get device node allows a workflow to retrieve one or more [devices](/devices/overview/) from the current application and add them to the current workflow payload.

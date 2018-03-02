@@ -1,3 +1,6 @@
+flowclass: Cloud
+description: Learn more about the Losant Update Experience User Node.
+
 # Update Experience User Node
 
 The Update Experience User node allows a workflow to update an existing [Experience User](/experiences/users/) inside the current application, and optionally add the updated user to the current workflow payload.

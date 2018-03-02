@@ -1,3 +1,4 @@
-description: Learn more about writing to Modbus in an Edge Workflow.
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Modbus: Write Node.
 
-# Modbus Write
+# Modbus: Write

@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Table: Get Rows Node.
+
 # Table: Get Rows Node
 
-The Table: Get Rows node allows for querying your application's data tables and storing the results of the query on your workflow's payload.
+The Data Table: Get Rows Node allows for querying your application's data tables and storing the results of the query on your workflow's payload.
 
 ![Get Rows Node](/images/workflows/data/get-rows-overview.png "Get Rows Node")
 

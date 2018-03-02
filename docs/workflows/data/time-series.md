@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Data: Time Series Node.
+
 # Data: Time Series Node
 
-The time series query node allows a workflow to query recent state across a time period for one or more devices for a specific attribute.
+The Data: Time Series Node allows a workflow to query recent state across a time period for one or more devices for a specific attribute.
 
 ![Time Series Node](/images/workflows/data/time-series-node.png "Time Series Node")
 
 ## Configuration
 
-The configuration for the time series node is extremely similar to the [time series dashboard block](/dashboards/time-series-graph/).
+The configuration for the node is extremely similar to the [Time Series Dashboard Block](/dashboards/time-series-graph/).
 
 ![Time Series Node Device Selection](/images/workflows/data/time-series-node-device.png "Time Series Node Device Selection")
 
@@ -14,13 +17,13 @@ First step is selecting the devices to query. The node has two options for selec
 
 ![Time Series Node Config](/images/workflows/data/time-series-node-config.png "Time Series Node Config")
 
-The time series node also needs to know the attribute, the time range, the resolution, and what aggregation to use for the query. The available resolutions will vary depending on the selected time range, just like the time series dashboard block. In the above example, the attribute `kwattHours` will be queried over the last 24 hours with a 1 hour resolution using a SUM aggregation.
+The Data: Time Series Node also needs to know the attribute, the time range, the resolution, and what aggregation to use for the query. The available resolutions will vary depending on the selected time range, just like the time series dashboard block. In the above example, the attribute `kwattHours` will be queried over the last 24 hours with a 1 hour resolution using a SUM aggregation.
 
 ![Time Series Node Result](/images/workflows/data/time-series-node-result.png "Time Series Node Result")
 
 Once the query is configured, the node needs a [payload path](/workflows/accessing-payload-data/#payload-paths) to know where to store the result on the current workflow payload. In the above example, the result will be stored at `data.totalKwattHours`. The value placed at that path will be an array of points. Each point is actually an object with two properties - `value`, which will hold the value for that point, and `time`, which will hold the timestamp of that point. The array of points will be in order from oldest timestamp to newest.
 
-The payload after the execution of the example time series node above might look like:
+The payload after the execution of the example Data: Time Series Node above might look like:
 
 ```json
 {

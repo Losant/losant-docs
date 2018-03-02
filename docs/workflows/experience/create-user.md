@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Create Experience User Node.
+
 # Create Experience User Node
 
-The Create Experience User node allows a workflow to create a new [Experience User](/experiences/users/) inside the current application, and optionally add the new user to the current workflow payload.
+The Create Experience User Node allows a workflow to create a new [Experience User](/experiences/users/) inside the current application, and optionally add the new user to the current workflow payload.
 
 ![Create Experience User Node](/images/workflows/experience/create-user-node.png "Create Experience User Node")
 
 ## Configuration
 
-There are three different ways to configure input data for the create user node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the user being created, while the third choice is the more common option for simple situations.
+There are three different ways to configure input data for the Create Experience User Node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the user being created, while the third choice is the more common option for simple situations.
 
 ![Create Experience User Node Configuration](/images/workflows/experience/create-user-node-config.png "Create Experience User Node Configuration")
 
