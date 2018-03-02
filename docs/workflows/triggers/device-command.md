@@ -8,7 +8,7 @@ The device command trigger will trigger a workflow whenever the edge compute dev
 
 ## Configuration
 
-The device command trigger has no configuration. When a workflow with this trigger is deployed to an [Edge Compute](/devices/edge-compute) device, if that device receives a command, the workflow will fire.
+The device command trigger has no configuration. When a workflow with this trigger is deployed to an [Edge Compute](/devices/edge-compute/) device, if that device receives a command, the workflow will fire.
 
 ## Payload
 
