@@ -1,14 +1,18 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Storage: Get Value Node.
+
 # Storage: Get Value Node
 
-The storage get value node allows a workflow to retrieve a value stored in a previous run of the workflow by the [storage set value node](/workflows/data/store-value/). Stored values can also be viewed and manipulated using the [workflow storage tab](/workflows/overview/#workflow-storage).
+The Storage: Get Value Node allows a workflow to retrieve a value stored in a previous run of the workflow by the [Storage: Set Value Node](/workflows/data/store-value/). Stored values can also be viewed and manipulated using the [workflow storage tab](/workflows/overview/#workflow-storage).
 
 ![Storage Get Value Node](/images/workflows/data/get-value-node.png "Storage Get Value Node")
 
 ## Configuration
 
-There are three configuration properties for the storage get value node - an identifier, a [payload path](/workflows/accessing-payload-data/#payload-paths), and an optional default value.
+There are three configuration properties for the Storage: Get Value Node - an identifier, a [payload path](/workflows/accessing-payload-data/#payload-paths), and an optional default value.
 
-The identifier is a [string template](/workflows/accessing-payload-data/#string-templates) for identifying value to retrieve - and while it can be an arbitrary string, it should match the identifier of a previously stored value - i.e., the identifier used in the configuration of a [storage set value node](/workflows/data/store-value/).
+The identifier is a [string template](/workflows/accessing-payload-data/#string-templates) for identifying value to retrieve - and while it can be an arbitrary string, it should match the identifier of a previously stored value - i.e., the identifier used in the configuration of a [Storage: Set Value Node](/workflows/data/store-value/).
 
 The [payload path](/workflows/accessing-payload-data/#payload-paths) defines where the workflow should place the retrieved value on the current payload. The optional default value is only used if there is no value previously stored with the specified identifier - in which case, the specified default value is placed on the payload instead. When defining the default value, you must first choose a "Default Value Type", which allows for setting the value as a [payload path](/workflows/accessing-payload-data/#payload-paths), [string template](/workflows/accessing-payload-data/#string-templates) or [JSON template](/workflows/accessing-payload-data/#json-templates).
 
@@ -32,7 +36,7 @@ In the above example, the workflow will fetch the value stored under the identif
 }
 ```
 
-The payload after the execution of the storage get value node would look like:
+The payload after the execution of the Storage: Get Value Node would look like:
 
 ```json
 {

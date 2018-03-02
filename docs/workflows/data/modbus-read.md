@@ -1,3 +1,4 @@
-description: Learn more about reading from Modbus in an Edge Workflow.
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Modbus: Read Node.
 
-# Modbus Read
+# Modbus: Read

@@ -1,18 +1,40 @@
+description: Learn more about Losant workflows: how they work and how to configure them.
+
 # Workflows
 
 Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to trigger notifications, create events, send commands, and more. Workflows are basically the brains of your connected solution.
 
+A list of your application's workflows, broken down by [type](#workflow-types), can be accessed through your application's subnavigation.
+
 ## Overview
 
-All workflows start with a trigger that includes a payload. The purpose of the workflow is to make decisions based on this payload, modify the data if needed, and eventually result in some kind of output.
+All workflows start with a trigger, and that trigger includes a payload. The purpose of the workflow is to make decisions based on this payload, modify the data if needed, and eventually result in some kind of output.
 
-As the payload flows through the workflow, fields can be added, removed, or changed. Each node in a workflow accepts a payload as an input, optionally modifies it, and outputs the payload to be the input for the next node. Some nodes, like conditionals, don't modify the payload at all and simply pass it through as-is, but they do provide a way to branch the workflow down multiple paths.
+As the payload flows through the workflow, fields can be added, removed or changed. Each node in a workflow accepts a payload as an input, optionally modifies it, and outputs the payload to be the input for the next node. Some nodes (e.g. the [Conditional Node](/workflows/logic/conditional/)) don't modify the payload at all and simply pass it through as-is, but they do provide a way to branch the workflow down multiple paths.
 
-Below is an example of how a payload flows through a workflow.
+## Creating a Workflow
+
+Workflows can be created by clicking the "Add Workflow" link in the "Workflows" dropdown within your application's subnavigation. They may also be created by clicking the "Add" button within your workflow lists both on the "Workflows" page and on the application overview.
+
+When creating a new workflow, you must first choose a workflow type. This cannot be changed after workflow creation. There are currently two different workflow types:
+
+*   [**Cloud workflows**](/workflows/cloud-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
+*   [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices on the fly and report up to the internet at a later time.
+
+More information on each workflow type, and what sets them apart, is available within each' type's documentation.
+
+## Example Workflow
+
+Below is an example of how a payload flows through a workflow. This example uses a [cloud workflow](/workflows/cloud-workflows/).
 
 ![Workflow Overview](/images/workflows/overview.png "Workflow Overview")
 
-Let's break down this workflow and explain the individual nodes and how they work with the payload.
+Let's break down this workflow and explain the individual nodes and how they work with the payload. For this example, our use case is ...
+
+1.   A device is reporting temperature readings and we are using those state reports to [kick off a workflow](#temp-sensor-trigger-node).
+2.   The user would like to take an action [if that temperature exceeds a certain threshold](#temp-high-conditional-node).
+3.   This device reports temperature in degrees Fahrenheit; however, our user would prefer to receive reports [in degrees Celsius](#convert-f-to-c-math-node).
+4.   When the temperature does exceed the threshold, the user should receive an [SMS alert](#sms-node).
 
 ### Temp Sensor - Trigger Node
 
@@ -20,7 +42,7 @@ All workflows start with a trigger. There are many different triggers and each o
 
 ![Workflow Overview Trigger](/images/workflows/overview-trigger.png "Workflow Overview Trigger")
 
-In this example the trigger is a [Device State node](/workflows/triggers/device/), which will run the payload whenever a device reports its [state](/devices/state/). The device state trigger places the state that was reported on the payload's data field. When the workflow starts, the payload will look like this:
+In this example the trigger is a [Device State Node](/workflows/triggers/device/), which will run the payload whenever a device reports its [state](/devices/state/). The state that was reported is available on the payload's `data` field. When the workflow starts, the payload will look like this:
 
 ```json
 {
@@ -32,31 +54,31 @@ The workflow will then continue with this payload and pass it to the next node.
 
 ### Temp High - Conditional Node
 
-[Conditional nodes](/workflows/logic/conditional/) allow you to branch the workflow based on an [expression](/workflows/accessing-payload-data/#expressions) that evaluates to true or false. If the expression is true, the workflow branches right. If the expression is false, the workflow branches left.
+[Conditional Nodes](/workflows/logic/conditional/) allow you to branch the workflow based on an [expression](/workflows/accessing-payload-data/#expressions) that evaluates to `true` or `false`. If the expression is `true`, the workflow branches right. If the expression is `false`, the workflow branches left.
 
 ![Workflow Overview Conditional](/images/workflows/overview-conditional.png "Workflow Overview Conditional")
 
-This node doesn't modify the payload, but it is using a value in the payload to make a decision. In short, the [expression](/workflows/accessing-payload-data/#expressions) in the Conditional node allows for testing the truthiness of a condition against a payload property. In this example, the expression is:
+This node doesn't modify the payload, but it is using a value in the payload to make a decision. In short, the [expression](/workflows/accessing-payload-data/#expressions) in the Conditional Node allows for testing the truthiness of a condition against a payload property. In this example, the expression is:
 
 ```handlebars
 {{ data.tempF }} > 75
 ```
 
-Whenever this node is executed it will grab the `data.tempF` value in the payload and check to see whether it's greater than 75. Since we saw that the tempF value in our payload is currently 77, this conditional will branch to the right. The conditional node doesn't modify the payload, so the same payload that was passed to it will flow as-is to the next node in the workflow.
+Whenever this node is executed it will grab the `data.tempF` value in the payload and check to see whether it's greater than 75. Since we saw that the `tempF` value in our payload is currently 77, this workflow will branch to the right. The Conditional Node doesn't modify the payload, so the same payload that was passed to it will flow as-is to the next node in the workflow.
 
 ### Convert ˚F to ˚C - Math Node
 
-[Math nodes](/workflows/logic/math/) allow you to write mathematical expressions and store the result anywhere on the payload.
+A [Math Node](/workflows/logic/math/) allows you to write mathematical expressions and store the result on the payload.
 
 ![Workflow Overview Math](/images/workflows/overview-math.png "Workflow Overview Math")
 
-Each math node supports multiple statements, but this example is only using one. Each statement includes the actual expression and a [payload path](/workflows/accessing-payload-data/#payload-paths) of where to store the result. For this example, the expression is:
+Each Math Node supports multiple statements, but this example is only using one. Each statement includes the actual expression and a [payload path](/workflows/accessing-payload-data/#payload-paths) for where to store the result. For this example, the expression is:
 
 ```handlebars
 ( {{ data.tempF }} - 32 ) / 1.8
 ```
 
-Just like with the Conditional node, you can reference values from the payload in these expressions. This is simply converting degrees Fahrenheit to degrees Celsius.
+Just like with the Conditional Node, you can reference values from the payload in these expressions. This is simply converting degrees Fahrenheit to degrees Celsius.
 
 The second part of each math expression is a [payload path](/workflows/accessing-payload-data/#payload-paths) to store the result. In this example the payload path is:
 
@@ -64,7 +86,7 @@ The second part of each math expression is a [payload path](/workflows/accessing
 degreesCelsius
 ```
 
-This payload path will place the result of the math expression on the root of the payload. The new payload now looks like:
+This payload path will place the result of the math expression on the root of the payload at the `degreesCelsius` property. The new payload now looks like:
 
 ```json
 {
@@ -75,17 +97,23 @@ This payload path will place the result of the math expression on the root of th
 
 ### SMS Node
 
-The [SMS node](/workflows/outputs/sms/) allows you to send an SMS message one or more phone numbers. This example demonstrates how to use the newly modified payload in a useful way.
+The [SMS Node](/workflows/outputs/sms/) allows you to send an SMS message to one or more phone numbers. This example demonstrates how to use the newly modified payload in a useful way.
 
 ![Workflow Overview SMS](/images/workflows/overview-sms.png "Workflow Overview SMS")
 
-The SMS node supports [string templates](/workflows/accessing-payload-data/#string-templates). But unlike evaluating to a boolean for the Conditional node, or a number for the Math node, the SMS node uses the that value to create a custom message that contains a value from the payload.
+The SMS Node supports [string templates](/workflows/accessing-payload-data/#string-templates) for its configuration values. But unlike evaluating to a boolean as it does for the Conditional Node, or a number for the Math Node, the SMS Node uses that value to create a custom message that containing a value from the payload.
 
 ```handlebars
 Temperature warning. Temperature now at {{ degreesCelsius }} deg C!
 ```
 
-For this example, the user wanted to send an SMS alert with the temperature in Celsius, but our temperature sensor reported the value in Fahrenheit. This is why we used the Math node to convert the temperature before being sent.
+### Next Steps
+
+To improve this user's experience, there are a number of additions and improvements we could make to this workflow. For example:
+
+*   The user's phone number could be stored as a [global variable](#workflow-globals) so that the workflow could be [exported](#import-export) without exposing the user's number to others.
+*   To avoid repeat SMS messages when the temperature is above the threshold for a long time, we could insert a [Latch Node](/workflows/logic/latch/) to only send one alert each time the temperature crosses the threshold.
+*   We could move the conversion to Celsius above our Conditional Node and then use a [Device State Node](/workflows/output/device-state/) to set that converted value as a separate [attribute](/devices/state/#state-attributes) on the device. This would allow us to also visualize the Celsius values in a [dashboard](/dashboards/overview/), such as in a [Time Series Block]() or a Gauge Block.
 
 ## Common Payload Fields
 
@@ -121,27 +149,13 @@ For example, a timer trigger will start a workflow with the following payload:
 }
 ```
 
-## Saving and Deploying
-
-Workflows are saved and deployed using the `Deploy Workflow` button.
-
-![Deploy Workflow](/images/workflows/overview-deploy.png "Deploy Workflow")
-
-The button will be green whenever there are changes that can be deployed. It will be gray when there are no changes. If you are viewing a [workflow version](/workflows/versioning/), the button will not allow the deployment of any changes; instead, it will allow you to return to the Develop version.
-
-Workflows can be enabled and disabled by clicking the `Enabled` checkbox on the workflow settings panel, and then clicking the "Update" button. The workflow settings panel can be displayed by clicking the gear icon in the right dock.
-
-![Enable Workflow](/images/workflows/overview-enable.png "Enable Workflow")
-
-Once a workflow has been deployed, its changes will take effect immediately.
-
 ## Import / Export
 
 Workflows and their [versions](/workflows/versioning/) can be exported by clicking the dropdown alongside the `Deploy Workflow` button, or by clicking the dropdown in the version row.
 
 ![Export Workflow](/images/workflows/workflow-export.png "Export Workflow")
 
-Clicking the `Export` option will open a modal, which will allow you to either export the version to a to a file, or (if you have [edit permissions](/organizations/members/#member-roles) within the application) to a new workflow. When exporting the workflow to a file, that file can then be imported into another workflow.
+Clicking the `Export` option will open a modal, which will allow you to either export the version to a file, or (if you have [edit permissions](/organizations/members/#member-roles) within the application) to a new workflow. When exporting the workflow to a file, that file can then be imported into another workflow of the same type.
 
 ![Export Modal](/images/workflows/workflow-export-modal.png "Export Modal")
 
@@ -155,11 +169,11 @@ When importing a workflow, configuration values that were specific to the applic
 
 ## Workflow Globals
 
-Workflow versions can have a set of global config keys - which are essentially keys/value pairs added to the payload under the `globals` key whenever the workflow runs. This is a great place to store configuration values or API keys, especially if they are needed for use in multiple different nodes. Globals can be accessed through the "Globals" tab in the right dock.
+Workflows can have a set of global config keys - which are essentially keys/value pairs added to the payload under the `globals` key whenever the workflow runs. This is a great place to store configuration values or API keys, especially if they are needed for use in multiple different nodes. Globals can be accessed through the "Globals" tab in the right dock.
 
 ![Workflow Globals](/images/workflows/workflow-globals.png "Workflow Globals")
 
-In addition, any [Application Globals](/applications/overview/#application-globals) configured in the application will be accessible here as well. Any application level globals can also be overridden at the workflow level by creating a workflow global with the same key name.
+In addition, any [Application Globals](/applications/overview/#application-globals) configured in the application will be accessible here as well. Any application globals can also be overridden at the workflow version level by creating a workflow global with the same key name.
 
 In the above example, there are three global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `632-538-0975`). Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value. Whenever the workflow runs, the payload will always include these global values. For the above example, a payload might end up looking like the following:
 
@@ -187,6 +201,8 @@ In the above example, there are three global keys set &mdash; `minLevel` (with a
 ```
 
 These values will be accessible in any node configuration that expects payload paths (such as `globals.minLevel`) or templates (such as `{{globals.phone}}`).
+
+Workflow globals are **version-specific**. Changing global values in one version (including your `develop` version) will not affect globals in your other versions. However, changing an application global's value will affect any versions referencing that global, provided the value was not overridden for that version.
 
 ## Workflow Storage
 

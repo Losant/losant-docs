@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Delete Experience User Node.
+
 # Delete Experience User Node
 
-The Delete Experience User node allows a workflow to delete an [Experience User](/experiences/users/) from the current application.
+The Delete Experience User Node allows a workflow to delete an [Experience User](/experiences/users/) from the current application.
 
 ![Delete Experience User Node](/images/workflows/experience/delete-experience-user-node.png "Delete Experience User Node")
 
