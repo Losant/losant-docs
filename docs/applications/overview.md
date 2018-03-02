@@ -77,7 +77,7 @@ In order to configure archiving for AWS, `Bucket`, `Region`, `Access Key ID` and
 
 ### Permissions
 
-Before setting up your configuration to archive, make sure that your 3rd party user has the correct permissions. For Google Cloud Services, create a service account with `ObjectCreator` and `ObjectViewer` permissions, which are the minimal permissions. For Amazon S3 archival, set the user's IAM Policy to the following guidelines, such that `bucketname` is replaced with the actual bucket name:
+Before setting up your configuration to archive, make sure that your 3rd party user has the correct permissions. For Google Cloud Services, create a service account with `ObjectAdmin` permissions, which are the minimal permissions. For Amazon S3 archival, set the user's IAM Policy to the following guidelines, such that `bucketname` is replaced with the actual bucket name:
 
 ```
 {
