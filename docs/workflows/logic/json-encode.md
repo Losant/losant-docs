@@ -1,12 +1,16 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant JSON Encode Node.
+
 # JSON Encode Node
 
-The JSON encode node allows a workflow to encode an object on the payload into a JSON string.
+The JSON Encode Node allows a workflow to encode an object on the payload into a JSON string.
 
 ![JSON Encode Node](/images/workflows/logic/json-encode-node.png "JSON Encode Node")
 
 ## Configuration
 
-There are two configuration properties for the JSON encode node - the [payload path](/workflows/accessing-payload-data/#payload-paths) to the JSON object to encode, and the path for where to store the resulting JSON-encoded string. Both paths are allowed to be the same, in which case the object will be replaced by the JSON string.
+There are two configuration properties for the JSON Encode Node - the [payload path](/workflows/accessing-payload-data/#payload-paths) to the JSON object to encode, and the path for where to store the resulting JSON-encoded string. Both paths are allowed to be the same, in which case the object will be replaced by the JSON string.
 
 ![JSON Encode Node Config](/images/workflows/logic/json-encode-node-config.png "JSON Encode Node Config")
 
@@ -27,7 +31,7 @@ In the above example, the workflow will encode the value at the `container.jsonO
 }
 ```
 
-The payload after execution of the JSON encode node would look like:
+The payload after execution of the JSON Encode Node would look like:
 
 ```json
 {

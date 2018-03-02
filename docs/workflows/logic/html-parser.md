@@ -1,18 +1,22 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant HTML/XML Parser Node.
+
 # HTML/XML Parser Node
 
-The HTML Parser Node allows you to parse an HTML or XML document string, as well as optionally run selectors against that document.
+The HTML/XML Parser Node allows you to parse an HTML or XML document string, as well as optionally run selectors against that document.
 
 ![HTML/XML Parser Node](/images/workflows/logic/html-parser-node.png "HTML/XML Parser Node")
 
 ## Configuration
 
-The HTML parser node has 2 distinct configuration sections - the first defining what to parse, and the second defining what to do with the result.
+The HTML/XML Parser Node has 2 distinct configuration sections - the first defining what to parse, and the second defining what to do with the result.
 
 ![HTML/XML Parser Node Config](/images/workflows/logic/html-parser-node-config.png "HTML/XML Parser Node Config")
 
 For determining what to parse, the node needs a JSON payload path, which is expected to point at a XML or HTML document string. The node will take that document and parse it as best as possible - obviously a well formed document is preferred, but the node does attempt to deal with documents that have structural or syntax errors. By default, the node will use the entire document for the result, but a selector can be defined to reduce what is actually returned from the parsed document. The selector uses standard [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) syntax. Invalid selectors will be treated as if they match nothing in the document. Selectors that match more than one section in the document are also valid.
 
-In the above example, the node is pulling the HTML document string from the `data.httpResult.body` path (which in this case is storing the body of a webpage retrieved by the previous HTTP node), and applying the selector `#myDataSource` against the document (which will pull out the node that has the ID `myDataSource`).
+In the above example, the node is pulling the HTML document string from the `data.httpResult.body` path (which in this case is storing the body of a webpage retrieved by the previous [HTTP Node](/workflows/data/http/)), and applying the selector `#myDataSource` against the document (which will pull out the node that has the ID `myDataSource`).
 
 ![HTML/XML Parser Node Result](/images/workflows/logic/html-parser-node-result.png "HTML/XML Parser Node Result")
 

@@ -1,12 +1,16 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant JSON Decode Node.
+
 # JSON Decode Node
 
-The JSON decode node allows a workflow to decode a JSON string into an object on the payload.
+The JSON Decode Node allows a workflow to decode a JSON string into an object on the payload.
 
 ![JSON Decode Node](/images/workflows/logic/json-decode-node.png "JSON Decode Node")
 
 ## Configuration
 
-There are two configuration properties for the JSON decode node - the [payload path](/workflows/accessing-payload-data/#payload-paths) to the string to decode, and the payload path for where to store the resulting decoded object. Both paths are allowed to be the same, in which case the JSON string will be replaced by the decoded object.
+There are two configuration properties for the JSON Decode Node - the [payload path](/workflows/accessing-payload-data/#payload-paths) to the string to decode, and the payload path for where to store the resulting decoded object. Both paths are allowed to be the same, in which case the JSON string will be replaced by the decoded object.
 
 ![JSON Decode Node Config](/images/workflows/logic/json-decode-node-config.png "JSON Decode Node Config")
 
@@ -22,7 +26,7 @@ In the above example, the workflow will decode the string at the `container.json
 }
 ```
 
-The payload after execution of the JSON decode node would look like:
+The payload after execution of the JSON Decode Node would look like:
 
 ```json
 {
