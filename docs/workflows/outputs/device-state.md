@@ -1,16 +1,20 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Device State Node.
+
 # Device State Node
 
-The device state node allows a workflow to update the state of a [device](/devices/overview/#device-configuration).
+The Device State Node allows a workflow to update the state of a [device](/devices/overview/#device-configuration).
 
 ![Device State Node](/images/workflows/outputs/device-state-node.png "Device State Node")
 
 ## Configuration
 
-There are two parts to configuring a device state node - selecting the device that the node should set the state of, and configuring what attributes and values should be set as the state. Users may manually choose a device, or they may define the [payload path](/workflows/accessing-payload-data/#payload-paths) of a device ID to use.
+There are two parts to configuring a Device State Node - selecting the device that the node should set the state of, and configuring what attributes and values should be set as the state. Users may manually choose a device, or they may define the [payload path](/workflows/accessing-payload-data/#payload-paths) of a device ID to use.
 
 ![Device State Node Configuration](/images/workflows/outputs/device-state-node-config.png "Device State Node Configuration")
 
-There are three different ways to configure incoming state data for the device state node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you more control over the state being reported, while the third choice is the more common option for simple situations.
+There are three different ways to configure incoming state data for the Device State Node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you more control over the state being reported, while the third choice is the more common option for simple situations.
 
 Any number of attributes can be configured - it does not have to be all of the attributes that the device is configured for. Values will be cast (if possible) to the type of attribute that the device has been previously defined to expect. If attributes are configured that are not valid for the given device, or if the values are not valid for the data type of that attribute, they will be ignored.
 
@@ -18,7 +22,7 @@ For "JSON Template", the input must be a [JSON template string](/workflows/acces
 
 For "Individual Fields", the most common method to use and the one shown in the example above, the state payload is broken into multiple fields that can be filled in using individual [string templates](/workflows/accessing-payload-data/#string-templates). When a specific device is selected (as in the case above), the attribute names are pre-filled in. When the device that the node will send state for is not known, you can fill in the both attribute names as well as the values.
 
-In the above example, the device state node is setting the state of the device `Electricity Cost`. It will set the `cents` attribute to the value of the field `pricing.price` in the current payload.
+In the above example, the Device State Node is setting the state of the device `Electricity Cost`. It will set the `cents` attribute to the value of the field `pricing.price` in the current payload.
 
 ![Device State Node Time Configuration](/images/workflows/outputs/device-state-node-config-time.png "Device State Node Time Configuration")
 
