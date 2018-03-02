@@ -3,7 +3,7 @@ description: Learn more about the Losant Update Experience User Node.
 
 # Update Experience User Node
 
-The Update Experience User node allows a workflow to update an existing [Experience User](/experiences/users/) inside the current application, and optionally add the updated user to the current workflow payload.
+The Update Experience User Node allows a workflow to update an existing [Experience User](/experiences/users/) inside the current application, and optionally add the updated user to the current workflow payload.
 
 ![Update Experience User Node](/images/workflows/experience/update-user-node.png "Update Experience User Node")
 
@@ -13,7 +13,7 @@ For finding the user to update, the node can find either by user ID or email add
 
 ![Update Experience User Node Configuration](/images/workflows/experience/update-user-node-config.png "Update Experience User Node Configuration")
 
-There are three different ways to configure input data for the update user node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the user being updated, while the third choice is the more common option for simple situations.
+There are three different ways to configure input data for the Update Experience User Node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the user being updated, while the third choice is the more common option for simple situations.
 
 For "JSON Template", the input must be a [JSON template string](/workflows/accessing-payload-data/#json-templates) that can be parsed into a JSON object that validates against the [Experience User Patch](/rest-api/schemas/#experience-user-patch) schema. For "Payload Path", the input must be a [payload path](/workflows/accessing-payload-data/#payload-paths) that points to an object on the current workflow payload that, again, validates against the [Experience User Patch](/rest-api/schemas/#experience-user-patch) schema.
 
