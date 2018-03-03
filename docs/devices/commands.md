@@ -1,3 +1,5 @@
+description: Learn more about how to send device commands.
+
 # Device Commands
 
 Device commands allow you to instruct your device to take some kind of action. Commands include a name and an optional payload. It's then up to the device's firmware to take the appropriate action based on the command and payload.

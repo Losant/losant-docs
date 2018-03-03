@@ -1,3 +1,5 @@
+description: Learn more about configuring gateways and peripherals in the Losant platform.
+
 # Gateways and Peripherals
 
 Some types of devices, like Bluetooth sensors, cannot connect directly to Losant. They require some form of middle man in order to communicate externally. In order to facilitate this, Losant has the concept of Gateway and Peripheral devices. Gateway devices are permitted to report state and receive commands on behalf of Peripheral devices.
