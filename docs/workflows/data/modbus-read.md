@@ -36,7 +36,8 @@ The following is an example of a successful read, where a resultKey is `threeCoi
 ```
 
 The following is an example of a failure to read, where a resultKey should have been `threeCoils`, and the destination path is `destination.modbusOutput`:
-```josn
+
+```json
 {
   "destination": {
     "modbusOutput": {
