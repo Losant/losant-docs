@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Google Pub/Sub Trigger.
+
 # GCP Pub/Sub Trigger
 
-The GCP (Google Cloud Platform) Pub/Sub trigger will trigger a workflow whenever a message is sent to one of the topics defined a given [Google Pub/Sub integration](/applications/integrations/#google-pubsub).
+The GCP (Google Cloud Platform) Pub/Sub Trigger will trigger a workflow whenever a message is sent to one of the topics defined a given [Google Pub/Sub integration](/applications/integrations/#google-pubsub).
 
 ![Google Pub/Sub Trigger](/images/workflows/triggers/google-pub-sub-trigger.png "Google Pub/Sub Trigger")
 

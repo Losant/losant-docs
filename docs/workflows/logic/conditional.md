@@ -1,12 +1,16 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Conditional Node.
+
 # Conditional Node
 
-The conditional node allows a workflow to branch based upon a [conditional expression](/workflows/accessing-payload-data/#expressions).
+The Conditional Node allows a workflow to branch based upon a [conditional expression](/workflows/accessing-payload-data/#expressions).
 
 ![Conditional Node](/images/workflows/logic/conditional-node.png "Conditional Node")
 
 ## Configuration
 
-Configuring a conditional node involves writing an [expression](/workflows/accessing-payload-data/#expressions), which will evaluate to a true or false value. When the expression evaluates to false for a given workflow payload, the route on the left out of the conditional node is taken. When the expression evaluates to true, the route on the right out of the conditional node is taken.
+Configuring a Conditional Node involves writing an [expression](/workflows/accessing-payload-data/#expressions), which will evaluate to a true or false value. When the expression evaluates to `false` for a given workflow payload, the route on the left out of the Conditional Node is taken. When the expression evaluates to `true`, the route on the right out of the node is taken.
 
 ![Conditional Node Config](/images/workflows/logic/conditional-node-config.png "Conditional Node Config")
 

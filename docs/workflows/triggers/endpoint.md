@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Endpoint Trigger.
+
 # Experience Endpoint Trigger
 
-The endpoint trigger will trigger a workflow when the selected endpoint receives a request.
+The Endpoint Trigger will trigger a workflow when the selected endpoint receives a request.
 
 ![Endpoint Trigger](/images/workflows/triggers/endpoint-trigger.png "Endpoint Trigger")
 
 ## Configuration
 
-The configuration for the endpoint trigger is relatively simple - just choose an endpoint that has been set up for the application as described in the [endpoint documentation](/experiences/endpoints/).
+The configuration for the Endpoint Trigger is relatively simple - just choose an endpoint that has been set up for the application as described in the [endpoint documentation](/experiences/endpoints/).
 
 ![Endpoint Trigger Config](/images/workflows/triggers/endpoint-trigger-config.png "Endpoint Trigger Config")
 

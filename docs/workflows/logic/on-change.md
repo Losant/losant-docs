@@ -1,16 +1,20 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant On Change Node.
+
 # On Change Node
 
-The on change node allows a workflow to branch based upon if a value has changed since previous executions of the workflow.
+The On Change Node allows a workflow to branch based upon if a value has changed since previous executions of the workflow.
 
 ![On Change Node](/images/workflows/logic/on-change-node.png "On Change Node")
 
 ## Configuration
 
-There are three configuration parts for the on change node - defining what payload field to monitor for changes, defining what constitutes a change, and optionally defining where to store the value compared against.
+There are three configuration parts for the On Change Node - defining what payload field to monitor for changes, defining what constitutes a change, and optionally defining where to store the value compared against.
 
 ![On Change Node Example](/images/workflows/logic/on-change-node-example.png "On Change Node Example")
 
-If the payload field being monitored for changes does in fact change between workflow runs, the route on the right out of the on change node is taken. If the payload field has not changed, the route on the left out of the on change node is taken. In addition, if this is first time that the field is being monitored (i.e., there is not a previous value to compare against), the route on the left out of the on change node is taken.
+If the payload field being monitored for changes does in fact change between workflow runs, the route on the right out of the On Change Node is taken. If the payload field has not changed, the route on the left out of the On Change Node is taken. In addition, if this is first time that the field is being monitored (i.e., there is not a previous value to compare against), the route on the left out of the On Change Node is taken.
 
 ### Field to monitor
 
@@ -70,7 +74,7 @@ The `Percent decrease of at least` type will trigger whenever the value to check
 
 ![On Change Node Previous Value](/images/workflows/logic/on-change-node-previous-value.png "On Change Node Previous Value")
 
-The on change node has the ability to optionally add information about the previous value being compared against to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the previous value and time at which that value ran through the workflow will be placed at that path no matter which branch out of the on change node is taken. If there is no previous value that was compared against (i.e., this is the first time this field is being checked), then nothing will be added to the payload. In the above example, the previous value information will be placed at the `data.previousColor` path. So, for example, given the following payload:
+The On Change Node has the ability to optionally add information about the previous value being compared against to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the previous value and time at which that value ran through the workflow will be placed at that path no matter which branch out of the On Change Node is taken. If there is no previous value that was compared against (i.e., this is the first time this field is being checked), then nothing will be added to the payload. In the above example, the previous value information will be placed at the `data.previousColor` path. So, for example, given the following payload:
 
 ```json
 {
@@ -83,7 +87,7 @@ The on change node has the ability to optionally add information about the previ
 }
 ```
 
-The payload after execution of the on change node might look like:
+The payload after execution of the On Change Node might look like:
 
 ```json
 {
@@ -102,4 +106,4 @@ The payload after execution of the on change node might look like:
 
 ## Advanced Options
 
-The On Change node also has an optional field named `On Change Identifier`. This field is a [string template](/workflows/accessing-payload-data/#string-templates) and can be used to make a single on change node function as the equivalent of multiple on change checks. For example, if multiple devices can trigger a workflow and pass through this on change node, you can have the on change identifier be the triggering device ID. That way the on change node will trigger on a per-device basis, instead of on a global workflow basis.
+The On Change Node also has an optional field named `On Change Identifier`. This field is a [string template](/workflows/accessing-payload-data/#string-templates) and can be used to make a single On Change Node function as the equivalent of multiple on change checks. For example, if multiple devices can trigger a workflow and pass through this On Change Node, you can have the on change identifier be the triggering device ID. That way the On Change Node will trigger on a per-device basis, instead of on a global workflow basis.

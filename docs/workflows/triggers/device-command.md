@@ -1,14 +1,15 @@
-description: Learn more about triggering an Edge Workflow with a device command.
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Device Command Trigger.
 
 # Edge Device Command Trigger
 
-The device command trigger will trigger a workflow whenever the edge compute device receives a [command](/devices/commands/).
+The Device Command Trigger will trigger a workflow whenever the [edge compute device](/devices/edge-compute/) receives a [command](/devices/commands/).
 
 ![Device Command Trigger](/images/workflows/triggers/device-command-trigger.png "Device Command Trigger")
 
 ## Configuration
 
-The device command trigger has no configuration. When a workflow with this trigger is deployed to an [Edge Compute](/devices/edge-compute/) device, if that device receives a command, the workflow will fire.
+The Device Command Trigger has no configuration. When a workflow with this trigger is deployed to an [Edge Compute](/devices/edge-compute/) device, if that device receives a command, the workflow will fire.
 
 ## Payload
 

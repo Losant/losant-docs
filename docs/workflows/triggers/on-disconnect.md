@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Device: Disconnect Trigger.
+
 # Device: Disconnect Trigger
 
-The device disconnect trigger will trigger a workflow whenever one or more devices disconnect from the Losant Platform.
+The Device: Disconnect Trigger will trigger a workflow whenever one or more devices disconnect from the Losant Platform.
 
 ![Device Disconnect Trigger](/images/workflows/triggers/on-disconnect-trigger.png "Device Disconnect Trigger")
 
 ## Configuration
 
-The device disconnect trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection disconnects from Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The Device: Disconnect Trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection disconnects from Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
 ![Device Disconnect Trigger Config](/images/workflows/triggers/on-disconnect-trigger-config.png "Device Disconnect Trigger Config")
 

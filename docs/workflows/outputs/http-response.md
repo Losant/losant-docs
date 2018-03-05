@@ -1,14 +1,15 @@
-description: Learn more about responding to an an Edge web request.
+flowclass: Edge 1.0.0
+description: Learn more about the Losant HTTP Response Node.
 
 # Edge HTTP Response
 
-The HTTP Response node allows an edge workflow triggered by an [HTTP Request](/workflows/triggers/request/) trigger to reply back to the triggering request.
+The HTTP Response Node allows an edge workflow triggered by an [HTTP Request](/workflows/triggers/request/) trigger to reply back to the triggering request.
 
 ![HTTP Response Node](/images/workflows/outputs/http-response-node.png "HTTP Response Node")
 
 ## Configuration
 
-All the standard components of an HTTP response are configurable in the HTTP Response node - the response code, the body, and the headers. The node also has some helpers for setting and removing cookies, so that you do not have to configure the cookie header manually.
+All the standard components of an HTTP response are configurable in the HTTP Response Node - the response code, the body and the headers. The node also has some helpers for setting and removing cookies, so that you do not have to configure the cookie header manually.
 
 ![HTTP Response Node Config](/images/workflows/outputs/http-response-node-config.png "HTTP Response Node Config")
 
@@ -32,7 +33,7 @@ Losant does automatically add certain other headers to the reply, if they are no
 * [X-Content-Type-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options): This header is added by default to the reply with the value `nosniff`.
 * [X-XSS-Protection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection): This header is added by default to the reply with the value `1; mode=block`.
 
-CORS related headers will also be added - the headers [Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) and [Access-Control-Expose-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers) are added by default to all replies. In addition, if the request was an `OPTIONS` request, Losant will add the headers [Access-Control-Allow-Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods), [Access-Control-Allow-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers), and [Access-Control-Max-Age](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age) to the reply. If any of the above headers is explicitly set in the header configuration of the HTTP response node, Losant will use that and not override it.
+CORS related headers will also be added - the headers [Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) and [Access-Control-Expose-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers) are added by default to all replies. In addition, if the request was an `OPTIONS` request, Losant will add the headers [Access-Control-Allow-Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods), [Access-Control-Allow-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers), and [Access-Control-Max-Age](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age) to the reply. If any of the above headers is explicitly set in the header configuration of the HTTP Response Node, Losant will use that and not override it.
 
 ### Cookies
 

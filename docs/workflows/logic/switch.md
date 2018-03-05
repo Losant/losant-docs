@@ -1,16 +1,20 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Switch Node.
+
 # Switch Node
 
-The switch node allows a workflow to branch across many different paths based on matching the switch value against various case values.
+The Switch Node allows a workflow to branch across many different paths based on matching the switch value against various case values.
 
 ![Switch Node](/images/workflows/logic/switch-node.png "Switch Node")
 
 ## Configuration
 
-To configure a switch node, first you fill in the 'Switch Template' - a [string template](/workflows/accessing-payload-data/#string-templates) that the workflow will evaluate to determine the base value to compare the various possible branches against.
+To configure a Switch Node, first you fill in the 'Switch Template' - a [string template](/workflows/accessing-payload-data/#string-templates) that the workflow will evaluate to determine the base value to compare the various possible branches against.
 
 ![Switch Node Switch Template](/images/workflows/logic/switch-node-switch-template.png "Switch Node Switch Template")
 
-Next, you fill in various `Case Templates`, which are also [string template](/workflows/accessing-payload-data/#string-templates) - one for each possible branch for the switch node. You may optionally provide a label for each case, which only affects how the branch is displayed on the workflow canvas. A case's label has no effect on its evaluation.
+Next, you fill in various `Case Templates`, which are also [string template](/workflows/accessing-payload-data/#string-templates) - one for each possible branch for the Switch Node. You may optionally provide a label for each case, which only affects how the branch is displayed on the workflow canvas. A case's label has no effect on its evaluation.
 
 When the workflow runs, the first evaluated case template that matches the evaluated switch template will be the branch that is followed by the workflow. If no cases match, then the `Default` branch is used instead.
 

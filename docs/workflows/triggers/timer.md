@@ -1,14 +1,16 @@
-description: Learn how to use a Timer Trigger to automatically run a Losant workflow at scheduled intervals.
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Timer Trigger.
 
 # Timer Trigger
 
-The timer trigger will trigger a workflow on a scheduled interval.
+The Timer Trigger will fire a workflow on a scheduled interval.
 
 ![Timer Trigger](/images/workflows/triggers/timer-trigger.png "Timer Trigger")
 
 ## Configuration
 
-The timer trigger can be configured in three different ways:
+The Timer Trigger can be configured in three different ways:
 
 * **Simple Interval**: Configure the timer to fire after a repeating period of time. Configured by using an amount and a unit - the unit can be "Seconds", "Minutes", "Hours", or "Days". The interval can be any positive number that evaluates to at least 1 second and less than 1 year (fractional intervals are allowed).
 * **Simple Schedule**: Configure the timer to fire based on a simple daily schedule. Select the days of the week, and the time of day that the timer should fire.
@@ -20,7 +22,7 @@ In the above example, the timer is configured using `Simple Interval`, and is se
 
 ## Payload
 
-Unlike most other triggers, there is no special data included in the payload for a timer trigger, so the `data` field is set to an empty object. The only data relevant to a timer trigger is the time at which the trigger fired, and that is just in the standard `time` field that every trigger payload has. In the general case, a timer workflow payload will look like the following:
+Unlike most other triggers, there is no special data included in the payload for a Timer Trigger, so the `data` field is set to an empty object. The only data relevant to a Timer Trigger is the time at which the trigger fired, and that is just in the standard `time` field that every trigger payload has. In the general case, a timer workflow payload will look like the following:
 
 ```json
 {
@@ -28,7 +30,7 @@ Unlike most other triggers, there is no special data included in the payload for
   "data": {},
   "applicationId": <id of the current application>,
   "applicationName": <name of the current application>,
-  "triggerId": <id of the timer trigger>,
+  "triggerId": <id of the Timer Trigger>,
   "triggerType": "timer",
   "flowId": <id of the current workflow>,
   "flowName": <name of the current workflow>,

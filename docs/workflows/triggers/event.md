@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Event Trigger.
+
 # Event Trigger
 
-The event trigger will trigger a workflow whenever an event is created or changes state that matches the criteria defined in its configuration.
+The Event Trigger will trigger a workflow whenever an event is created or changes state that matches the criteria defined in its configuration.
 
 ![Event Trigger](/images/workflows/triggers/event-trigger.png "Event Trigger")
 
