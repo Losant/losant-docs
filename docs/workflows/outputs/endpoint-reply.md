@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Experience Endpoint Reply Node.
+
 # Experience Endpoint Reply Node
 
-The experience endpoint reply node allows a workflow to create and send an HTTP response to an [endpoint](/experiences/endpoints/) HTTP request.
+The Experience Endpoint Reply Node allows a workflow to create and send an HTTP response to an [endpoint](/experiences/endpoints/) HTTP request.
 
 ![Endpoint Reply Node](/images/workflows/outputs/endpoint-reply-node.png "Endpoint Reply Node")
 
 ## Configuration
 
-There are three ways that you can use the endpoint reply node - send a custom response, send a page render, or send a redirect. In all three cases, you also have control over response headers. The node also has some helpers for setting and removing cookies, so that you do not have to configure the cookie header manually.
+There are three ways that you can use the Experience Endpoint Reply Node - send a custom response, send a page render, or send a redirect. In all three cases, you also have control over response headers. The node also has some helpers for setting and removing cookies, so that you do not have to configure the cookie header manually.
 
 ### Custom Response
 
@@ -55,7 +58,7 @@ Losant does automatically add certain other headers to the reply, if they are no
 * [X-Content-Type-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options): This header will be added by default with the value `nosniff`.
 * [X-XSS-Protection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection): This header will be added by default with the value `1; mode=block`.
 
-CORS related headers will also be added, depending on if [Default CORS](/experiences/endpoints/) is enabled. If that is enabled, Losant will automatically add the headers [Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) and [Access-Control-Expose-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers) to the reply. In addition, if the request was an `OPTIONS` request and "Default CORS" is enabled, Losant will add the headers [Access-Control-Allow-Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods), [Access-Control-Allow-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers), and [Access-Control-Max-Age](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age) to the reply. If any of the above headers is explicitly set in the header configuration of the endpoint reply node, Losant will use that and not override it.
+CORS related headers will also be added, depending on if [Default CORS](/experiences/endpoints/) is enabled. If that is enabled, Losant will automatically add the headers [Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) and [Access-Control-Expose-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers) to the reply. In addition, if the request was an `OPTIONS` request and "Default CORS" is enabled, Losant will add the headers [Access-Control-Allow-Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods), [Access-Control-Allow-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers), and [Access-Control-Max-Age](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age) to the reply. If any of the above headers is explicitly set in the header configuration of the Experience Endpoint Reply Node, Losant will use that and not override it.
 
 ### Cookies
 
@@ -65,8 +68,8 @@ Cookies can either be removed or set on the reply. In the case of removal, all t
 
 ## Advanced Options
 
-The endpoint reply node has one optional advanced option - setting the payload path to the `replyId`.
+The Experience Endpoint Reply Node has one optional advanced option - setting the payload path to the `replyId`.
 
 ![Endpoint Reply Node ReplyId](/images/workflows/outputs/endpoint-reply-node-replyid.png "Endpoint Reply Node ReplyId")
 
-The reply ID path by default is `data.replyId` - which is where an endpoint places the reply ID for the request made against the endpoint. But if for some reason you have moved the replyId to a different part of the payload, or you are using multiple workflows and passing the replyId between them under a different field name, you can set the path to that field here. If there is no reply ID at the path given, the endpoint reply node does nothing.
+The reply ID path by default is `data.replyId` - which is where an endpoint places the reply ID for the request made against the endpoint. But if for some reason you have moved the replyId to a different part of the payload, or you are using multiple workflows and passing the replyId between them under a different field name, you can set the path to that field here. If there is no reply ID at the path given, the Experience Endpoint Reply Node does nothing.

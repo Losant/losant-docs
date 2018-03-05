@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Device Command Node.
+
 # Device Command Node
 
-The device command node allows a workflow to send a [command](/devices/commands/) to one or more devices.
+The Device Command Node allows a workflow to send a [command](/devices/commands/) to one or more devices.
 
 ![Device Command Node](/images/workflows/outputs/device-command-node.png "Device Command Node")
 
 ## Configuration
 
-There are three parts to configuring a device command node - selecting the devices to send the command to, configuring the command name, and optionally creating a payload to be sent with the command.
+There are three parts to configuring a Device Command Node - selecting the devices to send the command to, configuring the command name, and optionally creating a payload to be sent with the command.
 
 ![Device Command Node Selection](/images/workflows/outputs/device-command-node-devices.png "Device Command Node Selection")
 
@@ -16,7 +19,7 @@ First step is selecting the devices to send the command to. The node has two opt
 
 The command name field supports [string templates](/workflows/accessing-payload-data/#string-templates), so if the command needs to be dynamically determined, it is possible to alter the command based on the current payload. The command payload is optional, and depending on the needs of the command being sent, may or may not be needed. If the command payload is needed, it must be entered as a [JSON template](/workflows/accessing-payload-data/#json-templates).
 
-In the above example, the device command node is sending the command `setHueColor` with a payload. And given the following payload:
+In the above example, the Device Command Node is sending the command `setHueColor` with a payload. And given the following payload:
 
 ```json
 {
@@ -29,7 +32,7 @@ In the above example, the device command node is sending the command `setHueColo
 }
 ```
 
-The device command node would send the following command payload with the `setHueColor` command:
+The Device Command Node would send the following command payload with the `setHueColor` command:
 
 ```json
 {

@@ -1,6 +1,10 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Random Number Node.
+
 # Random Number Node
 
-The random number node generates a random integer within a range of your choosing.
+The Random Number Node generates a random integer within a range of your choosing.
 
 ![Random Number Node](/images/workflows/logic/random-number.png "Random Number Node")
 

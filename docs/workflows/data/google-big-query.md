@@ -1,6 +1,10 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Google Cloud Platform BigQuery Node.
+
 # GCP BigQuery Node
 
-The GCP (Google Cloud Platform) BigQuery node allows a workflow to interact with [Google BigQuery](https://cloud.google.com/bigquery/what-is-bigquery) by fetching, creating, updating, or deleting data and optionally storing the result of the operation on the workflow payload.
+The GCP (Google Cloud Platform) BigQuery Node allows a workflow to interact with [Google BigQuery](https://cloud.google.com/bigquery/what-is-bigquery) by fetching, creating, updating, or deleting data and optionally storing the result of the operation on the workflow payload.
 
 ![GCP BigQuery Node](/images/workflows/data/google-big-query-node.png "GCP BigQuery Node")
 

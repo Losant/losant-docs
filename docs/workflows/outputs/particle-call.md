@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Particle Device Function Call Node.
+
 # Particle Device Function Call
 
-The Particle Call node allows a workflow to call a remote function on a device through a [Particle integration](/applications/integrations/#particle).
+The Particle Call Node allows a workflow to call a remote function on a device through a [Particle integration](/applications/integrations/#particle).
 
 ![Particle Call Node](/images/workflows/outputs/particle-call-node.png "Particle Call Node")
 

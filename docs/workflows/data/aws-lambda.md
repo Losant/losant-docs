@@ -1,6 +1,10 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant AWS Lambda Node.
+
 # AWS Lambda
 
-The AWS Lambda node allows a workflow to run an [AWS Lambda](https://aws.amazon.com/lambda/) function and optionally store the returned value from the function in the payload.
+The AWS Lambda Node allows a workflow to run an [AWS Lambda](https://aws.amazon.com/lambda/) function and optionally store the returned value from the function in the payload.
 
 ![AWS Lambda Node](/images/workflows/data/aws-lambda-node.png "AWS Lambda Node")
 
@@ -26,7 +30,7 @@ In the example above, `Workflow Payload` is selected, so the entire current payl
 
 ![AWS Lambda Node Output](/images/workflows/data/aws-lambda-node-output.png "AWS Lambda Node Output")
 
-Finally, if the Lambda function that is being called returns a result, it can optionally be stored for later use in the workflow. In the example above, the result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) `data.phoneNumber` on the current payload. What a Lambda function returns, though, is not *just* the result; it is a result object with potentially other useful information. For example, here is an example payload after the above Lambda workflow node has been run - the actual Lambda result is placed in the `Payload` field:
+Finally, if the Lambda function that is being called returns a result, it can optionally be stored for later use in the workflow. In the example above, the result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) `data.phoneNumber` on the current payload. What a Lambda function returns, though, is not *just* the result; it is a result object with potentially other useful information. For example, here is an example payload after the above AWS Lambda Node has been run - the actual Lambda result is placed in the `Payload` field:
 
 ```json
 {

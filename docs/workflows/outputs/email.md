@@ -1,18 +1,21 @@
+flowclass: Cloud
+description: Learn more about the Losant Email Node.
+
 # Email Node
 
-The email node allows a workflow to send emails using Losant provided email delivery. NOTE: This node is rate limited to one email every minute per workflow (bursts of up to 10 allowed), and is limited to a maximum of 5 recipients per email. If more frequent emails or more advanced recipient configuration is required, please use the [SendGrid node](/workflows/outputs/sendgrid/).
+The Email Node allows a workflow to send emails using Losant provided email delivery. NOTE: This node is rate limited to one email every minute per workflow (bursts of up to 10 allowed), and is limited to a maximum of 5 recipients per email. If more frequent emails or more advanced recipient configuration is required, please use the [SendGrid Node](/workflows/outputs/sendgrid/).
 
 ![Email Node](/images/workflows/outputs/email-node.png "Email Node")
 
 ## Configuration
 
-The email node has the basic configuration properties needed to send an email. For more advanced capabilities, please use the [SendGrid node](/workflows/outputs/sendgrid/).
+The Email Node has the basic configuration properties needed to send an email. For more advanced capabilities, please use the [SendGrid Node](/workflows/outputs/sendgrid/).
 
 ### Recipient Addresses
 
 ![Email Node To Addresses](/images/workflows/outputs/email-node-to-addresses.png "Email Node To Addresses")
 
-The email node supports any number of "To" addresses for the email. These address fields support [string templates](/workflows/accessing-payload-data/#string-templates), so they can pull email addresses off of the current workflow payload. The above node is set to send the email to `bob@embree.net` and `john@embree.net`.
+The Email Node supports any number of "To" addresses for the email. These address fields support [string templates](/workflows/accessing-payload-data/#string-templates), so they can pull email addresses off of the current workflow payload. The above node is set to send the email to `bob@embree.net` and `john@embree.net`.
 
 ### Message Contents
 

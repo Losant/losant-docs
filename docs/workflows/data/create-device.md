@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Device: Create Node.
+
 # Device: Create Node
 
-The Create Device node allows a workflow to create a new [Device](/devices/overview/) inside the current application, and optionally add the new device to the current workflow payload.
+The Create Device Node allows a workflow to create a new [Device](/devices/overview/) inside the current application, and optionally add the new device to the current workflow payload.
 
 ![Create Device Node](/images/workflows/data/create-device-node.png "Create Device Node")
 
 ## Configuration
 
-There are three different ways to configure input data for the create device node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the device being created, while the third choice is the more common option for simple situations.
+There are three different ways to configure input data for the Create Device Node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the device being created, while the third choice is the more common option for simple situations.
 
 In all three cases, though, you can start by choosing a [Device Recipe](/devices/device-recipes/), which will be used as the defaults for creating the device. Any further configuration of the device (through any of the three methods) will override the defaults provided by the recipe selection.
 

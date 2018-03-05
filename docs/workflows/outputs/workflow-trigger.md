@@ -1,12 +1,16 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Workflow Trigger Node.
+
 # Workflow Trigger Node
 
-The workflow trigger node allows a workflow to trigger a different workflow to run.
+The Workflow Trigger Node allows a workflow to trigger a different workflow to run.
 
 ![Workflow Trigger Node](/images/workflows/outputs/workflow-trigger-node.png "Workflow Trigger Node")
 
 ## Configuration
 
-There are two parts to configuring a workflow trigger node - selecting the workflow and virtual button to trigger, and optionally creating a payload to be used for the trigger.
+There are two parts to configuring a Workflow Trigger Node - selecting the workflow and virtual button to trigger, and optionally creating a payload to be used for the trigger.
 
 ![Workflow Trigger Node Selection](/images/workflows/outputs/workflow-trigger-node-selection.png "Workflow Trigger Node Selection")
 

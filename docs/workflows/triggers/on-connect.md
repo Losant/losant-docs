@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Device: Connect Trigger.
+
 # Device: Connect Trigger
 
-The device connect trigger will trigger a workflow whenever one or more devices connect to the Losant Platform.
+The Device: Connect Trigger will fire a workflow whenever one or more devices connect to the Losant Platform.
 
 ![Device Connect Trigger](/images/workflows/triggers/on-connect-trigger.png "Device Connect Trigger")
 
 ## Configuration
 
-The device connect trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection connects to Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The Device: Connect Trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection connects to Losant, the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
 ![Device Connect Trigger Config](/images/workflows/triggers/on-connect-trigger-config.png "Device Connect Trigger Config")
 

@@ -1,14 +1,15 @@
-description: Learn how to use a Device Inactive trigger to automatically run a Losant workflow when a device fails to report state for a period of time.
+flowclass: Cloud
+description: Learn more about the Losant Device: Inactivity Trigger.
 
 # Device: Inactive Trigger
 
-The device inactive trigger will trigger a workflow whenever one or more devices do not report state for the configured period of time.
+The Device: Inactive Trigger will fire a workflow whenever one or more devices do not report state for the configured period of time.
 
 ![Device Inactive Trigger](/images/workflows/triggers/device-inactive-trigger.png "Device Inactive Trigger")
 
 ## Configuration
 
-There are two parts to configuring a device inactive trigger - the devices to trigger on, and the amount of time a device should be inactive before triggering. The trigger can be configured with one or more specific devices, or a selection of tags (or both). See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works. The inactivity time can be configured as seconds, minutes, hours, or days, and can be any duration between 1 second and 1 year. When a device that matches anything in the selection does not report [state](/devices/state/) for the configured period of time, the workflow will trigger.
+There are two parts to configuring a Device: Inactive Trigger - the devices to trigger on, and the amount of time a device should be inactive before triggering. The trigger can be configured with one or more specific devices, or a selection of tags (or both). See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works. The inactivity time can be configured as seconds, minutes, hours, or days, and can be any duration between 1 second and 1 year. When a device that matches anything in the selection does not report [state](/devices/state/) for the configured period of time, the workflow will trigger.
 
 ![Device Inactive Trigger Config](/images/workflows/triggers/device-inactive-trigger-config.png "Device Inactive Trigger Config")
 
@@ -63,6 +64,6 @@ For the example workflow above, a specific payload for a triggered workflow migh
 
 ## Notes
 
-The device inactive trigger starts monitoring from scratch when added or changed. This means that for the inactive trigger to fire, one state message must arrive from the device **after** the inactive trigger is configured, and then inactivity starts counting from that message (or subsequent messages) onward. If a device never reports state after the trigger is configured, the trigger will never fire for that device.
+The Device: Inactive Trigger starts monitoring from scratch when added or changed. This means that for the trigger to fire, one state message must arrive from the device **after** the trigger is configured, and then inactivity starts counting from that message (or subsequent messages) onward. If a device never reports state after the trigger is configured, the trigger will never fire for that device.
 
 In addition, the timestamp of state payload **arrival** at Losant is used for calculating inactivity. This means that a device that sends a state payload now whose data is for 1 day ago will be counted as active *now*, not retroactively active 1 day ago.

@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Get Experience User Node.
+
 # Get Experience User Node
 
-The Get Experience User node allows a workflow to retrieve one or more [Experience Users](/experiences/users/) from the current application and add them to the current workflow payload.
+The Get Experience User Node allows a workflow to retrieve one or more [Experience Users](/experiences/users/) from the current application and add them to the current workflow payload.
 
 ![Get Experience User Node](/images/workflows/experience/get-user-node.png "Get Experience User Node")
 
@@ -14,9 +17,9 @@ When querying by user tags, the configuration expects one or more tag key/value 
 
 The query result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) provided in the `Result Path` field. If the query is configured to potentially return multiple users, this will always be an array, even if no users are found. If the query is only returning a single user (which is always the case for email/ID queries), this will either be the user object or will be `null`.
 
-![Get Experience User Node Node Result](/images/workflows/experience/get-user-node-config-result.png "Get Experience User Node Node Result")
+![Get Experience User Node Result](/images/workflows/experience/get-user-node-config-result.png "Get Experience User Node Result")
 
-In the example above, the workflow will retrieve the user that has the `externalId` tag matching the value at `data.query.systemId` on the payload. It is only expecting a single user to be returned, and will place the resulting user at `data.userResult`. For example, the payload after the Get User node runs might look like the following:
+In the example above, the workflow will retrieve the user that has the `externalId` tag matching the value at `data.query.systemId` on the payload. It is only expecting a single user to be returned, and will place the resulting user at `data.userResult`. For example, the payload after the Get Experience User Node runs might look like the following:
 
 ```json
 {

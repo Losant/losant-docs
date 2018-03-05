@@ -1,12 +1,16 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant SendGrid Node.
+
 # SendGrid Node
 
-The SendGrid node allows a workflow to send emails using the configured [SendGrid](https://sendgrid.com/) account.
+The SendGrid Node allows a workflow to send emails using the configured [SendGrid](https://sendgrid.com/) account.
 
 ![SendGrid Node](/images/workflows/outputs/sendgrid-node.png "SendGrid Node")
 
 ## Configuration
 
-The SendGrid node has a large number of configuration properties - everything needed to configure use of a SendGrid account and the sending of an email.
+The SendGrid Node has a large number of configuration properties - everything needed to configure use of a SendGrid account and the sending of an email.
 
 ### SendGrid API Key
 
@@ -32,7 +36,7 @@ The "To", "CC", and "BCC" addresses for the email can all be independently confi
 
 ![SendGrid Node Response](/images/workflows/outputs/sendgrid-node-response.png "SendGrid Node Response")
 
-The SendGrid node can optionally place the response from SendGrid on the current payload for use later in the workflow. The above example node is set to place the response at the [payload path](/workflows/accessing-payload-data/#payload-paths) `sendgridResult`. Below is an example payload after the successful execution of the SendGrid node:
+The SendGrid Node can optionally place the response from SendGrid on the current payload for use later in the workflow. The above example node is set to place the response at the [payload path](/workflows/accessing-payload-data/#payload-paths) `sendgridResult`. Below is an example payload after the successful execution of the SendGrid Node:
 
 ```json
 {
