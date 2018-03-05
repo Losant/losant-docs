@@ -21,7 +21,7 @@ Read Instructions have four fields - register type, address template, length tem
 
 ![Modbus Read Node Result](/images/workflows/data/modbus-read-node-result.png "Modbus Read Node Result")
 
-The results of the of each read instruction will be placed inside the destination path at the result key. It is important that each result key is named uniquely so the node does not overwrite another read result. If the key is not present it means the read failed, and there will be a list of errors, under the result path at `errors`. If one read fails it does not mean that all reads will fail, the reads will continue until finished.
+The results of the of each read instruction will be placed inside the destination path at the result key. It is important that each result key is named uniquely so the node does not overwrite another read result. If the key is not present it means the read failed, and there will be a list of errors, under the result path at `errors`. If one read fails it does not mean that all reads will fail, the reads will continue until finished. The only time you will get a single error for multiple reads is if the connection could never be made to the modbus itself.
 
 The following is an example of a successful read, where a resultKey is `threeCoils`, and the destination path is `destination.modbusOutput`:
 
