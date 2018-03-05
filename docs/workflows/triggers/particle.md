@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Particle Trigger.
+
 # Particle Trigger
 
-The Particle trigger will trigger a workflow whenever a event is published that matches one of the event names defined in the [Particle integration](/applications/integrations/#particle).
+The Particle Trigger will trigger a workflow whenever a event is published that matches one of the event names defined in the [Particle integration](/applications/integrations/#particle).
 
 ![Particle Trigger](/images/workflows/triggers/particle-trigger.png "Particle Trigger")
 

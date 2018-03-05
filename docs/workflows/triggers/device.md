@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Device: State Trigger.
+
 # Device: State Trigger
 
-The device state trigger will trigger a workflow whenever one or more devices report state.
+The Device: State Trigger will trigger a workflow whenever one or more devices report state.
 
 ![Device State Trigger](/images/workflows/triggers/device-trigger.png "Device State Trigger")
 
 ## Configuration
 
-The device state trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection reports [state](devices/state/), the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The Device: State Trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection reports [state](devices/state/), the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
 ![Device State Trigger Config](/images/workflows/triggers/device-trigger-config.png "Device State Trigger Config")
 

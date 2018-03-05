@@ -1,6 +1,9 @@
+flowclass: Cloud
+description: Learn more about the Losant Virtual Button Trigger.
+
 # Virtual Button Trigger
 
-The virtual button trigger will trigger a workflow when the "virtual button" is pressed. The common use case of the virtual button is to debug and test workflows, without having to wait for an external trigger of some kind.
+The Virtual Button Trigger will fire a workflow when the "virtual button" is pressed. The common use case of the virtual button is to debug and test workflows, without having to wait for an external trigger of some kind.
 
 ![Virtual Button Trigger](/images/workflows/triggers/virtual-button-trigger.png "Virtual Button Trigger")
 
@@ -28,7 +31,7 @@ As just discussed, the configuration of the virtual button directly determines w
   "data": <the object defined in the virtual button configuration>,
   "applicationId": <id of the current application>,
   "applicationName": <name of the current application>,
-  "triggerId": <id of the virtual button trigger>,
+  "triggerId": <id of the Virtual Button Trigger>,
   "triggerType": "virtualButton",
   "flowId": <id of the current workflow>,
   "flowName": <name of the current workflow>,

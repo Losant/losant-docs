@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Webhook Trigger.
+
 # Webhook Trigger
 
-The webhook trigger will trigger a workflow when the selected webhook receives a request.
+The Webhook Trigger will fire a workflow when the selected webhook receives a request.
 
 ![Webhook Trigger](/images/workflows/triggers/webhook-trigger.png "Webhook Trigger")
 
 ## Configuration
 
-The configuration for the webhook trigger is relatively simple - just choose a webhook that has been set up for the application as described in the [webhook documentation](/applications/webhooks/).
+The configuration for the Webhook Trigger is relatively simple - just choose a webhook that has been set up for the application as described in the [webhook documentation](/applications/webhooks/).
 
 ![Webhook Trigger Config](/images/workflows/triggers/webhook-trigger-config.png "Webhook Trigger Config")
 

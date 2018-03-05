@@ -1,6 +1,10 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant MQTT Trigger.
+
 # MQTT Trigger
 
-The MQTT trigger will trigger a workflow whenever a message is sent to one of your [MQTT broker integrations](/applications/integrations/#mqtt), or to a topic of your choosing on the [Losant MQTT broker](/mqtt/overview/#the-losant-message-broker).
+The MQTT Trigger will fire a workflow whenever a message is sent to one of your [MQTT broker integrations](/applications/integrations/#mqtt), or to a topic of your choosing on the [Losant MQTT broker](/mqtt/overview/#the-losant-message-broker).
 
 ![MQTT Trigger](/images/workflows/triggers/mqtt-trigger.png "MQTT Trigger")
 
@@ -18,7 +22,7 @@ In the above example, the workflow will trigger whenever any message is publishe
 
 The payload will include the MQTT message on the `data` field, as well as the standard workflow payload information. The `triggerType` will be "mqttTopic" when using the Losant broker, and "integration" when using one of your integrations.
 
-When triggering from the Losant broker, the value of `data` for the MQTT trigger will be a string (unlike most other triggers, where the value of the `data` field is an object). In the general case, an MQTT workflow payload triggered by the Losant broker will look like the following:
+When triggering from the Losant broker, the value of `data` for the MQTT Trigger will be a string (unlike most other triggers, where the value of the `data` field is an object). In the general case, an MQTT workflow payload triggered by the Losant broker will look like the following:
 
 ```json
 {

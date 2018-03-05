@@ -1,20 +1,22 @@
-description: Learn more about triggering an Edge Workflow with a web request.
+flowclass: Edge 1.0.0
+description: Learn more about the Losant HTTP Request Trigger.
+
 
 # Edge HTTP Request Trigger
 
-The HTTP request trigger will trigger a workflow whenever the edge compute device receives request on the local web server run by the Losant Edge Agent.
+The HTTP Request Trigger will fire a workflow whenever the [edge compute device](/devices/edge-compute/) receives request on the local web server run by the Losant Edge Agent.
 
 ![HTTP Request Trigger](/images/workflows/triggers/http-request-trigger.png "HTTP Request Trigger")
 
 ## Configuration
 
-The HTTP request trigger has no configuration. When a workflow with this trigger is deployed to an [Edge Compute](/devices/edge-compute/) device, if a request is made against the local web server run by the Losant Edge Agent, the workflow will fire. If you need to respond to a request, you can use the [HTTP Response](/workflows/outputs/http-response/) node within your workflow.
+The HTTP Request Trigger has no configuration. When a workflow with this trigger is deployed to an [Edge Compute](/devices/edge-compute/) device, if a request is made against the local web server run by the Losant Edge Agent, the workflow will fire. If you need to respond to a request, you can use the [HTTP Response](/workflows/outputs/http-response/) node within your workflow.
 
 ## Payload
 
-The payload for a workflow triggered by the HTTP request trigger will include all of the information about the triggering request in the `data` field. This includes the request path, the request method, any request headers, any request query parameters, any parsed path parameters (based off the route definition for the endpoint), any cookies, and the request body. If there is no body present, the value for the body field will be `null`. Otherwise, if the content type is `multipart/form-data`, `application/x-www-form-urlencoded`, or `application/json` and the request body is valid for that content type, it will automatically be parsed into an object. For other content types, such as `text/plain`, the body will be left as a string.
+The payload for a workflow triggered by the HTTP Request Trigger will include all of the information about the triggering request in the `data` field. This includes the request path, the request method, any request headers, any request query parameters, any parsed path parameters (based off the route definition for the endpoint), any cookies, and the request body. If there is no body present, the value for the body field will be `null`. Otherwise, if the content type is `multipart/form-data`, `application/x-www-form-urlencoded`, or `application/json` and the request body is valid for that content type, it will automatically be parsed into an object. For other content types, such as `text/plain`, the body will be left as a string.
 
-In the general case, an HTTP request trigger workflow payload will look like the following:
+In the general case, an HTTP Request Trigger workflow payload will look like the following:
 
 ```json
 {
