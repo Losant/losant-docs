@@ -635,6 +635,12 @@ a.login-button {
   user-select: none;
   vertical-align: top;
 }
+.flowclass-tag.inline {
+  margin-left: 0px;
+  float: none;
+  padding: 0px 8px;
+  font-size: 75%;
+}
 .flowclass-tag.Cloud {
   background: #02cae5;
 }
