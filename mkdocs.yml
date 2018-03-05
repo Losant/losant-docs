@@ -71,6 +71,7 @@ pages:
     - Overview: edge-compute/overview.md
     - Edge Agent: edge-compute/edge-agent.md
     - Edge Deployments: edge-compute/edge-deployments.md
+    - Edge Agent Changelog: edge-compute/edge-agent-changelog.md
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
