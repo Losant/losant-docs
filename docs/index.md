@@ -40,11 +40,13 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
     </a>
   </div>
   <div class="mqtt secondary">
-    <div class="content">
-      <img src="/images/mqtt-icon.svg" class="icon" alt="MQTT Icon" />
-      <h2>MQTT</h2>
-      <p>The basics of connecting Losant and MQTT.</p>
-    </div>
+    <a href="/mqtt/overview/">
+      <div class="content">
+        <img src="/images/mqtt-icon.svg" class="icon" alt="MQTT Icon" />
+        <h2>MQTT</h2>
+        <p>The basics of connecting Losant and MQTT.</p>
+      </div>
+    </a>
   </div>
   <div class="what-is-losant secondary">
     <a href="/getting-started/what-is-losant/">
@@ -56,7 +58,7 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
     </a>
   </div>
   <div class="what-is-losant secondary">
-    <a href="https://accounts.losant.com/create-account" target="_blank">
+    <a href="https://accounts.losant.com/create-account?utm_campaign=Docs&utm_source=Docs" target="_blank">
       <div class="content">
         <img src="/images/sign-up-icon.svg" class="icon" alt="Sign Up Icon" />
         <h2 class="button">Sign Up</h2>
