@@ -3,7 +3,7 @@ description: Learn more about the Losant Write: Read Node.
 
 # File Write
 
-The File Write Node allows you to write to a file on your [link](Edge Compute device). This node is *only* available on your edge device.
+The File Write Node allows you to write to a file on your [link](Edge Compute device). This node is *only* available in workflows for your edge device agent.
 
 ![File Write Node](/images/workflows/data/file-write-node.png "File Write Node")
 

@@ -3,7 +3,7 @@ description: Learn more about the Losant File: Read Node.
 
 # File Read
 
-The File Read Node allows you to read a file from disk on your [link](Edge Compute device). This node is *only* available on your edge device.
+The File Read Node allows you to read a file from disk on your [link](Edge Compute device). This node is *only* available in workflows for your edge device agent.
 
 ![File Read Node](/images/workflows/data/file-read-node.png "File Read Node")
 
