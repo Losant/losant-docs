@@ -59,3 +59,9 @@ Any version of an edge workflow can be [deployed](/edge-compute/deployments/) by
 More information on deploying edge workflows is available within the [edge compute documentation](/edge-compute/edge-deployments/).
 
 ## Deleting Edge Workflows
+
+Cloud workflows can be deleted directly by clicking the "Delete Flow" button at the bottom of the workflow's Properties panel. They can also be deleted by clicking the "Delete" icon in your application's workflow list.
+
+![Delete Workflow](/images/workflows/workflow-delete.png "Delete Workflow")
+
+Note that deleting an edge workflow - or a deployed version - will remove the workflow from all devices where it is deployed **only once the device is connected to the platform**. If the device is offline, it will continue to execute the workflow until it reconnects and receives the deletion message.
