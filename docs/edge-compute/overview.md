@@ -6,7 +6,7 @@ The Losant Edge Compute Engine is a suite of functionality within the Losant pla
 
 ## Advantages
 
-Fully utilizing the Edge Compute Engine bring a number of benefits to your application.
+Fully utilizing the Edge Compute Engine brings a number of benefits to your application.
 
 ### Local Control
 
@@ -32,9 +32,9 @@ To get started with the Edge Compute Engine, you will have to follow these steps
 
 1.   In your [application](/applications/overview/), create a [new device](/devices/overview/#adding-a-device) and set its [device type](/devices/overview/#device-type) to "Edge Compute". Only devices of this type can receive workflows to run locally from the Losant platform.
 2.   [Create an access key and secret](/applications/access-keys/#generating-an-access-key) for your new device. While we always recommend generating a new key/secret pair per device, this step may not be necessary if you already have a key and secret configured to work for all devices in your application, or to work for all devices with a tag that you applied to your device during creation.
-3.   Deploy the [Edge Agent](/edge-compute/edge-agent/) to your new device and configure it using the device ID, key and secret from your previous steps. The Edge Agent software package is necessary to receive edge workflows from Losant and to run them on the device.
+3.   Deploy the [Edge Agent](/edge-compute/edge-agent-installation/) to your new device and configure it using the device ID, key and secret from your previous steps. The Edge Agent software package is necessary to receive edge workflows from Losant and to run them on the device.
 4.   Create a [new workflow](/workflows/overview/#creating-a-workflow) of the "Edge Workflow" type. Make sure the [Target Agent Version](/workflows/edge-workflows/#edge-agent-version) is less than or equal to the version of the Edge Agent you deployed to the device in the previous step.
 5.   [Set up your workflow](/workflows/overview/#overview) using any of the nodes in the palette and [save your work](/workflows/edge-workflows/#saving-changes).
 6.   When it is ready, [deploy a version of your workflow](/edge-compute/edge-deployments/) to your edge compute device(s). If the device is [connected to Losant's MQTT broker](/mqtt/overview/) – or when it connects next – the edge workflow version will deploy to the device and it will begin executing.
 
-Installing or upgrading the [Edge Agent](/edge-compute/edge-agent/) requires physical access to the device. After that, management of all edge compute functionality - device configuration, workflow setup and deployment schedules – takes place within the Losant platform and updates are pushed down to the devices over the internet.
+Installing or upgrading the [Edge Agent](/edge-compute/edge-agent-installation/) requires physical access to the device. After that, management of all edge compute functionality - device configuration, workflow setup and deployment schedules – takes place within the Losant platform and updates are pushed down to the devices over the internet.

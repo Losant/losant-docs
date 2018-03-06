@@ -2,9 +2,7 @@ description: Learn about the latest version of the Losant Edge Agent and what's 
 
 # Edge Agent Changelog
 
-This file represents all changes to the `losant-edge-agent` since it's initial release. The versioning of the `losant-edge-agent` is kept in sync with the cloud version. As such, the initial release does not start at `v0.0.1` or similar.
-
-This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+This file represents all changes to the `losant-edge-agent` since it's initial release. This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!--
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
@@ -12,7 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
-## `v1.10.0` - 2018-03-08
+## `v1.0.0` - 2018-03-08
 ### Added
 - Basic ability to run workflows.
 - Workflow syncing/deployment with cloud.

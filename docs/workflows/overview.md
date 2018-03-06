@@ -23,7 +23,7 @@ When creating a new workflow, you must first choose a workflow type. This cannot
 
 More information on each workflow type, and what sets them apart, is available within each type's documentation.
 
-After choosing a type, you must then give your workflow a name and a description (optional). If you are creating an edge workflow, you must also choose the minimum [edge agent](/edge-compute/edge-agent/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
+After choosing a type, you must then give your workflow a name and a description (optional). If you are creating an edge workflow, you must also choose the minimum [edge agent](/edge-compute/edge-agent-changelog/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
 
 ![Create Workflow Settings](/images/workflows/workflow-create-settings.png "Create Workflow Settings")
 
