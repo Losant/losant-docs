@@ -69,7 +69,8 @@ pages:
         - "Part 4: Viewing Device Data": experiences/walkthrough/part4.md
 - Edge Compute:
     - Overview: edge-compute/overview.md
-    - Edge Agent: edge-compute/edge-agent.md
+    - Edge Agent Installation: edge-compute/edge-agent-installation.md
+    - Edge Agent Usage: edge-compute/edge-agent-usage.md
     - Edge Deployments: edge-compute/edge-deployments.md
     - Edge Agent Changelog: edge-compute/edge-agent-changelog.md
 - Devices:
