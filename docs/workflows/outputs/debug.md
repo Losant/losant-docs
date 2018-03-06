@@ -33,3 +33,11 @@ Optionally, you may also enable the Live Debug Stream by clicking the button in 
 ![Debug Node Live Stream](/images/workflows/outputs/debug-live-view.png "Debug Node Live Stream")
 
 Note that, should multiple workflow runs occur per second, some of the runs may not be visualized on the stage. Also, if you have unsaved changes in your workflow, live streams will automatically be disabled until the changes are saved.
+
+## Cloud vs Edge Behavior
+
+If the workflow is a [cloud](/workflows/cloud-workflow) workflow, debug node output is generated for any runs of the workflow whenever you are looking at the workflow. For [edge](/workflows/edge-workflows/#debugging) workflows, however, by default no debug output is generated. When you want debug output for an edge workflow, you must first select an [edge compute](/devices/edge-compute/) device that the workflow is deployed and running on. At that point, Losant will tell the edge agent on that device to start debugging that workflow, and the edge agent will start reporting debugging information.
+
+![Debug Node Choose Device](/images/workflows/outputs/debug-choose-device.png "Debug Node Choose Device")
+
+Of course, for an edge device to report workflow debug information, it must be connected to the internet and Losant. If an edge device is not online or connected, no debug information will appear even if the device is selected. In addition, debug messages from an edge device are also batched and throttled - a batch of debug messages will be sent up to Losant no more than once per second, with no more than 5 debug messages. So if a workflow is running quite frequently on an edge device, you might not see all the debug messages in the debug log.

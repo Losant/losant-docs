@@ -1,7 +1,6 @@
 flowclass: Edge 1.0.0
 description: Learn more about the Losant HTTP Request Trigger.
 
-
 # Edge HTTP Request Trigger
 
 The HTTP Request Trigger will fire a workflow whenever the [edge compute device](/devices/edge-compute/) receives request on the local web server run by the Losant Edge Agent.

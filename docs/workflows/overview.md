@@ -2,26 +2,36 @@ description: Learn more about Losant workflows: how they work and how to configu
 
 # Workflows
 
-Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to trigger notifications, create events, send commands, and more. Workflows are basically the brains of your connected solution.
+Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to (for example) [trigger email notifications](/workflows/outputs/email/), [create events](/workflows/outputs/record-event/), [send device commands](/workflows/outputs/device-command/) and more. Workflows are basically the brains of your connected solution.
 
 A list of your application's workflows, broken down by [type](#workflow-types), can be accessed through your application's subnavigation.
 
-## Overview
-
-All workflows start with a trigger, and that trigger includes a payload. The purpose of the workflow is to make decisions based on this payload, modify the data if needed, and eventually result in some kind of output.
-
-As the payload flows through the workflow, fields can be added, removed or changed. Each node in a workflow accepts a payload as an input, optionally modifies it, and outputs the payload to be the input for the next node. Some nodes (e.g. the [Conditional Node](/workflows/logic/conditional/)) don't modify the payload at all and simply pass it through as-is, but they do provide a way to branch the workflow down multiple paths.
+![Workflows List](/images/workflows/workflows-list.png "Workflows List")
 
 ## Creating a Workflow
 
 Workflows can be created by clicking the "Add Workflow" link in the "Workflows" dropdown within your application's subnavigation. They may also be created by clicking the "Add" button within your workflow lists both on the "Workflows" page and on the application overview.
+
+![Create Workflow](/images/workflows/workflow-create-buttons.png "Create Workflow")
 
 When creating a new workflow, you must first choose a workflow type. This cannot be changed after workflow creation. There are currently two different workflow types:
 
 *   [**Cloud workflows**](/workflows/cloud-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
 *   [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices on the fly and report up to the internet at a later time.
 
-More information on each workflow type, and what sets them apart, is available within each' type's documentation.
+![Choose Workflow Type](/images/workflows/workflow-create-choose-type.png "Choose Workflow Type")
+
+More information on each workflow type, and what sets them apart, is available within each type's documentation.
+
+After choosing a type, you must then give your workflow a name and a description (optional). If you are creating an edge workflow, you must also choose the minimum [edge agent](/edge-compute/edge-agent/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
+
+![Create Workflow Settings](/images/workflows/workflow-create-settings.png "Create Workflow Settings")
+
+## Overview
+
+All workflows start with a trigger, and that trigger includes a payload. The purpose of the workflow is to make decisions based on this payload, modify the data if needed, and eventually result in some kind of output.
+
+As the payload flows through the workflow, fields can be added, removed or changed. Each node in a workflow accepts a payload as an input, optionally modifies it, and outputs the payload to be the input for the next node. Some nodes (e.g. the [Conditional Node](/workflows/logic/conditional/)) don't modify the payload at all and simply pass it through as-is, but they do provide a way to branch the workflow down multiple paths.
 
 ## Example Workflow
 
