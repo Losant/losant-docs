@@ -8,13 +8,14 @@ The JWT: Decode Node allows a workflow to decode a [JSON Web Token](https://jwt.
 
 ![JWT Decode Node](/images/workflows/logic/jwt-decode-node.png "JWT Decode Node")
 
-## Configuraton
+## Configuration
 
 The JWT: Decode Node requires a token template and a result path. There is one optional configuration which is a checkbox called `Complete Payload, Headers and Signature`. If this is checked and the JWT successfully decoded, the result will include the JWT's signature, decoded payload and headers.
 
 ![JWT Decode Configuration](/images/workflows/logic/jwt-decode-configuration.png "JWT Decode Node Configuration")
 
 Example Result Complete Payload, Headers and Signature turned off:
+
 ```json
 "jwtPayload": {
   "iss":"issuer.com"
@@ -26,6 +27,7 @@ Example Result Complete Payload, Headers and Signature turned off:
 ```
 
 Example Result Complete Payload, Headers and Signature turned on:
+
 ```json
 "jwtPayload": {
   "header": {
