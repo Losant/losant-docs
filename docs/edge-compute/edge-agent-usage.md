@@ -2,7 +2,7 @@ description: Learn more about running and using the Losant Edge Agent.
 
 # Losant Edge Agent Usage
 
-The Losant Edge Agent ("Agent") is a command line utility exposed through Docker as a container you can run on your [Edge Compute Device](/devices/edge-compute/). The below outlines some example usage for how you can interact with the Agent on your device. For full documentation of all available flags and options, see the [`losant/edge-agent` image on Docker Hub](https://hub.docker.com/r/losant/edge-agent/).
+The Losant Edge Agent ("Agent") is a command line utility exposed through [Docker](https://www.docker.com/what-docker) as a [container](https://www.docker.com/what-container) you can run on your [Edge Compute Device](/devices/edge-compute/). The below outlines some example usage for how you can interact with the Agent on your device. For full documentation of all available flags and options, see the [`losant/edge-agent` image on Docker Hub](https://hub.docker.com/r/losant/edge-agent/).
 
 For help getting the Agent setup on your device, see the [installation instructions](/edge-compute/edge-agent-installation/). All command examples below assume you can run `docker` without `sudo` or that you are logged in as `root` (not recommended). If you wish to run `docker` as your current user, see [these instructions](/edge-compute/edge-agent-installation/#optional-executing-the-docker-command-without-sudo).
 
