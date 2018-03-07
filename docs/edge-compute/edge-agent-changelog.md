@@ -11,16 +11,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ***
 
 ## `v1.0.0` - 2018-03-08
+
 ### Added
-- Basic ability to run workflows.
-- Workflow syncing/deployment with cloud.
-- Support for debug messages.
-- Packaged and distributed as a Docker Container.
+
 - **Triggers**: Timer.
-- **Triggers**: HTTP.
+- **Triggers**: HTTP request.
 - **Triggers**: MQTT.
 - **Triggers**: Command.
-- **Nodes**: All cloud nodes that _could_ feasibly run on Edge Compute devices.
 - **Nodes**: Modbus read.
 - **Nodes**: Modbus write.
 - **Nodes**: File read.

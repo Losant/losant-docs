@@ -4,8 +4,6 @@ description: Learn more about installing the Losant Edge Agent.
 
 The Losant Edge Agent ("Agent") is a command line utility exposed through Docker as a container you can run on your [Edge Compute Device](/devices/edge-compute/). The below focuses on installing the Agent on a device running Ubuntu, but the Agent can be run on any device that can run Docker. While the expectation is that you'll be running on an IoT style device, the Agent can be run on OSX and Windows as well. See the Edge Compute Device documentation for additional information on [supported devices](/devices/edge-compute/#supported-devices) and [minimum requirements](/devices/edge-compute/#minimum-requirements).
 
-
-
 ## Setting Up Your OS
 
 The following installation takes place on `Ubuntu 16.04.4 LTS`. First, you'll need to make sure your packages are up to date.
@@ -14,10 +12,9 @@ The following installation takes place on `Ubuntu 16.04.4 LTS`. First, you'll ne
 sudo apt-get update
 ```
 
-
 ## Installing The Docker Repository
 
-For more information on any of the following setps, please see the Docker documenation for [installing Docker on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/). You can also find specific instructions for your particular OS.
+For more information on any of the following steps, please see the Docker documentation for [installing Docker on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/). You can also find specific instructions for your particular OS.
 
 Before installing Docker, it is recommended to install the Docker repository. The first step, allowing `apt` to use a repository over HTTPS:
 
@@ -50,7 +47,6 @@ sudo add-apt-repository \
    stable"
 ```
 
-
 ## Installing Docker
 
 Now we're ready to install Docker itself. Let's make sure our packages are up to date again:
@@ -71,7 +67,6 @@ Verify that we have successfully installed Docker:
 sudo docker run hello-world
 ```
 
-
 ## Getting The Losant Edge Agent
 
 At this point, you have a working Docker Daemon running in the background on your device and are ready to "pull" the `losant/edge-agent` from Docker Hub. The following architectures are supported and the proper image will be delivered to you based on your device/OS: `amd64`, `arm`, `arm64`. Again, the Agent runs as a Docker Container and therefore comes with everything it needs to run on your system. You don't need to install anything else on your device to run the Agent.
@@ -83,8 +78,6 @@ sudo docker pull losant/edge-agent
 ```
 
 That's it! Everything should be installed and ready to go. To verify, the best way is to start using the Agent. If you're unsure how to run the Agent, you can continue on to the [documentation for usage](/edge-compute/edge-agent-usage/).
-
-
 
 ## (Optional) Executing the Docker Command Without Sudo
 
