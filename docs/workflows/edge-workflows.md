@@ -8,9 +8,9 @@ Edge workflows are configured within the Losant platform, but they are then [dep
 
 When choosing a workflow type, there are a few benefits of edge workflows to consider ...
 
-*   Since edge workflows execute on their deployed devices, network latency issues are mitigated. If a snap decision needs to be made locally on the device (for example, shut its attached machine down if vibration levels exceed a certain threshold), that decision is no longer dependent on the device having an internet connection.
-*   Any payloads that the device should send up to the Losant platform are queued and sent up the next time the device establishes a connection. This allows for devices to be deployed in the field where internet connectivity may be sparse; it also allows for battery conservation as the device needs only to connect intermittently to report its collected data.
-*   Edge workflows have a few special nodes that allow for [reading](/workflows/data/file-read/) and [writing](/workflows/data/file-write/) to the device's file system, [executing scripts](/workflows/data/run-executable/) and interacting with data inputs such as [Modbus](http://www.modbus.org/).
+* Since edge workflows execute on their deployed devices, network latency issues are mitigated. If a snap decision needs to be made locally on the device (for example, shut its attached machine down if vibration levels exceed a certain threshold), that decision is no longer dependent on the device having an internet connection.
+* Any payloads that the device should send up to the Losant platform are queued and sent up the next time the device establishes a connection. This allows for devices to be deployed in the field where internet connectivity may be sparse; it also allows for battery conservation as the device needs only to connect intermittently to report its collected data.
+* Edge workflows have a few special nodes that allow for [reading](/workflows/data/file-read/) and [writing](/workflows/data/file-write/) to the device's file system, [executing scripts](/workflows/data/run-executable/) and interacting with data inputs such as [Modbus](http://www.modbus.org/).
 
 ## Limitations
 
@@ -38,7 +38,7 @@ When debugging edge workflows, it is necessary to choose a single device to view
 
 ![Workflow Edge Agent Tab](/images/workflows/workflow-edge-agent-tab.png "Workflow Edge Agent Tab")
 
-In order to utilize newly released edge workflow functionality (such as new nodes), it is necessary to upgrade your workflow's [Edge Agent](/edge-compute/edge-agent/) – and to deploy the new agent to your edge compute devices.
+In order to utilize newly released edge workflow functionality (such as new nodes), it is necessary to upgrade your workflow's [Edge Agent](/edge-compute/edge-agent-changelog/) – and to deploy the new agent to your edge compute devices.
 
 To do this, use the Edge Agent tab in the workflow editor. The upgrade can only be applied to the "develop" version. If you upgrade the Edge Agent version and make changes to your "develop" workflow, you will have to create new [versions](/workflows/versioning/) of the workflow before deploying them to your devices.
 

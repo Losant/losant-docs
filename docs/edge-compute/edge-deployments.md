@@ -42,9 +42,9 @@ In the workflow editor, click the "Deploy" tab to view a list of all devices to 
 
 Multiple workflows can be deployed to an edge compute device, however only one version of a workflow may be on a device at one time. When viewing a list of deployments, the "Version" can be in one of three states:
 
-*   **Up to date**, signaled by a green checkmark alongside the version name. This indicates that the version of the workflow running on the device matches what should be on the device per your scheduled edge deployments.
-*   **Pending**, signaled by a gray clock. The version currently on the device is listed first, and the version that is scheduled to be deployed to the device is on the right side of the arrow. The rollout should occur the next time the device connects.
-*   **Error**, signaled by a red tick. For whatever reason (usually because a device's [Edge Agent](/edge-compute/edge-agent/) is incompatible with the version you are trying to deploy), the deployment of a new version failed, and therefore the version listed to the left of the arrow is still running on the device. We will attempt to roll out the version listed on the right the next time the device connects.
+* **Up to date**, signaled by a green checkmark alongside the version name. This indicates that the version of the workflow running on the device matches what should be on the device per your scheduled edge deployments.
+* **Pending**, signaled by a gray clock. The version currently on the device is listed first, and the version that is scheduled to be deployed to the device is on the right side of the arrow. The rollout should occur the next time the device connects.
+* **Error**, signaled by a red tick. For whatever reason (usually because a device's [Edge Agent](/edge-compute/edge-agent/) is incompatible with the version you are trying to deploy), the deployment of a new version failed, and therefore the version listed to the left of the arrow is still running on the device. We will attempt to roll out the version listed on the right the next time the device connects.
 
 ## Deployment Logs
 

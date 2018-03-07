@@ -16,14 +16,14 @@ Workflows can be created by clicking the "Add Workflow" link in the "Workflows" 
 
 When creating a new workflow, you must first choose a workflow type. This cannot be changed after workflow creation. There are currently two different workflow types:
 
-*   [**Cloud workflows**](/workflows/cloud-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
-*   [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices on the fly and report up to the internet at a later time.
+* [**Cloud workflows**](/workflows/cloud-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
+* [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices on the fly and report up to the internet at a later time.
 
 ![Choose Workflow Type](/images/workflows/workflow-create-choose-type.png "Choose Workflow Type")
 
 More information on each workflow type, and what sets them apart, is available within each type's documentation.
 
-After choosing a type, you must then give your workflow a name and a description (optional). If you are creating an edge workflow, you must also choose the minimum [edge agent](/edge-compute/edge-agent/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
+After choosing a type, you must then give your workflow a name and a description (optional). If you are creating an edge workflow, you must also choose the minimum [edge agent](/edge-compute/edge-agent-changelog/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
 
 ![Create Workflow Settings](/images/workflows/workflow-create-settings.png "Create Workflow Settings")
 
@@ -41,10 +41,10 @@ Below is an example of how a payload flows through a workflow. This example uses
 
 Let's break down this workflow and explain the individual nodes and how they work with the payload. For this example, our use case is ...
 
-1.   A device is reporting temperature readings and we are using those state reports to [kick off a workflow](#temp-sensor-trigger-node).
-2.   The user would like to take an action [if that temperature exceeds a certain threshold](#temp-high-conditional-node).
-3.   This device reports temperature in degrees Fahrenheit; however, our user would prefer to receive reports [in degrees Celsius](#convert-f-to-c-math-node).
-4.   When the temperature does exceed the threshold, the user should receive an [SMS alert](#sms-node).
+1. A device is reporting temperature readings and we are using those state reports to [kick off a workflow](#temp-sensor-trigger-node).
+2. The user would like to take an action [if that temperature exceeds a certain threshold](#temp-high-conditional-node).
+3. This device reports temperature in degrees Fahrenheit; however, our user would prefer to receive reports [in degrees Celsius](#convert-f-to-c-math-node).
+4. When the temperature does exceed the threshold, the user should receive an [SMS alert](#sms-node).
 
 ### Temp Sensor - Trigger Node
 
@@ -121,9 +121,9 @@ Temperature warning. Temperature now at {{ degreesCelsius }} deg C!
 
 To improve this user's experience, there are a number of additions and improvements we could make to this workflow. For example:
 
-*   The user's phone number could be stored as a [global variable](#workflow-globals) so that the workflow could be [exported](#import-export) without exposing the user's number to others.
-*   To avoid repeat SMS messages when the temperature is above the threshold for a long time, we could insert a [Latch Node](/workflows/logic/latch/) to only send one alert each time the temperature crosses the threshold.
-*   We could move the conversion to Celsius above our Conditional Node and then use a [Device State Node](/workflows/output/device-state/) to set that converted value as a separate [attribute](/devices/state/#state-attributes) on the device. This would allow us to also visualize the Celsius values in a [dashboard](/dashboards/overview/), such as in a [Time Series Block]() or a Gauge Block.
+* The user's phone number could be stored as a [global variable](#workflow-globals) so that the workflow could be [exported](#import-export) without exposing the user's number to others.
+* To avoid repeat SMS messages when the temperature is above the threshold for a long time, we could insert a [Latch Node](/workflows/logic/latch/) to only send one alert each time the temperature crosses the threshold.
+* We could move the conversion to Celsius above our Conditional Node and then use a [Device State Node](/workflows/output/device-state/) to set that converted value as a separate [attribute](/devices/state/#state-attributes) on the device. This would allow us to also visualize the Celsius values in a [dashboard](/dashboards/overview/), such as in a [Time Series Block](/dashboards/time-series-graph/) or a [Gauge Block](/dashboards/gauge/).
 
 ## Common Payload Fields
 

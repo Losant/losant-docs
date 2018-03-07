@@ -1,3 +1,5 @@
+description: Learn about device state and how it's used in the Losant Platform.
+
 # Device State
 
 Device state is one of the core communication and data components of the Losant Platform. A device's state represents a snapshot of the device at some point in time. For example, if the device has a temperature sensor, it might report the temperature every minute of so. Losant stores every state request and makes them available in visualizations and workflow triggers.
