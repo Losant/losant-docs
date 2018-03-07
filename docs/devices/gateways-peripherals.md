@@ -6,7 +6,7 @@ Some types of devices, like Bluetooth sensors, cannot connect directly to Losant
 
 Gateways are very similar to regular devices. They connect directly to Losant and can report their own state and receive commands. The only difference is that gateways are allowed to report state for other peripheral devices.
 
-A gateway device is created by choosing the `Gateway` device type when adding a new device.
+A basic gateway device is created by choosing the the `Gateway` device type when adding a new device. Devices of the `Edge Compute` device type can also function as gateways.
 
 ![Add Gateway](/images/devices/gateways-peripherals/create-gateway.png "Add Gateway")
 
@@ -85,6 +85,6 @@ client.on('connect', function() {
 
 When and how a gateway publishes these message is entirely up to your environment. For example, if the peripheral is a [LightBlueBean](https://punchthrough.com/bean) connected over Bluetooth to a Raspberry Pi gateway, the Pi may report the peripheral's state every few seconds by first requesting the temperature over the Bluetooth connection.
 
-Gateways and also be used to configure MQTT bridges. Please read our tutorial on [setting up a Mosquitto MQTT bridge](https://www.losant.com/blog/how-to-configure-mosquitto-bridge-to-losant) for more details.
+Gateways can also be used to configure MQTT bridges. Please read our tutorial on [setting up a Mosquitto MQTT bridge](https://www.losant.com/blog/how-to-configure-mosquitto-bridge-to-losant) for more details.
 
 To the rest of the system, there's no difference between a gateway reporting state on behalf of a peripheral versus a device reporting state directly. You can now visualize the data, trigger workflows, etc.
