@@ -62,7 +62,7 @@ If you no longer need a webhook, you may delete it by clicking the `Delete` icon
 
 ![Delete Webhook](/images/applications/delete-webhook.png "Delete Webhook")
 
-When deleting a webhook, you also have the option of deleting any [workflows](/workflows/overview/) triggered by that webhook. Note that this action deletes **any workflow with a [Webhook Trigger Node](/workflows/triggers/webhook/) matching this webhook**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked. 
+When deleting a webhook, you also have the option of deleting any [workflows](/workflows/overview/) triggered by that webhook. Note that this action deletes **any workflow with a [Webhook Trigger Node](/workflows/triggers/webhook/) matching this webhook**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked.
 
 ## Using Webhooks
 
