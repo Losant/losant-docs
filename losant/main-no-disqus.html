@@ -117,7 +117,7 @@
               {%- if page and page.meta and page.meta.flowclass -%}
                 <script>
                   {% for flowclass in page.meta.flowclass %}
-                  $('.section h1').first().append('<span class="flowclass-tag {{flowclass}}">{{flowclass}}</span>');
+                  $('.section h1').first().prepend('<span class="flowclass-tag {{flowclass}}">{{flowclass}}</span>');
                   {% endfor %}
                 </script>
               {%- endif -%}

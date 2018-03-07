@@ -53,17 +53,17 @@ Once all the attributes are properly defined, click the `Create Device` button a
 
 In this step, we're going to use a [Losant workflow](/workflows/overview/) to periodically request weather data from Dark Sky and store it on our new device.
 
-Create a new workflow from the `Workflows` main menu.
+Create a new workflow from the `Workflows` main menu:
 
 ![Create Workflow](/images/getting-started/walkthrough/create-workflow.png "Create Workflow")
 
-Name the workflow anything you like and provide an optional description.
+Choose `Create Cloud Workflow` on the following screen, since we want to create a [cloud](/workflows/cloud-workflow/) workflow. Name the workflow anything you like and provide an optional description.
 
 ![Workflow Settings](/images/getting-started/walkthrough/workflow-settings.png "Workflow Settings")
 
 ### Timer Trigger
 
-All workflows start with a trigger. For this example, we simply want this workflow to run every couple of minutes and grab weather data. Drag a [timer trigger](/workflows/triggers/timer/) onto the workflow canvas.
+All workflows start with a trigger. For this example, we simply want this workflow to run every couple of minutes and grab weather data. Drag a [Timer Trigger](/workflows/triggers/timer/) onto the workflow canvas.
 
 ![Timer Trigger](/images/getting-started/walkthrough/timer-trigger.png "Timer Trigger")
 

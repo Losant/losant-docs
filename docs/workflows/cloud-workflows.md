@@ -8,10 +8,10 @@ Cloud workflows execute within Losant's cloud platform. Generally they are more 
 
 There are a number of benefits that come with workflows of this type:
 
-*   They can be triggered by a wide variety of events, such as [device connections](/workflows/triggers/on-connect/), messages from third-party sources and more.
-*   You may edit application resources such as devices or anything else exposed in the [Losant API Node](/workflows/data/losant-api/).
-*   You can [query device data](/workflows/data/time-series/) and [respond to experience endpoint requests](/workflows/outputs/endpoint-reply/) in order to build a custom UI for your end users.
-*   Events emitted by one device can directly impact another without the devices speaking directly to each other.
+* They can be triggered by a wide variety of events, such as [device connections](/workflows/triggers/on-connect/), messages from third-party sources and more.
+* You may edit application resources such as devices or anything else exposed in the [Losant API Node](/workflows/data/losant-api/).
+* You can [query device data](/workflows/data/time-series/) and [respond to experience endpoint requests](/workflows/outputs/endpoint-reply/) in order to build a custom UI for your end users.
+* Events emitted by one device can directly impact another without the devices speaking directly to each other.
 
 ## Limitations
 

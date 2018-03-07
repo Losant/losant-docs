@@ -22,16 +22,16 @@ Properly configuring devices is an important step to ensuring proper communicati
 
 ![Device Type](/images/devices/device-type.png "Device Type")
 
-The first thing to configure is the type of device. This is not about the actual physical
-type of the device, but more about how you expect the device to connect and report state
-to the Losant Platform. There are three categories ...
+The first thing to configure is the type of device. This is not about the actual physical type of the device, but more about how you expect the device to connect and report state to the Losant Platform. There are four categories ...
 
 * **Standalone**  
-  A standalone device is your normal everyday type of device. It is allowed to connect directly to Losant and report its own state. In most cases, this is the device type you will choose.
+  A Standalone device is your normal everyday type of device. It is allowed to connect directly to Losant and report its own state. In most cases, this is the device type you will choose.
+* **Edge Compute**  
+  An [Edge Compute](/devices/edge-compute/) device is a device that runs the Losant [Edge Agent](/edge-compute/edge-agent-usage/) and can run [edge](/workflows/edge-workflows/) workflows directly on the device itself. They also can behave as Gateway devices, in that they may report state on behalf of a Peripheral device.
 * **Gateway**  
-  A gateway device is a device that connects to Losant and reports both its own state and the state of other devices - i.e., other devices that use this device as a "gateway". Gateways are extremely useful for helping to report the state of non-internet connected devices to Losant - such as Bluetooth sensors.
+  A [Gateway](/devices/gateways-peripherals/) device is a device that connects to Losant and reports both its own state and the state of other devices - i.e., other devices that use this device as a "gateway". Gateways are extremely useful for helping to report the state of non-internet connected devices to Losant - such as Bluetooth sensors.
 * **Peripheral**  
-  A peripheral device does not connect directly to Losant - instead it reports its state to a gateway device (which is connected to the internet), and that gateway pushes the peripheral's state to Losant. When choosing peripheral as the device type, there are two options. You can either choose to let the device report state through any gateway in the application (which is useful for devices that move through the range of multiple gateways), or you can choose to only allow reporting through a specific gateway (useful for static or directly connected devices).
+  A [Peripheral](/devices/gateways-peripherals/) device does not connect directly to Losant - instead it reports its state either to a Gateway or Edge Compute device (which is connected to the internet), and that gateway pushes the peripheral's state to Losant. When choosing peripheral as the device type, there are two options. You can either choose to let the device report state through any gateway in the application (which is useful for devices that move through the range of multiple gateways), or you can choose to only allow reporting through a specific gateway (useful for static or directly connected devices).
 
 ### Device Attributes
 

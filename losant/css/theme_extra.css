@@ -642,5 +642,9 @@ a.login-button {
   font-size: 75%;
 }
 .flowclass-tag.Cloud {
-  background: #02cae5;
+  background: #5bc0de;
+}
+
+h1 > .flowclass-tag {
+  margin-top: 22px;
 }
