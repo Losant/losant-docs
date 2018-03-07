@@ -70,7 +70,7 @@ Instead of running `docker stop` and then `docker start`, you can simply run `do
 
 It's a good practice to name your containers on your Edge Compute Device to prevent many containers being created and taking up space on your device. Because of this practice, you'll need to remove your container before creating another with the same name. Or, you can create a container with a different name as you determine the best way to run the Agent on your device.
 
-### Example
+### Agent Management Example
 
 With these basic `docker` commands, we can manage our running agent. Note, this example shows how to remove a container and will destroy the container we have running permanently. You would need to create another container from the image if you do so.
 
@@ -103,7 +103,7 @@ CONTAINER ID   IMAGE                     COMMAND                   CREATED      
 
 The Losant Edge Agent has many configuration options, see the official [Docker Hub Repo](https://hub.docker.com/r/losant/edge-agent/) for a full list and advanced configuration. Because of the robust configuration options, you can configure the Agent via a [toml formatted](https://github.com/toml-lang/toml) configuration file. In addition to using a configuration file for this example, we're also going to configure the Agent to log to a file. See the section below for a full example configuration file.
 
-### Example
+### Configuration File Example
 
 Let's create a configuration file in the directory we created earlier. Here's our `/var/lib/losant-edge-agent/config.toml` file. I'm using `vim` to create the configuration file, but any editor is fine.
 
@@ -269,4 +269,3 @@ secret = ''
 # Bundle can also be provided directly using the EnvVar WEBSERVER_SSL_BUNDLE
 # bundlePath = ''
 ```
-

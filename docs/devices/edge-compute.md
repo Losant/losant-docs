@@ -21,7 +21,7 @@ The following devices have been tested and are known to work as an Edge Compute 
 | **Raspberry Pi 2** ([info][pi-2-info]) ![Raspberry Pi 2][pi-2-image]                   | **Raspberry Pi 3** ([info][pi-3-info]) ![Raspberry Pi 3][pi-3-image]                           |
 | **Advantech UTX-3115** ([info][advantech-info]) ![Advantech UTX-3115][advantech-image] | **BeagleBone Black** ([info][beaglebone-info]) ![BeagleBone Black][beaglebone-image]           |
 | **Intel's FRD Platform** ([info][frd-info]) ![Intel's FRD Platform][frd-image]         | **Dell Edge Gateway 3001** ([info][dell-3001-info]) ![Dell Edge Gateway 3001][dell-3001-image] |
-| **HPE GL10 IoT Gateway** ([info][gl10-info]) ![HPE GL10 IoT Gateway][gl10-image]       |                                                                                                | 
+| **HPE GL10 IoT Gateway** ([info][gl10-info]) ![HPE GL10 IoT Gateway][gl10-image]       |                                                                                                |
 
 [pi-2-info]: https://www.raspberrypi.org/products/raspberry-pi-2-model-b/
 [pi-2-image]: /images/devices/edge-compute/raspberry-pi-2.png "Raspberry Pi 2"
@@ -44,7 +44,7 @@ Images are 462x322
 
 ## Minimum Requirements
 
-The [Edge Agent](/edge-compute/overview/) must be running on your device and connected to Losant. It runs as a [Docker](https://www.docker.com/what-docker) container and expects some amount of memory to carved out for it. Your mileage may vary, but users have had success with the following specifications. See below for supported devices.
+The [Edge Agent](/edge-compute/overview/) must be running on your device and connected to Losant. It runs as a [Docker](https://www.docker.com/what-docker) container and expects some amount of memory to be carved out for it. Your mileage may vary, but users have had success with the following specifications. See below for supported devices.
 
 - Memory: `512MB`
 - CPU: `1Ghz Single-core`
