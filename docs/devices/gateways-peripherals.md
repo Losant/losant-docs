@@ -6,7 +6,7 @@ Some types of devices, like Bluetooth sensors, cannot connect directly to Losant
 
 Gateways are very similar to regular devices. They connect directly to Losant and can report their own state and receive commands. The only difference is that gateways are allowed to report state for other peripheral devices.
 
-A basic gateway device is created by choosing the the `Gateway` device type when adding a new device. Devices of the `Edge Compute` device type can also function as gateways.
+A basic gateway device is created by choosing the the `Gateway` device type when adding a new device. For more advanced use cases, devices of the `Edge Compute` device type can also function as gateways.
 
 ![Add Gateway](/images/devices/gateways-peripherals/create-gateway.png "Add Gateway")
 
@@ -52,7 +52,7 @@ A gateway can POST its own state using REST to the following endpoint:
 /applications/my-application-id/devices/my-gateway-id/state
 ```
 
-A gateway can also post to a peripheral's REST state endpoint:
+A gateway can also POST to a peripheral's REST state endpoint:
 
 ```text
 /applications/my-application-id/devices/my-peripheral-id/state
