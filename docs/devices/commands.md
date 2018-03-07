@@ -64,3 +64,7 @@ Note: If you are sending payloads of even moderate size, and your commands are f
 ```arduino
 #define MQTT_MAX_PACKET_SIZE 256
 ```
+
+### Handling Commands on Edge Compute Devices
+
+You can also send commands to [Edge Compute](/devices/edge-compute/) devices that are running the Losant Edge Agent. In that case, responding and acting on commands is as easy as designing workflows with the [Device Command Trigger](/workflows/triggers/device-command/) and deploying them to the relevant devices. That trigger will fire whenever the device receives a command, and the command will be available on the workflow payload.
