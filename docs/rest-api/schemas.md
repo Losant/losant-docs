@@ -528,6 +528,8 @@ Schema for the body of an Application API Token creation request
           "flowVersions.*",
           "webhook.*",
           "webhooks.*",
+          "application.archiveData",
+          "application.backfillArchiveData",
           "application.delete",
           "application.get",
           "application.patch",

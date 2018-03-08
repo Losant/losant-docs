@@ -186,6 +186,12 @@ No authentication is required for this endpoint.
 | -------------- | ----------- | ------- |
 | DASHBOARD_ID | ID of the associated dashboard | 575ece2b7ae143cd83dc4a9b |
 
+### Request Query Parameters <a name="validateContext-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| password | N | Password for password-protected dashboards |  | myPassword |
+
 ### Request Body <a name="validateContext-body"></a>
 
 The body of the request should be serialized JSON that validates against
