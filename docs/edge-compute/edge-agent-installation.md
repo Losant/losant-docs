@@ -16,7 +16,7 @@ sudo apt-get update
 
 For more information on any of the following steps, please see the Docker documentation for [installing Docker on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/). You can also find specific instructions for your particular OS.
 
-Before installing Docker, it is recommended to install the Docker repository. The first step, allowing `apt` to use a repository over HTTPS:
+Before installing Docker, it is recommended to install the Docker repository. The first step is to allow `apt` to use a repository over HTTPS:
 
 ```console
 sudo apt-get install \
@@ -55,7 +55,7 @@ Now we're ready to install Docker itself. Let's make sure our packages are up to
 sudo apt-get update
 ```
 
-Finally, we're ready to install the latest version of Docker. You may decide that you want a specific version of Docker, see the Docker documentation for more details.
+Finally, we're ready to install the latest version of Docker. You may decide that you want a specific version of Docker, see the [Docker documentation](https://docs.docker.com/install/linux/docker-ce/ubuntu/) for more details.
 
 ```console
 sudo apt-get install docker-ce
@@ -81,7 +81,7 @@ That's it! Everything should be installed and ready to go. To verify, the best w
 
 ## (Optional) Executing the Docker Command Without Sudo
 
-By default, you'll have to run `docker` with the `sudo` command as you see above. If you wish to omit typing `sudo`, you'll need to add your username to the `docker` group which was created when Docker was installed. After doing so, you'll need to log out and back in. Then, you can verify that `docker` is in the outputted list.
+By default, you'll have to run `docker` with the `sudo` command as you see above. If you wish to omit typing `sudo`, you'll need to add your username to the `docker` group which was created when Docker was installed. After doing so, you'll need to log out and back in. Then, you can verify that `docker` is in the output list.
 
 ```console
 sudo usermod -aG docker ${USER}

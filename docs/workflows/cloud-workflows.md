@@ -27,13 +27,17 @@ There are a handful of configuration options that are specific to cloud workflow
 
 ![Enable Workflow](/images/workflows/overview-enable.png "Enable Workflow")
 
-Cloud workflows can be enabled or disabled with a simple toggle. Disabling a workflow stops any of its triggers from firing. This can be done either from your application's list of cloud workflows or within the "Properties" tab of the cloud workflow editor.
+Cloud workflows can be enabled or disabled with a simple toggle. Disabling a workflow stops any triggers from firing in any of its [versions](/workflows/versioning/). This can be done either from your application's list of cloud workflows or within the "Properties" tab of the cloud workflow editor.
 
 ### Default Version
 
 ![Workflow Default Version](/images/workflows/workflow-default-version.png "Workflow Default Version")
 
 Cloud workflows have the concept of a "default version", which is the [version](/workflows/versioning/) of the workflow to run in the absence of the version being specified in the trigger event. Some cloud triggers, such as the [Endpoint Trigger](/workflows/triggers/endpoint/), can target a specific [version](/workflows/versioning/) of your workflow. Conversely, other triggers, such as the [Timer Trigger](/workflows/triggers/timer/), will only ever fire on the default version.
+
+### Manual Storage Manipulation
+
+In cloud workflows, the values in [workflow storage](/workflows/overview/#workflow-storage) may be directly edited, instead of having to go through the [Storage: Get Value](/workflows/data/get-value/) and [Storage: Set Value](/workflows/data/store-value/) Nodes. This is because these values are stored in the cloud platform and are universal across all versions of the workflow, whereas in edge workflows, these values are specific to each device where the workflow is deployed.
 
 ## Saving and Deploying
 

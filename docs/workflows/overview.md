@@ -2,7 +2,7 @@ description: Learn more about Losant workflows: how they work and how to configu
 
 # Workflows
 
-Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to (for example) [trigger email notifications](/workflows/outputs/email/), [create events](/workflows/outputs/record-event/), [send device commands](/workflows/outputs/device-command/) and more. Workflows are basically the brains of your connected solution.
+Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to (for example) [trigger email notifications](/workflows/outputs/email/), [create events](/workflows/outputs/record-event/), [send device commands](/workflows/outputs/device-command/) and more. Workflows are, in essence, the brains of your connected solution.
 
 A list of your application's workflows, broken down by [type](#workflow-types), can be accessed through your application's subnavigation.
 
@@ -17,13 +17,13 @@ Workflows can be created by clicking the "Add Workflow" link in the "Workflows" 
 When creating a new workflow, you must first choose a workflow type. This cannot be changed after workflow creation. There are currently two different workflow types:
 
 * [**Cloud workflows**](/workflows/cloud-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
-* [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices on the fly and report up to the internet at a later time.
+* [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices in real time and report up to the internet at a later time.
 
 ![Choose Workflow Type](/images/workflows/workflow-create-choose-type.png "Choose Workflow Type")
 
 More information on each workflow type, and what sets them apart, is available within each type's documentation.
 
-After choosing a type, you must then give your workflow a name and a description (optional). If you are creating an edge workflow, you must also choose the minimum [edge agent](/edge-compute/edge-agent-changelog/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
+After choosing a type, you must then give your workflow a name and optionally a description. If you are creating an edge workflow, you must also choose the minimum [Edge Agent](/edge-compute/edge-agent-changelog/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
 
 ![Create Workflow Settings](/images/workflows/workflow-create-settings.png "Create Workflow Settings")
 
@@ -52,7 +52,7 @@ All workflows start with a trigger. There are many different triggers and each o
 
 ![Workflow Overview Trigger](/images/workflows/overview-trigger.png "Workflow Overview Trigger")
 
-In this example the trigger is a [Device State Node](/workflows/triggers/device/), which will run the payload whenever a device reports its [state](/devices/state/). The state that was reported is available on the payload's `data` field. When the workflow starts, the payload will look like this:
+In this example we're using a [Device: State Trigger](/workflows/triggers/device/), which will run the payload whenever a device reports its [state](/devices/state/). The state that was reported is available on the payload's `data` field. When the workflow starts, the payload will look like this:
 
 ```json
 {
@@ -90,13 +90,7 @@ Each Math Node supports multiple statements, but this example is only using one.
 
 Just like with the Conditional Node, you can reference values from the payload in these expressions. This is simply converting degrees Fahrenheit to degrees Celsius.
 
-The second part of each math expression is a [payload path](/workflows/accessing-payload-data/#payload-paths) to store the result. In this example the payload path is:
-
-```text
-degreesCelsius
-```
-
-This payload path will place the result of the math expression on the root of the payload at the `degreesCelsius` property. The new payload now looks like:
+The second part of each math expression is a [payload path](/workflows/accessing-payload-data/#payload-paths) for where to store the result. In this example the payload path is `degreesCelsius`; therefore, the result of the math expression will be placed on the root of the payload at the `degreesCelsius` property. The new payload now looks like:
 
 ```json
 {
@@ -111,7 +105,7 @@ The [SMS Node](/workflows/outputs/sms/) allows you to send an SMS message to one
 
 ![Workflow Overview SMS](/images/workflows/overview-sms.png "Workflow Overview SMS")
 
-The SMS Node supports [string templates](/workflows/accessing-payload-data/#string-templates) for its configuration values. But unlike evaluating to a boolean as it does for the Conditional Node, or a number for the Math Node, the SMS Node uses that value to create a custom message that containing a value from the payload.
+The SMS Node supports [string templates](/workflows/accessing-payload-data/#string-templates) for its configuration values. But unlike evaluating to a boolean as it does for the Conditional Node, or a number for the Math Node, the SMS Node uses that value to create a custom message containing a value from the payload.
 
 ```handlebars
 Temperature warning. Temperature now at {{ degreesCelsius }} deg C!
@@ -175,17 +169,17 @@ The most common case when importing a workflow will be importing into a blank wo
 
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 
-When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application. So for instance, when importing a workflow across applications, things like a selected device ID on a device state trigger will be cleared, since that ID will not exist in the application being imported to.
+When importing a workflow, configuration values that were specific to the application the workflow was originally exported from are only kept when importing into that same application. So for instance, when importing a workflow across applications, things like a selected device ID on a Device: State Trigger will be cleared, since that ID will not exist in the application being imported into.
 
 ## Workflow Globals
 
-Workflows can have a set of global config keys - which are essentially keys/value pairs added to the payload under the `globals` key whenever the workflow runs. This is a great place to store configuration values or API keys, especially if they are needed for use in multiple different nodes. Globals can be accessed through the "Globals" tab in the right dock.
+Workflows can have a set of global config keys, which are essentially keys/value pairs added to the payload under the `globals` key whenever the workflow runs. This is a great place to store configuration values or API keys, especially if they are needed for use in multiple different nodes. Globals can be accessed through the "Globals" tab in the right dock.
 
 ![Workflow Globals](/images/workflows/workflow-globals.png "Workflow Globals")
 
 In addition, any [Application Globals](/applications/overview/#application-globals) configured in the application will be accessible here as well. Any application globals can also be overridden at the workflow version level by creating a workflow global with the same key name.
 
-In the above example, there are three global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `632-538-0975`). Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value. Whenever the workflow runs, the payload will always include these global values. For the above example, a payload might end up looking like the following:
+In the above example, there are three global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `513-555-1212`). Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value. Whenever the workflow runs, the payload will always include these global values. For the above example, a payload might end up looking like the following:
 
 ```json
 {
@@ -196,7 +190,7 @@ In the above example, there are three global keys set &mdash; `minLevel` (with a
   "globals":{
     "minLevel": 300,
     "resetLevel": 500,
-    "phone": "632-538-0975"
+    "phone": "513-555-1212"
   },
   "applicationId": "56919b1a9d206d0100c54152",
   "applicationName": "Light Wall",
@@ -225,6 +219,8 @@ In the top half of the interface, you can add new storage entries or modify exis
 **NOTE:** The act of clicking `Set Value` has an immediate effect **across all workflow versions**. This will change or add the value immediately; this is separate from saving/deploying the workflow.
 
 In the bottom half of the interface, you can view the values of existing storage identifiers. In this case, there is one identifier, `storedColor`, and its value is the number `35000`. This identifier was previous set by the Store Value node in a previous run of the above workflow. This table of values will automatically refresh every 60 seconds, but you can always click the refresh link on the upper right if you want to see the latest values now.
+
+### Deleting Storage Values
 
 You can also delete values individually by using the delete button on the right of each row, or wholesale by clicking the "Clear All Entries" button at the bottom of the table.
 

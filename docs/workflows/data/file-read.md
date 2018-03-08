@@ -1,23 +1,29 @@
 flowclass: Edge 1.0.0
 description: Learn more about the Losant File: Read Node.
 
-# File Read
+# File: Read
 
-The File Read Node allows you to read a file from disk on your [Edge Compute device](/edge-compute/overview/). This node is *only* available in workflows for your edge device agent.
+The File: Read Node allows you to read a file from disk on your [Edge Compute device](/edge-compute/overview/). This node is only available in [edge workflows](/workflows/edge-workflows/).
 
 ![File Read Node](/images/workflows/data/file-read-node.png "File Read Node")
 
 ## Configuration
 
-There are four configuration settings for this node - file path, encoding, start position, bytes to read, and result path. All fields, except for encoding, are [templatable](/workflows/accessing-payload-data/#string-templates) and can be pulled off of the current workflow payload.
+There are five configuration settings for this node:
 
-File path, encoding and result path are required. By default encoding is `UFT8`. However the following are supported encodings: `ASCII`, `UTF8`, `UFT16LE`, `Base64`, `Binary`, `Hex`. The field `start position` is not required and if it is not defined will default to the beginning of the file. This field accepts only integers. If the number is positive, it will start reading from that byte in the file. If the number is negative it will be interpreted as the last n bytes of the file, e.g. -10, means start 10 bytes before the end of file. The field `bytes to read` is also not required, and if it is not defined will be set to the number of bytes in the file. Thus if the node should read the entire file then both fields should be left blank. However, there is a limit of 5MB to read, if the file is larger than this an error will be returned.
+*   **File Path:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the disk location of the file to read.
+*   **Encoding:** The file encoding (defaults to UTF8).
+*   **Start Position:** A string template or integer for the byte at which to start reading. Not setting a value defaults to the start of the file. Passing a negative integer will start reading that many bytes from the end of the file.
+*   **Bytes to Read:** A string template or integer for the number of bytes to read. Not setting a value reads until the end of the file.
+*   **Result Path:** (Required) A [payload path](/workflows/accessing-payload-data/#payload-paths) for where to store the result of the operation.
+
+Attempting to read a file that is larger than 5MB will result in an error.
 
 ![File Read Node Configuration](/images/workflows/data/file-read-node-configuration.png "File Read Node Configuration")
 
 ## Result
 
-In the example above, the workflow will retrieve the contents of the file at the payload path `data.fileName`. If the result path is set to `data.result`, and the read was successful your the output would look like the following:
+In the example above, the workflow will retrieve the contents of the file at the payload path `data.fileName`. If the result path is set to `data.result`, and the read operation was successful, your output would look like the following:
 
 ```json
 {

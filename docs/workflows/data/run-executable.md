@@ -3,25 +3,35 @@ description: Learn more about the Losant Run Executable Node.
 
 # Run Executable
 
-The Run Executable Node allows an edge workflow to run a script or process on the locally on an [Edge Compute](/devices/edge-compute/) device.
+The Run Executable Node allows an edge workflow to run a script or process locally on an [Edge Compute device](/devices/edge-compute/). This node is only available in [edge workflows](/workflows/edge-workflows/).
 
 ![Run Executable Node](/images/workflows/data/run-executable-node.png "Run Executable Node")
 
 ## Configuration
 
-There are two main configuration sections for the Run Executable Node - configuring specifics around the command to run, and then the environment variables for the command.
+There are two main configuration sections for the Run Executable Node ...
+
+### Command Configuration
 
 ![Run Executable Node Configuration](/images/workflows/data/run-executable-node-config.png "Run Executable Node Configuration")
 
-The most important part is the `Command` string itself. This is a templatable field that should resolve to a script or executable on the local machine. In the example above, the node is will attempt to run the command `/opt/serial-reader/bin/read-state`. You can set the `Current Working Directory` for the command as well - if you leave this blank, it will be the current working directory for the Losant Edge Agent. Finally, you can set the expected encoding for the output of the command - by default, this is `UTF8`.
+*   **Command:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the command itself. This should resolve to a script or executable on the local machine. In the example above, the node will run the command `/opt/serial-reader/bin/read-state`.
+*   **Current Working Directory:** A string template for the directory from which to run the command. If you leave this blank, it will default to the working directory for the Losant [Edge Agent](/edge-compute/edge-agent-installation/).
+*   **Encoding:** The content encoding (defaults to UTF8).
+
+### Environment Variables
 
 ![Run Executable Node Environment Variables](/images/workflows/data/run-executable-node-env-vars.png "Run Executable Node Environment Variables")
 
-You can also set environment variables for the command. By default, when the command is run, it will be run with no environment variables. In the case above, one environment variable is set: `SERIAL_PORT` is set to `{{deviceTags.serialPort.[0]}}`.
+You can also set any number of environment variables for the command. By default, when the command is run, it will run with no environment variables. In the example above, one environment variable is set: `SERIAL_PORT` is set to `{{deviceTags.serialPort.[0]}}`.
+
+## Result
 
 ![Run Executable Node Node Output](/images/workflows/data/run-executable-node-output.png "Run Executable Node Output")
 
-Finally, if the command that is being executed returns a result, it can optionally be stored for later use in the workflow. In the example above, the result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) `data.myExecResults` on the current payload. What is returned, though, is not *just* the result; it is a result object with potentially other useful information. The result object will have fields for the command's `stdout` and `stderr`, as well as fields for the `exitCode` of the command and the termination `signal` for the command. In the case that a command fails to run, there will also be an `error` field with any errors. For example, here is an example payload after the above workflow node has been run:
+Finally, if the command that is being executed returns a result, it can optionally be stored on the payload for later use in the workflow. In the example above, the result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) `data.myExecResults`. What is returned, though, is not just the result; rather, it is a result object with other useful information.
+
+The result object will have fields for the command's `stdout` and `stderr`, as well as fields for the `exitCode` of the command and the termination `signal` for the command. In the case that a command fails to run, there will also be an `error` field with any errors. For example, here is an example payload after the above workflow node executes:
 
 ```json
 {
