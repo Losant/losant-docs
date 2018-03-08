@@ -3,7 +3,7 @@ description: Learn more about the Losant Modbus: Write Node.
 
 # Modbus: Write
 
-The *Modbus Write Node* allows you to write to multiple registers from your Modbus. This node is only available in [edge workflows](/workflows/edge-workflows/).
+The Modbus: Write Node allows you to write to multiple registers from your [Modbus](https://en.wikipedia.org/wiki/Modbus). This node is only available in [edge workflows](/workflows/edge-workflows/).
 
 ![Modbus Write Node](/images/workflows/data/modbus-write-node.png "Modbus Write Node")
 
@@ -28,8 +28,6 @@ You may define multiple write instructions for the Modbus: Write Node, and you m
 *   **Address:** (Required) A string template or integer for the address at which to write. This should resolve to an integer between `0` and `65534` inclusive.
 *   **Register Type:** (Required) `Holding Registers` (default) or `Coils`.
 *   **Value:** (Required) A string template or integer for the value to write.
-
-Address Configuration contains four fields - host template, port template, unit ID template. All are [templatable](/workflows/accessing-payload-data/#string-templates). All of the fields will set up the connection from the node to the Modbus.
 
 ![Modbus Write Node Result](/images/workflows/data/modbus-write-node-result.png "Modbus Write Node Result")
 

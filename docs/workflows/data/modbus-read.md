@@ -3,7 +3,7 @@ description: Learn more about the Losant Modbus: Read Node.
 
 # Modbus: Read
 
-The Modbus: Read Node allows you to read multiple registers from your [Modbus](https://en.wikipedia.org/wiki/Modbus) machine. This node is only available in [edge workflows](/workflows/edge-workflows/).
+The Modbus: Read Node allows you to read multiple registers from your [Modbus](https://en.wikipedia.org/wiki/Modbus). This node is only available in [edge workflows](/workflows/edge-workflows/).
 
 ![Modbus Read Node](/images/workflows/data/modbus-read-node.png "Modbus Read Node")
 
