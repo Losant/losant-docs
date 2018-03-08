@@ -8,9 +8,9 @@ For help getting the Agent setup on your device, see the [installation instructi
 
 ## Creating Storage Area
 
-It is **strongly** recommended that you mount a volume in to the Agent as a workspace for persistent data. By default, the Agent will write data **inside** the container to `/data`. By [mounting a volume or using a volume container](https://docs.docker.com/storage/volumes/), we can have the Agent write to a local folder on the Edge Compute Device. An important benefit to this being that you have access to the persistent data created by the Agent and thus, containers can be destroyed and created without losing the data created at run time. Another benefit is that the Agent doesn't accumulate data internally which could impact the performance and/or stability of the container.
+It is **strongly** recommended that you mount a volume in to the Agent as a workspace for persistent data. By default, the Agent will write data **inside** the container to `/data`. By [mounting a volume or using a volume container](https://docs.docker.com/storage/volumes/), we can have the Agent write to a local folder on the Edge Compute Device. By doing so, you have access to the persistent data created by the agent on your host machine and can resuse it if you have to destroy an Agent container and rebuild (upgrading the agent, for instance). Another benefit is that the Agent doesn't accumulate data internally which could impact the performance and/or stability of the container.
 
-All we need to do is create a folder locally to house the data. This folder can be anywhere on your filesystem, so long as permissions are set so `docker` can write to it. For instance, you might choose to put this folder at `~/losant-edge-agent` for easy access. For this example, we're going to create a folder at `/var/lib/losant-edge-agent/` and update the permissions to allow `docker` to write to it.
+All we need to do is create a folder locally to house the data. This folder can be anywhere on your file system, so long as permissions are set so `docker` can write to it. For instance, you might choose to put this folder at `~/losant-edge-agent` for easy access. For this example, we're going to create a folder at `/var/lib/losant-edge-agent/` and update the permissions to allow `docker` to write to it.
 
 ```console
 sudo mkdir -p /var/lib/losant-edge-agent/data
@@ -165,7 +165,7 @@ docker restart docs-agent
 
 ### Webserver: HTTP Request Trigger / HTTP Response Node
 
-If you wish to enable the [HTTP Request trigger](/workflows/triggers/request/) for your Edge Compute Device, you can do so by binding a host port at the time of container creation. Building on the configuration we have going, we only need to add the `-p` flag and then configure the Agent in our configuration file to enable the trigger. See [exposing ports](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p-expose) with Docker for more information. For more advanced configuration of the [HTTP Request trigger](/workflows/triggers/request/) and [HTTP Response Node](/workflows/outputs/http-response/), see the [Docker Hub Repo](https://hub.docker.com/r/losant/edge-agent/).
+If you wish to enable the [HTTP Request Trigger](/workflows/triggers/request/) for your Edge Compute Device, you can do so by binding a host port at the time of container creation. In order to build on the configuration we have going, we only need to add the `-p` flag and then configure the Agent in our configuration file to enable the trigger. See [exposing ports](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p-expose) with Docker for more information. For more advanced configuration of the [HTTP Request Trigger](/workflows/triggers/request/) and [HTTP Response Node](/workflows/outputs/http-response/), see the [Docker Hub Repo](https://hub.docker.com/r/losant/edge-agent/).
 
 ```console
 docker run -d --name docs-agent \
@@ -185,7 +185,7 @@ enable = true
 
 ### All Options
 
-As seen above, you can configure the Agent with the following options. If you set an option in both places, the environment variable will override the configuration file. For additional information the [Docker Hub Repo](https://hub.docker.com/r/losant/edge-agent/).
+As seen above, you can configure the Agent with the following options. If you set an option in both places, the environment variable will override the configuration file. For additional information review the [Docker Hub Repo](https://hub.docker.com/r/losant/edge-agent/).
 
 | Environment Variable        | Configuration File Option       |
 | --------------------------- | ------------------------------- |
