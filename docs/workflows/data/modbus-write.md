@@ -3,7 +3,7 @@ description: Learn more about the Losant Modbus: Write Node.
 
 # Modbus: Write
 
-The *Modbus Write Node* allows you to write to multiple registers from your Modbus machine. This node is *only* available in workflows for your [Edge Device Agent](/edge-compute/edge-agent-usage/).
+The *Modbus Write Node* allows you to write to multiple registers from your Modbus. This node is *only* available in workflows for your [Edge Device Agent](/edge-compute/edge-agent-usage/).
 
 ![Modbus Write Node](/images/workflows/data/modbus-write-node.png "Modbus Write Node")
 
