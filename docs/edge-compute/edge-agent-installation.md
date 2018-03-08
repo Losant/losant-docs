@@ -81,7 +81,7 @@ That's it! Everything should be installed and ready to go. To verify, the best w
 
 ## (Optional) Executing the Docker Command Without Sudo
 
-By default, you'll have to run `docker` with the `sudo` command as you see above. If you wish to omit typing `sudo`, you'll need to add your username to the `docker` group which was created when Docker was installed. After doing so, you'll need to log out and back in. Then, you can verify that `docker` is in the outputted list.
+By default, you'll have to run `docker` with the `sudo` command as you see above. If you wish to omit typing `sudo`, you'll need to add your username to the `docker` group which was created when Docker was installed. After doing so, you'll need to log out and back in. Then, you can verify that `docker` is in the output list.
 
 ```console
 sudo usermod -aG docker ${USER}
