@@ -16,7 +16,7 @@ sudo apt-get update
 
 For more information on any of the following steps, please see the Docker documentation for [installing Docker on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/). You can also find specific instructions for your particular OS.
 
-Before installing Docker, it is recommended to install the Docker repository. The first step, allowing `apt` to use a repository over HTTPS:
+Before installing Docker, it is recommended to install the Docker repository. The first step is to allow `apt` to use a repository over HTTPS:
 
 ```console
 sudo apt-get install \
