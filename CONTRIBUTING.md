@@ -4,7 +4,7 @@
 
 There are a few tags you can use at the **top of a file** and they will be transformed into `meta` tags. See the [doc generation logic](https://github.com/Losant/losant-docs/blob/release/losant/main-no-disqus.html#L14)
 
-### Descriptions
+### Description
 
 - Pragma: `description:`
 - Under 150 chars
@@ -18,7 +18,7 @@ description: Learn more about how to write descriptions
 Text about the thing ... 
 ```
 
-### Descriptions
+### Flow Class
 
 - Pragma: `flowclass:`
 - `Cloud` or `Edge 1.0.0` (whatever version)
