@@ -55,7 +55,7 @@ Now we're ready to install Docker itself. Let's make sure our packages are up to
 sudo apt-get update
 ```
 
-Finally, we're ready to install the latest version of Docker. You may decide that you want a specific version of Docker, see the Docker documentation for more details.
+Finally, we're ready to install the latest version of Docker. You may decide that you want a specific version of Docker, see the [Docker documentation](https://docs.docker.com/install/linux/docker-ce/ubuntu/) for more details.
 
 ```console
 sudo apt-get install docker-ce
