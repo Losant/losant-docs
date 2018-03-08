@@ -203,7 +203,7 @@ particular actions that can be performed on that resource.
   Contains all the actions that can be performed against the collection of [Device Recipes](/devices/device-recipes/) belonging to an Application - such as listing recipes or creating a new recipe.
 
 * [Edge Deployments](/rest-api/edge-deployments/)  
-  Contains all the actions that can be performed against the collection of [Edge Deployments](/edge-compute/) belonging to an Application - such as listing deployments or creating a new deployment.
+  Contains all the actions that can be performed against the collection of [Edge Deployments](/edge-compute/edge-deployments/) belonging to an Application - such as listing deployments or creating a new deployment.
 
 * [Event](/rest-api/event/)  
   Contains all the actions that can be performed against a single [Event](/applications/events/), such as commenting on or changing the state of an event.
