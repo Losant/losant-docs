@@ -40,7 +40,7 @@ Text about the thing ...
 
 Make sure you change your name to `Documentation` and your avatar to be generic, like so:
 
-![./documentation-user.png]()
+![](./documentation-user.png)
 
 ## Relative Links
 Relative links to docs pages should use a trailing `/` . Failing to do so will send the user on a silly redirect.
