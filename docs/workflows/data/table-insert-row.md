@@ -3,7 +3,7 @@ description: Learn more about the Losant Table: Insert Row Node.
 
 # Table: Insert Row Node
 
-The Data Table: Insert Row Node allows a workflow to insert a new rows into a [Data Table](/data-tables/overview/) inside the current application, and optionally add the newly created row to the current workflow payload.
+The Data Table: Insert Row Node allows a workflow to insert a new row into a [Data Table](/data-tables/overview/) within the current application, and optionally add the newly created row to the current workflow payload.
 
 ![Table Insert Row Node](/images/workflows/data/table-insert-row-node.png "Table Insert Row Node")
 

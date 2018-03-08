@@ -64,7 +64,7 @@ The result object will have fields for the command's `stdout` and `stderr`, as w
 
 ### Notes on Errors
 
-There are many reasons that the Run Executable node could error, but here are a few of the more common cases:
+There are many reasons that the Run Executable Node could error, but here are a few of the more common cases:
 
 * The command given in the `Command` template does not exist or is invalid in some way.
 * The path given for the `Current Working Directory` does not exist.

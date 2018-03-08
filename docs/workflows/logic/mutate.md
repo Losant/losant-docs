@@ -10,7 +10,7 @@ The Mutate Node allows a workflow to perform arbitrary changes to the structure 
 
 ## Configuration
 
-Mutate Nodes are configured by creating "rules", of which there are 4 types - "Set", "Remove", "Copy", and "Move". A Mutate Node can have as many rules as is needed, and the rules are executed in order from the first to last, which means subsequent rules can assume that the changes from previous rules have taken place.
+Mutate Nodes are configured by creating "rules", of which there are four types - "Set", "Remove", "Copy", and "Move". A Mutate Node can have as many rules as is needed, and the rules are executed in order from the first to last, which means subsequent rules can assume that the changes from previous rules have taken place.
 
 ![Mutate Node Add A Rule](/images/workflows/logic/mutate-node-add-a-rule.png "Mutate Node Add A Rule")
 

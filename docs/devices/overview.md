@@ -27,7 +27,7 @@ The first thing to configure is the type of device. This is not about the actual
 * **Standalone**  
   A Standalone device is your normal everyday type of device. It is allowed to connect directly to Losant and report its own state. In most cases, this is the device type you will choose.
 * **Edge Compute**  
-  An [Edge Compute](/devices/edge-compute/) device is a device that runs the Losant [Edge Agent](/edge-compute/edge-agent-usage/) and can run [edge](/workflows/edge-workflows/) workflows directly on the device itself. They also can behave as Gateway devices, in that they may report state on behalf of a Peripheral device.
+  An [Edge Compute device](/devices/edge-compute/) is a device that runs the Losant [Edge Agent](/edge-compute/edge-agent-usage/) and can run [edge workflows](/workflows/edge-workflows/) directly on the device itself. They also can behave as Gateway devices, in that they may report state on behalf of a Peripheral device.
 * **Gateway**  
   A [Gateway](/devices/gateways-peripherals/) device is a device that connects to Losant and reports both its own state and the state of other devices - i.e., other devices that use this device as a "gateway". Gateways are extremely useful for helping to report the state of non-internet connected devices to Losant - such as Bluetooth sensors.
 * **Peripheral**  
