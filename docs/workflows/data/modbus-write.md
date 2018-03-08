@@ -9,7 +9,7 @@ The Modbus: Write Node allows you to write to multiple registers from your [Modb
 
 ## Configuration
 
-There are two main parts of the configuration for this node ...
+There are two main parts of the configuration for this node.
 
 ![Modbus Write Node Configuration](/images/workflows/data/modbus-write-node-configuration.png "Modbus Write Node Configuration")
 
@@ -25,19 +25,19 @@ Address Configuration contains three fields:
 
 You may define multiple write instructions for the Modbus: Write Node, and you must define at least one. Each instruction has the following fields, all of which are required:
 
-*   **Address:** A string template or integer for the address at which to write. This should resolve to an integer between `0` and `65534` inclusive.
-*   **Register Type:** `Holding Registers` (default) or `Coils`.
-*   **Value:** A string template or integer for the value to write.
+*   **Address:** (Required) A string template or integer for the address at which to write. This should resolve to an integer between `0` and `65534` inclusive.
+*   **Register Type:** (Required) `Holding Registers` (default) or `Coils`.
+*   **Value:** (Required) A string template or integer for the value to write.
 
 ![Modbus Write Node Result](/images/workflows/data/modbus-write-node-result.png "Modbus Write Node Result")
 
 ## Result
 
-The **Destination Path** (a [payload path](/workflows/accessing-payload-data/#payload-paths)) is optional, but if you want to confirm that the write was successful, the path should be set. If set, the result of write instruction will be at a key in the format of `addr-${Number(address)}`. Successful writes will have a value of `true`, and failures will have a value of `false`.
+The **Destination Path** (a [payload path](/workflows/accessing-payload-data/#payload-paths)) is optional, but if you want to confirm that the write was successful, the path should be set. If set, the result of write instruction will be at a key in the format of `addr-${Number(address)}`, successful writes will have a value of `true`, and failures will have a value of `false`.
 
 If any errors occurred, there will be an `errors` key in the object at your path defining each error that occurred. The only time you will get a single error for multiple writes is if the connection could never be made to the Modbus itself.
 
-For example, say we want to write to two addresses (one at `23`, and the other at `80`), and we set our Destination Path to `destination.output`. If all write instructions were successful,  the output would look like the following:
+For example, say we want to write to two addresses (one at `23`, and the other at `80`), and we set our Destination Path to `destination.output`. If all write instructions were successful, the output will look like the following:
 
 ```json
 "destination": {
