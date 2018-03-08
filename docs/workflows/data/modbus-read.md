@@ -3,27 +3,43 @@ description: Learn more about the Losant Modbus: Read Node.
 
 # Modbus: Read
 
-The *Modbus Read Node* allows you to read multiple registers from your modbus machine. This node is *only* available in workflows for your [Edge Device Agent](/edge-compute/edge-agent-usage/).
+The Modbus: Read Node allows you to read multiple registers from your [Modbus](https://en.wikipedia.org/wiki/Modbus) machine. This node is only available in [edge workflows](/workflows/edge-workflows/).
 
 ![Modbus Read Node](/images/workflows/data/modbus-read-node.png "Modbus Read Node")
 
 ## Configuration
 
+There are three main parts of the configuration for this node ...
+
 ![Modbus Read Node Configuration](/images/workflows/data/modbus-read-node-configuration.png "Modbus Read Node Configuration")
 
-There are two main parts of the configuration for this node - Address Configuration and Read Instructions.
+### Address Configuration
 
-Address Configuration contains four fields - host template, port template, unit ID template, endianness. All are [templatable](/workflows/accessing-payload-data/#string-templates) except for endianness. Endianness has two options: `Big` or `Little`. By default endianess is set to `Big`.
+Address Configuration contains four fields:
 
-Read Instructions have four fields - register type, address template, length template, result key. This node allows several reads to be done at once, so you can read multiple registers and the results of each will be values at the result key inside of the object at the destination path. Register Types can be any one of the following - `Input Registers`, `Holding Registers`, `Discrete Input`, and `Coils`. Address Template is required and is [templatable](/workflows/accessing-payload-data/#string-templates). The address must be a number greater than or equal to 0 and less than 65535. By default, length template is 1, this defines how many registers to read past the given address template. The result key will be the key at which the result of this read is set under the result path. The result key *cannot* be at `errors` or be in the path `errors`, since the `errors` path is a special path where the node will place any errors that occur during reads. If the result key is present it will *always* be a list of results, even if the length is one. See below for examples.
+*   **Host:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the IP address at which the register(s) resides.
+*   **Port:** (Required) A string template or integer for the HTTP port.
+*   **Unit ID:** (Required) A string template or integer for the Unit ID at the specified host and port. Defaults to `0`.
+*   **Endianness:** The [endianness](https://en.wikipedia.org/wiki/Endianness), or sequential order of bytes. Defaults to "Big".
 
-## Destination Path
+### Read Instructions
+
+You may define multiple read instructions for the Modbus: Read Node, and you must define at least one. Each instruction has the following fields:
+
+*   **Register Type:** `Input Registers` (default), `Holding Registers`, `Discrete Input`, or `Coils`.
+*   **Address:** A string template or integer for the address at which to read. This should resolve to an integer between `0` and `65534` inclusive.
+*   **Length:** The length for this read instruction. This field is optional, but if it set, it should resolve to an integer greater than `0`. If not set, the length defaults to `1`.
+*   **Result Key:** The key at which to store the result of this read operation. This key will exist on the [Destination Path](#result) defined below the instructions. This can resolve to any string except `errors`, since that key is reserved for any errors that occur during reads.
+
+### Destination Path
 
 ![Modbus Read Node Result](/images/workflows/data/modbus-read-node-result.png "Modbus Read Node Result")
 
-The results of each read instruction read instruction will be placed inside the destination path at the result key. It is important that each result key is named uniquely so the node does not overwrite another read result. If the key is not present it means the read failed, and there will be a list of errors under the result path at `errors`. If one read fails it does not mean that all reads will fail, the reads will continue until finished. The only time you will get a single error for multiple reads is if the connection could never be made to the Modbus itself.
+The results of each read instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) at each instruction's `Result Key`. Each result is returned as an array. It is important that each key is named uniquely so the node does not overwrite another read result.
 
-The following is an example of a successful read, where a resultKey is `threeCoils`, and the destination path is `destination.modbusOutput`:
+If the key is not present, it means the read failed, and there will be a list of errors under that key in the object at the `errors` key. If one read fails, it does not mean that all reads will fail; rather, the reads will continue until finished. The only time you will get a single error for multiple reads is if the connection could never be made to the Modbus register itself.
+
+The following is an example of a successful read, where an instruction's Result Key is `threeCoils`, and the Destination Path is `destination.modbusOutput`:
 
 ```json
 {
@@ -47,7 +63,7 @@ The following is an example of a failure to read, where a resultKey should have 
 }
 ```
 
-## Process Results
+## Processing Results
 
 The following is an example of taking two Modbus read results and making them into one 32-bit float:
 
