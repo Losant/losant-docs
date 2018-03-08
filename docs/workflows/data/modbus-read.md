@@ -3,7 +3,7 @@ description: Learn more about the Losant Modbus: Read Node.
 
 # Modbus: Read
 
-The *Modbus Read Node* allows you to read multiple registers from your modbus machine. This node is *only* available in workflows for your [Edge Device Agent](/edge-compute/edge-agent-usage/).
+The *Modbus Read Node* allows you to read multiple registers from your Modbus. This node is *only* available in workflows for your [Edge Device Agent](/edge-compute/edge-agent-usage/).
 
 ![Modbus Read Node](/images/workflows/data/modbus-read-node.png "Modbus Read Node")
 
