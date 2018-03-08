@@ -27,7 +27,7 @@ Address Configuration contains four fields:
 You may define multiple read instructions for the Modbus: Read Node, and you must define at least one. Each instruction has the following fields:
 
 *   **Register Type:** `Input Registers` (default), `Holding Registers`, `Discrete Input`, or `Coils`.
-*   **Address:** A string template or integer for the address at which to read. This should resolve to an integer between `0` and `65535`.
+*   **Address:** A string template or integer for the address at which to read. This should resolve to an integer between `0` and `65534` inclusive.
 *   **Length:** The length for this read instruction. This field is optional, but if it set, it should resolve to an integer greater than `0`. If not set, the length defaults to `1`.
 *   **Result Key:** The key at which to store the result of this read operation. This key will exist on the [Destination Path](#result) defined below the instructions. This can resolve to any string except `errors`, since that key is reserved for any errors that occur during reads.
 
@@ -35,7 +35,9 @@ You may define multiple read instructions for the Modbus: Read Node, and you mus
 
 ![Modbus Read Node Result](/images/workflows/data/modbus-read-node-result.png "Modbus Read Node Result")
 
-The results of each read instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) at each instruction's `Result Key`. It is important that each key is named uniquely so the node does not overwrite another read result. If the key is not present, it means the read failed, and there will be a list of errors under that key in the object at the `errors` key. If one read fails, it does not mean that all reads will fail; rather, the reads will continue until finished. The only time you will get a single error for multiple reads is if the connection could never be made to the Modbus register itself.
+The results of each read instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) at each instruction's `Result Key`. Each result is returned as an array. It is important that each key is named uniquely so the node does not overwrite another read result.
+
+If the key is not present, it means the read failed, and there will be a list of errors under that key in the object at the `errors` key. If one read fails, it does not mean that all reads will fail; rather, the reads will continue until finished. The only time you will get a single error for multiple reads is if the connection could never be made to the Modbus register itself.
 
 The following is an example of a successful read, where an instruction's Result Key is `threeCoils`, and the Destination Path is `destination.modbusOutput`:
 
@@ -63,7 +65,7 @@ The following is an example of a failure to read, where a resultKey should have 
 
 ## Processing Results
 
-The following is an example can be used in of taking modbus read output of two registers and making them into one 32-bit float:
+The following is an example of taking two Modbus read results and making them into one 32-bit float:
 
 ```javascript
 const modbus = payload.modbus

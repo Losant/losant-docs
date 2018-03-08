@@ -13,12 +13,14 @@ There are a number of configuration options for this node:
 
 *   **File Path:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the disk location of where to write the file.
 *   **Encoding:** The content encoding (defaults to UTF8).
-*   **File Content:** A string template for the content to write to the file.
+*   **File Content:** (Required) A string template for the content to write to the file.
 *   **Result Path:** A [payload path](/workflows/accessing-payload-data/#payload-paths) for where to store the result of the operation, if desired.
 
 ![File Write Node Configuration](/images/workflows/data/file-write-node-configuration.png "File Write Node Configuration")
 
-### If File Exists
+1. *Cancel and return an error if the file exists* - with this option only write to a file that is nonexistent to avoid overwriting the wrong file.
+2. *Append my content to the file if it exists* - this will cause the content to be appended at the end of the file, so all the content currently in the file will stay, the node will simply add to the content.
+3. *Overwrite the file with my new content if it exists* - this is the default, with this option it allows you to completely replace the file with the content from the node.
 
 If a file does not already exist at the file path defined in your configuration, the node will write a new file to disk at that path.
 
