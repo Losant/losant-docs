@@ -1,3 +1,6 @@
+flowclass: Cloud
+description: Learn more about the Losant Authenticate Experience User Node.
+
 # Authenticate Experience User Node
 
 The Authenticate Experience User Node allows a workflow to authenticate an email and password against [Experience Users](/experiences/users/) in the application. It can also optionally generate a token that can subsequently be used for authorized requests against [Experience Endpoints](/experiences/endpoints/).
@@ -6,13 +9,13 @@ The Authenticate Experience User Node allows a workflow to authenticate an email
 
 ## Configuration
 
-The authenticate node has two sections. First, a required section for configuring the credentials to check against existing Experience Users, and then second an optional section about what do do with the result of a successful authentication.
+The Authenticate Experience User Node has two sections. First, a required section for configuring the credentials to check against existing Experience Users, and then second an optional section about what do do with the result of a successful authentication.
 
 ![Authenticate Experience User Node Config](/images/workflows/experience/authenticate-node-config.png "Authenticate Experience User Node Config")
 
 The credentials to check are two [templatable](/workflows/accessing-payload-data/#string-templates) fields, one for email and one for password. In the example above, they are templates that will pull in the values from the `data.body.email` and `data.body.password` fields, respectively, from the current workflow payload.
 
-The given email is used to find an existing Experience User in the application, at which point (if one is found), the given password is then hashed and checked against the stored password hash for the found Experience User. If the password hash matches, this is a successful authentication, and the `true` (or right) path out of the authenticate node is taken. If no user is found or the password does not match, the `false` (or left) path out of the authenticate node is taken.
+The given email is used to find an existing Experience User in the application, at which point (if one is found), the given password is then hashed and checked against the stored password hash for the found Experience User. If the password hash matches, this is a successful authentication, and the `true` (or right) path out of the node is taken. If no user is found or the password does not match, the `false` (or left) path out of the node is taken.
 
 ![Authenticate Experience User Node Output](/images/workflows/experience/authenticate-node-output.png "Authenticate Experience User Node Output")
 

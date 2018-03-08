@@ -1,16 +1,20 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant MongoDB Node.
+
 # MongoDB
 
-The MongoDB node allows a workflow to query or update values in a [MongoDB](https://www.mongodb.com/) database and optionally store the result on the workflow payload.
+The MongoDB Node allows a workflow to query or update values in a [MongoDB](https://www.mongodb.com/) database and optionally store the result on the workflow payload.
 
 ![MongoDB Node](/images/workflows/data/mongodb-node.png "MongoDB Node")
 
 ## Configuration
 
-The configuration of the MongoDB node can be broken down into four major sections - configuring the connection, choosing the operation, setting up the arguments, and choosing what to do with the result.
+The configuration of the MongoDB Node can be broken down into four major sections - configuring the connection, choosing the operation, setting up the arguments, and choosing what to do with the result.
 
 ![MongoDB Node Connection Configuration](/images/workflows/data/mongodb-node-connection.png "MongoDB Node Connection Configuration")
 
-When configuring the connection, you must provide a Mongo [Connection String URI](https://docs.mongodb.com/manual/reference/connection-string/), which must include a database name. You also choose here what collection that the node will be operating on. Both of these fields accept [string templates](/workflows/accessing-payload-data/#string-templates), and so can be configured with values from the current workflow payload. In the example above, the Mongo node has been configured to connect to the `embree` database at `example.com` with the username `user` and the password `pass`, and the node will be using the collection `alertMapping`.
+When configuring the connection, you must provide a Mongo [Connection String URI](https://docs.mongodb.com/manual/reference/connection-string/), which must include a database name. You also choose here what collection that the node will be operating on. Both of these fields accept [string templates](/workflows/accessing-payload-data/#string-templates), and so can be configured with values from the current workflow payload. In the example above, the MongoDB Node has been configured to connect to the `embree` database at `example.com` with the username `user` and the password `pass`, and the node will be using the collection `alertMapping`.
 
 ![MongoDB Node Operation](/images/workflows/data/mongodb-node-operation.png "MongoDB Node Operation")
 
@@ -42,7 +46,7 @@ Both the query argument and the options argument allows users to choose the meth
 
 ![MongoDB Node Result](/images/workflows/data/mongodb-node-result.png "MongoDB Node Result")
 
-Finally, you can optionally choose to store the result of the Mongo operation on the payload. For operations like `insert` or `remove`, you might not care about the result, but for an operation like the `findOne` above, you almost certainly do! In this case the result of the `findOne` is being placed at the [payload path](/workflows/accessing-payload-data/#payload-paths) `data.mongoResult`. Here is an example payload after the above MongoDB workflow node has been run:
+Finally, you can optionally choose to store the result of the Mongo operation on the payload. For operations like `insert` or `remove`, you might not care about the result, but for an operation like the `findOne` above, you almost certainly do! In this case the result of the `findOne` is being placed at the [payload path](/workflows/accessing-payload-data/#payload-paths) `data.mongoResult`. Here is an example payload after the above MongoDB Node has been run:
 
 ```json
 {

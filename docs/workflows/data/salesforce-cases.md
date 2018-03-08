@@ -1,12 +1,16 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Salesforce Cases Node.
+
 # Salesforce Cases
 
-The Salesforce Cases node allows Losant workflows to access the [Salesforce Service Cloud](https://www.salesforce.com/products/service-cloud/overview/) and create, read, update or delete cases in their CRM platform.
+The Salesforce Cases Node allows Losant workflows to access the [Salesforce Service Cloud](https://www.salesforce.com/products/service-cloud/overview/) and create, read, update or delete cases in their CRM platform.
 
 ![Salesforce Cases Node](/images/workflows/data/salesforce-overview.png "Salesforce Cases Node")
 
 ## Configuration
 
-There are three main configuration sections for the Salesforce Cases node ...
+There are three main configuration sections for the Salesforce Cases Node ...
 
 ### Authentication
 
@@ -86,7 +90,7 @@ Update a case record. Leave a parameter blank to leave its current value unchang
 
 ![Salesforce Result](/images/workflows/data/salesforce-result.png "Salesforce Result")
 
- If a path is defined, the Salesforce Case node will store the response from the request at the defined [payload path](/workflows/accessing-payload-data/#payload-path).
+ If a path is defined, the Salesforce Case Node will store the response from the request at the defined [payload path](/workflows/accessing-payload-data/#payload-path).
 
  Depending on the type of request made, the response from Salesforce can take a few different forms. Here is an example of the most complicated response object: an array of results returned from a query (only one item is included here) ...
 

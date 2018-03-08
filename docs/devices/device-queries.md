@@ -1,3 +1,5 @@
+description: Learn how to query devices and how to use the results in workflows.
+
 # Device Queries
 
 Many features within the Losant Platform require users to provide a list of devices to interact with. For example:

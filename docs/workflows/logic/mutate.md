@@ -1,16 +1,20 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Mutate Node.
+
 # Mutate Node
 
-The mutate node allows a workflow to perform arbitrary changes to the structure of the payload object.
+The Mutate Node allows a workflow to perform arbitrary changes to the structure of the payload object.
 
 ![Mutate Node](/images/workflows/logic/mutate-node.png "Mutate Node")
 
 ## Configuration
 
-Mutate nodes are configured by creating "rules", of which there are 4 types - "Set", "Remove", "Copy", and "Move". A mutate node can have as many rules as is needed, and the rules are executed in order from the first to last, which means subsequent rules can assume that the changes from previous rules have taken place.
+Mutate Nodes are configured by creating "rules", of which there are four types - "Set", "Remove", "Copy", and "Move". A Mutate Node can have as many rules as is needed, and the rules are executed in order from the first to last, which means subsequent rules can assume that the changes from previous rules have taken place.
 
 ![Mutate Node Add A Rule](/images/workflows/logic/mutate-node-add-a-rule.png "Mutate Node Add A Rule")
 
-To add a rule to a mutate node, select the type of rule desired, and press the "+" button.
+To add a rule to a Mutate Node, select the type of rule desired, and press the "+" button.
 
 ### The Set Rule
 
@@ -31,7 +35,7 @@ In the above example, the set rule will be creating a new value combined from th
 }
 ```
 
-The payload after execution of the mutate node would look like:
+The payload after execution of the Mutate Node would look like:
 
 ```json
 {
@@ -64,7 +68,7 @@ In the above example, the remove rule will be remove the existing `data.firstNam
 }
 ```
 
-The payload after execution of the mutate node would look like:
+The payload after execution of the Mutate Node would look like:
 
 ```json
 {
@@ -95,7 +99,7 @@ In the above example, the copy rule will copy the value at the existing `data.fi
 }
 ```
 
-The payload after execution of the mutate node would look like:
+The payload after execution of the Mutate Node would look like:
 
 ```json
 {
@@ -128,7 +132,7 @@ In the above example, the move rule will move the value at the existing `data.fi
 }
 ```
 
-The payload after execution of the mutate node would look like:
+The payload after execution of the Mutate Node would look like:
 
 ```json
 {

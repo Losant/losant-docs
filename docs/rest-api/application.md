@@ -8,6 +8,110 @@ Below are the various requests that can be performed against the
 Application resource, as well as the expected
 parameters and the potential responses.
 
+## Archive Data
+
+Returns success when a job has been enqueued to archive this application&#x27;s device data for a given day
+
+### Method And Url <a name="archiveData-method-url"></a>
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/archiveData
+
+### Authentication <a name="archiveData-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, application.*, or application.archiveData.
+
+### Request Path Components <a name="archiveData-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID of the associated application | 575ec8687ae143cd83dc4a97 |
+
+### Request Query Parameters <a name="archiveData-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| date | Y | The date to archive data (ms since epoch), it must be within the archive time range older than 31 days and newer than the organizations dataTTL |  | 1518556791829 |
+
+### Request Headers <a name="archiveData-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Curl Example <a name="archiveData-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X GET \
+    https://api.losant.com/applications/APPLICATION_ID/archiveData?date=1518556791829
+```
+
+### Successful Responses <a name="archiveData-successful-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | Enqueued a job to archive this applications device data |
+
+### Error Responses <a name="archiveData-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if application was not found |
+
+## Backfill Archive Data
+
+Returns success when a job has been enqueued to backfill all current data to it&#x27;s archive
+
+### Method And Url <a name="backfillArchiveData-method-url"></a>
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/backfillArchiveData
+
+### Authentication <a name="backfillArchiveData-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, application.*, or application.backfillArchiveData.
+
+### Request Path Components <a name="backfillArchiveData-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID of the associated application | 575ec8687ae143cd83dc4a97 |
+
+### Request Headers <a name="backfillArchiveData-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Curl Example <a name="backfillArchiveData-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X GET \
+    https://api.losant.com/applications/APPLICATION_ID/backfillArchiveData
+```
+
+### Successful Responses <a name="backfillArchiveData-successful-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | Enqueued a job to backfill device data to this application archive location |
+
+### Error Responses <a name="backfillArchiveData-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if application was not found |
+
 ## Delete
 
 Deletes an application

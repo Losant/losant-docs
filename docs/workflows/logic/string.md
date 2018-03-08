@@ -1,3 +1,7 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant String Node.
+
 # String Node
 
 The String Node allows for manipulating string values on your workflow payloads.

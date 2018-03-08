@@ -31,6 +31,7 @@ Most of the HTML in the example layout is simply markup for laying out the conte
 ```html
 <title>{{ experience.page.name }} | My Experience</title>
 ```
+
 Every time a page is rendered, some amount of context is provided that you can use inside your page or layout. [Some fields are guaranteed](/experiences/views/#data-that-is-always-provided), like those found on the `experience` object. Custom data, which is provided by the workflow that's handling the current page request, will be found on the `pageData` object. In this example, the page's title defaults to the name of whatever page is being rendered. For example, if the page that's being rendered inside this layout has a name of "Log In", the title of the page will be "Log In | My Experience". You'll at least want to change "My Experience" to something relevant to your use case.
 
 Immediately below the title is a tag for the description.

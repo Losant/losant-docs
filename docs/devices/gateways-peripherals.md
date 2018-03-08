@@ -1,3 +1,5 @@
+description: Learn more about configuring gateways and peripherals in the Losant platform.
+
 # Gateways and Peripherals
 
 Some types of devices, like Bluetooth sensors, cannot connect directly to Losant. They require some form of middle man in order to communicate externally. In order to facilitate this, Losant has the concept of Gateway and Peripheral devices. Gateway devices are permitted to report state and receive commands on behalf of Peripheral devices.
@@ -6,7 +8,7 @@ Some types of devices, like Bluetooth sensors, cannot connect directly to Losant
 
 Gateways are very similar to regular devices. They connect directly to Losant and can report their own state and receive commands. The only difference is that gateways are allowed to report state for other peripheral devices.
 
-A gateway device is created by choosing the `Gateway` device type when adding a new device.
+A basic gateway device is created by choosing the the `Gateway` device type when adding a new device. For more advanced use cases, devices of the `Edge Compute` device type can also function as gateways.
 
 ![Add Gateway](/images/devices/gateways-peripherals/create-gateway.png "Add Gateway")
 
@@ -52,7 +54,7 @@ A gateway can POST its own state using REST to the following endpoint:
 /applications/my-application-id/devices/my-gateway-id/state
 ```
 
-A gateway can also post to a peripheral's REST state endpoint:
+A gateway can also POST to a peripheral's REST state endpoint:
 
 ```text
 /applications/my-application-id/devices/my-peripheral-id/state
@@ -85,6 +87,6 @@ client.on('connect', function() {
 
 When and how a gateway publishes these message is entirely up to your environment. For example, if the peripheral is a [LightBlueBean](https://punchthrough.com/bean) connected over Bluetooth to a Raspberry Pi gateway, the Pi may report the peripheral's state every few seconds by first requesting the temperature over the Bluetooth connection.
 
-Gateways and also be used to configure MQTT bridges. Please read our tutorial on [setting up a Mosquitto MQTT bridge](https://www.losant.com/blog/how-to-configure-mosquitto-bridge-to-losant) for more details.
+Gateways can also be used to configure MQTT bridges. Please read our tutorial on [setting up a Mosquitto MQTT bridge](https://www.losant.com/blog/how-to-configure-mosquitto-bridge-to-losant) for more details.
 
 To the rest of the system, there's no difference between a gateway reporting state on behalf of a peripheral versus a device reporting state directly. You can now visualize the data, trigger workflows, etc.

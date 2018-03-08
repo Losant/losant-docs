@@ -1,16 +1,19 @@
+flowclass: Cloud
+description: Learn more about the Losant Modify Event Node.
+
 # Modify Event Node
 
-The modify event node allows a workflow to change the state of an existing [event](/applications/events/).
+The Modify Event Node allows a workflow to change the state of an existing [event](/applications/events/).
 
 ![Modify Event Node](/images/workflows/outputs/modify-event-node.png "Modify Event Node")
 
 ## Configuration
 
-There are three parts to configuring a modify event node - the event ID(s) to modify, selecting the new state of the event(s), and optional event update information.
+There are three parts to configuring a Modify Event Node - the event ID(s) to modify, selecting the new state of the event(s), and optional event update information.
 
 ![Modify Event Node Configuration](/images/workflows/outputs/modify-event-node-config.png "Modify Event Node Configuration")
 
-A [payload path](/workflows/accessing-payload-data/#payload-paths) must be provided that should point to the event ID(s) to modify; the value at the path can be a single event ID or an array of event IDs. If there are no IDs at the path, or the IDs are invalid (i.e, the event(s) are not found), the modify event node does nothing and the workflow continues.
+A [payload path](/workflows/accessing-payload-data/#payload-paths) must be provided that should point to the event ID(s) to modify; the value at the path can be a single event ID or an array of event IDs. If there are no IDs at the path, or the IDs are invalid (i.e, the event(s) are not found), the Modify Event Node does nothing and the workflow continues.
 
 The new state of the event(s) can be one of "Resolved", "Acknowledged", "New", or "Payload Template". When "Payload Template" is selected, the state is determined by evaluating the given [string template](/workflows/accessing-payload-data/#string-templates), allowing the state to be dynamically determined from the current workflow payload. When using a string template, it must evaluate to one of `resolved` / `acknowledged` / `new` - if it does not, the event modification will fail.
 

@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Table: Insert Row Node.
+
 # Table: Insert Row Node
 
-The Data Table Insert Row node allows a workflow to insert a new rows into a [Data Table](/data-tables/overview/) inside the current application, and optionally add the newly created row to the current workflow payload.
+The Data Table: Insert Row Node allows a workflow to insert a new row into a [Data Table](/data-tables/overview/) within the current application, and optionally add the newly created row to the current workflow payload.
 
 ![Table Insert Row Node](/images/workflows/data/table-insert-row-node.png "Table Insert Row Node")
 
 ## Configuration
 
-There are three different ways to configure input data for the insert row node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the row to insert, while the third choice is the more common option for simple situations.
+There are three different ways to configure input data for the Table: Insert Row Node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the row to insert, while the third choice is the more common option for simple situations.
 
 In all three cases, though, you start by choosing a [Data Table](/data-tables/overview/), which will determine where this row will be inserted, and also determines what columns are expected for the row.
 

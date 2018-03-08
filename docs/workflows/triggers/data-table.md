@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Data Table Trigger.
+
 # Data Table Trigger
 
-The data table trigger will trigger a workflow whenever a rows are manipulated in the selected data table.
+The Data Table Trigger will fire a workflow whenever a rows are manipulated in the selected data table.
 
 ![Data Table Trigger](/images/workflows/triggers/data-table-trigger.png "Data Table Trigger")
 
 ## Configuration
 
-There are two configurable criteria for a data table trigger - the data table to watch, and the types of actions to trigger on. You can choose to trigger on any combination of inserting rows, updating rows, and deleting rows.
+There are two configurable criteria for a Data Table Trigger: the data table to watch, and the types of actions to trigger on. You can choose to trigger on any combination of inserting rows, updating rows, and deleting rows.
 
 ![Data Table Trigger Config](/images/workflows/triggers/data-table-trigger-config.png "Data Table Trigger Config")
 

@@ -619,3 +619,32 @@ a.login-button {
     clear: both;
     padding-right: 12px;
   }
+}
+
+/* workflow class tags */
+.flowclass-tag {
+  display: inline-block;
+  background: #ff5700;
+  margin-left: 6px;
+  float: right;
+  font-size: 27%;
+  font-weight: bold;
+  color: #fff;
+  font-family: "Fira Sans", "Lucida Grande", "Trebuchet MS", sans-serif;
+  padding: 3px 8px;
+  user-select: none;
+  vertical-align: top;
+}
+.flowclass-tag.inline {
+  margin-left: 0px;
+  float: none;
+  padding: 0px 8px;
+  font-size: 75%;
+}
+.flowclass-tag.Cloud {
+  background: #5bc0de;
+}
+
+h1 > .flowclass-tag {
+  margin-top: 22px;
+}

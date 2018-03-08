@@ -1,12 +1,16 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Array Node.
+
 # Array Node
 
-The array node allows a workflow to perform operations against an array on the payload.
+The Array Node allows a workflow to perform operations against an array on the payload.
 
 ![Array Node](/images/workflows/logic/array-node.png "Array Node")
 
 ## Configuration
 
-Array nodes are configured by first specifying a payload path to an array on the payload. This will be the array that the node will operate on. If nothing exists at the given payload path, then an empty array will be created at that location. If a string exists at the given payload path, that string will be treated as an array of characters for the purposes of the array operation, but when the operation is completed, it will be left as a string on the payload.
+Array Nodes are configured by first specifying a payload path to an array on the payload. This will be the array that the node will operate on. If nothing exists at the given payload path, then an empty array will be created at that location. If a string exists at the given payload path, that string will be treated as an array of characters for the purposes of the array operation, but when the operation is completed, it will be left as a string on the payload.
 
 ![Array Node Configuration](/images/workflows/logic/array-node-config.png "Array Node Configuration")
 

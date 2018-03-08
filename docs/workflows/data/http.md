@@ -1,30 +1,34 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant HTTP Node.
+
 # HTTP Node
 
-The HTTP node allows a workflow to make an arbitrary HTTP request and optionally place the response on the current payload.
+The HTTP Node allows a workflow to make an arbitrary HTTP request and optionally place the response on the current payload.
 
 ![HTTP Node](/images/workflows/data/http-node.png "HTTP Node")
 
 ## Configuration
 
-The HTTP node can be configured with all the common properties of an HTTP request - request method, request URL, request body, and request headers. In addition, the node can optionally store the response of the request at a spot in the payload.
+The HTTP Node can be configured with all the common properties of an HTTP request - request method, request URL, request body, and request headers. In addition, the node can optionally store the response of the request at a spot in the payload.
 
 ### Basic Configuration
 
 ![HTTP Node Basic Configuration](/images/workflows/data/http-node-basic-configuration.png "HTTP Node Basic Configuration")
 
-The first part of configuring the node is selecting the method of the HTTP request - choosing between "GET", "POST", "PUT", and "DELETE". Next is the URL to actually make the request at - this field supports static URLs or [string templates](/workflows/accessing-payload-data/#string-templates). The third basic part of setting up an HTTP node is deciding wheather to `Disable SSL Verification?`. In the given example the SSL certificate will still be verified by the request and if it is invalid will return an error. However, if this box was checked it would **not** ensure that the SSL certificate is valid. The fourth basic part of setting up an HTTP node is configuring the body - which is actually not allowed for "GET" and "DELETE" requests. For "POST" and "PUT" requests, however, the body is optional and supports standard [JSON templates](/workflows/accessing-payload-data/#json-templates). In the above example, the node is making a "GET" request to the URL `https://rrtp.comed.com/api?type=5minutefeed`.
+The first part of configuring the node is selecting the method of the HTTP request - choosing between "GET", "POST", "PUT", and "DELETE". Next is the URL to actually make the request at - this field supports static URLs or [string templates](/workflows/accessing-payload-data/#string-templates). The third basic part of setting up an HTTP Node is deciding whether to `Disable SSL Verification?`. In the given example the SSL certificate will still be verified by the request and if it is invalid will return an error. However, if this box was checked it would **not** ensure that the SSL certificate is valid. The fourth basic part of setting up an HTTP Node is configuring the body - which is actually not allowed for "GET" and "DELETE" requests. For "POST" and "PUT" requests, however, the body is optional and supports standard [JSON templates](/workflows/accessing-payload-data/#json-templates). In the above example, the node is making a "GET" request to the URL `https://rrtp.comed.com/api?type=5minutefeed`.
 
 ### Header Configuration
 
 ![Header Configuration](/images/workflows/data/http-node-header-configuration.png "Header Configuration")
 
-The HTTP node also has optional support for adding headers to the HTTP request. Each header is a combination of a header name and a header value. Header values can take [string templates](/workflows/accessing-payload-data/#string-templates) to dynamically build headers out of the current payload if needed. The above example has a single header of `User-Agent` whose value is the template `Losant/{{ flowId }}`.
+The HTTP Node also has optional support for adding headers to the HTTP request. Each header is a combination of a header name and a header value. Header values can take [string templates](/workflows/accessing-payload-data/#string-templates) to dynamically build headers out of the current payload if needed. The above example has a single header of `User-Agent` whose value is the template `Losant/{{ flowId }}`.
 
 ### Storing The Response
 
 ![Response Configuration](/images/workflows/data/http-node-response-configuration.png "Response Configuration")
 
-The HTTP node can optionally store the response from the request at an arbitrary [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the body, headers, and status code are stored at the given path. The node also attempts to parse the body as JSON - if it is parseable, the parsed object is placed on the payload instead of the raw response body string. In the example above, the response will be stored at the `data.pricing` field.
+The HTTP Node can optionally store the response from the request at an arbitrary [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the body, headers, and status code are stored at the given path. The node also attempts to parse the body as JSON - if it is parseable, the parsed object is placed on the payload instead of the raw response body string. In the example above, the response will be stored at the `data.pricing` field.
 
 So with the above example, given the following payload:
 

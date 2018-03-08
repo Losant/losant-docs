@@ -67,12 +67,19 @@ pages:
         - "Part 2: User Authentication": experiences/walkthrough/part2.md
         - "Part 3: Device Registration": experiences/walkthrough/part3.md
         - "Part 4: Viewing Device Data": experiences/walkthrough/part4.md
+- Edge Compute:
+    - Overview: edge-compute/overview.md
+    - Edge Agent Installation: edge-compute/edge-agent-installation.md
+    - Edge Agent Usage: edge-compute/edge-agent-usage.md
+    - Edge Deployments: edge-compute/edge-deployments.md
+    - Edge Agent Changelog: edge-compute/edge-agent-changelog.md
 - Devices:
     - Device Overview: devices/overview.md
     - Device State: devices/state.md
     - Device Commands: devices/commands.md
     - Device Queries: devices/device-queries.md
     - Gateways and Peripherals: devices/gateways-peripherals.md
+    - Edge Compute: devices/edge-compute.md
     - Simulator: devices/simulator.md
     - Device Recipes: devices/device-recipes.md
 - Dashboards:
@@ -100,17 +107,21 @@ pages:
     - Overview: data-tables/overview.md
 - Workflows:
     - Overview: workflows/overview.md
+    - Cloud Workflows: workflows/cloud-workflows.md
+    - Edge Workflows: workflows/edge-workflows.md
     - Accessing Payload Data: workflows/accessing-payload-data.md
     - Versioning: workflows/versioning.md
     - Triggers:
-        - Device State: workflows/triggers/device.md
-        - Device Connect: workflows/triggers/on-connect.md
-        - Device Disconnect: workflows/triggers/on-disconnect.md
-        - Device Inactive: workflows/triggers/on-inactivity.md
-        - Endpoint: workflows/triggers/endpoint.md
         - Data Table: workflows/triggers/data-table.md
+        - "Device: Command": workflows/triggers/device-command.md
+        - "Device: Connect": workflows/triggers/on-connect.md
+        - "Device: Disconnect": workflows/triggers/on-disconnect.md
+        - "Device: Inactive": workflows/triggers/on-inactivity.md
+        - "Device: State": workflows/triggers/device.md
+        - Endpoint: workflows/triggers/endpoint.md
         - Event: workflows/triggers/event.md
         - GCP Pub/Sub: workflows/triggers/google-pub-sub.md
+        - HTTP Request: workflows/triggers/request.md
         - MQTT: workflows/triggers/mqtt.md
         - Particle: workflows/triggers/particle.md
         - Timer: workflows/triggers/timer.md
@@ -130,11 +141,11 @@ pages:
         - Function: workflows/logic/function.md
         - Geofence: workflows/logic/geofence.md
         - HTML/XML Parser: workflows/logic/html-parser.md
-        - JSON Decode: workflows/logic/json-decode.md
-        - JSON Encode: workflows/logic/json-encode.md
-        - JWT Create: workflows/logic/jwt-create.md
-        - JWT Decode: workflows/logic/jwt-decode.md
-        - JWT Verify: workflows/logic/jwt-verify.md
+        - "JSON: Decode": workflows/logic/json-decode.md
+        - "JSON: Encode": workflows/logic/json-encode.md
+        - "JWT: Create": workflows/logic/jwt-create.md
+        - "JWT: Decode": workflows/logic/jwt-decode.md
+        - "JWT: Verify": workflows/logic/jwt-verify.md
         - Latch: workflows/logic/latch.md
         - Loop: workflows/logic/loop.md
         - Math: workflows/logic/math.md
@@ -148,25 +159,30 @@ pages:
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
         - AWS Lambda: workflows/data/aws-lambda.md
-        - Data Gauge Query: workflows/data/gauge-query.md
-        - Data Time Series: workflows/data/time-series.md
-        - Device Create: workflows/data/create-device.md
-        - Device Get: workflows/data/get-device.md
-        - Device Update: workflows/data/update-device.md
-        - Device Delete: workflows/data/delete-device.md
-        - GCP BigQuery: workflows/data/google-big-query.md
-        - GCP ML: workflows/data/google-ml.md
+        - "Data: Gauge Query": workflows/data/gauge-query.md
+        - "Data: Time Series": workflows/data/time-series.md
+        - "Device: Create": workflows/data/create-device.md
+        - "Device: Get": workflows/data/get-device.md
+        - "Device: Update": workflows/data/update-device.md
+        - "Device: Delete": workflows/data/delete-device.md
+        - "File: Read": workflows/data/file-read.md
+        - "File: Write": workflows/data/file-write.md
+        - "GCP: BigQuery": workflows/data/google-big-query.md
+        - "GCP: ML": workflows/data/google-ml.md
         - HTTP: workflows/data/http.md
         - Losant API: workflows/data/losant-api.md
+        - "Modbus: Read": workflows/data/modbus-read.md
+        - "Modbus: Write": workflows/data/modbus-write.md
         - MongoDB: workflows/data/mongo.md
         - Redis: workflows/data/redis.md
+        - Run Executable: workflows/data/run-executable.md
         - Salesforce Cases: workflows/data/salesforce-cases.md
-        - Storage Get Value: workflows/data/get-value.md
-        - Storage Set Value: workflows/data/store-value.md
-        - Table Insert Row: workflows/data/table-insert-row.md
-        - Table Get Rows: workflows/data/table-get-rows.md
-        - Table Update Row: workflows/data/table-update-row.md
-        - Table Delete Rows: workflows/data/table-delete-row.md
+        - "Storage: Get Value": workflows/data/get-value.md
+        - "Storage: Set Value": workflows/data/store-value.md
+        - "Table: Insert Row": workflows/data/table-insert-row.md
+        - "Table: Get Rows": workflows/data/table-get-rows.md
+        - "Table: Update Row": workflows/data/table-update-row.md
+        - "Table: Delete Rows": workflows/data/table-delete-row.md
     - Outputs:
         - Debug: workflows/outputs/debug.md
         - Device Command: workflows/outputs/device-command.md
@@ -175,6 +191,7 @@ pages:
         - Endpoint Reply: workflows/outputs/endpoint-reply.md
         - GCP Pub/Sub: workflows/outputs/google-pub-sub.md
         - HTTP: workflows/outputs/http.md
+        - HTTP Response: workflows/outputs/http-response.md
         - Modify Event: workflows/outputs/modify-event.md
         - MQTT: workflows/outputs/mqtt.md
         - Particle Call: workflows/outputs/particle-call.md
@@ -216,6 +233,7 @@ pages:
     - Device Recipes: rest-api/device-recipes.md
     - Device: rest-api/device.md
     - Devices: rest-api/devices.md
+    - Edge Deployments: rest-api/edge-deployments.md
     - Event: rest-api/event.md
     - Events: rest-api/events.md
     - Experience Domain: rest-api/experience-domain.md

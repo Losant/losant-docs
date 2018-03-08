@@ -1,18 +1,22 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Geofence Node.
+
 # Geofence Node
 
-The geofence node allows a workflow to branch based upon the distance between two coordinates.
+The Geofence Node allows a workflow to branch based upon the distance between two coordinates.
 
 ![Geofence Node](/images/workflows/logic/geofence-node.png "Geofence Node")
 
 ## Configuration
 
-The geofence node has 4 distinct configuration sections - the coordinates to check (the "input" coordinates), the center point coordinates, the center point radius, and an optional [payload path](/workflows/accessing-payload-data/#payload-paths) for the calculated distance.
+The Geofence Node has 4 distinct configuration sections - the coordinates to check (the "input" coordinates), the center point coordinates, the center point radius, and an optional [payload path](/workflows/accessing-payload-data/#payload-paths) for the calculated distance.
 
-When the geofence node runs, it calculates the distance between the input and center point coordinates, and if that distance is less than or equal to the defined center point radius, the `true` route on the right out of the node is taken. If that distance is greater than the center point radius, the `false` route on the left out of the node is taken. If the distance between the two points cannot be calculated for some reason, the `false` route on the left out of the node is taken.
+When the Geofence Node runs, it calculates the distance between the input and center point coordinates, and if that distance is less than or equal to the defined center point radius, the `true` route on the right out of the node is taken. If that distance is greater than the center point radius, the `false` route on the left out of the node is taken. If the distance between the two points cannot be calculated for some reason, the `false` route on the left out of the node is taken.
 
 ![Geofence Node Example](/images/workflows/logic/geofence-node-example.png "Geofence Node Example")
 
-In the above example, there are actually two different geofences. The first checks against a center point position that represents "Home". If that is true (the route to the right), it records that payload as being "At Home". If that is false (the route to the left), it moves on to the second geofence, which checks against a center point position that represents "Work". If that is true (the route to the right), it records that payload as being "At Work", but if that is false (the route to the left), it records that payload as being "Other".
+In the above example, there are actually two different geofences. The first checks against a center point position that represents "Home". If that is `true` (the route to the right), it records that payload as being "At Home". If that is `false` (the route to the left), it moves on to the second geofence, which checks against a center point position that represents "Work". If that is `true` (the route to the right), it records that payload as being "At Work", but if that is `false` (the route to the left), it records that payload as being "Other".
 
 ### Input Coordinate Configuration
 
@@ -36,7 +40,7 @@ The radius of the center point is defined in meters, and must be greater than 0.
 
 ![Geofence Node Distance Value](/images/workflows/logic/geofence-node-distance-value.png "Geofence Node Distance Value")
 
-The geofence node has the ability to optionally add the calculated distance between the input and center point to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the geofence node is taken. If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the path. In the above example, the distance between the input and center coordinates will be placed at the `data.distance.work` path.
+The Geofence Node has the ability to optionally add the calculated distance between the input and center point to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the Geofence Node is taken. If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the path. In the above example, the distance between the input and center coordinates will be placed at the `data.distance.work` path.
 
 The node also has the ability to optionally add which branch out of the node was taken to the payload. If a path is defined, `true` or `false` will be placed at the given path, depending on which branch out of the node is taken. In the above example, the branch taken will be placed at the `data.geobranch.work` path.
 

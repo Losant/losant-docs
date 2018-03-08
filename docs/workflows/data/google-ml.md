@@ -1,6 +1,10 @@
+flowclass: Cloud
+flowclass: Edge 1.0.0
+description: Learn more about the Losant Google Cloud Platform ML Node.
+
 # GCP ML Node
 
-The GCP (Google Cloud Platform) ML node allows a workflow to send data to [Google ML](https://cloud.google.com/ml-engine/docs/technical-overview) and store the resulting predictions on the workflow payload.
+The GCP (Google Cloud Platform) ML Node allows a workflow to send data to [Google ML](https://cloud.google.com/ml-engine/docs/technical-overview) and store the resulting predictions on the workflow payload.
 
 ![GCP ML Node](/images/workflows/data/google-ml-node.png "GCP ML Node")
 

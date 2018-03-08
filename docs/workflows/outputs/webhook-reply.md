@@ -1,12 +1,15 @@
+flowclass: Cloud
+description: Learn more about the Losant Webhook Reply Node.
+
 # Webhook Reply Node
 
-The webhook reply node allows a workflow to send a reply back to a webhook trigger (as long as the webhook is configured to [wait for a reply](/applications/webhooks/#custom-replies)).
+The Webhook Reply Node allows a workflow to send a reply back to a webhook trigger (as long as the webhook is configured to [wait for a reply](/applications/webhooks/#custom-replies)).
 
 ![Webhook Reply Node](/images/workflows/outputs/webhook-reply-node.png "Webhook Reply Node")
 
 ## Configuration
 
-All the standard components of an HTTP response are configurable in the Webhook Reply node - the response code, the body, and the headers.
+All the standard components of an HTTP response are configurable in the Webhook Reply Node - the response code, the body, and the headers.
 
 ![Webhook Reply Node Config](/images/workflows/outputs/webhook-reply-node-config.png "Webhook Reply Node Config")
 
@@ -25,8 +28,8 @@ Arbitrary headers can also be set on the reply. Both the header name and value f
 
 ## Advanced Options
 
-The webhook reply node has one optional advanced option - setting the payload path to the `replyId`.
+The Webhook Reply Node has one optional advanced option - setting the payload path to the `replyId`.
 
 ![Webhook Reply Node ReplyId](/images/workflows/outputs/webhook-reply-node-replyid.png "Webhook Reply Node ReplyId")
 
-The reply ID path by default is `data.replyId` - which is where a webhook (that expects a reply) places the reply ID for the current webhook trigger request. But if for some reason you have moved the replyId to a different part of the payload, or you are using multiple workflows and passing the replyId between them under a different field name, you can set the path to that field here. If there is no reply ID at the path given, the webhook reply node does nothing.
+The reply ID path by default is `data.replyId` - which is where a webhook (that expects a reply) places the reply ID for the current webhook trigger request. But if for some reason you have moved the replyId to a different part of the payload, or you are using multiple workflows and passing the replyId between them under a different field name, you can set the path to that field here. If there is no reply ID at the path given, the Webhook Reply Node does nothing.

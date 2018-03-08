@@ -38,6 +38,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | perPage | N | How many items to return per page | 1000 | 10 |
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*flow |
+| flowClass | N | Filter the workflows by the given flow class. Accepted values are: edge, cloud |  | cloud |
 | triggerFilter | N | Array of triggers to filter by - always filters against default flow version. See [Workflow Trigger Filter](schemas.md#workflow-trigger-filter) for more details. |  | [Workflow Trigger Filter Example](schemas.md#workflow-trigger-filter-example) |
 
 ### Request Headers <a name="get-headers"></a>
