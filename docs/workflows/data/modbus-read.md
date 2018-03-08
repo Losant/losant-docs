@@ -3,7 +3,7 @@ description: Learn more about the Losant Modbus: Read Node.
 
 # Modbus: Read
 
-The Modbus Read Node allows you to read multiple registers from your modbus machine. This node is *only* available in workflows for your edge device agent.
+The *Modbus Read Node* allows you to read multiple registers from your modbus machine. This node is *only* available in workflows for your edge device agent.
 
 ![Modbus Read Node](/images/workflows/data/modbus-read-node.png "Modbus Read Node")
 
@@ -13,9 +13,9 @@ The Modbus Read Node allows you to read multiple registers from your modbus mach
 
 There are two main parts of the configuration for this node - Address Configuration and Read Instructions.
 
-Address Configuration contains four fields - host template, port template, unit ID template, endianness. All are [templatable](/workflows/accessing-payload-data/#string-templates) expect for endianness. Endianness has two options: `Big` or `Little`.
+Address Configuration contains four fields - host template, port template, unit ID template, endianness. All are [templatable](/workflows/accessing-payload-data/#string-templates) except for endianness. Endianness has two options: `Big` or `Little`.
 
-Read Instructions have four fields - register type, address template, length template, result key. This node allows several reads to be done at once, so you can read multiple registers and the results of each will Register Types can be anyone of the following - `Input Registers`, `Holding Registers`, `Discrete Input`, and `Coils`. Address Template is required and is [templatable](/workflows/accessing-payload-data/#string-templates). The address must be a number greater than or equal to 0 and less than 65535. By default, length template is 1, this defines how many registers to read past the given address template. The result key will be the key at which the result of this read is set under the result path. The result key *cannot* be at `errors` or be in the path `errors.`, since the `errors` path is a special path where the node will place any errors that occur during reads. If the result key is present it will *always* be a list of results, even if the length is one. See below for examples.
+Read Instructions have four fields - register type, address template, length template, result key. This node allows several reads to be done at once, so you can read multiple registers and the results of each will be presented in the result object keyed by the key field given. Register Types can be any one of the following - `Input Registers`, `Holding Registers`, `Discrete Input`, and `Coils`. Address Template is required and is [templatable](/workflows/accessing-payload-data/#string-templates). The address must be a number greater than or equal to 0 and less than 65535. By default, length template is 1, this defines how many registers to read past the given address template. The result key will be the key at which the result of this read is set under the result path. The result key *cannot* be at `errors` or be in the path `errors`, since the `errors` path is a special path where the node will place any errors that occur during reads. If the result key is present it will *always* be a list of results, even if the length is one. See below for examples.
 
 ## Destination Path
 
