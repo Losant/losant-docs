@@ -47,10 +47,10 @@ Relative links to docs pages should use a trailing `/` . Failing to do so will s
 
 Instead of 
 ```markdown
-Somethihng [is a link](/devices/edge-compute) to a place
+Something [is a link](/devices/edge-compute) to a place
 ```
 
 it should be 
 ```markdown
-Somethihng [is a link](/devices/edge-compute/) to a place
+Something [is a link](/devices/edge-compute/) to a place
 ```
