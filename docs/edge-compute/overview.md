@@ -1,12 +1,12 @@
-description: Learn more about the Losant Edge Compute Engine.
+description: Learn more about Losant Edge Compute.
 
 # Edge Compute
 
-The Losant Edge Compute Engine is a suite of functionality within the Losant platform that allows for deploying [workflows](/workflows/overview/) to your connected [devices](/devices/overview/) and executing those workflows on the device itself. This is in contrast to [cloud workflows](/workflows/cloud-workflows/), which execute in Losant's platform.
+Losant Edge Compute is a suite of functionality within the Losant platform that allows for deploying [workflows](/workflows/overview/) to your connected [devices](/devices/overview/) and executing those workflows on the device itself. This is in contrast to [cloud workflows](/workflows/cloud-workflows/), which execute in Losant's platform.
 
 ## Advantages
 
-Fully utilizing the Edge Compute Engine brings a number of benefits to your application.
+Fully utilizing Losant Edge Compute brings a number of benefits to your application.
 
 ### Local Control
 
@@ -16,7 +16,7 @@ This difference is achieved by acting on the value of that sensor and making the
 
 ### Low Connectivity Solutions
 
-If your devices are deployed in environments where internet service is intermittent, you can use the Edge Compute Engine to accumulate state reports on the device. Then, the next time the device connects, those reports can be sent up to the cloud platform.
+If your devices are deployed in environments where internet service is intermittent, you can use Losant Edge Compute to accumulate state reports on the device. Then, the next time the device connects, those reports can be sent up to the cloud platform.
 
 ### Data Filtering
 
@@ -24,11 +24,11 @@ Your devices and sensors can potentially generate hundreds of data points per se
 
 ### Low-Code Applications
 
-Much like with the [Workflow Engine](/workflows/overview/) itself, the Edge Compute Engine allows less-technical end users to make behavior changes within their connected devices without having to work in a coding environment. Then, updating, versioning and deploying the changes is all done through Losant's web interface, and since all changes require creating a [version](/workflows/versioning/), any mistakes can quickly be rolled back by deploying an older, stable version.
+Much like with the [Workflow Engine](/workflows/overview/) itself, Edge Compute allows less-technical end users to make behavior changes within their connected devices without having to work in a coding environment. Then, updating, versioning and deploying the changes is all done through Losant's web interface, and since all changes require creating a [version](/workflows/versioning/), any mistakes can quickly be rolled back by deploying an older, stable version.
 
 ## Using Edge Compute
 
-To get started with the Edge Compute Engine, you will have to follow these steps. More detailed information is available within the respective documentation for each section.
+To get started with Edge Compute, you will have to follow these steps. More detailed information is available within the respective documentation for each section.
 
 1. In your [application](/applications/overview/), create a [new device](/devices/overview/#adding-a-device) and set its [device type](/devices/overview/#device-type) to "Edge Compute". Only devices of this type can receive workflows to run locally from the Losant platform.
 2. [Create an access key and secret](/applications/access-keys/#generating-an-access-key) for your new device. While we always recommend generating a new key/secret pair per device, this step may not be necessary if you already have a key and secret configured to work for all devices in your application, or to work for all devices with a [tag](/devices/overview/#device-tags) that you applied to your device during creation.
