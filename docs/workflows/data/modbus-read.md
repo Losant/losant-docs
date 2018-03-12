@@ -29,7 +29,7 @@ You may define multiple read instructions for the Modbus: Read Node, and you mus
 *   **Register Type:** (Required) `Input Registers` (default), `Holding Registers`, `Discrete Input`, or `Coils`.
 *   **Address:** (Required) A string template or integer for the address at which to read. This should resolve to an integer between `0` and `65534` inclusive.
 *   **Length:** The length for this read instruction. This field is optional, but if it set, it should resolve to an integer greater than `0`. If not set, the length defaults to `1`.
-*   **Result Key:** (Required) The key at which to store the result of this read operation. This key will exist on the [Destination Path](#result) defined below the instructions. This can resolve to any string except `errors`, since that key is reserved for any errors that occur during reads.
+*   **Result Key:** (Required) The key at which to store the result of this read operation. This key will exist on the [Destination Path](#result) defined below the instructions. This can resolve to any string except `errors`, since that key is reserved for any errors that occur during reads. The value at this key is read as a *signed integer*.
 
 ### Destination Path
 
