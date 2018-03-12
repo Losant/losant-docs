@@ -22,7 +22,7 @@ sudo chmod a+rwx -R /var/lib/losant-edge-agent
 There are only three required environment variables that must be set to run the container. You must provide the `DEVICE_ID` obtained when you [created your edge compute device](/devices/edge-compute/), as well as the `ACCESS_KEY` and `ACCESS_SECRET` [associated with your application](/applications/access-keys/). Although these are the only required configuration, we're also going to mount in a volume for the Agent to write to.
 
 ```console
-docker run -d --name docs-agent \
+docker run -d --restart always --name docs-agent \
   -e 'DEVICE_ID=<your-device-id>' \
   -e 'ACCESS_KEY=<your-access-key>' \
   -e 'ACCESS_SECRET=<your-access-secret>' \
@@ -30,7 +30,7 @@ docker run -d --name docs-agent \
   losant/edge-agent
 ```
 
-Let's break this down a little bit. By specifying the `-d` parameter to `docker run`, we are asking the Agent to run in the background so we have control of our terminal after running the Agent. The `--name` option allows us to name our container so that we may stop and start it more easily in the future. The `-e` allows us to enumerate any and all environment variables we would like to pass in as configuration. Lastly, the `-v` flag tells `docker run` that we would like to mount our host folder `/var/lib/losant-edge-agent/data` as `/data` inside the container. Note, by specifying an image `losant/edge-agent` without a tag, we are asking for the `latest` tag of the Agent. It is recommended that you select a version- `losant/edge-agent:1.0.0` for example.
+Let's break this down a little bit. By specifying the `-d` parameter to `docker run`, we are asking the Agent to run in the background so we have control of our terminal after running the Agent. The `--restart always` option tells Docker to always restart the container if it were to die unexpectedly or on device boot. This aids in keeping your Edge Compute Device up and running with minimal intervention. The `--name` option allows us to name our container so that we may stop and start it more easily in the future. The `-e` allows us to enumerate any and all environment variables we would like to pass in as configuration. Lastly, the `-v` flag tells `docker run` that we would like to mount our host folder `/var/lib/losant-edge-agent/data` as `/data` inside the container. Note, by specifying an image `losant/edge-agent` without a tag, we are asking for the `latest` tag of the Agent. It is recommended that you select a version- `losant/edge-agent:1.0.0` for example.
 
 ## Managing The Edge Agent
 
@@ -38,7 +38,7 @@ Before we move on to more advanced ways of configuring the Agent, let's quickly 
 
 In general, the `docker --help` information is very useful for familiarizing yourself with the commands. Below, we're going to cover some basic management commands. A few of which, we've already started using. Let's recap those plus some additional ones that should allow you to get up and running for basic use cases.
 
-**> `docker run [-d] [--rm] [--name] [-e] [-v] <image-name>` ([more info](https://docs.docker.com/engine/reference/commandline/container_run/))**
+**> `docker run [-d] [--restart] [--rm] [--name] [-e] [-v] <image-name>` ([more info](https://docs.docker.com/engine/reference/commandline/container_run/))**
 
 This command allows us to configure a container from a base image. In our case, `losant/edge-agent`. We've talked about most of the above options in this document as we've been using the Agent. The only one not mentioned elsewhere is the `--rm` flag, which will tell docker to destroy the container after it has been stopped/killed. This is useful as you work to figure out your final configuration. There are, of course, many more flags you can use with `docker run`.
 
@@ -128,7 +128,7 @@ path = '/data/losant-edge-agent-store.db'
 Notice that we are designating the logger to output to the same `/data` directory within the container that the store is writing to. This allows us to just mount a local folder on our host to the `/data` directory in the Agent container and have all persistent data written to a single place. Now we can run the Agent container without specifying environment variables, and instead simply provide the path to our `config.toml`.
 
 ```console
-docker run -d --name docs-agent \
+docker run -d --restart always --name docs-agent \
   -v /var/lib/losant-edge-agent/data:/data \
   -v /var/lib/losant-edge-agent/config.toml:/etc/losant/losant-edge-agent-config.toml \
   losant/edge-agent
@@ -168,7 +168,7 @@ docker restart docs-agent
 If you wish to enable the [HTTP Request Trigger](/workflows/triggers/request/) for your Edge Compute Device, you can do so by binding a host port at the time of container creation. In order to build on the configuration we have going, we only need to add the `-p` flag and then configure the Agent in our configuration file to enable the trigger. See [exposing ports](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p-expose) with Docker for more information. For more advanced configuration of the [HTTP Request Trigger](/workflows/triggers/request/) and [HTTP Response Node](/workflows/outputs/http-response/), see the [Docker Hub Repo](https://hub.docker.com/r/losant/edge-agent/).
 
 ```console
-docker run -d --name docs-agent \
+docker run -d --restart always --name docs-agent \
   -v /var/lib/losant-edge-agent/data:/data \
   -v /var/lib/losant-edge-agent/config.toml:/etc/losant/losant-edge-agent-config.toml \
   -p 8080:8080
