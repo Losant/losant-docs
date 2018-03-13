@@ -10,7 +10,7 @@ This system is made up of a kegerator with a <a href="https://www.bannerengineer
 
 ## Register the Devices
 
-[Edge Compute device types](/devices/edge-compute/) can report state for themselves or for any number of peripheral devices. This example includes one peripheral, which is the kegerator itself. The Raspberry Pi will be the edge compute device that's responsible for reading the Modbus endpoint.
+[Edge Compute device types](/devices/edge-compute/) can report state for themselves or for any number of peripheral devices. This example includes one peripheral, which is the kegerator itself. The Raspberry Pi will be the Edge Compute device that's responsible for reading the Modbus endpoint.
 
 Using the `Devices -> Add Device` main application menu, first create the Edge Compute device.
 
@@ -114,7 +114,7 @@ You can create an edge workflow by clicking the `Workflows -> Create Workflow` m
 
 ![Edge Agent Version](/images/edge-compute/walkthrough/edge-agent-version.png "Edge Agent Version")
 
-It's important to ensure the version you select for `Minimum Agent Version` is the same or below whatever you have installed on your edge devices. Losant continually updates the Agent with new capabilities. This setting ensures the workflows you're about to build will be supported by the Agent version you have installed.
+It's important to ensure the version you select for `Minimum Agent Version` is the same or below whatever you have installed on your edge devices. Losant continually updates the Agent with new capabilities. This setting ensures the workflows you're about to build will be supported by the Agent version you have installed. We always default this option to the latest Agent version, so if you just installed the Agent, you should be good to go.
 
 Once you click `Create Workflow`, you'll be presented with a blank edge workflow canvas.
 
@@ -150,7 +150,7 @@ At this point, no data is being sent to the cloud, but this is a good time to de
 
 Losant keeps track of every version of every workflow deployed to Edge Compute devices. This means a workflow must first be versioned before it can be deployed. This popup provides a quick way to version this workflow, which defaults to the current date and time in UTC. You can change it to whatever you'd like. You next need to choose which Edge Compute devices to deploy this workflow version to. Choose the Edge Compute device you created earlier in this walkthrough. Click the `Deploy Version` button to schedule this deployment.
 
-Under normal conditions, a workflow version will be successfully deployed to an Edge Compute device in a matter of a few seconds. You can monitor the process by clicking the `Deployments` tab on the menu along the right side of the screen.
+Under normal conditions and if your device is currently connected, a workflow version will be successfully deployed to an Edge Compute device in a matter of a few seconds. You can monitor the process by clicking the `Deployments` tab on the menu along the right side of the screen.
 
 After the deploy completes, open the `Debug` tab and select your Edge Compute device from the dropdown. This will allow you to stream any debug information from that device to your browser. You can use this to verify that your Modbus read operations are working correctly.
 
@@ -164,7 +164,7 @@ Information stored in Modbus registers is not always in a friendly format. Below
 
 ![Modbus Registers](/images/edge-compute/walkthrough/modbus-registers.png "Modbus Registers")
 
-As you can see, we're getting a value between 0 and 10000 for humidity, and between -32768 and 32767 for Celsius and Fahrenheit. So in order to convert these to actual values, we need to divide humidity by 100 and divide the temperatures by 20.
+As you can see, we're getting a value between 0 and 10000 for humidity, and between -32768 and 32767 for Celsius and Fahrenheit. So in order to convert these to actual values, we need to divide humidity by 100 and divide the temperatures by 20. These values were found by dividing the raw range by the actual range. So for humidity, the raw range is 0 to 10000, which translates to an actual range of 0 to 100. 10000 divided by 100 gives us our conversion factor of 100.
 
 Fortunately, this is easily done with a [Math Node](/workflows/logic/math/).
 
@@ -188,7 +188,7 @@ The last step is to report these converted values to our kegerator peripheral. A
 
 Change the radio to `Select a specific device` and choose the peripheral device created earlier. In this example, the peripheral device is named "Kegerator".
 
-This device has two attributes, one for humdity and one for temperature. Set the humidity value to `{{ state.humidity }}` and set the temperature value to `{{ state.tempF }}`. In this example, the temperature in Celsius won't be reported to the cloud. After you save and deploy this workflow again, data is now being reported from your edge device to the cloud. You can verify this by opening the `Debug` tab on your peripheral device page.
+This device has two attributes, one for humdity and one for temperature. Set the humidity value to `{{ state.humidity }}` and set the temperature value to `{{ state.tempF }}`. In this example, the temperature in Celsius won't be reported to the cloud, however you could add additional nodes to perform more edge processing on the Celsius data if you'd like. After you save and deploy this workflow again, data is now being reported from your edge device to the cloud. You can verify this by opening the `Debug` tab on your peripheral device page.
 
 ![Device Debug Tab](/images/edge-compute/walkthrough/device-debug-tab.png "Device Debug Tab")
 
