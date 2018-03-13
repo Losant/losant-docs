@@ -10,7 +10,7 @@ This system is made up of a kegerator with a <a href="https://www.bannerengineer
 
 ## Register the Devices
 
-[Edge Compute device types](/devices/edge-compute/) can report state for themselves or for any number of peripheral devices. This examples includes one peripheral, which is the kegerator itself. The Raspberry Pi will be the edge compute device that's responsible for reading the Modbus endpoint.
+[Edge Compute device types](/devices/edge-compute/) can report state for themselves or for any number of peripheral devices. This example includes one peripheral, which is the kegerator itself. The Raspberry Pi will be the edge compute device that's responsible for reading the Modbus endpoint.
 
 Using the `Devices -> Add Device` main application menu, first create the Edge Compute device.
 
@@ -24,7 +24,7 @@ Next, create a second device for the Kegerator peripheral.
 
 ![Peripheral Device](/images/edge-compute/walkthrough/peripheral-device.png "Peripheral Device")
 
-This example named the device "Kegerator", but you can name it anything you'd like. Set the device type to `Peripheral` and set the gateway to our previously created Edge Compute device. This is primarily an access control setting, which restricts which gateways are allowed to report state on behalf of this peripheral. Lastly, add the two attributes for temperature and humidity. When done, click the `Create Device` button to add this device to your application.
+In this example we named the device "Kegerator", but you can name it anything you'd like. Set the device type to `Peripheral` and set the gateway to our previously created Edge Compute device. This is primarily an access control setting, which restricts which gateways are allowed to report state on behalf of this peripheral. Lastly, add the two attributes for temperature and humidity. When done, click the `Create Device` button to add this device to your application.
 
 ## Create Access Key and Secret
 
@@ -44,7 +44,7 @@ After clicking `Create Access Key`, you'll be presented with a popup with your n
 
 ## Install Losant Edge Agent
 
-Losant Edge Compute works by deploying [Edge Workflows](/workflows/edge-workflows/) to your devices. In order to receive, process, and manage these workflows on the device, the Losant Edge Agent ("Agent") must be installed.
+Losant Edge Compute works by deploying [edge workflows](/workflows/edge-workflows/) to your devices. In order to receive, process, and manage these workflows on the device, the Losant Edge Agent ("Agent") must be installed.
 
 Follow the [Agent Installation Guide](/edge-compute/edge-agent-installation/) for step-by-step instructions.
 
@@ -68,7 +68,7 @@ secret = '<your-access-secret>'
 path = '/data/losant-edge-agent-store.db'
 ```
 
-The Agent also stores data locally, so it's recommended to create a local folder and mount it inside the Docker container when you run it. This way the data is persisted between restarts of the container.
+The Agent also stores data locally, so it's recommended to create a local folder and mount it inside the Docker container when you run it. This way, the data persists between restarts of the container.
 
 ```console
 sudo mkdir -p /var/lib/losant-edge-agent/data
@@ -86,7 +86,7 @@ docker run -d --restart always --name losant-edge-agent \
   losant/edge-agent
 ```
 
-If you open the edge compute device page prior to running this command, you'll see it log some connection information when the Agent is started.
+If you open the Edge Compute device page prior to running this command, you'll see it log some connection information when the Agent is started.
 
 ![Edge Agent Connection](/images/edge-compute/walkthrough/edge-agent-connection.png "Edge Agent Connection")
 
@@ -96,7 +96,7 @@ If nothing shows in the device log when the Agent is started, try inspecting the
 docker logs losant-edge-agent
 ```
 
-You should see output similar to the image below. If there are any errors, they will be displayed and should provide helpful information to debug any issues.
+You should see an output similar to the image below. If there are any errors, they will be displayed and should provide helpful information to debug any issues.
 
 ![Docker Logs](/images/edge-compute/walkthrough/docker-logs.png "Docker Logs")
 
@@ -104,9 +104,9 @@ If you need to fix or change any configuration fields, you can simply edit the c
 
 ## Build the Workflow
 
-Now that you have the Agent installed and running, you can build and deploy an Edge Workflow to start reading Modbus information.
+Now that you have the Agent installed and running, you can build and deploy an edge workflow to start reading Modbus information.
 
-You can create an Edge Workflow by clicking the `Workflows -> Create Workflow` main application menu.
+You can create an edge workflow by clicking the `Workflows -> Create Workflow` main application menu.
 
 ![Create Workflow Menu](/images/edge-compute/walkthrough/create-workflow-menu.png "Create Workflow Menu")
 
@@ -128,7 +128,7 @@ Start by first dragging a [Timer Node](/workflows/triggers/timer/), a [Modbus Re
 
 The Modbus Read Node has three primary configuration sections. The first is the endpoint itself, which on our network is located at the address `192.168.1.117` on port `502`. You can also adjust the `Unit ID` or `Endianness` if your environment requires those to be changed.
 
-The next section is the registers to read. This will change greatly depending on what piece of equipment you're reading from, but our Banner Wireless Controller is configured to expose the humidity on Holding Register 0, the temperature in Celsius on Holding Register 1, and the temperature in Fahrenheit on Holding Register 2. Each register has a required length field as well. In this case, the data is stored in a single register, so the length is set to 1. As you read registers, an object is being built on the workflow payload with the value of each register stored on whatever you specified in the `Result Key` field.
+The next section includes the registers to read. This will change greatly depending on what piece of equipment you're reading from, but our Banner Wireless Controller is configured to expose the humidity on Holding Register 0, the temperature in Celsius on Holding Register 1, and the temperature in Fahrenheit on Holding Register 2. Each register has a required length field as well. In this case, the data is stored in a single register, so the length is set to 1. As you read registers, an object is being built on the workflow payload with the value of each register stored on whatever you specified in the `Result Key` field.
 
 The last configuration section is the `Destination Path`. This is where the final result object, with each key specified by the registers, will be placed on the payload. So in this example, an object with three keys (humidity, tempC, and tempF) will be put on the payload at `working.modbus`. The value at each key will be an array equal to the length configured for that register.
 
@@ -144,15 +144,15 @@ The last configuration section is the `Destination Path`. This is where the fina
 }
 ```
 
-At this point, no data is being sent to the cloud, but this is a good time to deploy and test that this workflow is properly reading Modbus data. Click the `Save` button on the top-right of the screen and then click the  `Deploy` button.
+At this point, no data is being sent to the cloud, but this is a good time to deploy and test that this workflow is properly reading Modbus data. Click the `Save` button on the top right of the screen and then click the  `Deploy` button.
 
 ![Deploy Popup](/images/edge-compute/walkthrough/deploy-popup.png "Deploy Popup")
 
-Losant keeps track of every version of every workflow deployed to edge compute devices. This means a workflow must first be versioned before it can be deployed. This popup provides a quick way to version this workflow, which defaults to the current date and time in UTC. You can change it to whatever you'd like. You next need to choose which edge compute devices to deploy this workflow version to. Choose the edge compute device you created earlier in this walkthrough. Click the `Deploy Version` button to schedule this deployment.
+Losant keeps track of every version of every workflow deployed to Edge Compute devices. This means a workflow must first be versioned before it can be deployed. This popup provides a quick way to version this workflow, which defaults to the current date and time in UTC. You can change it to whatever you'd like. You next need to choose which Edge Compute devices to deploy this workflow version to. Choose the Edge Compute device you created earlier in this walkthrough. Click the `Deploy Version` button to schedule this deployment.
 
-Under normal conditions, a workflow version will be successfully deployed to an edge compute device in a matter of a few seconds. You can monitor the process by clicking the `Deployments` tab on the menu along the right side of the screen.
+Under normal conditions, a workflow version will be successfully deployed to an Edge Compute device in a matter of a few seconds. You can monitor the process by clicking the `Deployments` tab on the menu along the right side of the screen.
 
-After the deploy completes, open the `Debug` tab and select your edge compute device from the dropdown. This will allow you to stream any debug information from that device to your browser. You can use this to verify that your Modbus read operations are working correctly.
+After the deploy completes, open the `Debug` tab and select your Edge Compute device from the dropdown. This will allow you to stream any debug information from that device to your browser. You can use this to verify that your Modbus read operations are working correctly.
 
 ![Debug Output](/images/edge-compute/walkthrough/debug-output.png "Debug Output")
 
@@ -160,7 +160,7 @@ When you hover over a debug message, a notice will show up over the canvas area 
 
 Since it looks like this workflow is successfully reading Modbus data, we can continue editing the workflow to translate the values and report them to the cloud.
 
-What's stored in Modbus registers is not always in a friendly format. Below is the table from the Banner temperature sensor that describes how the data is stored and how it translates to actual values.
+Information stored in Modbus registers is not always in a friendly format. Below is the table from the Banner temperature sensor that describes how the data is stored and how it translates to actual values.
 
 ![Modbus Registers](/images/edge-compute/walkthrough/modbus-registers.png "Modbus Registers")
 
@@ -170,7 +170,7 @@ Fortunately, this is easily done with a [Math Node](/workflows/logic/math/).
 
 ![Math Node](/images/edge-compute/walkthrough/math-node.png "Math Node")
 
-Add three expressions, one for each conversion, to the math node.
+Add three expressions, one for each conversion, to the Math Node.
 
 ```text
 1. {{ working.modbus.humidity.[0] }} / 100
@@ -192,6 +192,6 @@ This device has two attributes, one for humdity and one for temperature. Set the
 
 ![Device Debug Tab](/images/edge-compute/walkthrough/device-debug-tab.png "Device Debug Tab")
 
-The device's debug tab allows you see recent state messages reported by this device. You can also view real-time activity by inspecting the Device Log, which on the right side of every device tab.
+The device's debug tab allows you see recent state messages reported by this device. You can also view real-time activity by inspecting the Device Log, which is on the right side of every device tab.
 
-At this point, you've successfully deployed a working edge compute device that reads local Modbus data over TCP, performs some processing on that data, and then reports it to the cloud. You can now trigger a [Cloud Workflow](/workflows/cloud-workflows/) for further processing or alerting, build a [Dashboard](/dashboards/overview/) to visualize this data, or use [Experiences](/experiences/overview/) to create an entire custom application.
+At this point, you've successfully deployed a working Edge Compute device that reads local Modbus data over TCP, performs some processing on that data, and then reports it to the cloud. You can now trigger a [cloud workflow](/workflows/cloud-workflows/) for further processing or alerting, build a [Dashboard](/dashboards/overview/) to visualize this data, or use [Experiences](/experiences/overview/) to create an entire custom application.
