@@ -38,13 +38,23 @@ Verify that you now have the key with the fingerprint `9DC8 5822 9FC7 DD38 854A 
 sudo apt-key fingerprint 0EBFCD88
 ```
 
-Use the following command to set up the stable repository:
+Use the following command to set up the stable repository (`amd`):
 
 ```console
+# Amd
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
+```
+
+If you came here while doing [the walkthrough](/edge-compute/walkthrough/), you'll want the `arm` stable repository:
+
+```console
+# Arm
+echo "deb [arch=armhf] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
+    $(lsb_release -cs) stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list
 ```
 
 ## Installing Docker
