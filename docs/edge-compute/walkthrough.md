@@ -5,13 +5,12 @@ This guide provides a complete walkthrough for using [Losant Edge Compute](/edge
 <p style="text-align:center"><iframe width="560" height="315" src="https://www.youtube.com/embed/5tpFbnefbc8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
 
 ## Introduction
-This system is made up of a kegerator with a <a href="https://www.bannerengineering.com/us/en/products/wireless-sensor-networks/wireless-sensors/m12f-temperature-and-humidity-sensors-wireless.html#all" target="_blank">Banner Temperature &amp; Humidity Sensor</a> installed inside it, a <a href="https://www.bannerengineering.com/us/en/products/wireless-sensor-networks/wireless-controllers/industrial-wireless-controller-dxm-series.html#all" target="_blank">Banner Wireless Controller</a>  and a Raspberry Pi as the Edge Compute device. 
+
+This system is made up of a kegerator with a <a href="https://www.bannerengineering.com/us/en/products/wireless-sensor-networks/wireless-sensors/m12f-temperature-and-humidity-sensors-wireless.html#all" target="_blank">Banner Temperature &amp; Humidity Sensor</a> installed inside it, a <a href="https://www.bannerengineering.com/us/en/products/wireless-sensor-networks/wireless-controllers/industrial-wireless-controller-dxm-series.html#all" target="_blank">Banner Wireless Controller</a>  and a Raspberry Pi as the Edge Compute device.
 
 ![Edge Walkthrough Diagram](/images/edge-compute/walkthrough/edge-walkthrough-diagram.jpg "Edge Walkthrough Diagram")
 
 The Banner Wireless Controller reads sensor data from any number of remote sensors and then exposes that information to your local network over Modbus TCP. The Edge Compute device can then read that Modbus endpoint and report the data to the cloud. Banner is just an example used for this walkthrough. The same lessons apply to any Modbus TCP capable devices you may have.
-
-
 
 ## Register the Devices
 
@@ -80,7 +79,7 @@ sudo mkdir -p /var/lib/losant-edge-agent/data
 sudo chmod a+rwx -R /var/lib/losant-edge-agent
 ```
 
-These commands will create a data folder at `/var/lib/losant-edge-agent/data` and set the required permissions. You will only ever have to run these commands once. 
+These commands will create a data folder at `/var/lib/losant-edge-agent/data` and set the required permissions. You will only ever have to run these commands once.
 
 You can now run the Agent using the following Docker command.
 
@@ -193,7 +192,7 @@ The last step is to report these converted values to our kegerator peripheral. A
 
 Change the radio to `Select a specific device` and choose the peripheral device created earlier. In this example, the peripheral device is named "Kegerator".
 
-This device has two attributes, one for humdity and one for temperature. Set the humidity value to `{{ state.humidity }}` and set the temperature value to `{{ state.tempF }}`. In this example, the temperature in Celsius won't be reported to the cloud, however you could add additional nodes to perform more edge processing on the Celsius data if you'd like. After you save and deploy this workflow again, data is now being reported from your edge device to the cloud. You can verify this by opening the `Debug` tab on your peripheral device page.
+This device has two attributes, one for humidity and one for temperature. Set the humidity value to `{{ state.humidity }}` and set the temperature value to `{{ state.tempF }}`. In this example, the temperature in Celsius won't be reported to the cloud, however you could add additional nodes to perform more edge processing on the Celsius data if you'd like. After you save and deploy this workflow again, data is now being reported from your edge device to the cloud. You can verify this by opening the `Debug` tab on your peripheral device page.
 
 ![Device Debug Tab](/images/edge-compute/walkthrough/device-debug-tab.png "Device Debug Tab")
 
