@@ -2,9 +2,14 @@
 
 This guide provides a complete walkthrough for using [Losant Edge Compute](/edge-compute/overview/) to read data from a piece of industrial equipment using Modbus and then report that data to the cloud.
 
+<p style="text-align:center"><iframe width="560" height="315" src="https://www.youtube.com/embed/5tpFbnefbc8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+
+## Introduction
+This system is made up of a kegerator with a <a href="https://www.bannerengineering.com/us/en/products/wireless-sensor-networks/wireless-sensors/m12f-temperature-and-humidity-sensors-wireless.html#all" target="_blank">Banner Temperature &amp; Humidity Sensor</a> installed inside it, a <a href="https://www.bannerengineering.com/us/en/products/wireless-sensor-networks/wireless-controllers/industrial-wireless-controller-dxm-series.html#all" target="_blank">Banner Wireless Controller</a>  and a Raspberry Pi as the Edge Compute device. 
+
 ![Edge Walkthrough Diagram](/images/edge-compute/walkthrough/edge-walkthrough-diagram.jpg "Edge Walkthrough Diagram")
 
-This system is made up of a kegerator with a <a href="https://www.bannerengineering.com/us/en/products/wireless-sensor-networks/wireless-sensors/m12f-temperature-and-humidity-sensors-wireless.html#all" target="_blank">Banner Temperature &amp; Humidity Sensor</a> installed inside it, a <a href="https://www.bannerengineering.com/us/en/products/wireless-sensor-networks/wireless-controllers/industrial-wireless-controller-dxm-series.html#all" target="_blank">Banner Wireless Controller</a>  and a Raspberry Pi as the Edge Compute device. The Banner Wireless Controller reads sensor data from any number of remote sensors and then exposes that information to your local network over Modbus TCP. The Edge Compute device can then read that Modbus endpoint and report the data to the cloud. Banner is just an example used for this walkthrough. The same lessons apply to any Modbus TCP capable devices you may have.
+The Banner Wireless Controller reads sensor data from any number of remote sensors and then exposes that information to your local network over Modbus TCP. The Edge Compute device can then read that Modbus endpoint and report the data to the cloud. Banner is just an example used for this walkthrough. The same lessons apply to any Modbus TCP capable devices you may have.
 
 
 
