@@ -12,6 +12,24 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
       </div>
     </a>
   </div>
+  <div class="experiences secondary">
+    <a href="/experiences/overview/">
+      <div class="content">
+        <img src="/images/experiences-icon.svg" class="icon" alt="Experiences Icon" />
+        <h2>Experiences</h2>
+        <p>Configure experiences to best serve your team or end user.</p>
+      </div>
+    </a>
+  </div>
+  <div class="edge-compute secondary">
+    <a href="/edge-compute/overview/">
+      <div class="content">
+        <img src="/images/edge-compute-icon.svg" class="icon" alt="Edge Compute Icon" />
+        <h2>Edge Compute</h2>
+        <p>Deploy intelligence to edge devices &amp; remotely manage workflows.</p>
+      </div>
+    </a>
+  </div>
   <div class="devices secondary">
     <a href="/devices/overview/">
       <div class="content">
