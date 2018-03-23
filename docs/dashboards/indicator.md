@@ -6,11 +6,28 @@ The Indicator block displays a color and message of your choosing based on the r
 
 ## Query Configuration
 
-It is possible to build multiple data queries into your indicator block, and the result of each query will be available when writing conditions and displaying data. You must create at least one query, and each must have at least one device or one device tag selected, along with one attribute from which to return data. A duration must also be selected, though the value defaults to "Last received data point".
+### Data Type
+
+![Data Type](/images/dashboards/gauge-data-type.png "Data Type")
+
+The Indicator Block can display points as a **live stream** (re-rendering the block every time a data point hits the platform) or as an **historical** block. Each style has its own advantages:
+
+* **Live stream** blocks provide feedback with more immediacy than historical blocks, as they do not require a dashboard data refresh to populate with new data. If one of the block's segments references multiple devices by ID or tag, the block will update anytime any of those devices reports state for the chosen attribute. For this reason we recommend one device per segment when building live stream blocks.
+* **Historical** charts allow for data to be aggregated according to a number of rules (based on time durations, mathematical functions and the combination of data from multiple sources), and they also allow for [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).
+
+### Duration
+
+To view the current state of your device(s), select "Last received data point". To view an aggregation of your data over a given time period, choose any other value. This option is removed when "Live Stream" is selected for the block's data type.
+
+![Gauge Duration](/images/dashboards/gauge-duration.png "Gauge Duration")
+
+### Queries
+
+It is possible to build multiple data queries into your indicator block, and the result of each query will be available when writing conditions and displaying data. Each must have at least one device or one device tag selected, along with one attribute from which to return data.
 
 ![Indicator Query Configuration](/images/dashboards/indicator-query-config.png "Indicator Query Configuration")
 
-In the event that a duration other than "Last received data point" is selected, or if (within a query) more than one device is selected or at least one device tag is selected, it will also be necessary to select an aggregation method. This is the mathematical operation by which your query will boil down all data from the selected devices and duration into a single value. The default aggregation method is `MEAN`.
+When "Historical" is selected as the block type, and either a duration other than "Last received data point" is selected or more than one device is selected or at least one device tag is selected within a query, it will also be necessary to select an aggregation method for that query. This is the mathematical operation by which your query will boil down all data from the selected devices and duration into a single value. The default aggregation method is `MEAN`.
 
 ## Query Result
 

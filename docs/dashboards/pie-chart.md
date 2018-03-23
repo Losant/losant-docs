@@ -6,9 +6,18 @@ The Pie Chart block displays proportional data across one or more devices. In th
 
 ## Configuration
 
+### Data Type
+
+![Data Type](/images/dashboards/gauge-data-type.png "Data Type")
+
+The Pie Chart can display points as a **live stream** (re-rendering the chart every time a data point hits the platform) or as an **historical** chart. Each style has its own advantages:
+
+* **Live stream** charts provide feedback with more immediacy than historical charts, as they do not require a dashboard data refresh to populate with new data. If one of the block's segments references multiple devices by ID or tag, the block will update anytime any of those devices reports state for the chosen attribute. For this reason we recommend one device per segment when building live stream blocks.
+* **Historical** charts allow for data to be aggregated according to a number of rules (based on time durations, mathematical functions and the combination of data from multiple sources), and they also allow for [viewing past dashboard states](/dashboards/overview/#viewing-past-dashboard-states).
+
 ### Duration
 
-To view the current state of your device(s), select "Last received data point". To view an aggregation of your data over a given time period, choose any other value.
+To view the current state of your device(s), select "Last received data point". To view an aggregation of your data over a given time period, choose any other value. This option is removed when "Live Stream" is selected for the block's data type.
 
 ![Gauge Duration](/images/dashboards/gauge-duration.png "Gauge Duration")
 
