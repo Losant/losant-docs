@@ -1,7 +1,7 @@
 flowclass: Edge 1.0.0
 description: Learn more about the Losant Device Command Trigger.
 
-# Edge Device Command Trigger
+# Device Command Trigger
 
 The Device Command Trigger will trigger a workflow whenever the [edge compute device](/devices/edge-compute/) receives a [command](/devices/commands/).
 
