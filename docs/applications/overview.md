@@ -61,7 +61,7 @@ As a real-time tool, the Communication Log will always begin in an empty state. 
 
 ![Application Globals](/images/applications/application-globals.png "Application Globals")
 
-Application globals are a set of key/value pairs that are accessible inside of any workflow in the current application. This is a great place to store application-wide configuration that is used across multiple workflows, like phone numbers or API keys. Any values configured here are accessible under the globals object on the payload in a workflow run. Application globals can be overridden within a workflow by defining a different value at the same key in the globals for that specific workflow. You can read more about workflow globals [here](/workflows/overview/#workflow-globals).
+Application globals are a set of key/value pairs that are accessible inside of any workflow in the current application. This is a great place to store application-wide configuration that is used across multiple workflows, like phone numbers or API keys. Any values configured here are accessible under the globals object on the payload in a cloud workflow run. The globals will be accessible on the edge workflows, however, if `Only on Cloud Workflows` is checked that pair will not be available in the edge workflows. Application globals can be overridden within a workflow by defining a different value at the same key in the globals for that specific workflow. You can read more about workflow globals [here](/workflows/overview/#workflow-globals).
 
 ## Application Archive
 
