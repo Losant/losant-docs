@@ -140,7 +140,9 @@ pages:
         - Conditional: workflows/logic/conditional.md
         - Delay: workflows/logic/delay.md
         - Function: workflows/logic/function.md
+        - Generate ID: workflows/logic/generate-id.md
         - Geofence: workflows/logic/geofence.md
+        - Hash: workflows/logic/hash.md
         - HTML/XML Parser: workflows/logic/html-parser.md
         - "JSON: Decode": workflows/logic/json-decode.md
         - "JSON: Encode": workflows/logic/json-encode.md

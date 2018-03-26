@@ -1,3 +1,4 @@
+flowclass: Cloud
 flowclass: Edge 1.1.0
 description: Learn more about the Losant Hash Node.
 
@@ -11,7 +12,7 @@ The Hash Node allows you to create a [cryptographic hash](https://en.wikipedia.o
 
 Configuration fields are:
 * **Data Template:** (Required) The is a [string template](/workflows/accessing-payload-data/#string-templates) that is the input data (or message) used to create the hash.
-* **Secret Template:** When this string template is supplied will create an [HMAC](https://en.wikipedia.org/wiki/HMAC), which signs this secret in hash. 
+* **Secret Template:** When this string template is supplied will create an [HMAC](https://en.wikipedia.org/wiki/HMAC), which signs this secret in hash.
 * **Algorithm Type:** (Required) The algorithm that is used to generate the hash. This field defaults to SHA256.
 	* [MD5](https://en.wikipedia.org/wiki/MD5)
 	* [RIPEMD](https://en.wikipedia.org/wiki/RIPEMD)
