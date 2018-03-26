@@ -6,18 +6,20 @@ description: Learn more about the Losant Generate ID Node.
 
 The Generate ID Node allows you to generate IDs in [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier), [Object ID](https://docs.mongodb.com/manual/reference/method/ObjectId/), or [Nano ID](https://alex7kom.github.io/nano-nanoid-cc/) format and add them to your payload.
 
-![Generate ID Node](/images/workflows/logic/generate-id.png "Generate ID Node")
+![Generate ID Node](/images/workflows/logic/generate-id-node.png "Generate ID Node")
 
 ## Configuration
 
 There are at least two required fields of the configuration for this node ...
-* **ID TYPE:** (Required) Choose an ID type
-  * UUID V1
-  * UUID V3
-  * UUID V4
-  * UUID V5
-  * Object ID
-  * Nano ID
+
+* **ID TYPE:** (Required) Choose an ID type from the following list:
+    * UUID V1
+    * UUID V3
+    * UUID V4
+    * UUID V5
+    * Object ID
+    * Nano ID
+
 * **Destination Path:** (Required) A path to store the generated ID on the payload, e.g. `data.ID`
 
 ### Extra Fields
@@ -33,4 +35,4 @@ UUID V3, UUID V5 and Nano Id all have extra configuration fields.
 
 * **Number of Characters:** (Optional) A string template for setting the length of the generate ID. By default, an ID of 21 characters will be given if this is not specified. This number *must* be greater than 0 and less than 256.
 
-![Generate ID Node Configuration](/images/workflows/logic/generate-id-configuration.png "Generate ID Node Configuration")
+![Generate ID Node Configuration](/images/workflows/logic/generate-id-node-configuration.png "Generate ID Node Configuration")
