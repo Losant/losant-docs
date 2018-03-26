@@ -22,6 +22,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - Improved error messages
 - The [Validate Payload Node](/workflows/logic/validate-payload/) now allows for defining your schema using either a [payload path](/workflows/accessing-payload-data/#payload-paths) or a [JSON template](/workflows/accessing-payload-data/#json-templates).
 
+### Fixed
+
+- [Modbus: Read Node's](/workflows/data/modbus-read/) "Length" property now defaults to a value of 1 if left blank.
+- [Modbus: Read](/workflows/data/modbus-read/) and [Modbus: Write](/workflows/data/modbus-write/) Nodes will now time out if they fail to connect to Modbus.
+
 ___
 
 <h2><a id="100" href="#100">1.0.0</a> - 2018-03-08</h2>
