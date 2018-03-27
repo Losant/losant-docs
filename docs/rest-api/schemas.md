@@ -234,6 +234,10 @@ Schema for a single Application
             "type": "string",
             "minLength": 1,
             "maxLength": 32767
+          },
+          "cloudOnly": {
+            "type": "boolean",
+            "default": false
           }
         },
         "additionalProperties": false,
@@ -1163,6 +1167,10 @@ Schema for the body of an Application modification request
             "type": "string",
             "minLength": 1,
             "maxLength": 32767
+          },
+          "cloudOnly": {
+            "type": "boolean",
+            "default": false
           }
         },
         "additionalProperties": false,
@@ -1369,6 +1377,10 @@ Schema for the body of an Application creation request
             "type": "string",
             "minLength": 1,
             "maxLength": 32767
+          },
+          "cloudOnly": {
+            "type": "boolean",
+            "default": false
           }
         },
         "additionalProperties": false,
@@ -1579,6 +1591,10 @@ Schema for a collection of Applications
                   "type": "string",
                   "minLength": 1,
                   "maxLength": 32767
+                },
+                "cloudOnly": {
+                  "type": "boolean",
+                  "default": false
                 }
               },
               "additionalProperties": false,
@@ -4700,7 +4716,7 @@ Schema for a single Device
         ],
         "additionalProperties": false
       },
-      "maxItems": 100
+      "maxItems": 256
     },
     "deviceClass": {
       "type": "string",
@@ -5113,7 +5129,7 @@ Schema for the body of a Device modification request
         ],
         "additionalProperties": false
       },
-      "maxItems": 100
+      "maxItems": 256
     },
     "deviceClass": {
       "type": "string",
@@ -5227,7 +5243,7 @@ Schema for the body of a Device creation request
         ],
         "additionalProperties": false
       },
-      "maxItems": 100
+      "maxItems": 256
     },
     "deviceClass": {
       "type": "string",
@@ -5373,7 +5389,7 @@ Schema for a single Device Recipe
         ],
         "additionalProperties": false
       },
-      "maxItems": 100
+      "maxItems": 256
     },
     "deviceClass": {
       "type": "string",
@@ -5617,7 +5633,7 @@ Schema for the body of a Device Recipe modification request
         ],
         "additionalProperties": false
       },
-      "maxItems": 100
+      "maxItems": 256
     },
     "deviceClass": {
       "type": "string",
@@ -5742,7 +5758,7 @@ Schema for the body of a Device Recipe creation request
         ],
         "additionalProperties": false
       },
-      "maxItems": 100
+      "maxItems": 256
     },
     "deviceClass": {
       "type": "string",
@@ -5897,7 +5913,7 @@ Schema for a collection of Device Recipes
               ],
               "additionalProperties": false
             },
-            "maxItems": 100
+            "maxItems": 256
           },
           "deviceClass": {
             "type": "string",
@@ -6369,7 +6385,7 @@ Schema for a collection of Devices
               ],
               "additionalProperties": false
             },
-            "maxItems": 100
+            "maxItems": 256
           },
           "deviceClass": {
             "type": "string",
@@ -11279,8 +11295,9 @@ Schema for a single Integration
     "integrationType": {
       "type": "string",
       "enum": [
-        "mqtt",
         "googlePubSub",
+        "meridian",
+        "mqtt",
         "particle"
       ]
     },
@@ -11320,18 +11337,18 @@ Schema for a single Integration
       "properties": {
         "clientId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "username": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "password": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "clean": {
           "type": "boolean"
@@ -11352,8 +11369,8 @@ Schema for a single Integration
         },
         "host": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "privateKey": {
           "type": "string",
@@ -11383,28 +11400,54 @@ Schema for a single Integration
       "properties": {
         "accessToken": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "productSlugOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "orgSlugOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "deviceNameOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         }
       },
       "additionalProperties": false,
       "required": [
         "accessToken"
+      ]
+    },
+    "meridianConfig": {
+      "type": "object",
+      "properties": {
+        "authenticationToken": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "locationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "assetUpdates": {
+          "type": "boolean"
+        },
+        "zoneUpdates": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "authenticationToken",
+        "locationId"
       ]
     },
     "status": {
@@ -11506,8 +11549,9 @@ Schema for the body of an Integration modification request
     "integrationType": {
       "type": "string",
       "enum": [
-        "mqtt",
         "googlePubSub",
+        "meridian",
+        "mqtt",
         "particle"
       ]
     },
@@ -11547,18 +11591,18 @@ Schema for the body of an Integration modification request
       "properties": {
         "clientId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "username": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "password": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "clean": {
           "type": "boolean"
@@ -11579,8 +11623,8 @@ Schema for the body of an Integration modification request
         },
         "host": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "privateKey": {
           "type": "string",
@@ -11610,28 +11654,54 @@ Schema for the body of an Integration modification request
       "properties": {
         "accessToken": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "productSlugOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "orgSlugOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "deviceNameOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         }
       },
       "additionalProperties": false,
       "required": [
         "accessToken"
+      ]
+    },
+    "meridianConfig": {
+      "type": "object",
+      "properties": {
+        "authenticationToken": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "locationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "assetUpdates": {
+          "type": "boolean"
+        },
+        "zoneUpdates": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "authenticationToken",
+        "locationId"
       ]
     }
   },
@@ -11671,8 +11741,9 @@ Schema for the body of an Integration creation request
     "integrationType": {
       "type": "string",
       "enum": [
-        "mqtt",
         "googlePubSub",
+        "meridian",
+        "mqtt",
         "particle"
       ]
     },
@@ -11712,18 +11783,18 @@ Schema for the body of an Integration creation request
       "properties": {
         "clientId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "username": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "password": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "clean": {
           "type": "boolean"
@@ -11744,8 +11815,8 @@ Schema for the body of an Integration creation request
         },
         "host": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "privateKey": {
           "type": "string",
@@ -11775,28 +11846,54 @@ Schema for the body of an Integration creation request
       "properties": {
         "accessToken": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "productSlugOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "orgSlugOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         },
         "deviceNameOrId": {
           "type": "string",
-          "maxLength": 1024,
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 1024
         }
       },
       "additionalProperties": false,
       "required": [
         "accessToken"
+      ]
+    },
+    "meridianConfig": {
+      "type": "object",
+      "properties": {
+        "authenticationToken": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "locationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "assetUpdates": {
+          "type": "boolean"
+        },
+        "zoneUpdates": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "authenticationToken",
+        "locationId"
       ]
     }
   },
@@ -11877,8 +11974,9 @@ Schema for a collection of Integrations
           "integrationType": {
             "type": "string",
             "enum": [
-              "mqtt",
               "googlePubSub",
+              "meridian",
+              "mqtt",
               "particle"
             ]
           },
@@ -11918,18 +12016,18 @@ Schema for a collection of Integrations
             "properties": {
               "clientId": {
                 "type": "string",
-                "maxLength": 1024,
-                "minLength": 1
+                "minLength": 1,
+                "maxLength": 1024
               },
               "username": {
                 "type": "string",
-                "maxLength": 1024,
-                "minLength": 1
+                "minLength": 1,
+                "maxLength": 1024
               },
               "password": {
                 "type": "string",
-                "maxLength": 1024,
-                "minLength": 1
+                "minLength": 1,
+                "maxLength": 1024
               },
               "clean": {
                 "type": "boolean"
@@ -11950,8 +12048,8 @@ Schema for a collection of Integrations
               },
               "host": {
                 "type": "string",
-                "maxLength": 1024,
-                "minLength": 1
+                "minLength": 1,
+                "maxLength": 1024
               },
               "privateKey": {
                 "type": "string",
@@ -11981,28 +12079,54 @@ Schema for a collection of Integrations
             "properties": {
               "accessToken": {
                 "type": "string",
-                "maxLength": 1024,
-                "minLength": 1
+                "minLength": 1,
+                "maxLength": 1024
               },
               "productSlugOrId": {
                 "type": "string",
-                "maxLength": 1024,
-                "minLength": 1
+                "minLength": 1,
+                "maxLength": 1024
               },
               "orgSlugOrId": {
                 "type": "string",
-                "maxLength": 1024,
-                "minLength": 1
+                "minLength": 1,
+                "maxLength": 1024
               },
               "deviceNameOrId": {
                 "type": "string",
-                "maxLength": 1024,
-                "minLength": 1
+                "minLength": 1,
+                "maxLength": 1024
               }
             },
             "additionalProperties": false,
             "required": [
               "accessToken"
+            ]
+          },
+          "meridianConfig": {
+            "type": "object",
+            "properties": {
+              "authenticationToken": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024
+              },
+              "locationId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024
+              },
+              "assetUpdates": {
+                "type": "boolean"
+              },
+              "zoneUpdates": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "authenticationToken",
+              "locationId"
             ]
           },
           "status": {
