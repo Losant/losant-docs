@@ -1,3 +1,5 @@
+description: Learn about to subscribe to external services in Losant.
+
 # Integrations
 
 Integrations are connections to external [MQTT brokers](http://mqtt.org/), [Pub/Sub messaging suppliers](https://cloud.google.com/pubsub/docs/overview) or other third-party web services. These connections can then be used to trigger [workflows](/workflows/overview/) and/or output messages from your application.
@@ -75,6 +77,19 @@ There are two properties that must be defined when setting up the integration.
 The other three fields in the Particle integration configuration are optional - `Device Name or ID`, `Product Slug or ID`, `Org Slug or ID`. These correspond to the `deviceId`, `product`, and `org` parameters on the underlying Particle [Event Stream](https://docs.particle.io/reference/javascript/#geteventstream) API endpoint. When the `deviceId` field is left blank, Losant will use the special keyword `mine` when connecting to Particle, to ensure that Losant only subscribes to events for your devices (as opposed to subscribing to the public events of any Particle device).
 
 For a step-by-step walkthrough, please read the article <a href="https://www.losant.com/blog/how-to-integrate-particle-with-losant" target="_blank">How to Integrate Particle with Losant</a>.
+
+### Meridian
+
+A [Meridian](http://meridianapps.com/) integration allows you to [trigger workflows](/workflows/triggers/meridian/) off of asset and tag location updates published from a Meridian location.
+
+There are two properties that must be defined when setting up the integration.
+
+![Integration Meridian Config](/images/applications/integration-meridian-config.png "Integration Meridian Config")
+
+* **Authentication Token:** This is the authentication token that Losant will use to communicate with Meridian. You can create an authentication token from the "Application Tokens" screen in the Meridian interface for a location.
+* **Meridian Location ID:** This is the Meridian location ID associated with the authentication token.
+
+The other fields in the Meridian integration are optional, and help you to filter down the exact Meridian messages that Losant should listen to. `Subscribe to Zone Updates` tells the integration to subscribe to messages about assets entering or leaving Meridian zones. `Subscribe to Asset Updates` tells the integration to subscribe to messages about the location of an asset changing. Finally, you can provide any number of `Map IDs`, which will filter messages for the location down to just those taking place in the specified maps. If no map IDs are provided, the messages will not be filtered - Losant will subscribe to updates for the entire location.
 
 ## Using Integrations
 

@@ -123,6 +123,7 @@ pages:
         - Event: workflows/triggers/event.md
         - GCP Pub/Sub: workflows/triggers/google-pub-sub.md
         - HTTP Request: workflows/triggers/request.md
+        - Meridian: workflows/triggers/meridian.md
         - MQTT: workflows/triggers/mqtt.md
         - Particle: workflows/triggers/particle.md
         - Timer: workflows/triggers/timer.md
