@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
-<h2><a id="110" href="#110">1.1.0</a> - 2018-03-29</h2>
+## 1.1.0 - 2018-03-29
 
 ### Added
 
@@ -29,7 +29,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ___
 
-<h2><a id="100" href="#100">1.0.0</a> - 2018-03-08</h2>
+## 1.0.0 - 2018-03-08
 
 ### Added
 
