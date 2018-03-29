@@ -6,7 +6,7 @@ Welcome to your first workshop! Along with the videos, we wanted to give you rea
 
 The workshops build upon one another. So, as you create devices, workflows, etc. in the workshops, make sure to keep those around as they may come up again in the future. 
 
-This workshop is all about Data and Device Management. We are going to use the platform features talked about in Course 3, such as [creating a device](https://docs.losant.com/devices/overview/), the [Device Simulator](https://docs.losant.com/devices/simulator/), and the [Data Explorer](https://docs.losant.com/applications/data-explorer/).
+This workshop is all about Data and Device Management. We are going to use the platform features talked about in Course 3, such as [creating a device](/devices/overview/), the [Device Simulator](/devices/simulator/), and the [Data Explorer](/applications/data-explorer/).
 
 Let’s begin.
 
@@ -14,7 +14,7 @@ Let’s begin.
 
 Before we start building, let’s describe what you are building. Imagine you work for a company that manufactures industrial equipment. This company is named Embree Manufacturing. 
 
-<div class="slim-image-container"><img src="/images/university/course-three-workshop/embree-logo.png" alt="Auto Setup Complete" title="Auto Setup Complete" /></div>
+<div class="slim-image-container"><img style="padding: 10px;" src="/images/university/course-three-workshop/embree-logo.png" alt="Auto Setup Complete" title="Auto Setup Complete" /></div>
 
 Embree is launching an initiative to adopt IoT and offer new capabilities to their customers. Currently, Embree produces water pumps for industrial use cases like mining, construction, and oil & gas. Their goal is to gain deeper insight into the pumps and provide more value to their customers.
 
@@ -24,13 +24,13 @@ To build this proof-of-concept, they chose to use Losant. They chose Losant beca
 
 ## Start Building
 
-Let’s start building this application for Embree. First, if you haven’t already, [sign up for the no-cost developer sandbox](https://cta-service-cms2.hubspot.com/ctas/v2/public/cs/c/?cta_guid=4235d29f-c9d9-421e-98f9-bb935f3693d5&placement_guid=a0a2c69c-c64e-4bd7-ae42-9a1d4955c4e5&portal_id=742943&redirect_url=APefjpHwd51rX9IQ2AnoiW_wNJj21pHfKmWpFI0MeZZ8rapn_14ReJ6-GpYM6AhD8JxiXw7DYZz9vKEAHC-Y2PEcA7pypvdMGi33q5YvcMgBkDg44BTPv30L6wASPLzAf-bUU_88jqg5btb_PuGYaI_tLkRO_EpTarBgrc_DmuNukkvFHN84jOIrOQk6qX1R9ORPqH5HKZtOuVCrIW98AEENjDZCXb_Nk-4_XWHqnZI9PMtFQhpoFbQxHneq1royUWpUkI7I5GCm7-dtlF9ovUx_P1n1XIEG6g&hsutk=689669489b3f8d2e3c32a2f07de4f905&canon=https%3A%2F%2Fwww.losant.com%2F&click=9d46f18c-484d-47a4-8114-54868d69c399&pageId=5482690032). 
+Let’s start building this application for Embree. First, if you haven’t already, [sign up for the no-cost developer sandbox](https://app.losant.com/). 
 
-Next, you’ll need to **create an** [**application**](https://docs.losant.com/applications/overview/)**.** 
+Next, you’ll need to **create an** [**application**](/applications/overview/). 
 
 ![New application](/images/university/course-three-workshop/create-application.png)
 
-Next, we can **create a new** [**device**](https://docs.losant.com/devices/overview/) for our water pump. 
+Next, we can **create a new** [**device**](/devices/overview/) for our water pump. 
 
 ![New Device](/images/university/course-three-workshop/create-device.png)
 
@@ -54,7 +54,7 @@ When you are all done with your device settings, **save this new device**.
 
 ## Simulating Data
 
-As we learned in the video, to test things out in Losant, we don’t need hardware. We can use the [Device Simulator](https://docs.losant.com/devices/simulator/).
+As we learned in the video, to test things out in Losant, we don’t need hardware. We can use the [Device Simulator](/devices/simulator/).
 
 When it’s time to connect physical things, remember that Losant is hardware agnostic. As long as the hardware can connect to Losant directly (or through a gateway), it will work with the platform. 
 
@@ -70,7 +70,7 @@ Now, fire up the Device Simulator. If you open up the device page, on the left s
 
 Remember, the simulator is using your browser window as the device. So, you must leave this browser window open for your device to simulate data. 
 
-Pro Tip: If you want to simulate data without having your browser window open, you can use the workflow engine. With the [Timer Trigger Node](https://docs.losant.com/workflows/triggers/timer/), [Random Number Node](https://docs.losant.com/workflows/logic/random-number/), and [Device State Node](https://docs.losant.com/workflows/outputs/device-state/), this becomes an easy task. 
+Pro Tip: If you want to simulate data without having your browser window open, you can use the workflow engine. With the [Timer Trigger Node](/workflows/triggers/timer/), [Random Number Node](/workflows/logic/random-number/), and [Device State Node](/workflows/outputs/device-state/), this becomes an easy task. 
 
 Next, **generate a key/secret pair and connect your device****.** Here, we can easily press the “Generate key/secret” button. However, normally, one would go to the “Security” tab in the navigation and create new keys there like so: 
 
@@ -96,7 +96,7 @@ You can also look at the Simulator Log to see the simulator activity.
 
 
 
-Now that our device is successfully connected and sending data, we can open up the D[ata Explorer](https://docs.losant.com/applications/data-explorer/) to explore the data that's coming in.
+Now that our device is successfully connected and sending data, we can open up the D[ata Explorer](/applications/data-explorer/) to explore the data that's coming in.
 
 ## Digging Into Your Data
 
@@ -119,7 +119,7 @@ Congratulations, you are now officially done with Course 3 of Losant University!
 
 Feel free to poke around Losant; there is a ton to explore. If you have a specific use case in mind of how you would like to use Losant, feel free to create and simulate other devices that more closely represents your data and use case.
 
-If you run into any troubles along the way, the [Documentation](https://docs.losant.com/) and [Forums](https://forums.losant.com/) are there to help. 
+If you run into any troubles along the way, the [Documentation](/) and [Forums](https://forums.losant.com/) are there to help. 
 
 
 
