@@ -103,6 +103,7 @@ pages:
     - Input Controls: dashboards/input-controls.md
     - Open Event Indicator: dashboards/open-event-indicator.md
     - Pie Chart: dashboards/pie-chart.md
+    - Position Chart: dashboards/position-chart.md
     - Section Header: dashboards/section-header.md
     - Time Series Graph: dashboards/time-series-graph.md
     - Workflow List: dashboards/workflow-list.md

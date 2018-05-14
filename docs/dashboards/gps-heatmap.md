@@ -32,7 +32,14 @@ The selected device(s) must return an attribute of the type [GPS string](/device
 
 ![GPS Heatmap Default Viewport](/images/dashboards/gps-viewport.png "GPS Heatmap Default Viewport")
 
-Optionally, you may set a specific map center and/or zoom level for your map when it first loads. Failing to set a center, or setting "Automatic" for the zoom level, will cause the map to automatically set those aspects of its viewport to fit the data being passed to the map. Note that once a user manually pans or zooms the map, the default center and zoom will be ignored until the page is reloaded.
+Set the default viewport for the block. You can also interact with the map in the block preview and pass its settings to the block configuration by clicking the "Set" button.
+
+* **Center:** Automatically center the map to the middle of the points returned by the query, or set a manual position for the chart's center either as a context variable or in a `lat,lng` format.
+* **Zoom:** Automatically zoom the map to display all points returned by the query, or set a manual zoom level.
+* **Bearing:** Set a default bearing, where `0` points north to the top of the map, and values between `-180` and `180` swing the map in either direction.
+* **Pitch:** Set a default pitch for the map, between `0` (straight overhead) and `60` degrees.
+
+Once a user manually pans or zooms the chart in the dashboard view, the default settings are disregarded until the dashboard is reloaded.
 
 ### Map Style
 
