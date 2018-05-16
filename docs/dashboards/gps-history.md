@@ -50,6 +50,10 @@ Optionally, you may choose a particular map tile set. The two current styles ava
 
 You may also include arrows on your history lines to show the direction of movement between your GPS points.
 
+### State Property Behavior
+
+By default, other state attributes available in the [advanced pin style](#advanced-pin-style-configuration) and [popup configuration](#popup-style-configuration) return the most recently received value for that attribute at the time of any GPS point. However, you may change this behavior to only provide state attributes that were reported at the same time as the GPS state report. In this case, other attributes that were not reported along with the GPS data will return `undefined`.
+
 ### Point Display Configuration
 
 Losant allows for customization of the pins for points on the map as well as the popups that appear when clicking on a map pin.
