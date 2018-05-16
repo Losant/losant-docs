@@ -16,7 +16,7 @@ The HTTP Node can be configured with all the common properties of an HTTP reques
 
 ![HTTP Node Basic Configuration](/images/workflows/data/http-node-basic-configuration.png "HTTP Node Basic Configuration")
 
-The first part of configuring the node is selecting the method of the HTTP request - choosing between "GET", "POST", "PUT", and "DELETE". Next is the URL to actually make the request at - this field supports static URLs or [string templates](/workflows/accessing-payload-data/#string-templates). The third basic part of setting up an HTTP Node is deciding whether to `Disable SSL Verification?`. In the given example the SSL certificate will still be verified by the request and if it is invalid will return an error. However, if this box was checked it would **not** ensure that the SSL certificate is valid. The fourth basic part of setting up an HTTP Node is configuring the body - which is actually not allowed for "GET" and "DELETE" requests. For "POST" and "PUT" requests, however, the body is optional and supports standard [JSON templates](/workflows/accessing-payload-data/#json-templates). In the above example, the node is making a "GET" request to the URL `https://rrtp.comed.com/api?type=5minutefeed`.
+The first part of configuring the node is selecting the method of the HTTP request - choosing between "GET", "POST", "PUT", and "DELETE". Next is the URL to actually make the request at - this field supports static URLs or [string templates](/workflows/accessing-payload-data/#string-templates). Optionally, you can set a timeout on the request in seconds - the maximum (and default) timeout is 30 seconds. Next, you can you can decide whether to `Disable SSL Verification?` (useful if you are connecting to a a server with a self-signed SSL certificate). In the given example the SSL certificate will still be verified by the request and if it is invalid will return an error. However, if this box was checked it would **not** ensure that the SSL certificate is valid. Finally, you can configure the body of the HTTP request - which is actually not allowed for `GET` and `DELETE` requests. For `PATCH`, `POST`, and `PUT` requests, however, the body is optional and supports standard [JSON templates](/workflows/accessing-payload-data/#json-templates). In the above example, the node is making a `GET` request to the URL `https://rrtp.comed.com/api?type=5minutefeed`.
 
 ### Header Configuration
 
@@ -28,7 +28,7 @@ The HTTP Node also has optional support for adding headers to the HTTP request. 
 
 ![Response Configuration](/images/workflows/data/http-node-response-configuration.png "Response Configuration")
 
-The HTTP Node can optionally store the response from the request at an arbitrary [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the body, headers, and status code are stored at the given path. The node also attempts to parse the body as JSON - if it is parseable, the parsed object is placed on the payload instead of the raw response body string. In the example above, the response will be stored at the `data.pricing` field.
+The HTTP Node can optionally store the response from the request at an arbitrary [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the body, headers, status code, and original request information are stored at the given path. The node also attempts to parse the body as JSON - if it is parseable, the parsed object is placed on the payload instead of the raw response body string. In the example above, the response will be stored at the `data.pricing` field.
 
 So with the above example, given the following payload:
 
@@ -70,7 +70,15 @@ The node will make a GET request to `https://rrtp.comed.com/api?type=5minutefeed
         "connection": "close",
         "transfer-encoding": "chunked"
       },
-      "statusCode": 200
+      "statusCode": 200,
+      "request": {
+        "headers": {
+          "User-Agent": "Losant/5afb015e01206900050e7579"
+        },
+        "strictSSL": true,
+        "uri": "http://rrtp.comed.com/api?type=5minutefeed",
+        "method": "GET"
+      }
     }
   },
   "applicationId": "568beedeb436ab01007be53d",
@@ -82,3 +90,9 @@ The node will make a GET request to `https://rrtp.comed.com/api?type=5minutefeed
   "globals": { }
 }
 ```
+
+### Dealing With Errors
+
+![Error Configuration](/images/workflows/data/http-node-error-configuration.png "Error Configuration")
+
+Any HTTP request that returns with an actual response (even if it is a 4XX or 5XX status code) will be treated as a response, and so will be stored at the given response path. However, there are many reasons why the HTTP node might error *without* a response, such as timeouts, unreachable servers, DNS resolution failures, and the like. In those cases, there are two possible options - you can either error the workflow (which means the workflow will stop running at this node), or you can store the error at a path on the payload. If you choose to store the error at a path on the payload, an object will be placed at that path with the original request information as well as the particular error that occurred.
