@@ -2,39 +2,25 @@
 
 Organizations allow users to unlock the full potential of the Losant Platform by allowing multiple [members](/organizations/members/) to collaborate on shared [applications](/applications/overview/) and [dashboards](/dashboards/overview/). Additionally, organizations have significantly higher limits than [Sandboxes](/user-accounts/sandbox/) on [devices](/devices/overview/), [payload counts](/organizations/resource-limits/#payload-limits) and data retention periods, as well as additional platform support options.
 
-You can see all the organizations that you are a member of on the <a href="https://app.losant.com/#/organizations" target="\_blank">organization listing page</a> page, which can be found in the menu under your name on the top right of the screen.
+You can see all the organizations that you are a member of on the <a href="https://app.losant.com/organizations" target="\_blank">organization listing page</a> page, which can be found in the menu under your name on the top right of the screen.
 
 ![Organization Overview](/images/organizations/organization-overview.png "Organization Overview")
 
 Selecting an organization will take you to the home page of the organization. Here you can see all the applications and dashboards owned by the organization, as well as the current organization members. This is also where you have the option to [leave an organization](/organizations/members/#leaving-an-organization) if you no longer wish to be a member.
 
+## Organization Pricing
+
+Organization pricing is a function of a number of factors:
+
+* The number of resources your applications will require (such as [devices](/devices/overview/), [organization members](/organizations/members/) and [experience users](/experiences/users/))
+* How many [payloads](/organizations/resource-limits/#payload-limits) you expect to generate per month
+* Your [data retention](/organizations/resource-limits/#data-retention) requirements
+* Costs for our solutions team assisting in the buildout of your IoT application (if required)
+* Other special factors, such as if you require on-premises installation of the platform, single tenancy or SLAs
+
 ## Creating a New Organization
 
-Any user can create a new organization at any time. There are a handful of links throughout the platform that will lead a user to create a new organization; two of the most visible are a button on the user's Sandbox, and in the `Organizations` dropdown in the main site header.
-
-![Organization Creation Link](/images/organizations/organization-create-cta.png "Organization Creation Link")
-
-### Choosing a Plan
-
-Choose a billing plan that will meet the short-term needs of your new organization by clicking its `Select Plan` button, then click the `Continue` button at the bottom of the page. Note that the tier can be upgraded (or downgraded) at any time.
-
-![Organization Plan](/images/organizations/organization-choose-plan.png "Organization Plan")
-
-If none of the predefined tiers will meet the needs of your new organization, or if you need additional functionality that is not part of the existing tiers, you may [contact Losant](mailto:hello@losant.com) about an Enterprise contract.
-
-### Entering Organization Info
-
-After choosing a plan, you will fill out the following information to complete the organization creation. All of these can be changed at a later time:
-
-* **Name:** The name of the organization. This will be visible to all members of the organization.
-* **Icon Color:** This is simply to help identify your organization in lists of applications, dashboards and other organizations. The letters within the icon are a derivative of the organization name. The color can be changed by clicking the icon. Note that this icon is never visible to the public.
-* **Description:** An optional description of the organization.
-* **Billing Email Address:** Defaults to your user's email address.
-* **Payment Info:** The credit card that will be billed for this new organization on a recurring basis. The first charge will be placed immediately on organization creation; this charge is for the upcoming billing period.
-
-![Organization Setup](/images/organizations/organization-creation-inputs.png "Organization Setup")
-
-When you're finished, click the `Create Organization` button at the bottom of the screen. Once the organization is created, you can create new resources for the organization (see below); [invite members](/organizations/members/#inviting-new-members) to join the organization; or [transfer resources](/organizations/transferring-resources/) from your Sandbox (or from other organizations) into the new organization.
+[Contact Losant](https://www.losant.com/contact-us) for more information about setting up your organization. Once a contract is in place, the Losant team will take care of creating
 
 ## Creating Organization Resources
 
@@ -77,7 +63,7 @@ Deleting an organization will **NOT**:
 
 ![Organization Settings Usage](/images/organizations/org-settings-usage.png "Organization Settings Usage")
 
-This screen displays your detailed resource and payload usage for the current billing period.
+This screen displays your detailed resource and payload usage for the monthly period.
 
 ### Payment Method
 
