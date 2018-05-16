@@ -33,18 +33,21 @@ Note that a number of sensitive details, such as application key secrets, credit
 
 As a general rule, any request that creates, edits or deletes a Losant resource will appear in the audit logs. More specifically ...
 
-* Edits to the [organization itself](/organizations/overview/#managing-organizations), such as name, description or [billing plan](/organizations/overview/#choosing-a-plan) changes
+* Edits to the [organization itself](/organizations/overview/#managing-organizations), such as name or description changes
 * Changes to [organization members](/organizations/members/), such as leaving the organization or changing a member's role
 * Creation, revocation, acceptance or deletion of any [member invitation](/organizations/members/#inviting-new-members)
 * [Transfer of resources](/organizations/overview/#transferring-resources) to or from the organization, whether the other party is another organization or a [user's Sandbox](/user-accounts/sandbox/)
 * Creation or deletion of any [application](/applications/overview/) or [dashboard](/dashboards/overview/) owned by the organization, or edits to those resources. This includes application sub-resources, such as:
     * [Access Keys](/applications/access-keys/)
     * [Application API Tokens](/applications/application-tokens/)
+    * [Data Tables](/data-tables/overview/)
     * [Devices](/devices/overview/)
     * [Device Recipes](/devices/device-recipes/)
     * [Experience Endpoints](/experiences/endpoints/)
     * [Experience Groups](/experiences/groups/)
+    * [Experience Views](/experiences/views/)
     * [Experience Users](/experiences/users/)
+    * [Experience Domains](/experiences/domains/)
     * [Integrations](/applications/integrations/)
     * [Webhooks](/applications/webhooks/)
     * [Workflows](/workflows/overview/)
