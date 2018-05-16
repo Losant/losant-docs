@@ -52,7 +52,6 @@ Deleting an organization will:
 * Delete all data tied to those applications and their sub-resources.
 * Delete all dashboards tied to the organization.
 * Nullify any pending organization invitations.
-* Cancel the organization's billing plan, meaning the credit card on file will no longer get billed after the final invoice (if charges exist). If the account has a credit, that amount will be applied back to the credit card on file.
 
 Deleting an organization will **NOT**:
 
@@ -64,31 +63,3 @@ Deleting an organization will **NOT**:
 ![Organization Settings Usage](/images/organizations/org-settings-usage.png "Organization Settings Usage")
 
 This screen displays your detailed resource and payload usage for the monthly period.
-
-### Payment Method
-
-![Organization Settings Payment Method](/images/organizations/org-settings-payment.png "Organization Settings Payment Method")
-
-The recurring payment method can be updated on this screen.
-
-#### If Payment Method Fails ...
-
-Should Losant attempt to charge the credit card on file and the charge fails, the organization will be put in a `Past Due` status. A notification bar at the top of the organization screen, as well as atop any application or dashboard owned by the organization, will alert you to this. [Public and password-protected dashboards](/dashboards/overview/#dashboard-access-control) will never display this notification.
-
-![Organization Delinquent Status](/images/organizations/org-delinquent-bar.png "Organization Delinquent Status")
-
-While your organization's payment is past due, **all platform features will continue to function as normal**, and we will attempt to charge the card on file again every seven days until the charge is successful. Should you need to change the card on file, you should do so immediately so that the change is picked up on the next billing attempt.
-
-After 28 days of being in `Past Due` status, the account will be moved to an `Unpaid` status. At this time, **all payloads will be rejected** and your applications and dashboards will cease to function. You will have to update the organization's payment method to reactivate the account. At that time, all outstanding invoices will be charged, and if successful, the organization's full functionality will be restored.
-
-### Billing Plan
-
-![Organization Settings Plan](/images/organizations/org-settings-plan.png "Organization Settings Plan")
-
-Here you can upgrade or downgrade your billing plan at any time. Changes will be prorated and the extra charge (or credit) will appear on your next invoice. Note that downgrading may lead to overage charges if your new plan has fewer monthly payloads than your applications are currently using.
-
-### Invoices
-
-![Organization Settings Invoices](/images/organizations/org-settings-invoices.png "Organization Settings Invoices")
-
-Here you'll find a list of the last 12 invoices for your organization, including the invoice date, its payment status and the amount billed. Clicking any invoice will show you additional details about that billing period, including line-item charges and application usage.
