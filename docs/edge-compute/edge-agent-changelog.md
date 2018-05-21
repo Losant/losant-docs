@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.1.1 - 2018-05-21
+
+### Changed
+
+- Improved startup messages.
+- The [HTTP Node](/workflows/data/http/) now allows for setting timeouts and capturing network errors.
+
+### Fixed
+
+- Improved messages for [Slack Node](/workflows/output/slack/) errors.
+- Support circular references in debug messages.
+
+___
+
 ## 1.1.0 - 2018-03-29
 
 ### Added
