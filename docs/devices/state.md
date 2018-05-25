@@ -12,7 +12,7 @@ State is defined as one or more attributes. Typically an attribute maps to a sin
 
 ![Device Attributes](/images/devices/device-attributes.png "Device Attributes")
 
-Losant supports and understands a built-in set of data types for device attributes. These include `String`, `Number`, <span id="gps-attributes">`GPS String`</span>, and `Boolean`. If you specify a state attribute as one data type and report something different, the Losant Platform will attempt to convert the incoming data type into the one specified. Values for a string attribute have a maximum size of 65KB.
+Losant supports and understands a built-in set of data types for device attributes. These include `String`, `Number`, <span id="gps-attributes">`GPS String`</span>, and `Boolean`. If you specify a state attribute as one data type and report something different, the Losant Platform will attempt to convert the incoming data type into the one specified. Values for a string attribute have a maximum size of 64KiB.
 
 GPS attributes must be reported in one of four ways:
 
