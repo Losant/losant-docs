@@ -45,7 +45,7 @@ Refer to the [device state](/devices/state/) documentation for further details a
 
 ### Device Tags
 
-Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant Platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries/) for targeting devices by tag within the platform.
+Device tags allow you to group and organize your devices. Tags are defined as keys and values and they can be set to anything you'd like. Tags can be used in many other areas of the Losant Platform including choosing devices for visualizations, access keys, and workflow triggers. See the section on [device queries](/devices/device-queries/) for targeting devices by tag within the platform. Tags are also a great place to store things like device configuration or threshold values, as the tag keys and values for a device are available to use within workflows (both in the cloud and on the edge) as well as in a number of the dashboard blocks.
 
 ![Device Tags](/images/devices/device-tags.png "Device Tags")
 
