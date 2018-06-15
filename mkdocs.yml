@@ -1,7 +1,7 @@
 site_name: Losant Documentation
 site_url: https://docs.losant.com
 theme_dir: 'losant'
-strict: true
+strict: false
 markdown_extensions:
   - meta
 extra:

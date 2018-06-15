@@ -90,6 +90,10 @@ The node will make a GET request to `https://rrtp.comed.com/api?type=5minutefeed
   "globals": { }
 }
 ```
+### Authorization
+![Authorization Configuration](/images/workflows/data/http-node-authorization-configuration.png "Authorization Configuration")
+
+The HTTP Node can optionally set authorization headers for requests. If the authorization type is set to `Basic`, the request will be sent with `Authorization: Basic username:password` in the header.
 
 ### Dealing With Errors
 
