@@ -49,6 +49,7 @@ pages:
     - Application Tokens: applications/application-tokens.md
     - Data Explorer: applications/data-explorer.md
     - Events: applications/events.md
+    - Files: applications/files.md
     - Integrations: applications/integrations.md
     - Webhooks: applications/webhooks.md
 - Experiences:
