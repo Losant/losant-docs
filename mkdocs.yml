@@ -134,6 +134,7 @@ pages:
         - MQTT: workflows/triggers/mqtt.md
         - Particle: workflows/triggers/particle.md
         - Timer: workflows/triggers/timer.md
+        - UDP: workflows/triggers/udp.md
         - Virtual Button: workflows/triggers/virtual-button.md
         - Webhook: workflows/triggers/webhook.md
     - Experience:
@@ -212,6 +213,7 @@ pages:
         - SMS: workflows/outputs/sms.md
         - Tweet: workflows/outputs/tweet.md
         - Twilio: workflows/outputs/twilio.md
+        - UDP Send: workflows/outputs/udp-send.md
         - Webhook Reply: workflows/outputs/webhook-reply.md
         - Workflow Trigger: workflows/outputs/workflow-trigger.md
 - MQTT:
