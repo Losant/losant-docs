@@ -40,7 +40,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | myFile |
 | type | N | Limit by the type (file or directory) of the file |  | file |
 | status | N | Limit the result to only files of this status. Accepted values are: completed, pending |  | completed |
-| directory | N | Get files that are inside of this directory | / | /a/path/ |
+| directory | N | Get files that are inside of this directory |  | /a/path/ |
 
 ### Request Headers <a name="get-headers"></a>
 

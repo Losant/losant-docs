@@ -35,6 +35,8 @@ The payload will include the triggering device command on the `data` field. In t
   "flowName": <name of the current workflow>,
   "flowVersion": <name of the current workflow version>,
   "globals": <object of workflow globals>,
+  "isConnectedToLosant": <if the agent is connected to Losant>,
+  "agentEnvironment": <object of environment variables>,
   "time": <time the command arrived>,
   "triggerId": "deviceCommand",
   "triggerType": "deviceCommand"

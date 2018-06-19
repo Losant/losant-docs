@@ -64,7 +64,7 @@ CORS related headers will also be added, depending on if [Default CORS](/experie
 
 ![Endpoint Reply Node Cookie Config](/images/workflows/outputs/endpoint-reply-node-cookie-config.png "Endpoint Reply Node Cookie Config")
 
-Cookies can either be removed or set on the reply. In the case of removal, all that is needed is the name of the cookie (which is [templatable](/workflows/accessing-payload-data/#string-templates)). When setting the cookie, both a cookie name and a value for the cookie are required, and optionally you can provide the amount of time until the cookie expires (in milliseconds). If you do not provide an amount of time, the cookie will be treated as a "session cookie", which means it will last until the user's browser is closed. All three of these fields are [templatable](/workflows/accessing-payload-data/#string-templates), so they can use values off of the current workflow payload.
+Cookies can either be removed or set on the reply. In the case of removal, all that is needed is the name of the cookie (which is [templatable](/workflows/accessing-payload-data/#string-templates)). When setting the cookie, both a cookie name and a value for the cookie are required, and optionally you can provide path for the cookie as well as the amount of time until the cookie expires (in milliseconds). If you do not provide an amount of time, the cookie will be treated as a "session cookie", which means it will last until the user's browser is closed. All four of these fields are [templatable](/workflows/accessing-payload-data/#string-templates), so they can use values off of the current workflow payload.
 
 ## Advanced Options
 
