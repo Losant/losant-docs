@@ -52,7 +52,7 @@ Depending on which `Action` is selected will depend on what query string paramet
 
 ### RESPONSE
 
-![SeriveNow Node Result](/images/workflows/data/service-now-node-result.png "ServiceNow Node Result")
+![ServiceNow Node Result](/images/workflows/data/service-now-node-result.png "ServiceNow Node Result")
 
 *  **Result Path:** The result of the API call made to ServiceNow, will be placed at this [payload path](/workflows/accessing-payload-data/#payload-paths). This will either contain the result of the response, or a error. The result will exist under the key "result", and error will exist under the key "error".
 
