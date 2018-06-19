@@ -2,7 +2,7 @@ description: Learn about uploading files for use in the Losant platform.
 
 # Files
 
-Losant has a built-in file storage mechanism to allow for uploading and referencing resources for use within your application. Files can be used to, for example, serve static resources in your [experience layouts](/experiences/views/#layouts), display a custom floorplan in the [Position Chart](/dashboards/position-chart/) or map custom pin images in the [GPS History block](/dashboards/gps-history/).
+Losant has built-in file management functionality to allow for uploading and referencing resources for use within your application. Files can be used to, for example, serve static resources in your [experience layouts](/experiences/views/#layouts), display a custom floorplan in the [Position Chart](/dashboards/position-chart/) or map custom pin images in the [GPS History block](/dashboards/gps-history/).
 
 ## Viewing Files
 
