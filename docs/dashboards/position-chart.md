@@ -54,9 +54,12 @@ Once a user manually pans or zooms the chart in the dashboard view, the default 
 Losant allows for customization of the pins for points on the map as well as the popups that appear when clicking on a map pin.
 
 #### Line Decorators
+
 By default, Losant draws lines between data points on the map. You can remove these lines so that only the raw data points will be displayted.
 ![Point Display Configuration](/images/dashboards/gps-history-point-display-configuration.png "Point Display Configuration")
+
 #### Arrow Decorators
+
 Optionally, if line decorators are enabled, you can enable arrow decorators to show which direction your connected device was moving along the line.
 
 #### Simple Pin Style Configuration
