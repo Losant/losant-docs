@@ -26,4 +26,4 @@ You can optionally store the result of the UDP send on the payload for later use
 
 ## UDP Caveats
 
-Due to the nature of UDP, just because a UDP send succeeds does not mean the destination received the message - all it means is the message was successfully sent. UDP has no built in guarantees around message delivery. In addition, large UDP messages (greater than 1KB) may be dropped or fragmented by intermediate systems or networks, so if you planning to send large UDP messages, we recommend running some tests first.
+Due to the nature of UDP, just because a UDP send succeeds does not mean the destination received the message - all it means is the message was successfully sent. UDP has no built in guarantees around message delivery. In addition, large UDP messages (greater than 1KB) may be dropped or fragmented by intermediate systems or networks, so if you are planning to send large UDP messages, we recommend running some tests first.
