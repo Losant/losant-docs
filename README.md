@@ -13,15 +13,16 @@ using MkDocs for making changes and previewing them.
 To build the Losant documentation yourself, do the following:
 
 * **Prerequisites**  
-  Install MkDocs v0.16.3. [See Instructions](http://www.mkdocs.org/#installation).
+    * Run `yarn install`
+    * Install Python 3.6.
+    * Install MkDocs v0.16.3 - [See Instructions](http://www.mkdocs.org/#installation).
 
 * **Run the built in MkDocs webserver**  
-  Go to the repository directory, and run `mkdocs serve`. The documentation site will be running at <http://localhost:8000>. Any changes made to the documentation markdown will be reflected automatically.
+  Go to the repository directory, and run `yarn start`. The documentation site will be running at <http://localhost:8000>. Any changes made to the documentation markdown will be reflected automatically.
 
 ## Deploying
 
 ```bash
-yarn
 AWS_SECRET_KEY=your_secret AWS_ACCESS_KEY=your_key yarn deploy
 ```
 
