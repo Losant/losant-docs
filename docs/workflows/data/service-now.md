@@ -18,7 +18,7 @@ There are three main parts of the configuration for this node ...
 
 Either InstanceName Template or URL Template is required.
 
-* **Instance Name Template:** A [string template](/workflows/accessing-payload-data/#string-templates) for your ServiceNow instance that will be used to create the ServiceNow URL, e.g. `https://${INSTANCE NAME TEMPLATE}.service-now.com`
+* **Instance Name Template:** A [string template](/workflows/accessing-payload-data/#string-templates) for your ServiceNow instance that will be used to create the ServiceNow URL. For example, if your instance name is "Acme", the ServiceNow URL would end up being `https://acme.service-now.com`.
 * **URL Template:** A string template for the URL address to access your ServiceNow API.
 
 ### Authentication Fields
