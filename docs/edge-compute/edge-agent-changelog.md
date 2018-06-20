@@ -15,8 +15,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ### Added <a name="1.2.0-added"></a>
 
 - Data / [ServiceNow Node](/workflows/data/service-now/)
-- Trigger / [UDP](/workflows/trigger/udp/)
-- Output / [UDP Send](/workflows/output/udp-send/)
+- Triggers / [UDP Trigger](/workflows/triggers/udp/)
+- Outputs / [UDP Send Node](/workflows/outputs/udp-send/)
 - Edge workflow payloads now have environment variables available under the field `agentEnvironment`.
 - Edge workflow payloads now have the field `isConnectedToLosant`, representing if the agent is currently connected to Losant.
 
