@@ -241,6 +241,12 @@ particular actions that can be performed on that resource.
 * [Experience Views](/rest-api/experience-views/)  
   Contains all the actions that can be performed against the collection of [Experience Views](/experiences/views/) belonging to an Application - such as listing views or creating a new view.
 
+* [File](/rest-api/file)  
+  Contains all the actions that can be performed against a single [File](/applications/files/), such as moving, renaming, or deleting.
+
+* [Files](/rest-api/files/)  
+  Contains all the actions that can be performed against the collection of [Files](/applications/files/) belonging to an Application - such as listing files or uploading a new file.
+
 * [Integration](/rest-api/integration/)  
   Contains all the actions that can be performed against a single [Integration](/applications/integrations/), which include things like removing an integration or updating integration configuration.
 
