@@ -1,6 +1,6 @@
 flowclass: Cloud
 flowclass: Edge 1.2.0
-description: Learn more about the Losant Modbus: Read Node.
+description: Learn more about the ServiceNow Node.
 
 # ServiceNow Node
 
