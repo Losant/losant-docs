@@ -17,7 +17,7 @@ Get started quickly by using the Losant SDK for Node.js. The SDK helps take the 
 
 ![Arduino](/images/sdks/arduino-logo.svg "Arduino")
 
-The Arduino SDK simplifies the process of connecting embedded devices to the Losant's platform. The library takes care of using MQTT over SSL to communicate with the platform. Just download the library zip and include into your Arduino IDE.
+The Arduino SDK simplifies the process of connecting embedded devices to the Losant platform. The library takes care of using MQTT over SSL to communicate with the platform. Just download the library zip and include into your Arduino IDE.
 
 ### Download the SDK
 

@@ -272,7 +272,7 @@ pages:
     - Workflow Versions: rest-api/flow-versions.md
     - Schemas: rest-api/schemas.md
 - SDKS: 
-    - Overview: sdks/index.md
+    - Overview: sdks/overview.md
 
 # Redirects
 - _: getting-started/losant-iot-dev-kits/builder-kit-nodemcu.md
