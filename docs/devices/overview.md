@@ -51,9 +51,21 @@ Device tags allow you to group and organize your devices. Tags are defined as ke
 
 In the above example the `floor` tag is set to the value of `2` and the `color` tag is set to `red`. If you had many devices on different floors and of different colors, you could easily query all devices where `floor=2` or `color=red` to find the specific devices.
 
+## Other Device Actions
+
+From the original device page, you can perform common device actions such as:
+
+![Device Other Actions](/images/devices/device-other-actions.png "Device Other Actions")
+
+* [Cloning](/devices/overview/#cloning-an-existing-device) the current device
+
+* [Creating a recipe](/devices/device-recipes/) based on the settings of the current device
+
+* [Creating an access key](/applications/access-keys/) and a secret that will allow a connection to a Losant MQTT broker
+
 ## Cloning an Existing Device
 
-Once you've created a device you can clone it to create a copy with the same configuration. From the original device page, click "Clone Device" in the footer. This will create the new device and take you to its page where its configuration can be adjusted.
+Once you've created a device you can clone it to create a copy with the same configuration. From the original device page, click "Clone Device" in the "Other Actions" section. This will create the new device and take you to its page where its configuration can be adjusted.
 
 ![Device Clone Button](/images/devices/device-clone-button.png "Device Clone Button")
 

@@ -63,7 +63,7 @@ Losant allows for customization of the pins for points on the map as well as the
 ![Simple Pin Style Configuration](/images/dashboards/gps-history-simple-pin-config.png "Simple Pin Style Configuration")
 
 By default, Losant places a red marker at the oldest (starting) point for a series and a green marker at the most recent
-(ending) point for a series. You can change the color of either pin using the color picker for that pin, and the change
+(ending) point for a series. You can change the color and the transparency of either pin using the color picker for that pin, and the change
 will apply to all of the relevant start or end pins on the map.
 
 #### Advanced Pin Style Configuration
