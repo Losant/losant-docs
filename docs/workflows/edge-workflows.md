@@ -42,6 +42,26 @@ In order to utilize newly released edge workflow functionality (such as new node
 
 To do this, use the Edge Agent tab in the workflow editor. The upgrade can only be applied to the "develop" version. If you upgrade the Edge Agent version and make changes to your "develop" workflow, you will have to create new [versions](/workflows/versioning/) of the workflow before deploying them to your devices.
 
+## Payload
+
+The fields on a triggering payload for an edge workflows are very similar to what is available on cloud workflows, with a few edge-only additions. The following are the initial root fields on all edge payloads:
+
+* **agentEnvironment** is an object of the current environment variables for the Edge Agent (minus any Edge Agent configuration environment variables). This is unique to edge workflows, and only available in Edge Agent version 1.2 or greater.
+* **applicationId** is the ID of the Losant application that the Edge Agent (and the workflow) belong to.
+* **applicationName** is the name of the Losant application that the Edge Agent (and the workflow) belong to.
+* **data** is an object with trigger-specific data - the contents of this object change significantly based on the workflow trigger.
+* **deviceId** is the ID of the Losant Edge Agent device.
+* **deviceName** is the name of the Losant Edge Agent device.
+* **deviceTags** is an object of the tags for the Losant Edge Agent device.
+* **flowId** is the ID of the current Losant workflow that is running.
+* **flowName** is the name of the current Losant workflow that is running.
+* **flowVersion** is the version of the current Losant workflow that is running.
+* **globals** is an object of any workflow or application globals available to this Edge Agent.
+* **isConnectedToLosant** is a boolean representing if the Edge Agent is currently connected to Losant. This is unique to edge workflows, and only available in Edge Agent version 1.2 or greater.
+* **time** is the timestamp of the current workflow run.
+* **triggerId** is the ID of the trigger that caused this workflow run.
+* **triggerType** is the type of trigger that caused this workflow run.
+
 ## Saving and Deploying
 
 Unlike cloud workflows, saving and deploying edge workflows are two separate actions, and saving a workflow is not enough to propagate the changes to your edge devices.

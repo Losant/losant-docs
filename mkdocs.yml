@@ -1,7 +1,7 @@
 site_name: Losant Documentation
 site_url: https://docs.losant.com
 theme_dir: 'losant'
-strict: true
+strict: false
 markdown_extensions:
   - meta
 extra:
@@ -49,6 +49,7 @@ pages:
     - Application Tokens: applications/application-tokens.md
     - Data Explorer: applications/data-explorer.md
     - Events: applications/events.md
+    - Files: applications/files.md
     - Integrations: applications/integrations.md
     - Webhooks: applications/webhooks.md
 - Experiences:
@@ -133,6 +134,7 @@ pages:
         - MQTT: workflows/triggers/mqtt.md
         - Particle: workflows/triggers/particle.md
         - Timer: workflows/triggers/timer.md
+        - UDP: workflows/triggers/udp.md
         - Virtual Button: workflows/triggers/virtual-button.md
         - Webhook: workflows/triggers/webhook.md
     - Experience:
@@ -187,6 +189,7 @@ pages:
         - Redis: workflows/data/redis.md
         - Run Executable: workflows/data/run-executable.md
         - Salesforce Cases: workflows/data/salesforce-cases.md
+        - ServiceNow: workflows/data/service-now.md
         - "Storage: Get Value": workflows/data/get-value.md
         - "Storage: Set Value": workflows/data/store-value.md
         - "Table: Insert Row": workflows/data/table-insert-row.md
@@ -211,6 +214,7 @@ pages:
         - SMS: workflows/outputs/sms.md
         - Tweet: workflows/outputs/tweet.md
         - Twilio: workflows/outputs/twilio.md
+        - UDP Send: workflows/outputs/udp-send.md
         - Webhook Reply: workflows/outputs/webhook-reply.md
         - Workflow Trigger: workflows/outputs/workflow-trigger.md
 - MQTT:

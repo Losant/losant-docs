@@ -38,6 +38,8 @@ In the general case, an HTTP Request Trigger workflow payload will look like the
   "flowName": <name of the current workflow>,
   "flowVersion": <name of the current workflow version>,
   "globals": <object of workflow globals>,
+  "isConnectedToLosant": <if the agent is connected to Losant>,
+  "agentEnvironment": <object of environment variables>,
   "time": <time of the request>,
   "triggerId": "request",
   "triggerType": "request"

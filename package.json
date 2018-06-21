@@ -1,14 +1,25 @@
 {
   "name": "losant-docs",
   "scripts": {
+    "reinstall": "rm -rf node_modules && yarn install",
     "start": "mkdocs serve",
     "gzip": "find site -type f -exec gzip '{}' \\; -exec mv '{}.gz' '{}' \\;",
     "gunzip": "find site -type f -exec gunzip -S \"\" -f '{}' \\;",
     "predeploy": "mkdocs build --clean",
     "deploy": "npm run gzip && s3-cli --region=us-west-2 --config .s3 -P --delete-removed --add-header=\"Cache-Control:public,max-age=3600\" --add-header=Content-Encoding:gzip sync ./site s3://docs.losant.com/ && npm run gunzip",
-    "deploy:prerelease": "mkdocs build --clean && PYENV_VERSION=2.7 gsutil -m rsync -c -R ./site gs://docs.prerelease.losant.com"
+    "deploy:prerelease": "mkdocs build --clean && PYENV_VERSION=2.7 gsutil -m rsync -c -R ./site gs://docs.prerelease.losant.com",
+    "lint": "markdownlint docs README.md",
+    "lint:changed": "lint-staged",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.md": "markdownlint"
   },
   "devDependencies": {
-    "s3-cli": "^0.13.0"
+    "markdownlint": "^0.10.0",
+    "markdownlint-cli": "^0.10.0",
+    "s3-cli": "^0.13.0",
+    "lint-staged": "^7.2.0",
+    "husky": "^0.14.3"
   }
 }

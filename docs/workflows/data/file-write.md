@@ -11,10 +11,10 @@ The File: Write Node allows you to write to a file on your [Edge Compute device]
 
 There are a number of configuration options for this node:
 
-*   **File Path:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the disk location of where to write the file.
-*   **Encoding:** The content encoding (defaults to UTF8).
-*   **File Content:** (Required) A string template for the content to write to the file.
-*   **Result Path:** A [payload path](/workflows/accessing-payload-data/#payload-paths) for where to store the result of the operation, if desired.
+* **File Path:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the disk location of where to write the file.
+* **Encoding:** The content encoding (defaults to UTF8).
+* **File Content:** (Required) A string template for the content to write to the file.
+* **Result Path:** A [payload path](/workflows/accessing-payload-data/#payload-paths) for where to store the result of the operation, if desired.
 
 ![File Write Node Configuration](/images/workflows/data/file-write-node-configuration.png "File Write Node Configuration")
 
