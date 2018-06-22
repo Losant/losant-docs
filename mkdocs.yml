@@ -27,6 +27,9 @@ pages:
         - Motion Sensor Kit Instructions: getting-started/losant-iot-dev-kits/motion-sensor-kit.md
         - Door Sensor Kit Instructions: getting-started/losant-iot-dev-kits/door-sensor-kit.md
         - LCD Kit Instructions: getting-started/losant-iot-dev-kits/lcd-kit.md
+    - Losant Proof Of Concept Kits:
+        - Overview: getting-started/losant-proof-of-concept-kits/overview.md
+        - Asset Tracker Kit: getting-started/losant-proof-of-concept-kits/asset-tracker-kit.md
     - Boards:
         - Getting Started with Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
         - Getting Started with Raspberry PI: getting-started/boards/getting-started-with-raspberry-pi.md
