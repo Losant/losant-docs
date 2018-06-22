@@ -54,9 +54,12 @@ Once a user manually pans or zooms the chart in the dashboard view, the default 
 Losant allows for customization of the pins for points on the map as well as the popups that appear when clicking on a map pin.
 
 #### Line Decorators
+
 By default, Losant draws lines between data points on the map. You can remove these lines so that only the raw data points will be displayted.
 ![Point Display Configuration](/images/dashboards/gps-history-point-display-configuration.png "Point Display Configuration")
+
 #### Arrow Decorators
+
 Optionally, if line decorators are enabled, you can enable arrow decorators to show which direction your connected device was moving along the line.
 
 #### Simple Pin Style Configuration
@@ -64,7 +67,7 @@ Optionally, if line decorators are enabled, you can enable arrow decorators to s
 ![Simple Pin Style Configuration](/images/dashboards/gps-history-simple-pin-config.png "Simple Pin Style Configuration")
 
 By default, Losant places a red marker at the oldest (starting) point for a series and a green marker at the most recent
-(ending) point for a series. You can change the color of either pin using the color picker for that pin, and the change
+(ending) point for a series. You can change the color and the transparency of either pin using the color picker for that pin, and the change
 will apply to all of the relevant start or end pins on the map.
 
 #### Advanced Pin Style Configuration

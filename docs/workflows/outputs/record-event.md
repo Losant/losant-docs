@@ -19,6 +19,12 @@ The subject of the event, as well as the message, also support [string templates
 
 An event can also be optionally created with some structured data attached, by providing a [payload path](/workflows/accessing-payload-data/#payload-paths) in the `Extra Event Data Path` field. If provided, this JSON path will be evaluated against the payload and the result will be attached to the event as a JSON object.
 
+## Event Time
+
+![Record Event Node Time Configuration](/images/workflows/outputs/record-event-node-time.png "Record Event Node Time Configuration")
+
+In addition, optionally, the timestamp to use as the creation time of the event can be changed. By default, the current time will be used (the first radio option). But in cases where that timestamp value is not desired, there are two other options - the timestamp of the current workflow payload being processed, or a timestamp on a specified payload path. The current time will often be very similar to the timestamp on the current workflow payload, but not always (depending on the length of time running the workflow takes) - and can in fact be drastically different in the case of non-realtime reports triggering a workflow. When specifying a payload path, the workflow expects the timestamp to conform to the same rules as a timestamp on a [state report](/devices/state/#including-timestamps).
+
 ## Output
 
 ![Record Event Node Output](/images/workflows/outputs/record-event-node-output.png "Record Event Node Output")

@@ -17,17 +17,17 @@ There are two main parts of the configuration for this node.
 
 Address Configuration contains three fields:
 
-*   **Host:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the IP address at which the register(s) resides.
-*   **Port:** (Required) A string template or integer for the HTTP port.
-*   **Unit ID:** (Required) A string template or integer for the Unit ID at the specified host and port. Defaults to `0`.
+* **Host:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the IP address at which the register(s) resides.
+* **Port:** (Required) A string template or integer for the HTTP port.
+* **Unit ID:** (Required) A string template or integer for the Unit ID at the specified host and port. Defaults to `0`.
 
 ### Write Instructions
 
 You may define multiple write instructions for the Modbus: Write Node, and you must define at least one. Each instruction has the following fields, all of which are required:
 
-*   **Address:** (Required) A string template or integer for the address at which to write. This should resolve to an integer between `0` and `65534` inclusive.
-*   **Register Type:** (Required) `Holding Registers` (default) or `Coils`.
-*   **Value:** (Required) A string template or integer for the value to write.
+* **Address:** (Required) A string template or integer for the address at which to write. This should resolve to an integer between `0` and `65534` inclusive.
+* **Register Type:** (Required) `Holding Registers` (default) or `Coils`.
+* **Value:** (Required) A string template or integer for the value to write.
 
 ![Modbus Write Node Result](/images/workflows/data/modbus-write-node-result.png "Modbus Write Node Result")
 

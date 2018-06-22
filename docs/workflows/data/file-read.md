@@ -11,11 +11,11 @@ The File: Read Node allows you to read a file from disk on your [Edge Compute de
 
 There are five configuration settings for this node:
 
-*   **File Path:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the disk location of the file to read.
-*   **Encoding:** The file encoding (defaults to UTF8).
-*   **Start Position:** A string template or integer for the byte at which to start reading. Not setting a value defaults to the start of the file. Passing a negative integer will start reading that many bytes from the end of the file.
-*   **Bytes to Read:** A string template or integer for the number of bytes to read. Not setting a value reads until the end of the file.
-*   **Result Path:** (Required) A [payload path](/workflows/accessing-payload-data/#payload-paths) for where to store the result of the operation.
+* **File Path:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the disk location of the file to read.
+* **Encoding:** The file encoding (defaults to UTF8).
+* **Start Position:** A string template or integer for the byte at which to start reading. Not setting a value defaults to the start of the file. Passing a negative integer will start reading that many bytes from the end of the file.
+* **Bytes to Read:** A string template or integer for the number of bytes to read. Not setting a value reads until the end of the file.
+* **Result Path:** (Required) A [payload path](/workflows/accessing-payload-data/#payload-paths) for where to store the result of the operation.
 
 Attempting to read a file that is larger than 5MB will result in an error.
 
