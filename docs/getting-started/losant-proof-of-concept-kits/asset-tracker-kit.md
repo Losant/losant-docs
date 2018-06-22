@@ -25,61 +25,61 @@ Your kit should include the following items:
 
 ## Dashboard Blocks
 
-**Trackers**
+### Trackers
 
 This shows all of your assets on one map.
 
 ![Trackers](/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/trackers.jpg "Trackers")
 
-### Tracker Details
+#### Tracker Details
 
 You have access to the following information for each of your trackers.
 
 ![Tracker Details](/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/tracker-details.jpg "Tracker Details")
 
-**Location**
+### Location
 
 This plots the location of your asset during the last 7 days.
 
 ![Location](/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/location.jpg "Location")
 
-**Status**
+### Status
 
 This displays the current distance of your asset from the center point. If your asset tracker is not reporting correctly, it will be displayed here.
 
 <img style="width: 200px; margin: 0 auto; display: block;" src="/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/status.png" alt="Status" />
 
-**Movement Status**
+### Movement Status
 
 The displays whether your asset is idle or in transit.
 
 <img style="width: 200px; margin: 0 auto; display: block;" src="/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/movement-status.png" alt="Movement Status" />
 
-**GPS Location**
+### GPS Location
 
 This shows the current GPS coordinate of your asset.
 
 <img style="width: 200px; margin: 0 auto; display: block;" src="/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/gps-location.png" alt="GPS Location" />
 
-**Temperature**
+### Temperature
 
 This displays the ambient temperature around your asset.
 
 <img style="width: 200px; margin: 0 auto; display: block;" src="/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/temperature.png" alt="Temperature" />
 
-**Speed**
+### Speed
 
 This displays the current speed if your device is in transit.
 
 <img style="width: 200px; margin: 0 auto; display: block;" src="/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/speed.png" alt="Speed" />
 
-**Battery**
+### Battery
 
 This shows the battery life of the asset tracker. If your device's batteries die, they can be replaced with two [CR123A batteries](https://www.amazon.com/AmazonBasics-Lithium-CR123a-Batteries-12-pack/dp/B01KBEORDK).
 
 <img style="width: 200px; margin: 0 auto; display: block;" src="/images/getting-started/losant-proof-of-concept-kits/asset-tracker-kit/battery.png" alt="Battery" />
 
-**History**
+### History
 
 This shows historical data with the speed, distance from center, and whether your device was inside or outside the geofence.
 
