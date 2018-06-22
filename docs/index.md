@@ -48,7 +48,6 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
   <div class="col-sm-4 col-md-3"><a href="/workflows/overview/">Workflows</a></div>
   <div class="col-sm-4 col-md-3"><a href="/mqtt/overview/">MQTT</a></div>
   <div class="col-sm-4 col-md-3"><a href="/rest-api/overview/">Rest API</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/sdks/overview/">SDKs</a></div>
 </div>
 <div class="row">
   <div class="col-sm-12">
