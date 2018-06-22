@@ -637,15 +637,13 @@ a.login-button {
   margin-top: 25px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 992px) {
 
   .bottom-callout .content h2 {
     padding-top: 0;
     margin-top: 10px;
   }
-}
 
-@media (min-width: 900px) {
   .bottom-callout img.icon {
     float: left;
   }
@@ -661,13 +659,13 @@ a.login-button {
     margin-top: 10px;
   }
 
+  .bottom-callout .content h2,
+  .bottom-callout .content p {
+    text-align: left;
+    margin-left: 120px;
+  }
 }
 
-.bottom-callout .content h2,
-.bottom-callout .content p {
-  text-align: left;
-  margin-left: 120px;
-}
 
 @media (min-width: 1200px) {
   .bottom-callout .primary {
