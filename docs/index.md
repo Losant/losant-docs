@@ -1,4 +1,4 @@
-# Welcome to Losant Docs!
+<h1 style="text-transform: uppercase">Welcome to Losant Docs!</h1>
 
 We're happy you're here! Getting familiar with the Losant product is easy. Get started below.
 
@@ -32,8 +32,7 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
   </div>
 </div>
 
-## Choose a Topic
-
+<h2 style="text-transform: uppercase">Choose a Topic</h2>
 
 <div class="row topics">
   <div class="col-sm-4 col-md-3"><a href="/getting-started/what-is-losant/">Getting Started</a></div>

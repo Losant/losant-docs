@@ -56,12 +56,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 250%;
-    text-transform: uppercase;
 }
 
 h2 {
     color: #111a2b;
-    text-transform: uppercase;
 }
 
 h3, h4 {
@@ -553,8 +551,24 @@ a.login-button {
   background-color: #f5f4f3;
   padding: 20px;
   margin-bottom: 25px;
-  min-height: 145px;
 }
+
+@media (min-width: 992px) {
+  .docs-sections .content {
+    min-height: 300px;
+  }
+
+  .docs-sections.bottom-callout .content {
+    min-height: auto;
+    overflow: auto;
+  }
+
+  .docs-sections.bottom-callout .content img {
+    margin-bottom: 0;
+  }
+}
+
+
 
 .docs-sections .content:hover{
   background-color: #dcdcdc;
