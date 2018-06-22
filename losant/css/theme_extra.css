@@ -613,8 +613,8 @@ a.login-button {
 }
 
 .rst-content .section .topics a {
-  background-color: #ff495c;
-  color: #FFF;
+  background-color: #f5f4f3;
+  color: #ff495c;
   text-align: center;
   padding-top: 25px;
   padding-bottom: 25px;
@@ -625,10 +625,11 @@ a.login-button {
   margin-left: -8px;
   margin-right: -8px;
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .rst-content .section .topics a:hover {
-  background-color: #80252E;
+  background-color: #dcdcdc;
   text-decoration: none;
 }
 
