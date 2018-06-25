@@ -35,19 +35,19 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
 <h2 style="text-transform: uppercase">Choose a Topic</h2>
 
 <div class="row topics">
-  <div class="col-sm-4 col-md-3"><a href="/getting-started/what-is-losant/">Getting Started</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/security/">Security</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/user-accounts/overview/">User Accounts</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/organizations/overview/">Organizations</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/applications/overview/">Applications</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/experiences/overview/">Experiences</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/edge-compute/overview/">Edge Compute</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/devices/overview/">Devices</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/dashboards/overview/">Dashboards</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/data-tables/overview/">Data Tables</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/workflows/overview/">Workflows</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/mqtt/overview/">MQTT</a></div>
-  <div class="col-sm-4 col-md-3"><a href="/rest-api/overview/">Rest API</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/getting-started/what-is-losant/">Getting Started</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/security/">Security</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/user-accounts/overview/">User Accounts</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/organizations/overview/">Organizations</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/applications/overview/">Applications</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/experiences/overview/">Experiences</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/edge-compute/overview/">Edge Compute</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/devices/overview/">Devices</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/dashboards/overview/">Dashboards</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/data-tables/overview/">Data Tables</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/workflows/overview/">Workflows</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/mqtt/overview/">MQTT</a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="/rest-api/overview/">Rest API</a></div>
 </div>
 <div class="row">
   <div class="col-sm-12">
