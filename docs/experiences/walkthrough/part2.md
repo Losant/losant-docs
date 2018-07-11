@@ -71,7 +71,7 @@ You can use this token to request the authenticated `GET /me` route.
 ```text
 curl -H "Content-Type: application/json" \
   -H "Authorization: Bearer THE_USER_TOKEN" \
-  http://lom-smart-pot.on.structure.works/me
+  https://example.onlosant.com/me
 ```
 
 ```json
