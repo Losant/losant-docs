@@ -32,12 +32,12 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: order, method, route, id, creationDate, requestCount, lastUpdated | order | position |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: method, route |  | method |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*route |
-| experienceGroupId | N | Filter endpoints to those only in the specified group |  | 575ec8687ae143cd83dc4a97 |
-| requestCountDuration | N | If set, a count of recent requests is included on each endpoint for the duration requested (milliseconds) |  | 86400000 |
+| sortField | N | Field to sort the results by. Accepted values are: order, method, route, id, creationDate, requestCount, lastUpdated | order | sortField&#x3D;position |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: method, route |  | filterField&#x3D;method |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my*route |
+| experienceGroupId | N | Filter endpoints to those only in the specified group |  | experienceGroupId&#x3D;575ec8687ae143cd83dc4a97 |
+| requestCountDuration | N | If set, a count of recent requests is included on each endpoint for the duration requested (milliseconds) |  | requestCountDuration&#x3D;86400000 |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -156,9 +156,9 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| statGrouping | N | Field to group the statistics by. Accepted values are: statusCode, endpointId | statusCode | statusCode |
-| duration | N | Duration in milliseconds | 86400000 | 86400000 |
-| resolution | N | Resolution in milliseconds | 3600000 | 3600000 |
+| statGrouping | N | Field to group the statistics by. Accepted values are: statusCode, endpointId | statusCode | statGrouping&#x3D;statusCode |
+| duration | N | Duration in milliseconds | 86400000 | duration&#x3D;86400000 |
+| resolution | N | Resolution in milliseconds | 3600000 | resolution&#x3D;3600000 |
 
 ### Request Headers <a name="stats-headers"></a>
 

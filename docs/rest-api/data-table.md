@@ -262,7 +262,7 @@ all.Application, all.Organization, all.User, dataTable.*, or dataTable.removeCol
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| columnName | Y | Name of the column to remove |  | myColumnName |
+| columnName | Y | Name of the column to remove |  | columnName&#x3D;myColumnName |
 
 ### Request Headers <a name="removeColumn-headers"></a>
 

@@ -183,8 +183,8 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| limit | N | Max log entries to return (ordered by time descending) | 1 | 10 |
-| since | N | Look for log entries since this time (ms since epoch) |  | 1465790400000 |
+| limit | N | Max log entries to return (ordered by time descending) | 1 | limit&#x3D;10 |
+| since | N | Look for log entries since this time (ms since epoch) |  | since&#x3D;1465790400000 |
 
 ### Request Headers <a name="getLogEntries-headers"></a>
 

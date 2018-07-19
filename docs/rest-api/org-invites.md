@@ -24,8 +24,8 @@ No authentication is required for this endpoint.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| token | Y | The token associated with the invite |  | aTokenString |
-| email | Y | The email associated with the invite |  | example@example.com |
+| token | Y | The token associated with the invite |  | token&#x3D;aTokenString |
+| email | Y | The email associated with the invite |  | email&#x3D;example@example.com |
 
 ### Curl Example <a name="get-curl-example"></a>
 

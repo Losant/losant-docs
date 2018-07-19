@@ -32,8 +32,8 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| email | N | Email address to send export to. Defaults to current user&#x27;s email. |  | email@example.com |
-| callbackUrl | N | Callback URL to call with export result. |  | https://example.com/cburl |
+| email | N | Email address to send export to. Defaults to current user&#x27;s email. |  | email&#x3D;email@example.com |
+| callbackUrl | N | Callback URL to call with export result. |  | callbackUrl&#x3D;https://example.com/cburl |
 
 ### Request Headers <a name="export-headers"></a>
 
@@ -88,14 +88,14 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, lastUpdated | name | name |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
-| page | N | Which page of results to return | 0 | 0 |
-| perPage | N | How many items to return per page | 1000 | 10 |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my * device |
-| deviceClass | N | Filter the devices by the given device class. Accepted values are: standalone, gateway, peripheral, floating, edgeCompute |  | standalone |
-| tagFilter | N | Array of tag pairs to filter by. See [Device Tag Filter](schemas.md#device-tag-filter) for more details. |  | [Device Tag Filter Example](schemas.md#device-tag-filter-example) |
+| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, lastUpdated | name | sortField&#x3D;name |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| page | N | Which page of results to return | 0 | page&#x3D;0 |
+| perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | filterField&#x3D;name |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my * device |
+| deviceClass | N | Filter the devices by the given device class. Accepted values are: standalone, gateway, peripheral, floating, edgeCompute |  | deviceClass&#x3D;standalone |
+| tagFilter | N | Array of tag pairs to filter by. See [Device Tag Filter](schemas.md#device-tag-filter) for more details. |  | tagFilter[0][key]&#x3D;Floor&amp;tagFilter[0][value]&#x3D;2&amp;tagFilter[1][key]&#x3D;Serial |
 
 ### Request Headers <a name="get-headers"></a>
 

@@ -33,12 +33,12 @@ all.Organization, all.Organization.read, all.User, all.User.read, solutionUsers.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: email, firstName, lastName, id, creationDate, lastLogin, lastUpdated | email | email |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
-| page | N | Which page of results to return | 0 | 0 |
-| perPage | N | How many items to return per page | 1000 | 10 |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: email, firstName, lastName |  | email |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | email*address |
+| sortField | N | Field to sort the results by. Accepted values are: email, firstName, lastName, id, creationDate, lastLogin, lastUpdated | email | sortField&#x3D;email |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| page | N | Which page of results to return | 0 | page&#x3D;0 |
+| perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: email, firstName, lastName |  | filterField&#x3D;email |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;email*address |
 
 ### Request Headers <a name="get-headers"></a>
 

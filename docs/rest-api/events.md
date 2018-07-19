@@ -32,13 +32,13 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: subject, id, creationDate | creationDate | subject |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | desc | asc |
-| page | N | Which page of results to return | 0 | 0 |
-| perPage | N | How many items to return per page | 1000 | 10 |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: subject |  | subject |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | abnormal power to * |
-| state | N | If provided, return events only in the given state. Accepted values are: new, acknowledged, resolved |  | new |
+| sortField | N | Field to sort the results by. Accepted values are: subject, id, creationDate | creationDate | sortField&#x3D;subject |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | desc | sortDirection&#x3D;asc |
+| page | N | Which page of results to return | 0 | page&#x3D;0 |
+| perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: subject |  | filterField&#x3D;subject |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;abnormal power to * |
+| state | N | If provided, return events only in the given state. Accepted values are: new, acknowledged, resolved |  | state&#x3D;new |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -93,7 +93,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| filter | N | Filter to apply against event subjects. Supports globbing. Blank or not provided means no filtering. |  | abnormal power to * |
+| filter | N | Filter to apply against event subjects. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;abnormal power to * |
 
 ### Request Headers <a name="mostRecentBySeverity-headers"></a>
 
@@ -147,9 +147,9 @@ all.Application, all.Organization, all.User, events.*, or events.patch.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| filterField | N | Field to filter the events to act on by. Blank or not provided means no filtering. Accepted values are: subject |  | subject |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | abnormal power to * |
-| state | N | If provided, act on events only in the given state. Accepted values are: new, acknowledged, resolved |  | new |
+| filterField | N | Field to filter the events to act on by. Blank or not provided means no filtering. Accepted values are: subject |  | filterField&#x3D;subject |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;abnormal power to * |
+| state | N | If provided, act on events only in the given state. Accepted values are: new, acknowledged, resolved |  | state&#x3D;new |
 
 ### Request Headers <a name="patch-headers"></a>
 

@@ -133,8 +133,8 @@ all.Application, all.Organization, all.User, file.*, or file.move.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| name | N | The new name of the file or directory |  | fileA |
-| parentDirectory | N | The new parent directory for the file or directory to move into. |  | /new/location/here |
+| name | N | The new name of the file or directory |  | name&#x3D;fileA |
+| parentDirectory | N | The new parent directory for the file or directory to move into. |  | parentDirectory&#x3D;/new/location/here |
 
 ### Request Headers <a name="move-headers"></a>
 

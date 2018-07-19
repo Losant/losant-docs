@@ -32,7 +32,7 @@ all.Application, all.Organization, all.User, application.*, or application.archi
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| date | Y | The date to archive data (ms since epoch), it must be within the archive time range older than 31 days and newer than the organizations dataTTL |  | 1518556791829 |
+| date | Y | The date to archive data (ms since epoch), it must be within the archive time range older than 31 days and newer than the organizations dataTTL |  | date&#x3D;1518556791829 |
 
 ### Request Headers <a name="archiveData-headers"></a>
 
@@ -297,8 +297,8 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| start | N | Start of range for payload count query (ms since epoch) | -2592000000 | 0 |
-| end | N | End of range for payload count query (ms since epoch) | 0 | 1465790400000 |
+| start | N | Start of range for payload count query (ms since epoch) | -2592000000 | start&#x3D;0 |
+| end | N | End of range for payload count query (ms since epoch) | 0 | end&#x3D;1465790400000 |
 
 ### Request Headers <a name="payloadCounts-headers"></a>
 

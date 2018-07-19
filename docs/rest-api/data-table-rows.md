@@ -33,7 +33,7 @@ all.Application, all.Organization, all.User, dataTableRows.*, or dataTableRows.d
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| limit | N | Limit number of rows to delete from data table | 1000 | 10 |
+| limit | N | Limit number of rows to delete from data table | 1000 | limit&#x3D;10 |
 
 ### Request Headers <a name="delete-headers"></a>
 
@@ -187,10 +187,10 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortColumn | N | Column to sort the rows by |  | myColumnName |
-| sortDirection | N | Direction to sort the rows by. Accepted values are: asc, desc | asc | asc |
-| limit | N | How many rows to return | 1000 | 0 |
-| offset | N | How many rows to skip | 0 | 0 |
+| sortColumn | N | Column to sort the rows by |  | sortColumn&#x3D;myColumnName |
+| sortDirection | N | Direction to sort the rows by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| limit | N | How many rows to return | 1000 | limit&#x3D;0 |
+| offset | N | How many rows to skip | 0 | offset&#x3D;0 |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -309,10 +309,10 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortColumn | N | Column to sort the rows by |  | myColumnName |
-| sortDirection | N | Direction to sort the rows by. Accepted values are: asc, desc | asc | asc |
-| limit | N | How many rows to return | 1000 | 0 |
-| offset | N | How many rows to skip | 0 | 0 |
+| sortColumn | N | Column to sort the rows by |  | sortColumn&#x3D;myColumnName |
+| sortDirection | N | Direction to sort the rows by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| limit | N | How many rows to return | 1000 | limit&#x3D;0 |
+| offset | N | How many rows to skip | 0 | offset&#x3D;0 |
 
 ### Request Headers <a name="query-headers"></a>
 

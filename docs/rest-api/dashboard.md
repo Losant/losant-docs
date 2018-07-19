@@ -79,7 +79,7 @@ No authentication is required for this endpoint.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| password | N | Password for password-protected dashboards |  | myPassword |
+| password | N | Password for password-protected dashboards |  | password&#x3D;myPassword |
 
 ### Curl Example <a name="get-curl-example"></a>
 
@@ -190,7 +190,7 @@ No authentication is required for this endpoint.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| password | N | Password for password-protected dashboards |  | myPassword |
+| password | N | Password for password-protected dashboards |  | password&#x3D;myPassword |
 
 ### Request Body <a name="validateContext-body"></a>
 

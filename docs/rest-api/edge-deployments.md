@@ -32,14 +32,14 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: id, deviceId, flowId, desiredVersion, currentVersion, creationDate, lastUpdated | lastUpdated | creationDate |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
-| page | N | Which page of results to return | 0 | 0 |
-| perPage | N | How many items to return per page | 1000 | 10 |
-| deviceId | N | Filter deployments to the given Device ID |  | 575ecf887ae143cd83dc4aa2 |
-| version | N | Filter deployments to the given Workflow Version (matches against both current and desired) |  | myFlowVersion |
-| filterEmpty | N | Filter out deployments where both the current and desired version are null. |  | true |
-| flowId | N | Filter deployments to the given Workflow ID |  | 575ed18f7ae143cd83dc4aa6 |
+| sortField | N | Field to sort the results by. Accepted values are: id, deviceId, flowId, desiredVersion, currentVersion, creationDate, lastUpdated | lastUpdated | sortField&#x3D;creationDate |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| page | N | Which page of results to return | 0 | page&#x3D;0 |
+| perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
+| deviceId | N | Filter deployments to the given Device ID |  | deviceId&#x3D;575ecf887ae143cd83dc4aa2 |
+| version | N | Filter deployments to the given Workflow Version (matches against both current and desired) |  | version&#x3D;myFlowVersion |
+| filterEmpty | N | Filter out deployments where both the current and desired version are null. |  | filterEmpty&#x3D;true |
+| flowId | N | Filter deployments to the given Workflow ID |  | flowId&#x3D;575ed18f7ae143cd83dc4aa6 |
 
 ### Request Headers <a name="get-headers"></a>
 

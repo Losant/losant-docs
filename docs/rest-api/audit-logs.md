@@ -32,13 +32,13 @@ all.Organization, all.Organization.read, all.User, all.User.read, auditLogs.*, o
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: creationDate, responseStatus, actorName | creationDate | creationDate |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | desc | asc |
-| page | N | Which page of results to return | 0 | 0 |
-| perPage | N | How many items to return per page | 1000 | 10 |
-| start | N | Start of time range for audit log query |  | 1465790400000 |
-| end | N | End of time range for audit log query |  | 1465790400000 |
-| auditLogFilter | N | Filters for the audit log query. See [Audit Log Filter](schemas.md#audit-log-filter) for more details. |  | [Audit Log Filter Example](schemas.md#audit-log-filter-example) |
+| sortField | N | Field to sort the results by. Accepted values are: creationDate, responseStatus, actorName | creationDate | sortField&#x3D;creationDate |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | desc | sortDirection&#x3D;asc |
+| page | N | Which page of results to return | 0 | page&#x3D;0 |
+| perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
+| start | N | Start of time range for audit log query |  | start&#x3D;1465790400000 |
+| end | N | End of time range for audit log query |  | end&#x3D;1465790400000 |
+| auditLogFilter | N | Filters for the audit log query. See [Audit Log Filter](schemas.md#audit-log-filter) for more details. |  | auditLogFilter[primaryTarget][0][type]&#x3D;Dashboard&amp;auditLogFilter[primaryTarget][1][type]&#x3D;Application&amp;auditLogFilter[primaryTarget][1][id]&#x3D;575ec8687ae143cd83dc4a97&amp;auditLogFilter[actor][0][type]&#x3D;User&amp;auditLogFilter[actor][0][id]&#x3D;575ed70c7ae143cd83dc4aa9 |
 
 ### Request Headers <a name="get-headers"></a>
 

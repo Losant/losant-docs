@@ -33,7 +33,7 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| keepAliveInterval | N | Number of seconds between keepalive messages | 2 | 2 |
+| keepAliveInterval | N | Number of seconds between keepalive messages | 2 | keepAliveInterval&#x3D;2 |
 
 ### Request Headers <a name="commandStream-headers"></a>
 
@@ -141,10 +141,10 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| start | N | Start time of export (ms since epoch - 0 means now, negative is relative to now) | 1 | 1465790400000 |
-| end | N | End time of export (ms since epoch - 0 means now, negative is relative to now) | 0 | 1465790400000 |
-| email | N | Email address to send export to. Defaults to current user&#x27;s email. |  | email@example.com |
-| callbackUrl | N | Callback URL to call with export result. |  | https://example.com/cburl |
+| start | N | Start time of export (ms since epoch - 0 means now, negative is relative to now) | 1 | start&#x3D;1465790400000 |
+| end | N | End time of export (ms since epoch - 0 means now, negative is relative to now) | 0 | end&#x3D;1465790400000 |
+| email | N | Email address to send export to. Defaults to current user&#x27;s email. |  | email&#x3D;email@example.com |
+| callbackUrl | N | Callback URL to call with export result. |  | callbackUrl&#x3D;https://example.com/cburl |
 
 ### Request Headers <a name="export-headers"></a>
 
@@ -250,8 +250,8 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| limit | N | Max command entries to return (ordered by time descending) | 1 | 10 |
-| since | N | Look for command entries since this time (ms since epoch) |  | 1465790400000 |
+| limit | N | Max command entries to return (ordered by time descending) | 1 | limit&#x3D;10 |
+| since | N | Look for command entries since this time (ms since epoch) |  | since&#x3D;1465790400000 |
 
 ### Request Headers <a name="getCommand-headers"></a>
 
@@ -307,8 +307,8 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| start | N | Start of time range to look at to build composite state | 1 | 1465790400000 |
-| end | N | End of time range to look at to build composite state | 0 | 1465790400000 |
+| start | N | Start of time range to look at to build composite state | 1 | start&#x3D;1465790400000 |
+| end | N | End of time range to look at to build composite state | 0 | end&#x3D;1465790400000 |
 
 ### Request Headers <a name="getCompositeState-headers"></a>
 
@@ -364,8 +364,8 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| limit | N | Max log entries to return (ordered by time descending) | 1 | 10 |
-| since | N | Look for log entries since this time (ms since epoch) |  | 1465790400000 |
+| limit | N | Max log entries to return (ordered by time descending) | 1 | limit&#x3D;10 |
+| since | N | Look for log entries since this time (ms since epoch) |  | since&#x3D;1465790400000 |
 
 ### Request Headers <a name="getLogEntries-headers"></a>
 
@@ -421,8 +421,8 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| limit | N | Max state entries to return (ordered by time descending) | 1 | 10 |
-| since | N | Look for state entries since this time (ms since epoch) |  | 1465790400000 |
+| limit | N | Max state entries to return (ordered by time descending) | 1 | limit&#x3D;10 |
+| since | N | Look for state entries since this time (ms since epoch) |  | since&#x3D;1465790400000 |
 
 ### Request Headers <a name="getState-headers"></a>
 
@@ -555,8 +555,8 @@ all.Application, all.Organization, all.User, device.*, or device.removeData.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| start | N | Start time of export (ms since epoch - 0 means now, negative is relative to now) | 1 | 1465790400000 |
-| end | N | End time of export (ms since epoch - 0 means now, negative is relative to now) | 0 | 1465790400000 |
+| start | N | Start time of export (ms since epoch - 0 means now, negative is relative to now) | 1 | start&#x3D;1465790400000 |
+| end | N | End time of export (ms since epoch - 0 means now, negative is relative to now) | 0 | end&#x3D;1465790400000 |
 
 ### Request Headers <a name="removeData-headers"></a>
 
@@ -749,7 +749,7 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| keepAliveInterval | N | Number of seconds between keepalive messages | 2 | 2 |
+| keepAliveInterval | N | Number of seconds between keepalive messages | 2 | keepAliveInterval&#x3D;2 |
 
 ### Request Headers <a name="stateStream-headers"></a>
 

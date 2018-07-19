@@ -32,15 +32,15 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: lastUpdated, type, name, creationDate | lastUpdated | subject |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
-| page | N | Which page of results to return | 0 | 0 |
-| perPage | N | How many items to return per page | 1000 | 10 |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | myFile |
-| type | N | Limit by the type (file or directory) of the file |  | file |
-| status | N | Limit the result to only files of this status. Accepted values are: completed, pending |  | completed |
-| directory | N | Get files that are inside of this directory |  | /a/path/ |
+| sortField | N | Field to sort the results by. Accepted values are: lastUpdated, type, name, creationDate | lastUpdated | sortField&#x3D;subject |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| page | N | Which page of results to return | 0 | page&#x3D;0 |
+| perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | filterField&#x3D;name |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;myFile |
+| type | N | Limit by the type (file or directory) of the file |  | type&#x3D;file |
+| status | N | Limit the result to only files of this status. Accepted values are: completed, pending |  | status&#x3D;completed |
+| directory | N | Get files that are inside of this directory |  | directory&#x3D;/a/path/ |
 
 ### Request Headers <a name="get-headers"></a>
 

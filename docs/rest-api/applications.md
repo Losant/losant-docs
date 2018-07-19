@@ -26,13 +26,13 @@ all.Organization, all.Organization.read, all.User, all.User.read, applications.*
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, ownerId, lastUpdated | name | name |
-| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
-| page | N | Which page of results to return | 0 | 0 |
-| perPage | N | How many items to return per page | 1000 | 10 |
-| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | name |
-| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my * app |
-| orgId | N | If not provided, return all applications. If provided but blank, only return applications belonging to the current user. If provided and an id, only return applications belonging to the given organization id. |  | 575ecdf07ae143cd83dc4a9a |
+| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, ownerId, lastUpdated | name | sortField&#x3D;name |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| page | N | Which page of results to return | 0 | page&#x3D;0 |
+| perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | filterField&#x3D;name |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my * app |
+| orgId | N | If not provided, return all applications. If provided but blank, only return applications belonging to the current user. If provided and an id, only return applications belonging to the given organization id. |  | orgId&#x3D;575ecdf07ae143cd83dc4a9a |
 
 ### Request Headers <a name="get-headers"></a>
 

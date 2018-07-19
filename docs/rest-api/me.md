@@ -392,8 +392,8 @@ all.SolutionUser, all.SolutionUser.read, all.User, all.User.read, me.*, or me.fe
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| parentId | N | Parent id of the recent list |  | 575ec8687ae143cd83dc4a97 |
-| itemType | Y | Item type to get the recent list of. Accepted values are: application, device, flow, dashboard, organization |  | application |
+| parentId | N | Parent id of the recent list |  | parentId&#x3D;575ec8687ae143cd83dc4a97 |
+| itemType | Y | Item type to get the recent list of. Accepted values are: application, device, flow, dashboard, organization |  | itemType&#x3D;application |
 
 ### Request Headers <a name="fetchRecentItems-headers"></a>
 
@@ -441,8 +441,8 @@ all.SolutionUser, all.SolutionUser.read, all.User, all.User.read, me.*, or me.ge
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| includeRecent | N | Should the user include recent app/dashboard info |  | true |
-| summaryExclude | N | List of summary fields to exclude from user summary |  | payloadCount |
+| includeRecent | N | Should the user include recent app/dashboard info |  | includeRecent&#x3D;true |
+| summaryExclude | N | List of summary fields to exclude from user summary |  | summaryExclude&#x3D;payloadCount |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -549,8 +549,8 @@ all.SolutionUser, all.User, all.User.read, me.*, or me.payloadCounts.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| start | N | Start of range for payload count query (ms since epoch) |  | 0 |
-| end | N | End of range for payload count query (ms since epoch) |  | 1465790400000 |
+| start | N | Start of range for payload count query (ms since epoch) |  | start&#x3D;0 |
+| end | N | End of range for payload count query (ms since epoch) |  | end&#x3D;1465790400000 |
 
 ### Request Headers <a name="payloadCounts-headers"></a>
 
