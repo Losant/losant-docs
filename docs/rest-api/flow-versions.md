@@ -33,7 +33,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: version, id, creationDate | version | version |
+| sortField | N | Field to sort the results by. Accepted values are: version, id, creationDate, lastUpdated | version | version |
 | sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
 | page | N | Which page of results to return | 0 | 0 |
 | perPage | N | How many items to return per page | 1000 | 10 |

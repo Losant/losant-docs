@@ -28,7 +28,7 @@ all.Application, all.Organization, all.User, flowVersion.*, or flowVersion.delet
 | -------------- | ----------- | ------- |
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 | FLOW_ID | ID associated with the flow | 575ed18f7ae143cd83dc4aa6 |
-| FLOW_VERSION_ID | ID associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
+| FLOW_VERSION_ID | Version ID or version name associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
 
 ### Request Headers <a name="delete-headers"></a>
 
@@ -79,7 +79,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | -------------- | ----------- | ------- |
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 | FLOW_ID | ID associated with the flow | 575ed18f7ae143cd83dc4aa6 |
-| FLOW_VERSION_ID | ID associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
+| FLOW_VERSION_ID | Version ID or version name associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -130,7 +130,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | -------------- | ----------- | ------- |
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 | FLOW_ID | ID associated with the flow | 575ed18f7ae143cd83dc4aa6 |
-| FLOW_VERSION_ID | ID associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
+| FLOW_VERSION_ID | Version ID or version name associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
 
 ### Request Query Parameters <a name="getLogEntries-query-params"></a>
 
@@ -188,7 +188,7 @@ all.Application, all.Organization, all.User, flowVersion.*, or flowVersion.patch
 | -------------- | ----------- | ------- |
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 | FLOW_ID | ID associated with the flow | 575ed18f7ae143cd83dc4aa6 |
-| FLOW_VERSION_ID | ID associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
+| FLOW_VERSION_ID | Version ID or version name associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
 
 ### Request Headers <a name="patch-headers"></a>
 

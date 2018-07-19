@@ -32,7 +32,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, integrationType | name | name |
+| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, integrationType, lastUpdated | name | name |
 | sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
 | page | N | Which page of results to return | 0 | 0 |
 | perPage | N | How many items to return per page | 1000 | 10 |

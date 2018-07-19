@@ -8,6 +8,64 @@ Below are the various requests that can be performed against the
 Device resource, as well as the expected
 parameters and the potential responses.
 
+## Command Stream
+
+Attach to a real time stream of command messages to this device using Server Sent Events (SSE)
+
+### Method And Url <a name="commandStream-method-url"></a>
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/commandStream
+
+### Authentication <a name="commandStream-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, device.*, or device.commandStream.
+
+### Request Path Components <a name="commandStream-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+| DEVICE_ID | ID associated with the device | 575ecf887ae143cd83dc4aa2 |
+
+### Request Query Parameters <a name="commandStream-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| keepAliveInterval | N | Number of seconds between keepalive messages | 2 | 2 |
+
+### Request Headers <a name="commandStream-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Curl Example <a name="commandStream-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X GET \
+    https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/commandStream
+```
+
+### SSE Stream for a Successful Response  <a name="commandStream-successful-responses"></a>
+
+SSE stream of new command messages for this device
+
+| SSE Event Name | Type | Description |
+| -------------- | ---- | ----------- |
+| deviceState | [Device Command](schemas.md#device-command) | An SSE event representing a single device command |
+
+### Error Responses <a name="commandStream-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if device was not found |
+
 ## Delete
 
 Deletes a device
@@ -660,6 +718,64 @@ curl -H 'Content-Type: application/json' \
 | 200 | [Success](schemas.md#success) | If state was successfully received |
 
 ### Error Responses <a name="sendState-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if device was not found |
+
+## State Stream
+
+Attach to a real time stream of state messages from this device using Server Sent Events (SSE)
+
+### Method And Url <a name="stateStream-method-url"></a>
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/stateStream
+
+### Authentication <a name="stateStream-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Device, all.Device.read, all.Organization, all.Organization.read, all.User, all.User.read, device.*, or device.stateStream.
+
+### Request Path Components <a name="stateStream-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+| DEVICE_ID | ID associated with the device | 575ecf887ae143cd83dc4aa2 |
+
+### Request Query Parameters <a name="stateStream-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| keepAliveInterval | N | Number of seconds between keepalive messages | 2 | 2 |
+
+### Request Headers <a name="stateStream-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Curl Example <a name="stateStream-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X GET \
+    https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/stateStream
+```
+
+### SSE Stream for a Successful Response  <a name="stateStream-successful-responses"></a>
+
+SSE stream of new state messages for this device
+
+| SSE Event Name | Type | Description |
+| -------------- | ---- | ----------- |
+| deviceState | [Device State](schemas.md#device-state) | An SSE event representing a single device state |
+
+### Error Responses <a name="stateStream-error-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |

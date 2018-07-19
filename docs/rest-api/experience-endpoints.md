@@ -32,7 +32,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: order, method, route, id, creationDate, requestCount | order | position |
+| sortField | N | Field to sort the results by. Accepted values are: order, method, route, id, creationDate, requestCount, lastUpdated | order | position |
 | sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: method, route |  | method |
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | my*route |

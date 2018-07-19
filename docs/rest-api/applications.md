@@ -26,7 +26,7 @@ all.Organization, all.Organization.read, all.User, all.User.read, applications.*
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, ownerId | name | name |
+| sortField | N | Field to sort the results by. Accepted values are: name, id, creationDate, ownerId, lastUpdated | name | name |
 | sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | asc |
 | page | N | Which page of results to return | 0 | 0 |
 | perPage | N | How many items to return per page | 1000 | 10 |
