@@ -260,6 +260,8 @@ pages:
     - Experience Users: rest-api/experience-users.md
     - Experience View: rest-api/experience-view.md
     - Experience Views: rest-api/experience-views.md
+    - File: rest-api/file.md
+    - Files: rest-api/files.md
     - Integration: rest-api/integration.md
     - Integrations: rest-api/integrations.md
     - Me: rest-api/me.md
