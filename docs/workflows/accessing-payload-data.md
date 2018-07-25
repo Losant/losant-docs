@@ -127,7 +127,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 * `{{formatDateRelative date relativeTo}}`: Outputs a relative date value (such as "5 minutes ago"). Date is calculated relative to the `relativeTo` parameter, which defaults to the current time when not set.
 * `{{gpsDistance gpsStr1 gpsStr2}}`: Takes two [GPS points](/devices/state/#gps-attributes) and returns the distance between them (in meters).
 * `{{join array separator}}`: Joins the values in the given array as a single string, separated by the given separator. If no separator is given, defaults to `,`.
-* `{{jsonEncode val}}`: Returns `val` [stringified](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+* `{{jsonEncode val spacerStr}}`: Returns `val` [stringified](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify). If no spacer string is given (for adding whitespace for readability to the output), defaults to adding no whitespace.
 * `{{length val}}`:
     * If `val` is an **array**, returns the number of items in the array.
     * If `val` is an **object**, returns the number of keys on the object.
