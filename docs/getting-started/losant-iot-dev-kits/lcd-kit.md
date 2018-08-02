@@ -215,13 +215,7 @@ We have the inside temperature data - this is the temperature displayed in the S
 
 Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to trigger notifications, create events, send commands, and many more. Workflows are basically the brains of your connected solution.
 
-**First, create a new workflow and name it whatever you want.**
-
-![Create Workflow](/images/getting-started/losant-iot-dev-kits/lcd-kit/create-workflow.png "Create Workflow")
-
-### Import Workflow
-
-As a way to get up and running as fast as possible, we've provided you a workflow you can import. In the firmware zip file you downloaded earlier, there is a file named `lcd-weather-station.flow`. Import this file into your workflow using the import tools on the workflow properties panel.
+As a way to get up and running as fast as possible, we've provided you a workflow you can import. In the firmware zip file you downloaded earlier, there is a file named `lcd-weather-station.flow`. Import this file as a new workflow in your application using the import button on the `View All Workflows` page.
 
 ![Import Workflow](/images/getting-started/losant-iot-dev-kits/lcd-kit/import-workflow.png "Import Workflow")
 

@@ -101,12 +101,9 @@ Let's continue with the model we've followed so far by including the GET and POS
 
 ### Edit Profile Workflow
 
-Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
-
 ![Edit Profile Workflow](/images/experiences/walkthrough/views/user-profile/edit-profile-workflow.png "Edit Profile Workflow")
 
-1. `Name` the workflow `Endpoint /edit-profile` and click the "Create Workflow" button.
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/9bc72bcb/user-profile/endpoint-edit-profile.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-edit-profile.flow` into your new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/9bc72bcb/user-profile/endpoint-edit-profile.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-edit-profile.flow` as a new workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /edit-profile` and `GET /edit-profile` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Edit Profile` page](#page-edit-profile).
 
@@ -124,8 +121,7 @@ Now let's create a workflow allowing our logged-in users to update their passwor
 
 ![Change Password Workflow](/images/experiences/walkthrough/views/user-profile/change-password-workflow.png "Change Password Workflow")
 
-1. `Name` the workflow `Endpoint /change-password` and click the "Create Workflow" button.
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/f5d531da/user-profile/endpoint-change-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-change-password.flow` into your new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/f5d531da/user-profile/endpoint-change-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-change-password.flow` as a new workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /change-password` and `GET /change-password` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Change Password` page](#page-change-password).
 

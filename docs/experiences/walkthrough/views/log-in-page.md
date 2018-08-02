@@ -91,11 +91,7 @@ This is mostly Twitter Bootstrap boilerplate <a href="https://getbootstrap.com/d
 
 At this point we have the endpoints and the page. We now need the workflow that will get triggered by the endpoint requests, which will reply with the page we just created.
 
-Start by creating an empty workflow using the main "Workflows" application menu.
-
-![Workflow Menu](/images/experiences/walkthrough/views/log-in-page/workflow-menu.png "Workflow Menu")
-
-First, <a href="https://cdn.rawgit.com/Losant/experience-views-walkthrough/2fdf26db/log-in-page/endpoint-login.flow" target="_blank">download the example workflow</a> and [import it](/workflows/overview/#import-export) into your newly created workflow.
+First, <a href="https://cdn.rawgit.com/Losant/experience-views-walkthrough/2fdf26db/log-in-page/endpoint-login.flow" target="_blank">download the example workflow</a> and [import it](/workflows/overview/#import-export) as a new workflow.
 
 ![Workflow](/images/experiences/walkthrough/views/log-in-page/workflow.png "Workflow")
 

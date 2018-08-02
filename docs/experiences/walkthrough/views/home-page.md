@@ -20,7 +20,7 @@ This home page example is mostly Twitter Bootstrap markup for laying out the con
 
 Now that the endpoint and page are created, you can create the workflow that will respond to the endpoint request with this newly created page.
 
-Create a new workflow, <a href="https://cdn.rawgit.com/Losant/experience-views-walkthrough/107a5378/home-page/endpoint-home.flow" target="_blank">download the example</a>, and [import it](/workflows/overview/#import-export).
+First <a href="https://cdn.rawgit.com/Losant/experience-views-walkthrough/107a5378/home-page/endpoint-home.flow" target="_blank">download the example</a>, and [import it](/workflows/overview/#import-export).
 
 ![Home Workflow](/images/experiences/walkthrough/views/home-page/home-workflow.png "Home Workflow")
 

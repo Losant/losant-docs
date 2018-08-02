@@ -111,12 +111,9 @@ Let's continue with the model we've followed so far by including the GET and POS
 
 ### Forgot Password Workflow
 
-Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
-
 ![Forgot Password Workflow](/images/experiences/walkthrough/views/forgot-password/forgot-password-workflow.png "Forgot Password Workflow")
 
-1. `Name` the workflow `Endpoint /forgot-password` and click the "Create Workflow" button.
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/fa4d224f/forgot-password/endpoint-forgot-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-forgot-password.flow` into your new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/fa4d224f/forgot-password/endpoint-forgot-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-forgot-password.flow` as a new workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /forgot-password` and `GET /forgot-password` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Forgot Password` page](#page-forgot-password).
 
@@ -136,8 +133,7 @@ Now let's create a workflow allowing users to reset their passwords after clicki
 
 ![Reset Password Workflow](/images/experiences/walkthrough/views/forgot-password/reset-password-workflow.png "Reset Password Workflow")
 
-1. `Name` the workflow `Endpoint /reset-password` and click the "Create Workflow" button.
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/fa4d224f/forgot-password/endpoint-reset-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-reset-password.flow` into your new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/fa4d224f/forgot-password/endpoint-reset-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-reset-password.flow` as a new workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /reset-password` and `GET /reset-password` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Reset Password` page](#page-reset-password).
 
