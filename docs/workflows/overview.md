@@ -159,13 +159,13 @@ Workflows and their [versions](/workflows/versioning/) can be exported by clicki
 
 ![Export Workflow](/images/workflows/workflow-export.png "Export Workflow")
 
-Clicking the `Export` option will open a modal, which will allow you to either export the version to a file, or (if you have [edit permissions](/organizations/members/#member-roles) within the application) to a new workflow. When exporting the workflow to a file, that file can then be imported into another workflow of the same type.
+Clicking the `Export` option will open a modal, which will allow you to either export the version to a file, or (if you have [edit permissions](/organizations/members/#member-roles) within the application) clone it as a new workflow. When exporting the workflow to a file, that file can then be imported as a new workflow of the same type.
 
 ![Export Modal](/images/workflows/workflow-export-modal.png "Export Modal")
 
 When exporting, you must decide if the values for the global config should be included in the export. The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
 
-The most common case when importing a workflow will be importing into a blank workflow; however, Losant also supports importing into a workflow with existing nodes. In that case, the nodes for the imported workflow are just added alongside the existing nodes. Importing a workflow can be done in the properties panel when viewing its "Develop" version.
+You can import a workflow from the "View All Workflows" list, by either dragging the exported file onto the appropriate list, or clicking the `Import` button (which will allow you to browse for an exported workflow file). Imported workflows will by default be set as disabled, to give you the chance to make any needed modifications before the workflow starts running.
 
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 
