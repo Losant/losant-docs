@@ -38,7 +38,7 @@ There are a few actions you may take relative to a version:
 
 * Any version can be set as the workflow's default. It is this version that runs when a payload hits the workflow without a [specific version specified](#triggering-specific-versions).
 * Versions can have their contents copied to Develop, where they can then be edited and saved as a new version.
-* Versions can be [exported](/workflows/overview/#import-export) either to a JSON file or, if you have [edit permissions](/organizations/members/#member-roles) within the application, to a new workflow.
+* Versions can be [exported](/workflows/overview/#import-export) either to a JSON file or, if you have [edit permissions](/organizations/members/#member-roles) within the application, cloned as a new workflow.
 * Any version besides Develop can be individually disabled.
 * Any version besides Develop, or the current default version, can be deleted. This action cannot be undone.
 

@@ -34,7 +34,7 @@ The JWT: Create Node has one optional output field. The `Destination Path` field
 
 If any of these options are given in the `JSON Template` field, they will **not** be overwritten by these options. These options are your defaults.
 
-* `Expires In` - Given a number and the time unit to create an expiration date. This will not be used if `exp` exists in the `JSON Template`.
+* `Expires In` - Given a number and the time unit to create an expiration date. This will not be used if `exp` exists in the `JSON Template`. If you choose `No Expiration Time`, and `exp` is not in the `JSON Template`, the generated token will never expire.
 
 * `Issuer Template` - A string or payload template that will used as the issuser. This will not be used if `iss` exists in the `JSON Template`.
 

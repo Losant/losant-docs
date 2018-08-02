@@ -153,19 +153,11 @@ Insert the moisture sensor roughly halfway to two thirds into your plant's soil.
 
 ## 7. Set Up Alerts
 
-Now that real moisture data is flowing into Losant, we can set up our alerts to be notified by SMS and email whenever the moisture level reaches a certain value. We're also going to send a command back to the board to turn on the LED, just in case you missed the alert. For this, we're going to use [Losant Workflows](/workflows/overview/).
-
-First, create a new workflow and name it whatever you want.
-
-![Create Workflow](/images/getting-started/losant-iot-dev-kits/moisture-sensor/create-workflow.png "Create Workflow")
-
-![Workflow Settings](/images/getting-started/losant-iot-dev-kits/moisture-sensor/workflow-settings.png "Workflow Settings")
-
-As a way to get up and running as fast as possible, we've provided you a workflow you can import. In the firmware zip file you downloaded earlier, there is a file named `low-moisture-alert.flow`. Import this file into your workflow using the import tools on the workflow properties panel.
+Now that real moisture data is flowing into Losant, we can set up our alerts to be notified by SMS and email whenever the moisture level reaches a certain value. We're also going to send a command back to the board to turn on the LED, just in case you missed the alert. For this, we're going to use [Losant Workflows](/workflows/overview/). As a way to get up and running as fast as possible, we've provided you a workflow you can import. In the firmware zip file you downloaded earlier, there is a file named `low-moisture-alert.flow`. Import this file as a new workflow in your application using the import button on the `View All Workflows` page.
 
 ![Import Workflow](/images/getting-started/losant-iot-dev-kits/moisture-sensor/import-workflow.png "Import Workflow")
 
-Once imported, your workflow should look like the following.
+Once imported, your workflow should look like the following:
 
 ![Imported Workflow](/images/getting-started/losant-iot-dev-kits/moisture-sensor/imported-workflow.png "Imported Workflow")
 
