@@ -34,6 +34,18 @@ A "Device ID" is a [device query](/devices/device-queries/) that takes a single 
 
 If a device ID is used in a query with an attribute that is not defined on the device, the block that is referencing the variable will fail to load.
 
+### Device Tags
+
+A "Device Tag" is a [device query](/devices/device-queries/) that resolves to a single [device tag](/devices/overview/#device-tags). This tag can be used to build data queries for groups of devices that have common characteristics. Just like when build queries with device tags, the key or value of a device tage context variable can resolve to a wildcard ('*') or a static value.
+
+![Device Tag Context](/images/dashboards/context-deviceTag.png "Device Tag Context")
+
+Device Tags take three additional parameters:
+
+* **Application ID** is the Losant [application](/applications/overview/) to which any selected device tag must belong.
+* **Default Value** is the device tag to use when no value is provided by the user.
+* **Validation** is optional; it is a [device query](/devices/device-queries/) that accepts multiple device tags that the variable must match. The values must be tags that exist on at least one device within your application – or they can contain wildcard values. Any device tag entered by your dashboard users must match one of these validation tags, if they are provided. For example, if two validation tags of "foo=bar" and "*=world" are provided, a user could provide a context variable value of "foo=bar", or "hello=world", or "goodbye=world".
+
 ### Attributes
 
 An "Attribute" is a single [device attribute](/devices/overview/#device-attributes). Attributes take three additional parameters:
@@ -87,6 +99,8 @@ Dashboard context settings are stored on the page's URL and changes are logged i
 
 Context variables are stored on the [query string](https://en.wikipedia.org/wiki/Query_string), and each takes the format of `ctx[VARIABLE_NAME]=NEW_VALUE`. (Values must be [encoded](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).) For example, to set a context variable called "myString" to the value of "hello world", you would append `?ctx[myString]=hello%20world` to your dashboard's URL.
 
+In the case of device tags, the key and the value must be set separately as a device tag context variable is treated as an [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects). To set a value of "hello=world" for the variable "deviceTag", you would append `?ctx[deviceTag][key]=hello&ctx[deviceTag][value]=world` to the URL. To set a value that uses a wildcard, do not set any value for the wildcard property. A value of "such as "hello=*" would thus be appended to the URL as `?ctx[deviceTag][key]=hello`.
+
 These URLs are valid so long as the context variable's name remains the same, and the given values pass its respective validation rules. Therefore, context settings can be bookmarked or linked to from elsewhere on the Internet.
 
 ### Links Within the Dashboard
@@ -125,8 +139,20 @@ A Device ID value can, for example, be used to ...
 
 * Display data from a specific [device](/devices/overview/) within your dashboard blocks
 * Highlight one device against an array of devices in [time series graphs](/dashboards/time-series-graph/)
-* View data from a single device at a time within a [device state tables](/dashboards/device-state-table/)
+* View data from a single device at a time within a [device state table](/dashboards/device-state-table/)
 * Color-coding [map pins](/dashboards/gps-history/#advanced-pin-style-configuration), [gauges](/dashboards/gauge/#conditional-gauge-colors) and [indicator blocks](/dashboards/indicator/#conditions) when viewing a specific device
+
+### Using Device Tags
+
+![Device Tag Context Use](/images/dashboards/context-use-deviceTag.png "Device Tag Context Use")
+
+Device Tag values can be used to ...
+
+* Display averages of state values across multiple devices in a [gauge block](/dashboards/gauge/#conditional-gauge-colors)
+* Render position data for a subset of devices in a [GPS history block](/dashboards/gps-history/) or a [position chart](/dashboards/position-chart/)
+* Send a [command](/devices/commands/) to multiple devices at once in an [input controls block](/dashboards/input-controls/)
+
+Note that since device tags render as [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects), they must be treated differently when using them to render string output (such as in a block's title or in your dashboard's description). Given a value of "hello=world" for the tag "deviceTag", rendering the tag in that format would be done as `{{ctx.deviceTag.key}}={{ctx.deviceTag.value}}`.
 
 ### Using Attributes
 
