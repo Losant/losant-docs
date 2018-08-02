@@ -10,6 +10,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.2.1 - 2018-08-07
+
+### Added <a name="1.2.1-added"></a>
+
+- Can now choose to have no expiration time for the [JWT: Create Node](/workflows/logic/jwt-create/).
+
+### Changed <a name="1.2.1-changed"></a>
+
+- [Modbus: Read Node](/workflows/data/modbus-read/) and [Modbus: Write Node](/workflows/data/modbus-write/) now default to port 502.
+- Improved [MongoDB Node](/workflows/data/mongo/) error handling.
+- A workflow publishing MQTT messages to an invalid or unauthorized topic will no longer cause the agent to disconnect from the Losant Platform.
+
+### Fixed <a name="1.2.1-fixed"></a>
+
+- System clock changes no longer affect the firing of interval timers while the agent is running.
+- Debug messages with circular references correctly send to the Losant Platform.
+
+***
+
 ## 1.2.0 - 2018-06-21
 
 ### Added <a name="1.2.0-added"></a>
