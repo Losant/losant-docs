@@ -81,6 +81,12 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | FLOW_ID | ID associated with the flow | 575ed18f7ae143cd83dc4aa6 |
 | FLOW_VERSION_ID | Version ID or version name associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
 
+### Request Query Parameters <a name="get-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| includeCustomNodes | N | If the result of the request should also include the details of any custom nodes referenced by the returned workflows | false | includeCustomNodes&#x3D;true |
+
 ### Request Headers <a name="get-headers"></a>
 
 | Name | Required | Description | Default |
@@ -189,6 +195,12 @@ all.Application, all.Organization, all.User, flowVersion.*, or flowVersion.patch
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 | FLOW_ID | ID associated with the flow | 575ed18f7ae143cd83dc4aa6 |
 | FLOW_VERSION_ID | Version ID or version name associated with the flow version | 675ed18f7ae143cd83dc4bb7 |
+
+### Request Query Parameters <a name="patch-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| includeCustomNodes | N | If the result of the request should also include the details of any custom nodes referenced by the returned workflows | false | includeCustomNodes&#x3D;true |
 
 ### Request Headers <a name="patch-headers"></a>
 

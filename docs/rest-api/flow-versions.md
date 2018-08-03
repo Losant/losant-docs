@@ -39,6 +39,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: version |  | filterField&#x3D;version |
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my*version |
+| includeCustomNodes | N | If the result of the request should also include the details of any custom nodes referenced by the returned workflows | false | includeCustomNodes&#x3D;true |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -94,6 +95,7 @@ all.Application, all.Organization, all.User, flowVersions.*, or flowVersions.pos
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
+| includeCustomNodes | N | If the result of the request should also include the details of any custom nodes referenced by the returned workflows | false | includeCustomNodes&#x3D;true |
 | allowReplacement | N | Allow replacement of an existing flow version with same version name | false | allowReplacement&#x3D;true |
 
 ### Request Headers <a name="post-headers"></a>

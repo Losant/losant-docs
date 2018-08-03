@@ -40,6 +40,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my*flow |
 | flowClass | N | Filter the workflows by the given flow class. Accepted values are: edge, cloud, customNode |  | flowClass&#x3D;cloud |
 | triggerFilter | N | Array of triggers to filter by - always filters against default flow version. See [Workflow Trigger Filter](schemas.md#workflow-trigger-filter) for more details. |  | triggerFilter[0][type]&#x3D;webhook&amp;triggerFilter[0][key]&#x3D;575ed78e7ae143cd83dc4aab |
+| includeCustomNodes | N | If the result of the request should also include the details of any custom nodes referenced by the returned workflows | false | includeCustomNodes&#x3D;true |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -70,6 +71,87 @@ curl -H 'Content-Type: application/json' \
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 | 404 | [Error](schemas.md#error) | Error if application was not found |
 
+## Import
+
+Import a set of flows and flow versions
+
+### Method And Url <a name="import-method-url"></a>
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/flows/import
+
+### Authentication <a name="import-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Organization, all.User, flows.*, or flows.import.
+
+### Request Path Components <a name="import-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+
+### Request Headers <a name="import-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Request Body <a name="import-body"></a>
+
+The body of the request should be serialized JSON that validates against
+the [Workflow Import](schemas.md#workflow-import) schema. For example, the following would be a
+valid body for this request:
+
+```json
+{
+  "flows": [
+    {
+      "id": "575ed18f7ae143cd83dc4aa6",
+      "flowId": "575ed18f7ae143cd83dc4aa6",
+      "applicationId": "575ec8687ae143cd83dc4a97",
+      "creationDate": "2016-06-13T04:00:00.000Z",
+      "lastUpdated": "2016-06-13T04:00:00.000Z",
+      "name": "My Workflow",
+      "description": "Description of my empty workflow",
+      "enabled": true,
+      "triggers": [],
+      "nodes": [],
+      "globals": [],
+      "stats": {
+        "runCount": 0,
+        "errorCount": 0
+      }
+    }
+  ],
+  "flowVersions": []
+}
+```
+
+### Curl Example <a name="import-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X POST \
+    -d '{"flows":[{"id":"575ed18f7ae143cd83dc4aa6","flowId":"575ed18f7ae143cd83dc4aa6","applicationId":"575ec8687ae143cd83dc4a97","creationDate":"2016-06-13T04:00:00.000Z","lastUpdated":"2016-06-13T04:00:00.000Z","name":"My Workflow","description":"Description of my empty workflow","enabled":true,"triggers":[],"nodes":[],"globals":[],"stats":{"runCount":0,"errorCount":0}}],"flowVersions":[]}' \
+    https://api.losant.com/applications/APPLICATION_ID/flows/import
+```
+
+### Successful Responses <a name="import-successful-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 201 | [Workflow Import Result](schemas.md#workflow-import-result) | Successfully imported workflows |
+
+### Error Responses <a name="import-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if application was not found |
+
 ## Post
 
 Create a new flow for an application
@@ -89,6 +171,12 @@ all.Application, all.Organization, all.User, flows.*, or flows.post.
 | Path Component | Description | Example |
 | -------------- | ----------- | ------- |
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+
+### Request Query Parameters <a name="post-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| includeCustomNodes | N | If the result of the request should also include the details of any custom nodes referenced by the returned workflows | false | includeCustomNodes&#x3D;true |
 
 ### Request Headers <a name="post-headers"></a>
 
