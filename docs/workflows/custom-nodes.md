@@ -2,7 +2,7 @@ description: Learn more about creating and configuring Losant Custom Nodes.
 
 # Custom Nodes
 
-Custom nodes are wrapped-up groups of nodes that can be used in your application's workflows. They can take [input](#user-input) from their calling workflows and [return values](#output-mode) to be used later in workflow runs.
+Custom nodes are wrapped-up groups of nodes that can be used in your application's workflows. They can take [input](#user-input) from their outer workflows and [return values](#output-mode) to be used later in workflow runs.
 
 ![Custom Nodes Overview](/images/workflows/custom-nodes-overview.png "Custom Nodes Overview")
 
@@ -54,7 +54,7 @@ You can change the output type after creation in the custom node editor's "Outpu
 
 ### Output Result
 
-Custom nodes **cannot** manipulate the payload of the workflow calling the custom node, but they can return a result to a payload path of the user's choosing. The calling workflow can then use as that result as it continues its run.
+Custom nodes **cannot** manipulate the payload of the workflow calling the custom node, but they can return a result to a payload path of the user's choosing. The outer workflow can then use as that result as it continues its run.
 
 ![Custom Node Output Result](/images/workflows/custom-nodes-output-result.png "Custom Node Output Result")
 
@@ -74,8 +74,8 @@ To add an input, click the "Add Input" button at the bottom of the "Inputs" pane
 
 * **Checkbox:** Users are presented with a checkbox; when checked, the input returns a value of `true`, and an unchecked box returns a value of `false`. You may also decide if the box should be checked by default.
 * **Select:** Users are presented with an HTML select box, and they must choose a value. To configure the input, enter an array of options and select which one should be chosen by default. Each option must include a "Value", which is the string that is returned for the input when the node is invoked. You may optionally also provide a "Label" for a value; failing to provide a label will result in the value itself being used as the option's label.
-* **String Template:** Users are presented with a simple text box where they may enter an arbitrary string or a [string template](/workflows/accessing-payload-data/#string-templates), which should resolve to a string value from the calling workflow's payload. Optionally, you may set a default value for the input; mark it as required (which wipes away the default value); or provide a [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) for input validation (which is only checked if the user enters an arbitrary string).
-* **Number Template:** Users are presented with a simple text box where they may enter a number or a [string template](/workflows/accessing-payload-data/#string-templates), which should resolve to a number value from the calling workflow's payload. Optionally, you may set a default value for the input; mark it as required (which wipes away the default value); or provide minimum and/or maximum values for the input (which are only checked if the user enters a number).
+* **String Template:** Users are presented with a simple text box where they may enter an arbitrary string or a [string template](/workflows/accessing-payload-data/#string-templates), which should resolve to a string value from the outer workflow's payload. Optionally, you may set a default value for the input; mark it as required (which wipes away the default value); or provide a [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) for input validation (which is only checked if the user enters an arbitrary string).
+* **Number Template:** Users are presented with a simple text box where they may enter a number or a [string template](/workflows/accessing-payload-data/#string-templates), which should resolve to a number value from the outer workflow's payload. Optionally, you may set a default value for the input; mark it as required (which wipes away the default value); or provide minimum and/or maximum values for the input (which are only checked if the user enters a number).
 * **JSON Template:** Users are presented with a code editor where they may enter a [JSON template](/workflows/accessing-payload-data/#json-templates). Optionally, you may set a default value for the input or mark it as required (which wipes away the default value).
 * **Payload Path:** Users are presented with a simple text box where they may enter a payload path, the contents of which is made available to the custom node. Optionally, you may mark the input as required.
 * **Section Header:** These are a special case as they require no input from your users, nor do they require a unique custom ID. Section headers are strictly for display purposes, allowing you to break your form fields into easily digestible sections for your custom node users.
@@ -98,8 +98,59 @@ This trigger, like any workflow trigger, should be connected to additional nodes
 
 ### Return Nodes
 
+All branches of your custom node should terminate in a **Return Node**, which signifies the end of your custom node's run. There is just one type of Return node for a single-ouput custom node; branching custom nodes have both **Return False** and **Return True** nodes, which tell the outer workflow which branch of your custom node to follow after execution completes. When one of these Return Nodes is hit, the outer workflow continues on with your custom node's result on its payload (if applicable).
+
+![Custom Node Return Nodes](/images/workflows/custom-nodes-return-nodes.png "Custom Node Return Nodes")
+
+When you create a custom node, one will be placed on the editor canvas for you along with the start trigger; if you are creating a [branching node](#output-type), both a **Return False** and a **Return True** node will be placed on the canvas. Additional Return Nodes can be pulled off the node palette and placed at other spots on the canvas as well.
+
+If your custom node [returns a result](#output-result), you will have to enter a payload path in the Return Node's editor pointing to the value that should be returned to the outer workflow.
+
+**Note:** Return Nodes can not be used in the contents of a [Loop Node](/workflows/logic/loop/). They must exist at the root level of your custom node.
+
 ## Versioning
+
+When [using a custom node](#using-custom-nodes), you must choose a version of your custom node to run. Since a custom node's stage, user inputs, output type and output result are all version-specific, your custom node's functionality can differ wildly across versions. As a best practice, we recommend only making minor, incremental changes (such as bug fixes) across versions. If the custom node's core functionality is changing, we recommend creating a new custom node.
+
+![Custom Node Versions](/images/workflows/custom-nodes-versions.png "Custom Node Versions")
+
+Creating and working with versions of custom nodes is similar to versioning as it works with cloud workflows, except ...
+
+- Custom nodes do not have the concept of a "default version". The "develop" version is selected by default when dropping a custom node on the canvas, but we [recommend](#running-the-develop-version) pointing your custom node instance to another version.
+- Custom node versions cannot be directly overwritten. If you wish to make changes to an existing version, you will have to copy that version's contents to your "develop" version, make the necessary changes, delete the existing version, and create a new version of the same name.
+
+### Running the "Develop" Version
+
+While it is possible to run the "develop" version of any custom node, we **strongly** recommend creating versions of your custom node and referencing the versions in your workflows. This is because changes to your custom node's "develop" version will have an immediate impact on any instances of the custom node deployed to your workflows - including within uneditable versions of those workflows. Since custom node versions cannot be overridden, choosing a version for your custom node instance protects your workflows from these changes.
 
 ## Using Custom Nodes
 
+Once a custom node has been saved and deployed, it becomes available for use within your cloud workflows and other custom nodes. Your workflow palette contains a section with all of your application's custom nodes. These nodes can be dragged onto the stage, moved around, connected to other nodes, configured and deleted just like any other node.
+
+![Custom Nodes Overview](/images/workflows/custom-nodes-overview.png "Custom Nodes Overview")
+
+**Note:** A custom node cannot be used within itself (otherwise known as [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)). This is to protect your custom node from [infinite loops](https://en.wikipedia.org/wiki/Infinite_loop) and workflow timeouts. Therefore, when editing your custom node, all other custom nodes within your application *except* that custom node itself will be available in the node palette.
+
+### Configuring Custom Node Instances
+
+After dropping a custom node on the canvas, the first thing you should do is choose which [version](#versioning) of the custom node to run as the selected version can change the custom node's configuration options - including whether the custom node branches.
+
+![Custom Node Configure Instance](/images/workflows/custom-nodes-configure-instance.png "Custom Node Configure Instance")
+
+Beneath the version selector will be all of the [form fields](#user-inputs) defined for the custom node. Users of the node can input static values or reference values on their payload for each of these inputs (depending on the input type). Any validation rules configured for each input will also be enforced at this time, and just like with other nodes, the outer workflow cannot be saved or run until all of the custom node's input validation is satisfied.
+
 ## Testing Custom Nodes
+
+The [Virtual Button](/workflows/triggers/virtual-button/) is provided as a trigger within the editor for the purpose of testing your custom nodes. This trigger, in conjunction with [Debug Nodes](/workflows/outputs/debug/), allows you to visualize payloads as they move through your custom node and to view outputs corresponding to potential user inputs.
+
+![Custom Node Testing](/images/workflows/custom-nodes-testing.png "Custom Node Testing")
+
+Just like with cloud workflows, [debug output](/workflows/outputs/debug/#viewing-debug-output) is available within the "Debug" panel in the workflow editor. Note that **only** debug messages generated by clicking Virtual Buttons will be visible here; payloads moving through your custom node as outer workflows call your node cannot be examined.
+
+## Deleting Custom Nodes
+
+In order to delete a custom node, or a version of the custom node, that node / version must not be [in use](#using-custom-nodes) in any of your application's workflows. Deleting such a custom node would cause your workflow to error and cease to function.
+
+You must first delete any instances of that custom node you wish to delete - or, if you are attempting to delete a custom node version, you must switch all instances of that custom node to a version other than the one you wish to delete.
+
+Once none of your workflows are using the resource you are trying to delete, the custom node / version can be deleted in the same ways a [workflow](/workflows/cloud-workflows/#deleting-cloud-workflows) or [workflow version](/workflows/versioning/#working-with-versions) can be deleted.
