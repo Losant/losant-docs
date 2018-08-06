@@ -2,7 +2,7 @@ description: Learn more about creating and configuring Losant Custom Nodes.
 
 # Custom Nodes
 
-Custom Nodes are wrapped-up groups of [nodes](/workflows/overview/) that can be used in your application's [workflows](/workflows/overview/). They can take [input](#user-input) from their outer workflows and [return values](#output-mode) to be used later in those workflow runs.
+Custom Nodes are wrapped-up groups of [nodes](/workflows/overview/) that can be used in your application's [workflows](/workflows/overview/). They can take [input](#user-input) from the workflows calling the node and [return values](#output-mode) to be used later in those workflow runs.
 
 ![Custom Nodes Overview](/images/workflows/custom-nodes-overview.png "Custom Nodes Overview")
 
@@ -16,7 +16,7 @@ Your application's list of Custom Nodes can be found under the "Workflows" dropd
 
 ![Create Custom Node](/images/workflows/custom-nodes-create.png "Create Custom Node")
 
-If you have an exported Custom Node file, you can also import that Custom Node into your application by clicking the "Import" button and selecting the file. Losant has a [library of useful Custom Nodes](https://github.com/Losant/workflow-node-catalog) available on GitHub.
+If you have an exported Custom Node file, you can also import that Custom Node into your application by clicking the "Import" button and selecting the file. Losant has a [catalog of useful Custom Nodes](https://github.com/Losant/workflow-node-catalog) available on GitHub.
 
 ## Configuration
 
@@ -32,7 +32,7 @@ Custom Nodes take three properties related to its display in your application's 
 
 These properties are set on creation of the Custom Node, though they can be edited later in the Custom Node editor's "Properties" panel:
 
-* **Name**: This serves as the Custom Node's label in the node palette, as well as the default label on the node immediately after it is dropped onto the stage. The name must be unique within your application; no two Custom Nodes can share the same name.
+* **Name**: This serves as the Custom Node's label in the node palette, as well as the default label on the node immediately after it is dropped onto the canvas. The name must be unique within your application; no two Custom Nodes can share the same name.
 * **Description**: This optional property should briefly describe the purpose of the Custom Node. This value displays at the top of the Custom Node's editor panel.
 * **Icon**: The Custom Node must have an icon, though one will be chosen for you by default based on the Custom Node's name. There are also an array of icons available for quick selection. Alternatively, you may upload an icon to your application's [files](/applications/files/), provided the icon is in JPG, SVG or PNG format and is no larger than 128px in width or height. We recommend a single-color white icon on a transparent background, built at a 1:1 aspect ratio. (**Note:** Changing the image that is at the file's URL will **not** change the icon on the Custom Node; to update the icon, you will have to first remove it from your Custom Node configuration and then re-select the file at that URL.)
 
@@ -54,17 +54,17 @@ You can change the output type after creation in the Custom Node editor's "Outpu
 
 ### Output Result
 
-Custom Nodes **cannot** manipulate the payload of the workflow calling the Custom Node, but they can return a result to a payload path of the user's choosing. The outer workflow can then use that result as it continues its run.
+Custom Nodes **cannot** manipulate the payload of the workflow calling the Custom Node (also known as the "outer workflow"), but they can return a result to a payload path of the user's choosing. The outer workflow can then use that result as it continues its run.
 
 ![Custom Node Output Result](/images/workflows/custom-nodes-output-result.png "Custom Node Output Result")
 
-The Custom Node's output result may be set to **Optional**, **Required** or **None**. You may also provide a **Description** of the expected result for your end users. This output result may also be changed later under the "Output" tab.
+The Custom Node's output result may be set to **Optional**, **Required** or **None**. You may also provide a **Description** of the expected result for your node users. This output result may also be changed later under the "Output" tab.
 
 If choosing "Optional" or "Required", your Custom Node users will see a [payload path](/workflows/accessing-payload-data/#payload-paths) input at the bottom of the configuration panel for defining where the Custom Node's result should be added to their workflow's payload. If choosing "Required", the Custom Node user **must** enter a payload path.
 
 ### User Inputs
 
-After creating your Custom Node, the next step is to determine the information you require from your end users to execute it. Losant provides a simple form builder with a number of input types to solicit this information from your Custom Node users.
+After creating your Custom Node, the next step is to determine the information you require from your node users to execute it. Losant provides a simple form builder with a number of input types to solicit this information from your Custom Node users.
 
 ![Custom Node Inputs](/images/workflows/custom-nodes-inputs.png "Custom Node Inputs")
 
@@ -84,7 +84,7 @@ To add an input, click the "Add Input" button at the bottom of the "Inputs" pane
 
 ## Building Custom Nodes
 
-Building a Custom Node is very similar to [building a workflow](/workflows/overview/#overview); it is a combination of Losant nodes (and other Custom Nodes!) chained together to mutate data, make HTTP requests and branch based on payload conditions.
+Building a Custom Node is very similar to [building a workflow](/workflows/overview/#overview); it is a combination of Losant nodes (and other Custom Nodes!) chained together to mutate data, make HTTP requests, branch your workflow based on payload conditions, and much more.
 
 ![Custom Node Conversion Example](/images/workflows/custom-nodes-conversion-example.png "Custom Node Conversion Example")
 
@@ -112,7 +112,7 @@ If your Custom Node [returns a result](#output-result), you will have to enter a
 
 ## Versioning
 
-When [using a Custom Node](#using-custom-nodes), you must choose a version of the Custom Node to run. Since a Custom Node's stage, user inputs, output type and output result are all version-specific, your Custom Node's functionality can differ wildly across versions. As a best practice, we recommend only making minor, incremental changes (such as bug fixes) across versions. If the Custom Node's core functionality is changing, we recommend creating a new Custom Node.
+When [using a Custom Node](#using-custom-nodes), you must choose a version of the Custom Node to run. Since a Custom Node's canvas, user inputs, output type and output result are all version-specific, your Custom Node's functionality can differ wildly across versions. As a best practice, we recommend only making minor, incremental changes (such as bug fixes) across versions. If the Custom Node's core functionality is changing, we recommend creating a new Custom Node.
 
 ![Custom Node Versions](/images/workflows/custom-nodes-versions.png "Custom Node Versions")
 
@@ -127,7 +127,7 @@ While it is possible to run the "develop" version of any Custom Node, we **stron
 
 ## Using Custom Nodes
 
-Once a Custom Node has been saved and deployed, it becomes available for use within your cloud workflows and other Custom Nodes. Your workflow palette contains a section with all of your application's Custom Nodes. These nodes can be dragged onto the stage, moved around, connected to other nodes, configured and deleted just like any other node.
+Once a Custom Node has been saved and deployed, it becomes available for use within your cloud workflows and other Custom Nodes. Your workflow palette contains a section with all of your application's Custom Nodes. These nodes can be dragged onto the canvas, moved around, connected to other nodes, configured and deleted just like any other node.
 
 ![Custom Nodes Overview](/images/workflows/custom-nodes-overview.png "Custom Nodes Overview")
 
