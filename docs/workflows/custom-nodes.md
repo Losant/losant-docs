@@ -20,7 +20,7 @@ If you have an exported Custom Node file, you can also import that Custom Node i
 
 ## Configuration
 
-Creating a Custom Node is very similar to building a [cloud workflow](/workflows/cloud-workflows/); however, there are a number of additional properties that go into configuring a Custom Node. 
+Creating a Custom Node is very similar to building a [cloud workflow](/workflows/cloud-workflows/); however, there are a number of additional properties that go into configuring a Custom Node.
 
 All of these properties are [version-specific](#versioning) unless otherwise noted.
 
@@ -118,8 +118,8 @@ When [using a Custom Node](#using-custom-nodes), you must choose a version of th
 
 Creating and working with versions of Custom Nodes is similar to versioning as it works with cloud workflows, except ...
 
-- Custom Nodes do not have the concept of a "default version". The "develop" version is selected by default when dropping a Custom Node on the canvas, but we [recommend](#running-the-develop-version) pointing your Custom Node instance to another version.
-- Custom Node versions cannot be directly overwritten. If you wish to make changes to an existing version, you will have to copy that version's contents to your "develop" version, make the necessary changes, delete the existing version, and create a new version with the same name.
+* Custom Nodes do not have the concept of a "default version". The "develop" version is selected by default when dropping a Custom Node on the canvas, but we [recommend](#running-the-develop-version) pointing your Custom Node instance to another version.
+* Custom Node versions cannot be directly overwritten. If you wish to make changes to an existing version, you will have to copy that version's contents to your "develop" version, make the necessary changes, delete the existing version, and create a new version with the same name.
 
 ### Running the "Develop" Version
 
@@ -156,3 +156,11 @@ In order to delete a Custom Node, or a version of the Custom Node, that node / v
 You must first delete any instances of that Custom Node you wish to delete - or, if you are attempting to delete a Custom Node version, you must switch all instances of that Custom Node to a version other than the one you wish to delete.
 
 Once none of your workflows are using the resource you are trying to delete, the Custom Node / version can be deleted in the same ways a [workflow](/workflows/cloud-workflows/#deleting-cloud-workflows) or [workflow version](/workflows/versioning/#working-with-versions) can be deleted.
+
+## Exporting Custom Nodes
+
+In order to export a Custom Node, first save and deploy a version of it. Then click the down arrow next to "Save & Deploy" to open the dropdown menu and select "Export".
+
+![Export a specific custom node version](/images/workflows/custom-nodes-export-version.png "Export a specific custom node version")
+
+You can also export specific versions of a custom node by clicking the "Versions" tab in the right sidebar, clicking the down arrow next to the version you wish to export, and clicking "Export".
