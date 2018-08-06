@@ -1,6 +1,7 @@
 site
 node_modules/
 *.log
+package-lock.json
 
 # Mac
 .DS_Store
