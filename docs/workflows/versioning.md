@@ -4,8 +4,6 @@ With workflow versioning, it is possible to save multiple versions of a [Losant 
 
 ![Workflow Versioning](/images/workflows/versioning/overview.png "Workflow Versioning")
 
-Workflow versioning is only available within applications owned by an [organization](/organizations/overview/). If you require workflow versioning functionality for one of your [Sandbox](/user-accounts/sandbox/) applications, you will need to migrate that application to an organization.
-
 <div class='embed-container'>
   <iframe src='https://www.youtube.com/embed/QE1MGp2-lao' frameborder='0' allowfullscreen></iframe>
 </div>
@@ -21,7 +19,7 @@ New workflow versions can only be created from the Develop version. To create a 
 ![Create Version Modal](/images/workflows/versioning/create_version_modal.png "Create Version Modal")
 
 * **Version Name:** This required field is the identifier you will use to invoke a specific version within your payloads. This can be any string except "develop" or "default", though we recommend following [semantic versioning](http://semver.org/). If you provide a name that matches another version within that workflow, you will be prompted to confirm that you wish to overwrite that version.
-* **Make this the default version:** This is a shortcut to mark the new version as the workflow's default. The default version can be changed at any time.
+* **Make this the default version:** For cloud workflows, this is a shortcut to mark the new version as the workflow's default. The default version can be changed at any time.
 * **Notes:** Optionally, you may provide some more details on what this specific version entails.
 
 ## Working With Versions
@@ -36,10 +34,10 @@ A version's nodes, connectors and [global variables](/workflows/overview/#workfl
 
 There are a few actions you may take relative to a version:
 
-* Any version can be set as the workflow's default. It is this version that runs when a payload hits the workflow without a [specific version specified](#triggering-specific-versions).
+* For cloud workflows, any version can be set as the workflow's default. It is this version that runs when a payload hits the workflow without a [specific version specified](#triggering-specific-versions).
 * Versions can have their contents copied to Develop, where they can then be edited and saved as a new version.
 * Versions can be [exported](/workflows/overview/#import-export) either to a JSON file or, if you have [edit permissions](/organizations/members/#member-roles) within the application, cloned as a new workflow.
-* Any version besides Develop can be individually disabled.
+* For cloud workflows, any version besides Develop can be individually disabled.
 * Any version besides Develop, or the current default version, can be deleted. This action cannot be undone.
 
 ### Debugging Versions
@@ -62,11 +60,7 @@ Not every property of a workflow can be changed on a per-version basis:
 
 * **[Workflow storage](/workflows/overview/#workflow-storage) values span across all workflow versions.** If your application requires using workflow storage on a per-version basis, we recommend prefixing your storage keys with the name of your workflow version.
 * A workflow's **name and description**, when modified, will change across all workflow versions. Any identifying or descriptive information about a workflow version can be stored in the version's name and notes.
-* If a workflow is disabled, **all versions of the workflow are also disabled**, regardless of that version's specific enabled / disabled state.
-
-### Workflow Versions Migrated to a Sandbox
-
-If you [transferred an application](/organizations/transferring-resources/) from an organization to a Sandbox, and that application had one or more workflows with versions, you will still be able to view the past versions, enable / disable them, set one of the versions as the workflow default, run specific versions as described below, and copy a version's contents to Develop. However, you will not be able to create new workflow versions unless that application is migrated back to an organization.
+* If a cloud workflow is disabled, **all versions of the workflow are also disabled**, regardless of that version's specific enabled / disabled state.
 
 ## Triggering Specific Versions
 
