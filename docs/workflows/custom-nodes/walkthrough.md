@@ -2,7 +2,7 @@ description: It's a Custom Node walkthrough!
 
 # Custom Nodes Walkthrough
 
-[Custom Nodes](http://docs.prerelease.losant.com/workflows/custom-nodes/overview/) allow you to extend the functionality of Losant's workflow engine. This guide provides a complete walkthrough for building a custom node that provides access to [Dark Sky's API](https://darksky.net/dev) to retrieve weather forecast information. The node being built in this guide is also available in the [Losant Node Catalog](https://github.com/Losant/workflow-node-catalog), so you can download and import the completed node at any time.
+[Custom Nodes](http://docs.prerelease.losant.com/workflows/custom-nodes/overview/) allow you to extend the functionality of Losant's workflow engine. This guide is a complete walkthrough for building a custom node that provides access to [Dark Sky's API](https://darksky.net/dev) to retrieve weather forecast information. The node being built in this guide is also available in the [Losant Node Catalog](https://github.com/Losant/workflow-node-catalog), so you can download and import the completed node at any time.
 
 ![Dark Sky Node](/images/workflows/custom-nodes/walkthrough/dark-sky-node-used.png "Dark Sky Node")
 
@@ -84,7 +84,7 @@ Now that we have the user's information, we can build our node to make a request
 
 ## Build the Node's Logic
 
-Custom nodes are developed a lot like workflows. They are made by combining other built-in and custom nodes together into a reusable bundle. The biggest difference between a custom node and a workflow is how it's triggered and how it outputs result data. Custom Nodes only have access to two triggers. One is the "Start" trigger, which is invoked by the outer workflow whenever this node is executed. The other is the Virtual Button Trigger, which is used for testing and will be explained in the next section. The node can then use any other nodes needed to perform its intended function. It then ends with an "Output" node, which provide a way to pass a result back to the outer workflow's payload where execution will continue with your node's result data.
+Custom nodes are developed a lot like workflows. They are made by combining other built-in and custom nodes together into a reusable bundle. The biggest difference between a custom node and a workflow is how it's triggered and how it outputs result data. Custom Nodes only have access to two triggers. One is the "Start" trigger, which is invoked by the outer workflow whenever this node is executed. The other is the Virtual Button Trigger, which is used for testing and will be explained in the next section. The node can then use any other nodes needed to perform its intended function. It then ends with an "Output" node, which provides a way to pass a result back to the outer workflow's payload where execution will continue with your node's result data.
 
 Your node starts with a "Start" and an "Output" node already on the canvas. We now need to fill in the middle to make the Dark Sky API request and return the result.
 
@@ -97,9 +97,9 @@ First, add an [HTTP Node](/workflows/data/http/) to make the actual API request 
 * Click the `Store HTTP Error At Payload Path` radio button. API requests can fail for a variety of reasons. This option will cause the node to put those errors on the payload instead of causing the entire custom node to throw an error.
 * Set the `Payload Path to Store Error Response` to "working.result". You may notice this is the same payload path as the successful response, but since we're just passing through either the response or the error, this works well for us.
 
-The HTTP node will place an `error` object on the payload path if the API request fails. This is right in line with our recommended best practice for how nodes should output data. If the node produces an error for any reason, the result data should be an object with an "error" property that contains further details. This provides a standard way for users to handle errors across all nodes.
+The HTTP Node will place an `error` object on the payload path if the API request fails. This is right in line with our recommended best practice for how nodes should output data. If the node produces an error for any reason, the result data should be an object with an "error" property that contains further details. This provides a standard way for users to handle errors across all nodes.
 
-Now that our result is on our payload, we need to tell the Output Node to return it to the user. Click the Output Node and change the `Result Path` field "working.result", which will return whatever object is on your payload at "working.result" back to the outer workflow.
+Now that our result is on our payload, we need to tell the Output Node to return it to the user. Click the Output Node and change the `Result Path` field to "working.result", which will return whatever object is on your payload at "working.result" back to the outer workflow.
 
 ![Output Node Options](/images/workflows/custom-nodes/walkthrough/output-node-options.png "Output Node Options")
 
@@ -138,7 +138,7 @@ Using the debug output, we can verify that the object on the "working.result" pa
 
 Just like worklows, custom nodes support versioning, which is an important final step when delivering this node to your users. You can create multiple versions of the node as you add new functionality or fix bugs. When a user adds your node to a workflow, they will have the option to choose the version to use.
 
-The only version of a Custom Node that can be edited is the `develop` version. This version can also be used in workflows, but can cause unintended side affects since any changes you make to `develop` will immediately be applied to any workflows using this node. This is why it's important to create versions and use specific versions in your workflows. This will allow you to continue developing this node without impacting any workflows using a previous version.
+The only version of a Custom Node that can be edited is the `develop` version. This version can also be used in workflows, but can cause unintended side effects since any changes you make to `develop` will immediately be applied to any workflows using this node. This is why it's important to create versions and use specific versions in your workflows. This will allow you to continue developing this node without impacting any workflows using a previous version.
 
 Our recommended best practice for versioning nodes is to follow [Semantic Versioning](https://semver.org/). This helps communicate to your users how much impact each version will have and provides a standard across all nodes.
 
@@ -157,7 +157,7 @@ After you click the `Create Version` button, you'll see the newly created versio
 
 ![Version List](/images/workflows/custom-nodes/walkthrough/version-list.png "Version List")
 
-## Using your Custom Node
+## Using Your Custom Node
 
 Now that your node is successfully developed and versioned, you can begin using it within your cloud workflows. The node will immediately show up on the workflow node palette under the `Custom Nodes` section.
 
@@ -167,4 +167,4 @@ As you can see, the input fields you configured are automatically presented to t
 
 You may notice that your node is currently outputting a `request` object as part of its result. This is because the HTTP Node adds that as part of its result, and we're currently passing it straight through to the user. In most cases, you probably don't want to pass that along. As an added challenge, add a [Mutate Node](/workflows/logic/mutate/) to your custom node to remove the request object before passing the result back to the user. If you get stuck, check out the Dark Sky Node in the [Losant Node Catalog](https://github.com/Losant/workflow-node-catalog) for the implementation.
 
-This concludes the Custom Node Walkthrough. In this guide you learned how to build a complete custom node to access the Dark Sky API to retrieve weather forecast data. As you continue developing new nodes, if you build something that you'd like to share with the community, please consider contributing the node to the Losant Node Catalog so other developers can benefit from your implementation.
+This concludes the Custom Node Walkthrough. In this guide you learned how to build a complete custom node to access the Dark Sky API to retrieve weather forecast data. As you continue developing new nodes, if you build something that you'd like to share with the community, please consider contributing the node to the [Losant Node Catalog](https://github.com/Losant/workflow-node-catalog) so other developers can benefit from your implementation.
