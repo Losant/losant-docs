@@ -24,6 +24,8 @@ Custom Nodes are added to workflows just like any other node. The information yo
 
 The icon and name will be displayed on the node when it's added to the workflow canvas. The icon can be any PNG, JPG, or SVG you like. We recommend making icons 128x128 in size, completely white in color, and transparent backgrounds. The description will be displayed at the top of the node's settings tab after a user has added it to the canvas.
 
+If you'd like to use the Dark Sky logo referenced above, you can download it [here](/images/workflows/custom-nodes/walkthrough/dark-sky-logo.png).
+
 The `Output Type` determines whether or not this node has one output or two. Most nodes only have a single output, but some, like the [Conditional Node](https://docs.losant.com/workflows/logic/conditional/) have two. Since this node is only returning weather information, it only needs a single output.
 
 The `Output Result` determines whether or not the user is required to provide a payload path for the result of this node. Since this node is returning weather information, we will require the user to provide a path.
