@@ -2,7 +2,7 @@ description: Send commands to your devices and fire workflows directly from a co
 
 # Input Controls
 
-The Input Controls block allows you to send commands to devices, or to trigger workflows, directly from a dashboard. The block includes various input components to allow for configuring the payloads sent with those commands or triggers, and those components can also be configured to show the current state of your devices.
+The Input Controls Block allows you to send commands to devices, or to trigger workflows, directly from a dashboard. The block includes various input components to allow for configuring the payloads sent with those commands or triggers, and those components can also be configured to show the current state of your devices.
 
 ![Input Controls Dashboard](/images/dashboards/input-controls-overview.png "Input Controls Dashboard")
 
@@ -31,7 +31,7 @@ The block supports inputs of four types, plus a special ["Help Block" component]
 
 ### Dynamic Default Values
 
-By setting dynamic default values for your controls, you can extend the functionality of the Input Controls block to also serve as a series of simple gauges reflecting the last recorded state of your devices. When the block is "locked" (the lock/unlock option in the block settings menu), each of the controls that has a dynamic default set will update with a new value every time your dashboard refreshes.
+By setting dynamic default values for your controls, you can extend the functionality of the Input Controls Block to also serve as a series of simple gauges reflecting the last recorded state of your devices. When the block is "locked" (the lock/unlock option in the block settings menu), each of the controls that has a dynamic default set will update with a new value every time your dashboard refreshes.
 
 ![Input Controls Dynamic Default](/images/dashboards/input-controls-dynamic-default.png "Input Controls Dynamic Default")
 
@@ -79,7 +79,7 @@ If the dropdown's value is set by a [dynamic default](#dynamic-default-values), 
 
 ### Button Triggers
 
-Buttons are responsible for triggering device commands or workflows when clicked. Without a button, it is impossible to send commands or trigger workflows; so, unless you are simply using an Input Controls block to display device state within the other controls, make sure your block has at least one button within it.
+Buttons are responsible for triggering device commands or workflows when clicked. Without a button, it is impossible to send commands or trigger workflows; so, unless you are simply using an Input Controls Block to display device state within the other controls, make sure your block has at least one button within it.
 
 ![Button Trigger](/images/dashboards/input-controls-send-command.png "Button Trigger")
 
@@ -96,7 +96,7 @@ If your button should trigger a [workflow](/workflows/overview/), select the **T
 
 ### Help Blocks
 
-The Help Block is a special component in the Input Controls block that allows text to be displayed to users for the purpose of explaining, in greater detail than can be conveyed in a button label, what exactly will happen when a button is pressed and a workflow / device command is fired off.
+The Help Block is a special component in the Input Controls Block that allows text to be displayed to users for the purpose of explaining, in greater detail than can be conveyed in a button label, what exactly will happen when a button is pressed and a workflow / device command is fired off.
 
 ![Help Block Input](/images/dashboards/input-controls-help-input.png "Help Block Input")
 

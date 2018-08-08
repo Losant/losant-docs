@@ -1,6 +1,6 @@
 # GPS Heatmap
 
-The GPS Heatmap shows the distribution of GPS datapoints across one or more devices. The heatmap can show historical information or the current position distribution for a set of devices.
+The GPS Heatmap Block shows the distribution of GPS datapoints across one or more devices. The heatmap can show historical information or the current position distribution for a set of devices.
 
 ![GPS Heatmap Dashboard](/images/dashboards/heatmap-example.png "GPS Heatmap Dashboard")
 

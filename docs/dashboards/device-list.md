@@ -1,6 +1,6 @@
 # Device List
 
-The Device List block displays a list of devices for a given application. The list includes the device's name, current connection status and number of defined attributes.
+The Device List Block displays a list of devices for a given application. The list includes the device's name, current connection status and number of defined attributes.
 
 ![Device List](/images/dashboards/devices-example.png "Device List")
 

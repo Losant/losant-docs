@@ -1,6 +1,6 @@
 # Open Event Indicator
 
-The open event indicator block allows you to display the most important currently open event in the selected application.
+The Open Event Indicator Block allows you to display the most important currently open event in the selected application.
 
 ![External Website](/images/dashboards/open-event-indicator-example.png "External Website")
 
