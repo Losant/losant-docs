@@ -170,7 +170,7 @@ We're now ready to deploy this workflow. Click the `Deploy Workflow` button on t
 
 ![Deploy Workflow](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/deploy-workflow.png "Deploy Workflow")
 
-Once it's deployed, select the Debug tab on the bottom-right. The Photon is publishing the "light-level" event every five seconds, so we should see a debug message each time Particle sends that event to Losant. You'll also see a debug message whenever you push the hardware button.
+Once it's deployed, select the Debug tab on the right. The Photon is publishing the "light-level" event every five seconds, so we should see a debug message each time Particle sends that event to Losant. You'll also see a debug message whenever you push the hardware button.
 
 ![Debug Output](/images/getting-started/losant-iot-dev-kits/builder-kit-particle/debug-output.png "Debug Output")
 
