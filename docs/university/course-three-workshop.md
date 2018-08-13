@@ -1,5 +1,7 @@
 # Data and Device Management Workshop
 
+![Workshop Image](/images/university/workshop.jpg)
+
 ## Introduction
 
 Welcome to your first workshop! Along with the videos, we wanted to give you real, step-by-step instructions on how to accomplish and use most of the tools we covered in the videos. So, from here on out, you can expect every course to have a workshop.
