@@ -117,7 +117,7 @@ Next, let’s add a Gauge Block to display the RPM of the water pump.
 
 On the “Add Block” page, click the Gauge Block:
 
-![Guage Block Add](/images/university/course-four-workshop/gauge-block.png)
+![Gauge Block Add](/images/university/course-four-workshop/gauge-block.png)
 
 First, we must give our block a name and choose our application.
 
@@ -342,7 +342,7 @@ Now, we can add hundreds and thousands of pumps and each will have their own das
 
 ![Final Complete Dashboard](/images/university/course-four-workshop/water-pump-context-variables.gif)
 
-## What's next? 
+## What's next?
 
 Congratulations, you are now officially done with Course 4 of Losant University!
 
