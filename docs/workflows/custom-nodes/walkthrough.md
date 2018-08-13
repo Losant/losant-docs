@@ -138,7 +138,7 @@ Using the debug output, we can verify that the object on the "working.result" pa
 
 ## Version the Node
 
-Just like worklows, custom nodes support versioning, which is an important final step when delivering this node to your users. You can create multiple versions of the node as you add new functionality or fix bugs. When a user adds your node to a workflow, they will have the option to choose the version to use.
+Just like workflows, custom nodes support versioning, which is an important final step when delivering this node to your users. You can create multiple versions of the node as you add new functionality or fix bugs. When a user adds your node to a workflow, they will have the option to choose the version to use.
 
 The only version of a Custom Node that can be edited is the `develop` version. This version can also be used in workflows, but can cause unintended side effects since any changes you make to `develop` will immediately be applied to any workflows using this node. This is why it's important to create versions and use specific versions in your workflows. This will allow you to continue developing this node without impacting any workflows using a previous version.
 

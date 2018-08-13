@@ -1,4 +1,8 @@
+description: Become a Losant expert with Losant University. This is the Course Three Workshop on Data and Device Management.
+
 # Data and Device Management Workshop
+
+![Workshop Image](/images/university/workshop.jpg)
 
 ## Introduction
 
@@ -18,9 +22,9 @@ Before we start building, let’s describe what you are building. Imagine you wo
 
 Embree is launching an initiative to adopt IoT and offer new capabilities to their customers. Currently, Embree produces water pumps for industrial use cases like mining, construction, and oil & gas. Their goal is to gain deeper insight into the pumps and provide more value to their customers.
 
-To begin the new initiative, the Embree team decided to start with a proof-of-concept, which will enable them to solve a small, useful problem to get results faster. For this first project, Embree wants to take one of their existing pumps and send the data it’s collecting, like flow rate and temperature, to the Cloud.
+To begin the new initiative, the Embree team decided to start with a proof of concept, which will enable them to solve a small, useful problem to get results faster. For this first project, Embree wants to take one of their existing pumps and send the data it’s collecting, like flow rate and temperature, to the Cloud.
 
-To build this proof-of-concept, they chose to use Losant. They chose Losant because the user experience would allow them build this proof-of-concept in no time, and they could easily build new applications with the insights gained.
+To build this proof of concept, they chose to use Losant. They chose Losant because the user experience would allow them build this proof-of-concept in no time, and they could easily build new applications with the insights gained.
 
 ## Start Building
 

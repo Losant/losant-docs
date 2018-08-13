@@ -100,7 +100,7 @@ This trigger, like any workflow trigger, should be connected to additional nodes
 
 ### Return Nodes
 
-All branches of your Custom Node should terminate in a **Return Node**, which signifies the end of your Custom Node's run. There is just one type of Return node for a single-ouput Custom Node; branching Custom Nodes have both **Return False** and **Return True** nodes, which tell the outer workflow which branch of your Custom Node to follow after execution completes. When one of these Return Nodes is hit, the outer workflow continues on with your Custom Node's result on its payload (if applicable).
+All branches of your Custom Node should terminate in a **Return Node**, which signifies the end of your Custom Node's run. There is just one type of Return node for a single-output Custom Node; branching Custom Nodes have both **Return False** and **Return True** nodes, which tell the outer workflow which branch of your Custom Node to follow after execution completes. When one of these Return Nodes is hit, the outer workflow continues on with your Custom Node's result on its payload (if applicable).
 
 ![Custom Node Return Nodes](/images/workflows/custom-nodes-return-nodes.png "Custom Node Return Nodes")
 
