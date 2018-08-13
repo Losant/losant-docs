@@ -8,7 +8,7 @@ description: Become a Losant expert with Losant University. This is the Course F
 
 Welcome to your workshop on data visualization! The purpose of this workshop is to give you real, step-by-step instructions on how to accomplish and use most of the tools we covered throughout the course.
 
-This workshop builds on the [Course Three Workshop](/university/course-three-workshop/) and will guide you through [creating dashboard blocks](/dashboards/overview/) and show you how to use [context variables](/dashboards/context-variables/).
+This workshop builds on the [Course Three Workshop](/university/course-three-workshop/) and will guide you through [creating dashboard blocks](/dashboards/overview/) and showing you how to use [context variables](/dashboards/context-variables/).
 
 Let’s begin.
 
@@ -20,7 +20,7 @@ First, recall the story of the application we are building:
 >
 > To begin the new initiative, the Embree team decided to start with a proof of concept, which will enable them to solve a small, useful problem to get results faster. For this first project, Embree wants to take one of their existing pumps and send the data it’s collecting, like flow rate and temperature, to the cloud.  
 >
-> To build this proof of concept, they chose to use Losant. They chose Losant because the user experience would allow them build this proof-of-concept in no time and they could easily build new applications with the insights gained.  
+> To build this proof of concept, they chose to use Losant. They chose Losant because the user experience would allow them build this proof of concept in no time and they could easily build new applications with the insights gained.  
 
 Currently in our application, we already have a device that represents our water pump with the following attributes:
 
@@ -34,7 +34,7 @@ To visualize data in the last workshop we used the [Data Explorer](/applications
 
 ![Data Explorer](/images/university/course-three-workshop/device-explorer-graph.png)
 
-The Data Explorer is great if we want to quickly view and analyze data. But, creating a dashboard provides more features like different visualizations, [reporting](/dashboards/overview/#email-reports), [sharing](/dashboards/overview/#dashboard-access-control) etc.
+The Data Explorer is great if we want to quickly view and analyze data. But, creating a dashboard provides more features like different visualizations, [reporting](/dashboards/overview/#email-reports), [sharing](/dashboards/overview/#dashboard-access-control), etc.
 
 Before we can create a dashboard, we need some data.
 
@@ -58,7 +58,7 @@ Now that we have a device that’s generating data, **open up a new tab** and le
 
 We provide many visualizations to best show your data for the questions you are asking about your data. For this example, here is what we can do:
 
-Voltage, flow and temperature can be represented with a [Time Series Graph](/dashboards/time-series-graph/); mostly because we want to see changes in the data over time.
+Voltage, flow and temperature can be represented with a [Time Series Graph](/dashboards/time-series-graph/), mostly because we want to see changes in the data over time.
 
 ![Time Series Graph](/images/university/course-four-workshop/time-series-complete.png)
 
@@ -66,7 +66,7 @@ RPM can be represented with a [Gauge Block](/dashboards/gauge/); mostly because 
 
 ![Gauge Block](/images/university/course-four-workshop/gauge-preview.png)
 
-Valve status can represented with a [Indicator Block](/dashboards/indicator/). We want to use this block because we can create a visualization to show us the current status of the valve and a corresponding background color (green for on and red for off) to clearly see the status of the valve.
+Valve status can represented with an [Indicator Block](/dashboards/indicator/). We want to use this block because we can create a visualization to show us the current status of the valve and a corresponding background color (green for on and red for off) to clearly see the status of the valve.
 
 ![Indicator Block](/images/university/course-four-workshop/indicator-preview-bad.png)
 
@@ -84,7 +84,7 @@ Next, let’s set our block to be “Historical” and the duration and resoluti
 
 ![Time Series Graph Settings](/images/university/course-four-workshop/time-series-settings.png)
 
-The simulator is set to generate data every two seconds. So, by choosing a resolution of one minute, each data point on the block will represent an aggregated value of 30 data points (data will be reported 30 times, or every two seconds, within a one minute interval). We will have the option to select the aggregation method below.
+The simulator is set to generate data every two seconds. So, by choosing a resolution of one minute, each data point on the block will represent an aggregated value of 30 data points (data will be reported 30 times, or every two seconds, within a one-minute interval). We will have the option to select the aggregation method below.
 
 Next, configure the device data.
 
@@ -121,9 +121,9 @@ On the “Add Block” page, click the Gauge Block:
 
 First, we must give our block a name and choose our application.
 
-Since we are concerned with it’s current value within a range, this is a perfect use case for the “Live Stream” type. With this type, the block on the dashboard will just reflect a live stream of data coming in.
+Since we are concerned with its current value within a range, this is a perfect use case for the “Live Stream” type. With this type, the block on the dashboard will just reflect a live stream of data coming in.
 
-For our Gauge type, let’s choose a Dial Gauge, a min of 2000, and a max of 3000. These numbers are the same min and max we choose in the simulator.
+For our Gauge type, let’s choose a Dial Gauge, a min of 2000, and a max of 3000. These numbers are the same min and max we chose in the simulator.
 
 ![Gauge Settings](/images/university/course-four-workshop/gauge-settings.png)
 
@@ -141,15 +141,15 @@ Once done, our preview should appear:
 
 ### Gauge Block Exercise:
 
-The Gauge block can change colors based on its current represented value. Let’s say, for our water pump, the rpm should never reach above 2500 rpm. If it does, our dashboard should reflect that, like so:
+The Gauge block can change colors based on its current represented value. Let’s say, for our water pump, the rpm should never reach above 2500 RPM. If it does, our dashboard should reflect that, like so:
 
 ![Gauge Preview Conditional](/images/university/course-four-workshop/gauge-preview-conditional.png)
 
-Using the "Conditional Colors", create a conditional to implement this functionality into the block. Once done, if the rpm goes above 2500, you should see a block that looks like the screenshot above.
+Using the "Conditional Colors", create a condition to implement this functionality into the block. Once done, if the RPM goes above 2500, you should see a block that looks like the screenshot above.
 
 After completing the exercise, add the block to the dashboard.
 
-Next, we can add a Indicator Block to reflect our valve status.
+Next, we can add an Indicator Block to reflect our valve status.
 
 ### Adding an Indicator Block
 
@@ -178,7 +178,8 @@ Once done, in the preview to the right, when the valve is reporting as open, we 
 
 ![Indicator Block Preview Good](/images/university/course-four-workshop/indicator-preview.png)
 
-**Exercise:**
+### Indicator Block Exercise:
+
 If the valve is closed, let’s do the exact opposite. Create the conditional to cause the Indicator Block to be red and display “closed” when the status is `false`.
 
 ![Indicator Block Preview Bad](/images/university/course-four-workshop/indicator-preview-bad.png)
@@ -193,7 +194,7 @@ Now, our dashboard is complete! If all went well, we should have something that 
 
 ## Part Two: Context Variables
 
-Currently we only have one device and one dashboard. But, what if we have multiple devices? As you may recall from the videos, we don’t want to create a dashboard for each device, we can use [context variables](/dashboards/context-variables/) to make this dashboard reusable.
+Currently we only have one device and one dashboard. But, what if we have multiple devices? As you may recall from the videos, we don’t want to create a dashboard for each device; we can use [context variables](/dashboards/context-variables/) to make this dashboard reusable.
 
 ### More Devices
 
@@ -227,7 +228,7 @@ The items in the list can be a link. We will change this later, but for now, jus
 
 ![Device List Block Settings](/images/university/course-four-workshop/device-list-settings.png)
 
-Here is what your preview should look like:
+Here is what the preview should look like:
 
 ![Device List Block Preview](/images/university/course-four-workshop/device-list-preview.png)
 
@@ -236,7 +237,7 @@ Let’s also add this block to our dashboard:
 ![Dashboard Complete](/images/university/course-four-workshop/dashboard-complete-two.png)
 
 **Adding Context**
-If you choose our dashboard settings, in the window, we can select “Add Context”.
+Select “Add Context” in the dashboard settings.
 
 ![Add Context Variables](/images/university/course-four-workshop/add-context-vars.png)
 
@@ -252,7 +253,7 @@ Next, create a context variable for the name of the device. This will be helpful
 
 ![Name Context Variable](/images/university/course-four-workshop/name-context-var.png)
 
-Save the variables, now let’s use them.
+Save the variables; now let’s use them.
 
 **Update the Time Series Graph**
 Now that we have some context variables, let’s update the Time Series Graph to use the `deviceId` context variable.
@@ -267,7 +268,8 @@ Next, update the block data to use the context variable `{{ctx.deviceId}}` inste
 
 This tells the block to use the context of the dashboard as the device. So, we can switch the context of the dashboard, and our blocks will update as well.
 
-Time Series Context Variable Exercise:
+### Time Series Context Variable Exercise:
+
 Update the other segments of the block to use the `deviceId` context.
 
 ### Changing Context
@@ -336,13 +338,13 @@ Set the title to `{{ctx.name}}`.
 
 In the preview, you should see it update with our default device.
 
-### All done
+### All Done
 
 Now, we can add hundreds and thousands of pumps and each will have their own dashboard. Better yet, this dashboard never has to change to accommodate all of our new pumps.
 
 ![Final Complete Dashboard](/images/university/course-four-workshop/water-pump-context-variables.gif)
 
-## What's next?
+## What's Next?
 
 Congratulations, you are now officially done with Course 4 of Losant University!
 
