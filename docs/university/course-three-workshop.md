@@ -1,3 +1,5 @@
+description: Become a Losant expert with Losant University. This is the Course Three Workshop on Data and Device Management.
+
 # Data and Device Management Workshop
 
 ![Workshop Image](/images/university/workshop.jpg)
