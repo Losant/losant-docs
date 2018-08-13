@@ -6,9 +6,9 @@ description: Become a Losant expert with Losant University. This is the Course F
 
 ## Introduction
 
-Welcome to your workshop on data visualization! This workshop is meant to give you real, step-by-step instructions on how to accomplish and use most of the tools we covered throughout the course.
+Welcome to your workshop on data visualization! The purpose of this workshop is to give you real, step-by-step instructions on how to accomplish and use most of the tools we covered throughout the course.
 
-This workshop builds on the [Course Three Workshop](/university/course-three-workshop/) and will guide you through [building dashboard blocks](/dashboards/overview/) and the use of [context variables](/dashboards/context-variables/).
+This workshop builds on the [Course Three Workshop](/university/course-three-workshop/) and will guide you through [creating dashboard blocks](/dashboards/overview/) and show you how to use [context variables](/dashboards/context-variables/).
 
 Let’s begin.
 
@@ -18,9 +18,9 @@ First, recall the story of the application we are building:
 
 > Embree is launching an initiative to adopt IoT and offer new capabilities to their customers. Currently, Embree produces water pumps for industrial use cases like mining, construction, and oil & gas. Their goal is to gain deeper insight into the pumps and provide more value to their customers.
 >
-> To begin the new initiative, the Embree team decided to start with a proof-of-concept, which will enable them to solve a small, useful problem to get results faster. For this first project, Embree wants to take one of their existing pumps and send the data it’s collecting, like flow rate and temperature, to the cloud.  
+> To begin the new initiative, the Embree team decided to start with a proof of concept, which will enable them to solve a small, useful problem to get results faster. For this first project, Embree wants to take one of their existing pumps and send the data it’s collecting, like flow rate and temperature, to the cloud.  
 >
-> To build this proof-of-concept, they chose to use Losant. They chose Losant because the user experience would allow them build this proof-of-concept in no time and they could easily build new applications with the insights gained.  
+> To build this proof of concept, they chose to use Losant. They chose Losant because the user experience would allow them build this proof-of-concept in no time and they could easily build new applications with the insights gained.  
 
 Currently in our application, we already have a device that represents our water pump with the following attributes:
 
@@ -34,7 +34,7 @@ To visualize data in the last workshop we used the [Data Explorer](/applications
 
 ![Data Explorer](/images/university/course-three-workshop/device-explorer-graph.png)
 
-The Data Explorer is great if we want to quickly look and analyze data. But, creating a dashboard provides more features like different visualizations, [reporting](/dashboards/overview/#email-reports), [sharing](/dashboards/overview/#dashboard-access-control) etc.
+The Data Explorer is great if we want to quickly view and analyze data. But, creating a dashboard provides more features like different visualizations, [reporting](/dashboards/overview/#email-reports), [sharing](/dashboards/overview/#dashboard-access-control) etc.
 
 Before we can create a dashboard, we need some data.
 
@@ -84,7 +84,7 @@ Next, let’s set our block to be “Historical” and the duration and resoluti
 
 ![Time Series Graph Settings](/images/university/course-four-workshop/time-series-settings.png)
 
-The simulator is set to generate data every two seconds. So, by choosing a resolution of one minute, each data point on the block will represent an aggregated value of 30 data points (data will be reported 30 times, or every 2 seconds, within a 1 minute interval). We will have the option to select the aggregation method below.
+The simulator is set to generate data every two seconds. So, by choosing a resolution of one minute, each data point on the block will represent an aggregated value of 30 data points (data will be reported 30 times, or every two seconds, within a one minute interval). We will have the option to select the aggregation method below.
 
 Next, configure the device data.
 
@@ -103,7 +103,7 @@ Now, we should see data appearing in the preview:
 
 ### Time Series Graph Exercise:
 
-We wanted this block to display voltage, flow and temperature. Using the “Add Segment” button, add voltage and temperate to this graph.
+We wanted this block to display voltage, flow and ​temperature. Using the “Add Segment” button, add voltage and ​temperature to this graph.
 
 Once done, you should have a block that looks similar to this:
 
@@ -141,11 +141,11 @@ Once done, our preview should appear:
 
 ### Gauge Block Exercise:
 
-The Gauge block can change colors based on its current represented value. Let’s say, for our water pump, the RPM should never reach above 2500 rpm. If it does, our dashboard should reflect that, like so:
+The Gauge block can change colors based on its current represented value. Let’s say, for our water pump, the rpm should never reach above 2500 rpm. If it does, our dashboard should reflect that, like so:
 
 ![Gauge Preview Conditional](/images/university/course-four-workshop/gauge-preview-conditional.png)
 
-Using the "Conditional Colors", create a conditional to implement this functionality into the block. Once done, if the RPM goes above 2500, you should see a block that looks like the screenshot above.
+Using the "Conditional Colors", create a conditional to implement this functionality into the block. Once done, if the rpm goes above 2500, you should see a block that looks like the screenshot above.
 
 After completing the exercise, add the block to the dashboard.
 
