@@ -1,6 +1,6 @@
 # GPS History
 
-The GPS History block shows the path of GPS data points across one or more devices. The map visualizes the historical path of each device as a connected line, with a start and end bubble.
+The GPS History Block shows the path of GPS data points across one or more devices. The map visualizes the historical path of each device as a connected line, with a start and end bubble.
 
 ![GPS History Dashboard](/images/dashboards/gps-history-example.png "GPS History Dashboard")
 

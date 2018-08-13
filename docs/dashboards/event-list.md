@@ -1,6 +1,6 @@
 # Event List
 
-The Workflow List block displays a list of events for a given application. The list links to each event and displays each one's subject, level (info, warning, error or critical) and the time the event occurred.
+The Workflow List Block displays a list of events for a given application. The list links to each event and displays each one's subject, level (info, warning, error or critical) and the time the event occurred.
 
 ![Event List](/images/dashboards/events-example.png "Event List")
 

@@ -1,6 +1,6 @@
 # Device Connection Log
 
-The Device Connection Log block displays a list of devices logs their connection / disconnection events.
+The Device Connection Log Block displays a list of devices logs their connection / disconnection events.
 
 ![Device Connection Log](/images/dashboards/connection-log-example.png "Device Connection Log")
 

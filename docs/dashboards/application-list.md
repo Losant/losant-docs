@@ -1,6 +1,6 @@
 # Application List
 
-The Application List block allows you to display a list of your applications on your dashboard. The list includes links to the applications, their names, and their workflow and device count.
+The Application List Block allows you to display a list of your applications on your dashboard. The list includes links to the applications, their names, and their workflow and device count.
 
 ![Application List](/images/dashboards/applications-example.png "Application List")
 

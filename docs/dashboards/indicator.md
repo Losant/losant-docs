@@ -1,6 +1,6 @@
 # Indicator
 
-The Indicator block displays a color and message of your choosing based on the result returned from a [gauge query](/workflows/data/gauge-query/).
+The Indicator Block displays a color and message of your choosing based on the result returned from a [gauge query](/workflows/data/gauge-query/).
 
 ![Indicator Example](/images/dashboards/indicator-example.png "Indicator Example")
 

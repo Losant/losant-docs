@@ -1,6 +1,6 @@
 # Section Header
 
-The Section Header block allows you to add a dividing header and descriptive content relevant to a section on your dashboard.
+The Section Header Block allows you to add a dividing header and descriptive content relevant to a section on your dashboard.
 
 ![Section Header](/images/dashboards/section-header-example.png "Section Header")
 

@@ -1,6 +1,6 @@
 # Gauge
 
-The Gauge block displays a single attribute value, either as a number or as a visual representation in a dial.
+The Gauge Block displays a single attribute value, either as a number or as a visual representation in a dial.
 
 ![Gauge](/images/dashboards/gauge-example.png "Gauge")
 
