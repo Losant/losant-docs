@@ -2,7 +2,7 @@ description: Learn more about creating and configuring Losant Custom Nodes.
 
 # Custom Nodes
 
-Custom Nodes are wrapped-up groups of [nodes](/workflows/overview/) that can be used in your application's [workflows](/workflows/overview/). They can take [input](#user-input) from the workflows calling the node and [return values](#output-mode) to be used later in those workflow runs.
+Custom Nodes are wrapped-up groups of [nodes](/workflows/overview/) that can be used in your application's [workflows](/workflows/overview/). They can take [input](#user-inputs) from the workflows calling the node and [return values](#output-result) to be used later in those workflow runs.
 
 ![Custom Nodes Overview](/images/workflows/custom-nodes-overview.png "Custom Nodes Overview")
 
