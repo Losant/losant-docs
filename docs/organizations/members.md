@@ -1,6 +1,6 @@
 # Organization Members
 
-An organization can have multiple members, with limits on members and pending invitations depending on the organization's tier level. The organization's overview screen displays a list of current members, the 'Members' screen allows an administrator to perform quick actions such as removing a member or renewing a pending invite, and the `Edit Member` screen provides more details on each member. If you're an Administrator, that screen also displays a list of pending and expired invitations.
+An organization can have multiple members, with limits on members and pending invitations depending on the organization's tier level. The organization's overview screen displays a list of current members, the `Members` screen allows an administrator to perform quick actions such as removing a member or renewing a pending invite, and the `Edit Member` screen provides more details on each member. Both the `Members` and `Edit Member` screens are only visible to Administrators. If you're an Administrator, the organization's overview screen will display pending and expired invitations.
 
 ![Organization Members Home](/images/organizations/organization-members-home.png "Organization Members Home")
 
@@ -13,7 +13,7 @@ There are five levels of default organization membership:
 * **Collaborator**: A member with the Collaborator role can do everything that a member with the Viewer role can do, plus ...
     * Modify applications or dashboards owned by the organization
     * Create or modify sub-resources within the org-owned application (e.g. devices, workflows)
-* **Editor**: A member with the Editor role can do everything a member with the Collaborator role can do, as well as create new application or dashboards in that organization.
+* **Editor**: A member with the Editor role can do everything a member with the Collaborator role can do, as well as create new applications or dashboards in that organization.
 * **Administrator**: At all times, an organization is required to have one member with the Administrator role. A member with the Administrator role can do everything a member with the Editor role can do, plus ...
     * Modify and manage the organization itself (name, description and icon color)
     * Manage organization membership (invite / remove members and change member roles)
@@ -31,9 +31,9 @@ Administrators can view all of the organizations members. Here the user's name, 
 
 ![Organization Members](/images/organizations/organization-members.png "Organization Members")
 
-Administrators can change the role of any organization member (other than themselves) from the `Edit Member` page. This can be accessed by clicking on the member's email on either the `Organization Overview` or the `Members` screen. The user's current role is displayed in a drop-down box below their user info. Below this, administrators may also set the members granular permissions. Here administrators may select an individual application/dashboard as well as a permission that only applies to the selected asset. Simply select a new role for the user and optionally any granular permissions and click the `Update Member` button in the footer to complete the changes.
+Administrators can change the role of any organization member (other than themselves) from the `Edit Member` page. This can be accessed by clicking on the member's email on either the `Organization Overview` or the `Members` screen. The user's current role is displayed in a drop-down box below their user info. Below this, administrators may also set the member's granular permissions. Here administrators may select an individual application/dashboard as well as a permission that only applies to the selected asset. Simply select a new role for the user and optionally any granular permissions and click the `Update Member` button in the footer to complete the changes.
 
-Administrators can also remove any current organization member – including other administrators – by clicking the `Remove Member` button in the footer to the right of the `Update Member` button and confirm this action.
+Administrators can also remove any current organization member – including other administrators – by clicking the `Remove Member` button in the footer. Then by confirming this action.
 
 ## Inviting New Members
 
@@ -53,7 +53,7 @@ To revoke a pending invitation, click `Revoke Invitation` to the right of the in
 
 ## Expired Invitations
 
-Any invitation that was not accepted after seven days has expired. Invitations in this state do not count against your new invitation limit. Invitees whose invitation has expired can no longer join your organization.
+Any invitation that was not accepted after seven days has expired. Invitations in this state do not count against your new invitation limit. Invitees whose invitation has expired can no longer join your organization, but can always be sent a new invitation (or a renewal).
 
 ### Renewing Expired Invitations
 
