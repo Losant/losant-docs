@@ -58,6 +58,42 @@ Endpoint access – the ability of a specific user to invoke an endpoint with an
 * **Any authenticated user** endpoints can be invoked by any of your Experience Users when they are signed in. Their authentication token must be [included in the request](#passing-authorization-tokens).
 * **Only users who are in the following groups...** limits access to signed-in users who are a member of any one of the specified [Experience Groups](/experiences/groups/). This is useful for building routes that have special privileges (such as resource editing permissions or Experience administration) that you do not want to provide to your normal population of users. To add a group to the endpoint, select the radio button next to the label and begin typing one or more group names into the input. You may also create new groups directly from this interface. Simply type the name of a group that does not yet exist.
 
+### Reply Type & Unauthorized Reply Type
+
+Reply Types - the ability to respond with a static page or a redirect for all users or when users are not authenticated. Unauthenticated Replies are only available on endpoints with access control of `Any authenticated user` or `Only users who are in the following groups...`.
+
+![Endpoint Reply Type](/images/experiences/endpoint-reply-type.png "Endpoint Reply Type")
+
+Reply Types are static pages or redirect paths that will be rendered and used to respond to the endpoint. The workflows will still run any time this endpoint is requested, however, if any of them respond with a Reply Node **this response can take priority over the workflow response**. The Unauthorized Reply Type will the response when this endpoint is requires an authenticated user, and that user is either unauthenticated or forbidden from this endpoint. The standard Reply Type is always the response when the route is public, and when it is not public the response will only be given to authenticated users.
+
+Either Reply Type has the following three options:
+
+* **No Static Reply (user cloud workflow to reply)** means that the endpoint will be responded to at the end of a workflow that was triggered when this endpoint was requested.
+* **Experience Page** the selected static experience page will be rendered and used as the response. The default status code is dependent on whether this is a response to an authorized user or unauthorized user. For authorized users the default status code is 200, and for unauthorized users the default is 401. However, you can set this status code to be any valid status code.
+* **Redirect** if selected this endpoint will respond by redirecting the user to the another endpoint. The default status code is dependent on whether this is a response to an authorized user or unauthorized user. For authorized users the default status code is 301, and for unauthorized users the default is 302. Redirect Paths are **templateable**.
+
+The following is an example of the context data that you can access in your redirect template or experience page. It is slightly different than the payload passed when rendering in a workflow.
+
+```javascript
+{
+  time, // the time of the request
+  application, // object containing the application name and ID
+  experience: {
+    user, // object containing info on the user who made the request (if available)
+    endpoint, // object containing info on the endpoint config
+    page, // object containing info on the page config
+    layout // object containing info on the layout config
+  },
+  globals, // key/value mapping of any global variables from the application
+  request: {
+    path, // the actual request path
+    method, // request method (e.g. get, post, patch, delete)
+    headers, // object with header names as keys and their values mapped to them
+    cookies // object with cookie names as keys and their values mapped to them
+  }
+}
+```
+
 ### Other Properties
 
 There are a couple additional properties to set on each endpoint:

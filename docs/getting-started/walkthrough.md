@@ -93,7 +93,7 @@ Deploy the workflow now and we can inspect the payload using the debug node.
 
 ![Deploy Workflow](/images/getting-started/walkthrough/deploy-workflow.png "Deploy Workflow")
 
-You can now wait 2 minutes for the timer to fire, or simply click the virtual button to trigger the workflow. Once triggered, click the debug tab at the bottom of the properties panel to see the output.
+You can now wait 2 minutes for the timer to fire, or simply click the virtual button to trigger the workflow. Once triggered, click the debug tab on the right to see the output.
 
 ![Debug Output](/images/getting-started/walkthrough/debug-output.png "Debug Output")
 

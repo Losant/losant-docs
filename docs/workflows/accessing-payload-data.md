@@ -110,6 +110,7 @@ In addition to the [built-in Handlebars helpers](http://handlebarsjs.com/builtin
 Handlebars helpers can also mutate a given value in place and print the result. Losant provides the following formatting helpers:
 
 * `{{add val1 val2}}`: Casts the two values as numbers and adds them.
+* `{{currentDateTime formatStr}}`: Returns the current date/time formatted by the provided format string. The format string follows [Moment.js format](http://momentjs.com/docs/#/displaying/format/) syntax, and the default is 'L LTS'.
 * `{{divide val1 val2}}`: Casts the two values as numbers and divides them.
 * `{{dashboardUrl id queryParamKey1='queryParamValue1' ...}}`: Creates a link to the dashboard at the given ID (defaults to the current dashboard) and adds the optional query parameters. To pass a nested object of parameters, such as for [dashboard context](/dashboards/context-variables/), include the parameter as `ctx=(obj key1=value1 key2=value2)`.
 * `{{decodeBase64 val}}`: Treats `val` as a [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64), and returns a decoded string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
@@ -135,6 +136,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
     * For everything else, returns `undefined`.
 * `{{lower str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) to all lowercase characters.
 * `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
+* `{{scaleLinear fromLow fromHigh toLow toHigh value}}`: Scales the given `value` from the domain defined by `fromLow` and `fromHigh` to the range defined by `toLow` and `toHigh`. Similar to the Arduino [Map](https://www.arduino.cc/reference/en/language/functions/math/map/) function.
 * `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
 * `{{toHtml object}}`: Takes the given object and converts it to an HTML/XML document string. The object must be of the same format that the [HTML Parser node](/workflows/logic/html-parser/) outputs in JSON mode.
 * `{{trim str}}`: Returns `str` with all whitespace [trimmed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) from the start and end.

@@ -19,11 +19,11 @@ When querying by device ID or device name, there will at most be a single device
 
 ![Get Device Node Configuration](/images/workflows/data/get-device-node-config.png "Get Device Node Configuration")
 
-The query result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) provided in the `Result Path` field. If the query is configured to potentially return multiple results, this will always be an array, even if no results are found. If the query is only returning a single result, this will either be the device object or will be `null`. In addition, you have the option of changing the form of the tags on the device result. By default it is the standard array of key/value pairs (the same as the Losant API returns) - but you can instead ask for the tags to be in the form of an object map, where the tags property will be an object. In that case, each tag key will be a property on the object, and the value of that property will be an array of all the tag values for that key on the device. This is often an easier form to work with inside of workflows.
+The query result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) provided in the `Result Path` field. If the query is configured to potentially return multiple results, this will always be an array, even if no results are found. If the query is only returning a single result, this will either be the device object or will be `null`. You also have the option of changing the form of the tags on the device result. By default it is the standard array of key/value pairs (the same as the Losant API returns) - but you can instead ask for the tags to be in the form of an object map, where the tags property will be an object. In that case, each tag key will be a property on the object, and the value of that property will be an array of all the tag values for that key on the device. This is often an easier form to work with inside of workflows. In addition, you can ask for a composite of the last known state of each attribute of the device to be included as well, which will be added to the device under the `compositeState` field.
 
 ![Get Device Node Result](/images/workflows/data/get-device-node-config-result.png "Get Device Node Result")
 
-In the example above, the workflow will retrieve the device that has the `sigfox_id` tag matching the value at `data.body.device` on the payload. It is only expecting a single device to be returned, and will place the resulting device at `data.losantDevice` with the tags in object form. For example, the payload after the Get Device node runs might look like the following:
+In the example above, the workflow will retrieve the device that has the `sigfox_id` tag matching the value at `data.body.device` on the payload. It is only expecting a single device to be returned, and will place the resulting device at `data.losantDevice` with the tags in object form and the most recent composite state. For example, the payload after the Get Device node runs might look like the following:
 
 ```json
 {
@@ -40,8 +40,23 @@ In the example above, the workflow will retrieve the device that has the `sigfox
         "sigfox_id": ["AA00FF"]
       },
       "attributes": [
-        { "name": "temp", "dataType": "number" }
+        { "name": "temp", "dataType": "number" },
+        { "name": "humidity", "dataType": "number" }
       ],
+      "compositeState": {
+        "temp": {
+          "time": Thu Aug 16, 2018 10:17:36 GMT-04:00,
+          "value": "15.6",
+          "relayId": "56c8967bb8df0f0100d62912",
+          "relayType": "flow"
+        },
+        "humidity": {
+          "time": Thu Aug 16, 2018 10:10:36 GMT-04:00,
+          "value": "0.67",
+          "relayId": "56c8967bb8df0f0100d62912",
+          "relayType": "flow"
+        }
+      }
       ...
     },
     ...

@@ -1,6 +1,6 @@
 # Dashboard List
 
-The Dashboard List block allows you to display a list of your dashboards. The list includes links to the dashboards, their names, and whether each dashboard is visible to the public.
+The Dashboard List Block allows you to display a list of your dashboards. The list includes links to the dashboards, their names, and whether each dashboard is visible to the public.
 
 ![Dashboard List](/images/dashboards/dashboards-example.png "Dashboard List")
 

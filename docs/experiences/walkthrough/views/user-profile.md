@@ -95,9 +95,7 @@ We're making one significant change to the component, which can be seen just abo
 
 ## Create the Workflows
 
-Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow. Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
-
-![Add Workflow](/images/experiences/walkthrough/views/user-registration/add-workflow.png "Add Workflow")
+Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow.
 
 ### Edit Profile Workflow
 
