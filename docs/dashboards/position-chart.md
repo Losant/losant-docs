@@ -75,10 +75,11 @@ will apply to all of the relevant start or end pins on the map.
 ![Advanced Pin Style Configuration](/images/dashboards/gps-history-advanced-pin-config.png "Advanced Pin Style Configuration")
 
 If you want more control over marker pins, you can select `Advanced`. This allows you to provide a [string templates](/workflows/accessing-payload-data/#string-templates)
-that will be rendered for each individual point in each series displayed on the map. The string template must resolve to a single URL pointing to an image with a size of
-**30px wide by 70 tall** – or larger, so long as the ratio is the same. If the template does not resolves to a blank string for a point, no marker will be displayed for
-that point. Losant provides a helper function `colorMarker` which can be used to create the same kinds of markers that the `simple` configuration uses - the function takes
-a single argument, which is a hex color string, and returns an image url for a marker of that color. The default template for the advanced section uses this helper, rendering
+that will be rendered for each individual point in each series displayed on the map. The string template must resolve to a single URL pointing to an image and will be rendered using it's natural width and height. For SVG images, a width and/or height must be explicitly assigned in the outermost `<svg>` element in order to render. If the template does not resolve to an image, no marker will be displayed for that point.
+
+Marker images also support images optimized for retina displays. Any image with `@2x` or `@3x` immediately before the file extension will render at half or a third of its original size respectively.
+
+Losant provides a helper function `colorMarker` which can be used to create the same kinds of markers that the `simple` configuration uses - the function takes a single argument, which is a hex color string, and returns an image url for a marker of that color. The default template for the advanced section uses this helper, rendering
 a red marker for the starting (oldest) point of a series, and a green marker for the ending (most recent) point of a series.
 
 When using the advanced mode, the following variables are available for you to use in the icon template:
