@@ -3,7 +3,7 @@ description: Learn more about the Losant Device: Disconnect Trigger.
 
 # Device: Disconnect Trigger
 
-The Device: Disconnect Trigger will trigger a workflow whenever one or more devices disconnect from the Losant Platform.
+The Device: Disconnect Trigger will trigger a workflow whenever one or more devices disconnect from the Losant Platform, via the MQTT broker or the REST API.
 
 ![Device Disconnect Trigger](/images/workflows/triggers/on-disconnect-trigger.png "Device Disconnect Trigger")
 

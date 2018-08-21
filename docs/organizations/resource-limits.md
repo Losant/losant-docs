@@ -57,7 +57,7 @@ We also supply a detailed breakdown of the number of payloads by type so that yo
 
 * A device reporting its [state](/devices/state/)
 * A [command](/devices/commands/) sent to a device
-* Device connections to and disconnections from the [Losant broker](/mqtt/overview/#the-losant-message-broker)
+* Device connections to and disconnections from the [Losant broker](/mqtt/overview/#the-losant-message-broker) or via the REST API
 * Workflow [timer triggers](/workflows/triggers/timer/)
 * Incoming [webhook](/applications/webhooks/) requests
 * Incoming [experience endpoint](/experiences/endpoints/) requests

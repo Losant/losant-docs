@@ -20,7 +20,7 @@ Command names and payloads can be anything. It's entirely up the device and its 
 
 ## Handling Commands
 
-Commands can currently only be received over an [MQTT connection](/mqtt/overview/#subscribing-to-commands) to Losant. The Losant MQTT clients make connecting and receiving commands very easy for custom devices. All commands contain a name and an optional payload, sent as a JSON string that takes the following form:
+Commands can received over an [MQTT connection](/mqtt/overview/#subscribing-to-commands) to Losant, via the REST API or through the workflow engine's [Device Command Node](/workflows/outputs/device-command/). The Losant MQTT clients make connecting and receiving commands very easy for custom devices. All commands contain a name and an optional payload, sent as a JSON string that takes the following form:
 
 ```json
 {
