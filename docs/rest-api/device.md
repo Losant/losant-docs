@@ -724,6 +724,69 @@ curl -H 'Content-Type: application/json' \
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 | 404 | [Error](schemas.md#error) | Error if device was not found |
 
+## Set Connection Status
+
+Set the current connection status of the device
+
+### Method And Url <a name="setConnectionStatus-method-url"></a>
+
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/devices/**`DEVICE_ID`**/setConnectionStatus
+
+### Authentication <a name="setConnectionStatus-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Device, all.Organization, all.User, device.*, or device.setConnectionStatus.
+
+### Request Path Components <a name="setConnectionStatus-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+| DEVICE_ID | ID associated with the device | 575ecf887ae143cd83dc4aa2 |
+
+### Request Headers <a name="setConnectionStatus-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Request Body <a name="setConnectionStatus-body"></a>
+
+The body of the request should be serialized JSON that validates against
+the [Device Connection Status](schemas.md#device-connection-status) schema. For example, the following would be a
+valid body for this request:
+
+```json
+{
+  "status": "connected"
+}
+```
+
+### Curl Example <a name="setConnectionStatus-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X POST \
+    -d '{"status":"connected"}' \
+    https://api.losant.com/applications/APPLICATION_ID/devices/DEVICE_ID/setConnectionStatus
+```
+
+### Successful Responses <a name="setConnectionStatus-successful-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | If connection status was successfully applied |
+
+### Error Responses <a name="setConnectionStatus-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if device was not found |
+
 ## State Stream
 
 Attach to a real time stream of state messages from this device using Server Sent Events (SSE)
