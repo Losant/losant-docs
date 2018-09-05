@@ -41,7 +41,7 @@ As a real-time tool, the Communication Log will always begin in an empty state. 
 
 * Device State - When [devices](/devices/overview/) report [state](/devices/state/), a log will appear.
 * Device Commands - When Losant [sends a device command](/devices/commands/), a log will appear.
-* Device Connection Status - When [devices](/devices/overview/) successfully connect or disconnect from Losant, a log will appear.
+* Device Connection Status - When [devices](/devices/overview/) successfully connect or disconnect from Losant via the MQTT broker or the REST API, a log will appear.
 
 ### Webhooks
 

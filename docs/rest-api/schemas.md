@@ -517,6 +517,7 @@ Schema for the body of an Application API Token creation request
           "edgeDeployments.*",
           "event.*",
           "events.*",
+          "experience.*",
           "experienceDomain.*",
           "experienceDomains.*",
           "experienceEndpoint.*",
@@ -583,6 +584,7 @@ Schema for the body of an Application API Token creation request
           "device.removeData",
           "device.sendCommand",
           "device.sendState",
+          "device.setConnectionStatus",
           "device.stateStream",
           "deviceRecipe.bulkCreate",
           "deviceRecipe.delete",
@@ -605,6 +607,7 @@ Schema for the body of an Application API Token creation request
           "events.mostRecentBySeverity",
           "events.patch",
           "events.post",
+          "experience.delete",
           "experienceDomain.delete",
           "experienceDomain.get",
           "experienceDomain.patch",
@@ -5188,6 +5191,141 @@ Schema for an array of Device Commands
 ```
 
 <br/>
+## Device Connection Status
+
+Schema for the body of a request to set a device&#x27;s connection status
+
+### Schema <a name="device-connection-status-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "oneOf": [
+    {
+      "title": "Device Connected",
+      "description": "Schema for marking a device as connected",
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "connected"
+          ]
+        },
+        "connectedAt": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "$date": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "$date"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "title": "Device Disconnected",
+      "description": "Schema for marking a device as disconnected",
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "disconnected"
+          ]
+        },
+        "connectedAt": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "$date": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "$date"
+              ]
+            }
+          ]
+        },
+        "disconnectedAt": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "$date": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "$date"
+              ]
+            }
+          ]
+        },
+        "disconnectReason": {
+          "type": "string",
+          "maxLength": 1024
+        },
+        "messagesFromClient": {
+          "type": "number"
+        },
+        "messagesToClient": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}
+```
+
+<small></small>
+
+### Example <a name="device-connection-status-example"></a>
+
+```json
+{
+  "status": "connected"
+}
+```
+
+<br/>
 ## Device Credentials
 
 Schema for the body of a Device authentication request
@@ -8164,6 +8302,72 @@ Schema for a single Experience Endpoint
       },
       "additionalProperties": false
     },
+    "staticReply": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "statusCode": {
+              "type": "number",
+              "min": 100,
+              "max": 599,
+              "integer": true
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "page",
+                "redirect"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "unauthorizedReply": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "statusCode": {
+              "type": "number",
+              "min": 100,
+              "max": 599,
+              "integer": true
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "page",
+                "redirect"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
     "experienceGroups": {
       "type": "array",
       "items": {
@@ -8270,6 +8474,72 @@ Schema for the body of an Experience Endpoint modification request
         "pattern": "^[A-Fa-f\\d]{24}$"
       },
       "maxItems": 1000
+    },
+    "staticReply": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "statusCode": {
+              "type": "number",
+              "min": 100,
+              "max": 599,
+              "integer": true
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "page",
+                "redirect"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "unauthorizedReply": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "statusCode": {
+              "type": "number",
+              "min": 100,
+              "max": 599,
+              "integer": true
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "page",
+                "redirect"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
     }
   },
   "additionalProperties": false
@@ -8350,6 +8620,72 @@ Schema for the body of an Experience Endpoint creation request
         "pattern": "^[A-Fa-f\\d]{24}$"
       },
       "maxItems": 1000
+    },
+    "staticReply": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "statusCode": {
+              "type": "number",
+              "min": 100,
+              "max": 599,
+              "integer": true
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "page",
+                "redirect"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "unauthorizedReply": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "statusCode": {
+              "type": "number",
+              "min": 100,
+              "max": 599,
+              "integer": true
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "page",
+                "redirect"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
     }
   },
   "additionalProperties": false,
@@ -8512,6 +8848,72 @@ Schema for a collection of Experience Endpoints
               }
             },
             "additionalProperties": false
+          },
+          "staticReply": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "statusCode": {
+                    "type": "number",
+                    "min": 100,
+                    "max": 599,
+                    "integer": true
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "page",
+                      "redirect"
+                    ]
+                  }
+                },
+                "required": [
+                  "value",
+                  "type"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "unauthorizedReply": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "statusCode": {
+                    "type": "number",
+                    "min": 100,
+                    "max": 599,
+                    "integer": true
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "page",
+                      "redirect"
+                    ]
+                  }
+                },
+                "required": [
+                  "value",
+                  "type"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "experienceGroups": {
             "type": "array",
@@ -18372,8 +18774,6 @@ Schema for a single Organization
                 "role": {
                   "type": "string",
                   "enum": [
-                    "admin",
-                    "edit",
                     "collaborate",
                     "view",
                     "none"
@@ -18400,8 +18800,6 @@ Schema for a single Organization
                 "role": {
                   "type": "string",
                   "enum": [
-                    "admin",
-                    "edit",
                     "collaborate",
                     "view",
                     "none"
@@ -18874,8 +19272,6 @@ Schema for the body of a request to send an invitation
           "role": {
             "type": "string",
             "enum": [
-              "admin",
-              "edit",
               "collaborate",
               "view",
               "none"
@@ -18902,8 +19298,6 @@ Schema for the body of a request to send an invitation
           "role": {
             "type": "string",
             "enum": [
-              "admin",
-              "edit",
               "collaborate",
               "view",
               "none"
@@ -19017,8 +19411,6 @@ Schema for an array of pending invitations to an Organization
             "role": {
               "type": "string",
               "enum": [
-                "admin",
-                "edit",
                 "collaborate",
                 "view",
                 "none"
@@ -19045,8 +19437,6 @@ Schema for an array of pending invitations to an Organization
             "role": {
               "type": "string",
               "enum": [
-                "admin",
-                "edit",
                 "collaborate",
                 "view",
                 "none"
@@ -19131,8 +19521,6 @@ Schema for the body of a request to modify an Organization member
           "role": {
             "type": "string",
             "enum": [
-              "admin",
-              "edit",
               "collaborate",
               "view",
               "none"
@@ -19159,8 +19547,6 @@ Schema for the body of a request to modify an Organization member
           "role": {
             "type": "string",
             "enum": [
-              "admin",
-              "edit",
               "collaborate",
               "view",
               "none"
@@ -19400,8 +19786,6 @@ Schema for a collection of Organizations
                       "role": {
                         "type": "string",
                         "enum": [
-                          "admin",
-                          "edit",
                           "collaborate",
                           "view",
                           "none"
@@ -19428,8 +19812,6 @@ Schema for a collection of Organizations
                       "role": {
                         "type": "string",
                         "enum": [
-                          "admin",
-                          "edit",
                           "collaborate",
                           "view",
                           "none"

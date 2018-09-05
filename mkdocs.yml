@@ -98,6 +98,7 @@ pages:
     - Application List: dashboards/application-list.md
     - Bar Chart: dashboards/bar-chart.md
     - Dashboard List: dashboards/dashboard-list.md
+    - Data Table: dashboards/data-table.md
     - Device Connection Log: dashboards/device-connection-log.md
     - Device State Table: dashboards/device-state-table.md
     - Device List: dashboards/device-list.md
@@ -286,7 +287,6 @@ pages:
 - _: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
 - _: getting-started/losant-iot-dev-kits/builder-kit-feather.md
 - _: getting-started/what-is-structure.md
-- _: dashboards/data-table.md
 - _: events/overview.md
 - _: limits/overview.md
 - _: losant-sdks/arduino.md

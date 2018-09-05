@@ -3,7 +3,7 @@ description: Learn more about the Losant Device: Connect Trigger.
 
 # Device: Connect Trigger
 
-The Device: Connect Trigger will fire a workflow whenever one or more devices connect to the Losant Platform.
+The Device: Connect Trigger will fire a workflow whenever one or more devices connect to the Losant Platform, via the MQTT broker or the REST API.
 
 ![Device Connect Trigger](/images/workflows/triggers/on-connect-trigger.png "Device Connect Trigger")
 

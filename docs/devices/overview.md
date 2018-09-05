@@ -89,7 +89,7 @@ For Standalone and Gateway type devices, you can also view a log of recent devic
 
 ![Connection Log](/images/devices/connection-log.png "Connection Log")
 
-Whenever a device is disconnected the log will contain the reason and the number of messages sent and received during the connected period. Typically messages sent correspond to [state updates](/devices/state/) and messages received correspond to [commands](/devices/commands/). The list will automatically update as new connection events come in.
+Whenever a device is disconnected, the log will contain the reason and - if the connection events happened over the MQTT broker - the number of messages sent and received during the connected period. Typically messages sent correspond to [state updates](/devices/state/) and messages received correspond to [commands](/devices/commands/). The list will automatically update as new connection events come in.
 
 ### Debugging
 

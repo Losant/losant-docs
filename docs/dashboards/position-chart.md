@@ -74,12 +74,7 @@ will apply to all of the relevant start or end pins on the map.
 
 ![Advanced Pin Style Configuration](/images/dashboards/gps-history-advanced-pin-config.png "Advanced Pin Style Configuration")
 
-If you want more control over marker pins, you can select `Advanced`. This allows you to provide a [string templates](/workflows/accessing-payload-data/#string-templates)
-that will be rendered for each individual point in each series displayed on the map. The string template must resolve to a single URL pointing to an image with a size of
-**30px wide by 70 tall** – or larger, so long as the ratio is the same. If the template does not resolves to a blank string for a point, no marker will be displayed for
-that point. Losant provides a helper function `colorMarker` which can be used to create the same kinds of markers that the `simple` configuration uses - the function takes
-a single argument, which is a hex color string, and returns an image url for a marker of that color. The default template for the advanced section uses this helper, rendering
-a red marker for the starting (oldest) point of a series, and a green marker for the ending (most recent) point of a series.
+If you want more control over marker pins, you can select `Advanced`. Configuration is similar to advanced pin configuration in the [GPS History Block](/dashboards/gps-history/#advanced-pin-style-configuration).
 
 When using the advanced mode, the following variables are available for you to use in the icon template:
 
@@ -98,11 +93,7 @@ When using the advanced mode, the following variables are available for you to u
 
 ![Popup Style Configuration](/images/dashboards/gps-history-popup-config.png "Popup Style Configuration")
 
-Just like the `Advanced` pin configuration, the popup configuration allows you to provide a [string templates](/workflows/accessing-payload-data/#string-templates) that will
-be used for rendering the popup for a point. The popup for a point will only be available if there is a pin for that point, so make sure that a pin is rendered for any points
-that you want to provide a popup for. String templates for popups are treated as [Markdown](http://commonmark.org/help/), allowing for formatting options such as **bold** and
-*italic*. Using Losant's built-in [Handlebars helpers](/workflows/accessing-payload-data/#string-templates), it is possible to build quite complex popup templates that include
-images and links. By default the popup template renders simple text with the device name, timestamp of the point, and lat/lng location of the point. If the template renders to
-an empty string for a point, no popup will appear when clicking the map pin for that point.
+Just like the `Advanced` pin configuration, the popup configuration allows you to provide a [string template](/workflows/accessing-payload-data/#string-templates) that will
+be used for rendering the popup for a point. Configuration is similar to advanced pin configuration in the [GPS History Block](/dashboards/gps-history/#popup-style-configuration)
 
 The same variables exposed in the [advanced pin style configuration](#advanced-pin-style-configuration) are available in the popup configuration.

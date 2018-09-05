@@ -10,6 +10,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.2.2 - 2018-08-22
+
+### Added <a name="1.2.2-added"></a>
+
+- Added a configuration flag to control the queuing of messages while the agent is offline.
+- Added the new payload helper [`scaleLinear`](/workflows/accessing-payload-data/#format-helpers).
+- Added the new payload helper [`currentDateTime`](/workflows/accessing-payload-data/#format-helpers).
+
+### Changed <a name="1.2.2-changed"></a>
+
+- Improved [Google Big Query](/workflows/data/google-big-query/) and [GoogleML Node](/workflows/data/google-ml/) error handling.
+- Clarified certain verbose log messages.
+
+***
+
 ## 1.2.1 - 2018-08-07
 
 ### Added <a name="1.2.1-added"></a>
