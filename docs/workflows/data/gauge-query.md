@@ -3,17 +3,17 @@ description: Learn more about the Losant Data: Gauge Query Node.
 
 # Data: Gauge Query Node
 
-The Gauge Query Node allows a workflow to retrieve and aggregate recent state data for a specific attribute across devices.
+The Data: Gauge Query Node allows a workflow to retrieve and aggregate recent state data for a specific attribute across devices.
 
 ![Gauge Query Node](/images/workflows/data/gauge-query-node.png "Gauge Query Node")
 
 ## Configuration
 
-The configuration for the Gauge Query Node is extremely similar to the [gauge dashboard block](/dashboards/gauge/).
+The configuration for the Data: Gauge Query Node is extremely similar to the [Gauge Dashboard Block](/dashboards/gauge/).
 
 ![Gauge Query Node Device Selection](/images/workflows/data/gauge-query-node-device.png "Gauge Query Node Device Selection")
 
-The first step is selecting the devices to query. The Gauge Query Node has two options for selecting devices:
+The first step is selecting the devices to query. The Data: Gauge Query Node has two options for selecting devices:
 
 1. You can specifically select a set of devices to query.
 1. You can define a [payload path](/workflows/accessing-payload-data/#payload-paths) to pull one or more Device IDs off of the current workflow payload to query.
@@ -24,7 +24,7 @@ The second option allows a workflow to dynamically change what specific devices 
 
 ![Gauge Query Node Config](/images/workflows/data/gauge-query-node-config.png "Gauge Query Node Config")
 
-The Gauge Query Node also needs to know the time range, the attribute, and what aggregation to use for the query. When querying a single device, and requesting only the last data point, no aggregation is needed (since there will only be a single value). In the above example, the attribute `current` will be averaged over the last 24 hours for the selected devices.
+The Data: Gauge Query Node also needs to know the time range, the attribute, and what aggregation to use for the query. When querying a single device, and requesting only the last data point, no aggregation is needed (since there will only be a single value). In the above example, the attribute `current` will be averaged over the last 24 hours for the selected devices.
 
 ![Gauge Query Node Result](/images/workflows/data/gauge-query-node-result.png "Gauge Query Node Result")
 
@@ -42,7 +42,7 @@ Once the query is configured, the node needs a [payload path](/workflows/accessi
 
 The time field is most useful when using the node to query the "Last received data point" for an attribute, as the time value will be the time of that data point.
 
-In the above example, the result will be stored at `data.currentAvg`. The payload after the execution of the example Gauge Query Node above would look like:
+In the above example, the result will be stored at `data.currentAvg`. The payload after the execution of the example Data: Gauge Query Node above would look like:
 
 ```json
 {
