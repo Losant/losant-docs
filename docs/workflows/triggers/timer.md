@@ -13,7 +13,7 @@ The Timer Trigger will fire a workflow on a scheduled interval.
 The Timer Trigger can be configured in three different ways:
 
 * **Simple Interval**: Configure the timer to fire after a repeating period of time. Configured by using an amount and a unit - the unit can be "Seconds", "Minutes", "Hours", or "Days". The interval can be any positive number that evaluates to at least 1 second and less than 1 year (fractional intervals are allowed).
-* **Simple Schedule**: Configure the timer to fire based on a simple daily schedule. Select the days of the week, and the time of day that the timer should fire.
+* **Simple Schedule**: Configure the timer to fire based on a simple daily schedule. Select the days of the week, the time of day that the timer should fire, and the time zone of the given time of day.
 * **Advanced**: Configure the timer to fire using a valid cron string. The base cron spec is supported, and in addition the non-standard `/`, `@yearly`, `@monthly`, `@weekly`, `@daily`, and `@hourly` syntax is supported. The non-standard `L`, `W`, `#`, `?`, `@reboot`, and `@annually` syntax is not supported.
 
 ![Timer Trigger Config](/images/workflows/triggers/timer-trigger-config.png "Timer Trigger Config")
