@@ -107,8 +107,6 @@ Though a user most frequently completes a forgot password flow while logged out 
 
 Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow. Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
 
-![Add Workflow](/images/experiences/walkthrough/views/user-registration/add-workflow.png "Add Workflow")
-
 ### Forgot Password Workflow
 
 ![Forgot Password Workflow](/images/experiences/walkthrough/views/forgot-password/forgot-password-workflow.png "Forgot Password Workflow")
