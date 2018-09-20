@@ -10,6 +10,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.2.3 - 2018-09-27
+
+### Added <a name="1.2.3-added"></a>
+
+- There are now [Alpine](https://hub.docker.com/_/alpine/) based docker images for the Edge Agent.
+- The [typeof](/workflows/accessing-payload-data/#format-helpers) handlebars helper has been added.
+
+### Changed <a name="1.2.3-changed"></a>
+
+- The [Run Executable Node](/workflows/data/run-executable/) now supports detaching from the executable.
+- The [Geofence Node](/workflows/logic/geofence/) now supports drawing custom polygons.
+- The [Array Node](/workflows/logic/array/) now supports concat.
+- Update to Node.js 8.12.0.
+
+### Fixed <a name="1.2.3-fixed"></a>
+
+- The [HTTP Node](/workflows/data/http/) now uses `auto` for `ecdhCurve` for SSL connections.
+
+***
+
 ## 1.2.2 - 2018-08-22
 
 ### Added <a name="1.2.2-added"></a>
