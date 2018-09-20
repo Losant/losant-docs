@@ -104,3 +104,7 @@ When in `JSON template` or `payload path` mode, the Device State Node accepts a 
   ...
 ]
 ```
+
+## Throttling And Limits
+
+The Device State Node has the same throttling rules as using the [API](/rest-api/overview/#throttles-and-limits) or the [broker](/organizations/resource-limits/#message-throttling) to set state - it is limited to 30 calls in a 15-second window (per device) - on average, 2 calls per second.

@@ -294,3 +294,5 @@ The following API endpoints have specific throttling:
 * [Device Data Export](/rest-api/device/#export) is limited to one call every five minutes per device.
 
 * [Data Table Data Export](/rest-api/data-table-rows/#export) is limited to one call every five minutes per data table.
+
+* [Workflow Press Virtual Button](/rest-api/flow/#press-virtual-button) is limited to 100 calls in a 10-second window (or, on average, 10 per second) per virtual button.
