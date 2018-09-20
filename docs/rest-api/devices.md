@@ -96,6 +96,7 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my * device |
 | deviceClass | N | Filter the devices by the given device class. Accepted values are: standalone, gateway, peripheral, floating, edgeCompute |  | deviceClass&#x3D;standalone |
 | tagFilter | N | Array of tag pairs to filter by. See [Device Tag Filter](schemas.md#device-tag-filter) for more details. |  | tagFilter[0][key]&#x3D;Floor&amp;tagFilter[0][value]&#x3D;2&amp;tagFilter[1][key]&#x3D;Serial |
+| excludeConnectionInfo | N | If set, do not return connection info |  | excludeConnectionInfo&#x3D;true |
 
 ### Request Headers <a name="get-headers"></a>
 
