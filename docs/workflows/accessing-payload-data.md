@@ -37,7 +37,7 @@ There are a few different methods for accessing and manipulating data from workf
 
 ## Payload Paths
 
-Many workflow nodes, such as the [HTTP node](/workflows/data/http/), the [Get](/workflows/data/get-value/) and [Store Value](/workflows/data/store-value/) nodes and the [Math node](/workflows/logic/math/), require users to define a payload path at which either data will be accessed for evaluation, or at which the returned result of an operation will be stored. In these cases we use **payload paths**.
+Many workflow nodes, such as the [HTTP Node](/workflows/data/http/), the [Get](/workflows/data/get-value/) and [Store Value](/workflows/data/store-value/) nodes and the [Math Node](/workflows/logic/math/), require users to define a payload path at which either data will be accessed for evaluation, or at which the returned result of an operation will be stored. In these cases we use **payload paths**.
 
 Payload paths are dot-separated references to object properties, such as `foo.bar`. If any property in the chain returns `undefined`, the value of the payload path will also return undefined.
 
@@ -84,12 +84,12 @@ Areas within the app that call for a string template do not necessarily have to 
 
 String templates appear in a number of use places within the Losant Platform; in all cases, they serve one of two purposes:
 
-* **Referencing payload values**, such as for setting state in the [Device State node](/workflows/outputs/device-state/)
-* **Formatting values for output**, such as in the [GPS History block's tooltip](/dashboards/gps-history/) or the [SMS node's message](/workflows/outputs/sms/).
+* **Referencing payload values**, such as for setting state in the [Device State Node](/workflows/outputs/device-state/)
+* **Formatting values for output**, such as in the [GPS History block's tooltip](/dashboards/gps-history/) or the [SMS Node's message](/workflows/outputs/sms/).
 
 ### Escaping HTML
 
-By default, HTML within a Handlebars helper is [escaped](http://handlebarsjs.com/#html-escaping) to prevent malformed HTML from breaking the page layout. If you wish to override this feature, put your string templates inside of triple curly brackets, e.g. `{{{aValueWithHtmlTags}}}`. You may, for example, wish to include HTML tags in the message body of the [Email node](/workflows/outputs/email/).
+By default, HTML within a Handlebars helper is [escaped](http://handlebarsjs.com/#html-escaping) to prevent malformed HTML from breaking the page layout. If you wish to override this feature, put your string templates inside of triple curly brackets, e.g. `{{{aValueWithHtmlTags}}}`. You may, for example, wish to include HTML tags in the message body of the [Email Node](/workflows/outputs/email/).
 
 ### Conditional Block Helpers
 
@@ -138,7 +138,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 * `{{multiply val1 val2}}`: Casts the two values as numbers and multiplies them.
 * `{{scaleLinear fromLow fromHigh toLow toHigh value}}`: Scales the given `value` from the domain defined by `fromLow` and `fromHigh` to the range defined by `toLow` and `toHigh`. Similar to the Arduino [Map](https://www.arduino.cc/reference/en/language/functions/math/map/) function.
 * `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
-* `{{toHtml object}}`: Takes the given object and converts it to an HTML/XML document string. The object must be of the same format that the [HTML Parser node](/workflows/logic/html-parser/) outputs in JSON mode.
+* `{{toHtml object}}`: Takes the given object and converts it to an HTML/XML document string. The object must be of the same format that the [HTML Parser Node](/workflows/logic/html-parser/) outputs in JSON mode.
 * `{{trim str}}`: Returns `str` with all whitespace [trimmed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) from the start and end.
 * `{{upper str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to all uppercase characters.
 * `{{valueByKey objArray key keyField valueField}}`: Returns the value of `valueField` on the object in the `objArray` whose value for `keyField` matches the value of `key`. The arguments `keyField` and `valueField` are optional, defaulting to the field names `key` and `value`. If there is no match found, a blank result is returned.
@@ -219,9 +219,9 @@ Using our example object from above, let's see what each of these string templat
 
 ## Expressions
 
-Sometimes it is necessary to evaluate our data and determine which of two (or many) paths to follow as a result of the evaluation, such as in the dashboard [Indicator block's expressions](/dashboards/indicator/) and the workflow [Conditional node](/workflows/logic/conditional/). In these cases we use **expressions**.
+Sometimes it is necessary to evaluate our data and determine which of two (or many) paths to follow as a result of the evaluation, such as in the dashboard [Indicator block's expressions](/dashboards/indicator/) and the workflow [Conditional Node](/workflows/logic/conditional/). In these cases we use **expressions**.
 
-An expression is a combination of string templates and [JavaScript operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) that forms a "JavaScript-like" expression after parsing through the Handlebars engine. The expression returns a value; depending on the use case, that value may be evaluated as [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) or [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) to determine which branch a workflow follows (as in the [Conditional node](/workflows/logic/conditional/)), or the value may be added to a payload (as in the [Math node](/workflows/logic/math/)).
+An expression is a combination of string templates and [JavaScript operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) that forms a "JavaScript-like" expression after parsing through the Handlebars engine. The expression returns a value; depending on the use case, that value may be evaluated as [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) or [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) to determine which branch a workflow follows (as in the [Conditional Node](/workflows/logic/conditional/)), or the value may be added to a payload (as in the [Math Node](/workflows/logic/math/)).
 
 Any operators or functions applied to a string template within an expression should be placed outside of the string template; for example, `{{foo}} > {{bar}}` or `!{{bat}}`.
 
@@ -332,7 +332,7 @@ pow({{data.aNumberProp}}, {{data.aFalsyProp}}) === 1 // true
 
 ## JSON Templates
 
-In a few places within the Losant Platform – such as the [Input Controls block](/dashboards/input-controls/) and [Losant API node](/workflows/data/losant-api/), it is necessary to construct JSON objects from other data. In these instances we use **JSON templates**.
+In a few places within the Losant Platform – such as the [Input Controls block](/dashboards/input-controls/) and [Losant API Node](/workflows/data/losant-api/), it is necessary to construct JSON objects from other data. In these instances we use **JSON templates**.
 
 JSON templates can take any of the following formats (or a combination thereof):
 

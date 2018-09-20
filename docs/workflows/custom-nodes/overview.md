@@ -16,7 +16,7 @@ Your application's list of Custom Nodes can be found under the "Workflows" dropd
 
 ![Create Custom Node](/images/workflows/custom-nodes-create.png "Create Custom Node")
 
-If you have an exported Custom Node file, you can also import that Custom Node into your application by clicking the "Import" button and selecting the file. Losant has a [catalog of useful Custom Nodes](https://github.com/Losant/workflow-node-catalog) available on GitHub.
+If you have an exported Custom Node file, you can also import that Custom Node into your application by clicking the "Import" button and selecting the file. Losant has a [catalog of useful nodes](https://github.com/Losant/workflow-node-catalog) available on GitHub.
 
 ## Configuration
 
@@ -156,3 +156,11 @@ In order to delete a Custom Node, or a version of the Custom Node, that node / v
 You must first delete any instances of that Custom Node you wish to delete - or, if you are attempting to delete a Custom Node version, you must switch all instances of that Custom Node to a version other than the one you wish to delete.
 
 Once none of your workflows are using the resource you are trying to delete, the Custom Node / version can be deleted in the same ways a [workflow](/workflows/cloud-workflows/#deleting-cloud-workflows) or [workflow version](/workflows/versioning/#working-with-versions) can be deleted.
+
+## Exporting Custom Nodes
+
+In order to export a Custom Node, first save and deploy a version of it. Then click the down arrow next to "Save & Deploy" to open the dropdown menu and select "Export".
+
+![Export a specific custom node version](/images/workflows/custom-nodes-export-version.png "Export a specific custom node version")
+
+You can also export specific versions of a custom node by clicking the "Versions" tab in the right sidebar, clicking the down arrow next to the version you wish to export, and clicking "Export".
