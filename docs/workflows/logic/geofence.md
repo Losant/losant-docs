@@ -4,17 +4,19 @@ description: Learn more about the Losant Geofence Node.
 
 # Geofence Node
 
-The Geofence Node allows a workflow to branch based upon the distance between two coordinates.
+The Geofence Node allows a workflow to branch based upon whether a device reports state within a certain geographic area.
 
 ![Geofence Node](/images/workflows/logic/geofence-node.png "Geofence Node")
 
 ## Configuration
 
-The Geofence Node has 4 distinct configuration sections - the coordinates to check (the "input" coordinates), the center point coordinates, the center point radius, and an optional [payload path](/workflows/accessing-payload-data/#payload-paths) for the calculated distance.
+The Geofence Node has three different configruation settings: circular, polygonal, and polgyonal path. The geofence has 3 configuration sections - the coordinate to check (the "input" coordinate), the geofence coordinates to check against, and a branch output.
+
+## Circular Geofence
 
 When the Geofence Node runs, it calculates the distance between the input and center point coordinates, and if that distance is less than or equal to the defined center point radius, the `true` route on the right out of the node is taken. If that distance is greater than the center point radius, the `false` route on the left out of the node is taken. If the distance between the two points cannot be calculated for some reason, the `false` route on the left out of the node is taken.
 
-![Geofence Node Example](/images/workflows/logic/geofence-node-example.png "Geofence Node Example")
+![Geofence Node Example](/images/workflows/logic/geofence-node-workflow-example.png "Geofence Node Example")
 
 In the above example, there are actually two different geofences. The first checks against a center point position that represents "Home". If that is `true` (the route to the right), it records that payload as being "At Home". If that is `false` (the route to the left), it moves on to the second geofence, which checks against a center point position that represents "Work". If that is `true` (the route to the right), it records that payload as being "At Work", but if that is `false` (the route to the left), it records that payload as being "Other".
 
@@ -22,7 +24,7 @@ In the above example, there are actually two different geofences. The first chec
 
 ![Geofence Node Input Config](/images/workflows/logic/geofence-node-input-config.png "Geofence Node Input Config")
 
-The input coordinates can be take any of the forms we support for [GPS device state](/devices/state/#gps-attributes). No matter which form is used, the field will also accept a [string template](/workflows/accessing-payload-data/#string-templates) for the value. In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an NMEA string.
+The input coordinates can be defined by any of the forms we support for [GPS device state](/devices/state/#gps-attributes). No matter which form is used, the field will also accept a [string template](/workflows/accessing-payload-data/#string-templates) for the value. In the above example, the input coordinates are defined as the `data.location` field of the payload, which contains an NMEA string.
 
 ### Center Point Coordinate Configuration
 
@@ -40,7 +42,7 @@ The radius of the center point is defined in meters, and must be greater than 0.
 
 ![Geofence Node Distance Value](/images/workflows/logic/geofence-node-distance-value.png "Geofence Node Distance Value")
 
-The Geofence Node has the ability to optionally add the calculated distance between the input and center point to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the Geofence Node is taken. If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the path. In the above example, the distance between the input and center coordinates will be placed at the `data.distance.work` path.
+The Circular Geofence Node has the ability to optionally add the calculated distance between the input and center point to the payload at a defined [payload path](/workflows/accessing-payload-data/#payload-paths). If a path is defined, the distance (in meters) will be placed at that path no matter which branch out of the Geofence Node is taken. If there is a problem calculating the distance (bad coordinates or radius), no value will be places at the path. In the above example, the distance between the input and center coordinates will be placed at the `data.distance.work` path.
 
 The node also has the ability to optionally add which branch out of the node was taken to the payload. If a path is defined, `true` or `false` will be placed at the given path, depending on which branch out of the node is taken. In the above example, the branch taken will be placed at the `data.geobranch.work` path.
 
@@ -78,3 +80,21 @@ The payload after execution of the geofence node would look like:
   ...
 }
 ```
+
+## Polygonal Geofence
+
+The Polygonal Geofence calculates whether the input coordinate falls within a defined polygonal area. If the input coordinate falls within the defined area, the `true` path is taken. If it falls outside the defined area, the `false` path is taken. If whether or not the input falls within the polygon cannot be calculated for some reason, the `false` route on the left out of the node is taken.
+
+The Polygonal Gefence mode lets users draw their own polygon using the map's drawing tool or by typing the coordinates into the text box below it.
+
+To draw a polygon, click on the polygon tool in the top-right corner of the map and right-click where you'd like to begin to draw your polygon. To set the line and begin drawing in another direction, right-click on the map again. Do this until you have defined the area you with to monitor and then double-click to finish drawing. The coordinates you just drew will be displayed and editable in the text box below.
+
+To delete a polygon, click inside of it and click the trash button in the top-right corner of the map or delete the coordinates in the textbox underneath the map.
+
+Coordinates placed in the text box can be defined by any of the forms we support for [GPS device state](/devices/state/#gps-attributes).
+
+![Geofence Node](/images/workflows/logic/geofence-node-drawn-polygon.png "Geofence Node")
+
+## Polygonal Path
+
+The Geofence Node also allows polygonal geofences to be passed in via an array of GPS Coordinates defined on a payload path. Note the order of the points in the array is important, as it determines how the polygon is drawn.

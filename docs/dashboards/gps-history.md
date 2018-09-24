@@ -8,15 +8,19 @@ The map will automatically pan and zoom to display all the available data retrie
 
 ## Configuration
 
-At least one device ID or tag must be specified, along with a duration.
+At least one device ID or tag must be specified, along with a duration. Optionally, a resolution may be specified.
 
 ### Duration
-
-![GPS History Duration](/images/dashboards/gps-history-duration.png "GPS History Duration")
 
 To view the current location of your devices, select "Last received data point". This will show your devices on the map as green pins.
 
 To view your devices' locations over a given period of time, choose any other value for duration. Your devices will show on the map as red starting point pins and green ending point pins, with paths connecting the two showing how the device traveled over the given duration.
+
+![GPS History Duration](/images/dashboards/gps-history-duration.png "GPS History Duration")
+
+### Resolution
+
+Setting a resolution will return only the last data point per resolution period, omitting the other recorded data. Selecting a resolution is recommended for devices that report a large volume of location data to improve dashboard performance.
 
 ![GPS History Side by Side](/images/dashboards/gps-history-side-by-side.png "GPS History Side by Side")
 
