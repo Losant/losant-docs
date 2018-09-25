@@ -10,7 +10,7 @@ The Geofence Node allows a workflow to branch based upon whether a device report
 
 ## Configuration
 
-The Geofence Node has three different configruation settings: circular, polygonal, and polgyonal path. The geofence has 3 configuration sections - the coordinate to check (the "input" coordinate), the geofence coordinates to check against, and a branch output.
+The Geofence Node has three different configruation settings: circular, polygonal, and polygonal path. The geofence has 3 configuration sections - the coordinate to check (the "input" coordinate), the geofence coordinates to check against, and a branch output.
 
 ## Circular Geofence
 
@@ -85,13 +85,11 @@ The payload after execution of the geofence node would look like:
 
 The Polygonal Geofence calculates whether the input coordinate falls within a defined polygonal area. If the input coordinate falls within the defined area, the `true` path is taken. If it falls outside the defined area, the `false` path is taken. If whether or not the input falls within the polygon cannot be calculated for some reason, the `false` route on the left out of the node is taken.
 
-The Polygonal Gefence mode lets users draw their own polygon using the map's drawing tool or by typing the coordinates into the text box below it.
+The Polygonal Gefence mode lets users draw their own polygon using the map's drawing tool or by typing the coordinates into the text box below it using any of the forms we support for [GPS device state](/devices/state/#gps-attributes).
 
-To draw a polygon, click on the polygon tool in the top-right corner of the map and right-click where you'd like to begin to draw your polygon. To set the line and begin drawing in another direction, right-click on the map again. Do this until you have defined the area you with to monitor and then double-click to finish drawing. The coordinates you just drew will be displayed and editable in the text box below.
+To draw a polygon, click on the polygon tool in the top-right corner of the map and right-click where you'd like to begin to draw your polygon. To set the line and begin drawing in another direction, right-click on the map again. Do this until you have defined the area you with to monitor and then double-click to finish drawing. The coordinates of the drawn polygon will be placed in the text box below and can be edited and adjusted for more precision.
 
 To delete a polygon, click inside of it and click the trash button in the top-right corner of the map or delete the coordinates in the textbox underneath the map.
-
-Coordinates placed in the text box can be defined by any of the forms we support for [GPS device state](/devices/state/#gps-attributes).
 
 ![Geofence Node](/images/workflows/logic/geofence-node-drawn-polygon.png "Geofence Node")
 
