@@ -12,6 +12,8 @@ The Array Node allows a workflow to perform operations against an array on the p
 
 Array Nodes are configured by first specifying a payload path to an array on the payload. This will be the array that the node will operate on. If nothing exists at the given payload path, then an empty array will be created at that location. If a string exists at the given payload path, that string will be treated as an array of characters for the purposes of the array operation, but when the operation is completed, it will be left as a string on the payload.
 
+If the operation modifies the original array, you can specify a destination path where the altered array will be stored.
+
 ![Array Node Configuration](/images/workflows/logic/array-node-config.png "Array Node Configuration")
 
 Once you have configured the array that the node will operate on, then you can choose and configure one of the following operations to perform.
@@ -67,3 +69,7 @@ The shift operation is used to pull off the first element in the array. It takes
 ### Unshift
 
 The unshift operation is used to add an element to the beginning of the array. It takes one argument, a templatable value which will be the element to prepend.
+
+### Concat
+
+The concat operation is used to combine the elements of two arrays. It takes one argument, a templatable value which will be the array to be concatted.
