@@ -14,15 +14,11 @@ First, choose an application that owns the devices and/or the data tables you wo
 
 ### Datasets
 
-Once you have selected an application, you must choose a dataset to include on your custom chart. The datasets that you can form are time series, gauge, and data table sets. You can enter as many datasets as you wish to include on your custom chart. All datasets must have a query name as it is what is referenced in the Vega-Lite configuration for reading that dataset.
-
-If you wish to retrieve data from a third-party URL, including any of your own Experience Endpoints, those can be included as part of Vega-Lite's [data configuration](https://vega.github.io/vega-lite/docs/data.html#url).
-
 ![Datasets](/images/workflows/custom-chart-datasets.png "Datasets")
 
 #### Time Series Datasets
 
-Time series datasets provide the value of a single attribute from a selected device over a duration of time at a selected resolution. The result of the time series query will reflect the [time series data schema](../rest-api/schemas/#time-series-data). The values returned from the query will be returned as an array of objects in the form of `{ time: <time>, value: <value> }`. The value returned will reflect the selected attribute's value specified at a specific time.
+Time series datasets provide the value of a single attribute from a selected device over a duration of time at a selected resolution. The values returned from the query will be returned as an array of objects in the form of `{ time: <time>, value: <value> }`. The value returned will reflect the selected attribute's value specified at a specific time.
 
 ![Time Series Query](/images/workflows/custom-chart-time-series-query.png "Time Series Query")
 
@@ -34,11 +30,11 @@ Guage datasets allow you to query a single attribute from a selected device and 
 
 #### Data Table Datasets
 
-Data table datasets allow you to query any data that is stored on a data table. The data table query will return an array of your data table rows where the column names will be the keys you will reference. We will automatically generate a list of columns that are available to query as any default row data. You can customize the result by using a custom query. If you want to return all columns, simply don't include a custom query.
+Data table datasets allow you to query any data that is stored on a data table. The data table query will return an array of your data table rows where the column names will be the keys you will reference. We will automatically generate a list of columns that are available to query as well as all default row data. You can customize the result by using a custom query. If you want to return all rows, simply don't include a custom query.
 
 ![Data Table Query](/images/workflows/custom-chart-data-table-query.png "Data Table Query")
 
-Data table datasets have access to multiple query modes. With these query modes you can choose "Match any of the following..." which will select any row that matches at least one of the queries, "Match all of the following..." which will select any row that matches all of your queries, and ["Advanced"](../data-tables/overview/#advanced-queries) query mode.
+Data table datasets have access to multiple query modes. With these query modes you can choose "Match any of the following..." which will select any row that matches at least one of the queries, "Match all of the following..." which will select any row that matches all of your queries, or ["Advanced"](../data-tables/overview/#advanced-queries) query mode.
 
 ![Data Table Advanced Query Mode](/images/workflows/custom-chart-data-table-advanced-query.png 'Data Table Advanced Query Mode')
 
