@@ -1,6 +1,6 @@
 # Custom Chart
 
-The Custom Chartm Block is an advanced Block that allows you to create custom data visualization by utilizing [Vega-Lite](https://vega.github.io/vega-lite/). If you would like a specific visualization that's not already a Losant Dashboard Block, the Custom Chart Block gives you the ultimate support for a wide array of visualization types like [Scatterplots](https://vega.github.io/vega-lite/examples/point_2d.html), [Bubble Plots](https://vega.github.io/vega-lite/examples/circle_natural_disasters.html), or even [layer visualizations together](https://vega.github.io/vega-lite/examples/layer_falkensee.html).
+The Custom Chart Block is an advanced Block that allows you to create custom data visualization by utilizing [Vega-Lite](https://vega.github.io/vega-lite/). If you would like a specific visualization that's not already a Losant Dashboard Block, the Custom Chart Block supports a wide array of visualization types like [Scatterplots](https://vega.github.io/vega-lite/examples/point_2d.html), [Bubble Plots](https://vega.github.io/vega-lite/examples/circle_natural_disasters.html), or even [layer visualizations together](https://vega.github.io/vega-lite/examples/layer_falkensee.html).
 
 ![Data Table Scatter Plot](../images/workflows/custom-chart-data-table-scatter-plot.png "Data Table Scatter Plot")
 
@@ -12,31 +12,61 @@ Configuring the Custom Chart Block is broken up into two sections:
 
 ![Queries](/images/workflows/custom-chart-queries.png "Queries")
 
+All query types include a **Query Name** property which is how each individual query's data is referenced in the Vega-Lite configuration.
+
 #### Time Series Queries
 
-Time series queries provide the value of a single attribute from a selected device over a duration of time at a selected resolution. The values returned from the query will be returned as an array of objects in the form of `{ time: <time>, value: <value> }`. The value returned will reflect the selected attribute's value specified at a specific time.
+Time series queries provides a dataset that includes the value of a single attribute from a selected device over a duration of time at a selected resolution. The values returned from the query will be returned as an array of objects in the form of:
+
+```json
+[
+  { "time": <time>, "value": <value> },
+  { "time": <time>, "value": <value> },
+  { "time": <time>, "value": <value> }
+]
+```
+
+The values returned will reflect the selected attribute's value specified at the reported time. This is the same data that is used in the Time Series Block.
 
 ![Time Series Query](/images/workflows/custom-chart-time-series-query.png "Time Series Query")
 
+The parameters of the Time Series Query include:
+
+* **Query Name** is what will be referenced in the Vega-Lite configuration in order to access the returned dataset.
+* **Device IDS / Tags** is a [device query](../devices/device-queries/) for choosing which devices' data you want to access.
+* **Attribute** is the device attribute whose value will be returned in the query. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
+* **Duration** is how far into the past you want to look at the data.
+* **Resolution** is how your data will be grouped. These options will change based on what you specify for the duration.
+* **Aggregation** determines how all the available data in each resolution group should be aggregated before being read. For example, choosing "MEAN" will average all data points together before displaying within the gauge.
+
 #### Guage Queries
 
-Guage queries allow you to query a single attribute from a selected device and will return an object in the same form as an individual object from a time series query. You can select a duration which will pull all available data that was recorded in the selected duration. If you are pulling any data that is not just the last reported data point, you will need to select an aggregation to perform on the data.
+Guage queries allow you to query a single attribute from a selected device. You can choose to return either the last reported value of the attribute or the value over a selected duration of time with a selected aggregation performed on that data. This query will return an object in the form of `{ "time": <time>, "value": <value> }`. The value of `time` in the returned data is the time that the query was made and the value of `value` is the data of the attribute after the selected aggregation has been performed.
 
 ![Gauge Query](/images/workflows/custom-chart-gauge-query.png "Gauge Query")
 
+The parameters of the Gauge Query include:
+
+* **Query Name** is what will be referenced in the Vega-Lite configuration in order to access the returned dataset.
+* **Device IDS / Tags** is a [device query](../devices/device-queries/) for choosing which devices' data you want to access.
+* **Attribute** is the device attribute whose value will be returned in the query. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
+* **Duration** is how far into the past you want to look at the data.
+* **Aggregation** determines how all the available data returned should be aggregated before being read. For example, choosing "MEAN" will average all data points together before displaying within the gauge. This field is only available if "Data Type" is set to "Historical", and any of the following conditions applies:
+    * Duration is set to anything other than "Last received data point"
+    * A device tag is supplied in the device query
+    * More than one device ID is supplied within the device query
+
 #### Data Table Queries
 
-Data table queries allow you to query any data that is stored on a data table. The data table query will return an array of your data table rows where the column names will be the keys you will reference. We will automatically generate a list of columns that are available to query as well as all default row data. You can customize the result by using a custom query. If you want to return all rows, simply don't include a custom query.
+Data table queries allow you to query any data that is stored on a data table. The data table query will return an array of your data table rows where the column names will be the keys you will reference. We will automatically generate a list of columns that are available to query as well as all default row data.
 
 ![Data Table Query](/images/workflows/custom-chart-data-table-query.png "Data Table Query")
 
-Data table queries have access to multiple query modes. With these query modes you can choose "Match any of the following..." which will select any row that matches at least one of the queries, "Match all of the following..." which will select any row that matches all of your queries, or ["Advanced"](../data-tables/overview/#advanced-queries) query mode.
-
-![Data Table Advanced Query Mode](/images/workflows/custom-chart-data-table-advanced-query.png 'Data Table Advanced Query Mode')
+Building this query is done the same way as building a query in the [Table: Get Rows Node](../workflows/data/table-get-rows/#query-fields), where an array of individual queries can be joined with an "OR" or "AND" operator.
 
 ### Vega Configuration
 
-Once you have a query, you can write a custom vega configuration. We will provide a default configuration that includes the Vega-Lite schema and will be sized to the Dashboard Block size. The default configuration will not be valid as you will have to provide the data.
+Once you have a query, you can write a custom Vega-Lite configuration. We will provide a default configuration that includes the Vega-Lite schema and will be sized to the Dashboard Block size. The default configuration will not be valid as you will have to provide the data.
 
 ![Default Vega Configuration](/images/workflows/custom-chart-default-vega-configuration.png "Default Vega Configuration")
 
