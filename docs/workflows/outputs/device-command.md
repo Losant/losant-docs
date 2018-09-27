@@ -39,3 +39,7 @@ The Device Command Node would send the following command payload with the `setHu
   "hue": 1393
 }
 ```
+
+## Throttling And Limits
+
+The Device Command Node has the same throttling rules as using the [API](/rest-api/overview/#throttles-and-limits) or the [broker](/organizations/resource-limits/#message-throttling) to send commands - it is limited to 30 calls in a 15-second window (per device) - on average, 2 calls per second.

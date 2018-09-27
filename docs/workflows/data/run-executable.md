@@ -18,6 +18,7 @@ There are two main configuration sections for the Run Executable Node ...
 * **Command:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the command itself. This should resolve to a script or executable on the local machine. In the example above, the node will run the command `/opt/serial-reader/bin/read-state`.
 * **Current Working Directory:** A string template for the directory from which to run the command. If you leave this blank, it will default to the working directory for the Losant [Edge Agent](/edge-compute/edge-agent-installation/).
 * **Encoding:** The content encoding (defaults to UTF8).
+* **Run in detached state?:** (edge version 1.2.3 and above) Run your executable command in a detached state. This will cause your result path to be empty if the command successfully started. However, if it did not successfully start then there will be an error in the result path.
 
 ### Environment Variables
 

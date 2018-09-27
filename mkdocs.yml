@@ -98,6 +98,7 @@ pages:
     - Context Variables: dashboards/context-variables.md
     - Application List: dashboards/application-list.md
     - Bar Chart: dashboards/bar-chart.md
+    - Custom Chart: dashboards/custom-chart.md
     - Dashboard List: dashboards/dashboard-list.md
     - Data Table: dashboards/data-table.md
     - Device Connection Log: dashboards/device-connection-log.md

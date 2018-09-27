@@ -73,3 +73,7 @@ If for any reason you feel it is necessary to invalidate all existing access tok
 ![Invalidate All Tokens](/images/experiences/settings-invalidate-tokens.png "Invalidate All Tokens")
 
 If you only need to invalidate the access tokens for a single user, you can do that from the [Experience User's edit page](/experiences/users/#invalidating-user-tokens).
+
+### Deleting Your Experience
+
+If for any reason you need to delete parts or all of your Experience, you can do so from the Experience Settings page. This action will remove which ever parts of the experience you have selected. These include: Experience Users, Experience Domains, Experience Endpoints, Experience Groups, Experience Views and Workflows with Endpoint Triggers. This action cannot be undo once it has been completed. If you delete your entire experience, you will be able to re-bootstrap your experience.

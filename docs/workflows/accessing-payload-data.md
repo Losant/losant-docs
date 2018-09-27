@@ -140,6 +140,15 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 * `{{subtract val1 val2}}`: Casts the two values as numbers and subtracts them.
 * `{{toHtml object}}`: Takes the given object and converts it to an HTML/XML document string. The object must be of the same format that the [HTML Parser Node](/workflows/logic/html-parser/) outputs in JSON mode.
 * `{{trim str}}`: Returns `str` with all whitespace [trimmed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) from the start and end.
+* `{{typeof val}}`: Returns the following string based on the type of `val`:
+    * If `val` is a **number**, returns `number`.
+    * If `val` is a **boolean**, returns `boolean`.
+    * If `val` is a **string**, returns `string`.
+    * If `val` is **null**, returns `null`.
+    * If `val` is **undefined**, returns `undefined`.
+    * If `val` is an **array**, returns `array`.
+    * If `val` is a **date object**, returns `date`.
+    * If `val` is an **object**, returns `object`.
 * `{{upper str}}`: Returns `str` [converted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to all uppercase characters.
 * `{{valueByKey objArray key keyField valueField}}`: Returns the value of `valueField` on the object in the `objArray` whose value for `keyField` matches the value of `key`. The arguments `keyField` and `valueField` are optional, defaulting to the field names `key` and `value`. If there is no match found, a blank result is returned.
 

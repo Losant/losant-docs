@@ -196,6 +196,12 @@ all.Application, all.Application.read, all.Device, all.Device.read, all.Organiza
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 | DEVICE_ID | ID associated with the device | 575ecf887ae143cd83dc4aa2 |
 
+### Request Query Parameters <a name="get-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| excludeConnectionInfo | N | If set, do not return connection info |  | excludeConnectionInfo&#x3D;true |
+
 ### Request Headers <a name="get-headers"></a>
 
 | Name | Required | Description | Default |

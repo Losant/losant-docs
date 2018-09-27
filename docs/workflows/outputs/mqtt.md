@@ -17,3 +17,7 @@ There are three properties to configure for the MQTT Node:
 * **Message Template** is an optional [string template](/workflows/accessing-payload-data/#string-templates). If no message is given, a blank message is published on the configured topic.
 
 In the above example, the contents of the `container.string` field on the current payload will be published to the Losant broker on the MQTT topic `new/commands`.
+
+## Throttling And Limits
+
+The MQTT Node (when sending messages over the Losant broker) has the same throttling rules as using the [broker](/organizations/resource-limits/#message-throttling) directly - it is limited to 30 calls in a 15-second window (per topic) - on average, 2 calls per second.
