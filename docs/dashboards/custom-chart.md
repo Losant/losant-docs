@@ -2,7 +2,7 @@
 
 The Custom Chartm Block is an advanced Block that allows you to create custom data visualization by utilizing [Vega-Lite](https://vega.github.io/vega-lite/). If you would like a specific visualization that's not already a Losant Dashboard Block, the Custom Chart Block gives you the ultimate support for a wide array of visualization types.
 
-![Layered Time Series Line Chart with Gauge as Average Line](../images/workflows/custom-chart-layered-time-series-gauge-chart-result.png "Layered Time Series Line Chart with Gauge as Average Line")
+![Data Table Scatter Plot](../images/workflows/custom-chart-data-table-scatter-plot.png "Data Table Scatter Plot")
 
 ## Configuration
 
