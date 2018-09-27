@@ -1,10 +1,12 @@
 # Custom Chart
 
-The custom chart is an advanced block that allows you to create custom data visualization by utilizing Vega-Lite.
+The Custom Chartm Block is an advanced Block that allows you to create custom data visualization by utilizing [Vega-Lite](https://vega.github.io/vega-lite/). If you would like a specific visualization that's not already a Losant Dashboard Block, the Custom Chart Block gives you the ultimate support for a wide array of visualization types.
+
+![Layered Time Series Line Chart with Gauge as Average Line](../images/workflows/custom-chart-layered-time-series-gauge-chart-result.png "Layered Time Series Line Chart with Gauge as Average Line")
 
 ## Configuration
 
-Configuring the Custom Chart block is broken up into three sections ...
+Configuring the Custom Chart Block is broken up into three sections ...
 
 ### Choosing an Application
 
@@ -40,7 +42,7 @@ Data table datasets have access to multiple query modes. With these query modes 
 
 ### Vega Configuration
 
-Once you have a dataset, you can write a custom vega configuration. We will provide a default configuration that includes the Vega-Lite schema and will be sized to the dashboard block size. The default configuration will not be valid as you will have to provide the data.
+Once you have a dataset, you can write a custom vega configuration. We will provide a default configuration that includes the Vega-Lite schema and will be sized to the Dashboard Block size. The default configuration will not be valid as you will have to provide the data.
 
 ![Default Vega Configuration](/images/workflows/custom-chart-default-vega-configuration.png "Default Vega Configuration")
 
