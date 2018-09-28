@@ -10,6 +10,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.2.4 - 2018-09-28
+
+### Changed <a name="1.2.4-changed"></a>
+
+- Change the limit on the number of concurrently running nodes to be applied per running workflow instead of globally across all running workflows.
+
+***
+
 ## 1.2.3 - 2018-09-27
 
 ### Added <a name="1.2.3-added"></a>
