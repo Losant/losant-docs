@@ -39,7 +39,7 @@ The parameters of the Time Series Query include:
 * **Resolution** is how your data will be grouped. These options will change based on what you specify for the duration.
 * **Aggregation** determines how all the available data in each resolution group should be aggregated before being read. For example, choosing "MEAN" will average all data points together before displaying within the gauge.
 
-#### Guage Queries
+#### Gauge Queries
 
 Guage queries allow you to query a single attribute from a selected device. You can choose to return either the last reported value of the attribute or the value over a selected duration of time with a selected aggregation performed on that data. This query will return an object in the form of `{ "time": <time>, "value": <value> }`. The value of `time` in the returned data is the time that the query was made and the value of `value` is the data of the attribute after the selected aggregation has been performed.
 
