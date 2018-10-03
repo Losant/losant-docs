@@ -115,7 +115,7 @@ pages:
     - Pie Chart: dashboards/pie-chart.md
     - Position Chart: dashboards/position-chart.md
     - Section Header: dashboards/section-header.md
-    - Time Series Block: dashboards/time-series-block.md
+    - Time Series: dashboards/time-series.md
     - Workflow List: dashboards/workflow-list.md
 - Data Tables:
     - Overview: data-tables/overview.md

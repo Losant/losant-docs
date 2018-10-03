@@ -1,1 +1,1 @@
-redirect: /dashboards/time-series-block/
+redirect: /dashboards/time-series/
