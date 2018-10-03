@@ -115,7 +115,7 @@ pages:
     - Pie Chart: dashboards/pie-chart.md
     - Position Chart: dashboards/position-chart.md
     - Section Header: dashboards/section-header.md
-    - Time Series Graph: dashboards/time-series-graph.md
+    - Time Series Block: dashboards/time-series-block.md
     - Workflow List: dashboards/workflow-list.md
 - Data Tables:
     - Overview: data-tables/overview.md
@@ -297,3 +297,4 @@ pages:
 - _: structure-sdks/arduino.md
 - _: structure-sdks/javascript.md
 - _: workflows/outputs/virtual-device.md
+- _: dashboards/time-series-graph.md
