@@ -41,7 +41,7 @@ The parameters of the Time Series Query include:
 
 #### Gauge Queries
 
-Guage queries allow you to query a single attribute from a selected device. You can choose to return either the last reported value of the attribute or the value over a selected duration of time with a selected aggregation performed on that data. This query will return an object in the form of `{ "time": <time>, "value": <value> }`. The value of `time` in the returned data is the time that the query was made and the value of `value` is the data of the attribute after the selected aggregation has been performed.
+Gauge queries allow you to query a single attribute from a selected device. You can choose to return either the last reported value of the attribute or the value over a selected duration of time with a selected aggregation performed on that data. This query will return an object in the form of `{ "time": <time>, "value": <value> }`. The value of `time` in the returned data is the time that the query was made and the value of `value` is the data of the attribute after the selected aggregation has been performed.
 
 ![Gauge Query](/images/workflows/custom-chart-gauge-query.png "Gauge Query")
 
