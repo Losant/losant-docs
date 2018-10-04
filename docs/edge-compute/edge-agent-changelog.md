@@ -16,7 +16,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 - The [File: Read](/workflows/data/file-read/) Node now correctly closes the open file handle afterward in all cases.
 - When the [File: Read](/workflows/data/file-read/) Node errors, it no longer overwrites the entire payload with the error message in certain cases.
-- The [Modbus: Read](/workflows/data/modbus-read/) Node now correctly accepts the full range of a 16 bit unsigned integer for writing to a register.
+- The [Modbus: Write](/workflows/data/modbus-write/) Node now correctly accepts the full range of a 16 bit unsigned integer for writing to a register.
 
 ***
 
