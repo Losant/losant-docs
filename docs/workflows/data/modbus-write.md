@@ -27,7 +27,7 @@ You may define multiple write instructions for the Modbus: Write Node, and you m
 
 * **Address:** (Required) A string template or integer for the address at which to write. This should resolve to an integer between `0` and `65535` inclusive.
 * **Register Type:** (Required) `Holding Registers` (default) or `Coils`.
-* **Value:** (Required) A string template or integer for the value to write. This should resolve to an integer between `0` and `65535` inclusive.
+* **Value:** (Required) A string template or integer for the value to write. If the register type is `Holding Registers` then this should resolve to an integer between `0` and `65535` inclusive otherwise it should be a single bit.
 
 ![Modbus Write Node Result](/images/workflows/data/modbus-write-node-result.png "Modbus Write Node Result")
 
