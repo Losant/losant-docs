@@ -1,11 +1,5 @@
 # Losant Builder Kit Instructions
 
-*We’ve officially closed the Losant store and have deprecated our Losant kits. The good news is that you can still find components to create your own kits through other suppliers; we’d recommend [Adafruit](https://www.adafruit.com/).*
-
-*You can still find instructions on how to use existing kits in the documentation section of our website. And though we will no longer provide support for individual kit questions, since we based our kits on off-the-shelf components, there are plenty of other places to find help.*
-
-*IoT is evolving rapidly. Our developer kits offered a limited introduction to solving problems with IoT. We believe the best way to start building an IoT solution for your business is with a [proof of concept](https://www.losant.com/proof-of-concept).*
-
 The Losant Builder Kit is an easy way to get up and running with the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.
 
 ![Builder Kit](/images/getting-started/losant-iot-dev-kits/builder-kit-nodemcu/kit-complete.jpg "Builder Kit")
@@ -184,11 +178,11 @@ Create a new workflow and name it “Internet Button.”
 
 ![Save Workflow](/images/getting-started/losant-iot-dev-kits/builder-kit/save-workflow.png "Save Workflow")
 
-Start by dragging a Device workflow trigger node to the canvas. Then, on the Device trigger's configuration panel, select your builder kit device. Since this is likely the application's only device, it will be selected by default. If, however, you have more than one device, simply start typing the name of the device and select it from the dropdown.
+Start by dragging a Device workflow Trigger Node to the canvas. Then, on the Device trigger's configuration panel, select your builder kit device. Since this is likely the application's only device, it will be selected by default. If, however, you have more than one device, simply start typing the name of the device and select it from the dropdown.
 
 ![Device Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/device-workflow-node.png "Device Workflow Node")
 
-Next, add a [Debug node](/workflows/outputs/debug/) so you can test that the workflow is triggered when the button is pressed. This is also an opportunity to see what a workflow payload looks like. Understanding the payload will help make the following steps make sense.
+Next, add a [Debug Node](/workflows/outputs/debug/) so you can test that the workflow is triggered when the button is pressed. This is also an opportunity to see what a workflow payload looks like. Understanding the payload will help make the following steps make sense.
 
 ![Debug Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/debug-workflow-node.png "Debug Workflow Node")
 
@@ -202,7 +196,7 @@ After the workflow has been deployed, you can press the device button to see the
 
 ![Debug Output](/images/getting-started/losant-iot-dev-kits/builder-kit/debug-output.png "Debug Output")
 
-What the Debug node outputs is what Losant calls a “workflow payload.” This is the data that flows through the workflow. Workflow nodes can change the payload, validate values, and perform many other operations. In this example, the payload includes the state that was published.
+What the Debug Node outputs is what Losant calls a “workflow payload.” This is the data that flows through the workflow. Workflow nodes can change the payload, validate values, and perform many other operations. In this example, the payload includes the state that was published.
 
 ```text
 { "data" : { "button" : true }}
@@ -216,7 +210,7 @@ Since the Device node can be triggered on any state request and we only want thi
 
 ![Conditional Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/conditional-workflow-node.png "Conditional Workflow Node")
 
-You can delete the existing Debug node or click on the connecting line and delete it. Either way, insert a Conditional node between the Device node and the Debug node.
+You can delete the existing Debug Node or click on the connecting line and delete it. Either way, insert a Conditional node between the Device node and the Debug Node.
 
 Many workflow nodes, including the Conditional node, support what Losant calls [expressions](/workflows/accessing-payload-data/#expressions), which allow for testing the truthiness of a condition against a payload property. Set the conditional expression to the following:
 
@@ -224,7 +218,7 @@ Many workflow nodes, including the Conditional node, support what Losant calls [
 {{ data.button }} == true
 ```
 
-This expression pulls the value of data.button from the payload, which you saw earlier using the debug node. If data.button doesn’t exist, this will evaluate to false.
+This expression pulls the value of data.button from the payload, which you saw earlier using the Debug Node. If data.button doesn’t exist, this will evaluate to false.
 
 The Conditional node branches the workflow depending on whether the expression is true or false. If the value is true, the workflow takes the right branch. If the expression is false, the workflow takes the left branch. Since we have nothing attached to the false branch, the workflow simply ends and nothing happens.
 
@@ -308,13 +302,13 @@ Once created, drag the Virtual Button workflow node to the canvas.
 
 ![Virtual Button Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/virtual-button-workflow-node.png "Virtual Button Workflow Node")
 
-The Virtual Button node allows you to completely define the payload that will flow through the workflow. Since we won’t be using the payload, it can be kept as an empty object or left blank. The Virtual Button is often useful to debug complex workflows because you can trigger the workflow with any test data you’d like, but in our case, we're going to use it to send the toggle command to our device.
+The Virtual Button Node allows you to completely define the payload that will flow through the workflow. Since we won’t be using the payload, it can be kept as an empty object or left blank. The Virtual Button is often useful to debug complex workflows because you can trigger the workflow with any test data you’d like, but in our case, we're going to use it to send the toggle command to our device.
 
-Next, drag a Device Command node onto the canvas and connect it to the Virtual Button.
+Next, drag a Device Command Node onto the canvas and connect it to the Virtual Button.
 
 ![Device Command Workflow Node](/images/getting-started/losant-iot-dev-kits/builder-kit/device-command-workflow-node.png "Device Command Workflow Node")
 
-The Device Command node requires the device and the command details. Since you likely only have one device, it should be automatically selected. If not, choose it from the dropdown. The command name that the kit supports is “toggle.” Command names can be anything, and what commands a device supports are entirely up to the firmware. In our example, the firmware we flashed is looking for a command named “toggle” and knows to flip the LED when it’s received. Commands also support optional payloads that could be arguments to the command. For example, if the command is “start recording,” the payload could be `{ "resolution" : 1080 }`. Our toggle command, however, doesn't need a payload, so leave it blank.
+The Device Command Node requires the device and the command details. Since you likely only have one device, it should be automatically selected. If not, choose it from the dropdown. The command name that the kit supports is “toggle.” Command names can be anything, and what commands a device supports are entirely up to the firmware. In our example, the firmware we flashed is looking for a command named “toggle” and knows to flip the LED when it’s received. Commands also support optional payloads that could be arguments to the command. For example, if the command is “start recording,” the payload could be `{ "resolution" : 1080 }`. Our toggle command, however, doesn't need a payload, so leave it blank.
 
 Click the “Deploy Workflow” button at the top-right of the screen.
 
