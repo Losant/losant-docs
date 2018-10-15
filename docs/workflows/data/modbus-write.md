@@ -25,9 +25,9 @@ Address Configuration contains three fields:
 
 You may define multiple write instructions for the Modbus: Write Node, and you must define at least one. Each instruction has the following fields, all of which are required:
 
-* **Address:** (Required) A string template or integer for the address at which to write. This should resolve to an integer between `0` and `65534` inclusive.
+* **Address:** (Required) A string template or integer for the address at which to write. This should resolve to an integer between `0` and `65535` inclusive.
 * **Register Type:** (Required) `Holding Registers` (default) or `Coils`.
-* **Value:** (Required) A string template or integer for the value to write.
+* **Value:** (Required) A string template or integer for the value to write. If the register type is `Holding Registers` then this should resolve to an integer between `0` and `65535` inclusive otherwise it should be a single bit.
 
 ![Modbus Write Node Result](/images/workflows/data/modbus-write-node-result.png "Modbus Write Node Result")
 
