@@ -1,32 +1,43 @@
-description: A detailed look at the various REST actions supported by the Experience Domains resource of the Losant API. Learn more.
+description: A detailed look at the various REST actions supported by the Experience Versions resource of the Losant API. Learn more.
 
-# Experience Domains Actions
+# Experience Versions Actions
 
-https://api.losant.com/applications/**`APPLICATION_ID`**/experience/domains
+https://api.losant.com/applications/**`APPLICATION_ID`**/experience/versions
 
 Below are the various requests that can be performed against the
-Experience Domains resource, as well as the expected
+Experience Versions resource, as well as the expected
 parameters and the potential responses.
 
 ## Get
 
-Returns the experience domains for an application
+Returns the experience versions for an application
 
 ### Method And Url <a name="get-method-url"></a>
 
-GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/domains
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/versions
 
 ### Authentication <a name="get-authentication"></a>
 
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceDomains.*, or experienceDomains.get.
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceVersions.*, or experienceVersions.get.
 
 ### Request Path Components <a name="get-path-components"></a>
 
 | Path Component | Description | Example |
 | -------------- | ----------- | ------- |
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
+
+### Request Query Parameters <a name="get-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| sortField | N | Field to sort the results by. Accepted values are: version, id, creationDate, lastUpdated | version | sortField&#x3D;version |
+| sortDirection | N | Direction to sort the results by. Accepted values are: asc, desc | asc | sortDirection&#x3D;asc |
+| page | N | Which page of results to return | 0 | page&#x3D;0 |
+| perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
+| filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: version |  | filterField&#x3D;email |
+| filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my*version |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -41,14 +52,14 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
-    https://api.losant.com/applications/APPLICATION_ID/experience/domains
+    https://api.losant.com/applications/APPLICATION_ID/experience/versions
 ```
 
 ### Successful Responses <a name="get-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Experience Domains](schemas.md#experience-domains) | Collection of experience domains |
+| 200 | [Experience Versions](schemas.md#experience-versions) | Collection of experience versions |
 
 ### Error Responses <a name="get-error-responses"></a>
 
@@ -59,17 +70,17 @@ curl -H 'Content-Type: application/json' \
 
 ## Post
 
-Create a new experience domain for an application
+Create a new experience version for an application
 
 ### Method And Url <a name="post-method-url"></a>
 
-POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/domains
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/versions
 
 ### Authentication <a name="post-authentication"></a>
 
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Organization, all.User, experienceDomains.*, or experienceDomains.post.
+all.Application, all.Organization, all.User, experienceVersions.*, or experienceVersions.post.
 
 ### Request Path Components <a name="post-path-components"></a>
 
@@ -86,15 +97,19 @@ all.Application, all.Organization, all.User, experienceDomains.*, or experienceD
 ### Request Body <a name="post-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Experience Domain Post](schemas.md#experience-domain-post) schema. For example, the following would be a
+the [Experience Version Post](schemas.md#experience-version-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json
 {
-  "domainName": "my.example.domain.com",
-  "sslCert": "MY_SSL_CERTIFICATE",
-  "sslKey": "MY_SSL_KEY",
-  "version": "develop"
+  "version": "myNewVersion",
+  "description": "my version description",
+  "domainIds": [
+    "58c1de6c8f812590d8e82980"
+  ],
+  "slugIds": [
+    "5b995e51ea9994b50d745284"
+  ]
 }
 ```
 
@@ -105,15 +120,15 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"domainName":"my.example.domain.com","sslCert":"MY_SSL_CERTIFICATE","sslKey":"MY_SSL_KEY","version":"develop"}' \
-    https://api.losant.com/applications/APPLICATION_ID/experience/domains
+    -d '{"version":"myNewVersion","description":"my version description","domainIds":["58c1de6c8f812590d8e82980"],"slugIds":["5b995e51ea9994b50d745284"]}' \
+    https://api.losant.com/applications/APPLICATION_ID/experience/versions
 ```
 
 ### Successful Responses <a name="post-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Experience Domain](schemas.md#experience-domain) | Successfully created experience domain |
+| 201 | [Experience Version](schemas.md#experience-version) | Successfully created experience version |
 
 ### Error Responses <a name="post-error-responses"></a>
 

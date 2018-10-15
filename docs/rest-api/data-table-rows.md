@@ -251,7 +251,7 @@ all.Application, all.Organization, all.User, dataTableRows.*, or dataTableRows.p
 ### Request Body <a name="post-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Data Table Row Insert/Update](schemas.md#data-table-row-insert/update) schema. For example, the following would be a
+the [Data Table Row Insert](schemas.md#data-table-row-insert) schema. For example, the following would be a
 valid body for this request:
 
 ```json

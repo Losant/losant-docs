@@ -1,26 +1,26 @@
-description: A detailed look at the various REST actions supported by the Experience Domains resource of the Losant API. Learn more.
+description: A detailed look at the various REST actions supported by the Experience Slugs resource of the Losant API. Learn more.
 
-# Experience Domains Actions
+# Experience Slugs Actions
 
-https://api.losant.com/applications/**`APPLICATION_ID`**/experience/domains
+https://api.losant.com/applications/**`APPLICATION_ID`**/experience/slugs
 
 Below are the various requests that can be performed against the
-Experience Domains resource, as well as the expected
+Experience Slugs resource, as well as the expected
 parameters and the potential responses.
 
 ## Get
 
-Returns the experience domains for an application
+Returns the experience slugs for an application
 
 ### Method And Url <a name="get-method-url"></a>
 
-GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/domains
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/experience/slugs
 
 ### Authentication <a name="get-authentication"></a>
 
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceDomains.*, or experienceDomains.get.
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, experienceSlugs.*, or experienceSlugs.get.
 
 ### Request Path Components <a name="get-path-components"></a>
 
@@ -41,14 +41,14 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X GET \
-    https://api.losant.com/applications/APPLICATION_ID/experience/domains
+    https://api.losant.com/applications/APPLICATION_ID/experience/slugs
 ```
 
 ### Successful Responses <a name="get-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Experience Domains](schemas.md#experience-domains) | Collection of experience domains |
+| 200 | [Experience Slugs](schemas.md#experience-slugs) | Collection of experience slugs |
 
 ### Error Responses <a name="get-error-responses"></a>
 
@@ -59,17 +59,17 @@ curl -H 'Content-Type: application/json' \
 
 ## Post
 
-Create a new experience domain for an application
+Create a new experience slug for an application
 
 ### Method And Url <a name="post-method-url"></a>
 
-POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/domains
+POST https://api.losant.com/applications/**`APPLICATION_ID`**/experience/slugs
 
 ### Authentication <a name="post-authentication"></a>
 
 A valid api access token is required to access this endpoint. The token must
 include at least one of the following scopes:
-all.Application, all.Organization, all.User, experienceDomains.*, or experienceDomains.post.
+all.Application, all.Organization, all.User, experienceSlugs.*, or experienceSlugs.post.
 
 ### Request Path Components <a name="post-path-components"></a>
 
@@ -86,14 +86,12 @@ all.Application, all.Organization, all.User, experienceDomains.*, or experienceD
 ### Request Body <a name="post-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Experience Domain Post](schemas.md#experience-domain-post) schema. For example, the following would be a
+the [Experience Slug Post](schemas.md#experience-slug-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json
 {
-  "domainName": "my.example.domain.com",
-  "sslCert": "MY_SSL_CERTIFICATE",
-  "sslKey": "MY_SSL_KEY",
+  "slug": "my-custom-slug",
   "version": "develop"
 }
 ```
@@ -105,15 +103,15 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"domainName":"my.example.domain.com","sslCert":"MY_SSL_CERTIFICATE","sslKey":"MY_SSL_KEY","version":"develop"}' \
-    https://api.losant.com/applications/APPLICATION_ID/experience/domains
+    -d '{"slug":"my-custom-slug","version":"develop"}' \
+    https://api.losant.com/applications/APPLICATION_ID/experience/slugs
 ```
 
 ### Successful Responses <a name="post-successful-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Experience Domain](schemas.md#experience-domain) | Successfully created experience domain |
+| 201 | [Experience Slug](schemas.md#experience-slug) | Successfully created experience slug |
 
 ### Error Responses <a name="post-error-responses"></a>
 

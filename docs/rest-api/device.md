@@ -57,7 +57,7 @@ SSE stream of new command messages for this device
 
 | SSE Event Name | Type | Description |
 | -------------- | ---- | ----------- |
-| deviceState | [Device Command](schemas.md#device-command) | An SSE event representing a single device command |
+| deviceCommand | [Device Command](schemas.md#device-command) | An SSE event representing a single device command |
 
 ### Error Responses <a name="commandStream-error-responses"></a>
 
