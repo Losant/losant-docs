@@ -38,6 +38,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my*route |
 | experienceGroupId | N | Filter endpoints to those only in the specified group |  | experienceGroupId&#x3D;575ec8687ae143cd83dc4a97 |
 | requestCountDuration | N | If set, a count of recent requests is included on each endpoint for the duration requested (milliseconds) |  | requestCountDuration&#x3D;86400000 |
+| version | N | Return the experience endpoints belonging to this version | develop | version&#x3D;develop |
 
 ### Request Headers <a name="get-headers"></a>
 
@@ -156,9 +157,13 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| statGrouping | N | Field to group the statistics by. Accepted values are: statusCode, endpointId | statusCode | statGrouping&#x3D;statusCode |
+| statGrouping | N | Field to group the statistics by. Accepted values are: statusCode, endpointId, version, domain | statusCode | statGrouping&#x3D;statusCode |
 | duration | N | Duration in milliseconds | 86400000 | duration&#x3D;86400000 |
 | resolution | N | Resolution in milliseconds | 3600000 | resolution&#x3D;3600000 |
+| versionFilter | N | Filters the stats to a particular experience version |  | versionFilter&#x3D;myVersion |
+| domainFilter | N | Filters the stats to a particular experience domain or slug |  | domainFilter&#x3D;mycustomdomain.com |
+| statusCodeFilter | N | Filters the stats to a particular status code |  | statusCodeFilter&#x3D;200 |
+| endpointIdFilter | N | Filters the stats to a particular endpoint |  | endpointIdFilter&#x3D;575ec8687ae143cd83dc4a98 |
 
 ### Request Headers <a name="stats-headers"></a>
 
