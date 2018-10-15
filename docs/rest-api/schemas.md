@@ -4567,7 +4567,20 @@ Schema for inserting a data table row or rows
       "description": "Schema for inserting data table rows",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/dataTableRowInSingle"
+        "title": "Data Table Row Insert/Update",
+        "description": "Schema for inserting or updating a data table row",
+        "type": "object",
+        "patternProperties": {
+          "^[0-9a-zA-Z_-]{1,255}$": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
       }
     }
   ]
