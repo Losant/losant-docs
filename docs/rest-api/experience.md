@@ -61,7 +61,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Success](schemas.md#success) | If deletion was successful |
+| 200 | [Experience Bootstrap Result](schemas.md#experience-bootstrap-result) | If bootstrap was successful |
 
 ### Error Responses <a name="bootstrap-error-responses"></a>
 
