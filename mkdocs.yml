@@ -226,6 +226,8 @@ pages:
         - UDP Send: workflows/outputs/udp-send.md
         - Webhook Reply: workflows/outputs/webhook-reply.md
         - Workflow Trigger: workflows/outputs/workflow-trigger.md
+    - Annotations:
+        - Notes: workflows/annotations/note.md
 - MQTT:
     - Overview: mqtt/overview.md
     - Arduino: mqtt/arduino.md
