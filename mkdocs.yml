@@ -148,6 +148,7 @@ pages:
         - Webhook: workflows/triggers/webhook.md
     - Experience:
         - Authenticate: workflows/experience/authenticate.md
+        - Verify Group: workflows/experience/verify-group.md
         - Create User: workflows/experience/create-user.md
         - Delete User: workflows/experience/delete-user.md
         - Generate Token: workflows/experience/generate-token.md
