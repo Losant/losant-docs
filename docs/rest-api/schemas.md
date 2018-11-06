@@ -4817,6 +4817,83 @@ Schema for inserting a data table row or rows
 ```
 
 <br/>
+## Data Table Row Insert Result
+
+Schema for a the result of a single or multiple row insert
+
+### Schema <a name="data-table-row-insert-result-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "oneOf": [
+    {
+      "title": "Data Table Row",
+      "description": "Schema for a single Data Table Row",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Fa-f\\d]{24}$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "patternProperties": {
+        "^[0-9a-zA-Z_-]{1,255}$": {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "count": {
+          "type": "number"
+        },
+        "rowIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "maxItems": 1000
+        }
+      }
+    }
+  ]
+}
+```
+
+<small></small>
+
+### Example <a name="data-table-row-insert-result-example"></a>
+
+```json
+{
+  "id": "596fbb703fc088453872e609",
+  "creationDate": "2016-06-13T04:00:00.000Z",
+  "lastUpdated": "2016-06-13T04:00:00.000Z",
+  "myColumn": "myValue"
+}
+```
+
+<br/>
 ## Data Table Row Insert/Update
 
 Schema for inserting or updating a data table row
@@ -8626,6 +8703,12 @@ The body of an experience bootstrap request
     "createGroups": {
       "type": "boolean",
       "default": true
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 63,
+      "pattern": "^[0-9a-z-]*$"
     }
   },
   "additionalProperties": false
@@ -8654,7 +8737,7 @@ The result of an experience bootstrap request
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "homePath": {
+    "resourceSuffix": {
       "type": "string"
     },
     "password": {
@@ -10339,15 +10422,15 @@ Schema for a collection of Experience Slugs
     "items": {
       "type": "array",
       "items": {
-        "title": "Experience Domain",
-        "description": "Schema for a single Experience Domain",
+        "title": "Experience Slug",
+        "description": "Schema for a single Experience Slug",
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "pattern": "^[A-Fa-f\\d]{24}$"
           },
-          "experienceDomainId": {
+          "experienceSlugId": {
             "type": "string",
             "pattern": "^[A-Fa-f\\d]{24}$"
           },
@@ -10363,20 +10446,11 @@ Schema for a collection of Experience Slugs
             "type": "string",
             "format": "date-time"
           },
-          "sslCert": {
+          "slug": {
             "type": "string",
-            "maxLength": 32767,
-            "minLength": 50
-          },
-          "sslBundle": {
-            "type": "string",
-            "maxLength": 32767,
-            "minLength": 50
-          },
-          "domainName": {
-            "type": "string",
-            "maxLength": 1024,
-            "minLength": 3
+            "minLength": 4,
+            "maxLength": 63,
+            "pattern": "^[0-9a-z-]*$"
           },
           "version": {
             "type": "string",
@@ -11703,6 +11777,9 @@ Schema for a single file
     "fileSize": {
       "type": "number"
     },
+    "s3etag": {
+      "type": "string"
+    },
     "contentType": {
       "type": "string",
       "maxLength": 1024
@@ -12091,6 +12168,9 @@ Schema for a collection of files
           "fileSize": {
             "type": "number"
           },
+          "s3etag": {
+            "type": "string"
+          },
           "contentType": {
             "type": "string",
             "maxLength": 1024
@@ -12278,6 +12358,7 @@ Schema for a single Workflow
               "deviceTagInactivity",
               "endpoint",
               "event",
+              "fileWatch",
               "integration",
               "mqttTopic",
               "request",
@@ -12899,6 +12980,7 @@ Schema for the body of a Workflow modification request
               "deviceTagInactivity",
               "endpoint",
               "event",
+              "fileWatch",
               "integration",
               "mqttTopic",
               "request",
@@ -13391,6 +13473,7 @@ Schema for the body of a Workflow creation request
               "deviceTagInactivity",
               "endpoint",
               "event",
+              "fileWatch",
               "integration",
               "mqttTopic",
               "request",
@@ -14029,6 +14112,7 @@ Schema for a single Workflow Version
                   "deviceTagInactivity",
                   "endpoint",
                   "event",
+                  "fileWatch",
                   "integration",
                   "mqttTopic",
                   "request",
@@ -14529,6 +14613,7 @@ Schema for a single Workflow Version
                   "deviceTagInactivity",
                   "endpoint",
                   "event",
+                  "fileWatch",
                   "integration",
                   "mqttTopic",
                   "request",
@@ -14736,6 +14821,7 @@ Schema for the body of a Workflow Version creation request
               "deviceTagInactivity",
               "endpoint",
               "event",
+              "fileWatch",
               "integration",
               "mqttTopic",
               "request",
@@ -15253,6 +15339,7 @@ Schema for a collection of Workflow Versions
                         "deviceTagInactivity",
                         "endpoint",
                         "event",
+                        "fileWatch",
                         "integration",
                         "mqttTopic",
                         "request",
@@ -15753,6 +15840,7 @@ Schema for a collection of Workflow Versions
                         "deviceTagInactivity",
                         "endpoint",
                         "event",
+                        "fileWatch",
                         "integration",
                         "mqttTopic",
                         "request",
@@ -16025,6 +16113,7 @@ Schema for a collection of Workflows
                     "deviceTagInactivity",
                     "endpoint",
                     "event",
+                    "fileWatch",
                     "integration",
                     "mqttTopic",
                     "request",
@@ -16628,6 +16717,7 @@ Schema for the body of a workflow import request
                     "deviceTagInactivity",
                     "endpoint",
                     "event",
+                    "fileWatch",
                     "integration",
                     "mqttTopic",
                     "request",
@@ -17136,6 +17226,7 @@ Schema for the body of a workflow import request
                     "deviceTagInactivity",
                     "endpoint",
                     "event",
+                    "fileWatch",
                     "integration",
                     "mqttTopic",
                     "request",
@@ -17693,6 +17784,7 @@ Schema for the result of a workflow import request
                     "deviceTagInactivity",
                     "endpoint",
                     "event",
+                    "fileWatch",
                     "integration",
                     "mqttTopic",
                     "request",
@@ -18220,6 +18312,7 @@ Schema for the result of a workflow import request
                         "deviceTagInactivity",
                         "endpoint",
                         "event",
+                        "fileWatch",
                         "integration",
                         "mqttTopic",
                         "request",
@@ -18720,6 +18813,7 @@ Schema for the result of a workflow import request
                         "deviceTagInactivity",
                         "endpoint",
                         "event",
+                        "fileWatch",
                         "integration",
                         "mqttTopic",
                         "request",
