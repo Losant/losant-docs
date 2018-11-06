@@ -137,6 +137,7 @@ pages:
         - "Device: State": workflows/triggers/device.md
         - Endpoint: workflows/triggers/endpoint.md
         - Event: workflows/triggers/event.md
+        - File Watch: workflows/triggers/file-watch.md
         - GCP Pub/Sub: workflows/triggers/google-pub-sub.md
         - HTTP Request: workflows/triggers/request.md
         - Meridian: workflows/triggers/meridian.md

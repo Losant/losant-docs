@@ -17,15 +17,18 @@ In the above example, the workflow will be triggered whenever a row is added or 
 
 ## Payload
 
-Depending on the action, the data provided to the workflow changes. On an insertion trigger, the newly inserted row will be provided. On an update trigger, both the row prior to the update and the row after the update will be provided. On a deletion trigger, the deleted row will be provided.
+Depending on the action, the data provided to the workflow changes. On an insertion trigger, the newly inserted row will be provided. On a bulk insert trigger, ids of the successfully inserted rows will be provided (not the entire set of rows). On an update trigger, both the row prior to the update and the row after the update will be provided. On a deletion trigger, the deleted row will be provided.
 
 ```json
 {
   "time": <time of the data table action>,
   "data": {
-    "action": <action type - "insert" / "update" / "remove">,
+    "action": <action type - "insert" / "bulkInsert" / "update" / "remove">,
     "newRow": <the current row object, for insert and update actions>
     "oldRow": <the original row object, for delete and update actions>,
+    "count": <for bulkInsert, the count of rows inserted>,
+    "errorCount": <for bulkInsert, the count of insertions that failed>,
+    "rowIds": <for bulkInsert, an array of the ids of the inserted rows>
   },
   "applicationId": <id of the current application>,
   "applicationName": <name of the current application>,
