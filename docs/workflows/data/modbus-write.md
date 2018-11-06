@@ -20,6 +20,7 @@ Address Configuration contains three fields:
 * **Host:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the IP address at which the register(s) resides.
 * **Port:** (Required) A string template or integer for the HTTP port.
 * **Unit ID:** (Required) A string template or integer for the Unit ID at the specified host and port. Defaults to `0`.
+* **Timeout Template:**  A string template or integer for the numbers of seconds to wait before a timeout will occur while waiting for read results. Defaults to 30 seconds.
 
 ### Write Instructions
 
