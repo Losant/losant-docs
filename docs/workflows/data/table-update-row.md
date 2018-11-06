@@ -9,9 +9,15 @@ The Data Table: Update Row Node allows a workflow to update an existing row in a
 
 ## Configuration
 
-To find the row to update, the node requires both a data table to be selected, and the id of the row to update. Both fields are [templatable](/workflows/accessing-payload-data/#string-templates), and so supports finding a row based on the current workflow payload. The example below is doing exactly that, and is referencing the field `data.body.rowId` on the workflow payload.
+To find the row to update, the node requires both a data table to be selected, and by default the id of the row to update. Both fields are [templatable](/workflows/accessing-payload-data/#string-templates), and so supports finding a row based on the current workflow payload. The example below is doing exactly that, and is referencing the field `data.body.rowId` on the workflow payload.
 
 ![Table Update Row Node Configuration](/images/workflows/data/table-update-row-node-config.png "Table Update Row Node Configuration")
+
+As well as looking up the row to be updated by the id template there is also the option, "Select Row By... Query", to search for the row. Building your query within the node is nearly identical to [building a query](/data-tables/overview/#querying-table-data) within the table browsing interface. The only difference is, when building a query within the node, you may use [string templates](/workflows/accessing-payload-data/#string-templates) for each property and value – or, if building an [advanced query](/data-tables/overview/#advanced-queries), you may use a [JSON template](/workflows/accessing-payload-data/#json-templates). When selecting a row by query there is also the option to "Insert row if it does not exist" by selecting the checkbox below your query.
+
+**Note:** Only the first row returned by the query will be updated.
+
+![Table Update Row Node Query](/images/workflows/data/table-update-row-node-query.png "Table Update Row Node Query")
 
 There are three different ways to configure input data for the Table: Update Row Node - "JSON Template", "Payload Path", and "Individual Fields". The first two are more complicated to use, but are very powerful because they give you full control over the row being updated, while the third choice is the more common option for simple situations.
 
