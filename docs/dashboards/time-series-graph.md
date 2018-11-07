@@ -46,6 +46,7 @@ There are also a handful of parameters that only affect the graph's display prop
 * **Display As** is the graph type. "Line" is the default, but series may also be displayed as bar charts or area charts.
 * <strong><a href="https://www.mathsisfun.com/data/cumulative-tables-graphs.html" target="\_blank">Cumulative</a></strong>, when checked, means that the point graphed at any given time is the sum of that point plus all previous points that are currently displayed.
 * **Connect Line Across Data Gaps**, when checked, will display a line between all reported data points. If not checked, the line connecting data points will break if no data was reported for that resolution bucket. If "Bar" is selected for the display style, this option is disabled.
+* **Dot Weight** is the thickness of the dot applied to the series. If "Bar" is selected for the display style, this option is disabled.
 * **Line Weight** is the thickness of the line applied to the series. If "Bar" is selected for the display style, this option is disabled.
 * **Line Type** is the style of the line applied to the series. If "Bar" is selected for the display style, this option is disabled.
 * **Y Axis Label** is an optional label to apply to the Y Axis. If provided, this will draw a new axis for this series; however, if any two axes labels, minimums and maximums all match, only one of the two axes will be drawn on the graph. If left blank, the default left axis is used for the series.
