@@ -20,6 +20,8 @@ Address Configuration contains four fields:
 * **Host:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the IP address at which the register(s) resides.
 * **Port:** (Required) A string template or integer for the HTTP port.
 * **Unit ID:** (Required) A string template or integer for the Unit ID at the specified host and port. Defaults to `0`.
+* **Convert to signed or unsigned integers:** The conversion of integer results to either signed or unsigned integers. Defaults to `convert to signed integers`.
+* **Timeout Template:**  A string template or integer for the numbers of seconds to wait before a timeout will occur while waiting for read results. Defaults to 30 seconds.
 * **Endianness:** The [endianness](https://en.wikipedia.org/wiki/Endianness), or sequential order of bytes. Defaults to "Big".
 
 ### Read Instructions
