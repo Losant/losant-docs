@@ -65,6 +65,27 @@ Every column requires one of three constraints be defined:
 
 For optional columns, you may also define a **default value** for the column. If provided, this value will be inserted into that row's column (on row creation only, not on row edit) if you do not define a property for that column. Note that providing a value of `null` will **not** lead to the default value being entered in the column; rather, `null` will be inserted for that column's value.
 
+## Importing a Data Table
+
+A new data table can be created by importing a plain-text CSV (comma separated value) file. There are two ways to import your CSV files:
+
+* Clicking the "Import..." button in the top right corner of the data table list. This will open your operating system's native file browser dialog, where you can select a single file to import.
+* Dragging a file from your file system onto the table. Doing so will turn the table green to indicate that the selected file can be imported.
+
+![Data Table Importing Button](/images/data-tables/data-table-importing-btn.png "Data Table Importing Button")
+
+### Reviewing Before Importing a Data Table
+
+Immediately after selecting a file to import a preview an editing window will popup. Here you will have the choice to name and describe your new data table as well as set the columns' data types and constraints. Data types and constraints values will initially be guessed based on the first few rows of the CSV file.
+
+The same restrictions for creating a data table and columns apply to importing (e.g. column names "id", "createdAt", and "updatedAt" will be stripped from the import).
+
+Once satisfied with the import select the "Save Data Table" button in the bottom right of the preview and the data table and rows will be uploaded.
+
+**Notes:** Large CSV tables may take some time to import and will be reflected in rows count and storage size as they are uploaded. The data table storage size will be larger than the CSV file uploaded. User data storage size limits will apply.
+
+![Data Table Importing Preview](/images/data-tables/data-table-importing-preview.png "Data Table Importing Preview")
+
 ## Editing a Data Table
 
 A table's name and description may be changed at any time without any adverse effect on the table and its data. Columns can also be added or removed at any time; however, these actions can lead to undesirable results.
@@ -110,6 +131,17 @@ To manually add a row to a data table, click the "Add Row" button in the top rig
 **Note:** Depending on the values entered for the row and the table's current [sort](#sorting-data) / [query](#querying-table-rows) rules, your new row may not be immediately visible after it is added.
 
 Alternatively, you may add table rows through a workflow using the [Table Insert Row](/workflows/data/table-insert-row/) node.
+
+### Importing Rows
+
+Like importing a new data table you can import a CSV file with like columns. There are two ways to import your CSV files:
+
+* Clicking the "Import..." button in the top right corner of the data table list. This will open your operating system's native file browser dialog, where you can select a single file to import.
+* Dragging a file from your file system onto the table. Doing so will turn the table green to indicate that the selected file can be imported.
+
+**Note:** Protected column names ("id", "createdAt", and "updatedAt") will be removed, so exported rows can be easily imported.
+
+![Data Table Rows Importing Button](/images/data-tables/data-table-row-importing-btn.png "Data Table Rows Importing Button")
 
 ### Editing a Row
 

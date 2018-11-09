@@ -112,7 +112,7 @@ Handlebars helpers can also mutate a given value in place and print the result. 
 * `{{add val1 val2}}`: Casts the two values as numbers and adds them.
 * `{{currentDateTime formatStr}}`: Returns the current date/time formatted by the provided format string. The format string follows [Moment.js format](http://momentjs.com/docs/#/displaying/format/) syntax, and the default is 'L LTS'.
 * `{{divide val1 val2}}`: Casts the two values as numbers and divides them.
-* `{{dashboardUrl id queryParamKey1='queryParamValue1' ...}}`: Creates a link to the dashboard at the given ID (defaults to the current dashboard) and adds the optional query parameters. To pass a nested object of parameters, such as for [dashboard context](/dashboards/context-variables/), include the parameter as `ctx=(obj key1=value1 key2=value2)`.
+* `{{dashboardUrl id queryParamKey1='queryParamValue1' ...}}`: Creates a link to the dashboard at the given ID (defaults to the current dashboard) and adds the optional query parameters. To pass a nested object of parameters, such as for [dashboard context](/dashboards/context-variables/), include the parameter as `ctx=(obj key1=valueFromField key2="staticValue")`.
 * `{{decodeBase64 val}}`: Treats `val` as a [Base64-encoded](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/base64), and returns a decoded string ([UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character set).
 * `{{decodeURI str}}`: Returns `str` as a [decoded URI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
 * `{{decodeURIComponent str}}`: Returns `str` as a [decoded URI component](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent).

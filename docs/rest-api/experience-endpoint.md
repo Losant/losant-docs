@@ -79,6 +79,12 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 | APPLICATION_ID | ID associated with the application | 575ec8687ae143cd83dc4a97 |
 | EXPERIENCE_ENDPOINT_ID | ID associated with the experience endpoint | 575ed78e7ae143cd83dc4aab |
 
+### Request Query Parameters <a name="get-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| version | N | Version of this experience endpoint to return | develop | version&#x3D;develop |
+
 ### Request Headers <a name="get-headers"></a>
 
 | Name | Required | Description | Default |

@@ -10,6 +10,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.3.0 - 2018-11-08
+
+### Added <a name="1.3.0-added"></a>
+
+- Triggers / [File Watch](/workflows/triggers/file-watch/)
+
+### Changed <a name="1.3.0-changed"></a>
+
+- The [Modbus: Write](/workflows/data/modbus-write/) Node now has an adjustable timeout.
+- The [Modbus: Read](/workflows/data/modbus-read/) Node now can be configured to read values as either signed or unsigned, and it has an adjustable timeout.
+- Multiple library dependencies were updated.
+
+### Fixed <a name="1.3.0-fixed"></a>
+
+- An issue where using the `currentDateTime` [template helper](/workflows/accessing-payload-data/#format-helpers) by itself without a format argument would result in a blank string has been fixed.
+- An issue where the agent would exit without waiting for logs to finish writing has been fixed.
+- An issue with [timers](/workflows/triggers/timer/) configured by cron in certain timezones would hang has been fixed.
+
+***
+
 ## 1.2.5 - 2018-10-04
 
 ### Fixed <a name="1.2.5-fixed"></a>

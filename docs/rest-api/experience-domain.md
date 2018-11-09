@@ -145,7 +145,8 @@ valid body for this request:
 {
   "domainName": "my.example.domain.com",
   "sslCert": "MY_SSL_CERTIFICATE",
-  "sslKey": "MY_SSL_KEY"
+  "sslKey": "MY_SSL_KEY",
+  "version": "develop"
 }
 ```
 
@@ -156,7 +157,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X PATCH \
-    -d '{"domainName":"my.example.domain.com","sslCert":"MY_SSL_CERTIFICATE","sslKey":"MY_SSL_KEY"}' \
+    -d '{"domainName":"my.example.domain.com","sslCert":"MY_SSL_CERTIFICATE","sslKey":"MY_SSL_KEY","version":"develop"}' \
     https://api.losant.com/applications/APPLICATION_ID/experience/domains/EXPERIENCE_DOMAIN_ID
 ```
 

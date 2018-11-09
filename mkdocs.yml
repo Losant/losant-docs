@@ -137,6 +137,7 @@ pages:
         - "Device: State": workflows/triggers/device.md
         - Endpoint: workflows/triggers/endpoint.md
         - Event: workflows/triggers/event.md
+        - File Watch: workflows/triggers/file-watch.md
         - GCP Pub/Sub: workflows/triggers/google-pub-sub.md
         - HTTP Request: workflows/triggers/request.md
         - Meridian: workflows/triggers/meridian.md
@@ -153,6 +154,7 @@ pages:
         - Generate Token: workflows/experience/generate-token.md
         - Get User: workflows/experience/get-user.md
         - Update User: workflows/experience/update-user.md
+        - Verify Group: workflows/experience/verify-group.md
     - Logic:
         - Array: workflows/logic/array.md
         - Conditional: workflows/logic/conditional.md
@@ -226,6 +228,8 @@ pages:
         - UDP Send: workflows/outputs/udp-send.md
         - Webhook Reply: workflows/outputs/webhook-reply.md
         - Workflow Trigger: workflows/outputs/workflow-trigger.md
+    - Annotations:
+        - Notes: workflows/annotations/note.md
 - MQTT:
     - Overview: mqtt/overview.md
     - Arduino: mqtt/arduino.md

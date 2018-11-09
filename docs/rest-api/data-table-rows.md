@@ -223,7 +223,7 @@ curl -H 'Content-Type: application/json' \
 
 ## Post
 
-Inserts a new row into a data table
+Inserts a new row(s) into a data table
 
 ### Method And Url <a name="post-method-url"></a>
 
@@ -251,7 +251,7 @@ all.Application, all.Organization, all.User, dataTableRows.*, or dataTableRows.p
 ### Request Body <a name="post-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Data Table Row Insert/Update](schemas.md#data-table-row-insert/update) schema. For example, the following would be a
+the [Data Table Row Insert](schemas.md#data-table-row-insert) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -275,7 +275,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [Data Table Row](schemas.md#data-table-row) | Successfully created data table row |
+| 201 | [Data Table Row Insert Result](schemas.md#data-table-row-insert-result) | Successfully created data table row, or bulk insert count |
 
 ### Error Responses <a name="post-error-responses"></a>
 

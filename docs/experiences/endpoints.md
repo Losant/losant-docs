@@ -118,6 +118,7 @@ There are a number of nodes built specifically for working with your [Experience
 * [Create](/workflows/experience/create-user/), [get](/workflows/experience/get-user/), [update](/workflows/experience/update-user/) or [delete](/workflows/experience/delete-user/) a user
 * [Check the authentication credentials](/workflows/experience/authenticate/) of a user
 * [Generate a token](/workflows/experience/generate-token/) for a user of your choosing (if, for example, you are building your own system of authentication)
+* [Verify a user is a member of an experience group](/workflows/experience/verify-group/)
 
 ## Using Endpoints
 
