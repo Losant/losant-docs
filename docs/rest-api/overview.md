@@ -142,6 +142,12 @@ Each of the following is a resource on the Losant API, wrapping up functionality
 for a particular item or collection. See each resource documentation page for the
 particular actions that can be performed on that resource.
 
+* [Application](/rest-api/application/)  
+  Contains all of the actions that can be performed against a single [Application](/applications/overview/), which include things like getting info on an application or modifying an application.
+
+* [Applications](/rest-api/applications/)  
+  Contains all of the actions that can be performed against the set of [Applications](/applications/overview/) that the currently authenticated user has access to - such as listing the applications or creating a new application.
+
 * [Application API Token](/rest-api/application-api-token/)  
   Contains all the actions that can be performed against a single [API Access Token](/applications/application-tokens/) belonging to an application - for instance, getting info on a single token or revoking a token.
 
@@ -153,12 +159,6 @@ particular actions that can be performed on that resource.
 
 * [Application Keys](/rest-api/application-keys/)  
   Contains all of the actions that can be performed against the collection of [Application Keys](/applications/access-keys/) belonging to an Application - such as listing all keys or creating a new key.
-
-* [Application](/rest-api/application/)  
-  Contains all of the actions that can be performed against a single [Application](/applications/overview/), which include things like getting info on an application or modifying an application.
-
-* [Applications](/rest-api/applications/)  
-  Contains all of the actions that can be performed against the set of [Applications](/applications/overview/) that the currently authenticated user has access to - such as listing the applications or creating a new application.
 
 * [Audit Log](/rest-api/audit-log/)  
   Contains all of the actions that can be performed against a single [Audit Log](/organizations/audit-logs/) that belongs to an organization - such as viewing a log.
@@ -211,6 +211,9 @@ particular actions that can be performed on that resource.
 * [Events](/rest-api/events/)  
   Contains all the actions that can be performed against the collection of [Events](/applications/events/) belonging to an Application - such as listing open events or creating a new event.
 
+* [Experience](/rest-api/experience/)  
+  Contains all the actions that can be performed against an application [Experience](/experiences/), such as bootstrapping or clearing resources.
+
 * [Experience Domain](/rest-api/experience-domain/)  
   Contains all the actions that can be performed against a single [Experience Domain](/experiences/domains/), such as updating SSL certificate information.
 
@@ -229,11 +232,23 @@ particular actions that can be performed on that resource.
 * [Experience Groups](/rest-api/experience-groups/)  
   Contains all the actions that can be performed against the collection of [Experience Groups](/experiences/groups/) belonging to an Application - such as listing groups or creating a new group.
 
+* [Experience Slug](/rest-api/experience-slug/)  
+  Contains all the actions that can be performed against a single [Experience Slug](/experiences/domains/), such as changing the associated version.
+
+* [Experience Slugs](/rest-api/experience-slugs/)  
+  Contains all the actions that can be performed against the collection of [Experience Slugs](/experiences/domains/) belonging to an Application - such as listing slugs or creating a new slug.
+
 * [Experience User](/rest-api/experience-user/)  
   Contains all the actions that can be performed against a single [Experience User](/experiences/users/), such as changing their email or password.
 
 * [Experience Users](/rest-api/experience-users/)  
   Contains all the actions that can be performed against the collection of [Experience Users](/experiences/users/) belonging to an Application - such as listing users or creating a new user.
+
+* [Experience Version](/rest-api/experience-version/)  
+  Contains all the actions that can be performed against a single [Experience Version](/experiences/), such as modifying the description.
+
+* [Experience Versions](/rest-api/experience-versions/)  
+  Contains all the actions that can be performed against the collection of [Experience Versions](/experiences/) belonging to an Application - such as listing versions or creating a new versions.
 
 * [Experience View](/rest-api/experience-view/)  
   Contains all the actions that can be performed against a single [Experience View](/experiences/views/), such as modifying the body template.

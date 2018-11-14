@@ -238,12 +238,12 @@ pages:
     - Ruby: mqtt/ruby.md
 - REST API:
     - Overview: rest-api/overview.md
+    - Application: rest-api/application.md
+    - Applications: rest-api/applications.md
     - Application API Token: rest-api/application-api-token.md
     - Application API Tokens: rest-api/application-api-tokens.md
     - Application Key: rest-api/application-key.md
     - Application Keys: rest-api/application-keys.md
-    - Application: rest-api/application.md
-    - Applications: rest-api/applications.md
     - Audit Log: rest-api/audit-log.md
     - Audit Logs: rest-api/audit-logs.md
     - Auth: rest-api/auth.md
@@ -254,21 +254,26 @@ pages:
     - Data Tables: rest-api/data-tables.md
     - Data Table Row: rest-api/data-table-row.md
     - Data Table Rows: rest-api/data-table-rows.md
-    - Device Recipe: rest-api/device-recipe.md
-    - Device Recipes: rest-api/device-recipes.md
     - Device: rest-api/device.md
     - Devices: rest-api/devices.md
+    - Device Recipe: rest-api/device-recipe.md
+    - Device Recipes: rest-api/device-recipes.md
     - Edge Deployments: rest-api/edge-deployments.md
     - Event: rest-api/event.md
     - Events: rest-api/events.md
+    - Experience: rest-api/experience.md
     - Experience Domain: rest-api/experience-domain.md
     - Experience Domains: rest-api/experience-domains.md
     - Experience Endpoint: rest-api/experience-endpoint.md
     - Experience Endpoints: rest-api/experience-endpoints.md
     - Experience Group: rest-api/experience-group.md
     - Experience Groups: rest-api/experience-groups.md
+    - Experience Slug: rest-api/experience-slug.md
+    - Experience Slugs: rest-api/experience-slugs.md
     - Experience User: rest-api/experience-user.md
     - Experience Users: rest-api/experience-users.md
+    - Experience Version: rest-api/experience-version.md
+    - Experience Versions: rest-api/experience-versions.md
     - Experience View: rest-api/experience-view.md
     - Experience Views: rest-api/experience-views.md
     - File: rest-api/file.md
