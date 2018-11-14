@@ -2160,8 +2160,10 @@ Schema for a single Audit Log entry
         "ExperienceDomain",
         "ExperienceEndpoint",
         "ExperienceGroup",
-        "ExperienceView",
+        "ExperienceSlug",
         "ExperienceUser",
+        "ExperienceVersion",
+        "ExperienceView",
         "File",
         "Flow",
         "SolutionUser",
@@ -2310,8 +2312,10 @@ Schema for the filter of an audit log query
               "ExperienceDomain",
               "ExperienceEndpoint",
               "ExperienceGroup",
-              "ExperienceView",
+              "ExperienceSlug",
               "ExperienceUser",
+              "ExperienceVersion",
+              "ExperienceView",
               "File",
               "Flow",
               "SolutionUser",
@@ -2477,8 +2481,10 @@ Schema for a collection of Audit Logs
               "ExperienceDomain",
               "ExperienceEndpoint",
               "ExperienceGroup",
-              "ExperienceView",
+              "ExperienceSlug",
               "ExperienceUser",
+              "ExperienceVersion",
+              "ExperienceView",
               "File",
               "Flow",
               "SolutionUser",
@@ -14527,6 +14533,33 @@ Schema for a single Workflow Version
             "resultMode",
             "fields"
           ]
+        },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "runCount": {
+              "type": "number"
+            },
+            "errorCount": {
+              "type": "number"
+            },
+            "byVersion": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "object",
+                  "properties": {
+                    "runCount": {
+                      "type": "number"
+                    },
+                    "errorCount": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -14709,6 +14742,33 @@ Schema for a single Workflow Version
               "key",
               "json"
             ]
+          }
+        },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "runCount": {
+              "type": "number"
+            },
+            "errorCount": {
+              "type": "number"
+            },
+            "byVersion": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "object",
+                  "properties": {
+                    "runCount": {
+                      "type": "number"
+                    },
+                    "errorCount": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -15754,6 +15814,33 @@ Schema for a collection of Workflow Versions
                   "resultMode",
                   "fields"
                 ]
+              },
+              "stats": {
+                "type": "object",
+                "properties": {
+                  "runCount": {
+                    "type": "number"
+                  },
+                  "errorCount": {
+                    "type": "number"
+                  },
+                  "byVersion": {
+                    "type": "object",
+                    "patternProperties": {
+                      ".*": {
+                        "type": "object",
+                        "properties": {
+                          "runCount": {
+                            "type": "number"
+                          },
+                          "errorCount": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           },
@@ -15936,6 +16023,33 @@ Schema for a collection of Workflow Versions
                     "key",
                     "json"
                   ]
+                }
+              },
+              "stats": {
+                "type": "object",
+                "properties": {
+                  "runCount": {
+                    "type": "number"
+                  },
+                  "errorCount": {
+                    "type": "number"
+                  },
+                  "byVersion": {
+                    "type": "object",
+                    "patternProperties": {
+                      ".*": {
+                        "type": "object",
+                        "properties": {
+                          "runCount": {
+                            "type": "number"
+                          },
+                          "errorCount": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -18727,6 +18841,33 @@ Schema for the result of a workflow import request
                   "resultMode",
                   "fields"
                 ]
+              },
+              "stats": {
+                "type": "object",
+                "properties": {
+                  "runCount": {
+                    "type": "number"
+                  },
+                  "errorCount": {
+                    "type": "number"
+                  },
+                  "byVersion": {
+                    "type": "object",
+                    "patternProperties": {
+                      ".*": {
+                        "type": "object",
+                        "properties": {
+                          "runCount": {
+                            "type": "number"
+                          },
+                          "errorCount": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           },
@@ -18909,6 +19050,33 @@ Schema for the result of a workflow import request
                     "key",
                     "json"
                   ]
+                }
+              },
+              "stats": {
+                "type": "object",
+                "properties": {
+                  "runCount": {
+                    "type": "number"
+                  },
+                  "errorCount": {
+                    "type": "number"
+                  },
+                  "byVersion": {
+                    "type": "object",
+                    "patternProperties": {
+                      ".*": {
+                        "type": "object",
+                        "properties": {
+                          "runCount": {
+                            "type": "number"
+                          },
+                          "errorCount": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
