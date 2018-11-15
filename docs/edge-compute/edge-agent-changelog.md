@@ -10,6 +10,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.3.1 - 2018-11-21
+
+### Fixed <a name="1.3.1-fixed"></a>
+
+- Fixed an issue where a mix of successful and failing modbus reads in a single [Modbus: Read](/workflows/data/modbus-read/) node would not be represented correctly on the payload.
+- Fixed an issue with the [MongoDB](/workflows/data/mongo/) where certain connection URIs were incorrectly parsed.
+
+***
+
 ## 1.3.0 - 2018-11-08
 
 ### Added <a name="1.3.0-added"></a>
