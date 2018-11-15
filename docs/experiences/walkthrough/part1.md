@@ -193,7 +193,8 @@ You can now connect the right (true) output of the new Condition node to the exi
 ![Bad Request Reply](/images/experiences/walkthrough/part-1/bad-request-reply.png "Bad Request Reply")
 
 1. Set the `Response Code Template` to `400`.
-1. Set the `Response Body Template` to `{ "error": "Email and password fields required." }`.
+1. Set the `Response Body Template` to `{ "error": "Email and password fields required." }
+1. Add a `Content-Type` header with the value `application/json`.
 
 You can now test this endpoint by attempting to register a user with a missing field. Click the `Save & Deploy` button to deploy this workflow.
 
