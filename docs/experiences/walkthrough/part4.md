@@ -32,8 +32,8 @@ All that's left to do for this endpoint is to reply with the devices we just loo
 ![Devices Reply](/images/experiences/walkthrough/part-4/devices-reply.png "Devices Reply")
 
 1. Set the `Response Code Template` to `200`, which is the HTTP status code for OK.
-1. Change the `Reply Body` radio to `Payload Path`.
-1. Change the `Reply Body` to `data.devices`. This is the location on the payload where the Get Device node put its result. We're going to simply reply with the same value.
+1. Change the `Response Body Source` radio to `Payload Path`.
+1. Change the `Response Body Payload Path` to `data.devices`. This is the location on the payload where the Get Device node put its result. We're going to simply reply with the same value.
 1. Add a `Content-Type` header with the value `application/json`.
 
 At this point, the lōm mobile app can now request all of the devices owned by the currently logged-in user. You can test this route by requesting the devices created in Part 3 of this walkthrough.
@@ -118,8 +118,8 @@ The [Time Series node](/workflows/data/time-series/) provides powerful aggregati
 ![Data Reply](/images/experiences/walkthrough/part-4/data-reply.png "Data Reply")
 
 1. Set the `Response Code Template` to `200`, which is the HTTP status code for `OK`.
-1. Change the `Reply Body` radio to `Payload Path`.
-1. Set the `Reply Body` to `data.resultData`. This where the Time Series node put its result, so this reply is simply sending the result back to the client.
+1. Change the `Response Body Source` radio to `Payload Path`.
+1. Set the `Response Body Payload Path` to `data.resultData`. This where the Time Series node put its result, so this reply is simply sending the result back to the client.
 1. Add a `Content-Type` header with the value `application/json`.
 
 You can now test this endpoint to see data that has been reported by your application's devices.
