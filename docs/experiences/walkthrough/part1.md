@@ -24,9 +24,9 @@ To create this endpoint in Losant, the first thing we have to do is create an en
 
 ![Add Route](/images/experiences/walkthrough/part-1/add-route.png "Add Route")
 
-Click the `Experience` tab on the application menu to manage your application's Experience. First-time users will be presented with a guide that will automatically create a basic API. This guide will use some of the auto-generated endpoints, specifically `/auth`, so it's recommended to keep them for now.
+Click the `Experience` tab on the application menu to manage your application's Experience. First-time users will be presented with a wizard that will automatically create a basic example experience. This guide will not use any of those auto generated resources, so it's recommended that you skip the bootsrap for now.
 
-On the Experience overview page, you'll see an `Add` button in the top right corner of the endpoints list. Click `Add` to create the new endpoint for user registration.
+Click the `Endpoints` option in the `Experience` menu. On the Endpoints page, you'll see an `Add` button in the top right corner of the endpoints list. Click `Add` to create the new endpoint for user registration.
 
 ![POST users endpoint](/images/experiences/walkthrough/part-1/endpoint-post-users.png "POST users endpoint")
 
@@ -37,13 +37,13 @@ On the Experience overview page, you'll see an `Add` button in the top right cor
 
 Experience endpoints have three authentication options: all public users, any authenticated user, and users that belong to a specific group. Since it's used to originally create the user, this registration route must be publicly available. All routes within lōm, other than account creation and user login, will require authentication.
 
-When done, click the `Create Endpoint` button at the bottom to create this endpoint. You'll now be returned to a list of your endpoints.
+When done, click the `Create Endpoint` button at the bottom to create this endpoint, and then return to the list of endpoints.
 
 ![Endpoint list](/images/experiences/walkthrough/part-1/endpoint-list.png "Endpoint list")
 
 At this point,  we have the `/users` endpoint defined, but there's no logic to run when it's requested. If you were to request it now, Losant will automatically return a 404. In order to give this endpoint some intelligence, we have to create a [workflow](/workflows/overview/). All experience endpoints are backed by workflows that contain the [Endpoint trigger node](/workflows/triggers/endpoint/) and [Endpoint Reply node](/workflows/outputs/endpoint-reply/).
 
-Create a new workflow for this endpoint using the main `Workflows` application menu.
+Create a new workflow for this endpoint using the main `Workflows` application menu. Make sure to choose `Experience` as the Workflow Type.
 
 ![Create Workflow](/images/experiences/walkthrough/part-1/create-workflow.png "Create Workflow")
 
@@ -66,9 +66,9 @@ Add a [Debug node](/workflow/outputs/debug/) and an [Endpoint Reply node](/workf
 1. Add a Debug node and connect it to the Endpoint Trigger node.
 1. Add an Endpoint Reply node and connect it to the Endpoint Trigger node.
 1. In the Endpoint Reply config, set the `Response Code Template` to `200`.
-1. In the Endpoint Reply config, set the `Reply Body` to `OK`
+1. In the Endpoint Reply config, set the `Response Body Template` to `OK`
 
-Click the `Deploy Workflow` button to deploy this workflow. You can now request this API endpoint using your favorite API tester, like [Postman](https://www.getpostman.com/) or CURL.
+Click the `Save & Deploy` button to deploy this workflow. You can now request this API endpoint using your favorite API tester, like [Postman](https://www.getpostman.com/) or CURL.
 
 ```text
 curl -H "Content-Type: application/json" -X POST \
@@ -102,20 +102,20 @@ At this point, we're ready to return the `409 (Conflict)` back to the client if 
 ![User Exists Reply](/images/experiences/walkthrough/part-1/user-exists-reply.png "User Exists Reply")
 
 1. Set the `Response Code Template` to `409`.
-1. Set the `Reply Body` to `{ "error": "Email already exists." }`.
+1. Set the `Response Body Template` to `{ "error": "Email already exists." }`.
 1. Add a `Content-Type` header with the value `application/json`.
 
-This API will properly check that a user exists and will return an error if it does. You can test this by trying to register "test.user@example.com", which is the auto-generated user that was created as part of your application Experience's first-time setup.
+This API will properly check that a user exists and will return an error if it does. You can test this by creating an example user through the Losant interface, and then making a request with that same user email against this endpoint.
 
-Click the `Deploy Workflow` button to deploy this workflow.
+Click the `Save & Deploy` button to deploy this workflow.
 
 ```text
 curl -H "Content-Type: application/json" -X POST \
-  -d '{"email":"test.user@example.com","password":"my-password"}' \
+  -d '{"email":"example@example.com","password":"my-password"}' \
   https://example.onlosant.com/users
 ```
 
-If you make this `curl` request, you should receive this response:
+If you make this `curl` request with an already existing user, you should receive this response:
 
 ```json
 { "error": "Email already exists." }
@@ -138,13 +138,13 @@ The new user will be put back on the payload at `data.newUser`, so we can return
 ![Create User Reply](/images/experiences/walkthrough/part-1/create-user-reply.png "Create User Reply")
 
 1. Set the `Response Code Template` to `201`, which is the HTTP status code for "created".
-1. Change the `Reply Body` radio to `Payload Path`.
-1. Set the `Reply Body` to `data.newUser`.
+1. Choose `Payload Path` for `Response Body Source`.
+1. Set the `Response Body Payload Path` to `data.newUser`.
 1. Add a `Content-Type` header with the value `application/json`.
 
 This node will now return the contents of the new user, in JSON format, back to the client as the body of the response.
 
-When done, deploy this workflow using the `Deploy Workflow` button. You can now test this route by attempting to create a new user.
+When done, deploy this workflow using the `Save & Deploy` button. You can now test this route by attempting to create a new user.
 
 ```text
 curl -H "Content-Type: application/json" -X POST \
@@ -157,12 +157,13 @@ curl -H "Content-Type: application/json" -X POST \
   "email": "my.awesome.user@example.com",
   "userTags": { },
   "applicationId": "58e0152c1c3ce300017cc5bf",
-  "creationDate": "2017-04-01T22:41:48.442Z",
-  "lastUpdated": "2017-04-01T22:41:48.454Z",
-  "passwordLastUpdated": "2017-04-01T22:41:48.443Z",
+  "creationDate": "2018-11-15T17:17:37.169Z",
+  "lastUpdated": "2018-11-15T17:17:37.553Z",
+  "passwordLastUpdated": "2018-11-15T17:17:37.553Z",
   "experienceUserId": "58e02cac0d1a3b00011f0d81",
+  "avatarUrl": "....",
   "id": "58e02cac0d1a3b00011f0d81",
-  "experienceGroups": [ ]
+  "experienceGroups": []
 }
 ```
 
@@ -192,9 +193,9 @@ You can now connect the right (true) output of the new Condition node to the exi
 ![Bad Request Reply](/images/experiences/walkthrough/part-1/bad-request-reply.png "Bad Request Reply")
 
 1. Set the `Response Code Template` to `400`.
-1. Set the `Reply Body` to `{ "error": "Email and password fields required." }`.
+1. Set the `Response Body Template` to `{ "error": "Email and password fields required." }`.
 
-You can now test this endpoint by attempting to register a user with a missing field. Click the `Deploy Workflow` button to deploy this workflow.
+You can now test this endpoint by attempting to register a user with a missing field. Click the `Save & Deploy` button to deploy this workflow.
 
 ```text
 curl -H "Content-Type: application/json" -X POST \
