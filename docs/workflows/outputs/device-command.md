@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Device Command Node.
 
 # Device Command Node

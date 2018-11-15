@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Get Experience User Node.
 
 # Get Experience User Node

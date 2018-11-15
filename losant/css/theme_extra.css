@@ -676,7 +676,7 @@ a.login-button {
 /* workflow class tags */
 .flowclass-tag {
   display: inline-block;
-  background: #ff5700;
+  background: #ff9a25; /* edge */
   margin-left: 6px;
   float: right;
   font-size: 27%;
@@ -695,6 +695,9 @@ a.login-button {
 }
 .flowclass-tag.Cloud {
   background: #5bc0de;
+}
+.flowclass-tag.Experience {
+  background: #ff5700;
 }
 
 h1 > .flowclass-tag {

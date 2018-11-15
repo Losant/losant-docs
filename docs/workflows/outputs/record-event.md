@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Record Event Node.
 
 # Record Event Node

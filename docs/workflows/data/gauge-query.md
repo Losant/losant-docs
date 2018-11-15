@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Data: Gauge Query Node.
 
 # Data: Gauge Query Node

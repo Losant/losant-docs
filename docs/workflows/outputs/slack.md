@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 flowclass: Edge 1.0.0
 description: Learn more about the Losant Slack Node.
 

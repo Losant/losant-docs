@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Verify Experience Group Membership Node.
 
 # Verify Experience Group Membership Node

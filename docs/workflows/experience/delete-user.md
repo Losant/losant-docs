@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Delete Experience User Node.
 
 # Delete Experience User Node

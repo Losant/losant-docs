@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Particle Device Function Call Node.
 
 # Particle Device Function Call

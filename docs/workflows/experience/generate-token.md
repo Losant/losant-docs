@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Generate Experience User Token Node.
 
 # Generate Experience User Token Node

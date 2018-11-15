@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Virtual Button Trigger.
 
 # Virtual Button Trigger

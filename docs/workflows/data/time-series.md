@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Data: Time Series Node.
 
 # Data: Time Series Node

@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Table: Delete Rows Node.
 
 # Table: Delete Rows Node

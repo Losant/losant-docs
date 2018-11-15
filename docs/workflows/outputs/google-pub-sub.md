@@ -1,4 +1,5 @@
 flowclass: Cloud
+flowclass: Experience
 description: Learn more about the Losant Google Pub/Sub Node.
 
 # GCP Pub/Sub Node
