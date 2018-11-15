@@ -72,7 +72,7 @@ The next step is to add some basic validation to ensure the client provided the 
 
 1. Set the `Expression` on the Conditional node to `{{ data.body.manufacturerId }} && {{ data.body.deviceName }}`. This will verify that both "manufacturerId" and "deviceName" are present on the POST body.
 1. Set the `Response Code Template` to `400` on the Endpoint Reply node. 400 is the HTTP status code for `Bad Request`.
-1. Set the `Reply Body` on the endpoint reply node to `{ "error": "manufacturerId and deviceName are required." }`.
+1. Set the `Response Body Template` on the endpoint reply node to `{ "error": "manufacturerId and deviceName are required." }`.
 
 Now if a client makes a request against the lōm API to register a device and does not provide all required fields, the API will respond with a 400 (Bad Request).
 
@@ -95,16 +95,18 @@ Set the `device` to the following:
 ```json
 {
   "name": "{{ data.body.deviceName }}",
-  "tags": [
-    { "key": "owner",
-      "value": "{{ experience.user.id }}" },
-    { "key": "manufacturerId",
-      "value": "{{ data.body.manufacturerId }}" }
-  ],
-  "attributes": [
-    { "name": "moisture",
-      "dataType": "number" }
-  ]
+  "tags": [ {
+    "key": "owner",
+    "value": "{{ experience.user.id }}"
+  },
+  {
+    "key": "manufacturerId",
+    "value": "{{ data.body.manufacturerId }}"
+  } ],
+  "attributes": [ {
+    "name": "moisture",
+    "dataType": "number"
+  } ]
 }
 ```
 
@@ -145,7 +147,7 @@ The last thing we need to do is reply to the request with the newly created devi
 
 Set the `Response Code Template` to `201`, which is the HTTP status code for `Created`.
 
-Set the `Reply Body` to the following:
+Set the `Response Body Template` to the following:
 
 ```json
 {
