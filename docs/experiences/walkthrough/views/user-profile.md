@@ -16,7 +16,8 @@ This endpoint is responsible for handling requests to view the "Edit Profile" pa
 
 1. Leave the `Method` set as `GET`.
 1. Set the `Route` to `/edit-profile`.
-1. Change the `Access Control` to `All public users`.
+1. Change the `Access Control` to `Any authenticated user`.
+1. Set the `Unauthorized Reply Type` to `Redirect`, with a `Status Code` of `302` and a `Path` of `/login`.
 
 Save the route, then return to the endpoints list page and click "Add Endpoint" to add the next route.
 
@@ -26,7 +27,8 @@ This endpoint is responsible for handling form submissions from the "Edit Profil
 
 1. Set the `Method` to `POST`.
 1. Set the `Route` to `/edit-profile`.
-1. Change the `Access Control` to `All public users`.
+1. Change the `Access Control` to `Any authenticated user`.
+1. Set the `Unauthorized Reply Type` to `Redirect`, with a `Status Code` of `302` and a `Path` of `/login`.
 
 Same as before, save this route and back out to the endpoints list to make another one.
 
@@ -36,7 +38,8 @@ This endpoint is responsible for handling requests to view the "Change Password"
 
 1. Leave the `Method` set as `GET`.
 1. Set the `Route` to `/change-password`.
-1. Change the `Access Control` to `All public users`.
+1. Change the `Access Control` to `Any authenticated user`.
+1. Set the `Unauthorized Reply Type` to `Redirect`, with a `Status Code` of `302` and a `Path` of `/login`.
 
 <h3 id="post-change-password" style="text-transform: none">POST /change-password</h3>
 
@@ -44,7 +47,8 @@ This endpoint is responsible for handling form submissions from the "Change Pass
 
 1. Set the `Method` to `POST`.
 1. Set the `Route` to `/change-password`.
-1. Change the `Access Control` to `All public users`.
+1. Change the `Access Control` to `Any authenticated user`.
+1. Set the `Unauthorized Reply Type` to `Redirect`, with a `Status Code` of `302` and a `Path` of `/login`.
 
 ## Create the Views
 
@@ -91,7 +95,7 @@ Finally, we'll tweak the `profileForm` component we [created for user registrati
 1. Navigate to the `profileForm` component from your list of components.
 1. Replace its `Content` with **[this snippet](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-profile/component-profile-form.hbs)**.
 
-We're making one significant change to the component, which can be seen just above the closing `</form>` tag: If the component is being called from the `/edit-profile` route, we are excluding the password input from the form and changing the text of the submit button. We do this by checking against the current route in the `{{#eq request.path "/create-account"}}` block helper and condionally rendering one bit of content or the other based on the route.
+We're making one significant change to the component, which can be seen just above the closing `</form>` tag: If the component is being called from the `/edit-profile` route, we are excluding the password input from the form and changing the text of the submit button. We do this by checking if there is a current user with the `{{#if experience.user}}` block helper and condionally rendering one bit of content or the other based on the route.
 
 ## Create the Workflows
 
@@ -101,13 +105,14 @@ Let's continue with the model we've followed so far by including the GET and POS
 
 ![Edit Profile Workflow](/images/experiences/walkthrough/views/user-profile/edit-profile-workflow.png "Edit Profile Workflow")
 
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/9bc72bcb/user-profile/endpoint-edit-profile.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-edit-profile.flow` as a new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/9bc72bcb/user-profile/endpoint-edit-profile.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-edit-profile.flow` as a new experience workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /edit-profile` and `GET /edit-profile` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Edit Profile` page](#page-edit-profile).
+1. Enable the workflow (since imported workflows are by default disabled).
 
 As a general overview, this workflow handles the following:
 
-* If a user visits `/edit-profile`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Edit Profile` page – unless the user is not logged in, in which case we [redirect](/workflows/outputs/endpoint-reply/#redirect-response) them to the [Log In page](/experiences/walkthrough/views/log-in-page/).
+* If a user visits `/edit-profile`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Edit Profile` page.
 * When that user submits the `Edit Profile` form, we [validate](/workflows/logic/validate-payload/) that they have submitted all fields correctly. Then, we attempt to make the update. (It could fail if, for example, the user attempts to change their email address to one that is already registered to another experience user.) If either of these operations fail, we re-render the `Edit Profile` page with an error message.
 * If the [user update](/workflows/experience/update-user/) is successful, we [redirect the user](/workflows/outputs/endpoint-reply/#redirect-response) to the same URL with a `success=true` query parameter. The presence of this on the URL tells us if we should show our [`successAlert` component](#component-successalert).
 
@@ -119,13 +124,14 @@ Now let's create a workflow allowing our logged-in users to update their passwor
 
 ![Change Password Workflow](/images/experiences/walkthrough/views/user-profile/change-password-workflow.png "Change Password Workflow")
 
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/f5d531da/user-profile/endpoint-change-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-change-password.flow` as a new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/f5d531da/user-profile/endpoint-change-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-change-password.flow` as a new experience workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /change-password` and `GET /change-password` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Change Password` page](#page-change-password).
+1. Enable the workflow (since imported workflows are by default disabled).
 
 As a general overview, this workflow handles the following:
 
-* If a user visits `/change-password`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Change Password` page – unless the user is not logged in, in which case we [redirect](/workflows/outputs/endpoint-reply/#redirect-response) them to the [Log In page](/experiences/walkthrough/views/log-in-page/).
+* If a user visits `/change-password`, we [respond to the request](/workflows/outputs/endpoint-reply/#experience-page-response) with our new `Change Password` page.
 * When that user submits the `Change Password` form, we [validate](/workflows/logic/validate-payload/) that they have submitted valid old and new passwords. Then, we try [authenticating](/workflows/experience/authenticate/) using the old password provided by the user. If any of those checks fail, we re-render the `Change Password` page with an error message.
 * If authentication succeeds, we [change the user's password](/workflows/experience/update-user/) and display a confirmation message.
 
@@ -162,4 +168,4 @@ Now, a signed-in user can access the `/edit-profile` and `/change-password` link
 
 This concludes this tutorial, in which we've added the ability for experience users to update their profiles and change their passwords.
 
-There are plenty more tutorials to come, so check back often for more lessons on building out your application experiences.
+This concludes this tutorial, in which we've added the ability for experience visitors to register for an account and start accessing parts of the experience that were previously open only to logged-in visitors. Next, we'll build on top of what we've done here to [add a forgot password flow](/walkthrough/views/forgot-password/).
