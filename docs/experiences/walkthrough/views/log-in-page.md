@@ -12,7 +12,7 @@ You can define endpoints on the "Endpoints" page under the "Experience" main men
 
 ![Endpoints](/images/experiences/walkthrough/views/log-in-page/endpoints.png "Endpoints")
 
-Click the "Add Endpoints" button on the top right to add the new `GET /login` endpoint.
+Click the "Add" button on the top right of the endpoints list to add the new `GET /login` endpoint.
 
 ![Log in Endpoint](/images/experiences/walkthrough/views/log-in-page/login-endpoint.png "Log in Endpoint")
 

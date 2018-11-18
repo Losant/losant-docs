@@ -6,7 +6,7 @@ In this step, we'll add the ability for non-registered users to sign up for an a
 
 ## Create the Endpoints
 
-First, we'll need two new [endpoints](/experiences/endpoints/) to respond to our "Create Account" page requests. From your experience overview page, click "Endpoints" in the left column, then click "Add Endpoint" in the top right corner.
+First, we'll need two new [endpoints](/experiences/endpoints/) to respond to our "Create Account" page requests. In the experience menu, click the "Endpoints" menu item, then click the "Add" button at the top right of the list.
 
 ![Add Endpoint](/images/experiences/walkthrough/views/user-registration/add-endpoint.png "Add Endpoint")
 
@@ -18,7 +18,7 @@ This endpoint is responsible for handling requests to view the "Create Account" 
 1. Set the `Route` to `/create-account`.
 1. Change the `Access Control` to `All public users`.
 
-Save the route, then return to the endpoints list page and click "Add Endpoint" to add the other route.
+Save the route, then return to the endpoints list page and click "Add" to add the other route.
 
 <h3 id="post-create-account" style="text-transform: none">POST /create-account</h3>
 
@@ -32,7 +32,7 @@ Remember to save the route.
 
 ## Create the Views
 
-Now that the routes are configured, it's time to create the views that will power this new functionality. Click "Views" in the left column to return to your Experience Views list.
+Now that the routes are configured, it's time to create the views that will power this new functionality. In the experience menu, click the "Views" menu item, then click the "Add" button at the top right of the "Pages" list.
 
 ![Add Page](/images/experiences/walkthrough/views/user-registration/add-page.png "Add Page")
 
@@ -65,9 +65,10 @@ There are a few things to note about our new component:
 
 Now, similar to how we did for our [login page](/experiences/walkthrough/views/log-in-page/), let's create a single workflow for handling both GET and POST requests to our `/create-account` route.
 
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/d35d69fa/user-registration/endpoint-create-account.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-create-account.flow` as a new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/d35d69fa/user-registration/endpoint-create-account.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-create-account.flow` as a new experience workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /create-account` and `GET /create-account` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Create Account` page](#page-create-account).
+1. Enable the workflow (since imported workflows are by default disabled).
 
 ![Create Account Workflow](/images/experiences/walkthrough/views/user-registration/create-account-workflow.png "Create Account Workflow")
 
