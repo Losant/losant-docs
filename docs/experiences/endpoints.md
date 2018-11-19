@@ -146,9 +146,17 @@ One of the more popular tools for issuing HTTP requests is [curl](https://curl.h
 
 If a command line interface isn't your thing, one of the better (and free) HTTP request builders is Google Chrome's [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en). The application includes a GUI for building requests for any HTTP method, sending payload bodies, setting route parameters, defining headers, and everything else you need to test your endpoints.
 
+## Handling CORS Requests
+
+Beneath the list of experience endpoints is a toggler for enabling default Cross-Origin Resource Sharing settings. If enabled, [OPTIONS requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) emitted by web browsers sending [asynchronous requests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests) directly to your endpoints will automatically receive an appropriate response. Disabling this checkbox will cause asynchronous requests to your endpoints to fail; enabling it is less dangerous, but it would allow [cross-origin requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) to any endpoint for which you have not set up an OPTIONS route. By default, the checkbox is selected.
+
+![Default CORS Setting](/images/experiences/default-cors-setting.png "Default CORS Setting")
+
+The setting is version-specific and, like other experience version resources, cannot be changed in any version other than "develop".
+
 ## Deleting Endpoints
 
-An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on the list page, or by clicking the "Delete" button in the footer of an endpoint's edit page. Deleting an endpoint will automatically remove it from any of its [Experience Groups](/experiences/groups/).
+An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on the list page, or by clicking the "Delete" button in the footer of an endpoint's edit page.
 
 ![Delete Endpoint](/images/experiences/delete-endpoint.png "Delete Endpoint")
 

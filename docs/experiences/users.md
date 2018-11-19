@@ -50,9 +50,17 @@ Any tag keys that have been used with other Experience Users will be available a
 
 ## Invalidating User Tokens
 
-From a user's edit page, you have the option of invalidating any authorization tokens assigned to that user. This is useful if, for example, you believe the user's account was compromised.
+Sometimes, it may be necessary to invalidate access tokens for one or more of your experience users - particularly if you have reason to believe users' credentials have been compromised. This action does not edit or delete any of your Experience Users; rather, it simply requires that they all log in again before making any authenticated requests.
 
-![Invalidate User Tokens](/images/experiences/user-invalidate-tokens.png "Invalidate User Tokens")
+### All Users
+
+Beneath the experience users list is a button to invalidate the tokens of all experience users. Immediately after clicking this button, any authenticated made by an experience user will fail until that user has logged in again.
+
+![Invalidate User Tokens](/images/experiences/invalidate-tokens.png "Invalidate User Tokens")
+
+### Specific Users
+
+A similar box exists at the bottom of an individual user's edit page, though clicking here only invalidates any access tokens issued for that one user.
 
 Invalidating a user's tokens simply means that the user must re-authenticate using their email and password before they can make any more requests to [authenticated endpoints](/experiences/endpoints/#access-control). It does not take any destructive action on the user, nor does it automatically change their password.
 

@@ -60,20 +60,8 @@ Finally, if you chose to create the sample resources, you'll receive instruction
 
 If you chose to skip the resource creation step, the modal will simply dismiss when you set your slug.
 
-## Editing Experience Settings
+## Deleting Experience Resources
 
-Experience settings can be changed under the "Settings" tab of your application's "Experience" subsection. There is currently one attribute that can be changed across the application experience: the **Default CORS Settings**.
+If for any reason you need to delete parts or all of your Experience, you can do so under the "Settings" > "Delete Resources" tab in your application's navigation. Select all the resources you wish to delete and then submit the form.
 
-When checked, [OPTIONS requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) emitted by web browsers sending [asynchronous requests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests) directly to your Experience Endpoints will automatically receive an appropriate response. Disabling this checkbox would cause asynchronous requests to your endpoints to fail; enabling it is less dangerous, but it would allow [cross-origin requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) to any endpoint for which you have not set up an OPTIONS route. By default, the checkbox is selected.
-
-### Invalidating Access Tokens
-
-If for any reason you feel it is necessary to invalidate all existing access tokens, you can do so from the Experience Settings page. This action does not edit or delete any of your Experience Users; rather, it simply requires that they all log in again before making any authenticated requests.
-
-![Invalidate All Tokens](/images/experiences/settings-invalidate-tokens.png "Invalidate All Tokens")
-
-If you only need to invalidate the access tokens for a single user, you can do that from the [Experience User's edit page](/experiences/users/#invalidating-user-tokens).
-
-### Deleting Your Experience
-
-If for any reason you need to delete parts or all of your Experience, you can do so from the Experience Settings page. This action will remove which ever parts of the experience you have selected. These include: Experience Users, Experience Domains, Experience Endpoints, Experience Groups, Experience Views and Workflows with Endpoint Triggers. This action cannot be undo once it has been completed. If you delete your entire experience, you will be able to re-bootstrap your experience.
+![Bulk Delete Experience Resources](/images/experiences/bulk-delete-experience-versions.png "Bulk Delete Experience Resources")
