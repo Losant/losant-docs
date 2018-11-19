@@ -18,9 +18,11 @@ The primary limitation of experience workflows is they lack some of the more rob
 
 Generally speaking, experience workflows and cloud workflows are functionally similar, but there are a few differences.
 
+![Experience Workflow Triggers](/images/workflows/experience-workflow-triggers.png "Experience Workflow Triggers")
+
 ### Triggers
 
-The only triggers available in an experience workflow are the [Endpoint Reply Trigger](/workflows/triggers/endpoint/) and the [Virtual Button](/workflows/triggers/virtual-button/). The Endpoint Reply Trigger will only fire on requests made to domains or slugs pointed at the workflow's expeirence version. All other workflow nodes are available.
+The only triggers available in an experience workflow are the [Endpoint Trigger](/workflows/triggers/endpoint/) and the [Virtual Button](/workflows/triggers/virtual-button/). The Endpoint Trigger will only fire on requests made to domains or slugs pointed at the workflow's expeirence version. All other workflow nodes are available.
 
 ### Debugging
 
@@ -37,6 +39,8 @@ Much like cloud workflows, only the "develop" version of an experience workflow 
 ## Deleting Experience Workflows
 
 To delete an experience workflow, click the "Delete Flow" button at the bottom of the workflow's Properties panel while viewing the "develop" version. They can also be deleted by clicking the "Delete" icon in a list of your experience's "develop" workflows.
+
+![Delete Workflow](/images/workflows/workflow-delete.png "Delete Workflow")
 
 Only the "develop" version of an experience workflow can be deleted; to delete a version, it is necessary to delete the entire experience version.
 

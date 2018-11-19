@@ -58,10 +58,11 @@ pages:
     - Webhooks: applications/webhooks.md
 - Experiences:
     - Overview: experiences/overview.md
-    - Endpoints: experiences/endpoints.md
-    - Groups: experiences/groups.md
     - Users: experiences/users.md
+    - Groups: experiences/groups.md
     - Domains: experiences/domains.md
+    - Versions: experiences/versions.md
+    - Endpoints: experiences/endpoints.md
     - Views: experiences/views.md
     - Views Walkthrough:
         - Overview: experiences/walkthrough/views/overview.md

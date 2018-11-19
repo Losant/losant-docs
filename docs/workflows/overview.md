@@ -4,25 +4,23 @@ description: Learn more about Losant workflows: how they work and how to configu
 
 Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to (for example) [trigger email notifications](/workflows/outputs/email/), [create events](/workflows/outputs/record-event/), [send device commands](/workflows/outputs/device-command/) and more. Workflows are, in essence, the brains of your connected solution.
 
-A list of your application's workflows, broken down by [type](#workflow-types), can be accessed through your application's subnavigation.
+A list of your application's workflows, broken down by [type](#types-of-workflows), can be accessed through your application's subnavigation.
 
 ![Workflows List](/images/workflows/workflows-list.png "Workflows List")
 
-## Creating a Workflow
+## Types of Workflows
 
-Workflows can be created by clicking the "Add Workflow" link in the "Workflows" dropdown within your application's subnavigation. They may also be created by clicking the "Add" button within your workflow lists both on the "Workflows" page and on the application overview.
-
-![Create Workflow](/images/workflows/workflow-create-buttons.png "Create Workflow")
-
-When creating a new workflow, you must first choose a workflow type. This cannot be changed after workflow creation. There are currently two different workflow types:
+There are three types of workflows, each of which features unique functionality and is best suited for specific use cases:
 
 * [**Cloud workflows**](/workflows/cloud-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
 * [**Experience workflows**](/workflows/experience-workflows/) are best suited for handling requests and issuing responses within your [application experience](/experiences/overview/). They are versioned along with your experience's [endpoints](/experiences/endpoints/) and [views](/experiences/views/).
 * [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices in real time and report up to the internet at a later time.
 
-![Choose Workflow Type](/images/workflows/workflow-create-choose-type.png "Choose Workflow Type")
+## Creating a Workflow
 
-More information on each workflow type, and what sets them apart, is available within each type's documentation.
+Workflows can be created by clicking the "Add Workflow" link in the "Workflows" dropdown within your application's subnavigation. They may also be created by clicking the "Add" button within your workflow lists both on the "Workflows" page and on the application overview.
+
+When creating a new workflow, you must choose one of the workflow types outlined above. The type cannot be changed after workflow creation.
 
 After choosing a type, you must then give your workflow a name and optionally a description. If you are creating an edge workflow, you must also choose the minimum [Edge Agent](/edge-compute/edge-agent-changelog/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
 
