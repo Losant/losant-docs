@@ -8,11 +8,11 @@ The URLs that a user can request are called [Experience Endpoints](/experiences/
 
 Let's start by defining two endpoints that will allow users to log in to your experience. The first, `GET /login`, will return the form with the email and password fields. The second, `POST /login`, will accept the credentials from the form, authenticate the user, and set a cookie in their browser for future requests.
 
-You can define endpoints on the "Endpoints" tab under the "Experience" main menu item.
+You can define endpoints on the "Endpoints" page under the "Experience" main menu item.
 
 ![Endpoints](/images/experiences/walkthrough/views/log-in-page/endpoints.png "Endpoints")
 
-Click the "Add Endpoints" button on the top right to add the new `GET /login` endpoint.
+Click the "Add" button on the top right of the endpoints list to add the new `GET /login` endpoint.
 
 ![Log in Endpoint](/images/experiences/walkthrough/views/log-in-page/login-endpoint.png "Log in Endpoint")
 
@@ -91,11 +91,11 @@ This is mostly Twitter Bootstrap boilerplate <a href="https://getbootstrap.com/d
 
 At this point we have the endpoints and the page. We now need the workflow that will get triggered by the endpoint requests, which will reply with the page we just created.
 
-First, <a href="https://cdn.rawgit.com/Losant/experience-views-walkthrough/2fdf26db/log-in-page/endpoint-login.flow" target="_blank">download the example workflow</a> and [import it](/workflows/overview/#import-export) as a new workflow.
+First, <a href="https://cdn.rawgit.com/Losant/experience-views-walkthrough/2fdf26db/log-in-page/endpoint-login.flow" target="_blank">download the example workflow</a> and [import it](/workflows/overview/#import-export) as a new experience workflow.
 
 ![Workflow](/images/experiences/walkthrough/views/log-in-page/workflow.png "Workflow")
 
-You'll notice that some of the imported nodes have error icons. This is because you'll need to configure these for your newly created endpoints and login page.
+You'll notice that the workflow is disabled. Before you can actually use this workflow, you will need to enable it and configure a few settings in various nodes to use your newly created endpoints and login page.
 
 Click the two [endpoint triggers](/workflows/triggers/endpoint/) at the top and set the `Endpoint Method / Route` to the corresponding endpoints you created earlier.
 

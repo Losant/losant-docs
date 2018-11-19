@@ -11,7 +11,7 @@ In this tutorial, we'll build a flow allowing an experience user to reset his/he
 
 ## Create the Endpoints
 
-We'll be adding four endpoints, all of which will be hit by a user going through the password reset flow. From your experience overview page, click "Endpoints" in the left column, then click "Add Endpoint" in the top right corner.
+We'll be adding four endpoints, all of which will be hit by a user going through the password reset flow. In the experience menu, click the "Endpoints" menu item, then click the "Add" button at the top right of the list.
 
 ![Add Endpoint](/images/experiences/walkthrough/views/user-registration/add-endpoint.png "Add Endpoint")
 
@@ -23,7 +23,7 @@ This endpoint is responsible for handling requests to view the "Forgot Password"
 1. Set the `Route` to `/forgot-password`.
 1. Change the `Access Control` to `All public users`.
 
-Save the route, then return to the endpoints list page and click "Add Endpoint" to add the next route.
+Save the route, then return to the endpoints list page and click "Add" to add the next route.
 
 <h3 id="post-forgot-password" style="text-transform: none">POST /forgot-password</h3>
 
@@ -51,11 +51,11 @@ Finally, this endpoint is responsible for handling submissions of the form on th
 1. Set the `Route` to `/reset-password`.
 1. Change the `Access Control` to `All public users`.
 
-Save the route, then return to the endpoints list page and click "Add Endpoint" to add the next route.
+Save the route, then return to the endpoints list page and click "Add" to add the next route.
 
 ## Create the Views
 
-Now that all the endpoints have been created, let's move on to creating our new views. We'll be creating two new pages: one for requesting a password reset, and one for fulfilling the password reset request. Click "Views" in the left column to return to your Experience Views list.
+Now that all the endpoints have been created, let's move on to creating our new views. We'll be creating two new pages: one for requesting a password reset, and one for fulfilling the password reset request.
 
 ![Add Page](/images/experiences/walkthrough/views/user-registration/add-page.png "Add Page")
 
@@ -105,15 +105,16 @@ Save your new global, and then move on to creating the workflows.
 
 Though a user most frequently completes a forgot password flow while logged out (i.e. because they cannot log in to their account), we will still allow signed-in users to complete the flow as part of our walkthrough. This is because we are requiring [authenticated users who wish to change their password](/experiences/walkthrough/views/user-profile/#page-change-password) to enter their current password, and it is certainly possible for a user to have forgotten it while still in an active session.
 
-Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow. Click the "Workflows" dropdown at the top of the page, and select "New Workflow".
+Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow. In the experience menu, click the "Workflows" menu item, so we can create some new experience workflows.
 
 ### Forgot Password Workflow
 
 ![Forgot Password Workflow](/images/experiences/walkthrough/views/forgot-password/forgot-password-workflow.png "Forgot Password Workflow")
 
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/fa4d224f/forgot-password/endpoint-forgot-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-forgot-password.flow` as a new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/fa4d224f/forgot-password/endpoint-forgot-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-forgot-password.flow` as a new experience workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /forgot-password` and `GET /forgot-password` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Forgot Password` page](#page-forgot-password).
+1. Enable the workflow (since imported workflows are by default disabled).
 
 As a general overview, this workflow handles the following:
 
@@ -131,9 +132,10 @@ Now let's create a workflow allowing users to reset their passwords after clicki
 
 ![Reset Password Workflow](/images/experiences/walkthrough/views/forgot-password/reset-password-workflow.png "Reset Password Workflow")
 
-1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/fa4d224f/forgot-password/endpoint-reset-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-reset-password.flow` as a new workflow.
+1. Download the **[workflow template](https://cdn.rawgit.com/Losant/experience-views-walkthrough/fa4d224f/forgot-password/endpoint-reset-password.flow)**, then [import the file](/workflows/overview/#import-export) `endpoint-reset-password.flow` as a new experience workflow.
 1. Update each of the [endpoint triggers](/workflows/triggers/endpoint/) to point to the `POST /reset-password` and `GET /reset-password` endpoints you created [above](#create-the-endpoints).
 1. Update the [endpoint reply nodes](/workflows/outputs/endpoint-reply/) to point to your [`Reset Password` page](#page-reset-password).
+1. Enable the workflow (since imported workflows are by default disabled).
 
 As a general overview, this workflow handles the following:
 

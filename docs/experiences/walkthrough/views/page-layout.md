@@ -52,7 +52,7 @@ The next thing you'll want to change is the logo at the top left of the page.
 </a>
 ```
 
-This is a placeholder image provided as part of the example. Experience Views do not currently support the ability to upload and host custom assets like images. To replace this image, you'll need to host your logo somewhere else, like <a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a>, and replace the `src` attribute with the new URL. Alternatively, you can [Base64 encode](https://www.base64-image.de/) the image.
+This is a placeholder image provided as part of the example. To replace this image, you'll need to upload your logo somewhere, such as [Files](/applications/files/) or <a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a>, and replace the `src` attribute with the new URL. Alternatively, you can [Base64 encode](https://www.base64-image.de/) the image and place it directly in the layout.
 
 The next item you may notice is the `userIndicator` component, which provides the "Log In" link in the top right corner of the page. This will toggle between a "Log In" link and a dropdown menu displaying the user's first name based on whether a user is logged in.
 

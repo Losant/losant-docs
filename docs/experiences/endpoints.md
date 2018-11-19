@@ -1,18 +1,18 @@
 # Experience Endpoints
 
-An Experience Endpoint is a combination of an HTTP method and a route that, when invoked by an HTTP request, can fire a [workflow](/workflows/overview/). That workflow should then generate and issue a response to the request.
+An Experience Endpoint is a combination of an HTTP method and a route that, when invoked by an HTTP request, can fire a [workflow](/workflows/overview/) or directly respond with an [Experience Page](/experiences/views/). Fired workflows can also generate and issue a response to the request.
 
 ## Viewing Experience Endpoints
 
 ![Experience Endpoints](/images/experiences/endpoints-list.png "Experience Endpoints")
 
-Endpoints are listed within the "Endpoints" tab of your application's "Experience" subsection. There is also a list of endpoints on the Experience overview page, sorted by most times invoked in the last 24 hours.
+Endpoints are listed within the "Endpoints" tab of your application's "Experience" subsection.
 
 Click an endpoint's route in the list to view its configuration, make edits or view workflows associated with the endpoint.
 
 ## Adding an Experience Endpoint
 
-From the Endpoints list page, click "Add Endpoint" in the top right corner. This will take you to a page where the new endpoint can be configured.
+From the Endpoints list page, click "Add" in the upper right of the endpoint list. This will take you to a page where the new endpoint can be configured.
 
 ![Add Endpoint](/images/experiences/add-endpoint.png "Add Endpoint")
 
@@ -82,7 +82,8 @@ The following is an example of the context data that you can access in your redi
     user, // object containing info on the user who made the request (if available)
     endpoint, // object containing info on the endpoint config
     page, // object containing info on the page config
-    layout // object containing info on the layout config
+    layout, // object containing info on the layout config,
+    version // the experience version for this request
   },
   globals, // key/value mapping of any global variables from the application
   request: {
@@ -105,11 +106,11 @@ There are a couple additional properties to set on each endpoint:
 
 ## Endpoints and Workflows
 
-Every endpoint is powered by a [Losant workflow](/workflows/overview/) built by you. The workflow is initiated by an [Endpoint Trigger node](/workflows/triggers/endpoint/) configured to match your endpoint's method and route. From there, you can use any nodes within the workflow editor to parse your user's request, issue a response using an [Endpoint Reply node](/workflows/outputs/endpoint-reply/), and take auxiliary actions (such as [sending data](/workflows/data/http/) to a third party or issuing alerts via [email](/workflows/outputs/email/) or [SMS](/workflows/outputs/sms/)).
+Every endpoint can be powered by a [Losant Experience Workflow](/workflows/overview/) built by you. The workflow is initiated by an [Endpoint Trigger node](/workflows/triggers/endpoint/) configured to match your endpoint's method and route. From there, you can use any nodes within the workflow editor to parse your user's request, issue a response using an [Endpoint Reply node](/workflows/outputs/endpoint-reply/), and take auxiliary actions (such as [sending data](/workflows/data/http/) to a third party or issuing alerts via [email](/workflows/outputs/email/) or [SMS](/workflows/outputs/sms/)).
 
 ![Endpoint Workflow List](/images/experiences/endpoint-workflow-list.png "Endpoint Workflow List")
 
-At the bottom of an endpoint's edit page is a list of all workflows that contain an Endpoint Trigger Node that matches that endpoint's method and route. If no such workflows exist, you have the option of creating a starter workflow, which will contain an [Endpoint Trigger node](/workflows/triggers/endpoint/), an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) and a [Debug node](/workflows/outputs/debug/). This serves as a getting started template for configuring your new endpoint; you simply have to fill in the logic between the trigger and the reply.
+At the bottom of an endpoint's edit page is a list of all experience workflows that contain an Endpoint Trigger Node that matches that endpoint's method and route. If no such workflows exist, you have the option of creating a starter experience workflow, which will contain an [Endpoint Trigger node](/workflows/triggers/endpoint/), an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) and a [Debug node](/workflows/outputs/debug/). This serves as a getting started template for configuring your new endpoint; you simply have to fill in the logic between the trigger and the reply.
 
 ### Experience User Nodes
 
@@ -151,4 +152,4 @@ An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on
 
 ![Delete Endpoint](/images/experiences/delete-endpoint.png "Delete Endpoint")
 
-When deleting an endpoint, you also have the option of deleting any [workflows](/workflows/overview/) triggered by that endpoint. Note that this action deletes **any workflow with an [Endpoint Trigger node](/workflows/triggers/endpoint/) matching this endpoint**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked.
+When deleting an endpoint, you also have the option of deleting any [experience workflows](/workflows/overview/) triggered by that endpoint. Note that this action deletes **any experience workflow with an [Endpoint Trigger node](/workflows/triggers/endpoint/) matching this endpoint**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked.

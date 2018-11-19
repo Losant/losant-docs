@@ -6,13 +6,13 @@ An Experience User is a unique user registered to your application's Experience.
 
 ![Experience Users](/images/experiences/users-list.png "Experience Users")
 
-Users are listed within the "Users" tab of your application's "Experience" subsection. Click the user's email address in the list to view and to edit his / her profile.
+Users can be accessed through the "Users" menu item of your application's "Experience" menu. Click the user's email address in the list to view and to edit his / her profile.
 
 ## Adding an Experience User
 
 ![Add User](/images/experiences/add-user.png "Add User")
 
-From the Users list page, click "Add User" in the top right corner. This will take you to a page where the new user can be configured.
+From the Users list page, click "Add" at the top right of the users list. This will take you to a page where the new user can be configured.
 
 ## User Configuration
 
@@ -32,7 +32,7 @@ The combination of these two values is what your Experience Users will use to [a
 ![Optional User Fields](/images/experiences/user-optional-fields.png "Optional User Fields")
 
 * **First Name** and **Last Name**: The user's first and last names. These can be any string, or they can be left blank. You may also set one but not the other.
-* **Group IDs**: Any [Experience Groups](/experiences/groups/) the user should be a member of. Note that it is possible to create new groups directly from this interface, with the edited user automatically being added to the group. Simply type the name of a group that does not yet exist.
+* **Groups**: Any [Experience Groups](/experiences/groups/) the user should be a member of. Note that it is possible to create new groups directly from this interface, with the edited user automatically being added to the group. Simply type the name of a group that does not yet exist.
 
 ### User Tags
 
