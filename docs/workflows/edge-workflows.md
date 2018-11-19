@@ -16,17 +16,17 @@ When choosing a workflow type, there are a few benefits of edge workflows to con
 
 The main limitation of edge workflows is a lack of functionality that is available within [cloud workflows](/workflows/cloud-workflows/). For example, edge workflows cannot [edit Losant resources](/workflows/data/losant-api/) or send messages through [email](/workflows/outputs/email/) or [SMS](/workflows/outputs/sms/) (without using [SendGrid](/workflows/outputs/sendgrid/) or [Twilio](/workflows/outputs/twilio/) respectively).
 
-Also, changing or removing an edge workflow from a device requires the device to have an internet connection, which means that workflows deployed to edge devices could continue executing until previously deployed versions until those devices establish a connection to the Losant platform.
+Also, changing or removing an edge workflow from a device requires the device to have an internet connection, which means that workflows deployed to edge devices could continue executing previously deployed versions until those devices establish a connection to the Losant platform.
 
 ## Configuration
 
-There are a few configuration options that are different between cloud workflows and edge workflows.
+There are a few configuration options that are specific to edge workflows.
 
 ### Workflow Storage
 
 ![Edge Workflows Storage Tab](/images/workflows/edge-storage-tab.png "Edge Workflows Storage Tab")
 
-You may still use the [Storage: Get Value](/workflows/data/get-value/) and [Storage: Set Value](/workflows/data/store-value/) Nodes in an edge workflow; however, the values are specific to each device where the workflow is deployed, and there is no way to tell what the current values stored on the device are. Therefore, the [workflow storage tab](/workflows/overview/#workflow-storage) offers no interaction for edge workflows.
+You may still use the [Storage: Get Value](/workflows/data/get-value/) and [Storage: Set Value](/workflows/data/store-value/) Nodes in an edge workflow; however, the values are specific to each device where the workflow is deployed, and there is no way to tell what the current values stored on the device are. Therefore, the [workflow storage tab](/workflows/overview/#workflow-storage) offers no way to view or set storage values for edge workflows.
 
 ### Debugging
 
@@ -64,7 +64,7 @@ The fields on a triggering payload for an edge workflows are very similar to wha
 
 ## Saving and Deploying
 
-Unlike cloud workflows, saving and deploying edge workflows are two separate actions, and saving a workflow is not enough to propagate the changes to your edge devices.
+Unlike cloud workflows and experience workflows, saving and deploying edge workflows are two separate actions, and saving a workflow is not enough to propagate the changes to your edge devices.
 
 ![Deploy and Save Edge Workflow](/images/workflows/workflow-edge-save-deploy.png "Deploy and Save Edge Workflow")
 
@@ -80,7 +80,7 @@ More information on deploying edge workflows is available within the [edge compu
 
 ## Deleting Edge Workflows
 
-Cloud workflows can be deleted directly by clicking the "Delete Flow" button at the bottom of the workflow's Properties panel. They can also be deleted by clicking the "Delete" icon in your application's workflow list.
+Edge workflows can be deleted directly by clicking the "Delete Flow" button at the bottom of the workflow's Properties panel. They can also be deleted by clicking the "Delete" icon in your application's workflow list.
 
 ![Delete Workflow](/images/workflows/workflow-delete.png "Delete Workflow")
 

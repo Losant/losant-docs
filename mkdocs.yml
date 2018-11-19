@@ -122,6 +122,7 @@ pages:
 - Workflows:
     - Overview: workflows/overview.md
     - Cloud Workflows: workflows/cloud-workflows.md
+    - Experience Workflows: workflows/experience-workflows.md
     - Edge Workflows: workflows/edge-workflows.md
     - Accessing Payload Data: workflows/accessing-payload-data.md
     - Versioning: workflows/versioning.md

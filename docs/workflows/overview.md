@@ -17,6 +17,7 @@ Workflows can be created by clicking the "Add Workflow" link in the "Workflows" 
 When creating a new workflow, you must first choose a workflow type. This cannot be changed after workflow creation. There are currently two different workflow types:
 
 * [**Cloud workflows**](/workflows/cloud-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
+* [**Experience workflows**](/workflows/experience-workflows/) are best suited for handling requests and issuing responses within your [application experience](/experiences/overview/). They are versioned along with your experience's [endpoints](/experiences/endpoints/) and [views](/experiences/views/).
 * [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices in real time and report up to the internet at a later time.
 
 ![Choose Workflow Type](/images/workflows/workflow-create-choose-type.png "Choose Workflow Type")

@@ -15,7 +15,7 @@ There are a number of benefits that come with workflows of this type:
 
 ## Limitations
 
-The primary drawback of cloud workflows is the potential for network latency issues. For example, if you'd like to fire a workflow every time a device reports state, and firing that workflow is critical to the operation of your system, a slow internet connection (from the device reading state and sending it up to the cloud) could make or break your application.
+The primary drawback of cloud workflows, in comparison to edge workflows, is the potential for network latency issues. For example, if you'd like to fire a workflow every time a device reports state, and firing that workflow is critical to the operation of your system, a slow internet connection (from the device reading state and sending it up to the cloud) could make or break your application.
 
 Cloud workflows also do not have the ability to interact with any deployed device's operating system; they cannot execute scripts, write files or read inputs. They can, however, listen to a number of events emitted by the devices, such as [connections](/workflows/triggers/on-connect/), [disconnections](/workflows/triggers/on-disconnect/), [inactivity](/workflows/triggers/on-inactivity/) and [state reports](/workflows/triggers/device/), and in response they may [send commands to](/workflows/outputs/device-command/) or [report state on behalf of](/workflows/outputs/device-state/) your devices.
 
@@ -35,10 +35,6 @@ Cloud workflows can be enabled or disabled with a simple toggle. Disabling a wor
 
 Cloud workflows have the concept of a "default version", which is the [version](/workflows/versioning/) of the workflow to run in the absence of the version being specified in the trigger event. Some cloud triggers, such as the [Endpoint Trigger](/workflows/triggers/endpoint/), can target a specific [version](/workflows/versioning/) of your workflow. Conversely, other triggers, such as the [Timer Trigger](/workflows/triggers/timer/), will only ever fire on the default version.
 
-### Manual Storage Manipulation
-
-In cloud workflows, the values in [workflow storage](/workflows/overview/#workflow-storage) may be directly edited, instead of having to go through the [Storage: Get Value](/workflows/data/get-value/) and [Storage: Set Value](/workflows/data/store-value/) Nodes. This is because these values are stored in the cloud platform and are universal across all versions of the workflow, whereas in edge workflows, these values are specific to each device where the workflow is deployed.
-
 ## Saving and Deploying
 
 Workflows are saved and deployed using the `Deploy Workflow` button.
@@ -51,12 +47,12 @@ If you are viewing a [workflow version](/workflows/versioning/), the button will
 
 ## Deleting Cloud Workflows
 
-Cloud workflows can be deleted directly by clicking the "Delete Flow" button at the bottom of the workflow's Properties panel. They can also be deleted by clicking the "Delete" icon in your application's workflow list.
+Cloud workflows can be deleted by clicking the "Delete Flow" button at the bottom of the workflow's Properties panel. They can also be deleted by clicking the "Delete" icon in your application's workflow list.
 
 ![Delete Workflow](/images/workflows/workflow-delete.png "Delete Workflow")
 
-Cloud workflows can also be deleted indirectly by deleting resources that depend directly on the workflow engine. For example, when deleting an [experience endpoint](/experiences/endpoints/#deleting-endpoints), you are presented with the option of also deleting any workflow triggered by a request to that endpoint. Take care when doing this, as this action will delete the entire workflow, and not just any series of nodes within the workflow that start from the endpoint trigger.
+Cloud workflows can also be deleted indirectly by deleting resources that depend directly on the workflow engine. For example, when deleting a [webhook](/applications/webhooks/#deleting-a-webhook) or [integration](/applications/integrations/#deleting-an-integration), you are presented with the option of also deleting any workflow triggered by messages to those resources. Take care when doing this, as this action will delete the entire workflow, and not just any series of nodes within the workflow that start from the endpoint trigger.
 
-![Delete Workflow Through Resource](/images/experiences/delete-endpoint.png "Delete Workflow Through Resource")
+![Delete Workflow Through Resource](/images/applications/delete-integration.png "Delete Workflow Through Resource")
 
-When a cloud workflow is deleted, it ceases execution immediately – unlike deleting an edge workflow, the deletion of which must be rolled out to any devices to which the flow was deployed before they cease to fire.
+When a cloud workflow is deleted, it ceases execution immediately. Deleting a cloud workflow will also delete **all versions** of the workflow; once the workflow has been deleted, none of its versions can be retrieved or triggered.
