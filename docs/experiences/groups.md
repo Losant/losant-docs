@@ -12,7 +12,7 @@ Groups are can be accessed through the "Groups" menu item of your application's 
 
 ![Add Group](/images/experiences/add-group.png "Add Group")
 
-From the Groups list page, click "Add Group" in the top right corner. This will take you to a page where the new group can be configured.
+From the Groups list page, click "Add" at the top right of the group list. This will take you to a page where the new group can be configured.
 
 ## Group Configuration
 
