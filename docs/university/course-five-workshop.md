@@ -54,9 +54,9 @@ First, let’s create a workflow. You can create a workflow by going to “Creat
 
 ![Create Workflow](/images/university/course-five-workshop/create-workflow.png)
 
-Be sure to create a Cloud Workflow:
+Be sure to create an Application Workflow:
 
-![Cloud Vs Edge](/images/university/course-five-workshop/cloud-vs-edge.png)
+![Application Vs Edge](/images/university/course-five-workshop/application-vs-edge.png)
 
 Next, you can give the new workflow a name and description:
 

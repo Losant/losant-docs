@@ -1,10 +1,10 @@
-flowclass: Cloud
+flowclass: Application
 flowclass: Experience
 description: Learn more about the Losant Experience Endpoint Reply Node.
 
 # Experience Endpoint Reply Node
 
-The Experience Endpoint Reply Node allows a workflow to create and send an HTTP response to an [endpoint](/experiences/endpoints/) HTTP request. This node can be used with both experience and cloud workflows, although the configuration for each differs slightly. Note: we recommend only using this node in experience workflows, to take advantage of the built in experience versioning.
+The Experience Endpoint Reply Node allows a workflow to create and send an HTTP response to an [endpoint](/experiences/endpoints/) HTTP request. This node can be used with both experience and application workflows, although the configuration for each differs slightly. Note: we recommend only using this node in experience workflows, to take advantage of the built in experience versioning.
 
 ![Endpoint Reply Node](/images/workflows/outputs/endpoint-reply-node.png "Endpoint Reply Node")
 
@@ -37,7 +37,7 @@ To do this, you choose what page to render (this field does accept templates), a
 
 In all cases, there is a significant amount of data available in a page render [by default](/experiences/views/#data-that-is-always-provided). The above only changes the `pageData` variable on that basic context object.
 
-The configuration for the Endpoint Trigger for a cloud workflow is slightly more complicated. Because cloud workflows are not versioned with your experience, you will need to select the version of your experience you want to use when choosing an experience page to render. By default this is the `develop` version:
+The configuration for the Endpoint Trigger for an application workflow is slightly more complicated. Because application workflows are not versioned with your experience, you will need to select the version of your experience you want to use when choosing an experience page to render. By default this is the `develop` version:
 
 ![Endpoint Reply Node Page Config - Application Workflow](/images/workflows/outputs/endpoint-reply-node-page-config-app-flow.png "Endpoint Reply Node Page Config - Application Workflow")
 

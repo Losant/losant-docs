@@ -1,4 +1,4 @@
-flowclass: Cloud
+flowclass: Application
 flowclass: Experience
 flowclass: Edge 1.2.0
 description: Learn more about the ServiceNow Node.

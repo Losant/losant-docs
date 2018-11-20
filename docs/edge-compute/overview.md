@@ -2,7 +2,7 @@ description: Learn more about Losant Edge Compute.
 
 # Edge Compute
 
-Losant Edge Compute is a suite of functionality within the Losant platform that allows for deploying [workflows](/workflows/overview/) to your connected [devices](/devices/overview/) and executing those workflows on the device itself. This is in contrast to [cloud workflows](/workflows/cloud-workflows/), which execute in Losant's platform.
+Losant Edge Compute is a suite of functionality within the Losant platform that allows for deploying [workflows](/workflows/overview/) to your connected [devices](/devices/overview/) and executing those workflows on the device itself. This is in contrast to [application workflows](/workflows/application-workflows/), which execute in Losant's platform.
 
 ## Advantages
 
@@ -12,7 +12,7 @@ Fully utilizing Losant Edge Compute brings a number of benefits to your applicat
 
 The ability to make decisions on the device – and not in the cloud, which depends on an internet connection (much less a fast one) – can be critical to an IoT application. For example, if you have a vibration sensor attached to a machine, and that machine should shut down if vibration levels spike (a clear indication of a fault), even a one-second difference can mean the difference between a simple repair and a new piece of equipment.
 
-This difference is achieved by acting on the value of that sensor and making the "shut-down" decision locally on the device via an [edge workflow](/workflows/edge-workflows/). The alternative is sending the sensor readings through the internet up to the cloud, where the evaluation of the data takes place in a [cloud workflow](/workflows/cloud-workflows/). Then, a command to shut the machine down must be sent back through the internet down to the connected device.
+This difference is achieved by acting on the value of that sensor and making the "shut-down" decision locally on the device via an [edge workflow](/workflows/edge-workflows/). The alternative is sending the sensor readings through the internet up to the cloud, where the evaluation of the data takes place in an [application workflow](/workflows/application-workflows/). Then, a command to shut the machine down must be sent back through the internet down to the connected device.
 
 ### Low Connectivity Solutions
 

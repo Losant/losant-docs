@@ -14,7 +14,7 @@ When choosing a workflow type, there are a few benefits of edge workflows to con
 
 ## Limitations
 
-The main limitation of edge workflows is a lack of functionality that is available within [cloud workflows](/workflows/cloud-workflows/). For example, edge workflows cannot [edit Losant resources](/workflows/data/losant-api/) or send messages through [email](/workflows/outputs/email/) or [SMS](/workflows/outputs/sms/) (without using [SendGrid](/workflows/outputs/sendgrid/) or [Twilio](/workflows/outputs/twilio/) respectively).
+The main limitation of edge workflows is a lack of functionality that is available within [application workflows](/workflows/application-workflows/). For example, edge workflows cannot [edit Losant resources](/workflows/data/losant-api/) or send messages through [email](/workflows/outputs/email/) or [SMS](/workflows/outputs/sms/) (without using [SendGrid](/workflows/outputs/sendgrid/) or [Twilio](/workflows/outputs/twilio/) respectively).
 
 Also, changing or removing an edge workflow from a device requires the device to have an internet connection, which means that workflows deployed to edge devices could continue executing previously deployed versions until those devices establish a connection to the Losant platform.
 
@@ -44,7 +44,7 @@ To do this, use the Edge Agent tab in the workflow editor. The upgrade can only 
 
 ## Payload
 
-The fields on a triggering payload for an edge workflows are very similar to what is available on cloud workflows, with a few edge-only additions. The following are the initial root fields on all edge payloads:
+The fields on a triggering payload for an edge workflows are very similar to what is available on application workflows, with a few edge-only additions. The following are the initial root fields on all edge payloads:
 
 * **agentEnvironment** is an object of the current environment variables for the Edge Agent (minus any Edge Agent configuration environment variables). This is unique to edge workflows, and only available in Edge Agent version 1.2 or greater.
 * **applicationId** is the ID of the Losant application that the Edge Agent (and the workflow) belong to.
@@ -64,7 +64,7 @@ The fields on a triggering payload for an edge workflows are very similar to wha
 
 ## Saving and Deploying
 
-Unlike cloud workflows and experience workflows, saving and deploying edge workflows are two separate actions, and saving a workflow is not enough to propagate the changes to your edge devices.
+Unlike application workflows and experience workflows, saving and deploying edge workflows are two separate actions, and saving a workflow is not enough to propagate the changes to your edge devices.
 
 ![Deploy and Save Edge Workflow](/images/workflows/workflow-edge-save-deploy.png "Deploy and Save Edge Workflow")
 

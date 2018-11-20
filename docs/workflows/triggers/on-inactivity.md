@@ -1,4 +1,4 @@
-flowclass: Cloud
+flowclass: Application
 description: Learn more about the Losant Device: Inactivity Trigger.
 
 # Device: Inactive Trigger

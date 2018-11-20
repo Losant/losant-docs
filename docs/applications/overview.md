@@ -63,7 +63,7 @@ As a real-time tool, the Communication Log will always begin in an empty state. 
 
 Application globals are a set of key/value pairs that are accessible inside of any workflow in the current application. This is a great place to store application-wide configuration that is used across multiple workflows, like phone numbers or API keys.
 
-Any values configured here are accessible under the `globals` object on the payload in a [workflow](/workflows/overview/) run. The globals will always be accessible on the [cloud workflows](/workflows/cloud-workflows/); however, each global will only be exposed to [edge workflows](/workflows/edge-workflows/) if `Only on Cloud Workflows` is left unchecked.
+Any values configured here are accessible under the `globals` object on the payload in a [workflow](/workflows/overview/) run. The globals will always be accessible on the [application workflows](/workflows/application-workflows/); however, each global will only be exposed to [edge workflows](/workflows/edge-workflows/) if `Only on Application Workflows` is left unchecked.
 
 Application globals can be overridden within a workflow by defining a different value at the same key in the globals for that specific workflow. You can read more about workflow globals [here](/workflows/overview/#workflow-globals).
 

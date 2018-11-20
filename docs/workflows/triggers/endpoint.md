@@ -1,10 +1,10 @@
-flowclass: Cloud
+flowclass: Application
 flowclass: Experience
 description: Learn more about the Losant Endpoint Trigger.
 
 # Experience Endpoint Trigger
 
-The Endpoint Trigger will trigger a workflow when the selected endpoint receives a request. It can be used in both cloud and experience workflows, although the configuration differs slightly between the two.
+The Endpoint Trigger will trigger a workflow when the selected endpoint receives a request. It can be used in both application and experience workflows, although the configuration differs slightly between the two.
 
 ![Endpoint Trigger](/images/workflows/triggers/endpoint-trigger.png "Endpoint Trigger")
 
@@ -16,7 +16,7 @@ The configuration for the Endpoint Trigger for an experience workflow is relativ
 
 In the above example, the workflow will be triggered whenever the "GET /logout" endpoint receives a request.
 
-The configuration for the Endpoint Trigger for a cloud workflow is slightly more complicated. Because cloud workflows are not versioned with your experience, you will need to select the version of your experience you want to use. By default this is the `develop` version:
+The configuration for the Endpoint Trigger for an application workflow is slightly more complicated. Because application workflows are not versioned with your experience, you will need to select the version of your experience you want to use. By default this is the `develop` version:
 
 ![Endpoint Trigger Config Application Workflow](/images/workflows/triggers/endpoint-trigger-config-app-flow.png "Endpoint Trigger Config Application Workflow")
 
