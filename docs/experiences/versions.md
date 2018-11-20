@@ -64,9 +64,9 @@ At this point, the resources within the version can be modified or deleted, and 
 
 It is possible to build out a full application experience without using the experience versioning feature, but we strongly recommend doing so for the following reasons:
 
-*   Creating versions allows for updating an experience after initial publication without disrupting your end users, as you can make changes within the 'develop' version (which can be pointed at a staging domain) and only publish the changes to your production domain once the edits are complete.
+*   Creating versions allows for updating an experience after initial publication without disrupting your end users, as you can make changes within the "develop" version (which can be pointed at a staging domain) and only publish the changes to your production domain once the edits are complete.
 *   Experience versioning makes it much easier to host two or more disparate end user experiences that are backed by the same Losant application data, as different domains can be pointed at different published versions.
-*   Creating experience versions provides a means for revision history as the entire experience can be saved as a new version at any time. You may then look back at any past version or even copy the resources to the 'develop' version for further editing.
+*   Creating experience versions provides a means for revision history as the entire experience can be saved as a new version at any time. You may then look back at any past version or even copy the resources to the "develop" version for further editing.
 
 ## Versioned Resources
 
@@ -76,7 +76,7 @@ The following resources are frozen as part of an experience version:
 *   [Experience workflows](/workflows/experience-workflows/)
 *   [Experience endpoints](/experiences/endpoints/)
 
-These resources will continue to exist within the application version even if their counterparts are deleted within the 'develop' version.
+These resources will continue to exist within the application version even if their counterparts are deleted within the "develop" version.
 
 ##  Unversioned Resources
 

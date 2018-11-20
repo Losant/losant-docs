@@ -1,6 +1,6 @@
 # Experience Groups
 
-An Experience Group is a collection of [users](/experiences/users/) and [endpoints](/experiences/endpoints/) for controlling access to your application's Experience. Only users included in the group may access the endpoints within the group. This is useful for setting up administration routes within your Experience; for example, only a subset of your users may create other Experience Users or delete resources.
+An Experience Group is a collection of [users](/experiences/users/) for controlling access to your application's [Experience Endpoints](/experiences/endpoints/). When configuring an endpoint - or within a workflow using the [Verify Group Node](/workflows/experience/verify-group/) - you can limit access to the endpoint or change the user experience based on their group membership. This is useful for setting up administration routes within your Experience; for example, only a subset of your users may create other Experience Users or delete resources.
 
 ## Viewing Experience Groups
 
@@ -18,15 +18,19 @@ From the Groups list page, click "Add" at the top right of the group list. This 
 
 ![Group Config](/images/experiences/group-config.png "Group Config")
 
-Group configuration takes four parameters:
+Group configuration takes three parameters:
 
 * **Name** is simply the name of the group; it is for display purposes only and in no way affects the group's functionality, nor is it ever exposed to your users. The field is required.
 * **Description** is a longer description of the group. Similar to the name, it is only for display purposes.
 * **Users** is an array of users to include in the group. Any user who is not in the group will not have access to the endpoints in the group.
 
-### Endpoint Access Control
+## Using Experience Groups
 
-Note that, if an endpoint is configured to allow **All public users** or **Any authenticated user** in its [access control](/experiences/endpoints/#access-control), that setting will override any group configuration applied to the endpoint. To apply group access to an endpoint, the endpoint's access control must first be set to **Only users who are in the following groups...**.
+There are three methods by which you may use experience groups to conditionally render or redirect users within your Experience:
+
+1. In an [Experience Endpoint's access control](/experiences/endpoints/#access-control), you may limit an endpoint's access to "Only users who are in the following groups ..." When selected, a request will only be treated as authenticated if the Experience User is signed in AND is a member of one or more of the groups you select.
+2. In a workflow, you may use the [Verify Group Node](/workflows/experience/verify-group/) to check if the user making the request is a member of a specific group, and you may branch your workflow's execution based on this. Note that this method is endpoint-agnostic; if you use the first method above to limit the endpoint's access control, and the user is not a member of one of the selected groups, your workflow will never fire.
+3. In an Experience View, assuming you do not [override the context](/workflows/outputs/endpoint-reply/#experience-page-response) passed to the page, you will have access to the [user's information](/experiences/views/#data-that-is-always-provided) - including their group membership. Certain portions of the page could be conditionally rendered based on the user's group membership, such as an "Admin" link that takes the user to a gated portion of your Experience.
 
 ## Deleting Groups
 
