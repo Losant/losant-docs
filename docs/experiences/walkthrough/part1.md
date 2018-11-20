@@ -41,7 +41,7 @@ When done, click the `Create Endpoint` button at the bottom to create this endpo
 
 ![Endpoint list](/images/experiences/walkthrough/part-1/endpoint-list.png "Endpoint list")
 
-At this point,  we have the `/users` endpoint defined, but there's no logic to run when it's requested. If you were to request it now, Losant will automatically return a 404. In order to give this endpoint some intelligence, we have to create a [workflow](/workflows/overview/). All experience endpoints are backed by workflows that contain the [Endpoint trigger node](/workflows/triggers/endpoint/) and [Endpoint Reply node](/workflows/outputs/endpoint-reply/).
+At this point,  we have the `/users` endpoint defined, but there's no logic to run when it's requested. If you were to request it now, Losant will automatically return a 404. In order to give this endpoint some intelligence, we have to create an [experience workflow](/workflows/experience-workflows/). All experience endpoints are backed by workflows that contain the [Endpoint trigger node](/workflows/triggers/endpoint/) and [Endpoint Reply node](/workflows/outputs/endpoint-reply/).
 
 Create a new workflow for this endpoint using the main `Workflows` application menu. Make sure to choose `Experience` as the Workflow Type.
 
