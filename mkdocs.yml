@@ -60,7 +60,7 @@ pages:
     - Overview: experiences/overview.md
     - Users: experiences/users.md
     - Groups: experiences/groups.md
-    - Domains: experiences/domains.md
+    - Domains & Slugs: experiences/domains.md
     - Versions: experiences/versions.md
     - Endpoints: experiences/endpoints.md
     - Views: experiences/views.md
