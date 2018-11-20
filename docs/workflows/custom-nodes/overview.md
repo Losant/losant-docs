@@ -127,7 +127,7 @@ While it is possible to run the "develop" version of any Custom Node, we **stron
 
 ## Using Custom Nodes
 
-Once a Custom Node has been saved and deployed, it becomes available for use within your application workflows and other Custom Nodes. Your workflow palette contains a section with all of your application's Custom Nodes. These nodes can be dragged onto the canvas, moved around, connected to other nodes, configured and deleted just like any other node.
+Once a Custom Node has been saved and deployed, it becomes available for use within your application and experience workflows and other Custom Nodes. Your workflow palette contains a section with all of your application's Custom Nodes. These nodes can be dragged onto the canvas, moved around, connected to other nodes, configured and deleted just like any other node.
 
 ![Custom Nodes Overview](/images/workflows/custom-nodes-overview.png "Custom Nodes Overview")
 

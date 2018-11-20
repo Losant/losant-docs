@@ -29,9 +29,9 @@ In the above example, the Device State Node is setting the state of the device `
 
 In addition, optionally, the timestamp to associate with the state to report can be changed. By default, the timestamp of the current workflow payload being processed is used (the first radio option). But in cases where that timestamp value is not desired, there are two other options - the current time, or a timestamp on a specified payload path. The current time will often be very similar to the timestamp on the current workflow payload, but not always (depending on the length of time running the workflow takes) - and can in fact be drastically different in the case of non-realtime state reports triggering a workflow. When specifying a payload path, the workflow expects the timestamp to conform to the same rules as a timestamp on a [normal state report](/devices/state/#including-timestamps).
 
-## Application vs Edge Behavior
+## Behavior by Flow Type
 
-If the workflow is an [application workflow](/workflows/application-workflows/), the Device State Node can update the state for any device. However, if the workflow is an [edge workflow](/workflows/edge-workflows/), the permissions of the workflow are constrained by the [edge compute](/devices/edge-compute/) device the workflow is running on. In that case, the rules about reporting state for [gateways and peripherals](/devices/gateways-peripherals/#reporting-state-for-peripheral) apply - the workflow can report state for the device it is running on, as well as any peripherals that it has permission to talk on behalf of.
+If the workflow is an [application workflow](/workflows/application-workflows/) or [experience workflow](/workflows/experience-workflows/), the Device State Node can update the state for any device. However, if the workflow is an [edge workflow](/workflows/edge-workflows/), the permissions of the workflow are constrained by the [edge compute](/devices/edge-compute/) device the workflow is running on. In that case, the rules about reporting state for [gateways and peripherals](/devices/gateways-peripherals/#reporting-state-for-peripheral) apply - the workflow can report state for the device it is running on, as well as any peripherals that it has permission to talk on behalf of.
 
 ## Offline Edge Support
 

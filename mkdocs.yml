@@ -308,3 +308,4 @@ pages:
 - _: structure-sdks/arduino.md
 - _: structure-sdks/javascript.md
 - _: workflows/outputs/virtual-device.md
+- _: workflows/cloud-workflows.md
