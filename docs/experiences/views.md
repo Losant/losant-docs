@@ -1,6 +1,6 @@
 # Experience Views
 
-Experience Views allow you to build custom web interfaces on top of your connected device data and present those interfaces to your [Experience Users](/experiences/users/). Views are rendered as a reply to an [Experience Endpoint](/experiences/endpoints/), and the data backing your views comes from a Losant [Experience Workflow](/workflows/overview/).
+Experience Views allow you to build custom web interfaces on top of your connected device data and present those interfaces to your [Experience Users](/experiences/users/). Views are rendered as a reply to an [Experience Endpoint](/experiences/endpoints/), and the data backing your views comes from a Losant [Experience Workflow](/workflows/experience-workflows/).
 
 Through the combination of endpoints, workflows, views and users, it is possible to build completely custom, web-based, user-specific solutions entirely within the Losant platform.
 
@@ -139,7 +139,7 @@ A dashboard page takes the following additional configuration options:
 In order to use a page, you must do the following:
 
 1. Define an [Experience Endpoint](/experiences/endpoints/) for your users to visit.
-1. Build a [Experience Workflow](/workflows/overview/) to handle the endpoint request and issue a response. (You can do this [automatically](/experiences/endpoints/#endpoints-and-workflows) from the endpoint's edit page.)
+1. Build a [Experience Workflow](/workflows/experience-workflows/) to handle the endpoint request and issue a response. (You can do this [automatically](/experiences/endpoints/#endpoints-and-workflows) from the endpoint's edit page.)
 1. Choose "Experience Page" as the "Reply Type" in the [Endpoint Reply node](/workflows/outputs/endpoint-reply/#reply-type) and select your page as the one to render for the user.
 
 In the Endpoint Reply node, you may optionally [construct a `pageData` object](/workflows/outputs/endpoint-reply/#reply-type) to supply to the page. Note that there are a number of context properties [available automatically](#data-that-is-always-provided), in addition to the `pageData` you may provide through the workflow.

@@ -4,7 +4,7 @@ In the [previous part](/experiences/walkthrough/views/page-layout/) of this walk
 
 ![Log In Page Screenshot](/images/experiences/walkthrough/views/log-in-page/screenshot.png "Log In Page Screenshot")
 
-The URLs that a user can request are called [Experience Endpoints](/experiences/endpoints/). Whenever an endpoint is requested, a [Workflow](/workflows/overview/) is triggered with that request. That workflow can then reply with data (you're building an API) or with a page. [Pages](/experiences/views/#pages) are the main entry point for your custom experiences.
+The URLs that a user can request are called [Experience Endpoints](/experiences/endpoints/). Whenever an endpoint is requested, an [Experience Workflow](/workflows/experience-workflows/) is triggered with that request. That workflow can then reply with data (you're building an API) or with a page. [Pages](/experiences/views/#pages) are the main entry point for your custom experiences.
 
 Let's start by defining two endpoints that will allow users to log in to your experience. The first, `GET /login`, will return the form with the email and password fields. The second, `POST /login`, will accept the credentials from the form, authenticate the user, and set a cookie in their browser for future requests.
 

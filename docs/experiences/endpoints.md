@@ -1,6 +1,6 @@
 # Experience Endpoints
 
-An Experience Endpoint is a combination of an HTTP method and a route that, when invoked by an HTTP request, can fire a [workflow](/workflows/overview/) or directly respond with an [Experience Page](/experiences/views/). Fired workflows can also generate and issue a response to the request.
+An Experience Endpoint is a combination of an HTTP method and a rªoute that, when invoked by an HTTP request, can fire a [workflow](/workflows/experience-workflows/) or directly respond with an [Experience Page](/experiences/views/). Fired workflows can also generate and issue a response to the request.
 
 ## Viewing Experience Endpoints
 
@@ -8,7 +8,7 @@ An Experience Endpoint is a combination of an HTTP method and a route that, when
 
 Endpoints are listed within the "Endpoints" tab of your application's "Experience" subsection.
 
-Click an endpoint's route in the list to view its configuration, make edits or view workflows associated with the endpoint.
+Click an endpoint's route in the list to view its configuration, make edits or view experience workflows associated with the endpoint.
 
 ## Adding an Experience Endpoint
 
@@ -66,7 +66,7 @@ Reply Types are static pages or redirects that will be rendered and used to resp
 
 Either Reply Type has the following three options:
 
-* **No Static Reply (use cloud workflow to reply)** - the endpoint will be responded to at the end of a workflow that was triggered when this endpoint was requested.
+* **No Static Reply (use experience workflow to reply)** - the endpoint will be responded to at the end of a workflow that was triggered when this endpoint was requested.
 * **Experience Page** - the selected static experience page will be rendered and used as the response. The default status code is dependent on whether this is a response to an authorized user or unauthorized user. For authorized users, the default status code is [200](https://httpstatuses.com/200), and for unauthorized users the default is [401](https://httpstatuses.com/401). However, you can set this to be any valid status code.
 * **Redirect** - the endpoint will redirect the user to the another URL. The default status code is dependent on whether this is a response to an authorized user or unauthorized user. For authorized users the default status code is [301](https://httpstatuses.com/301), and for unauthorized users the default is [302](https://httpstatuses.com/302). Redirect Paths are **templatable**.
 
@@ -106,7 +106,7 @@ There are a couple additional properties to set on each endpoint:
 
 ## Endpoints and Workflows
 
-Every endpoint can be powered by a [Losant Experience Workflow](/workflows/overview/) built by you. The workflow is initiated by an [Endpoint Trigger node](/workflows/triggers/endpoint/) configured to match your endpoint's method and route. From there, you can use any nodes within the workflow editor to parse your user's request, issue a response using an [Endpoint Reply node](/workflows/outputs/endpoint-reply/), and take auxiliary actions (such as [sending data](/workflows/data/http/) to a third party or issuing alerts via [email](/workflows/outputs/email/) or [SMS](/workflows/outputs/sms/)).
+Every endpoint can be powered by a [Losant Experience Workflow](/workflows/experience-workflows/) built by you. The workflow is initiated by an [Endpoint Trigger node](/workflows/triggers/endpoint/) configured to match your endpoint's method and route. From there, you can use any nodes within the workflow editor to parse your user's request, issue a response using an [Endpoint Reply node](/workflows/outputs/endpoint-reply/), and take auxiliary actions (such as [sending data](/workflows/data/http/) to a third party or issuing alerts via [email](/workflows/outputs/email/) or [SMS](/workflows/outputs/sms/)).
 
 ![Endpoint Workflow List](/images/experiences/endpoint-workflow-list.png "Endpoint Workflow List")
 
@@ -160,4 +160,4 @@ An endpoint can be deleted by clicking the "Delete" icon next to any endpoint on
 
 ![Delete Endpoint](/images/experiences/delete-endpoint.png "Delete Endpoint")
 
-When deleting an endpoint, you also have the option of deleting any [experience workflows](/workflows/overview/) triggered by that endpoint. Note that this action deletes **any experience workflow with an [Endpoint Trigger node](/workflows/triggers/endpoint/) matching this endpoint**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked.
+When deleting an endpoint, you also have the option of deleting any [experience workflows](/workflows/experience-workflows/) triggered by that endpoint. Note that this action deletes **any experience workflow with an [Endpoint Trigger node](/workflows/triggers/endpoint/) matching this endpoint**. If you wish to save your workflows and change out their triggers, or if the workflows are triggered by multiple conditions and you wish to retain them, you should leave this option unchecked.
