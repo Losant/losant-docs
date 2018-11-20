@@ -6,7 +6,7 @@ Experiences are a means by which you can build a fully functional web interface,
 
 ![Experiences Overview](/images/experiences/overview-overview.png "Experiences Overview")
 
-Experience Users, Endpoints, Groups and Views are subject to account [resource limits](/organizations/resource-limits/), with all but the Users being [soft limits](/organizations/resource-limits/#soft-limited-resources) (meaning you may request increases to these limits at potentially zero additional charge). If you need to register additional Experience Users, you will have to upgrade to an [organization](/organizations/overview/).
+Experience resources are subject to account [resource limits](/organizations/resource-limits/), with all but the Users being [soft limits](/organizations/resource-limits/#soft-limited-resources) (meaning you may request increases to these limits at potentially zero additional charge). If you need to register additional Experience Users, you will have to upgrade to an [organization](/organizations/overview/).
 
 ## Initial Setup
 
@@ -16,9 +16,9 @@ New applications Experiences must first go through a short bootstrapping process
 
 ![Bootstrap Slug](/images/experiences/overview-choose-slug.png "Bootstrap Slug")
 
-The first step in working with Experiences is to choose a custom endpoint slug, which is the subdomain at which your endpoint requests will live. It is here that endpoint requests can be **securely** received and responded to. After initial setup, you may also configure one or more full [domains](/experiences/domains/) for handling endpoint requests.
+The first step in working with Experiences is to choose a custom endpoint slug, which is a subdomain at which your endpoint requests will live. It is here that endpoint requests can be **securely** received and responded to. After initial setup, you may also configure one or more full [domains](/experiences/domains/) for handling endpoint requests as well as additional endpoint slugs.
 
-Your slug defaults to your application ID, but it can be changed to a custom subdomain that meets these requirements:
+By default, your application experience includes a slug that matches your application ID; this slug cannot be deleted. If you choose to enter a custom slug during the bootstrapping process, the slug must meet these requirements:
 
 * Must be at least 4 characters
 * May only contain lowercase letters, numbers, hyphens (-) and underscores (\_)
@@ -28,8 +28,6 @@ Your slug defaults to your application ID, but it can be changed to a custom sub
 
 HTTP requests for your endpoints should then go to `https://[my-custom-slug].onlosant.com/[my-endpoint]`.
 
-You may [change the slug](/experiences/domains/#editing-the-endpoint-slug) at any time, but doing so after you are receiving traffic can cause **breaking changes** within your experience.
-
 ### Bootstrap Your Experience
 
 After choosing a slug, you'll have the option of setting up some example resources to get you started. This step can be skipped on a per-application basis, though we recommend completing it as a great starting point for building out a full experience.
@@ -38,17 +36,16 @@ After choosing a slug, you'll have the option of setting up some example resourc
 
 If you choose to create the helper resources, Losant will automatically add the following to your application:
 
-* A `/login` [endpoint](/experiences/endpoints/), its backing [workflow](/workflows/overview/) (which handles the actual authentication and routing), and the [page](/experiences/views/#pages) to render when the endpoint is requested.
-* A `/` (root) endpoint, its backing workflow (which handles routing signed-out users back to the login page), and the page to render when it is requested.
+* Two `/login` [endpoint](/experiences/endpoints/) (one for GET and one for POST requests), a backing [workflow](/workflows/overview/) (which handles the actual authentication and routing), and the [page](/experiences/views/#pages) to render when the endpoints are requested.
+* A `/logout` endpoint and a backing workflow for signing users out.
+* A `/` (root) endpoint configured to render another page for signed-in users and to redirect to the login page for unauthenticated users.
 * The [layout](/experiences/views/#layouts) and [components](/experiences/views/#components) necessary to render the pages listed above.
 * A test [Experience User](/experiences/users/) for testing authentication and protected endpoints.
 * An [Experience Group](/experiences/groups/) with the test user as a member.
 
-![Bootstrap Progress](/images/experiences/overview-progress.png "Bootstrap Progress")
-
 The sample resources utilize a placeholder brand and a layout wrapped in [Twitter Bootstrap](https://getbootstrap.com/docs/3.3/), a popular front-end framework whose stylesheets and script files are available on a content delivery network. You are free to continuing using this framework to build out your experience, or to swap it with another of your choosing (or no framework at all).
 
-All of these resources can be deleted at any time, but note that doing so may temporarily break your Experience until your workflows can be reconfigured to account for any deleted pages, layouts and endpoints.
+All of these resources can be updated or deleted at any time. If you [delete all your experience resources](#deleting-experience-resources), you will have the option of running the bootstrap process again.
 
 ### Test Your Experience
 

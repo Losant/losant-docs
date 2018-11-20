@@ -22,6 +22,10 @@ New workflow versions can only be created from the Develop version. To create a 
 * **Make this the default version:** For cloud workflows, this is a shortcut to mark the new version as the workflow's default. The default version can be changed at any time.
 * **Notes:** Optionally, you may provide some more details on what this specific version entails.
 
+### Versioning Experience Workflows
+
+[Experience workflows](/workflows/experience-workflows/) cannot be versioned independently of your application experience as a whole; this is to help keep the back-end logic provided by a workflow in sync with the front-end presentation from [experience views](/experiences/views/). To create and utilize experience workflow versions, you must create a whole [experience version](/experiences/versions/).
+
 ## Working With Versions
 
 By default, when first visiting a workflow, you will be presented with its default version. To view other versions, click the Versions tab in the right column. In there you will find a list of the workflow's versions; click the version name to view it. (The currently viewed version is bolded and unlinked.)
@@ -30,7 +34,7 @@ Once you have selected a version, you will see that version name as a tag alongs
 
 ![Selected Version](/images/workflows/versioning/selected_version.png "Selected Version")
 
-A version's nodes, connectors and [global variables](/workflows/overview/#workflow-globals) are specific to that version. Other than within the Develop version, these items are not editable (except as described [below](#editing-existing-versions)), but you can still view their configuration.
+A version's nodes, connectors, [global variables](/workflows/overview/#workflow-globals) and [target agent version](/workflows/edge-workflows/#edge-agent-version) (in the case of [edge workflows](/workflows/edge-workflows/)) are specific to that version. Other than within the Develop version, these items are not editable (except as described [below](#editing-existing-versions)), but you can still view their configuration.
 
 There are a few actions you may take relative to a version:
 
