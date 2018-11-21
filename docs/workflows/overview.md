@@ -12,9 +12,9 @@ A list of your application's workflows, broken down by [type](#types-of-workflow
 
 There are three types of workflows, each of which features unique functionality and is best suited for specific use cases:
 
-* [**Application workflows**](/workflows/application-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
-* [**Experience workflows**](/workflows/experience-workflows/) are best suited for handling requests and issuing responses within your [application experience](/experiences/overview/). They are versioned along with your experience's [endpoints](/experiences/endpoints/) and [views](/experiences/views/).
-* [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices in real time and report up to the internet at a later time.
+* [**Application workflows**](/workflows/application-workflows/) run in Losant's cloud and are for general purpose processing and data handling. They offer a wide variety of triggers to facilitate the ingestion and handling of data from multiple data sources or services. They are versioned independently.
+* [**Experience workflows**](/workflows/experience-workflows/) run in Losant's cloud and are designed for the data handling and custom back-end logic for [Application Experiences](/experiences/overview/). They can only be triggered by [Experience Endpoints](/experiences/endpoints/) and they are versioned as part of an [Experience Version](/experiences/versions/).
+* [**Edge workflows**](/workflows/edge-workflows/) run on your own [gateway hardware](/devices/edge-compute/) and are executed by Losant's [Edge Agent](/edge-compute/overview/). They provide additional nodes and triggers specifically designed to interface with local peripherals and data sources. They can run without an internet connection and will buffer any reported data while offline. They are versioned independently.
 
 ## Creating a Workflow
 

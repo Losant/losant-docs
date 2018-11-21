@@ -2,7 +2,7 @@ description: Learn more about creating and configuring Losant Application Workfl
 
 # Application Workflows
 
-Application workflows execute within Losant's cloud platform. Generally they are more robust than [edge workflows](/workflows/edge-workflows/) in regards to the available functionality, speed of execution and uptime.
+Application Workflows run in Losant's cloud and are for general purpose processing and data handling. They offer a wide variety of triggers to facilitate the ingestion and handling of data from multiple data sources or services. They are versioned independently.
 
 ## Advantages
 

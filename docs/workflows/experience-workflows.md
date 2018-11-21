@@ -2,7 +2,7 @@ description: Learn more about creating and configuring Losant Experience Workflo
 
 # Experience Workflows
 
-Experience workflows are very similar to [application workflows](/workflows/application-workflows/) in that they execute within Losant's cloud platform. While they lack some of the more robust functionality of application workflows, they are better suited for handling requests from your experience endpoints and issuing responses.
+Experience Workflows run in Losant's cloud and are designed for the data handling and custom back-end logic for [Application Experiences](/experiences/overview/). They can only be triggered by [Experience Endpoints](/experiences/endpoints/) and they are versioned as part of an [Experience Version](/experiences/versions/).
 
 ## Advantages
 
@@ -12,7 +12,7 @@ While it is entirely possible to build a full application experience without usi
 
 ## Limitations
 
-The primary limitation of experience workflows is they lack some of the more robust functionality provided by application workflows - particularly when it comes to [workflow triggers](#triggers). But since experience workflows are meant primarily for handling experience endpoint requests, this lack of functionality should not be an issue for most users, and any desired behavior can instead be accomplished within an application workflow.
+The primary limitation of experience workflows is they lack some of the functionality available in application workflows - particularly when it comes to [workflow triggers](#triggers). But since experience workflows are meant primarily for handling experience endpoint requests, this lack of functionality should not be an issue for most users, and any desired behavior can instead be accomplished within an application workflow.
 
 ## Differences From Application Workflows
 

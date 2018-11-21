@@ -2,7 +2,7 @@ description: Learn more about creating and configuring Losant Edge Workflows.
 
 # Edge Workflows
 
-Edge workflows are configured within the Losant platform, but they are then [deployed](/edge-compute/edge-deployments/) to [edge devices](/devices/edge-compute/) where the flow's actual execution takes place.
+Edge Workflows run on your own [gateway hardware](/devices/edge-compute/) and are executed by Losant's [Edge Agent](/edge-compute/overview/). They provide additional nodes and triggers specifically designed to interface with local peripherals and data sources. They can run without an internet connection and will buffer any reported data while offline. They are versioned independently.
 
 ## Advantages
 
