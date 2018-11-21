@@ -238,6 +238,10 @@ pages:
     - JavaScript: mqtt/javascript.md
     - Python: mqtt/python.md
     - Ruby: mqtt/ruby.md
+- Losant CLI:
+    - Overview: cli/overview.md
+    - Experience: cli/experience.md
+    - Files: cli/files.md
 - REST API:
     - Overview: rest-api/overview.md
     - Application: rest-api/application.md
