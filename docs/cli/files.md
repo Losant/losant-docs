@@ -31,7 +31,7 @@ If you have conflicts, which can be seen when running `losant files status` and 
 
 ![Download Resolved Conflicts](/images/cli/files-download-resolved.png "Files Download Resolved Conflicts")
 
-## Status
+### Status
 
 Usage: `losant files status`
 

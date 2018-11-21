@@ -32,7 +32,7 @@ If you have conflicts, which can be seen when running `losant experience status`
 
 ![Download Resolved Conflicts](/images/cli/exp-download-resolved.png "Experience Download Resolved Conflicts")
 
-## Status
+### Status
 
 Usage: `losant experience status`
 
