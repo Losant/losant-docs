@@ -1,8 +1,14 @@
+description: Learn more about creating and using experience domains and slugs in the Losant platform.
+
 # Experience Domains And Experience Slugs
 
-Experience domains and experience slugs are the two ways that you (or your users) can access an experience that you have created. An experience domain is a custom domain at which a [version](/experiences/versions/) of your experience is available on the Internet. Your application can have multiple experience domains, and each domain can point to a the same or a different version of your experience. Experience slugs are a less customizable way of exposing your experience - you can configure one or more subdomains of `onlosant.com` to point at a version of your experience.
+Experience domains and experience slugs are the two ways that you (or your users) can access an experience that you have created. An experience domain is a custom domain at which a [version](/experiences/versions/) of your experience is available on the Internet. Your application can have multiple experience domains, and each domain can point to a different version of your experience. Or, multiple domains can point to the same experience version.
 
-Every application experience is guaranteed to have a single slug which is `<YOUR_APPLICATION_ID>.onlosant.com`, which by default is pointed at the develop version of your experience. You cannot delete this slug, although you can change what version it points at. Experience domains are only available within applications owned by an organization. If you require a fully custom domain in front of your experience endpoints for one of your Sandbox applications, you will need to migrate that application to an organization.
+Experience slugs are a less customizable way of exposing your experience; you can configure one or more subdomains of `onlosant.com` to point at your experience versions.
+
+Every application experience is guaranteed to have a single slug, which is `<YOUR_APPLICATION_ID>.onlosant.com`. By default this is pointed at the "develop" version of your experience. You cannot delete this slug, although you can change what version it points at.
+
+Experience domains are only available within applications owned by an [organization](/organizations/overview/). If you require a fully custom domain in front of your experience endpoints for one of your [Sandbox](/user-accounts/sandbox/) applications, you will need to migrate that application to an organization.
 
 ## Viewing Experience Domains and Slugs
 
@@ -75,4 +81,6 @@ The version field configures which version of your experience this slug will loa
 
 ## Deleting Domains and Slugs
 
-A domain or slug can be deleted by clicking the "Delete" icon next to any domain or slug on the list page, or by clicking the "Delete" button in the footer of a domain's or slug's edit page. Deletion will take effect immediately, and any requests to the domain or slug will neither return a result nor forward to your experience's other domains or endpoint slug. Note: You cannot delete the Application ID experience slug.
+A domain or slug can be deleted by clicking the "Delete" icon next to any domain or slug on the list page, or by clicking the "Delete" button in the footer of a domain's or slug's edit page. Deletion will take effect immediately, and any requests to the domain or slug will neither return a result nor forward to your experience's other domains or endpoint slug.
+
+**Note:** You cannot delete the Application ID experience slug.
