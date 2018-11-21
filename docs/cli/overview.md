@@ -6,7 +6,7 @@ Losant CLI is a command line tool to help manage your Losant [Application](/appl
 
 ## Installation
 
-The Losant CLI requires you to download and install Node.js version 8.3 or higher and NPM. You can use the [Node installer](https://nodejs.org/en/download/) to install both Node and NPM. Once you have those installed, run `npm install -g losant-cli`. To check that you have install Losant ClI properly run `losant --help`, and that will print all of the commands you have available. See our [GitHub repository](https://github.com/Losant/losant-cli) if you are having trouble installing.
+The Losant CLI requires you to download and install Node.js version 8.3 or higher and NPM. You can use the [Node installer](https://nodejs.org/en/download/) to install both Node and NPM. Once you have those installed, run `npm install -g losant-cli`. To check that you have install Losant CLI properly run `losant --help`, and that will print all of the commands you have available. See our [GitHub repository](https://github.com/Losant/losant-cli) if you are having trouble installing.
 
 ## Set Up Commands
 
