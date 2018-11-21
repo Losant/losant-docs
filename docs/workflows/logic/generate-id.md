@@ -1,4 +1,4 @@
-flowclass: Cloud
+flowclass: Application
 flowclass: Experience
 flowclass: Edge 1.1.0
 description: Learn more about the Losant Generate ID Node.

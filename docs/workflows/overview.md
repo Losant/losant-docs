@@ -12,7 +12,7 @@ A list of your application's workflows, broken down by [type](#types-of-workflow
 
 There are three types of workflows, each of which features unique functionality and is best suited for specific use cases:
 
-* [**Cloud workflows**](/workflows/cloud-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
+* [**Application workflows**](/workflows/application-workflows/) execute within Losant's cloud platform. While they are generally more robust, they do depend on your devices having a strong, stable internet connection for near-immediate execution.
 * [**Experience workflows**](/workflows/experience-workflows/) are best suited for handling requests and issuing responses within your [application experience](/experiences/overview/). They are versioned along with your experience's [endpoints](/experiences/endpoints/) and [views](/experiences/views/).
 * [**Edge workflows**](/workflows/edge-workflows/) are configured in the cloud platform, but are then deployed to your [edge compute devices](/devices/edge-compute/) where their execution happens. The primary benefit of these workflows is that they do not need an internet connection to run, and they can interact with their host devices in real time and report up to the internet at a later time.
 
@@ -34,7 +34,7 @@ As the payload flows through the workflow, fields can be added, removed or chang
 
 ## Example Workflow
 
-Below is an example of how a payload flows through a workflow. This example uses a [cloud workflow](/workflows/cloud-workflows/).
+Below is an example of how a payload flows through a workflow. This example uses an [application workflow](/workflows/application-workflows/).
 
 ![Workflow Overview](/images/workflows/overview.png "Workflow Overview")
 

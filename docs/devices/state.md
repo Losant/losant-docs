@@ -37,7 +37,7 @@ A device can report state as often as needed, as long as it's within the Losant 
 
 [Peripheral](/devices/overview/#device-type) devices do not connect to Losant or report their own state. A Gateway or Edge Compute device generally reports the state of a peripheral device on behalf of that peripheral.
 
-[Cloud workflows](/workflows/cloud-workflows/) can also report state for any type of device using the [Device State Node](/workflows/outputs/device-state/). In addition, when authenticated against the Losant API as a user or using an [application API token](/applications/application-tokens/), the [Device Post State](/rest-api/device/#post-state) API endpoint can be used to record state for any type of device.
+[Application workflows](/workflows/application-workflows/) can also report state for any type of device using the [Device State Node](/workflows/outputs/device-state/). In addition, when authenticated against the Losant API as a user or using an [application API token](/applications/application-tokens/), the [Device Post State](/rest-api/device/#post-state) API endpoint can be used to record state for any type of device.
 
 ### Including Timestamps
 

@@ -2,7 +2,7 @@ description: Learn more about creating and configuring Losant Experience Workflo
 
 # Experience Workflows
 
-Experience workflows are very similar to [cloud workflows](/workflows/cloud-workflows/) in that they execute within Losant's cloud platform. While they lack some of the more robust functionality of cloud workflows, they are better suited for handling requests from your experience endpoints and issuing responses.
+Experience workflows are very similar to [application workflows](/workflows/application-workflows/) in that they execute within Losant's cloud platform. While they lack some of the more robust functionality of application workflows, they are better suited for handling requests from your experience endpoints and issuing responses.
 
 ## Advantages
 
@@ -12,11 +12,11 @@ While it is entirely possible to build a full application experience without usi
 
 ## Limitations
 
-The primary limitation of experience workflows is they lack some of the more robust functionality provided by cloud workflows - particularly when it comes to [workflow triggers](#triggers). But since experience workflows are meant primarily for handling experience endpoint requests, this lack of functionality should not be an issue for most users, and any desired behavior can instead be accomplished within a cloud workflow.
+The primary limitation of experience workflows is they lack some of the more robust functionality provided by application workflows - particularly when it comes to [workflow triggers](#triggers). But since experience workflows are meant primarily for handling experience endpoint requests, this lack of functionality should not be an issue for most users, and any desired behavior can instead be accomplished within an application workflow.
 
-## Differences From Cloud Workflows
+## Differences From Application Workflows
 
-Generally speaking, experience workflows and cloud workflows are functionally similar, but there are a few differences.
+Generally speaking, experience workflows and application workflows are functionally similar, but there are a few differences.
 
 ![Experience Workflow Triggers](/images/workflows/experience-workflow-triggers.png "Experience Workflow Triggers")
 
@@ -26,7 +26,7 @@ The only triggers available in an experience workflow are the [Endpoint Trigger]
 
 ### Debugging
 
-When viewing an experience workflow version - including the "develop" version - the debug log will only include workflow runs matching that version. By contrast, when viewing a cloud workflow, the debug log includes workflow runs from **all versions** of the workflow.
+When viewing an experience workflow version - including the "develop" version - the debug log will only include workflow runs matching that version. By contrast, when viewing an application workflow, the debug log includes workflow runs from **all versions** of the workflow.
 
 ### Versioning
 
@@ -34,7 +34,7 @@ An experience workflow cannot be versioned independently of your other experienc
 
 ## Saving and Deploying
 
-Much like cloud workflows, only the "develop" version of an experience workflow can be edited, and any changes you make will immediately take effect for any domains or slugs that are pointed to the "develop" version.
+Much like application workflows, only the "develop" version of an experience workflow can be edited, and any changes you make will immediately take effect for any domains or slugs that are pointed to the "develop" version.
 
 ## Deleting Experience Workflows
 

@@ -1,4 +1,4 @@
-flowclass: Cloud
+flowclass: Application
 flowclass: Experience
 flowclass: Edge 1.0.0
 description: Learn more about the Losant Validate Payload Node.
@@ -13,7 +13,7 @@ The Validate Payload Node allows a workflow check the part or all of current pay
 
 The Validate Payload Node is configured using a [JSON Schema](http://spacetelescope.github.io/understanding-json-schema/index.html) definition. A part of or all of the current payload of the workflow is validated against the given JSON schema, and if it passes validation the route on the right out of the node is taken. If it fails validation, the route on the left out of the node is taken.
 
-In <span class="flowclass-tag Cloud inline">Cloud</span> and <span class="flowclass-tag Edge inline">Edge >= 1.1.0</span> workflows, the schema can be defined using either a [payload path](/workflows/accessing-payload-data/) or a [JSON template](/workflows/accessing-payload-data/#json-templates). For legacy edge workflows, the schema must be defined as a static object.
+For <span class="flowclass-tag Edge inline">Edge < 1.1.0</span> workflows, the schema must be defined as a static object; for all other workflow types, the schema can be defined using either a [payload path](/workflows/accessing-payload-data/) or a [JSON template](/workflows/accessing-payload-data/#json-templates).
 
 ![Validate Payload Example](/images/workflows/logic/validate-payload-example.png "Validate Payload Example")
 

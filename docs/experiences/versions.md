@@ -85,7 +85,7 @@ Special care should be taken regarding the following resources when building out
 * [Experience users](/experiences/users/) exist outside of the versioning architecture, as do [experience groups](/experiences/groups/) - specifically, which users are a member of a group.
 * [Application global variables](/applications/overview/#application-globals), which can be referenced in experience workflows, are unaffected by experience versions. Changing an application global value will affect any experience workflow referencing the value.
 * [Workflow storage](/workflows/overview/#workflow-storage) spans across all workflow versions, including across experience workflow versions.
-* [Cloud workflows](/workflows/cloud-workflows/) that employ [Endpoint Trigger](/workflows/triggers/endpoint/) and [Endpoint Reply](/workflows/outputs/endpoint-reply/) Nodes are not versioned as part of the experience. We recommend migrating any cloud workflows whose sole purpose is to handle endpoint requests to a new experience workflow so they get versioned along with the rest of the experience.
+* [Application workflows](/workflows/application-workflows/) that employ [Endpoint Trigger](/workflows/triggers/endpoint/) and [Endpoint Reply](/workflows/outputs/endpoint-reply/) Nodes are not versioned as part of the experience. We recommend migrating any application workflows whose sole purpose is to handle endpoint requests to a new experience workflow so they get versioned along with the rest of the experience.
 
 ## Deleting Experience Versions
 

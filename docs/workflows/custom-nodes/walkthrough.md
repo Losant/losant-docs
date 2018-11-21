@@ -161,7 +161,7 @@ After you click the `Create Version` button, you'll see the newly created versio
 
 ## Using Your Custom Node
 
-Now that your node is successfully developed and versioned, you can begin using it within your cloud workflows. The node will immediately show up on the workflow node palette under the `Custom Nodes` section.
+Now that your node is successfully developed and versioned, you can begin using it within your application and experience workflows. The node will immediately show up on the workflow node palette under the `Custom Nodes` section.
 
 ![Using Dark Sky Node](/images/workflows/custom-nodes/walkthrough/using-dark-sky-node.png "Using Dark Sky Node")
 
