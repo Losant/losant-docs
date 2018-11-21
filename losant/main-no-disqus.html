@@ -117,7 +117,15 @@
               {%- if page and page.meta and page.meta.flowclass -%}
                 <script>
                   {% for flowclass in page.meta.flowclass %}
-                  $('.section h1').first().prepend('<span class="flowclass-tag {{flowclass}}">{{flowclass}}</span>');
+                  $('.section h1').first().prepend(
+                    {%- if flowclass == "Application" -%}
+                    '<a href="/workflows/application-workflows/"><span class="flowclass-tag {{flowclass}}">{{flowclass}}</span></a>'
+                    {%- elif flowclass == 'Experience' -%}
+                    '<a href="/workflows/experience-workflows/"><span class="flowclass-tag {{flowclass}}">{{flowclass}}</span></a>'
+                    {%- else -%}
+                    '<a href="/workflows/edge-workflows/"><span class="flowclass-tag {{flowclass}}">{{flowclass}}</span></a>'
+                    {%- endif -%}
+                  );
                   {% endfor %}
                 </script>
               {%- endif -%}
