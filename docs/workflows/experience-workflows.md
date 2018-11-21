@@ -22,7 +22,7 @@ Generally speaking, experience workflows and cloud workflows are functionally si
 
 ### Triggers
 
-The only triggers available in an experience workflow are the [Endpoint Trigger](/workflows/triggers/endpoint/) and the [Virtual Button](/workflows/triggers/virtual-button/). The Endpoint Trigger will only fire on requests made to domains or slugs pointed at the workflow's expeirence version. All other workflow nodes are available.
+The only triggers available in an experience workflow are the [Endpoint Trigger](/workflows/triggers/endpoint/) and the [Virtual Button](/workflows/triggers/virtual-button/). The Endpoint Trigger will only fire on requests made to domains or slugs pointed at the workflow's experience version. All other workflow nodes are available.
 
 ### Debugging
 

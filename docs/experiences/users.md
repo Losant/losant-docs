@@ -54,7 +54,7 @@ Sometimes, it may be necessary to invalidate access tokens for one or more of yo
 
 ### All Users
 
-Aotp the experience users list is a button to invalidate the tokens of all experience users. This will display a confirmation modal, and immediately after clicking the modal button, any authenticated request made by an experience user will fail until that user has logged in again.
+At the top of the experience users list is a button to invalidate the tokens of all experience users. This will display a confirmation modal, and immediately after clicking the modal button, any authenticated request made by an experience user will fail until that user has logged in again.
 
 ![Invalidate Users Tokens](/images/experiences/invalidate-tokens.png "Invalidate Users Tokens")
 
@@ -63,7 +63,6 @@ Aotp the experience users list is a button to invalidate the tokens of all exper
 At the bottom of an individual user's edit page is a box for invalidating any access tokens issued for that one user.
 
 ![Invalidate User Tokens](/images/experiences/invalidate-user-tokens.png "Invalidate User Tokens")
-
 
 Invalidating a user's tokens simply means that the user must re-authenticate using their email and password before they can make any more requests to [authenticated endpoints](/experiences/endpoints/#access-control). It does not take any destructive action on the user, nor does it automatically change their password.
 

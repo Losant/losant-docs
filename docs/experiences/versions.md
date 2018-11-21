@@ -30,9 +30,9 @@ To create a new experience version, click the "Create Version ..." button atop t
 
 This will open a configuration modal with the following options:
 
-*   **Version Name**, a required field which must be unique within your application. By default the new version name is the current date and time but this can be changed to anything you'd like; for example, many Losant users follow the [semantic versioning specification](https://semver.org/).
-*   **Notes**, an optional field where you can put any information about the new version, such as significant changes or bug fixes.
-*   **Domains and Slugs** that should be pointed to the new version. This is also optional and can be changed at a later date within the domain / slug edit pages. Any changes made here will take effect immediately upon version creation.
+* **Version Name**, a required field which must be unique within your application. By default the new version name is the current date and time but this can be changed to anything you'd like; for example, many Losant users follow the [semantic versioning specification](https://semver.org/).
+* **Notes**, an optional field where you can put any information about the new version, such as significant changes or bug fixes.
+* **Domains and Slugs** that should be pointed to the new version. This is also optional and can be changed at a later date within the domain / slug edit pages. Any changes made here will take effect immediately upon version creation.
 
 ![Create Experience Version Modal](/images/experiences/create-experience-version-modal.png "Create Experience Version Modal")
 
@@ -58,34 +58,34 @@ This will bring up a modal asking you to confirm the change, as doing so will co
 
 ![Copy Version to Develop Modal](/images/experiences/copy-version-to-develop-modal.png "Copy Version to Develop Modal")
 
-At this point, the resources within the version can be modified or deleted, and new resources can be added. When you are finished making changes, you can save "develop" as a new version and, optionally, point one or more of your domains to the new version. 
+At this point, the resources within the version can be modified or deleted, and new resources can be added. When you are finished making changes, you can save "develop" as a new version and, optionally, point one or more of your domains to the new version.
 
 ## Benefits
 
 It is possible to build out a full application experience without using the experience versioning feature, but we strongly recommend doing so for the following reasons:
 
-*   Creating versions allows for updating an experience after initial publication without disrupting your end users, as you can make changes within the "develop" version (which can be pointed at a staging domain) and only publish the changes to your production domain once the edits are complete.
-*   Experience versioning makes it much easier to host two or more disparate end user experiences that are backed by the same Losant application data, as different domains can be pointed at different published versions.
-*   Creating experience versions provides a means for revision history as the entire experience can be saved as a new version at any time. You may then look back at any past version or even copy the resources to the "develop" version for further editing.
+* Creating versions allows for updating an experience after initial publication without disrupting your end users, as you can make changes within the "develop" version (which can be pointed at a staging domain) and only publish the changes to your production domain once the edits are complete.
+* Experience versioning makes it much easier to host two or more disparate end user experiences that are backed by the same Losant application data, as different domains can be pointed at different published versions.
+* Creating experience versions provides a means for revision history as the entire experience can be saved as a new version at any time. You may then look back at any past version or even copy the resources to the "develop" version for further editing.
 
 ## Versioned Resources
 
 The following resources are frozen as part of an experience version:
 
-*   [Experience views](/experiences/views/) of all types
-*   [Experience workflows](/workflows/experience-workflows/)
-*   [Experience endpoints](/experiences/endpoints/)
+* [Experience views](/experiences/views/) of all types
+* [Experience workflows](/workflows/experience-workflows/)
+* [Experience endpoints](/experiences/endpoints/)
 
 These resources will continue to exist within the application version even if their counterparts are deleted within the "develop" version.
 
-##  Unversioned Resources
+## Unversioned Resources
 
 Special care should be taken regarding the following resources when building out an experience version:
 
-*   [Experience users](/experiences/users/) exist outside of the versioning architecture, as do [experience groups](/experiences/groups/) - specifically, which users are a member of a group.
-*   [Application global variables](/applications/overview/#application-globals), which can be referenced in experience workflows, are unaffected by experience versions. Changing an application global value will affect any experience workflow referencing the value.
-*   [Workflow storage](/workflows/overview/#workflow-storage) spans across all workflow versions, including across experience workflow versions.
-*   [Cloud workflows](/workflows/cloud-workflows/) that employ [Endpoint Trigger](/workflows/triggers/endpoint/) and [Endpoint Reply](/workflows/outputs/endpoint-reply/) Nodes are not versioned as part of the experience. We recommend migrating any cloud workflows whose sole purpose is to handle endpoint requests to a new experience workflow so they get versioned along with the rest of the experience.
+* [Experience users](/experiences/users/) exist outside of the versioning architecture, as do [experience groups](/experiences/groups/) - specifically, which users are a member of a group.
+* [Application global variables](/applications/overview/#application-globals), which can be referenced in experience workflows, are unaffected by experience versions. Changing an application global value will affect any experience workflow referencing the value.
+* [Workflow storage](/workflows/overview/#workflow-storage) spans across all workflow versions, including across experience workflow versions.
+* [Cloud workflows](/workflows/cloud-workflows/) that employ [Endpoint Trigger](/workflows/triggers/endpoint/) and [Endpoint Reply](/workflows/outputs/endpoint-reply/) Nodes are not versioned as part of the experience. We recommend migrating any cloud workflows whose sole purpose is to handle endpoint requests to a new experience workflow so they get versioned along with the rest of the experience.
 
 ## Deleting Experience Versions
 
@@ -93,8 +93,8 @@ Experience versions other than "develop" can be deleted one of two ways:
 
 ![Delete Experience Version Button](/images/experiences/delete-experience-version-button.png "Delete Experience Version Button")
 
-*   Individually, by clicking the "Delete" icon next to any version you wish to delete within the versions list
-*   In bulk, under the "Settings" > "Delete Resources" tab in your application's navigation by selecting "Delete Experience Versions" and submitting the form
+* Individually, by clicking the "Delete" icon next to any version you wish to delete within the versions list
+* In bulk, under the "Settings" > "Delete Resources" tab in your application's navigation by selecting "Delete Experience Versions" and submitting the form
 
 ![Bulk Delete Experience Versions](/images/experiences/bulk-delete-experience-versions.png "Bulk Delete Experience Versions")
 
