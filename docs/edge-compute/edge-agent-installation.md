@@ -2,7 +2,7 @@ description: Learn more about installing the Losant Edge Agent.
 
 # Losant Edge Agent Installation
 
-The Losant Edge Agent ("Agent") is a command line utility exposed through [Docker](https://www.docker.com/what-docker) as a [container](https://www.docker.com/what-container) you can run on your [Edge Compute Device](/devices/edge-compute/). The below focuses on installing the Agent on a device running Ubuntu, but the Agent can be run on any device that can run Docker. While the expectation is that you'll be running on an IoT style device, the Agent can be run on OSX and Windows as well. See the Edge Compute Device documentation for additional information on [supported devices](/devices/edge-compute/#supported-devices) and [minimum requirements](/devices/edge-compute/#minimum-requirements).
+The Losant Edge Agent ("Agent") is a command line utility exposed through [Docker](https://www.docker.com/what-docker) as a [container](https://www.docker.com/what-container) you can run on your [Edge Compute Device](/devices/edge-compute/). The below focuses on installing the Agent on a device running Ubuntu, but the Agent can be run on any device that can run Docker. While the expectation is that you'll be running on an IoT style device, the Agent can be run on macOS and Windows as well. See the Edge Compute Device documentation for additional information on [supported devices](/devices/edge-compute/#supported-devices) and [minimum requirements](/devices/edge-compute/#minimum-requirements).
 
 ## Setting Up Your OS
 
