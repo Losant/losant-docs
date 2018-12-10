@@ -10,7 +10,7 @@ The Authenticate Experience User Node allows a workflow to authenticate an email
 
 ## Configuration
 
-The Authenticate Experience User Node has two sections. First, a required section for configuring the credentials to check against existing Experience Users, and then second an optional section about what do do with the result of a successful authentication.
+The Authenticate Experience User Node has two sections. First, a required section for configuring the credentials to check against existing Experience Users, and then second an optional section about what to do with the result of a successful authentication.
 
 ![Authenticate Experience User Node Config](/images/workflows/experience/authenticate-node-config.png "Authenticate Experience User Node Config")
 
