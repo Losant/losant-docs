@@ -8,19 +8,22 @@ The Gauge Block displays a single attribute value, either as a number or as a vi
 
 ### Block Type
 
-Gauge blocks currently support two types. Additional types will be added in future releases.
+Gauge blocks currently support five types. Additional types may be added in future releases.
 
 ![Gauge Type](/images/dashboards/gauge-block-type.png "Gauge Type")
 
-* **Number Gauge** displays a value as a single number.
-* **Dial Gauge** displays the value as a number, but also provides a gauge representation to show where that number stands against a minimum and maximum value provided by you.
+* **Number** displays a value as a single number.
+* **Dial** displays the value along with a filled semicircular dial.
+* **Battery** displays the value along with a filled horizontal battery.
+* **Thermometer** displays the value along with a filled vertical thermometer.
+* **Tank** displays the value along with a filled vertical tank.
 
-When "Dial Gauge" is selected, additional configuration options become available:
+When any type other than "Number Gauge" is selected, additional configuration options become available:
 
-* **Min** and **Max** values are required. Each must be a number, and Min must be less than Max. These numbers determine the upper and lower bounds of your dial gauge.
+* **Min** and **Max** values are required. Each must be a number, and Min must be less than Max. These numbers determine the upper and lower bounds of your  gauge.
 * Optionally, the gauge value and minimum and maximum bounds can be **displayed as a percentage** instead of raw numbers.
 
-Values that go above or below the set `Min` or `Max` will continue to display in the middle of the gauge, but the gauge itself will either be empty or full, depending on if the value falls below the `Min` or exceeds the `Max`, respectively.
+Values that go above or below the set `Min` or `Max` will continue to display in the gauge, but the gauge itself will either be empty or full, depending on if the value falls below the `Min` or exceeds the `Max`, respectively.
 
 ### Number Display Rules
 
