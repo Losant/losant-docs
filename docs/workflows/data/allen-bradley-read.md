@@ -3,7 +3,7 @@ description: Learn more about the Losant Allen-Bradley: Read Node.
 
 # Allen-Bradley: Read
 
-The Allen-Bradley: Read Node allows you to read multiple tags from your [Allen-Bradley](https://en.wikipedia.org/wiki/Allen-Bradley) CompactLogix or ControlLogix device through EtherNet/IP. This node is only available in [edge workflows](/workflows/edge-workflows/).
+The Allen-Bradley: Read Node allows you to read multiple tags from your [Allen-Bradley](https://en.wikipedia.org/wiki/Allen-Bradley) CompactLogix or ControlLogix programmable logic controller (PLC) through EtherNet/IP. This node is only available in [edge workflows](/workflows/edge-workflows/).
 
 ![Allen-Bradley Read Node](/images/workflows/data/allen-bradley-read-node.png "Allen-Bradley Read Node")
 
@@ -17,9 +17,9 @@ There are three main parts of the configuration for this node ...
 
 Address Configuration contains three fields:
 
-* **Host:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the IP address at which the PLC resides.
+* **Host:** (Required) A [string template](/workflows/accessing-payload-data/#string-templates) for the IP address at which the PLC or EtherNet/IP Module resides.
 * **Slot:** (Required) A string template or integer for the PLC Slot number.
-* **Keep-Alive Interval:** (Optional) A string template or integer for the seconds between keep-alive requests are sent to the PLC to keep the connection alive. Blank (the default) or 0 turns off the keep-alive request.
+* **Keep-Alive Interval:** (Optional) A string template or integer for the seconds between keep-alive connection requests. Set this value lower than your device's connection timeout. Blank (the default) or 0 turns off the keep-alive request.
 
 ### Read Instructions
 
@@ -27,10 +27,10 @@ Address Configuration contains three fields:
 
 You may define multiple read instructions for the Allen-Bradley: Read Node, and you must define at least one. Each instruction has the following fields:
 
-* **Controller or Program Tag:** (Required) A string template or string.
-* **Program:** (Optional) A string template or string for the program which your program tag is a member of. 
-* **Data Type:** Atomic (SINT, INT, DINT, REAL, BOOL) or string.
-* **Result Key:** (Required) The key at which to store the result of this read operation. This key will exist on the [Destination Path](#result) defined below the instructions. This can resolve to any string except `errors`, since that key is reserved for any errors that occur during reads. The value at this key is read as an *signed integer*.
+* **Controller or Program Tag:** (Required) A string template.
+* **Program:** (Optional) A string template for the program which your program tag is a member of. In case of a controller tag (above) leave this blank. 
+* **Data Type:** Atomic (SINT, INT, DINT, REAL, BOOL) or STRING.
+* **Result Key:** (Required) The key at which to store the result of this read operation. This key will exist on the [Destination Path](#result) defined below the instructions. This can resolve to any string except `errors`, since that key is reserved for any errors that occur during reads.
 
 ### Destination Path
 
