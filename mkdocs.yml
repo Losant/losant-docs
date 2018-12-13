@@ -183,6 +183,8 @@ pages:
         - Time Range: workflows/logic/time-range.md
         - Validate Payload: workflows/logic/validate-payload.md
     - Data:
+        - "Allen-Bradley: Read": workflows/data/allen-bradley-read.md
+        - "Allen-Bradley: Write": workflows/data/allen-bradley-write.md
         - AWS Lambda: workflows/data/aws-lambda.md
         - "Data: Gauge Query": workflows/data/gauge-query.md
         - "Data: Time Series": workflows/data/time-series.md
