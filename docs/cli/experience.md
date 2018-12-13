@@ -79,9 +79,9 @@ Usage: `losant experience bootstrap`
 
 The bootstrap command will build starter layouts, routes, workflows, users and user groups to get you started on your Experience. You can only bootstrap your Experience once.
 
-If you run `losant experience bootstrap`, it will automatically download all of your views:
+If you run `losant experience bootstrap`, it will automatically download all of your newly created views, prints out the email, and password of a generated user and gives you a link to your new Experience.
 
-![Bootstrap](/images/cli/exp-bootstrap.png, "Bootstrap")
+![Bootstrap](/images/cli/exp-bootstrap.png "Bootstrap")
 
 This is also a new prompt when running the `losant configure` command. After you have selected the Application, if that Application does not have an Experience then you will have the option to bootstrap.
 
