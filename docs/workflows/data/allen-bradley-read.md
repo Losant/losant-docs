@@ -38,7 +38,7 @@ You may define multiple read instructions for the Allen-Bradley: Read Node, and 
 
 The results of each read instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) at each instruction's `Result Key`. It is important that each key is named uniquely so the node does not overwrite another read result.
 
-If the key is not present, it means the read failed, and there will be a list of errors at the Destination Path under the key `errors`. For this reason, this node restricts Result Keys to not resolve to the path `errors`. Because the tags are read as a group one failed read for a tag may cause the other keys in the group to not appear.
+If the key is not present in the Destination Path of the payload, it means the read failed, and there will be a list of errors at the Destination Path under the key `errors`. For this reason, this node restricts Result Keys to not resolve to the path `errors`. Because the tags are read as a group one failed read for a tag may cause the other keys in the group to not appear.
 
 Along with the `Result Key` and possible `errors`, each read object at the `Destination Path` will include a `plcProperties` object key. The PLC Properties object includes current device information about various possible faults, status, version, time, slot, serial number, and name.
 
