@@ -110,6 +110,7 @@ pages:
     - Gauge: dashboards/gauge.md
     - GPS Heatmap: dashboards/gps-heatmap.md
     - GPS History: dashboards/gps-history.md
+    - Image: dashboards/image.md
     - Indicator: dashboards/indicator.md
     - Input Controls: dashboards/input-controls.md
     - Open Event Indicator: dashboards/open-event-indicator.md
