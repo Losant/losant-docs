@@ -56,9 +56,14 @@ Upload has the following options:
 
 ### Version
 
-Usage: `losant experience version <name>`
+Usage: `losant experience version [options] <name>`
 
 The version command can be used to either list your versions or create a new version.
+
+Version has the following options:
+
+- `-l, --list <pattern>` this filters which versions will be printed, by only printing ones that match this glob e.g. `v1.2.*`
+- `-d, --description <description>` when creating a new version you can set the description of that version by passing in this option.
 
 If you run `losant experience version` it will print a list of all your current versions, and the domains or slugs that are pointed to that version.
 
@@ -67,3 +72,37 @@ If you run `losant experience version` it will print a list of all your current 
 If you run `losant experience version v1.0.0`, then it will try to create a new version with the name `v1.0.0` and you will be prompted to choose domains and slugs that you want to point to that new version.
 
 ![Version List](/images/cli/exp-version-create.png "Experience Version Create")
+
+### Bootstrap
+
+Usage: `losant experience bootstrap`
+
+The bootstrap command will build starter layouts, routes, workflows, users and user groups to get you started on your Experience. You can only bootstrap your Experience once.
+
+If you run `losant experience bootstrap`, it will automatically download all of your newly created views, prints out the email, and password of a generated user and gives you a link to your new Experience.
+
+![Bootstrap](/images/cli/exp-bootstrap.png "Bootstrap")
+
+This is also a new prompt when running the `losant configure` command. After you have selected the Application, if that Application does not have an Experience then you will have the option to bootstrap.
+
+If you run `losant configure` and do not have an experience you will see the following:
+
+![Bootstrap On Configure](/images/cli/exp-configure-bootstrap.png "Bootstrap On Configure")
+
+### Layout
+
+Usage: `losant experience layout [options] <page>`
+
+The layout command works similar to the versions command. If no page is given it will print out a table of the pages to layouts so you can see which page belongs to which layout. If you give a page, you will be asked to select a layout to set that page as. There will be a special option called "no layout", which will unset the layout for that page(s). The page can be a glob, in order to set multiple pages to the same layout.
+
+Layout has the one options:
+
+- `-l --list pattern` this can be used to filter the table of pages to layouts, by only printing pages that match this glob e.g. `User*`.
+
+When you run `losant experience layout`:
+
+![Layout Table](/images/cli/exp-layout-table.png "Layout Table")
+
+When you run `losant experience layout 'Home *'`
+
+![Setting Layout](/images/cli/exp-set-layout.png "Set Layout")

@@ -14,7 +14,7 @@ All we need to do is create a folder locally to house the data. This folder can 
 
 ```console
 sudo mkdir -p /var/lib/losant-edge-agent/data
-sudo chmod a+rwx -R /var/lib/losant-edge-agent
+sudo chmod -R a+rwx /var/lib/losant-edge-agent
 ```
 
 ## Running With Environment Config

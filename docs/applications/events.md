@@ -30,8 +30,6 @@ In the above example, the workflow is trigger whenever an event is created with 
 
 Events include basic life cycle features for proper organization and handling.
 
-`
-New -> Acknowledged -> Resolved
-`
+`New -> Acknowledged -> Resolved`
 
 How the events transition through these states is entirely up to your and your specific application. A log of who/what transitioned an event (as well as when that occurred) is attached to each event with optional comments and structured data.
