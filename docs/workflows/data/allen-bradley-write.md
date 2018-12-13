@@ -25,7 +25,7 @@ Address Configuration contains three fields:
 
 ![Allen-Bradley Write Node Write Instructions](/images/workflows/data/allen-bradley-write-node-instructions.png "Allen-Bradley Write Node Instructions")
 
-You may define multiple read instructions for the Allen-Bradley: Write Node, and you must define at least one. Each instruction has the following fields:
+You may define multiple write instructions for the Allen-Bradley: Write Node, and you must define at least one. Each instruction has the following fields:
 
 * **Controller or Program Tag:** (Required) A string template or string.
 * **Program:** (Optional) A string template or string for the program which your program tag is a member of. 
