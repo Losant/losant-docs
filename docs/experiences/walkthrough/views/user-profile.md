@@ -168,4 +168,4 @@ Now, a signed-in user can access the `/edit-profile` and `/change-password` link
 
 This concludes this tutorial, in which we've added the ability for experience users to update their profiles and change their passwords.
 
-This concludes this tutorial, in which we've added the ability for experience visitors to register for an account and start accessing parts of the experience that were previously open only to logged-in visitors. Next, we'll build on top of what we've done here to [add a forgot password flow](/walkthrough/views/forgot-password/).
+This concludes this tutorial, in which we've added the ability for experience visitors to register for an account and start accessing parts of the experience that were previously open only to logged-in visitors. Next, we'll build on top of what we've done here to [add a forgot password flow](/experiences/walkthrough/views/forgot-password/).
