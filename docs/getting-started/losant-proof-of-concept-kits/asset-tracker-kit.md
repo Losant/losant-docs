@@ -1,5 +1,5 @@
 ---
-description:  Follow along to connect and deploy your Asset Tracker Kit.
+description: Follow along to connect and deploy your Asset Tracker Kit.
 ---
 
 # Asset Tracker Kit Instructions
