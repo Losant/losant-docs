@@ -1,3 +1,7 @@
+---
+description: Learn about listing your Devices on a Losant Dashboard.
+---
+
 # Device List
 
 The Device List Block displays a list of devices for a given application. The list includes the device's name, current connection status and number of defined attributes.

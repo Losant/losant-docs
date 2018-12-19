@@ -1,4 +1,6 @@
+---
 description: A comprehensive list of the JSON schemas defining the objects expected by and returned from the Losant API. Learn More.
+---
 
 # Schemas
 

@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a device registration API in a Losant Experience.
+---
+
 # Part 3 - Device Registration
 
 In [Part 1](/experiences/walkthrough/part1/) and [Part 2](/experiences/walkthrough/part2/) of this walkthrough, we successfully built a custom API for our lōm mobile application that allows users to register and then log in. In this part, we'll create a new API endpoint that allows devices to perform on-demand registration.

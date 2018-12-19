@@ -1,4 +1,6 @@
+---
 description: Learn more about Losant's Data Table Dashboard Block
+---
 
 # Data Table
 

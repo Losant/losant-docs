@@ -1,5 +1,8 @@
-flowclass: Application
+---
+flowclass:
+  - Application
 description: Learn more about the Losant Data Table Trigger.
+---
 
 # Data Table Trigger
 

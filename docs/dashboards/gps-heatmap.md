@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a GPS Heatmap on a Losant Dashboard.
+---
+
 # GPS Heatmap
 
 The GPS Heatmap Block shows the distribution of GPS datapoints across one or more devices. The heatmap can show historical information or the current position distribution for a set of devices.

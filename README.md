@@ -15,7 +15,7 @@ To build the Losant documentation yourself, do the following:
 * **Prerequisites**  
     * Run `yarn install`
     * Install Python 3.6.
-    * Install MkDocs v0.16.3 - [See Instructions](http://www.mkdocs.org/#installation).
+    * Install MkDocs v1.0.4 - [See Instructions](http://www.mkdocs.org/#installation).
 
 * **Run the built in MkDocs webserver**  
   Go to the repository directory, and run `yarn start`. The documentation site will be running at <http://localhost:8000>. Any changes made to the documentation markdown will be reflected automatically.

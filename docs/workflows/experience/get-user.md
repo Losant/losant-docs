@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
+---
+flowclass:
+  - Application
+  - Experience
 description: Learn more about the Losant Get Experience User Node.
+---
 
 # Get Experience User Node
 

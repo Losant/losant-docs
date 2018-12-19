@@ -1,3 +1,7 @@
+---
+description:  Follow along to connect and deploy your Asset Tracker Kit.
+---
+
 # Asset Tracker Kit Instructions
 
 The Asset Tracker Kit makes it easy to locate your equipment or merchandise in real time with cellular-based GPS trackers, and to receive geofence-based alerts. The following instructions will guide you through setting up your hardware, accessing your dashboards, and customizing your settings.

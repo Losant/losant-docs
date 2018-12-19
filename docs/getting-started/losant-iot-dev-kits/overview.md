@@ -1,3 +1,7 @@
+---
+description: Learn about the various Losant IoT Developer Kits.
+---
+
 # Losant IoT Developer Kits
 
 *We’ve officially closed the Losant store and have deprecated our Losant kits. The good news is that you can still find components to create your own kits through other suppliers; we’d recommend [Adafruit](https://www.adafruit.com/).*

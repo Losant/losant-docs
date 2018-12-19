@@ -1,4 +1,6 @@
+---
 description: A detailed look at the various REST actions supported by the Experience Slug resource of the Losant API. Learn more.
+---
 
 # Experience Slug Actions
 

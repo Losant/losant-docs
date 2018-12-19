@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
+---
+flowclass:
+  - Application
+  - Experience
 description: Learn more about the Losant Google Pub/Sub Node.
+---
 
 # GCP Pub/Sub Node
 

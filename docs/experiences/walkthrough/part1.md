@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a user registration API in a Losant Experience.
+---
+
 # Part 1 - User Registration
 
 Like most mobile applications, lōm starts by asking the user to create an account. This part of the walkthrough covers how Experience Users and Endpoints can be used to accomplish user registration.

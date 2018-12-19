@@ -1,5 +1,8 @@
-flowclass: Edge 1.4.0
-description: Learn more about the Losant Allen-Bradley: Read Node.
+---
+flowclass:
+  - Edge 1.4.0
+description: 'Learn more about the Losant Allen-Bradley: Read Node.'
+---
 
 # Allen-Bradley: Read
 
@@ -28,7 +31,7 @@ Address Configuration contains three fields:
 You may define multiple read instructions for the Allen-Bradley: Read Node, and you must define at least one. Each instruction has the following fields:
 
 * **Controller or Program Tag:** (Required) A string template.
-* **Program:** (Optional) A string template for the program which your program tag is a member of. In case of a controller tag (above) leave this blank. 
+* **Program:** (Optional) A string template for the program which your program tag is a member of. In case of a controller tag (above) leave this blank.
 * **Data Type:** Atomic (SINT, INT, DINT, REAL, BOOL) or STRING.
 * **Result Key:** (Required) The key at which to store the result of this read operation. This key will exist on the [Destination Path](#result) defined below the instructions. This can resolve to any string except `errors`, since that key is reserved for any errors that occur during reads.
 
@@ -49,7 +52,7 @@ The following is an example of a successful read, where an instruction's Result 
   "destination": {
     "allenStart": {
       "plcProperties":{
-        "io_faluted": false,
+        "io_faulted": false,
         "majorUnrecoverableFault": false,
         "majorRecoverableFault": false,
         "minorUnrecoverableFault": false,
@@ -75,7 +78,7 @@ The following is an example of a failure to read, where a resultKey should have 
   "destination": {
     "allenStart": {
       "plcProperties":{
-        "io_faluted": false,
+        "io_faulted": false,
         "majorUnrecoverableFault": false,
         "majorRecoverableFault": false,
         "minorUnrecoverableFault": false,

@@ -1,3 +1,7 @@
+---
+description: Follow along as we create a page layout for a Losant Experience.
+---
+
 # Part 1 - Page Layout
 
 An Experience View's [layout](/experiences/views/#layouts) holds elements and visuals that are common across all pages in your custom experience. This is typically one of the first things you'll create before building any other components or pages.

@@ -1,3 +1,7 @@
+---
+description: Learn more about creating and using experience views in the Losant platform.
+---
+
 # Experience Views
 
 Experience Views allow you to build custom web interfaces on top of your connected device data and present those interfaces to your [Experience Users](/experiences/users/). Views are rendered as a reply to an [Experience Endpoint](/experiences/endpoints/), and the data backing your views comes from a Losant [Experience Workflow](/workflows/experience-workflows/).

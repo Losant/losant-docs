@@ -1,14 +1,12 @@
 
-{%- if not nav_item.title in config.extra.hidden -%}
-  {%- if nav_item.children -%}
-    {%- for nav_item in nav_item.children -%}
-      {%- include 'sitemap-inner.xml' -%}
-    {%- endfor -%}
-  {%- else %}
-  <url>
-    <loc>{{ config.site_url }}{{ nav_item.abs_url }}</loc>
-    <lastmod>{{nav_item.update_date}}</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  {%- endif -%}
+{%- if nav_item.children -%}
+  {%- for nav_item in nav_item.children -%}
+    {%- include 'sitemap-inner.xml' -%}
+  {%- endfor -%}
+{%- else %}
+<url>
+  <loc>{{ config.site_url }}{{ nav_item.abs_url }}</loc>
+  <lastmod>{{nav_item.update_date}}</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
 {%- endif -%}

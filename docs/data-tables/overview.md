@@ -1,3 +1,7 @@
+---
+description: Learn about creating and managing Data Tables in your Losant Application.
+---
+
 # Data Tables
 
 Data tables allow for the storage of arbitrary data within your applications. This data can then be edited, queried or deleted either directly through the table interface or through a Losant [workflow](/workflows/overview/).

@@ -1,3 +1,7 @@
+---
+description: Learn more about creating end user experiences in the Losant platform.
+---
+
 # Experiences
 
 Building a product on top of Losant would normally involve writing an API service, implementing user authentication, building and serving a front-end interface, and hosting all of the above somewhere – which is a lot of work! Experiences bring all of this functionality directly inside your Losant application.

@@ -1,4 +1,6 @@
+---
 description: Learn more about how to send device commands.
+---
 
 # Device Commands
 

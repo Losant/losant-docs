@@ -1,4 +1,6 @@
+---
 description: Learn more about configuring gateways and peripherals in the Losant platform.
+---
 
 # Gateways and Peripherals
 

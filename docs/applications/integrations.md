@@ -1,4 +1,6 @@
+---
 description: Learn about to subscribe to external services in Losant.
+---
 
 # Integrations
 

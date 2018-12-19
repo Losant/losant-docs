@@ -1,3 +1,7 @@
+---
+description: Follow along to connect your PWC Hardware Kit to Losant.
+---
+
 # PWC and Losant Instructions
 
 Welcome to the PWC and Losant Hardware Workshop. Below is everything you need to build your IoT project. Enjoy!

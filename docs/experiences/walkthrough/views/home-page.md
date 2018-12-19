@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a home page for a Losant Experience.
+---
+
 # Part 3 - Home Page
 
 In the [previous part](/experiences/walkthrough/views/page-layout/) of this walkthrough, you learned how to create a login page to allow your Experience Users to authenticate against your custom experience. This part will expand your experience to include a custom home page that only logged-in users can see.

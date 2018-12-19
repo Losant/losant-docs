@@ -1,3 +1,7 @@
+---
+description: Learn more about creating and using experience users in the Losant platform.
+---
+
 # Experience Users
 
 An Experience User is a unique user registered to your application's Experience. Users can access protected [endpoints](/experiences/endpoints/), and you can build profiles against each user.

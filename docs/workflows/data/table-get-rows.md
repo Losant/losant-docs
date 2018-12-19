@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
-description: Learn more about the Losant Table: Get Rows Node.
+---
+flowclass:
+  - Application
+  - Experience
+description: 'Learn more about the Losant Table: Get Rows Node.'
+---
 
 # Table: Get Rows Node
 

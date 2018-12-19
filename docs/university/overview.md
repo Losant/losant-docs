@@ -1,3 +1,7 @@
+---
+description: Become a Losant expert with Losant University.
+---
+
 # Losant University
 
 <p style="text-align:center"><iframe width="560" height="315" src="https://www.youtube.com/embed/3kaRnCtIzrU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>

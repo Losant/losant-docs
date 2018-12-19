@@ -1,3 +1,7 @@
+---
+description: Losant is an easy-to-use and powerful enterprise IoT platform designed to help you quickly and securely build complex connected solutions.
+---
+
 # What is Losant?
 
 Losant is an easy-to-use and powerful enterprise IoT platform designed to help you quickly and securely build complex connected solutions. Losant uses open communication standards like REST and MQTT to provide connectivity from one to millions of devices. Losant provides powerful data collection, aggregation, and visualization features to help understand and quantify vast amounts of sensor data. Losant's drag-and-drop workflow editor allows you to trigger actions, notifications, and machine-to-machine communication without programming.

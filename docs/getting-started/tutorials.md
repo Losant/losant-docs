@@ -1,4 +1,6 @@
+---
 description: Looking for resources beyond basic Losant documentation? Read on for a list of useful Losant tutorials and projects.
+---
 
 # Tutorials And Projects
 

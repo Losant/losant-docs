@@ -1,4 +1,6 @@
+---
 description: Learn more about running and using the Losant Edge Agent.
+---
 
 # Losant Edge Agent Usage
 

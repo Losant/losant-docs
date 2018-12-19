@@ -1,3 +1,7 @@
+---
+description: Learn about listing your Events on a Losant Dashboard.
+---
+
 # Event List
 
 The Event List Block displays a list of events for a given application. The list links to each event and displays each one's subject, level (info, warning, error or critical) and the time the event occurred.

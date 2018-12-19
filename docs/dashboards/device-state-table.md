@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Device State Table on a Losant Dashboard.
+---
+
 # Device State Table
 
 The Device State Table allows you to display attribute data from one or more devices.

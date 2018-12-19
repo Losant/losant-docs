@@ -1,4 +1,6 @@
+---
 description: Manages your Losant Application's Files from the command line.
+---
 
 # Files
 

@@ -1,3 +1,7 @@
+---
+description: Learn more about creating and using experience groups in the Losant platform.
+---
+
 # Experience Groups
 
 An Experience Group is a collection of [users](/experiences/users/) for controlling access to your application's [Experience Endpoints](/experiences/endpoints/). When configuring an endpoint - or within a workflow using the [Verify Group Node](/workflows/experience/verify-group/) - you can limit access to the endpoint or change the user experience based on their group membership. This is useful for setting up administration routes within your Experience; for example, only a subset of your users may create other Experience Users or delete resources.

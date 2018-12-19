@@ -1,4 +1,6 @@
+---
 description: Learn how to query devices and how to use the results in workflows.
+---
 
 # Device Queries
 

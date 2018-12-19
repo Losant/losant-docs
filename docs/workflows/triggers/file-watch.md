@@ -1,5 +1,8 @@
-flowclass: Edge 1.3.0
+---
+flowclass:
+  - Edge 1.3.0
 description: Learn more about the Losant File Watch Trigger.
+---
 
 # File Watch Trigger
 

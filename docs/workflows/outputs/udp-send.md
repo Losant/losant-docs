@@ -1,5 +1,8 @@
-flowclass: Edge 1.2.0
+---
+flowclass:
+  - Edge 1.2.0
 description: Learn more about the Losant UDP Send Node.
+---
 
 # Edge UDP Send
 

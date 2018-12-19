@@ -1,3 +1,7 @@
+---
+description: Learn about including a external website on a Losant Dashboard.
+---
+
 # External Website
 
 The External Website Block allows you to display some other web page or status board along side Losant information on your Losant dashboard.

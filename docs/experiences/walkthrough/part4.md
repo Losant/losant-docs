@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a device data API in a Losant Experience.
+---
+
 # Part 4 - Viewing Device Data
 
 In [Part 1](/experiences/walkthrough/part1/), [Part 2](/experiences/walkthrough/part2/), and [Part 3](/experiences/walkthrough/part3/) of this walkthrough we've created an API for our lōm smart plant mobile app that allows users to sign up, log in, and register devices. In this part we're going to add the ability to view a list of devices owned by the current user and cover how to request historical device data.

@@ -1,6 +1,6 @@
 {%- if page and page.meta and page.meta.redirect -%}
 <html>
-  <head><meta http-equiv="refresh" content="0;URL={{page.meta.redirect | first}}" /></head>
+  <head><meta http-equiv="refresh" content="0;URL={{page.meta.redirect}}" /></head>
   <body></body>
 </html>
 {%- else -%}
@@ -12,7 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {%- if page and page.meta and page.meta.description %}
-  <meta name="description" content="{{page.meta.description | first}}" />
+  <meta name="description" content="{{page.meta.description}}" />
   {%- endif %}
   {% block htmltitle %}{% include "title.html" %}{% endblock %}
 
@@ -84,7 +84,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+      {# MOBILE NAV, TRIGGERS SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
         <a href="/">{{ config.site_name }}</a>

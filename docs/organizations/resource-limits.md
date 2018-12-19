@@ -1,3 +1,7 @@
+---
+description: Learn about resource limits for Sandboxes and Organizations.
+---
+
 # Resource Limits
 
 Organizations and Sandboxes within the Losant Platform are subject to limits on the number of resources (e.g. [devices](/devices/overview/), [applications](/applications/overview/) and more) that are registered under that entity.

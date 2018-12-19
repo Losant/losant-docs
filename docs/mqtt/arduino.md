@@ -1,3 +1,7 @@
+---
+description: Learn about the Losant Arduino MQTT Client.
+---
+
 # Arduino MQTT Client
 
 The Losant Arduino MQTT Client is a C++ library designed to work on a variety of Arduino compatible boards. The library is open source and <a href="https://github.com/Losant/losant-mqtt-arduino" target="_blank">available on GitHub</a>.

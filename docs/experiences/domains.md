@@ -1,4 +1,6 @@
+---
 description: Learn more about creating and using experience domains and slugs in the Losant platform.
+---
 
 # Experience Domains And Experience Slugs
 

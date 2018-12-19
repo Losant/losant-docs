@@ -1,1 +1,3 @@
+---
 redirect: /organizations/resource-limits/
+---

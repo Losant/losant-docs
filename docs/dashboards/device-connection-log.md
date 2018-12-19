@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Device Connection Log on a Losant Dashboard.
+---
+
 # Device Connection Log
 
 The Device Connection Log Block displays a list of devices logs their connection / disconnection events.

@@ -1,3 +1,7 @@
+---
+description: Learn about transfering resources between Sandboxes and Organizations.
+---
+
 # Transferring Resources
 
 It is possible to transfer [applications](/applications/overview/) and [dashboards](/dashboards/overview/) to and from your [Sandbox](/user-accounts/sandbox/) and any [organization](/organizations/overview/) you are an administrator of. The most common case is users migrating resources from their Sandbox to a newly created organization.

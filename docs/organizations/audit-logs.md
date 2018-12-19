@@ -1,3 +1,7 @@
+---
+description: Learn about viewing the audit log for a Losant Organization.
+---
+
 # Audit Logs
 
 Enterprise organizations have access to audit logs, detailing the creation, modification and deletion of Losant resources by your organization's team members. This allows administrators to view a trail of edits made to any resource owned by that organization.

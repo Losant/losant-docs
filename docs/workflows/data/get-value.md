@@ -1,7 +1,10 @@
-flowclass: Application
-flowclass: Experience
-flowclass: Edge 1.0.0
-description: Learn more about the Losant Storage: Get Value Node.
+---
+flowclass:
+  - Application
+  - Experience
+  - Edge 1.0.0
+description: 'Learn more about the Losant Storage: Get Value Node.'
+---
 
 # Storage: Get Value Node
 

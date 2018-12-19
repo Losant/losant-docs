@@ -1,3 +1,7 @@
+---
+description: Follow along to build and connect your Moisture Sensor Kit.
+---
+
 # Moisture Sensor Kit Instructions
 
 *We’ve officially closed the Losant store and have deprecated our Losant kits. The good news is that you can still find components to create your own kits through other suppliers; we’d recommend [Adafruit](https://www.adafruit.com/).*

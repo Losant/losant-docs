@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
-description: Learn more about the Losant Device: Get Node.
+---
+flowclass:
+  - Application
+  - Experience
+description: 'Learn more about the Losant Device: Get Node.'
+---
 
 # Device: Get Node
 

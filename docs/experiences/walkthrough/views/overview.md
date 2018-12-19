@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a custom web interface in a Losant Experience.
+---
+
 # Experience Views Walkthrough
 
 This guide provides a complete walkthrough for using [Experience Views](/experiences/views/) to build a custom web interface for your end users. This guide starts with a detailed explanation of the pages that are auto-generated when you create a new experience. This guide then expands on those example pages with additional functionality that may be common in most web experiences.

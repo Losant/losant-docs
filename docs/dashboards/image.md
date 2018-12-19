@@ -1,4 +1,6 @@
+---
 description: Learn about how to use an Image Block on your Losant Dashboard
+---
 
 # Image
 

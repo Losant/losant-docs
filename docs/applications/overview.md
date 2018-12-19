@@ -1,4 +1,6 @@
+---
 description: Applications are the basic scoping mechanism within the Losant platform. Learn more about creating and managing applications.
+---
 
 # Applications
 

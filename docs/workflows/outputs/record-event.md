@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
+---
+flowclass:
+  - Application
+  - Experience
 description: Learn more about the Losant Record Event Node.
+---
 
 # Record Event Node
 

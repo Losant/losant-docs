@@ -1,4 +1,6 @@
+---
 description: Learn more about configuring internet-connected devices in the Losant platform.
+---
 
 # Devices
 

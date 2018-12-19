@@ -1,3 +1,7 @@
+---
+description: Learn about visualizing your data through Losant Dashboards.
+---
+
 # Dashboards
 
 Losant dashboards provide a flexible and powerful way to display information relevant to your specific connected solution. Users can have many different dashboards and a single dashboard can display information from many different applications and devices.

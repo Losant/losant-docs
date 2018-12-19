@@ -1,4 +1,6 @@
+---
 description: Send commands to your devices and fire workflows directly from a configurable Losant dashboard block. Read more.
+---
 
 # Input Controls
 

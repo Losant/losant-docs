@@ -1,3 +1,7 @@
+---
+description: Learn more about using the Intel Edison with Losant.
+---
+
 # Getting Started with the Intel Edison
 
 The <a href="http://www.intel.com/content/www/us/en/do-it-yourself/edison.html" target="_blank">Intel Edison</a> is a very capable compute module that runs Linux. It's an ideal IoT device because it has built-in WiFi and Bluetooth connectivity. This guide will cover how to connect an Intel Edison to the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>.

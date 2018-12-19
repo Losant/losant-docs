@@ -1,3 +1,7 @@
+---
+description: Learn about creating and managing Application API tokens in the Losant platform.
+---
+
 # Application API Tokens
 
 Application tokens allow you to interact with a single [application](/applications/overview/) at a scope level you define. Using an application token, users can create, read, update or delete any child resource of the parent application – as well as the application itself.

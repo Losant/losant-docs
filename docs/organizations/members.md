@@ -1,3 +1,7 @@
+---
+description: Learn about membership and roles in a Losant Organization.
+---
+
 # Organization Members
 
 An organization can have multiple members, with limits on members and pending invitations depending on the organization's tier level. The organization's overview screen displays a list of current members, the `Members` screen allows an administrator to perform quick actions such as removing a member or renewing a pending invite, and the `Edit Member` screen provides more details on each member. Both the `Members` and `Edit Member` screens are only visible to Administrators. If you're an Administrator, the organization's overview screen will display pending and expired invitations.

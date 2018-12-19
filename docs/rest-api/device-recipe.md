@@ -1,4 +1,6 @@
+---
 description: A detailed look at the various REST actions supported by the Device Recipe resource of the Losant API. Learn more.
+---
 
 # Device Recipe Actions
 
