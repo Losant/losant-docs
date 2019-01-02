@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a forgot password page for a Losant Experience.
+---
+
 # Forgot Password
 
 In this tutorial, we'll build a flow allowing an experience user to reset his/her forgotten password. We'll follow a standard forgot password flow found on the web:

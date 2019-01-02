@@ -1,3 +1,7 @@
+---
+description: Follow along on a walkthough of Losant Edge Compute.
+---
+
 # Edge Compute Walkthrough
 
 This guide provides a complete walkthrough for using [Losant Edge Compute](/edge-compute/overview/) to read data from a piece of industrial equipment using Modbus and then report that data to the cloud.

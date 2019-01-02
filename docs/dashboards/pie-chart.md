@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Pie Chart on a Losant Dashboard.
+---
+
 # Pie Chart
 
 The Pie Chart block displays proportional data across one or more devices. In the example below, a device's [GPS data](/devices/state/#gps-attributes) is being shown as a percentage of time it spends at certain locations.

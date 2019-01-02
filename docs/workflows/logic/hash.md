@@ -1,7 +1,10 @@
-flowclass: Application
-flowclass: Experience
-flowclass: Edge 1.1.0
+---
+flowclass:
+  - Application
+  - Experience
+  - Edge 1.1.0
 description: Learn more about the Losant Hash Node.
+---
 
 # Hash
 

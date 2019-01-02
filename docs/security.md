@@ -1,3 +1,7 @@
+---
+description: Learn more about security in the Losant platform.
+---
+
 # Losant Security Overview
 
 Losant's platform ensures the highest degree of security possible for a customer's connected solution. Losant makes use of industry-standard encryption mechanisms to fully encrypt all data during transit and while at rest. This document provides a detailed overview of the practices used to provide a completely secure environment for users and applications.

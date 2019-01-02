@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a user authentication API in a Losant Experience.
+---
+
 # Part 2 - User Authentication
 
 In [Part 1](/experiences/walkthrough/part1/) of this guide, we learned how to create users for the lōm mobile application. In this part, we'll learn how those users can log in to the app and authenticate against the lōm API.

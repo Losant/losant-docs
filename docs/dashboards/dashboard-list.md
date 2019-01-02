@@ -1,3 +1,7 @@
+---
+description: Learn about listing your Dashboards on a Losant Dashboard.
+---
+
 # Dashboard List
 
 The Dashboard List Block allows you to display a list of your dashboards. The list includes links to the dashboards, their names, and whether each dashboard is visible to the public.

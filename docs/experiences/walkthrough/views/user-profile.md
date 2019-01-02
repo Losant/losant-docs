@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a user profile page for a Losant Experience.
+---
+
 # User Profile
 
 In a [previous step](/experiences/walkthrough/views/user-registration/), we added the ability for experience visitors to register for an account. Now, we'll build on the changes we made there and allow our experience users to manage their profiles.

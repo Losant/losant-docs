@@ -1,3 +1,7 @@
+---
+description: Learn about recording and managing events in the Losant platform.
+---
+
 # Events
 
 Events provide a way to collect, view, and respond to exceptional occurrences in your application. For example, if the temperature of a refrigerator exceeds 40 degrees, a temperature warning event could be created. If the temperature then exceeds 50 degrees a temperature error could be created.

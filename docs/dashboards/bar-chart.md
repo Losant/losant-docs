@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Bar Chart on a Losant Dashboard.
+---
+
 # Bar Chart
 
 The Bar Chart allows you to display proportional data across one or more devices.

@@ -1,3 +1,7 @@
+---
+description: Learn about your personal Losant Sandbox.
+---
+
 # Sandbox
 
 Your Sandbox is the collection of all applications and dashboards owned by your personal account. From your Sandbox, you can test new functionality for eventual [transfer](/organizations/transferring-resources/) to a new organization or an existing [organization](/organizations/overview/). You can even run small, personal applications out of your Sandbox for an extended period, so long as you stay within the Sandbox's [resource limits](/organizations/resource-limits/).

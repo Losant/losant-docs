@@ -1,4 +1,6 @@
+---
 description: An overview of the Losant REST API, which provides a powerful interface to all aspects of the Losant Enterprise IoT Platform. Learn more.
+---
 
 # Losant REST API
 

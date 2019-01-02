@@ -1,3 +1,7 @@
+---
+description: Follow along to build and connect your Losant Builder Kit.
+---
+
 # Losant Builder Kit Instructions
 
 The Losant Builder Kit is an easy way to get up and running with the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>. This kit provides all the hardware and software needed to build a few simple projects that cover a wide variety of the features within the Losant Platform.

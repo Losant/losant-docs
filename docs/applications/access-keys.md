@@ -1,3 +1,7 @@
+---
+description: Learn about creating and managing device access keys in the Losant platform.
+---
+
 # Access Keys
 
 To connect your devices to the Losant Platform, you must use a set of security credentials called access keys. Access keys consist of a generated key and secret pair. An access key can be used to authenticate multiple devices in an application or multiple access keys can be created to scope your devices into virtual security groups.

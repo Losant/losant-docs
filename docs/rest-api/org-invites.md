@@ -1,4 +1,6 @@
+---
 description: A detailed look at the various REST actions supported by the Org Invites resource of the Losant API. Learn more.
+---
 
 # Org Invites Actions
 

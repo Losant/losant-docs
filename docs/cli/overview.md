@@ -1,4 +1,6 @@
+---
 description: Manage your Losant Application and it's resources on your local disk.
+---
 
 # Losant CLI
 

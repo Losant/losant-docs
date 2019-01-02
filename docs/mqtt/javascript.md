@@ -1,3 +1,7 @@
+---
+description: Learn about the Losant Javascript MQTT Client.
+---
+
 # JavaScript MQTT Client
 
 The Losant JavaScript MQTT Client is a library for Node.js compatible compute modules. The library is open source and <a href="https://github.com/Losant/losant-mqtt-js" target="_blank">available on GitHub</a>.

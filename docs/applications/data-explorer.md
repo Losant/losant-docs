@@ -1,3 +1,7 @@
+---
+description: Learn about exploring and graphing your device data within an application.
+---
+
 # Data Explorer
 
 The Application Data Explorer allows you to easily explore, aggregate and analyze historical data across all of the devices in an application.

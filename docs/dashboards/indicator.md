@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring an Indicator Block on a Losant Dashboard.
+---
+
 # Indicator
 
 The Indicator Block displays a color and message of your choosing based on the result returned from a [gauge query](/workflows/data/gauge-query/).

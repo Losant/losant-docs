@@ -1,18 +1,10 @@
 site_name: Losant Documentation
 site_url: https://docs.losant.com
-theme_dir: 'losant'
-strict: false
-markdown_extensions:
-  - meta
-extra:
-  hidden:
-    - _
-    - Home
-    - Losant Go
-    - Builder Kit PWC
-pages:
-- Losant Go: losant-go/overview.md
-- Home: index.md
+theme:
+  name: mkdocs
+  custom_dir: losant
+  include_search_page: true
+nav:
 - Getting Started:
     - What is Losant: getting-started/what-is-losant.md
     - Losant Walkthrough: getting-started/walkthrough.md
@@ -24,7 +16,6 @@ pages:
     - Losant IoT Dev Kits:
         - Overview: getting-started/losant-iot-dev-kits/overview.md
         - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
-        - Builder Kit PWC: getting-started/losant-iot-dev-kits/builder-kit-pwc.md
         - Builder Kit Instructions: getting-started/losant-iot-dev-kits/builder-kit.md
         - Builder Kit Particle Instructions: getting-started/losant-iot-dev-kits/builder-kit-particle.md
         - Moisture Sensor Kit Instructions: getting-started/losant-iot-dev-kits/moisture-sensor-kit.md
@@ -300,19 +291,3 @@ pages:
     - Workflow Version: rest-api/flow-version.md
     - Workflow Versions: rest-api/flow-versions.md
     - Schemas: rest-api/schemas.md
-
-# Redirects
-- _: getting-started/losant-iot-dev-kits/builder-kit-nodemcu.md
-- _: getting-started/losant-iot-dev-kits/builder-kit-nodevember.md
-- _: getting-started/losant-iot-dev-kits/builder-kit-salesforce.md
-- _: getting-started/losant-iot-dev-kits/builder-kit-feather.md
-- _: getting-started/what-is-structure.md
-- _: events/overview.md
-- _: limits/overview.md
-- _: losant-sdks/arduino.md
-- _: losant-sdks/javascript.md
-- _: mqtt.md
-- _: structure-sdks/arduino.md
-- _: structure-sdks/javascript.md
-- _: workflows/outputs/virtual-device.md
-- _: workflows/cloud-workflows.md

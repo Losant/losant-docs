@@ -1,3 +1,7 @@
+---
+description: Learn about listing your Applications on a Losant Dashboard.
+---
+
 # Application List
 
 The Application List Block allows you to display a list of your applications on your dashboard. The list includes links to the applications, their names, and their workflow and device count.

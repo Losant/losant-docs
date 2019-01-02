@@ -1,5 +1,8 @@
-flowclass: Edge 1.4.0
-description: Learn more about the Losant Allen-Bradley: Write Node.
+---
+flowclass:
+  - Edge 1.4.0
+description: 'Learn more about the Losant Allen-Bradley: Write Node.'
+---
 
 # Allen-Bradley: Write
 
@@ -21,7 +24,6 @@ Address Configuration contains three fields:
 * **Slot:** (Required) A string template or integer for the PLC Slot number.
 * **Keep-Alive Interval:** (Optional) A string template or integer for the seconds between keep-alive connection requests. Set this value lower than your device's connection timeout. Blank (the default) or 0 turns off the keep-alive request.
 
-
 ### Write Instructions
 
 ![Allen-Bradley Write Node Write Instructions](/images/workflows/data/allen-bradley-write-node-instructions.png "Allen-Bradley Write Node Instructions")
@@ -29,7 +31,7 @@ Address Configuration contains three fields:
 You may define multiple write instructions for the Allen-Bradley: Write Node, and you must define at least one. Each instruction has the following fields:
 
 * **Controller or Program Tag:** (Required) A string template.
-* **Program:** (Optional) A string template for the program which your program tag is a member of. In case of a controller tag (above) leave this blank. 
+* **Program:** (Optional) A string template for the program which your program tag is a member of. In case of a controller tag (above) leave this blank.
 * **Data Type:** Atomic (SINT, INT, DINT, REAL, BOOL) or STRING.
 * **Value:** (Required) A string template of the value to write to the tag.
 
@@ -37,7 +39,7 @@ You may define multiple write instructions for the Allen-Bradley: Write Node, an
 
 ![Allen-Bradley Write Node Result](/images/workflows/data/allen-bradley-write-node-path.png "Allen-Bradley Write Node Result")
 
-The success or failure of each write instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) (optional) under the `write` key. If the write is successful the `write` value will be `success`, and conversly if the write failed the `write` value will be `fail`.
+The success or failure of each write instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) (optional) under the `write` key. If the write is successful the `write` value will be `success`, and conversely if the write failed the `write` value will be `fail`.
 
 If the write failed there will be a list of errors at the Destination Path under the key `errors`. Because the tags are written as a group one failed write for a tag may cause the other writes in the group to fail.
 
@@ -76,7 +78,7 @@ The following is an example of a failure to write:
   "destination": {
     "allenWrite": {
       "plcProperties":{
-        "io_faluted": false,
+        "io_faulted": false,
         "majorUnrecoverableFault": false,
         "majorRecoverableFault": false,
         "minorUnrecoverableFault": false,

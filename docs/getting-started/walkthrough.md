@@ -1,3 +1,7 @@
+---
+description: Follow along for a basic walkthough of gathering, storing, and visualizing data within the Losant platform.
+---
+
 # Losant Walkthrough
 
 Don't have a device? No problem! This walkthrough will allow you to experience many of the features in Losant by building a weather station dashboard.

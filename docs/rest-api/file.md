@@ -1,4 +1,6 @@
+---
 description: A detailed look at the various REST actions supported by the File resource of the Losant API. Learn more.
+---
 
 # File Actions
 

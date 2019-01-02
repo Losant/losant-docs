@@ -1,3 +1,7 @@
+---
+description: Learn about the Losant Ruby MQTT Client.
+---
+
 # Ruby MQTT Client
 
 The Losant Ruby MQTT Client is a gem for Ruby compatible IoT modules (such as the Raspberry Pi or Edison). The library is open source and <a href="https://github.com/Losant/losant-mqtt-ruby" target="_blank">available on GitHub</a>.

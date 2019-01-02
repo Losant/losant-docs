@@ -1,3 +1,7 @@
+---
+description: Learn about creating and managing Webhooks for a Losant Application.
+---
+
 # Webhooks
 
 Webhooks are defined HTTP endpoints within the Losant Platform that can be used to trigger [workflows](/workflows/overview/) from external sources.

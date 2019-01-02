@@ -1,5 +1,8 @@
-flowclass: Application
-description: Learn more about the Losant Device: Disconnect Trigger.
+---
+flowclass:
+  - Application
+description: 'Learn more about the Losant Device: Disconnect Trigger.'
+---
 
 # Device: Disconnect Trigger
 

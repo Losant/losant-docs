@@ -1,4 +1,6 @@
-description: Learn more about Losant workflows: how they work and how to configure them.
+---
+description: 'Learn more about Losant workflows: how they work and how to configure them.'
+---
 
 # Workflows
 

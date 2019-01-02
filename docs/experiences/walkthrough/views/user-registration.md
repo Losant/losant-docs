@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a user registration page for a Losant Experience.
+---
+
 # User Registration
 
 In this step, we'll add the ability for non-registered users to sign up for an account within our application experience.

@@ -1,3 +1,7 @@
+---
+description: Learn about communicating with the Losant platform over MQTT.
+---
+
 # MQTT Protocol
 
 <a href="http://mqtt.org" target="\_blank">MQTT</a> is a lightweight communication protocol targeted at embedded devices with limited connectivity. MQTT is the preferred communication mechanism between your devices and the Losant Platform. Currently, Losant has MQTT Clients

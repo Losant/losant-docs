@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
-description: Learn more about the Losant Table: Insert Row Node.
+---
+flowclass:
+  - Application
+  - Experience
+description: 'Learn more about the Losant Table: Insert Row Node.'
+---
 
 # Table: Insert Row Node
 

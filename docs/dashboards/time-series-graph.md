@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Time Series Graph on a Losant Dashboard.
+---
+
 # Time Series Graph
 
 The Time Series Graph allows you to display historical data across one or more devices. Hovering your mouse over the graph will display a tooltip, which shows the value of each series at that moment in time. Move your mouse left or right to view graph data back or forward in time respectively.

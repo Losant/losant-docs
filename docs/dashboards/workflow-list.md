@@ -1,3 +1,7 @@
+---
+description: Learn about listing your Workflows on a Losant Dashboard.
+---
+
 # Workflow List
 
 The Workflow List Block displays a list of workflows within a given application. The list links to each workflow and displays each one's name, enabled / disabled status and a count of runs and errors in the last 24 hours.

@@ -1,3 +1,7 @@
+---
+description: Learn about the Losant Python MQTT Client.
+---
+
 # Python MQTT Client
 
 The Losant Python MQTT Client is a gem for Python compatible IoT modules such as the Raspberry Pi. The library is open source and <a href="https://github.com/Losant/losant-mqtt-python" target="_blank">available on GitHub</a>.

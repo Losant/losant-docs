@@ -1,4 +1,6 @@
+---
 description: Become a Losant expert with Losant University. This is the Course Four Workshop on Data Visualization.
+---
 
 # Data Visualization Workshop
 

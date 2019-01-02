@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Gauge on a Losant Dashboard.
+---
+
 # Gauge
 
 The Gauge Block displays a single attribute value, either as a number or as a visual representation in a dial.

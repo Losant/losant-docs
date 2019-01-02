@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Position Chart on a Losant Dashboard.
+---
+
 # Position Chart
 
 The Position Chart allows for displaying the position of devices over a custom image, such as a floorplan. The block behaves similarly to the [GPS History Block](/dashboards/gps-history/) with the exception of the custom image in place of the world map.

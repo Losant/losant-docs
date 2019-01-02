@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
+---
+flowclass:
+  - Application
+  - Experience
 description: Learn more about the Losant Particle Device Function Call Node.
+---
 
 # Particle Device Function Call
 

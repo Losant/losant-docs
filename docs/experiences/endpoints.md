@@ -1,3 +1,7 @@
+---
+description: Learn more about creating and using experience endpoints in the Losant platform.
+---
+
 # Experience Endpoints
 
 An Experience Endpoint is a combination of an HTTP method and a route that, when invoked by an HTTP request, can fire a [workflow](/workflows/experience-workflows/) or directly respond with an [Experience Page](/experiences/views/). Fired workflows can also generate and issue a response to the request.

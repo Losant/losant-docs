@@ -1,4 +1,6 @@
+---
 description: A detailed look at the various REST actions supported by the Audit Log resource of the Losant API. Learn more.
+---
 
 # Audit Log Actions
 

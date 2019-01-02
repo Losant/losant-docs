@@ -1,4 +1,6 @@
+---
 description: Learn about the latest version of the Losant Edge Agent and what's changed over time.
+---
 
 # Edge Agent Changelog
 

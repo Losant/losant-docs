@@ -1,4 +1,6 @@
+---
 description: Learn more about Losant Edge Compute.
+---
 
 # Edge Compute
 

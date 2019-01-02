@@ -1,3 +1,7 @@
+---
+description: Learn about managing your Losant account.
+---
+
 # User Accounts
 
 Users are the highest level resource in Losant. All applications and dashboards are either owned by a user or by an organization (of which users can be members). You can sign up as a new user on the <a href="https://accounts.losant.com/create-account" target="\_blank">create account page</a>.

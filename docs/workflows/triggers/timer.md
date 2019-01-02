@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Edge 1.0.0
+---
+flowclass:
+  - Application
+  - Edge 1.0.0
 description: Learn more about the Losant Timer Trigger.
+---
 
 # Timer Trigger
 

@@ -1,4 +1,6 @@
+---
 description: A detailed look at the various REST actions supported by the Devices resource of the Losant API. Learn more.
+---
 
 # Devices Actions
 

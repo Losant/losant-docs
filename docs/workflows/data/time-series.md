@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
-description: Learn more about the Losant Data: Time Series Node.
+---
+flowclass:
+  - Application
+  - Experience
+description: 'Learn more about the Losant Data: Time Series Node.'
+---
 
 # Data: Time Series Node
 

@@ -1,4 +1,6 @@
+---
 description: Learn more about creating and configuring Losant Edge Workflows.
+---
 
 # Edge Workflows
 

@@ -1,3 +1,7 @@
+---
+description: Learn about Losant Proof Of Concept Kits.
+---
+
 # Losant Proof Of Concept Kits
 
 The Losant IoT Proof Of Concept Kits provide all of the pre-configured hardware, connectivity, and Losant resources so that little to no setup is required by you. All kits can be purchased through the [Losant Kit Store](https://store.losant.com).

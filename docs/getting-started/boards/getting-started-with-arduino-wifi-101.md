@@ -1,3 +1,7 @@
+---
+description: Learn more about using the Arduino WiFi 101 Shield with Losant.
+---
+
 # Getting Started with the Arduino WiFi 101 Shield
 
 This guide demonstrates how to connect Arduino hardware using the <a href="https://www.arduino.cc/en/Main/ArduinoWiFiShield101" target="\_blank">Arduino WiFi 101 Shield</a> to the <a href="https://www.losant.com" target="\_blank">Losant Enterprise IoT Platform</a>.

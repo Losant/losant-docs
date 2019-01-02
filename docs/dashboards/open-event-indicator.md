@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring an Open Event Indicator on a Losant Dashboard.
+---
+
 # Open Event Indicator
 
 The Open Event Indicator Block allows you to display the most important currently open event in the selected application.

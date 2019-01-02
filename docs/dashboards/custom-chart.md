@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Custom Chart on a Losant Dashboard.
+---
+
 # Custom Chart
 
 The Custom Chart Block is an advanced Block that allows you to create custom data visualization by utilizing [Vega-Lite](https://vega.github.io/vega-lite/). If you would like a specific visualization that's not already a Losant Dashboard Block, the Custom Chart Block supports a wide array of visualization types like [Scatterplots](https://vega.github.io/vega-lite/examples/point_2d.html), [Bubble Plots](https://vega.github.io/vega-lite/examples/circle_natural_disasters.html), or even [layer visualizations together](https://vega.github.io/vega-lite/examples/layer_falkensee.html).

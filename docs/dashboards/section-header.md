@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a Section Header on a Losant Dashboard.
+---
+
 # Section Header
 
 The Section Header Block allows you to add a dividing header and descriptive content relevant to a section on your dashboard.

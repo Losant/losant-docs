@@ -1,4 +1,6 @@
+---
 description: Learn how to manipulate Losant dashboards by setting global context variables to control data queries and visualizations.
+---
 
 # Context Variables
 
@@ -36,7 +38,7 @@ If a device ID is used in a query with an attribute that is not defined on the d
 
 ### Device Tags
 
-A "Device Tag" is a [device query](/devices/device-queries/) that resolves to a single [device tag](/devices/overview/#device-tags). This tag can be used to build data queries for groups of devices that have common characteristics. Just like when build queries with device tags, the key or value of a device tage context variable can resolve to a wildcard ('*') or a static value.
+A "Device Tag" is a [device query](/devices/device-queries/) that resolves to a single [device tag](/devices/overview/#device-tags). This tag can be used to build data queries for groups of devices that have common characteristics. Just like when build queries with device tags, the key or value of a device tag context variable can resolve to a wildcard ('*') or a static value.
 
 ![Device Tag Context](/images/dashboards/context-deviceTag.png "Device Tag Context")
 

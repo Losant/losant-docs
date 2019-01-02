@@ -1,6 +1,9 @@
-flowclass: Application
-flowclass: Experience
-description: Learn more about the Losant Data: Gauge Query Node.
+---
+flowclass:
+  - Application
+  - Experience
+description: 'Learn more about the Losant Data: Gauge Query Node.'
+---
 
 # Data: Gauge Query Node
 

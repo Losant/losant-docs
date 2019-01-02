@@ -1,5 +1,8 @@
-flowclass: Application
-description: Learn more about the Losant Device: Connect Trigger.
+---
+flowclass:
+  - Application
+description: 'Learn more about the Losant Device: Connect Trigger.'
+---
 
 # Device: Connect Trigger
 

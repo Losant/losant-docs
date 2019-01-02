@@ -1,4 +1,6 @@
+---
 description: Learn about device state and how it's used in the Losant Platform.
+---
 
 # Device State
 

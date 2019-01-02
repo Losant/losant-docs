@@ -1,4 +1,6 @@
+---
 description: Learn more about installing the Losant Edge Agent.
+---
 
 # Losant Edge Agent Installation
 

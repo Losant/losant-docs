@@ -1,4 +1,6 @@
+---
 description: Learn about how device recipes can give you the power to create devices in bulk for your Losant application.
+---
 
 # Device Recipes
 

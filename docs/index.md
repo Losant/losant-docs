@@ -1,3 +1,7 @@
+---
+description: Welcome to the Losant Documentation!
+---
+
 <h1 style="text-transform: uppercase">Welcome to Losant Docs!</h1>
 
 We're happy you're here! Getting familiar with the Losant product is easy. Get started below.

@@ -1,3 +1,7 @@
+---
+description: Learn about adding and configuring a GPS History Map on a Losant Dashboard.
+---
+
 # GPS History
 
 The GPS History Block shows the path of GPS data points across one or more devices. The map visualizes the historical path of each device as a connected line, with a start and end bubble.

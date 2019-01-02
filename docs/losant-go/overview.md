@@ -1,3 +1,7 @@
+---
+description: Follow along to use the Losant Go mobile app to connect with your Losant Application.
+---
+
 # Losant Go App Overview
 
 **UPDATE: September 1, 2017:**  

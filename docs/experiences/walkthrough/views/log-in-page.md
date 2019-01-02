@@ -1,3 +1,7 @@
+---
+description: Follow along as we build a log in page for a Losant Experience.
+---
+
 # Part 2 - Log In Page
 
 In the [previous part](/experiences/walkthrough/views/page-layout/) of this walkthrough, you learned how to create a layout. This part covers how to create a log in page that will be rendered in that layout. This page will allow your Experience Users to log in and make authenticated requests to other pages within your experience.
