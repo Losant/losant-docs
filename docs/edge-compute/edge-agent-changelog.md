@@ -150,7 +150,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ### Fixed <a name="1.1.1-fixed"></a>
 
-- Improved messages for [Slack Node](/workflows/output/slack/) errors.
+- Improved messages for [Slack Node](/workflows/outputs/slack/) errors.
 - Support circular references in debug messages.
 
 ***

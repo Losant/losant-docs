@@ -1,0 +1,3 @@
+---
+redirect: /workflows/application-workflows/
+---

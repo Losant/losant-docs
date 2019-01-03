@@ -27,7 +27,7 @@ The body of the reply can be set either as a [string template](/workflows/access
 
 ### Experience Page Response
 
-The Experience Page reply type enables you to use [Experience Views](/experience/views/) for replying to endpoint requests. In the case of an experience page reply, you still have control over the response code (just like `custom`), but the body of the response comes from rendering an experience page.
+The Experience Page reply type enables you to use [Experience Views](/experiences/views/) for replying to endpoint requests. In the case of an experience page reply, you still have control over the response code (just like `custom`), but the body of the response comes from rendering an experience page.
 
 ![Endpoint Reply Node Page Config - Experience Workflow](/images/workflows/outputs/endpoint-reply-node-page-config.png "Endpoint Reply Node Page Config - Experience Workflow")
 
