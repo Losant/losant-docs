@@ -24,14 +24,14 @@ There are a handful of controls available for building a data query and for expl
 * **D - Forward**: Moves the time range forward by the current time range duration.
 * **E - Now**: Moves the "End" time to the current time, and "Start" time to "now minus the current time range duration".
 * **F - Devices / Tags**: A [device query](/devices/device-queries/#querying-by-devices) for selecting which devices to return data against. All attributes from each device that matches the query will be returned; however, the format of the returned data (and whether data even can be returned) will change depending on each attribute's type and the selected aggregation method.
-* **G - Aggregation**: The aggregator function to use for accumulating the data into the selected resolution. Defaults to MEAN (i.e., the average of all the values in a resolution window). If NONE is selected in the "Aggregation" dropdown, then all data points within the selected time range will be returned for each device. "Resolution" does not apply to unaggregated data, so that dropdown will disappear.
+* **G - Aggregation**: The aggregator function to use for accumulating the data into the selected resolution. Defaults to Mean (i.e., the average of all the values in a resolution window). If NONE is selected in the "Aggregation" dropdown, then all data points within the selected time range will be returned for each device. "Resolution" does not apply to unaggregated data, so that dropdown will disappear.
 * **H - Resolution**: The size of the aggregation window, which determines how many points will be displayed for a time range. For example, a three-hour time range at five-minute resolution would have 36 data points - one for each five-minute period in those three hours.
 
 ## Graphs Tab
 
 ![Data Display](/images/applications/data-explorer-data-display.png "Data Display")
 
-After building your data query, the Graph tab will update to show an array of graphable attributes with "spark lines" representing a simplified version of that attribute's data over the given time period. Only attributes of the **Number** and **Boolean** types can be displayed on the cartesian grid, unless **COUNT** is the chosen aggregation. In that case, the number of times **String** and **GPS** attributes are reported per resolution period will also be displayed on the graph.
+After building your data query, the Graph tab will update to show an array of graphable attributes with "spark lines" representing a simplified version of that attribute's data over the given time period. Only attributes of the **Number** and **Boolean** types can be displayed on the cartesian grid, unless **Count** is the chosen aggregation. In that case, the number of times **String** and **GPS** attributes are reported per resolution period will also be displayed on the graph.
 
 Hovering your mouse over the main graph will display a tooltip with the exact value of each graphed attribute at that time.
 
@@ -52,13 +52,13 @@ There is a limit to the number of points that may be graphed at one time before 
 
 ![Boolean Exception](/images/applications/data-explorer-boolean.png "Boolean Exception")
 
-In the case where a **Boolean** attribute it being graphed, and the selected aggregation method is not **SUM** or **COUNT**, the attribute's graph follows a special stepped layout. It is still possible to change the attribute's color, but the Graph Type and Y Axis Domain cannot be overridden.
+In the case where a **Boolean** attribute it being graphed, and the selected aggregation method is not **Sum** or **Count**, the attribute's graph follows a special stepped layout. It is still possible to change the attribute's color, but the Graph Type and Y Axis Domain cannot be overridden.
 
 ## All Data Tab
 
 ![All Data](/images/applications/data-explorer-table.png "All Data")
 
-The "All Data" tab shows all returned data points for your query – all device / attribute combinations, timestamps and the values per attribute – in a sortable table. **Number** and **Boolean** attributes will return data for any aggregation method; **GPS** and **String** attributes will only return data for "COUNT", "FIRST" and "LAST" aggregations.
+The "All Data" tab shows all returned data points for your query – all device / attribute combinations, timestamps and the values per attribute – in a sortable table. **Number** and **Boolean** attributes will return data for any aggregation method; **GPS** and **String** attributes will only return data for "Count", "First" and "Last" aggregations.
 
 If "NONE" is the chosen aggregation method, there is a limit to the number of points that can be returned per device / attribute combination. Should you run up against this limitation, you will have to narrow your query's time range to ensure you are receiving all data points.
 
@@ -74,6 +74,6 @@ It is also possible to export the data table as a CSV by clicking the button in 
 
 The "Aggregates" tab shows the aggregate values of each device / attribute combination over the given time period. This is the equivalent of the resolution being set to the same as the start to end duration, thus only one data point is returned for each combination.
 
-**Number** and **Boolean** attributes will return data for any aggregation method; **GPS** and **String** attributes will only return data for "COUNT", "FIRST" and "LAST" aggregations.
+**Number** and **Boolean** attributes will return data for any aggregation method; **GPS** and **String** attributes will only return data for "Count", "First" and "Last" aggregations.
 
 Like the "All Data" tab, this table can also be exported as a CSV.

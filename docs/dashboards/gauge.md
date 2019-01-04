@@ -68,7 +68,7 @@ The block data takes five parameters, three of which are required:
 * **Device IDS / Tags** is a [device query](/devices/device-queries/) for choosing which devices are displayed within the gauge.
 * **Attribute** is the device attribute whose value will be displayed in the gauge. This attribute must be of the type `Number`. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Color** can only be set when the gauge type is set to "Dial". The color picker defaults to green, but any color may be selected as the default gauge color.
-* **Aggregation Type** determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "MEAN" will average all data points together before displaying within the gauge. This field is only available if "Data Type" is set to "Historical", and any of the following conditions applies:
+* **Aggregation Type** determines how the all the available data returned should be aggregated before displaying the value. For example, choosing "Mean" will average all data points together before displaying within the gauge. This field is only available if "Data Type" is set to "Historical", and any of the following conditions applies:
     * Duration is set to anything other than "Last received data point"
     * A device tag is supplied in the device query
     * More than one device ID is supplied within the device query

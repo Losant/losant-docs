@@ -31,7 +31,7 @@ It is possible to build multiple data queries into your indicator block, and the
 
 ![Indicator Query Configuration](/images/dashboards/indicator-query-config.png "Indicator Query Configuration")
 
-When "Historical" is selected as the block type, and either a duration other than "Last received data point" is selected or more than one device is selected or at least one device tag is selected within a query, it will also be necessary to select an aggregation method for that query. This is the mathematical operation by which your query will boil down all data from the selected devices and duration into a single value. The default aggregation method is `MEAN`.
+When "Historical" is selected as the block type, and either a duration other than "Last received data point" is selected or more than one device is selected or at least one device tag is selected within a query, it will also be necessary to select an aggregation method for that query. This is the mathematical operation by which your query will boil down all data from the selected devices and duration into a single value. The default aggregation method is `Mean`.
 
 ## Query Result
 
@@ -56,11 +56,12 @@ If querying for the last received data point of a boolean attribute for a single
 
 If the boolean attribute is being aggregated – as the result of a query across multiple devices or a larger duration – then all `false` points will be treated as a **0** and all `true` points will be treated as a **1**. Then, the result will return as a **number** representing the following:
 
-* `FIRST` and `LAST` aggregations will return as `true` or `false`.
-* `MIN` and `MAX` aggregations will return as `0` (false) or `1` (true).
-* `MEAN` aggregations will return as a number between 0 and 1 (inclusive), which is the average of all data points across the query.
-* `SUM` will return as a whole number greater than or equal to 0, which is equal to the number of `true` data points across the query.
-* `COUNT` will return as a whole number greater than or equal to 0, which is equal to the total number of data points across the query.
+* `Count` will return as a whole number greater than or equal to 0, which is equal to the total number of data points across the query.
+* `First` and `Last` aggregations will return as `true` or `false`.
+* `Min` and `Max` aggregations will return as `0` (false) or `1` (true).
+* `Mean` aggregations will return as a number between 0 and 1 (inclusive), which is the average of all data points across the query.
+* `Sum` will return as a whole number greater than or equal to 0, which is equal to the number of `true` data points across the query.
+* `Standard Deviation` aggregations will return as a number between 0 and 1 (inclusive), which is the amount of variation or dispersion of all data points across the query.
 
 ### GPS and String Attributes
 
@@ -68,8 +69,8 @@ When requesting the last received data point of a single device, the result will
 
 When requesting aggregated data for such an attribute ...
 
-* `FIRST` and `LAST` aggregations will return the first or last data point collected across the query
-* `COUNT` aggregations will return as a number representing the total number of data points across the query
+* `First` and `Last` aggregations will return the first or last data point collected across the query
+* `Count` aggregations will return as a number representing the total number of data points across the query
 * All other queries will return as `undefined`
 
 To expand a condition for editing, simply click the header. You can also choose to expand or collapse all conditions by clicking the link at the top right corner of the section.
