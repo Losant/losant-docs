@@ -118,7 +118,7 @@ To improve this user's experience, there are a number of additions and improveme
 
 * The user's phone number could be stored as a [global variable](#workflow-globals) so that the workflow could be [exported](#import-export) without exposing the user's number to others.
 * To avoid repeat SMS messages when the temperature is above the threshold for a long time, we could insert a [Latch Node](/workflows/logic/latch/) to only send one alert each time the temperature crosses the threshold.
-* We could move the conversion to Celsius above our Conditional Node and then use a [Device State Node](/workflows/output/device-state/) to set that converted value as a separate [attribute](/devices/state/#state-attributes) on the device. This would allow us to also visualize the Celsius values in a [dashboard](/dashboards/overview/), such as in a [Time Series Block](/dashboards/time-series-graph/) or a [Gauge Block](/dashboards/gauge/).
+* We could move the conversion to Celsius above our Conditional Node and then use a [Device State Node](/workflows/outputs/device-state/) to set that converted value as a separate [attribute](/devices/state/#state-attributes) on the device. This would allow us to also visualize the Celsius values in a [dashboard](/dashboards/overview/), such as in a [Time Series Block](/dashboards/time-series-graph/) or a [Gauge Block](/dashboards/gauge/).
 
 ## Common Payload Fields
 

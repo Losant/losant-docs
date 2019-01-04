@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="{{ path }}" type="text/css" />
   {%- endfor %}
   {%- if page %}
+  <link rel="canonical" href="{{ config.site_url }}{{ page.abs_url }}" />
   <script>
     // Current page data
     var mkdocs_page_name = "{{ page.title }}";

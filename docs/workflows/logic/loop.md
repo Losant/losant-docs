@@ -51,7 +51,7 @@ If any of your loop's sub-nodes has configuration errors, the Loop Node at the r
 
 ![Loop Debug Hover](/images/workflows/logic/loop-debug-hover.png "Loop Debug Hover")
 
-While viewing a loop's contents, [debug messages](/workflows/outputs/debug/#viewing-debug-output) will continue to stream into the debug panel from the workflow, regardless of if the node that triggered the message is part of the currently viewed group. However, hovering over a debug message, or viewing a live stream of debug content, will only highlight workflow runs whose corresponding [Debug Node](/workflows/output/debug/) is currently visible.
+While viewing a loop's contents, [debug messages](/workflows/outputs/debug/#viewing-debug-output) will continue to stream into the debug panel from the workflow, regardless of if the node that triggered the message is part of the currently viewed group. However, hovering over a debug message, or viewing a live stream of debug content, will only highlight workflow runs whose corresponding [Debug Node](/workflows/outputs/debug/) is currently visible.
 
 ### Returning to the Top Level
 

@@ -76,7 +76,7 @@ The "Save" button will be green whenever there are changes to your "develop" wor
 
 ### Deploying Versions
 
-Any version of an edge workflow can be [deployed](/edge-compute/deployments/) by clicking the "Deploy" button in the top right corner. This will display a configuration modal for which devices to deploy the selected workflow to. If you are viewing the "develop" version when the "Deploy" button is clicked, you will have to create a new version as part of the process.
+Any version of an edge workflow can be [deployed](/edge-compute/edge-deployments/) by clicking the "Deploy" button in the top right corner. This will display a configuration modal for which devices to deploy the selected workflow to. If you are viewing the "develop" version when the "Deploy" button is clicked, you will have to create a new version as part of the process.
 
 More information on deploying edge workflows is available within the [edge compute documentation](/edge-compute/edge-deployments/).
 

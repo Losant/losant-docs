@@ -12,7 +12,7 @@ The Device: State Trigger will trigger a workflow whenever one or more devices r
 
 ## Configuration
 
-The Device: State Trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection reports [state](devices/state/), the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
+The Device: State Trigger can be configured with one or more specific devices, or a selection of tags (or both). When a device that matches anything in the selection reports [state](/devices/state/), the workflow will trigger. See the [device query](/devices/device-queries/) documentation for more info about how ID and tag matching works.
 
 ![Device State Trigger Config](/images/workflows/triggers/device-trigger-config.png "Device State Trigger Config")
 

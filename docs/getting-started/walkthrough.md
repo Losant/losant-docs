@@ -61,7 +61,7 @@ Create a new workflow from the `Workflows` main menu:
 
 ![Create Workflow](/images/getting-started/walkthrough/create-workflow.png "Create Workflow")
 
-Choose `Create Application Workflow` on the following screen, since we want to create an [application workflow](/workflows/application-workflow/). Name the workflow anything you like and provide an optional description.
+Choose `Create Application Workflow` on the following screen, since we want to create an [application workflow](/workflows/application-workflows/). Name the workflow anything you like and provide an optional description.
 
 ![Workflow Settings](/images/getting-started/walkthrough/workflow-settings.png "Workflow Settings")
 

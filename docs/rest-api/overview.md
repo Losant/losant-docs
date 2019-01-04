@@ -214,7 +214,7 @@ particular actions that can be performed on that resource.
   Contains all the actions that can be performed against the collection of [Events](/applications/events/) belonging to an Application - such as listing open events or creating a new event.
 
 * [Experience](/rest-api/experience/)  
-  Contains all the actions that can be performed against an application [Experience](/experiences/), such as bootstrapping or clearing resources.
+  Contains all the actions that can be performed against an application [Experience](/experiences/overview/), such as bootstrapping or clearing resources.
 
 * [Experience Domain](/rest-api/experience-domain/)  
   Contains all the actions that can be performed against a single [Experience Domain](/experiences/domains/), such as updating SSL certificate information.
@@ -247,10 +247,10 @@ particular actions that can be performed on that resource.
   Contains all the actions that can be performed against the collection of [Experience Users](/experiences/users/) belonging to an Application - such as listing users or creating a new user.
 
 * [Experience Version](/rest-api/experience-version/)  
-  Contains all the actions that can be performed against a single [Experience Version](/experiences/), such as modifying the description.
+  Contains all the actions that can be performed against a single [Experience Version](/experiences/versions/), such as modifying the description.
 
 * [Experience Versions](/rest-api/experience-versions/)  
-  Contains all the actions that can be performed against the collection of [Experience Versions](/experiences/) belonging to an Application - such as listing versions or creating a new versions.
+  Contains all the actions that can be performed against the collection of [Experience Versions](/experiences/versions/) belonging to an Application - such as listing versions or creating a new versions.
 
 * [Experience View](/rest-api/experience-view/)  
   Contains all the actions that can be performed against a single [Experience View](/experiences/views/), such as modifying the body template.

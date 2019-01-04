@@ -44,9 +44,9 @@ On a Mac, the above link downloads a disk image. Double-click the file to mount 
 
 ### Install Mos Tool
 
-Mongoose OS comes with a [CLI tool](https://mongoose-os.com/docs/quickstart/setup.html) called `mos`. The `mos` CLI tool provides a terminal interface to program and flash the NodeMCU.
+Mongoose OS comes with a [CLI tool](https://mongoose-os.com/docs/quickstart/setup.md) called `mos`. The `mos` CLI tool provides a terminal interface to program and flash the NodeMCU.
 
-To install the `mos` tool, follow the [instructions in the Mongoose OS documentation](https://mongoose-os.com/software.html).
+To install the `mos` tool, follow the [instructions in the Mongoose OS documentation](https://mongoose-os.com/docs/quickstart/setup.md#1-download-and-install-mos-tool).
 
 Once you download the `mos` tool, make sure you have the latest version:
 

@@ -6,7 +6,7 @@ description: Learn about adding and configuring a Custom Chart on a Losant Dashb
 
 The Custom Chart Block is an advanced Block that allows you to create custom data visualization by utilizing [Vega-Lite](https://vega.github.io/vega-lite/). If you would like a specific visualization that's not already a Losant Dashboard Block, the Custom Chart Block supports a wide array of visualization types like [Scatterplots](https://vega.github.io/vega-lite/examples/point_2d.html), [Bubble Plots](https://vega.github.io/vega-lite/examples/circle_natural_disasters.html), or even [layer visualizations together](https://vega.github.io/vega-lite/examples/layer_falkensee.html).
 
-![Data Table Scatter Plot](../images/workflows/custom-chart-data-table-scatter-plot.png "Data Table Scatter Plot")
+![Data Table Scatter Plot](/images/workflows/custom-chart-data-table-scatter-plot.png "Data Table Scatter Plot")
 
 ## Configuration
 
@@ -37,7 +37,7 @@ The values returned will reflect the selected attribute's value specified at the
 The parameters of the Time Series Query include:
 
 * **Query Name** is what will be referenced in the Vega-Lite configuration in order to access the returned dataset.
-* **Device IDS / Tags** is a [device query](../devices/device-queries/) for choosing which devices' data you want to access.
+* **Device IDS / Tags** is a [device query](/devices/device-queries/) for choosing which devices' data you want to access.
 * **Attribute** is the device attribute whose value will be returned in the query. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Duration** is how far into the past you want to look at the data.
 * **Resolution** is how your data will be grouped. These options will change based on what you specify for the duration.
@@ -52,7 +52,7 @@ Gauge queries allow you to query a single attribute from a selected device. You 
 The parameters of the Gauge Query include:
 
 * **Query Name** is what will be referenced in the Vega-Lite configuration in order to access the returned dataset.
-* **Device IDS / Tags** is a [device query](../devices/device-queries/) for choosing which devices' data you want to access.
+* **Device IDS / Tags** is a [device query](/devices/device-queries/) for choosing which devices' data you want to access.
 * **Attribute** is the device attribute whose value will be returned in the query. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Duration** is how far into the past you want to look at the data.
 * **Aggregation** determines how all the available data returned should be aggregated before being read. For example, choosing "MEAN" will average all data points together before displaying within the gauge. This field is only available if "Data Type" is set to "Historical", and any of the following conditions applies:
@@ -66,7 +66,7 @@ Data table queries allow you to query any data that is stored on a data table. T
 
 ![Data Table Query](/images/workflows/custom-chart-data-table-query.png "Data Table Query")
 
-Building this query is done the same way as building a query in the [Table: Get Rows Node](../workflows/data/table-get-rows/#query-fields), where an array of individual queries can be joined with an "OR" or "AND" operator.
+Building this query is done the same way as building a query in the [Table: Get Rows Node](/workflows/data/table-get-rows/#query-fields), where an array of individual queries can be joined with an "OR" or "AND" operator.
 
 ### Vega Configuration
 
@@ -114,7 +114,7 @@ For more information on configuring Vega-Lite, please reference the [Vega-Lite d
 
 #### Layered Time Series Line Chart with Gauge as Average Line
 
-![Layered Time Series Line Chart with Gauge as Average Line](../images/workflows/custom-chart-layered-time-series-gauge-chart-result.png "Layered Time Series Line Chart with Gauge as Average Line")
+![Layered Time Series Line Chart with Gauge as Average Line](/images/workflows/custom-chart-layered-time-series-gauge-chart-result.png "Layered Time Series Line Chart with Gauge as Average Line")
 
 ```json
 {
@@ -163,7 +163,7 @@ For more information on configuring Vega-Lite, please reference the [Vega-Lite d
 
 #### Data Table Scatter Plot
 
-![Data Table Scatter Plot](../images/workflows/custom-chart-data-table-scatter-plot.png "Data Table Scatter Plot")
+![Data Table Scatter Plot](/images/workflows/custom-chart-data-table-scatter-plot.png "Data Table Scatter Plot")
 
 ```json
 {
