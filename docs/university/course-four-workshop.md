@@ -251,7 +251,7 @@ Let’s create some context variables. First, let’s create a context variable 
 2. Choose the proper application
 3. Set “Water Pump 0” as the default value.
 
-Next, create a context variable for the name of the device. This will be helpful later to see the name of the device we are currently viewing.
+Next, create a context variable--it will be of type String--for the name of the device. This will be helpful later to see the name of the device we are currently viewing.
 
 ![Name Context Variable](/images/university/course-four-workshop/name-context-var.png)
 
