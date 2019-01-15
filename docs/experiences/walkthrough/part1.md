@@ -63,7 +63,7 @@ In the trigger's configuration, select the endpoint we just created (i.e. POST /
 
 For now, let's make a simple workflow that simply returns 200 (OK) whenever anything is requested. We'll also use a [Debug node](/workflows/outputs/debug/) so you can see the format of the data as it comes into the workflow.
 
-Add a [Debug node](/workflow/outputs/debug/) and an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) to the canvas.
+Add a [Debug node](/workflows/outputs/debug/) and an [Endpoint Reply node](/workflows/outputs/endpoint-reply/) to the canvas.
 
 ![Endpoint Debug](/images/experiences/walkthrough/part-1/endpoint-debug.png "Endpoint Debug")
 

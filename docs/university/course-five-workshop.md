@@ -10,7 +10,7 @@ description: Become a Losant expert with Losant University. This is the Course F
 
 Welcome to your workshop on the Workflow Engine! The purpose of this workshop is to give you real, step-by-step instructions on how to accomplish and use most of the tools we covered throughout the course.
 
-This workshop builds on the [Course Four Workshop](https://docs.losant.com/university/course-four-workshop) and will guide you through creating workflows and illustrate how to use advanced workflow features.
+This workshop builds on the [Course Four Workshop](/university/course-four-workshop) and will guide you through creating workflows and illustrate how to use advanced workflow features.
 
 Let’s begin.
 
@@ -36,7 +36,7 @@ Then, we simulated the data and did a simple analysis using the Data Explorer:
 
 ![Data Explorer](/images/university/course-three-workshop/device-explorer-graph.png)
 
-In Course Four, we took a look at different visualizations, [reporting](https://docs.losant.com/dashboards/overview/#email-reports), [sharing](https://docs.losant.com/dashboards/overview/#dashboard-access-control), and all the dashboarding features in Losant. In the workshop, we created a dashboard that supports Context Variables, which allows us to add hundreds and thousands of pumps and each had have their own dashboard.
+In Course Four, we took a look at different visualizations, [reporting](/dashboards/overview/#email-reports), [sharing](/dashboards/overview/#dashboard-access-control), and all the dashboarding features in Losant. In the workshop, we created a dashboard that supports Context Variables, which allows us to add hundreds and thousands of pumps and each had have their own dashboard.
 
 ![Final Complete Dashboard](/images/university/course-four-workshop/water-pump-context-variables.gif)
 
@@ -70,10 +70,10 @@ Now, that you are at the in the Workflow Canvas, it’s time to start building! 
 
 The goal of this workflow is to, on an interval, generate a random number that represents temperature, and report the temperature state to `Water Pump 0`. To do this we need the following nodes:
 
-- [Timer Trigger Node](https://docs.losant.com/workflows/triggers/timer/) - to trigger based on an interval
-- [Random Number Node](https://docs.losant.com/workflows/logic/random-number/) - to generate a random number
-- [Device State Node](https://docs.losant.com/devices/state/) - to report state
-- [Debug Node](https://docs.losant.com/workflows/outputs/debug/) - to inspect the payload
+- [Timer Trigger Node](/workflows/triggers/timer/) - to trigger based on an interval
+- [Random Number Node](/workflows/logic/random-number/) - to generate a random number
+- [Device State Node](/devices/state/) - to report state
+- [Debug Node](/workflows/outputs/debug/) - to inspect the payload
 
 Let’s walk through each node configuration.
 
@@ -179,9 +179,9 @@ In our Water Pump Simulator workflow, let’s add a new workflow path:
 
 This new path consists of:
 
-- [Virtual Button Trigger](https://docs.losant.com/workflows/triggers/virtual-button/) - to trigger using a button
-- [Device State Node](https://docs.losant.com/devices/state/) - to report valve state
-- [Debug Node](https://docs.losant.com/workflows/outputs/debug/) - to inspect the payload
+- [Virtual Button Trigger](/workflows/triggers/virtual-button/) - to trigger using a button
+- [Device State Node](/devices/state/) - to report valve state
+- [Debug Node](/workflows/outputs/debug/) - to inspect the payload
 
 We don’t need to do any configuration for the Virtual Button or Debug Node. Let’s configure the Device State Node:
 
@@ -236,7 +236,7 @@ Here is the block configuration:
 
 With this configuration, we are tying the input control button to the Virtual Button on the workflow. When triggering the Virtual Button, the Input Control Block will use the contents of the “Payload” configuration as the data of the Virtual Button. In this case, it will send a `deviceId` and `valve`. These values correspond to the data we expect in the Device State Output Node in our workflow.
 
-Another thing: Our dashboard supports [Context Variables](https://docs.losant.com/dashboards/context-variables/). Since we have access to these variables within the block settings, we can use `{{ctx.deviceId}}` as the Device ID. So, no matter the device, my Input Control Block is flexible enough to know what device I want to control.
+Another thing: Our dashboard supports [Context Variables](/dashboards/context-variables/). Since we have access to these variables within the block settings, we can use `{{ctx.deviceId}}` as the Device ID. So, no matter the device, my Input Control Block is flexible enough to know what device I want to control.
 
 ### Exercise Two
 
@@ -258,10 +258,10 @@ Because we are solving a different problem, let’s create a new workflow:
 
 This new workflow consists of:
 
-- [Device: State Trigger](https://docs.losant.com/workflows/triggers/device/) - to trigger the workflow when our device sends data
-- [Latch Node](https://docs.losant.com/workflows/logic/latch/) - to do one-time branching to check our alert
-- [Email Node](https://docs.losant.com/workflows/outputs/email/) - to send an email
-- [Debug Node](https://docs.losant.com/workflows/outputs/debug/) - to inspect the payload
+- [Device: State Trigger](/workflows/triggers/device/) - to trigger the workflow when our device sends data
+- [Latch Node](/workflows/logic/latch/) - to do one-time branching to check our alert
+- [Email Node](/workflows/outputs/email/) - to send an email
+- [Debug Node](/workflows/outputs/debug/) - to inspect the payload
 
 Let’s configure them:
 
@@ -346,7 +346,7 @@ If we added a new water pump, we would have to copy/paste and adjust all the Ran
 
 ### Connect to External API
 
-In this workshop, we didn’t bring in any external data. Try bringing weather data into our application, and build a dashboard around it. There is already complete instructions on how to do this in the [Losant Walkthrough](https://docs.losant.com/getting-started/walkthrough/).
+In this workshop, we didn’t bring in any external data. Try bringing weather data into our application, and build a dashboard around it. There is already complete instructions on how to do this in the [Losant Walkthrough](/getting-started/walkthrough/).
 
 ![Weather Dashboard](/images/getting-started/walkthrough/dashboard-full.png)
 
@@ -354,4 +354,4 @@ In this workshop, we didn’t bring in any external data. Try bringing weather d
 
 Congratulations, you are now officially done with Course Five of Losant University!
 
-Feel free to poke around Losant; there is a ton to explore. If you run into any troubles along the way, the [Documentation](https://docs.losant.com/) and [Forums](https://forums.losant.com/) are there to help.
+Feel free to poke around Losant; there is a ton to explore. If you run into any troubles along the way, the [Documentation](/) and [Forums](https://forums.losant.com/) are there to help.

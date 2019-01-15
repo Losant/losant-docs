@@ -119,4 +119,4 @@ Your PoC Kit allows you to configure your geofence alert settings, email, and SM
 
 ### Need Support?
 
-Visit <a href="https://docs.losant.com" target="_blank">docs.losant.com</a>, email us at <a href="mailto:support@losant.com">support@losant.com</a> or reach us at <a href="https://forums.losant.com" target="_blank">forums.losant.com</a>.
+Visit <a href="/" target="_blank">docs.losant.com</a>, email us at <a href="mailto:support@losant.com">support@losant.com</a> or reach us at <a href="https://forums.losant.com" target="_blank">forums.losant.com</a>.

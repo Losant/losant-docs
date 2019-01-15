@@ -350,4 +350,4 @@ Now, we can add hundreds and thousands of pumps and each will have their own das
 
 Congratulations, you are now officially done with Course 4 of Losant University!
 
-Feel free to poke around Losant; there is a ton to explore. If you run into any troubles along the way, the [Documentation](https://docs.losant.com/) and [Forums](https://forums.losant.com/) are there to help.
+Feel free to poke around Losant; there is a ton to explore. If you run into any troubles along the way, the [Documentation](/) and [Forums](https://forums.losant.com/) are there to help.

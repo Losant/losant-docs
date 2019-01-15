@@ -4,7 +4,7 @@ description: It's a Custom Node walkthrough!
 
 # Custom Nodes Walkthrough
 
-[Custom Nodes](http://docs.prerelease.losant.com/workflows/custom-nodes/overview/) allow you to extend the functionality of Losant's workflow engine. This guide is a complete walkthrough for building a custom node that provides access to [Dark Sky's API](https://darksky.net/dev) to retrieve weather forecast information. The node being built in this guide is also available in the [Losant Node Catalog](https://github.com/Losant/workflow-node-catalog), so you can download and import the completed node at any time.
+[Custom Nodes](/workflows/custom-nodes/overview/) allow you to extend the functionality of Losant's workflow engine. This guide is a complete walkthrough for building a custom node that provides access to [Dark Sky's API](https://darksky.net/dev) to retrieve weather forecast information. The node being built in this guide is also available in the [Losant Node Catalog](https://github.com/Losant/workflow-node-catalog), so you can download and import the completed node at any time.
 
 ![Dark Sky Node](/images/workflows/custom-nodes/walkthrough/dark-sky-node-used.png "Dark Sky Node")
 
@@ -28,7 +28,7 @@ The icon and name will be displayed on the node when it's added to the workflow 
 
 If you'd like to use the Dark Sky logo referenced above, you can download it [here](/images/workflows/custom-nodes/walkthrough/dark-sky-logo.png).
 
-The `Output Type` determines whether or not this node has one output or two. Most nodes only have a single output, but some, like the [Conditional Node](https://docs.losant.com/workflows/logic/conditional/) have two. Since this node is only returning weather information, it only needs a single output.
+The `Output Type` determines whether or not this node has one output or two. Most nodes only have a single output, but some, like the [Conditional Node](/workflows/logic/conditional/) have two. Since this node is only returning weather information, it only needs a single output.
 
 The `Output Result` determines whether or not the user is required to provide a payload path for the result of this node. Since this node is returning weather information, we will require the user to provide a path.
 
