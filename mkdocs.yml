@@ -13,6 +13,7 @@ nav:
         - Course Three Workshop: university/course-three-workshop.md
         - Course Four Workshop: university/course-four-workshop.md
         - Course Five Workshop: university/course-five-workshop.md
+        - Course Six Workshop: university/course-six-workshop.md
     - Losant IoT Dev Kits:
         - Overview: getting-started/losant-iot-dev-kits/overview.md
         - Environment Setup: getting-started/losant-iot-dev-kits/environment-setup.md
