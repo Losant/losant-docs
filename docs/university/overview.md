@@ -22,8 +22,16 @@ Below you can find all the available courses. **It is recommended that you follo
 
 As you continue Losant University, if you run into questions or want additional information, please check out the [Losant Forums](https://forums.losant.com), [Blog](https://www.losant.com/blog), and [Documentation](/).
 
-<a href="https://www.losant.com/university/lessons/course-1-chapter-1-introduction" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-one-overview-slide.jpeg" alt="Course One Overview Slide" title="Course One Overview Slide" /></a>
+## Courses
 
-<a href="https://www.losant.com/university/lessons/course-2-chapter-1-introduction" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-two-overview-slide.jpeg" alt="Course Two Overview Slide" title="Course Two Overview Slide" /></a>
+<a href="https://www.losant.com/university/lessons#losant-overview" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-one-overview-slide.jpeg" alt="Course One Overview Slide" title="Course One Overview Slide" /></a>
 
-<a href="https://www.losant.com/university/lessons/course-3-chapter-1-introduction" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-three-overview-slide.jpeg" alt="Course Three Overview Slide" title="Course Three Overview Slide" /></a>
+<a href="https://www.losant.com/university/lessons#user-accounts" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-two-overview-slide.jpeg" alt="Course Two Overview Slide" title="Course Two Overview Slide" /></a>
+
+<a href="https://www.losant.com/university/lessons#user-accounts#data-and-device-management" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-three-overview-slide.jpeg" alt="Course Three Overview Slide" title="Course Three Overview Slide" /></a>
+
+<a href="https://www.losant.com/university/lessons#data-visualization" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-four-overview-slide.jpg" alt="Course Four Overview Slide" title="Course Four Overview Slide" /></a>
+
+<a href="https://www.losant.com/university/lessons#workflow-engine" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-five-overview-slide.jpg" alt="Course Five Overview Slide" title="Course Five Overview Slide" /></a>
+
+<a href="https://www.losant.com/university/lessons#edge-agent" target="_blank"><img style="padding: 10px;" src="/images/university/overview/course-six-overview-slide.jpg" alt="Course Six Overview Slide" title="Course Six Overview Slide" /></a>
