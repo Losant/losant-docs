@@ -6,9 +6,7 @@ description: Become a Losant expert with Losant University. This is the Course S
 
 ![Workshop Image](/images/university/workshop.jpg)
 
-## Introduction
-
-Welcome to your workshop on the Edge Agent. The purpose of this workshop to get your hands dirty with the edge agent. In the course, we installed the agent, reviewed usage, and covered some of the edge-specific nodes. Now, let's put some of that to use to our example.
+Welcome to your workshop on the Edge Agent. The purpose of this workshop to get your hands dirty with the Edge Agent. In the course, we installed the agent, reviewed usage, and covered some of the edge-specific nodes. Now, let's put some of that to use in our example.
 
 ## Review
 
@@ -32,7 +30,7 @@ Then, we simulated the data and did a simple analysis using the Data Explorer:
 
 ![Data Explorer](/images/university/course-three-workshop/device-explorer-graph.png)
 
-In Course Four, we took a look at different visualizations, [reporting](/dashboards/overview/#email-reports), [sharing](/dashboards/overview/#dashboard-access-control), and all the dashboarding features in Losant. In the workshop, we created a dashboard that supports Context Variables, which allows us to add hundreds and thousands of pumps and each had have their own dashboard.
+In Course Four, we took a look at different visualizations, [reporting](/dashboards/overview/#email-reports), [sharing](/dashboards/overview/#dashboard-access-control), and all the dashboarding features in Losant. In the workshop, we created a dashboard that supports Context Variables, which allows us to add hundreds and thousands of pumps and each had a distinct dashboard.
 
 ![Final Complete Dashboard](/images/university/course-four-workshop/water-pump-context-variables.gif)
 
@@ -46,7 +44,7 @@ Now that we’ve covered the Edge Agent, we can make use of it in this applicati
 
 <div style="padding:20px; background: #efefef; margin: 10px 0px 10px 0px; border-top: 5px #FF495C solid">
 <h2>SIDEBAR</h2>
-<p style="margin-bottom:2px;">In the real world, our pump could have a PLC that exposed local Modbus TCP. In that case, we could use the Edge Agent to talk to the pump. However, since we don't have an actual pump with a PLC, we will continue to let the cloud simulate the data and generate other data on the Pi.</p>
+<p style="margin-bottom:2px;">In the real world, our pump could have a PLC that exposes local Modbus TCP. In that case, we could use the Edge Agent to talk to the pump. However, since we don't have an actual pump with a PLC, we will continue to let the cloud simulate the data and generate other data on the Pi.</p>
 </div>
 
 To demonstrate the Edge Agent without the need for additional sensors, we are going to read system memory (RAM) and storage (hard drive space) from the Raspberry Pi.
@@ -58,13 +56,13 @@ In this workshop we are going to:
 
 Let’s begin.
 
-## Materials:
+## Materials
 
 This workshop assumes that you are using a [Raspberry Pi](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) as your edge device.
 
 ![Raspberry Pi](/images/university/course-six-workshop/raspberrypi.jpg)
 
-If you don't own a Raspberry Pi, remember that the edge agent can be installed on your own computer running MacOS or Windows.
+If you don't own a Raspberry Pi, remember that the Edge Agent can be installed on your own computer running MacOS or Windows.
 
 ## Part One: Installation and Setup
 
@@ -74,7 +72,10 @@ Please refer to the installation documentation: [Losant Edge Agent Installation]
 
 After you have it installed, we need to get it running: [Losant Edge Agent Usage](/edge-compute/edge-agent-usage/).
 
-**Important**: You will be creating a new device for the edge agent.
+<div style="padding:20px; background: #ff9a25; margin: 10px 0px 10px 0px;">
+<h2 style="color: white;">IMPORTANT</h2>
+<p style="color: white; margin-bottom:2px;">As you are setting up your Edge Agent device, you will be creating a new device. The "Edge Device" type in Losant functions like a gateway--meaning it can collect data on behalf of other devices.</p>
+</div>
 
 Once done, you should be able to run the `docker logs` command:
 
@@ -84,9 +85,9 @@ You should also see your device connected within Losant:
 
 ![Connected Edge Device](/images/university/course-six-workshop/connected-edge-device.png)
 
-## Part One: Reading Memory
+## Part Two: Reading Memory
 
-We are going to use an Edge Workflow to collecting memory information form the Raspberry Pi and save it as device data within Losant. Before we start, we need to add some new attributes to our edge device in Losant:
+We are going to use an Edge Workflow to collect memory information from the Raspberry Pi and save it as device data within Losant. Before we start, we need to add some new attributes to our edge device in Losant:
 
 ![New Device Attributes](/images/university/course-six-workshop/new-device-attributes.png)
 
@@ -136,7 +137,7 @@ payload.working.free = free;
 payload.working.usage = usage;
 ```
 
-In this Javascript Code, we are using the `os` Node.js module to get the total memory, free memory and calculating percentage usage. Then, attaching to the payload on an object called `working`.
+In this Javascript Code, we are using the `os` Node.js module to get the total memory, free memory and calculate percentage usage. Then, attach the memory data to the payload on an object called `working`.
 
 Next, as we did in the last workshop, configure the Device State Node to update these attributes on your device.
 
@@ -171,7 +172,7 @@ Here is what the payload should look like:
 
 To verify that it is indeed saving to a device, you can always check on the Device Debug Page. Next, we need to get system storage. Let’s do that.
 
-## Part Two: Get Storage
+## Part Three: Get Storage
 
 Now that we have memory, we can grab storage. Yes, we could use the Function Node here as well, but let's accomplish it using another node: the [Run Executable Node](workflows/data/run-executable/).
 
@@ -187,7 +188,7 @@ Let's use Run Executable Node to run this command, and save that to our device.
 
 ![Run Exec Settings](/images/university/course-six-workshop/run-exec-settings.png)
 
-We will need two nodes to do get storage. From the command we saw earlier, we only care about two values in the first line. The first line represents `/dev/root` which is the primary drive on the Pi. Then, from that first line, we need to grab the amount of storage used and the total amount available. We can create two commands to only grab those values.
+We will need use two Run Executable nodes to do get the storage information we need. From the command we saw earlier, we only care about two values in the first line. The first line represents `/dev/root` which is the primary drive on the Pi. Then, from that first line, we need to grab the amount of storage used and the total amount available. We can create two commands to only grab those values.
 
 ![df unix command](/images/university/course-six-workshop/df-annotated.png)
 
