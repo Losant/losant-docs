@@ -22,7 +22,7 @@ First, recall the story of the application we are building:
 >
 > To begin the new initiative, the Embree team decided to start with a proof of concept, which will enable them to solve a small, useful problem to get results faster. For this first project, Embree wants to take one of their existing pumps and send the data it’s collecting, like flow rate and temperature, to the cloud.  
 >
-> To build this proof of concept, they chose to use Losant. They chose Losant because the user experience would allow them build this proof of concept in no time and they could easily build new applications with the insights gained.  
+> To build this proof of concept, they chose to use Losant. They chose Losant because the user experience would allow them to build this proof of concept in no time and they could easily build new applications with the insights gained.  
 
 Currently in our application, we already have a device that represents our water pump with the following attributes:
 
