@@ -36,6 +36,9 @@ We're happy you're here! Getting familiar with the Losant product is easy. Get s
   </div>
 </div>
 
+<a href="https://hubs.ly/H0gk3fK0" target="_blank"><img src="/images/marketing/deeperDive-social-01_docs.jpg" alt="Losant Deeper Dive Webinar" />
+</a>
+
 <h2 style="text-transform: uppercase">Choose a Topic</h2>
 
 <div class="row topics">
