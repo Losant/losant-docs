@@ -451,3 +451,58 @@ curl -H 'Content-Type: application/json' \
 | ---- | ---- | ----------- |
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 | 404 | [Error](schemas.md#error) | Error if application was not found |
+
+## Search
+
+Search across an application&#x27;s resources by target identifier
+
+### Method And Url <a name="search-method-url"></a>
+
+GET https://api.losant.com/applications/**`APPLICATION_ID`**/search
+
+### Authentication <a name="search-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Application, all.Application.read, all.Organization, all.Organization.read, all.User, all.User.read, application.*, or application.search.
+
+### Request Path Components <a name="search-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| APPLICATION_ID | ID of the associated application | 575ec8687ae143cd83dc4a97 |
+
+### Request Query Parameters <a name="search-query-params"></a>
+
+| Name | Required | Description | Default | Example |
+| ---- | -------- | ----------- | ------- | ------- |
+| filter | Y | The partial resource name being searched for |  | filter&#x3D;my dev |
+
+### Request Headers <a name="search-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Curl Example <a name="search-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X GET \
+    https://api.losant.com/applications/APPLICATION_ID/search?filter=my%20dev
+```
+
+### Successful Responses <a name="search-successful-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Application Search Result](schemas.md#application-search-result) | An array of resource ids, names, descriptions, and types matching the search query |
+
+### Error Responses <a name="search-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if application is not found |

@@ -374,6 +374,14 @@ Schema for a single Application
         "organization"
       ]
     },
+    "organizationName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "organizationIconColor": {
+      "type": "string"
+    },
     "name": {
       "type": "string",
       "minLength": 1,
@@ -736,6 +744,7 @@ Schema for the body of an Application API Token creation request
           "application.mqttSubscriptionStream",
           "application.patch",
           "application.payloadCounts",
+          "application.search",
           "applicationApiToken.delete",
           "applicationApiToken.get",
           "applicationApiToken.patch",
@@ -1739,6 +1748,85 @@ Schema for the body of an Application creation request
 ```
 
 <br/>
+## Application Search Result
+
+Results of a search of an application&#x27;s resources
+
+### Schema <a name="application-search-result-schema"></a>
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[A-Fa-f\\d]{24}$"
+      },
+      "name": {
+        "type": "string"
+      },
+      "metadata": {
+        "type": "object"
+      },
+      "viewType": {
+        "type": "string"
+      },
+      "version": {
+        "type": "string"
+      },
+      "_type": {
+        "type": "string",
+        "enum": [
+          "applicationKey",
+          "dashboard",
+          "dataTable",
+          "deviceRecipe",
+          "device",
+          "domain",
+          "event",
+          "experienceEndpoint",
+          "experienceGroup",
+          "experienceSlug",
+          "experienceUser",
+          "experienceVersion",
+          "experienceView",
+          "file",
+          "flow",
+          "integration",
+          "webhook"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "_type"
+    ]
+  }
+}
+```
+
+<small></small>
+
+### Example <a name="application-search-result-example"></a>
+
+```json
+[
+  {
+    "type": "device",
+    "name": "My Device #1",
+    "metadata": {
+      "descriptor": "a basic description of device #1"
+    },
+    "id": "575ec8687ae143cd83dc4a97"
+  }
+]
+```
+
+<br/>
 ## Applications
 
 Schema for a collection of Applications
@@ -1783,6 +1871,14 @@ Schema for a collection of Applications
               "user",
               "organization"
             ]
+          },
+          "organizationName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "organizationIconColor": {
+            "type": "string"
           },
           "name": {
             "type": "string",
@@ -2916,6 +3012,23 @@ Schema for a single Dashboard
         "organization"
       ]
     },
+    "organizationName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "organizationIconColor": {
+      "type": "string"
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "applicationName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
     "name": {
       "type": "string",
       "minLength": 1,
@@ -3583,6 +3696,10 @@ Schema for the body of a Dashboard creation request
       "type": "string",
       "pattern": "^[A-Fa-f\\d]{24}$"
     },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
     "name": {
       "type": "string",
       "minLength": 1,
@@ -3916,6 +4033,23 @@ Schema for a collection of Dashboards
               "organization"
             ]
           },
+          "organizationName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "organizationIconColor": {
+            "type": "string"
+          },
+          "applicationId": {
+            "type": "string",
+            "pattern": "^[A-Fa-f\\d]{24}$"
+          },
+          "applicationName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
           "name": {
             "type": "string",
             "minLength": 1,
@@ -4211,6 +4345,14 @@ Schema for a collection of Dashboards
         "asc",
         "desc"
       ]
+    },
+    "orgId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
+    },
+    "applicationId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
     }
   }
 }
@@ -12454,6 +12596,7 @@ Schema for a single Workflow
           "type": {
             "type": "string",
             "enum": [
+              "customNodeStart",
               "dataTable",
               "deviceCommand",
               "deviceId",
@@ -12469,8 +12612,8 @@ Schema for a single Workflow
               "fileWatch",
               "integration",
               "mqttTopic",
+              "redis",
               "request",
-              "customNodeStart",
               "timer",
               "udp",
               "virtualButton",
@@ -13076,6 +13219,7 @@ Schema for the body of a Workflow modification request
           "type": {
             "type": "string",
             "enum": [
+              "customNodeStart",
               "dataTable",
               "deviceCommand",
               "deviceId",
@@ -13091,8 +13235,8 @@ Schema for the body of a Workflow modification request
               "fileWatch",
               "integration",
               "mqttTopic",
+              "redis",
               "request",
-              "customNodeStart",
               "timer",
               "udp",
               "virtualButton",
@@ -13569,6 +13713,7 @@ Schema for the body of a Workflow creation request
           "type": {
             "type": "string",
             "enum": [
+              "customNodeStart",
               "dataTable",
               "deviceCommand",
               "deviceId",
@@ -13584,8 +13729,8 @@ Schema for the body of a Workflow creation request
               "fileWatch",
               "integration",
               "mqttTopic",
+              "redis",
               "request",
-              "customNodeStart",
               "timer",
               "udp",
               "virtualButton",
@@ -14208,6 +14353,7 @@ Schema for a single Workflow Version
               "type": {
                 "type": "string",
                 "enum": [
+                  "customNodeStart",
                   "dataTable",
                   "deviceCommand",
                   "deviceId",
@@ -14223,8 +14369,8 @@ Schema for a single Workflow Version
                   "fileWatch",
                   "integration",
                   "mqttTopic",
+                  "redis",
                   "request",
-                  "customNodeStart",
                   "timer",
                   "udp",
                   "virtualButton",
@@ -14736,6 +14882,7 @@ Schema for a single Workflow Version
               "type": {
                 "type": "string",
                 "enum": [
+                  "customNodeStart",
                   "dataTable",
                   "deviceCommand",
                   "deviceId",
@@ -14751,8 +14898,8 @@ Schema for a single Workflow Version
                   "fileWatch",
                   "integration",
                   "mqttTopic",
+                  "redis",
                   "request",
-                  "customNodeStart",
                   "timer",
                   "udp",
                   "virtualButton",
@@ -14971,6 +15118,7 @@ Schema for the body of a Workflow Version creation request
           "type": {
             "type": "string",
             "enum": [
+              "customNodeStart",
               "dataTable",
               "deviceCommand",
               "deviceId",
@@ -14986,8 +15134,8 @@ Schema for the body of a Workflow Version creation request
               "fileWatch",
               "integration",
               "mqttTopic",
+              "redis",
               "request",
-              "customNodeStart",
               "timer",
               "udp",
               "virtualButton",
@@ -15489,6 +15637,7 @@ Schema for a collection of Workflow Versions
                     "type": {
                       "type": "string",
                       "enum": [
+                        "customNodeStart",
                         "dataTable",
                         "deviceCommand",
                         "deviceId",
@@ -15504,8 +15653,8 @@ Schema for a collection of Workflow Versions
                         "fileWatch",
                         "integration",
                         "mqttTopic",
+                        "redis",
                         "request",
-                        "customNodeStart",
                         "timer",
                         "udp",
                         "virtualButton",
@@ -16017,6 +16166,7 @@ Schema for a collection of Workflow Versions
                     "type": {
                       "type": "string",
                       "enum": [
+                        "customNodeStart",
                         "dataTable",
                         "deviceCommand",
                         "deviceId",
@@ -16032,8 +16182,8 @@ Schema for a collection of Workflow Versions
                         "fileWatch",
                         "integration",
                         "mqttTopic",
+                        "redis",
                         "request",
-                        "customNodeStart",
                         "timer",
                         "udp",
                         "virtualButton",
@@ -16317,6 +16467,7 @@ Schema for a collection of Workflows
                 "type": {
                   "type": "string",
                   "enum": [
+                    "customNodeStart",
                     "dataTable",
                     "deviceCommand",
                     "deviceId",
@@ -16332,8 +16483,8 @@ Schema for a collection of Workflows
                     "fileWatch",
                     "integration",
                     "mqttTopic",
+                    "redis",
                     "request",
-                    "customNodeStart",
                     "timer",
                     "udp",
                     "virtualButton",
@@ -16921,6 +17072,7 @@ Schema for the body of a workflow import request
                 "type": {
                   "type": "string",
                   "enum": [
+                    "customNodeStart",
                     "dataTable",
                     "deviceCommand",
                     "deviceId",
@@ -16936,8 +17088,8 @@ Schema for the body of a workflow import request
                     "fileWatch",
                     "integration",
                     "mqttTopic",
+                    "redis",
                     "request",
-                    "customNodeStart",
                     "timer",
                     "udp",
                     "virtualButton",
@@ -17430,6 +17582,7 @@ Schema for the body of a workflow import request
                 "type": {
                   "type": "string",
                   "enum": [
+                    "customNodeStart",
                     "dataTable",
                     "deviceCommand",
                     "deviceId",
@@ -17445,8 +17598,8 @@ Schema for the body of a workflow import request
                     "fileWatch",
                     "integration",
                     "mqttTopic",
+                    "redis",
                     "request",
-                    "customNodeStart",
                     "timer",
                     "udp",
                     "virtualButton",
@@ -17988,6 +18141,7 @@ Schema for the result of a workflow import request
                 "type": {
                   "type": "string",
                   "enum": [
+                    "customNodeStart",
                     "dataTable",
                     "deviceCommand",
                     "deviceId",
@@ -18003,8 +18157,8 @@ Schema for the result of a workflow import request
                     "fileWatch",
                     "integration",
                     "mqttTopic",
+                    "redis",
                     "request",
-                    "customNodeStart",
                     "timer",
                     "udp",
                     "virtualButton",
@@ -18516,6 +18670,7 @@ Schema for the result of a workflow import request
                     "type": {
                       "type": "string",
                       "enum": [
+                        "customNodeStart",
                         "dataTable",
                         "deviceCommand",
                         "deviceId",
@@ -18531,8 +18686,8 @@ Schema for the result of a workflow import request
                         "fileWatch",
                         "integration",
                         "mqttTopic",
+                        "redis",
                         "request",
-                        "customNodeStart",
                         "timer",
                         "udp",
                         "virtualButton",
@@ -19044,6 +19199,7 @@ Schema for the result of a workflow import request
                     "type": {
                       "type": "string",
                       "enum": [
+                        "customNodeStart",
                         "dataTable",
                         "deviceCommand",
                         "deviceId",
@@ -19059,8 +19215,8 @@ Schema for the result of a workflow import request
                         "fileWatch",
                         "integration",
                         "mqttTopic",
+                        "redis",
                         "request",
-                        "customNodeStart",
                         "timer",
                         "udp",
                         "virtualButton",
@@ -19322,6 +19478,7 @@ Schema for the body of a Github login request
                   "application.mqttSubscriptionStream",
                   "application.patch",
                   "application.payloadCounts",
+                  "application.search",
                   "applicationApiToken.delete",
                   "applicationApiToken.get",
                   "applicationApiToken.patch",
@@ -19484,6 +19641,7 @@ Schema for the body of a Github login request
                   "solutionUsers.*",
                   "applications.get",
                   "applications.post",
+                  "applications.detailedSummary",
                   "auditLog.get",
                   "auditLogs.get",
                   "dashboard.patch",
@@ -20526,7 +20684,35 @@ Schema for a collection of Integrations
 {
   "items": [
     {
-      "$ref": "#/examples/integrations"
+      "id": "58ec07f20c747f65243d0d76",
+      "integrationId": "58ec07f20c747f65243d0d76",
+      "applicationId": "575ec8687ae143cd83dc4a97",
+      "creationDate": "2016-06-13T04:00:00.000Z",
+      "lastUpdated": "2016-06-13T04:00:00.000Z",
+      "name": "Example Integrations",
+      "integrationType": "mqtt",
+      "enabled": true,
+      "topics": [
+        "myTopic"
+      ],
+      "mqttConfig": {
+        "clientId": "exampleClientId",
+        "username": "exampleUsername",
+        "password": "examplePassword",
+        "port": 8883,
+        "protocol": "mqtts",
+        "host": "broker.example.com"
+      },
+      "status": {
+        "lastKeepAlive": 1491863679994,
+        "connectInfo": {
+          "ts": 1490629589313
+        },
+        "disconnectInfo": {
+          "ts": 1490629587190,
+          "error": "Keepalive Timeout"
+        }
+      }
     }
   ],
   "count": 1,
@@ -24626,6 +24812,7 @@ Schema for the result of a time series query
         "MEDIAN",
         "MEAN",
         "SUM",
+        "STD_DEV",
         "NONE"
       ]
     },
@@ -24776,6 +24963,7 @@ Schema for the body of a time series query request
         "MEDIAN",
         "MEAN",
         "SUM",
+        "STD_DEV",
         "NONE"
       ]
     },
@@ -24942,6 +25130,7 @@ Schema for the body of a User authentication request
                   "application.mqttSubscriptionStream",
                   "application.patch",
                   "application.payloadCounts",
+                  "application.search",
                   "applicationApiToken.delete",
                   "applicationApiToken.get",
                   "applicationApiToken.patch",
@@ -25104,6 +25293,7 @@ Schema for the body of a User authentication request
                   "solutionUsers.*",
                   "applications.get",
                   "applications.post",
+                  "applications.detailedSummary",
                   "auditLog.get",
                   "auditLogs.get",
                   "dashboard.patch",
@@ -25336,6 +25526,7 @@ Schema for the body of a User creation request
                   "application.mqttSubscriptionStream",
                   "application.patch",
                   "application.payloadCounts",
+                  "application.search",
                   "applicationApiToken.delete",
                   "applicationApiToken.get",
                   "applicationApiToken.patch",
@@ -25498,6 +25689,7 @@ Schema for the body of a User creation request
                   "solutionUsers.*",
                   "applications.get",
                   "applications.post",
+                  "applications.detailedSummary",
                   "auditLog.get",
                   "auditLogs.get",
                   "dashboard.patch",
@@ -25625,6 +25817,10 @@ Schema for the body of a request to press a Workflow virtual button
       "type": "string",
       "minLength": 1,
       "maxLength": 255
+    },
+    "deviceId": {
+      "type": "string",
+      "pattern": "^[A-Fa-f\\d]{24}$"
     }
   },
   "required": [

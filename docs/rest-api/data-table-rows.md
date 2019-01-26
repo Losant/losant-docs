@@ -148,6 +148,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
+    -d '{"email":"email@example.com","query":{"$or":[{"myCol1":{"$ne":0}},{"myCol2":5}]},"queryOptions":{"limit":10000}}' \
     https://api.losant.com/applications/APPLICATION_ID/data-tables/DATA_TABLE_ID/rows/export
 ```
 
