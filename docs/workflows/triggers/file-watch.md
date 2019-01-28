@@ -47,7 +47,7 @@ The payload will include information about the event and the triggering file or 
   "isConnectedToLosant": <if the agent is connected to Losant>,
   "agentEnvironment": <object of environment variables>,
   "time": <time of the watch event arrived>,
-  "triggerId": <if of the file watch trigger>,
+  "triggerId": <id of the file watch trigger>,
   "triggerType": "fileWatch"
 }
 ```

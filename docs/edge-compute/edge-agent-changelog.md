@@ -12,6 +12,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.5.0 - 2018-12-18
+
+### Added <a name="1.5.0-added"></a>
+
+- Triggers / [Redis](/workflows/triggers/redis/)
+- Triggers / [Virtual Button](/workflows/triggers/virtual-button/)
+- Data / [SQL](/workflows/data/sql/)
+
+### Changed <a name="1.5.0-changed"></a>
+
+- The [HTTP Node](/workflows/data/http/) now supports making requests with client certificates.
+- The [HTTP Node](/workflows/data/http/) now supports using a custom CA.
+- Update to Node.js 10.15.0.
+- Multiple library dependencies were updated.
+
+### Fixed <a name="1.5.0-fixed"></a>
+
+- Fixed an issue where one workflow could monopolize the process and prevent other workflows from running.
+
+***
+
 ## 1.4.0 - 2018-12-18
 
 ### Added <a name="1.4.0-added"></a>
