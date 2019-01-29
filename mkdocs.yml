@@ -193,6 +193,7 @@ nav:
         - Run Executable: workflows/data/run-executable.md
         - Salesforce Cases: workflows/data/salesforce-cases.md
         - ServiceNow: workflows/data/service-now.md
+        - SQL: workflows/data/sql.md
         - "Storage: Get Value": workflows/data/get-value.md
         - "Storage: Set Value": workflows/data/store-value.md
         - "Table: Insert Row": workflows/data/table-insert-row.md
