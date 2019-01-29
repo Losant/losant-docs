@@ -95,9 +95,9 @@ Next, configure the device data.
 1. Choose the “Water Pump” device.
 2. Select an attribute. In the screenshot above, I chose flow.
 3. Set the “Series Label” to “Flow”.
-4. Set the aggregation to “MEAN”.
+4. Set the aggregation to “Mean”.
 
-Because we chose “MEAN”, each data point on the graph will represent the average of the 30 points we talked about previously.
+Because we chose “Mean”, each data point on the graph will represent the average of the 30 points we talked about previously.
 
 Now, we should see data appearing in the preview:
 

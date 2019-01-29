@@ -41,7 +41,7 @@ The parameters of the Time Series Query include:
 * **Attribute** is the device attribute whose value will be returned in the query. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Duration** is how far into the past you want to look at the data.
 * **Resolution** is how your data will be grouped. These options will change based on what you specify for the duration.
-* **Aggregation** determines how all the available data in each resolution group should be aggregated before being read. For example, choosing "MEAN" will average all data points together before displaying within the gauge.
+* **Aggregation** determines how all the available data in each resolution group should be aggregated before being read. For example, choosing "Mean" will average all data points together before displaying within the gauge.
 
 #### Gauge Queries
 
@@ -55,7 +55,7 @@ The parameters of the Gauge Query include:
 * **Device IDS / Tags** is a [device query](/devices/device-queries/) for choosing which devices' data you want to access.
 * **Attribute** is the device attribute whose value will be returned in the query. Note that if data from more than one device is being displayed, each of those devices must supply the same attribute name.
 * **Duration** is how far into the past you want to look at the data.
-* **Aggregation** determines how all the available data returned should be aggregated before being read. For example, choosing "MEAN" will average all data points together before displaying within the gauge. This field is only available if "Data Type" is set to "Historical", and any of the following conditions applies:
+* **Aggregation** determines how all the available data returned should be aggregated before being read. For example, choosing "Mean" will average all data points together before displaying within the gauge. This field is only available if "Data Type" is set to "Historical", and any of the following conditions applies:
     * Duration is set to anything other than "Last received data point"
     * A device tag is supplied in the device query
     * More than one device ID is supplied within the device query

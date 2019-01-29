@@ -215,7 +215,7 @@ Next, add a gauge block. This block will display the total number of times the d
 
 ![Gauge Settings](/images/getting-started/losant-iot-dev-kits/door-sensor/gauge-settings.png "Gauge Settings")
 
-Name the block anything you want. Make sure your application is selected. Set the `Duration` to `24 hours`. Make sure your device is selected, set the label to whatever you want, make sure the `open` attribute is selected, and change the `Aggregation` to `SUM`. As soon as all the fields are filled out, you should see a real-time preview on the top-right of the screen. Since our device reports the number 1 whenever the door is opened, we can simply sum up all of those 1's to see how many times the door was opened.
+Name the block anything you want. Make sure your application is selected. Set the `Duration` to `24 hours`. Make sure your device is selected, set the label to whatever you want, make sure the `open` attribute is selected, and change the `Aggregation` to `Sum`. As soon as all the fields are filled out, you should see a real-time preview on the top-right of the screen. Since our device reports the number 1 whenever the door is opened, we can simply sum up all of those 1's to see how many times the door was opened.
 
 Click `Add Block` to add the gauge to your dashboard.
 
@@ -241,7 +241,7 @@ The last block we're going to add is a graph of door activity over time. Click t
 
 ![Time Series Settings](/images/getting-started/losant-iot-dev-kits/door-sensor/time-series-settings.png "Time Series Settings")
 
-Set the `Time Range` to `24 hours` and the `One point every` to `5 minutes`. Make sure your device is selected. Set the label to anything you want. Make sure the `Attribute` is set to `open` and set the `Aggregation` to `SUM`.
+Set the `Time Range` to `24 hours` and the `One point every` to `5 minutes`. Make sure your device is selected. Set the label to anything you want. Make sure the `Attribute` is set to `open` and set the `Aggregation` to `Sum`.
 
 This will graph the total number of door opens every 5 minutes over the last 24 hours.
 

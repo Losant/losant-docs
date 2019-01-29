@@ -25,7 +25,7 @@ The Time Series Graph can display points as a **live stream** (rendering a point
 
 In your block configuration, you must set a default **duration** and **resolution** for the Time Series Graph. These fields allow you to configure how far into the past to view and how to group the data together. The available resolutions will change based on what you specify for the duration. For example, when you choose 30 days of data, the smallest resolution available is 60 minutes. This is because smaller resolutions result in more data points, and too much data can't be graphed by the browser and is hard to understand by the viewer.
 
-The resolution and the aggregator specified in the block data section work together in order to generate a data point. For example, if the resolution is 60 minutes and the aggregator is `MEAN`, Losant will average all of the data together in 60-minute increments to create a single point on the graph.
+The resolution and the aggregator specified in the block data section work together in order to generate a data point. For example, if the resolution is 60 minutes and the aggregator is `Mean`, Losant will average all of the data together in 60-minute increments to create a single point on the graph.
 
 Note that if **live stream** is selected as the data type, the "resolution" selector will disappear from the block configuration.
 

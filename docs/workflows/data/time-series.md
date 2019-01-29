@@ -28,7 +28,7 @@ The second option allows a workflow to dynamically change what specific devices 
 
 ![Time Series Node Config](/images/workflows/data/time-series-node-config.png "Time Series Node Config")
 
-The Data: Time Series Node also needs to know the attribute, the time range, the resolution, and what aggregation to use for the query. The available resolutions will vary depending on the selected time range, just like the Time Series Dashboard Block. In the above example, the attribute `kwattHours` will be queried over the last 24 hours with a one-hour resolution using a `SUM` aggregation.
+The Data: Time Series Node also needs to know the attribute, the time range, the resolution, and what aggregation to use for the query. The available resolutions will vary depending on the selected time range, just like the Time Series Dashboard Block. In the above example, the attribute `kwattHours` will be queried over the last 24 hours with a one-hour resolution using a `Sum` aggregation.
 
 ![Time Series Node Result](/images/workflows/data/time-series-node-result.png "Time Series Node Result")
 

@@ -151,7 +151,7 @@ curl -H "Authorization: Bearer USER_TOKEN" \
 ]
 ```
 
-The result of this API request will be a data point for each five-minute interval over the last 24 hours. Since the aggregation in the Time Series node was set to `MEAN`, the `value` above will be the average. The `count` is the number of data points collected in that five-minute interval. The `sum` is the value of every point collected in the five-minute interval added together.
+The result of this API request will be a data point for each five-minute interval over the last 24 hours. Since the aggregation in the Time Series node was set to `Mean`, the `value` above will be the average. The `count` is the number of data points collected in that five-minute interval. The `sum` is the value of every point collected in the five-minute interval added together.
 
 The lōm mobile app now has an API that supports all required features. Users can sign up, they can log in, they can register devices, they can see a list of their devices, and they can view historical data for each device. This concludes the Losant Application Experience walkthrough. If you have additional questions about experiences, please visit our [forums](https://forums.losant.com).
 

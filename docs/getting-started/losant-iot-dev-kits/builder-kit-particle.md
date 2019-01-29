@@ -262,7 +262,7 @@ Next, let's display the number of times the button has been pressed. Add a new G
 1. Make sure your device is selected.
 1. Set the label to anything you want.
 1. Select "button-pressed" as the attribute.
-1. Change aggregation to SUM.
+1. Change aggregation to Sum.
 
 This block will now display the sum of all button presses over the last 24 hours. Click `Add Block` to add it to your dashboard.
 

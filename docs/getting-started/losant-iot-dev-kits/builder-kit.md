@@ -389,9 +389,9 @@ Next, let’s add a graph to the dashboard that shows the temperature value over
 
 Set the name of the block to any value you’d like. Select your builder kit application from the Application drop down. Next, select to view the last 15 minutes of data at a 10 second resolution. This will cause the graph to show 15 minutes of data with a data point every 10 seconds.
 
-In the block data section, name the graph series Deg F or Deg C, select your device, select the tempF or tempC attribute, and set the aggregation to `MEAN`.
+In the block data section, name the graph series Deg F or Deg C, select your device, select the tempF or tempC attribute, and set the aggregation to `Mean`.
 
-The aggregation is the operator applied to the data in order to provide a data point for every 10 seconds. Since we chose MEAN, all data points in a 10 second window will be averaged together for each data point on the graph.
+The aggregation is the operator applied to the data in order to provide a data point for every 10 seconds. Since we chose Mean, all data points in a 10 second window will be averaged together for each data point on the graph.
 
 Click the `Add Block` button and the graph will appear on your dashboard.
 
