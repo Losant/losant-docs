@@ -2,6 +2,7 @@
 flowclass:
   - Application
   - Experience
+  - Edge 1.5.0
 description: Learn more about the Losant Virtual Button Trigger.
 ---
 
@@ -24,6 +25,18 @@ The Virtual Button Trigger Node can be configured to have a specific payload sen
 ![Virtual Button Trigger Config](/images/workflows/triggers/virtual-button-trigger-config.png "Virtual Button Trigger Config")
 
 In the above example, the workflow will run with the `data` payload of `{"power": "toggle"}`.
+
+![Virtual Button Edge Flow](/images/workflows/triggers/virtual-button-trigger-edge.png "Virtual Button Edge Flow")
+
+## Edge Workflow
+
+When using the Virtual Button Trigger Node in an Edge Workflow there are a couple extra configurations required.
+
+First to fire the Virtual Button Trigger you need to select a workflow [version](/workflows/versioning/) which is currently deployed on at least one device.
+
+Next it is required to select a single device.
+
+Finally to fire the trigger you can press the "Trigger Workflow" button, or the button on the node itself
 
 ## Payload
 
