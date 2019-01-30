@@ -18,6 +18,8 @@ Currently supported SQL database servers include [MSSQL](https://www.microsoft.c
 
 The configuration of the SQL Node can be broken down into four major sections - configuring the connection, configuring connection encryption (optional), creating the SQL query, and choosing what to do with the result.
 
+## SQL Connection
+
 ![SQL Node Connection Configuration](/images/workflows/data/SQL-node-connection.png "SQL Node Connection Configuration")
 
 SQL connection configuration contains up to six fields:
@@ -31,9 +33,13 @@ SQL connection configuration contains up to six fields:
 
 When using a SQLite 3 DBMS the only connection option is **SQLite File**, which is a string or template pointing to an db disk file (.sqlite) or a in-memory db file (e.g. **SQLite File** = :memory:).
 
-![SQL Node Connection Encrption](/images/workflows/data/SQL-node-encryption.png "SQL Node Connection Encrption")
+## SQL Connection Encryption
+
+![SQL Node Connection Encryption](/images/workflows/data/SQL-node-encryption.png "SQL Node Connection Encryption")
 
 Next you have the option of adding SSL/Encryption options to your SQL client connection. This is not available to SQLite connections. When "MSSQL Encrypt Option" is checked the option "encrypt=true" is set in the client connection (Note: this is required when connecting to Azure's MSSQL). Concerning MySQL and PostreSQL, if "SSL/TLS Connection" is checked "ssl=true" will be set but if the "SSL Configuration" is also filled in the object will be set for the connection. Check your SQL server configuration for the appropriate settings.
+
+## SQL Query
 
 ![SQL Query](/images/workflows/data/SQL-node-query.png "SQL Query")
 
@@ -43,13 +49,15 @@ Then an SQL query string is required to use this node in your workflow. [String 
 SELECT * FROM {{foo.bar}}
 ```
 
+## Payload
+
 ![SQL Node Result](/images/workflows/data/SQL-node-result.png "SQL Node Result")
 
 Finally, you can optionally choose to store the result of the SQL query on the payload. For queries like `INSERT` or `DELETE`, you might not care about the result, but for an query like the `SELECT` above, you almost certainly do! In this case the result of the `SELECT` is being placed at the [payload path](/workflows/accessing-payload-data/#payload-paths) `sales`. Here is an example payload after the above SQL Node has been run:
 
 ```json
 {
-  "sales": {
+  "sales": [
     0: {
       "sale_id": "a001",
       "customer": "DT",
@@ -64,7 +72,7 @@ Finally, you can optionally choose to store the result of the SQL query on the p
     },
     2: {},
     3: {}
-  },
+  ],
   "globals": { },
   "applicationName": "SQL Data",
   "flowName": "Public SQL",
