@@ -26,17 +26,17 @@ The Virtual Button Trigger Node can be configured to have a specific payload sen
 
 In the above example, the workflow will run with the `data` payload of `{"power": "toggle"}`.
 
-![Virtual Button Edge Flow](/images/workflows/triggers/virtual-button-trigger-edge.png "Virtual Button Edge Flow")
-
 ## Edge Workflow
 
-When using the Virtual Button Trigger Node in an Edge Workflow there are a couple extra configurations required.
+When using the Virtual Button Trigger Node in an Edge Workflow there are a couple extra configurations required. Edge Workflows can be deployed to many different devices at the same time (potentially different versions of this workflow). The extra configuration is to ensure that you are triggering the correct Edge Workflow, workflow version, and device.
 
-First to fire the Virtual Button Trigger you need to select a workflow [version](/workflows/versioning/) which is currently deployed on at least one device.
+![Virtual Button Edge Flow](/images/workflows/triggers/virtual-button-trigger-edge.png "Virtual Button Edge Flow")
 
-Next it is required to select a single device.
+Here are the steps:
 
-Finally to fire the trigger you can press the "Trigger Workflow" button, or the button on the node itself
+1. Select a [workflow version](/workflows/versioning/) which is currently deployed on at least one device.
+1. Select a single device.
+1. Press the "Trigger Workflow" button, or the button on the node itself.
 
 ## Payload
 
