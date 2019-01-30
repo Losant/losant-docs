@@ -6,13 +6,13 @@ description: Learn more about the Losant Redis Trigger.
 
 # Redis Trigger
 
-The Redis Trigger will trigger a workflow whenever the [Edge Compute device](/devices/edge-compute/) receives a message on the configured Redis pub/sub channel.
+The Redis Trigger Node will trigger a workflow whenever the [Edge Compute device](/devices/edge-compute/) receives a message on the configured Redis Pub/Sub channel.
 
 ![Redis Trigger](/images/workflows/triggers/redis-trigger.png "Redis Trigger")
 
 ## Configuration
 
-There are two sections of configuration for a Redis trigger. First, you need to configure what Redis server to connect to. You are required to provide the Redis hostname, and you may optionally provide the Redis port and password. If you don't provide a port, it defaults to the standard Redis port of `6379`. If you don't provide a password, it defaults to no password. Once you have the information configured for the Redis connection, you then must configure the particular Redis channel or channel pattern to subscribe to.
+There are two sections of configuration for a Redis Trigger Node. First, you need to configure what Redis server to connect to. You are required to provide the Redis hostname, and you may optionally provide the Redis port and password. If you don't provide a port, it defaults to the standard Redis port of `6379`. If you don't provide a password, it defaults to no password. Once you have the information configured for the Redis connection, you then must configure the particular Redis channel or channel pattern to subscribe to.
 
 ## Payload
 
