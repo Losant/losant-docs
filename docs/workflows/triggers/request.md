@@ -6,7 +6,7 @@ description: Learn more about the Losant HTTP Request Trigger.
 
 # Edge HTTP Request Trigger
 
-The HTTP Request Trigger will fire a workflow whenever the [edge compute device](/devices/edge-compute/) receives request on the local web server run by the Losant Edge Agent.
+The HTTP Request Trigger will fire a workflow whenever the [Edge Compute device](/devices/edge-compute/) receives request on the local web server run by the Losant Edge Agent.
 
 ![HTTP Request Trigger](/images/workflows/triggers/http-request-trigger.png "HTTP Request Trigger")
 

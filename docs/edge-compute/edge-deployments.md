@@ -1,5 +1,5 @@
 ---
-description: Learn more about deploying Losant Workflows to Edge Compute Devices.
+description: Learn more about deploying Losant Workflows to Edge Compute devices.
 ---
 
 # Edge Deployments
@@ -42,7 +42,7 @@ In the workflow editor, click the "Deploy" tab to view a list of all devices to 
 
 ### Deployment Status
 
-Multiple workflows can be deployed to an edge compute device, however only one version of a workflow may be on a device at one time. When viewing a list of deployments, the "Version" can be in one of three states:
+Multiple workflows can be deployed to an Edge Compute device, however only one version of a workflow may be on a device at one time. When viewing a list of deployments, the "Version" can be in one of three states:
 
 * **Up to date**, signaled by a green checkmark alongside the version name. This indicates that the version of the workflow running on the device matches what should be on the device per your scheduled edge deployments.
 * **Pending**, signaled by a gray clock. The version currently on the device is listed first, and the version that is scheduled to be deployed to the device is on the right side of the arrow. The rollout should occur the next time the device connects.

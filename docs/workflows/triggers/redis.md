@@ -6,7 +6,7 @@ description: Learn more about the Losant Redis Trigger.
 
 # Redis Trigger
 
-The Redis Trigger will trigger a workflow whenever the [edge compute device](/devices/edge-compute/) receives a message on the configured Redis pub/sub channel.
+The Redis Trigger will trigger a workflow whenever the [Edge Compute device](/devices/edge-compute/) receives a message on the configured Redis pub/sub channel.
 
 ![Redis Trigger](/images/workflows/triggers/redis-trigger.png "Redis Trigger")
 

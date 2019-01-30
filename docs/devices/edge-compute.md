@@ -1,22 +1,22 @@
 ---
-description: Learn more about configuring edge compute devices in the Losant platform.
+description: Learn more about configuring Edge Compute devices in the Losant platform.
 ---
 
 # Edge Compute Devices
 
-Edge devices are similar to the concept of a [gateway device](/devices/gateways-peripherals/), but have the power to act on the data they receive from their peripherals. Because Losant operates in the cloud, there is latency in receiving and acting on device state over the network. By installing an Edge Compute Device and running an [Edge Agent](/edge-compute/edge-agent-usage/) you can reduce the latency involved to just the latency over your local network. It's like having your own personal Losant!
+Edge devices are similar to the concept of a [gateway device](/devices/gateways-peripherals/), but have the power to act on the data they receive from their peripherals. Because Losant operates in the cloud, there is latency in receiving and acting on device state over the network. By installing an Edge Compute device and running an [Edge Agent](/edge-compute/edge-agent-usage/) you can reduce the latency involved to just the latency over your local network. It's like having your own personal Losant!
 
 ## Creating a Device
 
-You can create an Edge Compute Device through the same flow that all devices are created. Just choose "Edge Compute" from the device creation screen.
+You can create an Edge Compute device through the same flow that all devices are created. Just choose "Edge Compute" from the device creation screen.
 
-![Add Edge Compute Device](/images/devices/edge-compute/create-edge-compute-device.png "Add Edge Compute Device")
+![Add Edge Compute device](/images/devices/edge-compute/create-edge-compute-device.png "Add Edge Compute device")
 
 Once created, make note of the `Device ID` at the top right of the device page. To finish the setup, you'll need to configure and run the Losant Edge Agent. You can read more about the Edge Agent [here](/edge-compute/overview/), and read about detailed setup/usage instructions [here](/edge-compute/edge-agent-installation/).
 
 ## Supported Devices
 
-The following devices have been tested and are known to work as an Edge Compute Device.
+The following devices have been tested and are known to work as an Edge Compute device.
 
 |                                                                                        |                                                                                                |
 | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |

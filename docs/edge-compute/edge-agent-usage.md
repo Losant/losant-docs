@@ -4,13 +4,13 @@ description: Learn more about running and using the Losant Edge Agent.
 
 # Losant Edge Agent Usage
 
-The Losant Edge Agent ("Agent") is a command line utility exposed through [Docker](https://www.docker.com/what-docker) as a [container](https://www.docker.com/what-container) you can run on your [Edge Compute Device](/devices/edge-compute/). The below outlines some example usage for how you can interact with the Agent on your device. For full documentation of all available flags and options, see the [`losant/edge-agent` image on Docker Hub](https://hub.docker.com/r/losant/edge-agent/).
+The Losant Edge Agent ("Agent") is a command line utility exposed through [Docker](https://www.docker.com/what-docker) as a [container](https://www.docker.com/what-container) you can run on your [Edge Compute device](/devices/edge-compute/). The below outlines some example usage for how you can interact with the Agent on your device. For full documentation of all available flags and options, see the [`losant/edge-agent` image on Docker Hub](https://hub.docker.com/r/losant/edge-agent/).
 
 For help getting the Agent setup on your device, see the [installation instructions](/edge-compute/edge-agent-installation/). All command examples below assume you can run `docker` without `sudo` or that you are logged in as `root` (not recommended). If you wish to run `docker` as your current user, see [these instructions](/edge-compute/edge-agent-installation/#optional-executing-the-docker-command-without-sudo).
 
 ## Creating Storage Area
 
-It is **strongly** recommended that you mount a volume in to the Agent as a workspace for persistent data. By default, the Agent will write data **inside** the container to `/data`. By [mounting a volume or using a volume container](https://docs.docker.com/storage/volumes/), we can have the Agent write to a local folder on the Edge Compute Device. By doing so, you have access to the persistent data created by the agent on your host machine and can reuse it if you have to destroy an Agent container and rebuild (upgrading the agent, for instance). Another benefit is that the Agent doesn't accumulate data internally which could impact the performance and/or stability of the container.
+It is **strongly** recommended that you mount a volume in to the Agent as a workspace for persistent data. By default, the Agent will write data **inside** the container to `/data`. By [mounting a volume or using a volume container](https://docs.docker.com/storage/volumes/), we can have the Agent write to a local folder on the Edge Compute device. By doing so, you have access to the persistent data created by the agent on your host machine and can reuse it if you have to destroy an Agent container and rebuild (upgrading the agent, for instance). Another benefit is that the Agent doesn't accumulate data internally which could impact the performance and/or stability of the container.
 
 All we need to do is create a folder locally to house the data. This folder can be anywhere on your file system, so long as permissions are set so `docker` can write to it. For instance, you might choose to put this folder at `~/losant-edge-agent` for easy access. For this example, we're going to create a folder at `/var/lib/losant-edge-agent/` and update the permissions to allow `docker` to write to it.
 
@@ -21,7 +21,7 @@ sudo chmod -R a+rwx /var/lib/losant-edge-agent
 
 ## Running With Environment Config
 
-There are only three required environment variables that must be set to run the container. You must provide the `DEVICE_ID` obtained when you [created your edge compute device](/devices/edge-compute/), as well as the `ACCESS_KEY` and `ACCESS_SECRET` [associated with your application](/applications/access-keys/). Although these are the only required configuration, we're also going to mount in a volume for the Agent to write to.
+There are only three required environment variables that must be set to run the container. You must provide the `DEVICE_ID` obtained when you [created your Edge Compute device](/devices/edge-compute/), as well as the `ACCESS_KEY` and `ACCESS_SECRET` [associated with your application](/applications/access-keys/). Although these are the only required configuration, we're also going to mount in a volume for the Agent to write to.
 
 ```console
 docker run -d --restart always --name docs-agent \
@@ -32,7 +32,7 @@ docker run -d --restart always --name docs-agent \
   losant/edge-agent
 ```
 
-Let's break this down a little bit. By specifying the `-d` parameter to `docker run`, we are asking the Agent to run in the background so we have control of our terminal after running the Agent. The `--restart always` option tells Docker to always restart the container if it were to die unexpectedly or on device boot. This aids in keeping your Edge Compute Device up and running with minimal intervention. The `--name` option allows us to name our container so that we may stop and start it more easily in the future. The `-e` allows us to enumerate any and all environment variables we would like to pass in as configuration. Lastly, the `-v` flag tells `docker run` that we would like to mount our host folder `/var/lib/losant-edge-agent/data` as `/data` inside the container. Note, by specifying an image `losant/edge-agent` without a tag, we are asking for the `latest` tag of the Agent. It is recommended that you select a version- `losant/edge-agent:1.0.0` for example.
+Let's break this down a little bit. By specifying the `-d` parameter to `docker run`, we are asking the Agent to run in the background so we have control of our terminal after running the Agent. The `--restart always` option tells Docker to always restart the container if it were to die unexpectedly or on device boot. This aids in keeping your Edge Compute device up and running with minimal intervention. The `--name` option allows us to name our container so that we may stop and start it more easily in the future. The `-e` allows us to enumerate any and all environment variables we would like to pass in as configuration. Lastly, the `-v` flag tells `docker run` that we would like to mount our host folder `/var/lib/losant-edge-agent/data` as `/data` inside the container. Note, by specifying an image `losant/edge-agent` without a tag, we are asking for the `latest` tag of the Agent. It is recommended that you select a version- `losant/edge-agent:1.0.0` for example.
 
 ## Managing The Edge Agent
 
@@ -70,7 +70,7 @@ Instead of running `docker stop` and then `docker start`, you can simply run `do
 
 **> `docker rm <container-name|container-id>` ([more info](https://docs.docker.com/engine/reference/commandline/container_rm/))**
 
-It's a good practice to name your containers on your Edge Compute Device to prevent many containers being created and taking up space on your device. Because of this practice, you'll need to remove your container before creating another with the same name. Or, you can create a container with a different name as you determine the best way to run the Agent on your device.
+It's a good practice to name your containers on your Edge Compute device to prevent many containers being created and taking up space on your device. Because of this practice, you'll need to remove your container before creating another with the same name. Or, you can create a container with a different name as you determine the best way to run the Agent on your device.
 
 ### Agent Management Example
 
@@ -167,7 +167,7 @@ docker restart docs-agent
 
 ### Webserver: HTTP Request Trigger / HTTP Response Node
 
-If you wish to enable the [HTTP Request Trigger](/workflows/triggers/request/) for your Edge Compute Device, you can do so by binding a host port at the time of container creation. In order to build on the configuration we have going, we only need to add the `-p` flag and then configure the Agent in our configuration file to enable the trigger. See [exposing ports](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p-expose) with Docker for more information. For more advanced configuration of the [HTTP Request Trigger](/workflows/triggers/request/) and [HTTP Response Node](/workflows/outputs/http-response/), see the [Docker Hub Repo](https://hub.docker.com/r/losant/edge-agent/).
+If you wish to enable the [HTTP Request Trigger](/workflows/triggers/request/) for your Edge Compute device, you can do so by binding a host port at the time of container creation. In order to build on the configuration we have going, we only need to add the `-p` flag and then configure the Agent in our configuration file to enable the trigger. See [exposing ports](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p-expose) with Docker for more information. For more advanced configuration of the [HTTP Request Trigger](/workflows/triggers/request/) and [HTTP Response Node](/workflows/outputs/http-response/), see the [Docker Hub Repo](https://hub.docker.com/r/losant/edge-agent/).
 
 ```console
 docker run -d --restart always --name docs-agent \

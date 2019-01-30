@@ -6,7 +6,7 @@ description: Learn more about the Losant UDP Trigger.
 
 # UDP Trigger
 
-The UDP Trigger will trigger a workflow whenever the [edge compute device](/devices/edge-compute/) receives a UDP datagram on the configured port.
+The UDP Trigger will trigger a workflow whenever the [Edge Compute device](/devices/edge-compute/) receives a UDP datagram on the configured port.
 
 ![UDP Trigger](/images/workflows/triggers/udp-trigger.png "UDP Trigger")
 

@@ -6,7 +6,7 @@ description: Learn more about the Losant Device Command Trigger.
 
 # Device Command Trigger
 
-The Device Command Trigger will trigger a workflow whenever the [edge compute device](/devices/edge-compute/) receives a [command](/devices/commands/).
+The Device Command Trigger will trigger a workflow whenever the [Edge Compute device](/devices/edge-compute/) receives a [command](/devices/commands/).
 
 ![Device Command Trigger](/images/workflows/triggers/device-command-trigger.png "Device Command Trigger")
 

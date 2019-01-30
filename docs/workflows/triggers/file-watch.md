@@ -6,13 +6,13 @@ description: Learn more about the Losant File Watch Trigger.
 
 # File Watch Trigger
 
-The File Watch Trigger will trigger a workflow whenever the [edge compute device](/devices/edge-compute/) sees file or directory changes on the configured path.
+The File Watch Trigger will trigger a workflow whenever the [Edge Compute device](/devices/edge-compute/) sees file or directory changes on the configured path.
 
 ![File Watch Trigger](/images/workflows/triggers/file-watch-trigger.png "File Watch Trigger")
 
 ## Configuration
 
-There are two configurable criteria for a File Watch Trigger: the file system path to watch, and the types of watch events to trigger on. You can choose to trigger on any combination of adding files, changing files, removing files, adding directories, or removing directories. Remember, the file system path is a path on the file system of the [edge compute device](/devices/edge-compute/) where the Edge Agent is running.
+There are two configurable criteria for a File Watch Trigger: the file system path to watch, and the types of watch events to trigger on. You can choose to trigger on any combination of adding files, changing files, removing files, adding directories, or removing directories. Remember, the file system path is a path on the file system of the [Edge Compute device](/devices/edge-compute/) where the Edge Agent is running.
 
 ## Payload
 

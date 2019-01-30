@@ -40,7 +40,7 @@ When debugging edge workflows, it is necessary to choose a single device to view
 
 ![Workflow Edge Agent Tab](/images/workflows/workflow-edge-agent-tab.png "Workflow Edge Agent Tab")
 
-In order to utilize newly released edge workflow functionality (such as new nodes), it is necessary to upgrade your workflow's [Edge Agent](/edge-compute/edge-agent-changelog/) – and to deploy the new agent to your edge compute devices.
+In order to utilize newly released edge workflow functionality (such as new nodes), it is necessary to upgrade your workflow's [Edge Agent](/edge-compute/edge-agent-changelog/) – and to deploy the new agent to your Edge Compute devices.
 
 To do this, use the Edge Agent tab in the workflow editor. The upgrade can only be applied to the "develop" version. If you upgrade the Edge Agent version and make changes to your "develop" workflow, you will have to create new [versions](/workflows/versioning/) of the workflow before deploying them to your devices.
 

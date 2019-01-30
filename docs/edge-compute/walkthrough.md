@@ -24,7 +24,7 @@ Using the `Devices -> Add Device` main application menu, first create the Edge C
 
 ![Add Device Menu](/images/edge-compute/walkthrough/add-device.png "Add Device Menu")
 
-![Edge Compute Device](/images/edge-compute/walkthrough/edge-compute-device.png "Edge Compute Device")
+![Edge Compute device](/images/edge-compute/walkthrough/edge-compute-device.png "Edge Compute device")
 
 In this example, the device is named "Raspberry Pi Gateway", however you can name it anything you'd like. The only other required setting is to make the device type `Edge Compute`. This device doesn't need any attributes because the actual temperature and humidity information will be added to our peripheral device. Click the `Create Device` button to add this new device to your application.
 
