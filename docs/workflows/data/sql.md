@@ -49,7 +49,7 @@ Finally, you can optionally choose to store the result of the SQL query on the p
 
 ```json
 {
-  "sales": {
+  "sales": [
     0: {
       "sale_id": "a001",
       "customer": "DT",
@@ -64,7 +64,7 @@ Finally, you can optionally choose to store the result of the SQL query on the p
     },
     2: {},
     3: {}
-  },
+  ],
   "globals": { },
   "applicationName": "SQL Data",
   "flowName": "Public SQL",
