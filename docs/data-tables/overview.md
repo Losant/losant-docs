@@ -4,7 +4,9 @@ description: Learn about creating and managing Data Tables in your Losant Applic
 
 # Data Tables
 
-Data tables allow for the storage of arbitrary data within your applications. This data can then be edited, queried or deleted either directly through the table interface or through a Losant [workflow](/workflows/overview/).
+Data tables allow for the storage of arbitrary data within your applications. This data can then be edited, queried or deleted either directly through the table interface or through a Losant [workflow](/workflows/overview/). Data Tables should be used to store static or semi static information only, e.g. a list of names and phone numbers.
+
+Do **not** use data tables to store time series data, that belongs on a device in [state](/devices/state). The only dashboard block that you can utilize data tables on is the [data table block](/dashboards/data-table) itself. Thus if you want to display this data in a graph do **not** use data tables store as state on a device. If you would like a copy of your device data in the form of a data table you can use the [device data export tool](/devices/overview/#exporting-devices) to retrieve a copy of all the data currently stored for a single device. If you would like to continuously get a copy of your devices state data, enable your [Application archive feature](/applications/overview/#application-archive).
 
 The amount of data (in bytes) that can be stored in your application's data tables is a [hard-limited resource](/organizations/resource-limits/#hard-limited-resources).
 
