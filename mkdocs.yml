@@ -72,7 +72,7 @@ nav:
     - Edge Deployments: edge-compute/edge-deployments.md
     - Edge Agent Changelog: edge-compute/edge-agent-changelog.md
 - Devices:
-    - Device Overview: devices/overview.md
+    - Overview: devices/overview.md
     - Device State: devices/state.md
     - Device Commands: devices/commands.md
     - Device Queries: devices/device-queries.md
