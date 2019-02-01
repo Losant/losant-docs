@@ -10,14 +10,6 @@ Data tables allow for the storage of arbitrary data within your applications. Th
 
 **Store static or semi static data**: Information that would change rarely or not at all, below are some examples that we have seen.
 
-- a list of names and phone numbers.
-- site and location information
-- customer mapping between devices
-- device configuration
-- custom logs
-- API Keys
-- roll-up analytics
-
 **Dashboards**: The only dashboard block that utilizes data tables is the [Data Table block](/dashboards/data-table), which displays the data table itself. See below if you would like to utilize the graphs.
 
 ## When to not use data tables:
