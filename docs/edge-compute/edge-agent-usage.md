@@ -115,7 +115,7 @@ With the following steps, the old container will be removed and replaced with a 
 ###Updating Edge Workflow Target Version
 When you create an [Edge Workflow](https://docs.losant.com/workflows/edge-workflows/#edge-workflows), you specify a target agent version. Edge Workflows can only run on devices with that specified target agent version or higher. The Edge Agent is always backwards compatible.
 
-After you update your Edge Agent, to take advantage of the new features, you will need to update your Edge Workflows to proper target agent version. Upgrading your target agent version is easily accomplished within the [Agent Version tab](https://docs.losant.com/workflows/edge-workflows/#edge-agent-version) in the Workflow Settings Panel.
+After you update your Edge Agent, to take advantage of the new features, you will need to update your Edge Workflows to the proper target agent version. Upgrading your target agent version is easily accomplished within the [Agent Version tab](https://docs.losant.com/workflows/edge-workflows/#edge-agent-version) in the Workflow Settings Panel.
 
 ## Running With A Configuration File
 
