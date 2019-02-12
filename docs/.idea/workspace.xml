@@ -33,7 +33,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="140" />
+    <option name="x" value="139" />
     <option name="y" value="43" />
     <option name="width" value="1400" />
     <option name="height" value="933" />
@@ -53,11 +53,6 @@
             <path>
               <item name="docs" type="b2602c69:ProjectViewProjectNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="edge-compute" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -138,7 +133,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="140" y="43" width="1400" height="933" extended-state="1" />
+    <frame x="139" y="43" width="1400" height="933" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
