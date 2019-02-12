@@ -11,3 +11,4 @@ package-lock.json
 ehthumbs.db
 Thumbs.db
 .vscode
+.idea
