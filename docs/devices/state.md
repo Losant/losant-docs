@@ -69,7 +69,7 @@ You can also set a timestamp on a payload in order to report historical state in
 
 #### Reporting Future State
 
-Overall, reporting future state is not recommended. But, if state is reported with a timestamp more than a day in the future, that state report will be ignored - it will not be recorded, and workflows will not be run.
+Overall, reporting future state is not recommended. If state is reported with a timestamp more than a day in the future, that state report will be ignored - it will not be recorded, and workflows will not be run.
 
 ## Using State
 
