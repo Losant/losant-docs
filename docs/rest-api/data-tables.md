@@ -110,6 +110,11 @@ valid body for this request:
       "name": "myColumn1",
       "dataType": "string",
       "constraint": "unique"
+    },
+    {
+      "name": "myColumn2",
+      "dataType": "number",
+      "constraint": "optional"
     }
   ]
 }
@@ -122,7 +127,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"name":"My Data Table","columns":[{"name":"myColumn1","dataType":"string","constraint":"unique"}]}' \
+    -d '{"name":"My Data Table","columns":[{"name":"myColumn1","dataType":"string","constraint":"unique"},{"name":"myColumn2","dataType":"number","constraint":"optional"}]}' \
     https://api.losant.com/applications/APPLICATION_ID/data-tables
 ```
 

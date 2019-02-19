@@ -696,7 +696,7 @@ all.Application, all.Device, all.Organization, all.User, device.*, or device.sen
 ### Request Body <a name="sendState-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Single or Multiple Device States](schemas.md#single-or-multiple-device-states) schema. For example, the following would be a
+the [Device State or States](schemas.md#device-state-or-states) schema. For example, the following would be a
 valid body for this request:
 
 ```json

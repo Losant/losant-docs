@@ -143,7 +143,7 @@ all.Application, all.Organization, all.User, dataTableRow.*, or dataTableRow.pat
 ### Request Body <a name="patch-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Data Table Row Insert/Update](schemas.md#data-table-row-insert/update) schema. For example, the following would be a
+the [Data Table Row Insert Update](schemas.md#data-table-row-insert-update) schema. For example, the following would be a
 valid body for this request:
 
 ```json

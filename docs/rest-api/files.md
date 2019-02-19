@@ -130,7 +130,7 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 201 | [File Post Response](schemas.md#file-post-response) | Successfully created file and returned a post url to respond with |
+| 201 | [File Upload Post Response](schemas.md#file-upload-post-response) | Successfully created file and returned a post url to respond with |
 
 ### Error Responses <a name="post-error-responses"></a>
 
