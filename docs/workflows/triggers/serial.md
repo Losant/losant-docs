@@ -6,7 +6,7 @@ description: Learn more about the Losant Serial Trigger.
 
 # Serial Trigger
 
-The Serial Trigger will trigger a workflow whenever the [Edge Compute device](/devices/edge-compute/) receives enough data to satisfy the configured trigger.
+The Serial Trigger will trigger a workflow whenever the [Edge Compute device](/devices/edge-compute/) receives enough data via [Serial](https://en.wikipedia.org/wiki/Serial_communication) to satisfy the configured trigger.
 
 ![Serial Trigger](/images/workflows/triggers/serial-trigger.png "Serial Trigger")
 
