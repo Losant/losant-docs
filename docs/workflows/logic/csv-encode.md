@@ -26,7 +26,7 @@ This required field specifies the payload path where the object array to be enco
 
 There are three different ways to control the headers of the encoded CSV string - "Object Keys", "Individual Fields", and "Payload Path". The last two settings allow you to customize what headers will appear in the output CSV string, while the first setting is a simpler default.
 
-**Note:** This setting will only exclude or repeat headers. It will not replace any headers from the input objects.
+**Note:** This setting will only exclude or repeat headers. It will not replace or rename any headers from the input objects.
 
 ![CSV Encode Node Headers](/images/workflows/logic/csv-encode-node-header.png "CSV Encode Node Headers")
 

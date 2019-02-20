@@ -8,7 +8,7 @@ description: Learn more about the Losant CSV Decode Node.
 
 # CSV Decode Node
 
-The CSV Decode Node allows a workflow to decode a CSV String on the payload into an object.
+The CSV Decode Node allows a workflow to decode a CSV String on the payload into an object array.
 
 ![CSV Decode Node](/images/workflows/logic/csv-decode-node.png "CSV Decode Node")
 
