@@ -18,7 +18,7 @@ There are four main parts to the configuration of this node...
 
 ### Input Path
 
-This required field specifies the payload path where the CSV String to be encoded is located.
+This required field specifies the payload path where the object array to be encoded is located.
 
 ![CSV Encode Node Input](/images/workflows/logic/csv-encode-node-input.png "CSV Encode Node Input")
 
@@ -26,7 +26,7 @@ This required field specifies the payload path where the CSV String to be encode
 
 There are three different ways to control the headers of the encoded CSV string - "Object Keys", "Individual Fields", and "Payload Path". The last two settings allow you to customize what headers will appear in the output CSV string, while the first setting is a simpler default.
 
-**Note:** This setting will only exclude headers. It will not replace any headers from the input objects.
+**Note:** This setting will only exclude or repeat headers. It will not replace any headers from the input objects.
 
 ![CSV Encode Node Headers](/images/workflows/logic/csv-encode-node-header.png "CSV Encode Node Headers")
 
@@ -40,7 +40,7 @@ There are three different ways to control the headers of the encoded CSV string 
 
 ![CSV Encode Node Config](/images/workflows/logic/csv-encode-node-config.png "CSV Encode Node Config")
 
-This section contains four fields that specify the format of the encoded CSV string:
+This section contains four fields that specify the format for the encoded CSV string:
 
 * **Record Delimiter:** (Optional) This is the character used to separate rows of data.
 
@@ -58,7 +58,7 @@ This required field specifies the payload path where the encoded CSV string will
 
 ## Output
 
-In this particular instance, the workflow will encode the CSV string at the `data.csvString` path and place the resulting array of objects at `data.out`
+In this particular instance, the workflow will encode the object array at the `data.in` path and place the resulting CSV string at `data.csvString`
 
 So, for the following input payload...
 
