@@ -8,7 +8,7 @@ description: Learn more about the Losant CSV Encode Node.
 
 # CSV Encode Node
 
-The CSV Encode Node allows a workflow to encode an object on the payload into a CSV String.
+The CSV Encode Node allows a workflow to encode an object array on the payload into a CSV String.
 
 ![CSV Encode Node](/images/workflows/logic/csv-encode-node.png "CSV Encode Node")
 
