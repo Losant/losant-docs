@@ -28,7 +28,7 @@ To create this endpoint in Losant, the first thing we have to do is create an en
 
 ![Add Route](/images/experiences/walkthrough/part-1/add-route.png "Add Route")
 
-Click the `Experience` tab on the application menu to manage your application's Experience. First-time users will be presented with a wizard that will automatically create a basic example experience. This guide will not use any of those auto generated resources, so it's recommended that you skip the bootsrap for now.
+Click the `Experience` tab on the application menu to manage your application's Experience. First-time users will be presented with a wizard that will automatically create a basic example experience. This guide will not use any of those auto generated resources, so it's recommended that you skip the bootstrap for now.
 
 Click the `Endpoints` option in the `Experience` menu. On the Endpoints page, you'll see an `Add` button in the top right corner of the endpoints list. Click `Add` to create the new endpoint for user registration.
 

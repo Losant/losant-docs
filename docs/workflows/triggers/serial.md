@@ -33,7 +33,7 @@ The payload will include a `serial` field under the data field which contains th
   "applicationId": <id of the current application>,
   "applicationName": <name of the current application>,
   "data": {
-    "serial": <data recieved from the serial port>,
+    "serial": <data received from the serial port>,
   },
   "deviceId": <id of the edge device>,
   "deviceName": <the edge device name>,
