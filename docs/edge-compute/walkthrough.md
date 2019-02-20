@@ -1,5 +1,5 @@
 ---
-description: Follow along on a walkthough of Losant Edge Compute.
+description: Follow along on a walkthrough of Losant Edge Compute.
 ---
 
 # Edge Compute Walkthrough

@@ -1,5 +1,5 @@
 ---
-description: Follow along for a basic walkthough of gathering, storing, and visualizing data within the Losant platform.
+description: Follow along for a basic walkthrough of gathering, storing, and visualizing data within the Losant platform.
 ---
 
 # Losant Walkthrough

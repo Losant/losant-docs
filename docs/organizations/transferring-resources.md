@@ -1,5 +1,5 @@
 ---
-description: Learn about transfering resources between Sandboxes and Organizations.
+description: Learn about transferring resources between Sandboxes and Organizations.
 ---
 
 # Transferring Resources
