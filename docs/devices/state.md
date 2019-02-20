@@ -65,7 +65,11 @@ If a state payload is sent with a timestamp, and that timestamp corresponds to a
 
 #### Reporting Historical State
 
-You can also set a timestamp on a payload in order to report historical state information - for example, if a device is offline when it wants to report a value. When the device comes back online, it can report the state payload with the timestamp of when the value actually occurred. There are some limitations to this, however - Losant will only accept reported state whose timestamp is within the past 30 days. If state is reported which has a timestamp older than 30 days (or more than a day in the future), that state report will be ignored - it will not be recorded, and workflows will not be run.
+You can also set a timestamp on a payload in order to report historical state information - for example, if a device is offline when it wants to report a value. When the device comes back online, it can report the state payload with the timestamp of when the value actually occurred. There are some limitations to this, however - Losant will only accept reported state whose timestamp is within the past 30 days. If state is reported which has a timestamp older than 30 days, that state report will be ignored - it will not be recorded, and workflows will not be run.
+
+#### Reporting Future State
+
+Overall, reporting future state is not recommended. If state is reported with a timestamp more than a day in the future, that state report will be ignored - it will not be recorded, and workflows will not be run.
 
 ## Using State
 
