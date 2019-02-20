@@ -55,42 +55,38 @@ The results of the browse instruction will be placed in an object with the name 
 
 ### Result
 
-The following is an example of a successful browse of the "root folder", where the Destination Path is `destination.OPCUA_PLC`:
+The following is an example of a successful browse of the "root folder", where the Destination Path is `OPCUA_PLC`:
 
 ```json
 {
-  "destination": {
-    "OPCUA_PLC": {
-      "RootFolder": [
-        {
-          "nodeClass": "Object (1)",
-          "isForward": true,
-          "namespaceUri": "http://opcfoundation.org/UA/",
-          "identifierType": "Numeric",
-          "identifier": 85,
-          "namespace": 0,
-          "nodeId": "ns=0;i=85",
-          "displayName": "locale=null text=Objects",
-          "browseName": "Objects"
-        },
-        { ... },
-        { ... }
-      ]
-    }
+  "OPCUA_PLC": {
+    "RootFolder": [
+      {
+        "nodeClass": "Object (1)",
+        "isForward": true,
+        "namespaceUri": "http://opcfoundation.org/UA/",
+        "identifierType": "Numeric",
+        "identifier": 85,
+        "namespace": 0,
+        "nodeId": "ns=0;i=85",
+        "displayName": "locale=null text=Objects",
+        "browseName": "Objects"
+      },
+      { ... },
+      { ... }
+    ]
   }
 }
 ```
 
 ## Node Errors
 
-The following is an example of a failure to browse, where a resultKey should have been `Power`, and the destination path is `destination.OPCUA_PLC`:
+The following is an example of a failure to browse, and the destination path is `OPCUA_PLC`:
 
 ```json
 {
-  "destination": {
-    "OPCUA_PLC": {
-      "errors": [ { "type": "OPC-UA_BROWSE_ERROR", "message": "Something useful to help you fix the issue." } ]
-    }
+  "OPCUA_PLC": {
+    "errors": [ { "type": "OPC-UA_BROWSE_ERROR", "message": "Something useful to help you fix the issue." } ]
   }
 }
 ```
