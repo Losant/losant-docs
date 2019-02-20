@@ -105,14 +105,17 @@ CONTAINER ID   IMAGE                     COMMAND                   CREATED      
 
 Updating the Edge Agent to the latest version is accomplished through a series of `docker` commands:
 
-```docker stop <container-name|container-id>
+```console
+docker stop <container-name|container-id>
 docker rm <container-name|container-id>
 docker pull losant/edge-agent:<version of edge agent>
-docker run …```
+docker run …
+```
 
 With the following steps, the old container will be removed and replaced with a new container running the new version of the Edge Agent. Note that if sudo is being used to pull, it should be used consistently to avoid unexpected behavior.
 
-###Updating Edge Workflow Target Version
+### Updating Edge Workflow Target Version
+
 When you create an [Edge Workflow](https://docs.losant.com/workflows/edge-workflows/#edge-workflows), you specify a target agent version. Edge Workflows can only run on devices with that specified target agent version or higher. The Edge Agent is always backwards compatible.
 
 After you update your Edge Agent, to take advantage of the new features, you will need to update your Edge Workflows to the proper target agent version. Upgrading your target agent version is easily accomplished within the [Agent Version tab](https://docs.losant.com/workflows/edge-workflows/#edge-agent-version) in the Workflow Settings Panel.
