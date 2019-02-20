@@ -12,6 +12,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.6.0 - 2019-02-26
+
+### Added <a name="1.6.0-added"></a>
+
+- Triggers / [Serial](/workflows/triggers/serial/)
+- Data / [OPC UA: Read](/workflows/data/opcua-read/)
+- Data / [OPC UA: Write](/workflows/data/opcua-write/)
+- Data / [OPC UA: Browse](/workflows/data/opcua-browse/)
+- Logic / [CSV: Decode](/workflows/data/csv-decode/)
+- Logic / [CSV: Encode](/workflows/data/csv-encode/)
+
+### Fixed <a name="1.6.0-fixed"></a>
+
+- Fixed an issue where non-geographic area codes for USA phone numbers were rejected as invalid in the Twilio node.
+
+***
+
 ## 1.5.0 - 2019-01-31
 
 ### Added <a name="1.5.0-added"></a>
