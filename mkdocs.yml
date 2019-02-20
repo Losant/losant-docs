@@ -189,6 +189,9 @@ nav:
         - "Modbus: Read": workflows/data/modbus-read.md
         - "Modbus: Write": workflows/data/modbus-write.md
         - MongoDB: workflows/data/mongo.md
+        - "OPC UA: Browse": workflows/data/opcua-browse.md
+        - "OPC UA: Read": workflows/data/opcua-read.md
+        - "OPC UA: Write": workflows/data/opcua-write.md
         - Redis: workflows/data/redis.md
         - Run Executable: workflows/data/run-executable.md
         - Salesforce Cases: workflows/data/salesforce-cases.md
