@@ -133,6 +133,7 @@ nav:
         - MQTT: workflows/triggers/mqtt.md
         - Particle: workflows/triggers/particle.md
         - Redis: workflows/triggers/redis.md
+        - Serial: workflows/triggers/serial.md
         - Timer: workflows/triggers/timer.md
         - UDP: workflows/triggers/udp.md
         - Virtual Button: workflows/triggers/virtual-button.md
