@@ -54,29 +54,25 @@ The results of the write instruction will optionally be placed in an object at t
 
 ### Result
 
-The following is an example of a successful write and the Destination Path is `destination.OPCUA_PLC`:
+The following is an example of a successful write and the Destination Path is `OPCUA_PLC`:
 
 ```json
 {
-  "destination": {
-    "OPCUA_PLC": {
-      "write": "success"
+  "OPCUA_PLC": {
+    "write": "success"
     }
-  }
 }
 ```
 
 ## Node Errors
 
-The following is an example of a failure to write and the destination path is `destination.OPCUA_PLC`:
+The following is an example of a failure to write and the destination path is `OPCUA_PLC`:
 
 ```json
 {
-  "destination": {
-    "OPCUA_PLC": {
-      "write": "fail"
-      "errors": [ { "type": "OPC-UA_WRITE_ERROR", "message": "Something useful to help you fix the issue." } ]
-    }
+  "OPCUA_PLC": {
+    "write": "fail"
+    "errors": [ { "type": "OPC-UA_WRITE_ERROR", "message": "Something useful to help you fix the issue." } ]
   }
 }
 ```

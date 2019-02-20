@@ -39,7 +39,7 @@ If a **Security Policy** is selected, you will have the option to select between
 You are required to define browse instructions for the OPC UA: Browse Node. The instructions have the following fields:
 
 * **Namespace Index (ns):** (Optional) A string template or positive integer.
-* **Identifier or Browse Name:** (Optional) A string template or string for the node identifier. If the **Namespace** is left blank the identifier is a valid node browse name the path will be resolved when executed (otherwise an error will be placed in the `Destination Path`). If an identifier, the string should begin with one of the following types:
+* **Identifier or Browse Name:** (Optional) A string template or string for the node identifier or browse name. If the **Namespace** is left blank and this is a valid node browse name, the path will be resolved. If an identifier, the string should begin with one of the following types:
     * **i=:** for unsigned integer (UINT).
     * **s=:** for string.
     * **g=:** for global unique identifier (GUID).

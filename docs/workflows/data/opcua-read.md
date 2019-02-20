@@ -52,32 +52,28 @@ You are required to define read instructions for the OPC UA: Read Node. The inst
 
 The results of the read instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) at the instruction's `Result Key`. It is important that each key is named uniquely so the node does not overwrite another read result.
 
-If the key is not present in the Destination Path of the payload, it means the read failed, and there will be a list of errors at the Destination Path under the key `errors`. For this reason, this node restricts Result Keys to not resolve to the path `errors`. Because the tags are read as a group one failed read for a tag may cause the other keys in the group to not appear.
+If the key is not present in the Destination Path of the payload, it means the read failed, and there will be a list of errors at the Destination Path under the key `errors`. For this reason, this node restricts Result Keys to not resolve to the path `errors`.
 
 ### Result
 
-The following is an example of a successful read, where an instruction's Result Key is `Power`, and the Destination Path is `destination.OPCUA_PLC`:
+The following is an example of a successful read, where an instruction's Result Key is `Power`, and the Destination Path is `OPCUA_PLC`:
 
 ```json
 {
-  "destination": {
-    "OPCUA_PLC": {
-      "Power": 10.01
-    }
+  "OPCUA_PLC": {
+    "Power": 10.01
   }
 }
 ```
 
 ## Node Errors
 
-The following is an example of a failure to read, where a resultKey should have been `Power`, and the destination path is `destination.OPCUA_PLC`:
+The following is an example of a failure to read, and the destination path is `OPCUA_PLC`:
 
 ```json
 {
-  "destination": {
-    "OPCUA_PLC": {
-      "errors": [ { "type": "OPC-UA_READ_ERROR", "message": "Something useful to help you fix the issue." } ]
-    }
+  "OPCUA_PLC": {
+    "errors": [ { "type": "OPC-UA_READ_ERROR", "message": "Something useful to help you fix the issue." } ]
   }
 }
 ```
