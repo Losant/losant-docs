@@ -58,7 +58,7 @@ So, for the following input payload...
 }
 ```
 
-The CSV Decode node would give the following output payload.
+The CSV Decode Node would give the following output payload.
 
 ```json
 {
