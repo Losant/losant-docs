@@ -8,7 +8,7 @@ description: Learn more about the Losant CSV Encode Node.
 
 # CSV Encode Node
 
-The CSV Encode Node allows a workflow to encode an object array on the payload into a CSV String.
+The CSV Encode Node allows a workflow to encode an object array on the payload into a CSV string.
 
 ![CSV Encode Node](/images/workflows/logic/csv-encode-node.png "CSV Encode Node")
 
@@ -42,13 +42,13 @@ There are three different ways to control the headers of the encoded CSV string 
 
 This section contains four fields that specify the format for the encoded CSV string:
 
-* **Record Delimiter:** (Optional) This is the character used to separate rows of data.
+* **Record Delimiter:** (Optional) This is the character used to separate rows of data. Default \n.
 
-* **Delimiter:** (Optional) A [string template](/workflows/accessing-payload-data/#string-templates) to override the delimiter. This character is used to separate columns of data. Must be a single character. Leave blank to default to comma (,)
+* **Delimiter:** (Optional) A [string template](/workflows/accessing-payload-data/#string-templates) to override the delimiter. This character is used to separate columns of data. Must be a single character. Leave blank to default to comma (,).
 
-* **Quote:** (Optional) A string template to override the quote character. Must be a single character. Leave blank to default to double-quote (")
+* **Quote:** (Optional) A string template to override the quote character. Must be a single character. Leave blank to default to double-quote (").
 
-* **Escape:** (Optional) A string template to override the escape character. Must be a single character. Leave blank to default to double-quote (")
+* **Escape:** (Optional) A string template to override the escape character. Must be a single character. Leave blank to default to double-quote (").
 
 ### Result Path
 
@@ -58,7 +58,7 @@ This required field specifies the payload path where the encoded CSV string will
 
 ## Output
 
-In this particular instance, the workflow will encode the object array at the `data.in` path and place the resulting CSV string at `data.csvString`
+In this particular instance, the workflow will encode the object array at the `data.in` path and place the resulting CSV string at `data.csvString`.
 
 So, for the following input payload...
 
@@ -81,7 +81,7 @@ So, for the following input payload...
 }
 ```
 
-the CSV Encode node would give the following output payload.
+The CSV Encode Node would give the following output payload:
 
 ```json
 {
