@@ -4,7 +4,7 @@ description: Learn about membership and roles in a Losant Organization.
 
 # Organization Members
 
-An organization can have multiple members, with limits on members and pending invitations depending on the organization's tier level. The organization's overview screen displays a list of current members, the `Members` screen allows an administrator to perform quick actions such as removing a member or renewing a pending invite, and the `Edit Member` screen provides more details on each member. Both the `Members` and `Edit Member` screens are only visible to Administrators. If you're an Administrator, the organization's overview screen will display pending and expired invitations.
+An organization can have multiple members, with limits on members and pending invitations depending on the organization's tier level. The organization's overview screen displays a list of current members, the `Members` screen allows an administrator to perform quick actions such as removing a member or renewing a pending invite, and the `Edit Member` screen provides more details on each member. Both the `Current Members` and `Edit Member` screens are only visible to Administrators. If you're an Administrator, the organization's overview screen will display pending and expired invitations.
 
 ![Organization Members Home](/images/organizations/organization-members-home.png "Organization Members Home")
 
@@ -35,7 +35,7 @@ Administrators can view all of the organizations members. Here the user's name, 
 
 ![Organization Members](/images/organizations/organization-members.png "Organization Members")
 
-Administrators can change the role of any organization member (other than themselves) from the `Edit Member` page. This can be accessed by clicking on the member's email on either the `Organization Overview` or the `Members` screen. The user's current role is displayed in a drop-down box below their user info. Below this, administrators may also set the member's granular permissions. Here administrators may select an individual application/dashboard as well as a permission that only applies to the selected asset. Simply select a new role for the user and optionally any granular permissions and click the `Update Member` button in the footer to complete the changes.
+Administrators can change the role of any organization member (other than themselves) from the `Edit Member` page. This can be accessed by clicking on the member's email on either the `Organization Overview` or the `Current Members` screen. The user's current role is displayed in a drop-down box below their user info. Below this, administrators may also set the member's granular permissions. Here administrators may select an individual application/dashboard as well as a permission that only applies to the selected asset. Simply select a new role for the user and optionally any granular permissions and click the `Update Member` button in the footer to complete the changes.
 
 Administrators can also remove any current organization member – including other administrators – by clicking the `Remove Member` button in the footer. Then by confirming this action.
 
@@ -49,7 +49,7 @@ Pending invitations are limited by the maximum number of members your organizati
 
 Each of your invitees will receive an email with instructions on how to join your organization. If they do not already have a Losant account, they can create one as part of the invitation acceptance process.
 
-Once a user is invited, administrators may view the details of the invitation from the `Invite Details` screen. This can be accessed by clicking on the email of the invitee from either the `Organization Overview` or `Members` screen.
+Once a user is invited, administrators may view the details of the invitation from the `Invite Details` screen. This can be accessed by clicking on the email of the invitee from either the `Organization Overview` or `Pending Invitations` screen.
 
 ![Organization Invite Details](/images/organizations/organization-invite-details.png "Organization Invite Details")
 
