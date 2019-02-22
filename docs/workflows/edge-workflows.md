@@ -40,15 +40,15 @@ When debugging edge workflows, it is necessary to choose a single device to view
 
 ![Workflow Edge Agent Tab](/images/workflows/workflow-edge-agent-tab.png "Workflow Edge Agent Tab")
 
-In order to utilize newly released edge workflow functionality (such as new nodes), it is necessary to upgrade your workflow's [Edge Agent](/edge-compute/edge-agent-changelog/) – and to deploy the new agent to your Edge Compute devices.
+In order to utilize [newly released edge workflow functionality](/edge-compute/edge-agent-changelog/) (such as new nodes), it is necessary to upgrade your workflow's [Edge Agent](/edge-compute/edge-agent-changelog/) – and to deploy the new agent to your Edge Compute devices.
 
 To do this, use the Edge Agent tab in the workflow editor. The upgrade can only be applied to the "develop" version. If you upgrade the Edge Agent version and make changes to your "develop" workflow, you will have to create new [versions](/workflows/versioning/) of the workflow before deploying them to your devices.
 
 ## Payload
 
-The fields on a triggering payload for an edge workflows are very similar to what is available on application workflows, with a few edge-only additions. The following are the initial root fields on all edge payloads:
+The fields on a triggering payload for an edge workflow are very similar to what is available on an application workflow, with a few edge-only additions. The following are the initial root fields on all edge payloads:
 
-* **agentEnvironment** is an object of the current environment variables for the Edge Agent (minus any Edge Agent configuration environment variables). This is unique to edge workflows, and only available in Edge Agent version 1.2 or greater.
+* **agentEnvironment** is an object of the current [environment variables](/edge-compute/edge-agent-usage/#running-with-environment-config) for the Edge Agent (minus any Edge Agent configuration environment variables). This is unique to edge workflows, and only available in Edge Agent version 1.2 or greater.
 * **applicationId** is the ID of the Losant application that the Edge Agent (and the workflow) belong to.
 * **applicationName** is the name of the Losant application that the Edge Agent (and the workflow) belong to.
 * **data** is an object with trigger-specific data - the contents of this object change significantly based on the workflow trigger.
