@@ -6,7 +6,7 @@ description: 'Learn more about Losant workflows: how they work and how to config
 
 Workflows are the primary way for your devices to communicate with each other and other services. Workflows allow you to (for example) [trigger email notifications](/workflows/outputs/email/), [create events](/workflows/outputs/record-event/), [send device commands](/workflows/outputs/device-command/) and more. Workflows are, in essence, the brains of your connected solution.
 
-A list of your application's workflows, broken down by [type](#types-of-workflows), can be accessed through your application's subnavigation.
+A list of your application's workflows, broken down by [type](#types-of-workflows), can be accessed through your application's subnavigation. They are also available on your application's overview page.
 
 ![Workflows List](/images/workflows/workflows-list.png "Workflows List")
 
@@ -20,11 +20,15 @@ There are three types of workflows, each of which features unique functionality 
 
 ## Creating a Workflow
 
-Workflows can be created by clicking the "Add Workflow" link in the "Workflows" dropdown within your application's subnavigation. They may also be created by clicking the "Add" button within your workflow lists both on the "Workflows" page and on the application overview.
+Workflows can be created by clicking the "Add Workflow" button at the top of the Workflows page, or by clicking the "Add" link atop any of the lists of workflows broken down by type.
 
-When creating a new workflow, you must choose one of the workflow types outlined above. The type cannot be changed after workflow creation.
+![Add Workflow Buttons](/images/workflows/add-workflow-buttons.png "Add Workflow Buttons")
 
-After choosing a type, you must then give your workflow a name and optionally a description. If you are creating an edge workflow, you must also choose the minimum [Edge Agent](/edge-compute/edge-agent-changelog/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
+It is also possible to create workflows that are triggered by other Losant resources from the edit screens of those resources. For example, within the edit interface for a webhook is a list of application workflows that are triggered by requests to that webhook.
+
+![Webhooks Workflow List](/images/workflows/webhooks-workflow-list.png "Webhooks Workflow List")
+
+When creating a new workflow, you must choose one of the workflow types outlined above. The type cannot be changed after workflow creation. You must then give your workflow a name and optionally a description. If you are creating an edge workflow, you must also choose the minimum [Edge Agent](/edge-compute/edge-agent-changelog/) to target with your workflow. This can be upgraded (but not downgraded) at a later time.
 
 ![Create Workflow Settings](/images/workflows/workflow-create-settings.png "Create Workflow Settings")
 
@@ -106,7 +110,7 @@ The [SMS Node](/workflows/outputs/sms/) allows you to send an SMS message to one
 
 ![Workflow Overview SMS](/images/workflows/overview-sms.png "Workflow Overview SMS")
 
-The SMS Node supports [string templates](/workflows/accessing-payload-data/#string-templates) for its configuration values. But unlike evaluating to a boolean as it does for the Conditional Node, or a number for the Math Node, the SMS Node uses that value to create a custom message containing a value from the payload.
+The SMS Node supports [string templates](/workflows/accessing-payload-data/#string-templates) for its configuration values – but unlike evaluating to a boolean as it does for the Conditional Node, or a number for the Math Node, the SMS Node uses that value to create a custom message containing a value from the payload.
 
 ```handlebars
 Temperature warning. Temperature now at {{ degreesCelsius }} deg C!
@@ -160,13 +164,13 @@ Workflows and their [versions](/workflows/versioning/) can be exported by clicki
 
 ![Export Workflow](/images/workflows/workflow-export.png "Export Workflow")
 
-Clicking the `Export` option will open a modal, which will allow you to either export the version to a file, or (if you have [edit permissions](/organizations/members/#member-roles) within the application) clone it as a new workflow. When exporting the workflow to a file, that file can then be imported as a new workflow of the same type.
+Clicking the `Export` option will open a modal, which will allow you to either export the version to a file, or (if you have [collaborator permissions](/organizations/members/#member-roles) within the application) clone it as a new workflow. When exporting the workflow to a file, that file can then be imported as a new workflow of the same type.
 
 ![Export Modal](/images/workflows/workflow-export-modal.png "Export Modal")
 
 When exporting, you must decide if the values for the global config should be included in the export. The keys for the global config will always be included, but you have the option of not exporting the values in case sensitive information (such as access keys) are in the global config section.
 
-You can import a workflow from the "View All Workflows" list, by either dragging the exported file onto the appropriate list, or clicking the `Import` button (which will allow you to browse for an exported workflow file). Imported workflows will by default be set as disabled, to give you the chance to make any needed modifications before the workflow starts running.
+You can import a workflow from your application's workflows list, by either dragging the exported file onto the appropriate list, or clicking the `Import` button (which will allow you to browse for an exported workflow file). Imported workflows will by default be set as disabled, to give you the chance to make any needed modifications before the workflow starts running.
 
 ![Import Workflow](/images/workflows/workflow-import.png "Import Workflow")
 
@@ -180,7 +184,7 @@ Workflows can have a set of global config keys, which are essentially keys/value
 
 In addition, any [Application Globals](/applications/overview/#application-globals) configured in the application will be accessible here as well. Any application globals can also be overridden at the workflow version level by creating a workflow global with the same key name.
 
-In the above example, there are three global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `513-555-1212`). Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON as the value. Whenever the workflow runs, the payload will always include these global values. For the above example, a payload might end up looking like the following:
+In the above example, there are three global keys set &mdash; `minLevel` (with a numeric value of `300`), `resetLevel` (with a numeric value of `500`), and `phone` (with a string value of `513-555-1212`). Complex objects can be configured by choosing `JSON` as the data type of the value and adding JSON-formatted data as the value. Whenever the workflow runs, the payload will always include these global values. For the above example, a payload might end up looking like the following:
 
 ```json
 {
