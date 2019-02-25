@@ -26,13 +26,13 @@ Applications can be deleted on the settings page. Deleting an application cannot
 
 ![Delete Application](/images/applications/delete-application.png "Delete Application")
 
-## Communication Log
+## Application Log
 
-The Communication Log is a real-time log that displays helpful information about various aspects of your Losant application. It's most useful for debugging purposes.
+The Application Log is a real-time log that displays helpful information about various aspects of your Losant application. It's most useful for debugging purposes.
 
-![Communication Log](/images/applications/communication-log-full.png "Communication Log")
+![Application Log](/images/applications/application-log-full.png "Application Log")
 
-As a real-time tool, the Communication Log will always begin in an empty state. Logs will appear as actions on your application take place. Logs will show for the following cases:
+As a real-time tool, the Application Log will always begin in an empty state. Logs will appear as actions on your application take place. Logs will show for the following cases:
 
 ### MQTT
 

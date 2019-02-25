@@ -140,7 +140,7 @@ In the case where you no longer want the data for a device or you want to clear 
 
 ## Device Communication Log
 
-The device communication log is similar to the [application communication log](/applications/overview/#communication-log) in that is displays a real-time stream of events; it differs from the application log in that these events are specific to the device currently being viewed, instead of across the application as a whole. A number of different events will display within the log, such as:
+The device communication log is similar to the [application log](/applications/overview/#communication-log) in that is displays a real-time stream of events; it differs from the application log in that these events are specific to the device currently being viewed, instead of across the application as a whole. A number of different events will display within the log, such as:
 
 * State reports for the device, whether they come via the device itself through the [Losant broker](/mqtt/overview/#the-losant-message-broker), via a [workflow](/workflows/overview/) or through the [Losant REST API](/rest-api/device/#send-state).
 * [Commands](/devices/commands/) sent to the device, sent via any of the channels mentioned above.
