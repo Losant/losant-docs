@@ -59,6 +59,18 @@ As a real-time tool, the Application Log will always begin in an empty state. Lo
 
 * Integration Messages - When Losant receives a message from an [Integration](/applications/integrations/), a log will appear.
 
+## Application Search
+
+Resources can be looked up and accessed from any page within an application by searching for it using the search bar within the subnavigation.
+
+![Application Search Box](/images/applications/search-box.png "Application Search Box")
+
+The search panel displays a list of recently accessed workflows and devices and links to common routes when it is first opened.
+
+As a term is input, the options will filter and return resources that match. Resources can be looked up by name or partial name and results are restricted to the current application.
+
+![Application Search Panel Open](/images/applications/search-panel-populated.png "Application Search Panel Open")
+
 ## Application Globals
 
 ![Application Globals](/images/applications/application-globals.png "Application Globals")
