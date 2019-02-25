@@ -61,7 +61,7 @@ As a real-time tool, the Application Log will always begin in an empty state. Lo
 
 ## Application Search
 
-Resources can be looked up and accessed from any page within an application by searching for it using the search bar within the subnavigation.
+Resources can be looked up and accessed from any page within an application by searching for it using the search bar within the subnavigation. The search panel can be opened by clicking on the search box or by hitting Option (⌥) + L on Mac or Alt + L on Windows.
 
 ![Application Search Box](/images/applications/search-box.png "Application Search Box")
 
