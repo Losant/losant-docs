@@ -5,6 +5,7 @@ theme:
   custom_dir: losant
   include_search_page: true
 markdown_extensions:
+    - admonition
     - toc:
         permalink: "#"
 nav:
