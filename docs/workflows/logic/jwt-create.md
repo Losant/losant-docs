@@ -34,6 +34,8 @@ JWT: Create Node configuration requires at least a `JSON Template` object, `Secr
 
 The JWT: Create Node has one optional output field. The `Destination Path` field takes a [payload path](/workflows/accessing-payload-data/#payload-paths). If it is defined and the JWT successfully created, it will be added to your payload at said path, otherwise an error object will be there.
 
+Please note that an `iat` or `issued at time` value will be included on the payload, and does modify the Web Token string.
+
 ## Options
 
 If any of these options are given in the `JSON Template` field, they will **not** be overwritten by these options. These options are your defaults.
