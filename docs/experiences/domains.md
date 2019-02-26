@@ -16,7 +16,7 @@ Experience domains are only available within applications owned by an [organizat
 
 ![Domains Overview](/images/experiences/domains-overview.png "Domains Overview")
 
-Domains and Slugs are listed under the "Domains" menu item of your application's "Experience" menu. Click a domain name or a slug in the respective lists to view their configuration or make edits.
+"Domains and Slugs" can be found under the "Experience" section of your application's sub-navigation. Click a domain name or a slug in the respective lists to view their configuration or make edits.
 
 ## Working with Experience Domains
 

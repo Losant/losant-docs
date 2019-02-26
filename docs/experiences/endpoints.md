@@ -10,7 +10,7 @@ An Experience Endpoint is a combination of an HTTP method and a route that, when
 
 ![Experience Endpoints](/images/experiences/endpoints-list.png "Experience Endpoints")
 
-Endpoints are listed within the "Endpoints" tab of your application's "Experience" subsection.
+"Endpoints" are listed within the "Endpoints" tab under "Edit" in the "Experience" section of your application's sub-navigation.
 
 Click an endpoint's route in the list to view its configuration, make edits or view experience workflows associated with the endpoint.
 
