@@ -28,9 +28,9 @@ To create this endpoint in Losant, the first thing we have to do is create an en
 
 ![Add Route](/images/experiences/walkthrough/part-1/add-route.png "Add Route")
 
-Click the `Experience` tab on the application menu to manage your application's Experience. First-time users will be presented with a wizard that will automatically create a basic example experience. This guide will not use any of those auto generated resources, so it's recommended that you skip the bootstrap for now.
+Click `Edit` within the `Experience` section of your application's sub-navigation to manage your application's Experience. First-time users will be presented with a wizard that will automatically create a basic example experience. This guide will not use any of those auto generated resources, so it's recommended that you skip the bootstrap for now.
 
-Click the `Endpoints` option in the `Experience` menu. On the Endpoints page, you'll see an `Add` button in the top right corner of the endpoints list. Click `Add` to create the new endpoint for user registration.
+Click the `Endpoints` tab in the top navigation. On the Endpoints page, you'll see an `Add` button in the top right corner of the endpoints list. Click `Add` to create the new endpoint for user registration.
 
 ![POST users endpoint](/images/experiences/walkthrough/part-1/endpoint-post-users.png "POST users endpoint")
 
@@ -47,7 +47,7 @@ When done, click the `Create Endpoint` button at the bottom to create this endpo
 
 At this point,  we have the `/users` endpoint defined, but there's no logic to run when it's requested. If you were to request it now, Losant will automatically return a 404. In order to give this endpoint some intelligence, we have to create an [experience workflow](/workflows/experience-workflows/). All experience endpoints are backed by workflows that contain the [Endpoint trigger node](/workflows/triggers/endpoint/) and [Endpoint Reply node](/workflows/outputs/endpoint-reply/).
 
-Create a new workflow for this endpoint using the main `Workflows` application menu. Make sure to choose `Experience` as the Workflow Type.
+Create a new workflow for this endpoint from your application's `Workflows` menu inside of the `Visual Workflow Engine` section. Make sure to choose `Experience` as the Workflow Type.
 
 ![Create Workflow](/images/experiences/walkthrough/part-1/create-workflow.png "Create Workflow")
 
