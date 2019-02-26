@@ -10,8 +10,6 @@ Losant has built-in file management functionality to allow for uploading and ref
 
 You can access all the files within an application by clicking the "Files" tab in the application menu bar.
 
-![View Files](/images/files/view-files.png "View Files")
-
 From there, you can click a file's name to view more details, or click a [directory's](#directories) name to view its contents.
 
 ![File Details](/images/files/file-details.png "File Details")

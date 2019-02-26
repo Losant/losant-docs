@@ -8,7 +8,7 @@ Application tokens allow you to interact with a single [application](/applicatio
 
 ## Viewing Application Tokens
 
-You can view the the API tokens for an application by choosing `Security` in the Application menu bar, and then clicking `Application API Tokens` in the left navigation.
+You can view the the API tokens for an application by choosing `API Tokens` in the Application subnavigation.
 
 The list of application tokens includes the token's name, a summary of its scope, its creator (which may be yourself, another member of your [organization](/organizations/overview/) or even another API token) and the token's [expiration date](#token-expiration-date).
 
