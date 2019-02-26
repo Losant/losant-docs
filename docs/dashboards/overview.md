@@ -10,7 +10,7 @@ Losant dashboards provide a flexible and powerful way to display information rel
 
 ## Creating a Dashboard
 
-A dashboard can be created at any time from the `Dashboards` dropdown in the site header, or from a few other places within the platform.
+A dashboard can be created at any time from the `Dashboards` tab, or from a few other places within the platform.
 
 When creating a dashboard, you'll be asked for three pieces of information:
 
@@ -22,7 +22,7 @@ Note that, should you choose to make your dashboard public, the name and descrip
 
 ![Create Dashboard](/images/dashboards/create-dashboard.png "Create Dashboard")
 
-After filling out the form, click `Save Dashboard` to start adding blocks.
+After filling out the form, click `Create Dashboard` to start adding blocks.
 
 ## Adding Blocks
 
@@ -124,7 +124,7 @@ From your dashboard's settings page, click "Embed Dashboard" in the left column.
 
 This will generate a code snippet, which you can drop into any HTML document at the place where you want the embedded dashboard to appear.
 
-An embedded dashboard only includes the dashboard's blocks, not its title, configuration buttons or Losant header and footer. The image below is a screenshot of a dashboard, where the sections crossed out would not appear if the dashboard were embedded.
+An embedded dashboard only includes the dashboard's blocks, not its title, configuration buttons or Losant header and footer. The image below is a screenshot of a dashboard, this is the only section that would appear if the dashboard were embedded.
 
 ![Dashboard Embed Diff](/images/dashboards/dashboard-embed-diff.png "Dashboard Embed Diff")
 
@@ -138,10 +138,10 @@ This will display a modal where you can set the block's `width`, `height` and `t
 
 ## Email Reports
 
-You also have the option to email a report based on a dashboard at a recurring interval. You can do this under the "Email Reports" section in the dashboard settings:
+You also have the option to email a report based on a dashboard at a recurring interval. You can do this under the "Reports" header in the dashboard settings:
 
 ![Email Report Settings](/images/dashboards/email-report-settings.png "Email Report Settings")
 
-You can configure a set of email addresses to receive a PDF report of the dashboard at a regular interval. Choose a time of day and the days of the week to send the report, and you can also configure the subject and message of the email. In the above example, the report will be emailed every Thursday at 10:10am central time to myemail@example.com. The resulting email will include a link to a PDF report of the dashboard at that time, similar to the example below:
+You can configure a set of email addresses to receive a PDF report of the dashboard at a regular interval. Choose a time of day and the days of the week to send the report, and you can also configure the subject and message of the email. In the above example, the report will be emailed every Thursday at 10:10am central time to the addressed recipient. The resulting email will include a link to a PDF report of the dashboard at that time, similar to the example below:
 
 <img style="border-top: 0px; border-bottom: 0px" src="/images/dashboards/email-report-example.png" alt="Email Report Example" title="Email Report Example" />
