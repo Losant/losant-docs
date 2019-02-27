@@ -10,13 +10,13 @@ An Experience User is a unique user registered to your application's Experience.
 
 ![Experience Users](/images/experiences/users-list.png "Experience Users")
 
-Users can be accessed through the "Users" menu item of your application's "Experience" menu. Click the user's email address in the list to view and to edit his / her profile.
+"Users" can be found under the "Experience" section of your application's sub-navigation. Click the user's email address in the list to view and to edit his / her profile.
 
 ## Adding an Experience User
 
 ![Add User](/images/experiences/add-user.png "Add User")
 
-From the Users list page, click "Add" at the top right of the users list. This will take you to a page where the new user can be configured.
+From the Users list page, click "Add Experience User" at the top right of the page. This will take you to a page where the new user can be configured.
 
 ## User Configuration
 

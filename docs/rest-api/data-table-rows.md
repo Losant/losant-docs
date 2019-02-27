@@ -53,12 +53,12 @@ valid body for this request:
 {
   "$or": [
     {
-      "myCol1": {
-        "$ne": 0
+      "myColumn1": {
+        "$ne": "myValue"
       }
     },
     {
-      "myCol2": 5
+      "myColumn2": 5
     }
   ]
 }
@@ -117,7 +117,7 @@ all.Application, all.Application.read, all.Organization, all.Organization.read, 
 ### Request Body <a name="export-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Data Table Export](schemas.md#data-table-export) schema. For example, the following would be a
+the [Data Table Rows Export](schemas.md#data-table-rows-export) schema. For example, the following would be a
 valid body for this request:
 
 ```json
@@ -126,12 +126,12 @@ valid body for this request:
   "query": {
     "$or": [
       {
-        "myCol1": {
-          "$ne": 0
+        "myColumn1": {
+          "$ne": "myValue"
         }
       },
       {
-        "myCol2": 5
+        "myColumn2": 5
       }
     ]
   },
@@ -148,7 +148,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"email":"email@example.com","query":{"$or":[{"myCol1":{"$ne":0}},{"myCol2":5}]},"queryOptions":{"limit":10000}}' \
+    -d '{"email":"email@example.com","query":{"$or":[{"myColumn1":{"$ne":"myValue"}},{"myColumn2":5}]},"queryOptions":{"limit":10000}}' \
     https://api.losant.com/applications/APPLICATION_ID/data-tables/DATA_TABLE_ID/rows/export
 ```
 
@@ -333,12 +333,12 @@ valid body for this request:
 {
   "$or": [
     {
-      "myCol1": {
-        "$ne": 0
+      "myColumn1": {
+        "$ne": "myValue"
       }
     },
     {
-      "myCol2": 5
+      "myColumn2": 5
     }
   ]
 }

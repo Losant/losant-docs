@@ -10,7 +10,7 @@ In this step, we'll add the ability for non-registered users to sign up for an a
 
 ## Create the Endpoints
 
-First, we'll need two new [endpoints](/experiences/endpoints/) to respond to our "Create Account" page requests. In the experience menu, click the "Endpoints" menu item, then click the "Add" button at the top right of the list.
+First, we'll need two new [endpoints](/experiences/endpoints/) to respond to our "Create Account" page requests. Navigate to the "Experience" tab, then click the "Add" button at the top right of the list.
 
 ![Add Endpoint](/images/experiences/walkthrough/views/user-registration/add-endpoint.png "Add Endpoint")
 
@@ -36,7 +36,7 @@ Remember to save the route.
 
 ## Create the Views
 
-Now that the routes are configured, it's time to create the views that will power this new functionality. In the experience menu, click the "Views" menu item, then click the "Add" button at the top right of the "Pages" list.
+Now that the routes are configured, it's time to create the views that will power this new functionality. Click the "Views" tab, then click the "Add" button at the top right of the "Pages" list.
 
 ![Add Page](/images/experiences/walkthrough/views/user-registration/add-page.png "Add Page")
 

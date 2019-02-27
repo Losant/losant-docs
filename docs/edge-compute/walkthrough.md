@@ -1,5 +1,5 @@
 ---
-description: Follow along on a walkthough of Losant Edge Compute.
+description: Follow along on a walkthrough of Losant Edge Compute.
 ---
 
 # Edge Compute Walkthrough
@@ -20,7 +20,7 @@ The Banner Wireless Controller reads sensor data from any number of remote senso
 
 [Edge Compute device types](/devices/edge-compute/) can report state for themselves or for any number of peripheral devices. This example includes one peripheral, which is the kegerator itself. The Raspberry Pi will be the Edge Compute device that's responsible for reading the Modbus endpoint.
 
-Using the `Devices -> Add Device` main application menu, first create the Edge Compute device.
+Using the `Devices -> Add Device` button in your application page, first create the Edge Compute device.
 
 ![Add Device Menu](/images/edge-compute/walkthrough/add-device.png "Add Device Menu")
 
@@ -36,7 +36,7 @@ In this example we named the device "Kegerator", but you can name it anything yo
 
 ## Create Access Key and Secret
 
-In order for the Raspberry Pi to communicate with Losant, it requires authentication details. Using the main `Security` application menu, create a new access key and secret for this device.
+In order for the Raspberry Pi to communicate with Losant, it requires authentication details. Within `Access Keys`, create a new access key and secret for this device.
 
 ![Security Menu](/images/edge-compute/walkthrough/security-menu.png "Security Menu")
 
@@ -114,13 +114,11 @@ If you need to fix or change any configuration fields, you can simply edit the c
 
 Now that you have the Agent installed and running, you can build and deploy an edge workflow to start reading Modbus information.
 
-You can create an edge workflow by clicking the `Workflows -> Create Workflow` main application menu.
+You can create an edge workflow by clicking `Workflows -> Add Workflow`.
 
 ![Create Workflow Menu](/images/edge-compute/walkthrough/create-workflow-menu.png "Create Workflow Menu")
 
 ![Create Edge Workflow](/images/edge-compute/walkthrough/create-edge-workflow.png "Create Edge Workflow")
-
-![Edge Agent Version](/images/edge-compute/walkthrough/edge-agent-version.png "Edge Agent Version")
 
 It's important to ensure the version you select for `Minimum Agent Version` is the same or below whatever you have installed on your edge devices. Losant continually updates the Agent with new capabilities. This setting ensures the workflows you're about to build will be supported by the Agent version you have installed. We always default this option to the latest Agent version, so if you just installed the Agent, you should be good to go.
 

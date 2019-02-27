@@ -8,13 +8,13 @@ Users are the highest level resource in Losant. All applications and dashboards 
 
 ## User Profile
 
-Your user profile stores information like your name and email address. To view and edit this information, click your name on the top right of the screen and select `Settings` under `My Account`. You will be redirected to the `Profile` tab.
+Your user profile stores information like your name and email address. To view and edit this information, click your user icon on the bottom left of the screen and select `Settings` under `My Account`. You will be redirected to the `Profile` tab.
 
 ![Profile](/images/user-accounts/profile.png "Profile")
 
-## Change Password
+## Password
 
-You can change your password at any time on the `Change Password` tab. You will need to provide your current password and the new password. If you forgot your password and cannot login, navigate to the <a href="https://accounts.losant.com/forgot-password" target="\_blank">forgot password page</a>.
+You can change your password at any time on the `Password` tab. You will need to provide your current password and the new password. If you forgot your password and cannot login, navigate to the <a href="https://accounts.losant.com/forgot-password" target="\_blank">forgot password page</a>.
 
 ![Reset Password](/images/user-accounts/reset-password.png "Reset Password")
 
@@ -42,7 +42,7 @@ Open the two-factor authentication app used in the verification process and sele
 
 ### Disabling two-Factor Authentication
 
-To disable two-factor authentication, navigate to the `Two Factor Auth` tab under `Account Settings` and authenticate yourself using your password and two-factor code, then click `Disable Two Factor Auth`.
+To disable two-factor authentication, navigate to the `Two-Factor Auth` tab under `My Profile` and authenticate yourself using your password and two-factor code, then click `Disable Two Factor Auth`.
 
 ![Disable Two-Factor Auth](/images/user-accounts/disable-2fa.png "Disable Two-Factor Auth")
 

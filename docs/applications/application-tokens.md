@@ -8,7 +8,7 @@ Application tokens allow you to interact with a single [application](/applicatio
 
 ## Viewing Application Tokens
 
-You can view the the API tokens for an application by choosing `Security` in the Application menu bar, and then clicking `Application API Tokens` in the left navigation.
+You can view the the API tokens for an application by choosing `API Tokens` in the Application subnavigation.
 
 The list of application tokens includes the token's name, a summary of its scope, its creator (which may be yourself, another member of your [organization](/organizations/overview/) or even another API token) and the token's [expiration date](#token-expiration-date).
 
@@ -16,7 +16,7 @@ The list of application tokens includes the token's name, a summary of its scope
 
 ## Generating an API Token
 
-Application API tokens can be added to your application by using the `Add Application Token` button on the `Application API Tokens` page. Token setup requires four pieces of information ...
+Application API tokens can be added to your application by using the `Add Application Token` button on the `API Tokens` page. Token setup requires four pieces of information:
 
 ### Name and Description
 
@@ -62,7 +62,7 @@ When you're finished, check the `I have copied my application token to a safe pl
 
 To temporarily deactivate an application API token ...
 
-* Click the checkbox alongside the token in the list view, OR
+* Toggle the switch in the list view, OR
 * From the token's detail page, select the "Inactive" radio button under the "Status" label and save the token.
 
 ![Delete Token](/images/applications/delete-token.png "Delete Token")

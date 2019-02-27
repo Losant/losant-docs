@@ -45,7 +45,7 @@ valid body for this request:
 
 ```json
 {
-  "name": "myOptionalColumn",
+  "name": "myColumn3",
   "dataType": "string",
   "constraint": "optional",
   "defaultValue": "aDefault"
@@ -59,7 +59,7 @@ curl -H 'Content-Type: application/json' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
     -X POST \
-    -d '{"name":"myOptionalColumn","dataType":"string","constraint":"optional","defaultValue":"aDefault"}' \
+    -d '{"name":"myColumn3","dataType":"string","constraint":"optional","defaultValue":"aDefault"}' \
     https://api.losant.com/applications/APPLICATION_ID/data-tables/DATA_TABLE_ID/column
 ```
 

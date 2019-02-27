@@ -10,11 +10,7 @@ description: It's a Custom Node walkthrough!
 
 ## Create the New Node
 
-To create a new Custom Node, first navigate to your application's custom nodes by selecting the `Workflows->Custom Nodes` main application menu.
-
-![Custom Nodes Menu](/images/workflows/custom-nodes/walkthrough/custom-nodes-menu.png "Custom Nodes Menu")
-
-From this page, you can start building a new node by clicking the `Add` button at the top of the custom node list.
+To create a new Custom Node, first navigate to your application's custom nodes by selecting the `Custom Nodes` link in the application navigation. From this page, you can start building a new node by clicking the `Add` button at the top of the page.
 
 ![Add Custom Node Button](/images/workflows/custom-nodes/walkthrough/add-custom-node-button.png "Add Custom Node Button")
 
@@ -28,11 +24,11 @@ The icon and name will be displayed on the node when it's added to the workflow 
 
 If you'd like to use the Dark Sky logo referenced above, you can download it [here](/images/workflows/custom-nodes/walkthrough/dark-sky-logo.png).
 
-The `Output Type` determines whether or not this node has one output or two. Most nodes only have a single output, but some, like the [Conditional Node](/workflows/logic/conditional/) have two. Since this node is only returning weather information, it only needs a single output.
+The `Output Type` determines whether this node has one output or two. Most nodes only have a single output, but some (like the [Conditional Node](/workflows/logic/conditional/)) have two. Since this node is only returning weather information, it only needs a single output.
 
-The `Output Result` determines whether or not the user is required to provide a payload path for the result of this node. Since this node is returning weather information, we will require the user to provide a path.
+The `Output Result` determines whether the user is required to provide a payload path for the result of this node. Since this node is returning weather information, we will require the user to provide a path.
 
-If you choose optional or required here, the workflow editor will automatically display a text field for the user to provide a payload path. The result description you provide here will be displayed above that text field to help the user understand the format of this node's output data.
+If you choose "optional" or "required" here, the workflow editor will automatically display a text field for the user to provide a payload path. The result description you provide here will be displayed above that text field to help the user understand the format of this node's output data.
 
 Once you click "Create Custom Node" you'll be presented with a blank canvas where we can begin developing our new node.
 
@@ -88,7 +84,7 @@ Now that we have the user's information, we can build our node to make a request
 
 ## Build the Node's Logic
 
-Custom nodes are developed a lot like workflows. They are made by combining other built-in and custom nodes together into a reusable bundle. The biggest difference between a custom node and a workflow is how it's triggered and how it outputs result data. Custom Nodes only have access to two triggers. One is the "Start" trigger, which is invoked by the outer workflow whenever this node is executed. The other is the Virtual Button Trigger, which is used for testing and will be explained in the next section. The node can then use any other nodes needed to perform its intended function. It then ends with an "Output" node, which provides a way to pass a result back to the outer workflow's payload where execution will continue with your node's result data.
+Custom nodes are developed a lot like workflows. They are made by combining other built-in and custom nodes together into a reusable bundle. The biggest difference between a custom node and a workflow is how it's triggered and how it outputs result data. Custom Nodes only have access to two triggers. One is the "Start" trigger, which is invoked by the outer workflow whenever this node is executed. The other is the [Virtual Button Trigger](/workflows/triggers/virtual-button/), which is used for testing and will be explained in the next section. The node can then use any other nodes needed to perform its intended function. It then ends with an "Output" node, which provides a way to pass a result back to the outer workflow's payload where execution will continue with your node's result data.
 
 Your node starts with a "Start" and an "Output" node already on the canvas. We now need to fill in the middle to make the Dark Sky API request and return the result.
 
@@ -107,11 +103,11 @@ Now that our result is on our payload, we need to tell the Output Node to return
 
 ![Output Node Options](/images/workflows/custom-nodes/walkthrough/output-node-options.png "Output Node Options")
 
-At this point, the node could be considered done. Click the `Save and Deploy` button to make this custom node available. Before delivering this node to your users, it should probably be tested. The next section covers how to test and debug a custom node.
+At this point, the node could be considered done. Click the `Save and Deploy` button at the top of the page to make this custom node available.
 
 ## Test and Debug the Node
 
-Testing a custom node is done directly in the custom node editor using a combination of [Virtual Button Triggers](/workflows/triggers/virtual-button/) and [Debug Nodes](/workflows/outputs/debug/).
+Before delivering this node to your users, it should probably be tested. Testing a custom node is done directly in the custom node editor using a combination of [Virtual Button Triggers](/workflows/triggers/virtual-button/) and [Debug Nodes](/workflows/outputs/debug/).
 
 For our Dark Sky node, start by adding a Debug Node right before the Output Node. This will allow us to inspect the payload and make sure what we're returning to the user is correct.
 

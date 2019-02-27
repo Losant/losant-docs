@@ -14,7 +14,7 @@ Custom Nodes can only be used within [application workflows](/workflows/applicat
 
 ## Creating and Viewing Custom Nodes
 
-Your application's list of Custom Nodes can be found under the "Workflows" dropdown menu. From the list, you may add a new Custom Node by clicking the "Add" button in the top right corner.
+A list of your application's Custom Nodes can be found under the "Custom Nodes" link. From the list, you may add a new Custom Node by clicking the "Add" button in the top right corner.
 
 ![Create Custom Node](/images/workflows/custom-nodes-create.png "Create Custom Node")
 

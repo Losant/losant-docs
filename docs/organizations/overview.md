@@ -24,7 +24,7 @@ Organization pricing is a function of a number of factors:
 
 ## Creating a New Organization
 
-[Contact Losant](https://www.losant.com/contact-us) for more information about setting up your organization. Once a contract is in place, the Losant team will take care of creating
+[Contact Losant](https://www.losant.com/contact-us) for more information about setting up your organization. Once a contract is in place, the Losant team will take care of creating the organization before turning it over to you to invite additional members, create new resources and transfer resources into the organization.
 
 ## Creating Organization Resources
 
@@ -36,9 +36,7 @@ If the resource has already been created, and you have `Administrator` permissio
 
 ## Managing Organizations
 
-![Organization Settings Link](/images/organizations/organization-settings-link.png "Organization Settings Link")
-
-If you have the Administrator role in this organization, there will be a `Settings` link in the organization subnavigation. Clicking this will take you to a page where you can edit many aspects of the organization itself.
+If you have the Administrator role in this organization, there will be an `Organization Info` link in the organization subnavigation. Clicking this will take you to a page where you can edit many aspects of the organization itself.
 
 ### Overview
 

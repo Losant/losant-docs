@@ -163,7 +163,7 @@ After our device is selected, we should be able to see memory information in the
 
 <div style="padding:20px; background: #efefef; margin: 10px 0px 10px 0px; border-top: 5px #FF495C solid">
 <h2>SIDEBAR</h2>
-<p style="margin-bottom:2px;">When using the Workflow Engine, it's helpful to have standards. Though you can put data anywhere you want on the payload <code>working</code> is a best practice we settled on at Losant. Everything in <code>working</code> reprents data that we are actively manipulating a workflow. Using <code>working</code> you can always assume that the rest of the payload is untouched, and you may use those values in other nodes without worry.</p>
+<p style="margin-bottom:2px;">When using the Workflow Engine, it's helpful to have standards. Though you can put data anywhere you want on the payload <code>working</code> is a best practice we settled on at Losant. Everything in <code>working</code> represents data that we are actively manipulating a workflow. Using <code>working</code> you can always assume that the rest of the payload is untouched, and you may use those values in other nodes without worry.</p>
 </div>
 
 Here is what the payload should look like:

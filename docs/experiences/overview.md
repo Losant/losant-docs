@@ -63,6 +63,6 @@ If you chose to skip the resource creation step, the modal will simply dismiss w
 
 ## Deleting Experience Resources
 
-If for any reason you need to delete parts or all of your Experience, you can do so under the "Settings" > "Delete Resources" tab in your application's navigation. Select all the resources you wish to delete and then submit the form.
+If for any reason you need to delete parts or all of your Experience, you can do so under the "Settings" > "Application info" tab in your application's sub-navigation and then selecting "Delete Resources" in the top navigation tabs. Select all the resources you wish to delete and then submit the form.
 
 ![Bulk Delete Experience Resources](/images/experiences/bulk-delete-experience-versions.png "Bulk Delete Experience Resources")

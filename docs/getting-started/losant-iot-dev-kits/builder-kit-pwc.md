@@ -37,7 +37,7 @@ Before you can flash the required firmware to these devices, you must setup your
 
 ## Install Arduino IDE
 
-Download and install the lastest version of the Arduino IDE by following the instructions at:  
+Download and install the latest version of the Arduino IDE by following the instructions at:  
 <a href="https://www.arduino.cc/en/Main/Software" target="_blank">https://www.arduino.cc/en/Main/Software</a>
 
 If you already have the Arduino IDE installed, it is strongly recommend that you check your current version, and upgrade if necessary. There have been issues with previous versions not working correctly.

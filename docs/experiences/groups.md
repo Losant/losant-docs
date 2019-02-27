@@ -10,13 +10,13 @@ An Experience Group is a collection of [users](/experiences/users/) for controll
 
 ![Experience Groups](/images/experiences/groups-list.png "Experience Groups")
 
-Groups are can be accessed through the "Groups" menu item of your application's "Experience" menu. Click the group's name in the list to view view or modify user membership. Note: while endpoints can also belong to groups, endpoint membership can only be modified on the endpoint edit page.
+"Groups" can be found under the "Experience" section of your application's sub-navigation. Click the group's name in the list to view view or modify user membership. Note: while endpoints can also belong to groups, endpoint membership can only be modified on the endpoint edit page.
 
 ## Adding an Experience Group
 
 ![Add Group](/images/experiences/add-group.png "Add Group")
 
-From the Groups list page, click "Add" at the top right of the group list. This will take you to a page where the new group can be configured.
+From the Groups list page, click "Add Experience Group" at the top right of the group list. This will take you to a page where the new group can be configured.
 
 ## Group Configuration
 

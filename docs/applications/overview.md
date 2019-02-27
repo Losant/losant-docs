@@ -26,13 +26,13 @@ Applications can be deleted on the settings page. Deleting an application cannot
 
 ![Delete Application](/images/applications/delete-application.png "Delete Application")
 
-## Communication Log
+## Application Log
 
-The Communication Log is a real-time log that displays helpful information about various aspects of your Losant application. It's most useful for debugging purposes.
+The Application Log is a real-time log that displays helpful information about various aspects of your Losant application. It's most useful for debugging purposes.
 
-![Communication Log](/images/applications/communication-log-full.png "Communication Log")
+![Application Log](/images/applications/application-log-full.png "Application Log")
 
-As a real-time tool, the Communication Log will always begin in an empty state. Logs will appear as actions on your application take place. Logs will show for the following cases:
+As a real-time tool, the Application Log will always begin in an empty state. Logs will appear as actions on your application take place. Logs will show for the following cases:
 
 ### MQTT
 
@@ -58,6 +58,18 @@ As a real-time tool, the Communication Log will always begin in an empty state. 
 ### Integrations
 
 * Integration Messages - When Losant receives a message from an [Integration](/applications/integrations/), a log will appear.
+
+## Application Search
+
+Resources can be looked up and accessed from any page within an application by searching for it using the search bar within the subnavigation. The search panel can be opened by clicking on the search box or by hitting Option (⌥) + L on Mac or Alt + L on Windows.
+
+![Application Search Box](/images/applications/search-box.png "Application Search Box")
+
+The search panel displays a list of recently accessed workflows and devices and links to common routes when it is first opened.
+
+As a term is input, the options will filter and return resources that match. Resources can be looked up by name or partial name and results are restricted to the current application.
+
+![Application Search Panel Open](/images/applications/search-panel-populated.png "Application Search Panel Open")
 
 ## Application Globals
 

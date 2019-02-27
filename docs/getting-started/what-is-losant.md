@@ -26,11 +26,11 @@ Commands allow you to instruct your devices to take specific actions. What comma
 
 All state information reported by devices is stored. This allows you to visualize complex aggregations across one or more devices. For example, if you manufacture water quality sensors, Losant easily provides the ability to view, in real-time, the average water quality across all sensors, or view an average for a subset like a region or single building.
 
-![Full Dashboard](/images/getting-started/walkthrough/dashboard-full.png "Full Dashboard")
+![Full Dashboard](/images/getting-started/dashboard-full.png "Full Dashboard")
 
 Losant's customizable dashboarding tools allow you to display and arrange information most important to your application.
 
-![Dashboard Resize](/images/getting-started/walkthrough/dashboard-resize.gif "Dashboard Resize")
+![Dashboard Resize](/images/getting-started/dashboard-resize.gif "Dashboard Resize")
 
 ## Workflows
 

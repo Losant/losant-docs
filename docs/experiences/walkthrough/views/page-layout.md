@@ -12,7 +12,7 @@ For this walkthrough, the layout that we'll be building looks like the following
 
 This layout includes a header and a footer. The header includes a logo, a few placeholder navigation links, and a "Log In" link. The footer includes a copyright statement. The blank space in the middle is where individual pages will be rendered within this layout.
 
-The Experience Views functionality can be found under the "Views" tab in the "Experience" section of Losant.
+The Experience Views functionality can be found under the "Views" tab in the "Edit" Experience section of Losant.
 
 ![Views Tab](/images/experiences/walkthrough/views/page-layout/views-tab.png "Views Tab")
 

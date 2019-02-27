@@ -12,7 +12,7 @@ Through the combination of endpoints, workflows, views and users, it is possible
 
 ![Experience Views List](/images/experiences/views-overview.png "Experience Views List")
 
-Views are listed within the "Views" tab of your application's "Experience" subsection. Here you will see a heading for each type of view and a list of views of that type beneath it. Click the name of any view to edit it.
+"Views" are listed within the "Endpoints" tab under "Edit" in the "Experience" section of your application's sub-navigation. Here you will see a heading for each type of view and a list of views of that type beneath it. Click the name of any view to edit it.
 
 ## Adding an Experience View
 

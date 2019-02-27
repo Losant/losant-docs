@@ -166,7 +166,7 @@ all.Application, all.Organization, all.User, flows.*, or flows.import.
 ### Request Body <a name="import-body"></a>
 
 The body of the request should be serialized JSON that validates against
-the [Workflow Import](schemas.md#workflow-import) schema. For example, the following would be a
+the [Workflows Import Post](schemas.md#workflows-import-post) schema. For example, the following would be a
 valid body for this request:
 
 ```json

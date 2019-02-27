@@ -1780,12 +1780,12 @@ Results of a search of an application&#x27;s resources
       "_type": {
         "type": "string",
         "enum": [
-          "applicationKey",
+          "applicationApiToken",
           "dashboard",
           "dataTable",
           "deviceRecipe",
           "device",
-          "domain",
+          "experienceDomain",
           "event",
           "experienceEndpoint",
           "experienceGroup",
@@ -4503,7 +4503,12 @@ Schema for a single Data Table
     {
       "name": "myColumn1",
       "dataType": "string",
-      "defaultValue": "aDefault"
+      "constraint": "unique"
+    },
+    {
+      "name": "myColumn2",
+      "dataType": "number",
+      "constraint": "optional"
     }
   ]
 }
@@ -4564,7 +4569,7 @@ Schema for a single Data Table Column
 
 ```json
 {
-  "name": "myOptionalColumn",
+  "name": "myColumn3",
   "dataType": "string",
   "constraint": "optional",
   "defaultValue": "aDefault"
@@ -4692,6 +4697,11 @@ Schema for the body of a Data Table creation request
       "name": "myColumn1",
       "dataType": "string",
       "constraint": "unique"
+    },
+    {
+      "name": "myColumn2",
+      "dataType": "number",
+      "constraint": "optional"
     }
   ]
 }
@@ -4801,12 +4811,12 @@ Schema for a data table query
 {
   "$or": [
     {
-      "myCol1": {
-        "$ne": 0
+      "myColumn1": {
+        "$ne": "myValue"
       }
     },
     {
-      "myCol2": 5
+      "myColumn2": 5
     }
   ]
 }
@@ -4859,7 +4869,8 @@ Schema for a single Data Table Row
   "id": "596fbb703fc088453872e609",
   "creationDate": "2016-06-13T04:00:00.000Z",
   "lastUpdated": "2016-06-13T04:00:00.000Z",
-  "myColumn": "myValue"
+  "myColumn1": "myValue",
+  "myColumn2": 5
 }
 ```
 
@@ -4875,7 +4886,7 @@ Schema for inserting data table rows
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "array",
   "items": {
-    "title": "Data Table Row Insert/Update",
+    "title": "Data Table Row Insert Update",
     "description": "Schema for inserting or updating a data table row",
     "type": "object",
     "patternProperties": {
@@ -4920,7 +4931,7 @@ Schema for inserting a data table row or rows
   "$schema": "http://json-schema.org/draft-04/schema#",
   "oneOf": [
     {
-      "title": "Data Table Row Insert/Update",
+      "title": "Data Table Row Insert Update",
       "description": "Schema for inserting or updating a data table row",
       "type": "object",
       "patternProperties": {
@@ -4940,7 +4951,7 @@ Schema for inserting a data table row or rows
       "description": "Schema for inserting data table rows",
       "type": "array",
       "items": {
-        "title": "Data Table Row Insert/Update",
+        "title": "Data Table Row Insert Update",
         "description": "Schema for inserting or updating a data table row",
         "type": "object",
         "patternProperties": {
@@ -5043,16 +5054,17 @@ Schema for a the result of a single or multiple row insert
   "id": "596fbb703fc088453872e609",
   "creationDate": "2016-06-13T04:00:00.000Z",
   "lastUpdated": "2016-06-13T04:00:00.000Z",
-  "myColumn": "myValue"
+  "myColumn1": "myValue",
+  "myColumn2": 5
 }
 ```
 
 <br/>
-## Data Table Row Insert/Update
+## Data Table Row Insert Update
 
 Schema for inserting or updating a data table row
 
-### Schema <a name="data-table-row-insert/update-schema"></a>
+### Schema <a name="data-table-row-insert-update-schema"></a>
 
 ```json
 {
@@ -5074,7 +5086,7 @@ Schema for inserting or updating a data table row
 
 <small></small>
 
-### Example <a name="data-table-row-insert/update-example"></a>
+### Example <a name="data-table-row-insert-update-example"></a>
 
 ```json
 {
@@ -5171,7 +5183,8 @@ Schema for a collection of Data Table Rows
       "id": "596fbb703fc088453872e609",
       "creationDate": "2016-06-13T04:00:00.000Z",
       "lastUpdated": "2016-06-13T04:00:00.000Z",
-      "myColumn": "myValue"
+      "myColumn1": "myValue",
+      "myColumn2": 5
     }
   ],
   "count": 1,
@@ -5215,11 +5228,11 @@ Schema for response to data table rows removal
 ```
 
 <br/>
-## Data Table Export
+## Data Table Rows Export
 
 Schema for the body of a data table export
 
-### Schema <a name="data-table-export-schema"></a>
+### Schema <a name="data-table-rows-export-schema"></a>
 
 ```json
 {
@@ -5346,7 +5359,7 @@ Schema for the body of a data table export
 
 <small></small>
 
-### Example <a name="data-table-export-example"></a>
+### Example <a name="data-table-rows-export-example"></a>
 
 ```json
 {
@@ -5354,12 +5367,12 @@ Schema for the body of a data table export
   "query": {
     "$or": [
       {
-        "myCol1": {
-          "$ne": 0
+        "myColumn1": {
+          "$ne": "myValue"
         }
       },
       {
-        "myCol2": 5
+        "myColumn2": 5
       }
     ]
   },
@@ -5518,7 +5531,12 @@ Schema for a collection of Data Tables
         {
           "name": "myColumn1",
           "dataType": "string",
-          "defaultValue": "aDefault"
+          "constraint": "unique"
+        },
+        {
+          "name": "myColumn2",
+          "dataType": "number",
+          "constraint": "optional"
         }
       ]
     }
@@ -7159,11 +7177,11 @@ Schema for a single Device state
 ```
 
 <br/>
-## Single or Multiple Device States
+## Device State or States
 
 Schema for a single device state or an array of device states
 
-### Schema <a name="single-or-multiple-device-states-schema"></a>
+### Schema <a name="device-state-or-states-schema"></a>
 
 ```json
 {
@@ -7290,7 +7308,7 @@ Schema for a single device state or an array of device states
 
 <small></small>
 
-### Example <a name="single-or-multiple-device-states-example"></a>
+### Example <a name="device-state-or-states-example"></a>
 
 ```json
 {
@@ -12191,11 +12209,11 @@ Schema to create a single file or directory
 ```
 
 <br/>
-## File Post Response
+## File Upload Post Response
 
 Schema to upload the file to s3
 
-### Schema <a name="file-post-response-schema"></a>
+### Schema <a name="file-upload-post-response-schema"></a>
 
 ```json
 {
@@ -12311,7 +12329,7 @@ Schema to upload the file to s3
 
 <small></small>
 
-### Example <a name="file-post-response-example"></a>
+### Example <a name="file-upload-post-response-example"></a>
 
 ```json
 {
@@ -12614,6 +12632,7 @@ Schema for a single Workflow
               "mqttTopic",
               "redis",
               "request",
+              "serial",
               "timer",
               "udp",
               "virtualButton",
@@ -13237,6 +13256,7 @@ Schema for the body of a Workflow modification request
               "mqttTopic",
               "redis",
               "request",
+              "serial",
               "timer",
               "udp",
               "virtualButton",
@@ -13731,6 +13751,7 @@ Schema for the body of a Workflow creation request
               "mqttTopic",
               "redis",
               "request",
+              "serial",
               "timer",
               "udp",
               "virtualButton",
@@ -14371,6 +14392,7 @@ Schema for a single Workflow Version
                   "mqttTopic",
                   "redis",
                   "request",
+                  "serial",
                   "timer",
                   "udp",
                   "virtualButton",
@@ -14900,6 +14922,7 @@ Schema for a single Workflow Version
                   "mqttTopic",
                   "redis",
                   "request",
+                  "serial",
                   "timer",
                   "udp",
                   "virtualButton",
@@ -15136,6 +15159,7 @@ Schema for the body of a Workflow Version creation request
               "mqttTopic",
               "redis",
               "request",
+              "serial",
               "timer",
               "udp",
               "virtualButton",
@@ -15655,6 +15679,7 @@ Schema for a collection of Workflow Versions
                         "mqttTopic",
                         "redis",
                         "request",
+                        "serial",
                         "timer",
                         "udp",
                         "virtualButton",
@@ -16184,6 +16209,7 @@ Schema for a collection of Workflow Versions
                         "mqttTopic",
                         "redis",
                         "request",
+                        "serial",
                         "timer",
                         "udp",
                         "virtualButton",
@@ -16485,6 +16511,7 @@ Schema for a collection of Workflows
                     "mqttTopic",
                     "redis",
                     "request",
+                    "serial",
                     "timer",
                     "udp",
                     "virtualButton",
@@ -17018,11 +17045,11 @@ Schema for a collection of Workflows
 ```
 
 <br/>
-## Workflow Import
+## Workflows Import Post
 
 Schema for the body of a workflow import request
 
-### Schema <a name="workflow-import-schema"></a>
+### Schema <a name="workflows-import-post-schema"></a>
 
 ```json
 {
@@ -17090,6 +17117,7 @@ Schema for the body of a workflow import request
                     "mqttTopic",
                     "redis",
                     "request",
+                    "serial",
                     "timer",
                     "udp",
                     "virtualButton",
@@ -17600,6 +17628,7 @@ Schema for the body of a workflow import request
                     "mqttTopic",
                     "redis",
                     "request",
+                    "serial",
                     "timer",
                     "udp",
                     "virtualButton",
@@ -18028,7 +18057,7 @@ Schema for the body of a workflow import request
 
 <small></small>
 
-### Example <a name="workflow-import-example"></a>
+### Example <a name="workflows-import-post-example"></a>
 
 ```json
 {
@@ -18159,6 +18188,7 @@ Schema for the result of a workflow import request
                     "mqttTopic",
                     "redis",
                     "request",
+                    "serial",
                     "timer",
                     "udp",
                     "virtualButton",
@@ -18688,6 +18718,7 @@ Schema for the result of a workflow import request
                         "mqttTopic",
                         "redis",
                         "request",
+                        "serial",
                         "timer",
                         "udp",
                         "virtualButton",
@@ -19217,6 +19248,7 @@ Schema for the result of a workflow import request
                         "mqttTopic",
                         "redis",
                         "request",
+                        "serial",
                         "timer",
                         "udp",
                         "virtualButton",

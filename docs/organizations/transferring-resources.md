@@ -1,5 +1,5 @@
 ---
-description: Learn about transfering resources between Sandboxes and Organizations.
+description: Learn about transferring resources between Sandboxes and Organizations.
 ---
 
 # Transferring Resources
@@ -8,9 +8,9 @@ It is possible to transfer [applications](/applications/overview/) and [dashboar
 
 ## Transferring en Masse
 
-![Transfer Link](/images/organizations/transfer-link.png "Transfer Link")
+To begin the process, select `Transfer Resources` from the main navigation's `Organizations` tab.
 
-To begin the process, select `Transfer Resources` from the header's `Organizations` tab.
+![Transfer Link](/images/organizations/transfer-link.png "Transfer Link")
 
 ### Choosing the Source and Destination
 
@@ -28,7 +28,7 @@ After selecting a `Source` and `Destination`, a list of applications for each wi
 
 ![Transfer Applications](/images/organizations/transfer-applications.png "Transfer Applications")
 
-If any application in the `Source` column can not be transferred – most likely because the application's device count would be the destination over its own device limit – the application will be marked unavailable for transfer.
+If any application in the `Source` column cannot be transferred – most likely because the application's device count would be the destination over its own device limit – the application will be marked unavailable for transfer.
 
 At the bottom of the application lists are device count summaries for both the source and destination, showing how many devices will be in each after the transfer is completed.
 

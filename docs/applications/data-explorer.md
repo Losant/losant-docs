@@ -8,8 +8,6 @@ The Application Data Explorer allows you to easily explore, aggregate and analyz
 
 The Data Explorer can be accessed through the "Data Explorer" link in the Application navigation bar:
 
-![Data Explorer Link](/images/applications/data-explorer-link.png "Data Explorer Link")
-
 ## Data Settings
 
 There are a handful of controls available for building a data query and for exploring application data over time:
