@@ -14,7 +14,7 @@ Edge deployments can be managed on a per-device basis or a per-workflow basis.
 
 ![Device Edge Deployments](/images/edge-compute/device-edge-deployments.png "Device Edge Deployments")
 
-After selecting a device from your device list, click "Edge Compute" in the left navigation. This will bring you to a page where you can view the Edge Agent version currently deployed to the device, as well as a list of all workflows deployed to the device and their version status.
+After selecting a device from your device list, click "Edge Compute" in the top navigation. This will bring you to a page where you can view the Edge Agent version currently deployed to the device, as well as a list of all workflows deployed to the device and their version status.
 
 Clicking the "Settings" (gear) icon in any deployment table row will allow you to edit that specific deployment, including changing the workflow version or canceling a scheduled rollout.
 
