@@ -6,7 +6,7 @@ description: 'Learn more about the Losant OPC UA: Read Node.'
 
 # OPC UA: Read
 
-The OPC UA: Read Node allows you to read node values from your [OPC UA Server](https://en.wikipedia.org/wiki/OPC_Unified_Architecture) and connected programmable logic controller (PLC). This node is only available in [edge workflows](/workflows/edge-workflows/).
+The OPC UA: Read Node allows you to read multiple node values from your [OPC UA Server](https://en.wikipedia.org/wiki/OPC_Unified_Architecture) and connected programmable logic controller (PLC). This node is only available in [edge workflows](/workflows/edge-workflows/).
 
 ![OPC UA Read Node](/images/workflows/data/opcua-read-node.png "OPC UA Read Node")
 
@@ -36,7 +36,7 @@ If a **Security Policy** is selected, you will have the option to select between
 
 ![OPC UA Read Node Read Instructions](/images/workflows/data/opcua-read-node-instructions.png "OPC UA Read Node Instructions")
 
-You are required to define read instructions for the OPC UA: Read Node. The instructions have the following fields:
+You may define multiple read instructions for the OPC UA: Read Node, and you must define at least one. Each instruction has the following fields:
 
 * **Namespace Index (ns):** (Required) A string template or positive integer.
 * **Identifier:** (Required) A string template or string for the node identifier. The identifier string should begin with one of the following types:
@@ -50,9 +50,9 @@ You are required to define read instructions for the OPC UA: Read Node. The inst
 
 ![OPC UA Read Node Result](/images/workflows/data/opcua-read-node-path.png "OPC UA Read Node Result")
 
-The results of the read instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) at the instruction's `Result Key`. It is important that each key is named uniquely so the node does not overwrite another read result.
+The results of each read instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) at each instruction's `Result Key`. It is important that each key is named uniquely so the node does not overwrite another read result.
 
-If the key is not present in the Destination Path of the payload, it means the read failed, and there will be a list of errors at the Destination Path under the key `errors`. For this reason, this node restricts Result Keys to not resolve to the path `errors`.
+If the key is not present in the Destination Path of the payload, it means the read failed, and there will be a list of errors at the Destination Path under the key `errors`. For this reason, this node restricts Result Keys to not resolve to the path `errors`. Because the tags are read as a group one failed read for a tag may cause the other keys in the group to not appear.
 
 ### Result
 

@@ -6,7 +6,7 @@ description: 'Learn more about the Losant OPC UA: Write Node.'
 
 # OPC UA: Write
 
-The OPC UA: Write Node allows you to write new node values to your [OPC UA Server](https://en.wikipedia.org/wiki/OPC_Unified_Architecture) and connected programmable logic controller (PLC). This node is only available in [edge workflows](/workflows/edge-workflows/).
+The OPC UA: Write Node allows you to write to multiple new node values to your [OPC UA Server](https://en.wikipedia.org/wiki/OPC_Unified_Architecture) and connected programmable logic controller (PLC). This node is only available in [edge workflows](/workflows/edge-workflows/).
 
 ![OPC UA Write Node](/images/workflows/data/opcua-write-node.png "OPC UA Write Node")
 
@@ -36,7 +36,7 @@ If a **Security Policy** is selected, you will have the option to select between
 
 ![OPC UA Write Node Write Instructions](/images/workflows/data/opcua-write-node-instructions.png "OPC UA Write Node Instructions")
 
-You are required to define write instructions for the OPC UA: Write Node. The instructions have the following fields:
+You may define multiple write instructions for the OPC UA: Write Node, and you must define at least one. Each instruction has the following fields:
 
 * **Namespace Index (ns):** (Required) A string template or positive integer.
 * **Identifier:** (Required) A string template or string for the node identifier. The identifier string should begin with one of the following types:
@@ -50,7 +50,9 @@ You are required to define write instructions for the OPC UA: Write Node. The in
 
 ![OPC UA Write Node Result](/images/workflows/data/opcua-write-node-path.png "OPC UA Write Node Result")
 
-The results of the write instruction will optionally be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)).
+The success or failure of each write instruction will be placed in an object at the `Destination Path` (a [payload path](/workflows/accessing-payload-data/#payload-paths)) (optional) under the `write` key. If the write is successful the `write` value will be `success`, and conversely if the write failed the `write` value will be `fail`.
+
+If the write failed there will be a list of errors at the Destination Path under the key `errors`. Because the nodes are written as a group one failed write for a node may cause the other writes to fail.
 
 ### Result
 
