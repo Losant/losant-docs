@@ -36,9 +36,7 @@ If the resource has already been created, and you have `Administrator` permissio
 
 ## Managing Organizations
 
-![Organization Settings Link](/images/organizations/organization-settings-link.png "Organization Settings Link")
-
-If you have the Administrator role in this organization, there will be a `Settings` link in the organization subnavigation. Clicking this will take you to a page where you can edit many aspects of the organization itself.
+If you have the Administrator role in this organization, there will be an `Organization Info` link in the organization subnavigation. Clicking this will take you to a page where you can edit many aspects of the organization itself.
 
 ### Overview
 

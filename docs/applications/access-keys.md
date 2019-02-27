@@ -8,13 +8,13 @@ To connect your devices to the Losant Platform, you must use a set of security c
 
 ## Viewing Access Keys
 
-You can view the the access keys for an application by choosing `Security` in the Application menu bar, and then clicking `Device Access Keys` in the left navigation.
+You can view the the access keys for an application by choosing `Access Keys` in the Application menu bar.
 
 ![Access Keys](/images/applications/access-keys.png "Access Keys")
 
 ## Generating an Access Key
 
-Access keys can be added to your application by using the `Add Access Key` button on the `Device Access Keys` page.
+Access keys can be added to your application by using the `Add Access Key` button on the `Access Keys` page.
 
 ![Add Access Key](/images/applications/generate-key.png "Add Access Key")
 
@@ -34,7 +34,7 @@ After you've saved your access key and secret, check the `I have copied my app s
 
 To temporarily deactivate an access key ...
 
-* Click the checkbox alongside the access key in the list view, OR
+* Click the switch alongside the access key in the list view, OR
 * From the access key's detail page, select the "Inactive" radio button under the "Status" label and save the key.
 
 ![Delete Key](/images/applications/delete-key.png "Delete Key")

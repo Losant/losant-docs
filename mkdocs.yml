@@ -17,10 +17,6 @@ nav:
         - Course Four Workshop: university/course-four-workshop.md
         - Course Five Workshop: university/course-five-workshop.md
         - Course Six Workshop: university/course-six-workshop.md
-    - Boards:
-        - Getting Started with Intel Edison: getting-started/boards/getting-started-with-intel-edison.md
-        - Getting Started with Raspberry PI: getting-started/boards/getting-started-with-raspberry-pi.md
-        - Getting Started with Arduino: getting-started/boards/getting-started-with-arduino-wifi-101.md
     - Tutorials And Projects: getting-started/tutorials.md
 - Security:
     - Overview: security.md
@@ -190,6 +186,9 @@ nav:
         - "Modbus: Read": workflows/data/modbus-read.md
         - "Modbus: Write": workflows/data/modbus-write.md
         - MongoDB: workflows/data/mongo.md
+        - "OPC UA: Browse": workflows/data/opcua-browse.md
+        - "OPC UA: Read": workflows/data/opcua-read.md
+        - "OPC UA: Write": workflows/data/opcua-write.md
         - Redis: workflows/data/redis.md
         - Run Executable: workflows/data/run-executable.md
         - Salesforce Cases: workflows/data/salesforce-cases.md

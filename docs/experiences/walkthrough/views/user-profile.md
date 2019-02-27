@@ -99,7 +99,7 @@ Finally, we'll tweak the `profileForm` component we [created for user registrati
 1. Navigate to the `profileForm` component from your list of components.
 1. Replace its `Content` with **[this snippet](https://raw.githubusercontent.com/Losant/experience-views-walkthrough/master/user-profile/component-profile-form.hbs)**.
 
-We're making one significant change to the component, which can be seen just above the closing `</form>` tag: If the component is being called from the `/edit-profile` route, we are excluding the password input from the form and changing the text of the submit button. We do this by checking if there is a current user with the `{{#if experience.user}}` block helper and condionally rendering one bit of content or the other based on the route.
+We're making one significant change to the component, which can be seen just above the closing `</form>` tag: If the component is being called from the `/edit-profile` route, we are excluding the password input from the form and changing the text of the submit button. We do this by checking if there is a current user with the `{{#if experience.user}}` block helper and conditionally rendering one bit of content or the other based on the route.
 
 ## Create the Workflows
 

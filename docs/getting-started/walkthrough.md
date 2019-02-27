@@ -1,5 +1,5 @@
 ---
-description: Follow along for a basic walkthough of gathering, storing, and visualizing data within the Losant platform.
+description: Follow along for a basic walkthrough of gathering, storing, and visualizing data within the Losant platform.
 ---
 
 # Losant Walkthrough
@@ -22,7 +22,7 @@ No, sorry, the API key in the above screenshot won't work.
 
 ## Step 2: Create Losant Application
 
-After signing up you'll be prompted to create your first application. You can also go to create an application from the main `Applications` menu at the top of every screen.
+After signing up you'll be prompted to create your first application. You can also go to create an application from the `Applications` menu.
 
 ![Welcome Page](/images/getting-started/walkthrough/welcome-page.png "Welcome Page")
 
@@ -33,15 +33,21 @@ You can name your application whatever you would like - in this case we have cal
 
 ## Step 3: Add the Device
 
-Now that we have an application we need a [device](/devices/overview/) to store all of our weather data. Add a device using the `Add Device` button or the `Devices` menu. Choose `Create Blank Device` on the following screen, since we want to create from a blank device.
+Now that we have an application we need a [device](/devices/overview/) to store all of our weather data. On the "Application Overview" page you can easily add a device. Choose `Create Blank Device` on the following screen, since we want to create from a blank device.
 
 ![Add Device](/images/getting-started/walkthrough/add-device.png "Add Device")
 
 The [Dark Sky API](https://darksky.net/dev/docs/forecast) provides a lot of information, but we're only going to track and store the most common information people are typically interested in.
 
+When creating the device, make sure `Standalone` is selected as the device type.
+
 ![Device Settings](/images/getting-started/walkthrough/device-settings.png "Device Settings")
 
-When creating the device, make sure `Standalone` is selected as the device type. The `Device Attributes` are important. These are what tell Losant what data this device will be reporting and what Losant will be storing. For the weather device, we'll be storing the following attributes:
+The `Device Attributes` are important. These are what tell Losant what data this device will be reporting and what Losant will be storing.
+
+![Device Settings](/images/getting-started/walkthrough/device-settings-1.png "Device Settings")
+
+For the weather device, we'll be storing the following attributes:
 
 * `dew-point` - the dew point in degrees Fahrenheit.
 * `feels-like` - the apparent temperature with wind chill and humidity accounted for.
@@ -61,7 +67,7 @@ Create a new workflow from the `Workflows` main menu:
 
 ![Create Workflow](/images/getting-started/walkthrough/create-workflow.png "Create Workflow")
 
-Choose `Create Application Workflow` on the following screen, since we want to create an [application workflow](/workflows/application-workflows/). Name the workflow anything you like and provide an optional description.
+Choose `Create Workflow` on the following screen to create an [application workflow](/workflows/application-workflows/). Name the workflow anything you like and provide an optional description.
 
 ![Workflow Settings](/images/getting-started/walkthrough/workflow-settings.png "Workflow Settings")
 
@@ -91,7 +97,13 @@ The `APIKEY` should be replaced by the key you obtained in step 1 after register
 https://api.darksky.net/forecast/APIKEY/39.1119359,-84.51254
 ```
 
-The second required configuration parameter for this HTTP node is the location on the payload to put the result. Workflows work by passing a payload through each node in the workflow. Nodes can add, remove, or modify the payload as needed as it flows through them. In this case, we're going to add a `weather` field to the payload that will hold the response from the Dark Sky API.
+The second required configuration parameter for this HTTP node is the location on the payload to put the result. Workflows work by passing a payload through each node in the workflow. Nodes can add, remove, or modify the payload as needed as it flows through them.
+
+![HTTP Node](/images/getting-started/walkthrough/http-node-1.png "HTTP Node")
+
+In this case, we're going to add a `working.weather` field to the payload that will hold the response from the Dark Sky API.
+
+  When using the Workflow Engine, it's helpful to have standards. Though you can put data anywhere you want on the payload `working` is a best practice we settled on at Losant. Everything in `working` represents data that we are actively manipulating a workflow. Using `working` you can always assume that the rest of the payload is untouched, and you may use those values in other nodes without worry.
 
 Deploy the workflow now and we can inspect the payload using the debug node.
 
@@ -101,7 +113,7 @@ You can now wait 2 minutes for the timer to fire, or simply click the virtual bu
 
 ![Debug Output](/images/getting-started/walkthrough/debug-output.png "Debug Output")
 
-We can now inspect our payload and can see the result from the Dark Sky API call has been placed on the `weather` field of the payload.
+We can now inspect our payload and can see the result from the Dark Sky API call has been placed on the `working.weather` field of the payload.
 
 ![Payload](/images/getting-started/walkthrough/payload.png "Payload")
 
@@ -127,7 +139,8 @@ The device state node requires you to select the device to report as - which in 
   "flowName": "Weather Grabber",
   "applicationName": "Weather Station",
   "globals": {},
-  "weather": {
+  "working": {
+    "weather": {
     "body": {
       "latitude": 39.1119359,
       "longitude": -84.51254,
@@ -158,24 +171,25 @@ The device state node requires you to select the device to report as - which in 
     },
     ...
   }
+ }
 }
 ```
 
 To pull the value of the temperature out of this payload, we would use the following template:
 
 ```handlebars
-{{ weather.body.currently.temperature }}
+{{ working.weather.body.currently.temperature }}
 ```
 
 We can then assign values to our various attributes by using the following templates:
 
-* dew-point : `{{ weather.body.currently.dewPoint }}`
-* feels-like : `{{ weather.body.currently.apparentTemperature }}`
-* humidity : `{{ weather.body.currently.humidity }}`
-* pressure : `{{ weather.body.currently.pressure }}`
-* temp : `{{ weather.body.currently.temperature }}`
-* visibility : `{{ weather.body.currently.visibility }}`
-* wind-speed : `{{ weather.body.currently.windSpeed }}`
+* dew-point : `{{ working.weather.body.currently.dewPoint }}`
+* feels-like : `{{ working.weather.body.currently.apparentTemperature }}`
+* humidity : `{{ working.weather.body.currently.humidity }}`
+* pressure : `{{ working.weather.body.currently.pressure }}`
+* temp : `{{ working.weather.body.currently.temperature }}`
+* visibility : `{{ working.weather.body.currently.visibility }}`
+* wind-speed : `{{ working.weather.body.currently.windSpeed }}`
 
 You can now deploy this workflow and every time the timer triggers, the device state node will publish those state attributes to your device in Losant.
 

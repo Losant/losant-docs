@@ -52,7 +52,7 @@ The following is an example of a successful write, where the Destination Path is
   "destination": {
     "allenWrite": {
       "plcProperties":{
-        "io_faluted": false,
+        "io_faulted": false,
         "majorUnrecoverableFault": false,
         "majorRecoverableFault": false,
         "minorUnrecoverableFault": false,

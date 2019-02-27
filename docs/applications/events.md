@@ -20,8 +20,6 @@ In the above example, a device is reporting temperature state and triggering the
 
 Events are typically consumed using the events page, which is accessible under `Events` in the Application menu bar.
 
-![Events Menu](/images/events/events-menu.png "Events Menu")
-
 The events page allows you to review the details about each event, acknowledged them if needed, and resolve them.
 
 Events can also be used to trigger other workflows. In the refrigerator example, if you wanted to perform additional actions when an event gets created, you could use the [event trigger](/workflows/triggers/event/) to run additional workflows.

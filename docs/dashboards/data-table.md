@@ -20,7 +20,7 @@ First, choose one of your application's data tables from which rows should be re
 
 ### Building a Query
 
-Optionally, you may include a query to only return a subset of your table's rows. Building a query is done the same way as building a query in the [Table: Get Rows Node](http://localhost:8000/workflows/data/table-get-rows/#query-fields), where an array of individual queries can be joined with an "OR" or "AND" operator.
+Optionally, you may include a query to only return a subset of your table's rows. Building a query is done the same way as building a query in the [Table: Get Rows Node](/workflows/data/table-get-rows/#query-fields), where an array of individual queries can be joined with an "OR" or "AND" operator.
 
 ![Data Table Simple Query](/images/dashboards/data-table-query-simple.png "Data Table Simple Query")
 

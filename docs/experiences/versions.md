@@ -8,7 +8,7 @@ Experience versions are frozen snapshots of a [portion of your application exper
 
 ## Viewing Experience Versions
 
-To view a list of your experience versions, click the "Versions" link within the "Experience" dropdown menu in your application navigation.
+"Versions" can be found under the "Experience" section of your application's sub-navigation.
 
 ![Experience Versions List](/images/experiences/experience-versions-list.png "Experience Versions List")
 
@@ -26,7 +26,7 @@ If you are viewing any version besides "develop", none of the resources will be 
 
 ## Creating an Experience Version
 
-To create a new experience version, click the "Create Version ..." button atop the versions list.
+To create a new experience version, click the "Create Version ..." button atop the page.
 
 ![Create Experience Version Button](/images/experiences/create-experience-version-button.png "Create Experience Version Button")
 
@@ -96,7 +96,7 @@ Experience versions other than "develop" can be deleted one of two ways:
 ![Delete Experience Version Button](/images/experiences/delete-experience-version-button.png "Delete Experience Version Button")
 
 * Individually, by clicking the "Delete" icon next to any version you wish to delete within the versions list
-* In bulk, under the "Settings" > "Delete Resources" tab in your application's navigation by selecting "Delete Experience Versions" and submitting the form
+* In bulk, under the "Delete Resources" tab in "Application Info" under the "Settings" section of your application's sub-navigation by selecting "Delete Experience Versions" and submitting the form
 
 ![Bulk Delete Experience Versions](/images/experiences/bulk-delete-experience-versions.png "Bulk Delete Experience Versions")
 

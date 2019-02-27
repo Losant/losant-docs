@@ -1,5 +1,5 @@
 ---
-description: Learn about transfering resources between Sandboxes and Organizations.
+description: Learn about transferring resources between Sandboxes and Organizations.
 ---
 
 # Transferring Resources
@@ -8,9 +8,9 @@ It is possible to transfer [applications](/applications/overview/) and [dashboar
 
 ## Transferring en Masse
 
-![Transfer Link](/images/organizations/transfer-link.png "Transfer Link")
+To begin the process, select `Transfer Resources` from the main navigation's `Organizations` tab.
 
-To begin the process, select `Transfer Resources` from the header's `Organizations` tab.
+![Transfer Link](/images/organizations/transfer-link.png "Transfer Link")
 
 ### Choosing the Source and Destination
 
