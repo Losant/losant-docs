@@ -154,6 +154,6 @@ Arbitrary topics the device publishes to or is subscribed to will not display wi
 
 ![Export Devices](/images/devices/devices-export.png "Export Devices")
 
-To export a list of all the devices scoped to an application, visit the "Devices" menu item and click the "Export All Devices" button in the top right corner of the list. This generate a CSV file of all devices in the application for download, which will be emailed to you after the export has completed. The CSV will include each device's name, ID, description, device type and each tag associated with the device.
+To export a list of all the devices scoped to an application, visit the "Devices" page and click the "Export All Devices" button in the top right corner of the list. This generate a CSV file of all devices in the application for download, which will be emailed to you after the export has completed. The CSV will include each device's name, ID, description, device type and each tag associated with the device.
 
 Note that device exports always include the application's entire device list, not just the devices that are currently displayed in the interface (as filtered by name or paginated).

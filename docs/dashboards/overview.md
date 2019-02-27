@@ -124,7 +124,7 @@ From your dashboard's settings page, click "Embed Dashboard" in the left column.
 
 This will generate a code snippet, which you can drop into any HTML document at the place where you want the embedded dashboard to appear.
 
-An embedded dashboard only includes the dashboard's blocks, not its title, configuration buttons or Losant header and footer. The image below is a screenshot of a dashboard, this is the only section that would appear if the dashboard were embedded.
+An embedded dashboard only includes the dashboard's blocks, not its title, configuration buttons or Losant header and footer. The image below is a screenshot of a dashboard. This is the only content that appears when a dashboard is embedded.
 
 ![Dashboard Embed Diff](/images/dashboards/dashboard-embed-diff.png "Dashboard Embed Diff")
 
