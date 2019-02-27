@@ -28,13 +28,13 @@ Data tables allow for the storage of arbitrary data within your applications. Th
 
 The amount of data (in bytes) that can be stored in your application's data tables is a [hard-limited resource](/organizations/resource-limits/#hard-limited-resources).
 
-A list of your application's data tables can be reached by clicking the "Data Tables" tab in your application menu bar.
+A list of your application's data tables can be reached by clicking "Data Tables" in your application.
 
 ![Data Table List](/images/data-tables/data-table-list.png "Data Table List")
 
 ## Creating a Data Table
 
-To create a data table, click the "Add Table" button in the top right corner of your application's data table list.
+To create a data table, click the "Add Data Table" button in the top right corner of your application's data table list.
 
 A data table's configuration consists of:
 
@@ -44,7 +44,7 @@ A data table's configuration consists of:
 
 ![Data Table Name and Description](/images/data-tables/data-table-name-desc.png "Data Table Name and Description")
 
-Once your configuration is complete, click the "Add Data Table" button in the page's footer.
+Once your configuration is complete, click the "Create Data Table" button in the page's footer.
 
 ## Table Columns
 
@@ -93,8 +93,8 @@ For optional columns, you may also define a **default value** for the column. If
 
 A new data table can be created by importing a plain-text CSV (comma separated value) file. There are two ways to import your CSV files:
 
-- Clicking the "Import..." button in the top right corner of the data table list. This will open your operating system's native file browser dialog, where you can select a single file to import.
-- Dragging a file from your file system onto the table. Doing so will turn the table green to indicate that the selected file can be imported.
+- Clicking the "Import Data Table" button in the top right corner of the data table list. This will open your operating system's native file browser dialog, where you can select a single file to import.
+- Dragging a file from your file system onto the table.
 
 ![Data Table Importing Button](/images/data-tables/data-table-importing-btn.png "Data Table Importing Button")
 
@@ -104,7 +104,7 @@ Immediately after selecting a file to import a preview an editing window will po
 
 The same restrictions for creating a data table and columns apply to importing (e.g. column names "id", "createdAt", and "updatedAt" will be stripped from the import).
 
-Once satisfied with the import select the "Save Data Table" button in the bottom right of the preview and the data table and rows will be uploaded.
+Once satisfied with the import select the "Create Data Table" button in the bottom right of the preview and the data table and rows will be uploaded.
 
 **Notes:** Large CSV tables may take some time to import and will be reflected in rows count and storage size as they are uploaded. The data table storage size will be larger than the CSV file uploaded. User data storage size limits will apply.
 
@@ -148,7 +148,7 @@ By default, your table displays up to 1,000 rows per page, sorted by creation da
 
 ### Adding a Row
 
-To manually add a row to a data table, click the "Add Row" button in the top right corner of the table browsing interface. This will open an editor pane alongside the table where values can be added for each column. Then, click the "Add Row" button at the bottom of the pane to insert the row into the table.
+To manually add a row to a data table, click the "Add Row" button in the top right corner of the table browsing interface. This will open an editor pane alongside the table where values can be added for each column. Then, click the "Save Row" button at the bottom of the pane to insert the row into the table.
 
 ![Data Table Add Row](/images/data-tables/data-table-add-row.png "Data Table Add Row")
 
@@ -160,8 +160,8 @@ Alternatively, you may add table rows through a workflow using the [Table Insert
 
 Like importing a new data table you can import a CSV file with like columns. There are two ways to import your CSV files:
 
-- Clicking the "Import..." button in the top right corner of the data table list. This will open your operating system's native file browser dialog, where you can select a single file to import.
-- Dragging a file from your file system onto the table. Doing so will turn the table green to indicate that the selected file can be imported.
+- Clicking the "Import Rows" button in the top right corner of the data table list. This will open your operating system's native file browser dialog, where you can select a single file to import.
+- Dragging a file from your file system onto the table.
 
 **Note:** Protected column names ("id", "createdAt", and "updatedAt") will be removed, so exported rows can be easily imported.
 
@@ -224,7 +224,7 @@ Valid comparison operators include:
 
 ![Data Table Export](/images/data-tables/data-table-export.png "Data Table Export")
 
-You can request a CSV export of a data table using the "Export..." button in the top right corner of the table. This will generate a CSV file of the data table and send you an email when the export is complete. The email includes a link which will allow you to download the generated file (the link is time sensitive and will only work for 7 days). This request can only be made 1 every 5 minutes per data table.
+You can request a CSV export of a data table using the "Export" button in the top right corner of the table. This will generate a CSV file of the data table and send you an email when the export is complete. The email includes a link which will allow you to download the generated file (the link is time sensitive and will only work for 7 days). This request can only be made 1 every 5 minutes per data table.
 
 ![Data Table Export Form](/images/data-tables/data-table-export-email.png "Data Table Export Form")
 

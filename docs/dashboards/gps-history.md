@@ -111,11 +111,13 @@ When using the advanced mode, the following variables are available for you to u
 
 ![Popup Style Configuration](/images/dashboards/gps-history-popup-config.png "Popup Style Configuration")
 
-Just like the `Advanced` pin configuration, the popup configuration allows you to provide a [string templates](/workflows/accessing-payload-data/#string-templates) that will
-be used for rendering the popup for a point. The popup for a point will only be available if there is a pin for that point, so make sure that a pin is rendered for any points
-that you want to provide a popup for. String templates for popups are treated as [Markdown](http://commonmark.org/help/), allowing for formatting options such as **bold** and
+Just like the `Advanced` pin configuration, the popup configuration allows you to provide a [string template](/workflows/accessing-payload-data/#string-templates) that can
+be used for rendering the popup for a point. The popup for a point will only be available if there is a pin for that point, make sure that a pin is rendered for any points
+that you want to provide a popup for. Device attribute data is only available in the popup pin when it is reported in the same state as the GPS attribute.
+
+String templates for popups are treated as [Markdown](http://commonmark.org/help/), allowing for formatting options such as **bold** and
 *italic*. Using Losant's built-in [Handlebars helpers](/workflows/accessing-payload-data/#string-templates), it is possible to build quite complex popup templates that include
 images and links. By default the popup template renders simple text with the device name, timestamp of the point, and lat/lng location of the point. If the template renders to
 an empty string for a point, no popup will appear when clicking the map pin for that point.
 
-The same variables exposed in the [advanced pin style configuration](#advanced-pin-style-configuration) are available in the popup configuration.
+The same variables exposed in the [advanced pin style configuration](#advanced-pin-style-configuration) are also available in the popup configuration.

@@ -83,11 +83,11 @@ Once the device is added and successfully connected to Losant, there are several
 
 ### Connection Status
 
-The current connection status of your device is always available beneath the device page's subnavigation. For peripheral type devices, the connection status of the gateway device it is configured to use is displayed.
+The current connection status of your device is always available within the Connection Log panel. For peripheral type devices, the connection status of the gateway device it is configured to use is displayed.
 
 ![Connection Status](/images/devices/connection-status.png "Connection Status")
 
-For Standalone and Gateway type devices, you can also view a log of recent device connection events in the `Device Connection Log` under the `Debug` section of the device page.
+For Standalone and Gateway type devices, you can also view a log of recent device connection events in the `Device Connection Log` of the Connection Log panel.
 
 ![Connection Log](/images/devices/connection-log.png "Connection Log")
 
@@ -99,7 +99,7 @@ Losant provides several tools on the device page to help debug communication bet
 
 #### Recent Device States
 
-To debug whether your device is sending state to Losant, you can use the `Recent Device States` log under the debug section of the device page.
+To debug if your device is sending state to Losant, you can use the `Recent Device States` log under the debug section of the device page.
 
 ![Recent Device States](/images/devices/state-log.png "Recent Device States")
 
@@ -113,9 +113,11 @@ The `Force State in Losant` form under the debug section of the device page allo
 
 #### Send Command
 
-The `Send Device Command` form under the debug section of the device page allows you to send commands to your devices. This is useful if your debugging and during initial implementation of command support for your devices.
+The `Send Device Command` form under the debug section of the device page allows you to send commands to your devices. This is useful for debugging and during initial implementation of command support for your devices.
 
 ![Send Command](/images/devices/send-command.png "Send Command")
+
+### Data
 
 #### Data Export
 
@@ -136,7 +138,7 @@ Timestamp,ISO Date,location,temperature
 
 ![Delete Device Data](/images/devices/data-deletion.png "Delete Device Data")
 
-In the case where you no longer want the data for a device or you want to clear out old incorrect data, you can do so with the "Delete Device Data" form under the data section of the device page. This will remove either all data for the device or data for a specific time range that you select - state data for attributes, connection log history, and command history. Data deletion may take a few seconds to propagate through the system, but cannot be reversed or undone, so do not press this button lightly!
+In the case where you no longer want the data for a device or you want to clear out old incorrect data, you can do so with the "Delete Device Data" form under the data section of the device page. This will remove either all data for the device or data for a specific time range that you select - state data for attributes, connection log history, and command history. Data deletion may take a few seconds to propagate through the system, but cannot be reversed or undone, so be cautious with this button!
 
 ## Device Communication Log
 
@@ -152,6 +154,6 @@ Arbitrary topics the device publishes to or is subscribed to will not display wi
 
 ![Export Devices](/images/devices/devices-export.png "Export Devices")
 
-To export a list of all the devices scoped to an application, visit the "All Devices" page and click the "Export All Devices" button in the top right corner of the list. This generate a CSV file of all devices in the application for download, which will be emailed to you after the export has completed. The CSV will include each device's name, ID, description, device type and each tag associated with the device.
+To export a list of all the devices scoped to an application, visit the "Devices" page and click the "Export All Devices" button in the top right corner of the list. This generate a CSV file of all devices in the application for download, which will be emailed to you after the export has completed. The CSV will include each device's name, ID, description, device type and each tag associated with the device.
 
 Note that device exports always include the application's entire device list, not just the devices that are currently displayed in the interface (as filtered by name or paginated).

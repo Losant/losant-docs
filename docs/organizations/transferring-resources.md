@@ -28,7 +28,7 @@ After selecting a `Source` and `Destination`, a list of applications for each wi
 
 ![Transfer Applications](/images/organizations/transfer-applications.png "Transfer Applications")
 
-If any application in the `Source` column can not be transferred – most likely because the application's device count would be the destination over its own device limit – the application will be marked unavailable for transfer.
+If any application in the `Source` column cannot be transferred – most likely because the application's device count would be the destination over its own device limit – the application will be marked unavailable for transfer.
 
 At the bottom of the application lists are device count summaries for both the source and destination, showing how many devices will be in each after the transfer is completed.
 

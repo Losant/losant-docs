@@ -16,7 +16,7 @@ The list of application tokens includes the token's name, a summary of its scope
 
 ## Generating an API Token
 
-Application API tokens can be added to your application by using the `Add Application Token` button on the `Application API Tokens` page. Token setup requires four pieces of information ...
+Application API tokens can be added to your application by using the `Add Application Token` button on the `API Tokens` page. Token setup requires four pieces of information:
 
 ### Name and Description
 
@@ -62,7 +62,7 @@ When you're finished, check the `I have copied my application token to a safe pl
 
 To temporarily deactivate an application API token ...
 
-* Click the checkbox alongside the token in the list view, OR
+* Toggle the switch in the list view, OR
 * From the token's detail page, select the "Inactive" radio button under the "Status" label and save the token.
 
 ![Delete Token](/images/applications/delete-token.png "Delete Token")

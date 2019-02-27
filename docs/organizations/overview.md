@@ -24,7 +24,7 @@ Organization pricing is a function of a number of factors:
 
 ## Creating a New Organization
 
-[Contact Losant](https://www.losant.com/contact-us) for more information about setting up your organization. Once a contract is in place, the Losant team will take care of creating
+[Contact Losant](https://www.losant.com/contact-us) for more information about setting up your organization. Once a contract is in place, the Losant team will take care of creating the organization before turning it over to you to invite additional members, create new resources and transfer resources into the organization.
 
 ## Creating Organization Resources
 

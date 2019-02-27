@@ -6,13 +6,13 @@ description: Learn about how device recipes can give you the power to create dev
 
 A device recipe is a template (or 'recipe') for creating devices. If you have many devices that are the same or very similar, you can use device recipes to make creating those devices much easier.
 
-Device recipes can be found under the `Devices` dropdown menu in your application's subnavigation.
+Device recipes can be found under `Device Recipes` in your application's navigation.
 
 ![Device Recipe Overview](/images/devices/device-recipe-overview.png "Device Recipe Overview")
 
 ## Adding a Device Recipe
 
-From the Device Recipes page, click the "Add Recipe" button in the top right corner.
+From the Device Recipes page, click the "Add Device Recipe" button in the top right corner.
 
 ![Add Device Recipe](/images/devices/add-device-recipe.png "Add Device Recipe")
 

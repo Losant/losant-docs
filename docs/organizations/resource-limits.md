@@ -10,7 +10,7 @@ Organizations and Sandboxes within the Losant Platform are subject to limits on 
 
 ![Organization Current Usage](/images/organizations/organization-current-usage.png "Organization Current Usage")
 
-To view an **organization's current payload usage**, first navigation to the organization's overview page. There is a widget in the right column that displays the device and payload count for the current period, along with a link to a detailed usage breakdown. That view can also be reached under the `Usage` sub-tab in the left column.
+To view an **organization's current payload usage**, navigate to the organization's overview page. There is a widget in the right column that displays the device and payload count for the current period, along with a link to a detailed usage breakdown. That view can also be reached under the `Usage` sub-tab in the left column.
 
 Your **[Sandbox](/user-accounts/sandbox/) usage for the current period** is visible on the Sandbox page, which can be accessed by clicking the `Organizations` tab and selecting the `My Sandbox` link. You may only view the Sandbox usage for the current period; historical Sandbox usage is not available at this time.
 
