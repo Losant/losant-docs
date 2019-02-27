@@ -26,7 +26,7 @@ After clicking `Create Access Key`, the newly generated key and secret will be d
 
 __IMPORTANT__: Losant does not store key secrets and they cannot be recovered or regenerated if lost. If you fail to save your key secret before closing the window, you will have to generate a new access key / secret pair.
 
-After you've saved your access key and secret, check the `I have copied my app secret to a safe place` box and click `Close Window`.
+After you've saved your access key and secret, check the `I have copied my access key and secret to a safe place` box and click `Close Window`.
 
 ![Access Key Generated](/images/applications/access-key-generated.png "Access Key Generated")
 
@@ -35,7 +35,7 @@ After you've saved your access key and secret, check the `I have copied my app s
 To temporarily deactivate an access key ...
 
 * Click the switch alongside the access key in the list view, OR
-* From the access key's detail page, select the "Inactive" radio button under the "Status" label and save the key.
+* From the access key's detail page, toggle the switch in the far right of the column.
 
 ![Delete Key](/images/applications/delete-key.png "Delete Key")
 

@@ -15,7 +15,7 @@ In this tutorial, we'll build a flow allowing an experience user to reset his/he
 
 ## Create the Endpoints
 
-We'll be adding four endpoints, all of which will be hit by a user going through the password reset flow. In the experience menu, click the "Endpoints" menu item, then click the "Add" button at the top right of the list.
+We'll be adding four endpoints, all of which will be hit by a user going through the password reset flow. In "Edit" in the experience menu, click the "Endpoints" tab, then click the "Add" button at the top right of the list.
 
 ![Add Endpoint](/images/experiences/walkthrough/views/user-registration/add-endpoint.png "Add Endpoint")
 
@@ -109,7 +109,7 @@ Save your new global, and then move on to creating the workflows.
 
 Though a user most frequently completes a forgot password flow while logged out (i.e. because they cannot log in to their account), we will still allow signed-in users to complete the flow as part of our walkthrough. This is because we are requiring [authenticated users who wish to change their password](/experiences/walkthrough/views/user-profile/#page-change-password) to enter their current password, and it is certainly possible for a user to have forgotten it while still in an active session.
 
-Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow. In the experience menu, click the "Workflows" menu item, so we can create some new experience workflows.
+Let's continue with the model we've followed so far by including the GET and POST methods for each route within the same workflow. Click the "Workflows" menu item, so we can create some new experience workflows.
 
 ### Forgot Password Workflow
 

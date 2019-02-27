@@ -12,7 +12,7 @@ The URLs that a user can request are called [Experience Endpoints](/experiences/
 
 Let's start by defining two endpoints that will allow users to log in to your experience. The first, `GET /login`, will return the form with the email and password fields. The second, `POST /login`, will accept the credentials from the form, authenticate the user, and set a cookie in their browser for future requests.
 
-You can define endpoints on the "Endpoints" page under the "Experience" main menu item.
+You can define endpoints under "Endpoints".
 
 ![Endpoints](/images/experiences/walkthrough/views/log-in-page/endpoints.png "Endpoints")
 

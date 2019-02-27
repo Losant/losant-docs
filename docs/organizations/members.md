@@ -41,7 +41,7 @@ Administrators can also remove any current organization member – including oth
 
 ## Inviting New Members
 
-To invite a new member, click the `Add` button at the top right of the table. This can also be done from the `Organization Overview` screen. This will navigate you to the `New Member` screen. Here simply input the new member's email in the provided box, choose a default permission, and optionally choose any granular permissions to assign. Then, simply click the `Send Invite` button in the bottom left to send the invitation.
+To invite a new member, click the `Add Member` button at the top right of the table. This can also be done from the `Organization Overview` screen. This will navigate you to the `New Member` screen. Here simply input the new member's email in the provided box, choose a default permission, and optionally choose any granular permissions to assign. Then, simply click the `Send Invite` button in the bottom left to send the invitation.
 
 ![Organization New Invite](/images/organizations/organization-new-invite.png "Organization New Invite")
 
