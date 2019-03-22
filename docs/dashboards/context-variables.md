@@ -26,13 +26,14 @@ To add a new variable, click the "Add Variable" button on the "Context Variables
 
 ### Device IDs
 
-A "Device ID" is a [device query](/devices/device-queries/) that takes a single device at a time. Device IDs take three additional parameters:
+A "Device ID" is a [device query](/devices/device-queries/) that takes a single device at a time. Device IDs take four additional parameters:
 
 ![Device ID Context](/images/dashboards/context-deviceId.png "Device ID Context")
 
 * **Application ID** is the Losant [application](/applications/overview/) to which any selected device must belong.
 * **Default Value** is the device ID to use when no value is provided by the user.
 * **Validation** is optional; it is a [device query](/devices/device-queries/) that accepts device IDs and/or [tags](/devices/overview/#device-tags) that the variable must match. If both IDs and tags are provided, the variable may match a specific ID, or the tag must be applied to the device. If multiple tags are defined in validation, the device must match **all** tags (or a provided ID). If no validation rules are provided, then any device from the selected application is valid. Note that the default value does not have to match your defined validation rules.
+* **Include full device info in context** is unchecked by default. When checked, the name and tags of the device matching the ID set in the context variable will be available when [using this variable](#using-device-ids) within your dashboard, and whether the variable is checked affects how it is used.
 
 If a device ID is used in a query with an attribute that is not defined on the device, the block that is referencing the variable will fail to load.
 
@@ -143,6 +144,14 @@ A Device ID value can, for example, be used to ...
 * Highlight one device against an array of devices in [time series graphs](/dashboards/time-series-graph/)
 * View data from a single device at a time within a [device state table](/dashboards/device-state-table/)
 * Color-coding [map pins](/dashboards/gps-history/#advanced-pin-style-configuration), [gauges](/dashboards/gauge/#conditional-gauge-colors) and [indicator blocks](/dashboards/indicator/#conditions) when viewing a specific device
+
+Note that if the "**Include full device info in context**" checkbox is checked for a device ID variable, rendering the value of the context variable requires referencing the properties of the **object** returned in the context.
+
+* `{{ctx.VARIABLE_NAME.id}}` renders the device ID
+* `{{ctx.VARIABLE_NAME.name}}` renders the device name
+* `{{ctx.VARIABLE_NAME.tags}}` is a reference to the tags associated with the device; you may wish to [iterate over all tags](/workflows/accessing-payload-data/#iterating-over-arrays-and-objects) or get the value of a specific tag with a string template such as `{{ctx.VARIABLE_NAME.tags.TAG_KEY.[INDEX]}}`, where `INDEX` is usually `0` since tag values are returned as an array.
+
+If you are not returning full device info, you may only render the currently selected device's ID with `{{ctx.VARIABLE_NAME}}`.
 
 ### Using Device Tags
 
