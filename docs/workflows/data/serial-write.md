@@ -6,7 +6,7 @@ description: 'Learn more about the Losant Serial Write Node.'
 
 # Serial Write
 
-The Serial Write
+The Serial Write allows you to write to a specified [Serial port](https://en.wikipedia.org/wiki/Serial_communication).
 
 ![Serial Write Node](/images/workflows/data/serial-write-node.png "Serial Write Node")
 
