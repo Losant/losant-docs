@@ -192,6 +192,7 @@ nav:
         - Redis: workflows/data/redis.md
         - Run Executable: workflows/data/run-executable.md
         - Salesforce Cases: workflows/data/salesforce-cases.md
+        - Serial Write: workflows/data/serial-write.md
         - ServiceNow: workflows/data/service-now.md
         - SQL: workflows/data/sql.md
         - "Storage: Get Value": workflows/data/get-value.md
