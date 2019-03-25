@@ -170,6 +170,74 @@ curl -H 'Content-Type: application/json' \
 | 400 | [Error](schemas.md#error) | Error if malformed request |
 | 404 | [Error](schemas.md#error) | Error if dashboard was not found |
 
+## Send Report
+
+Sends a snapshot of a dashboard
+
+### Method And Url <a name="sendReport-method-url"></a>
+
+POST https://api.losant.com/dashboards/**`DASHBOARD_ID`**
+
+### Authentication <a name="sendReport-authentication"></a>
+
+A valid api access token is required to access this endpoint. The token must
+include at least one of the following scopes:
+all.Organization, all.User, dashboard.*, or dashboard.sendReport.
+
+### Request Path Components <a name="sendReport-path-components"></a>
+
+| Path Component | Description | Example |
+| -------------- | ----------- | ------- |
+| DASHBOARD_ID | ID of the associated dashboard | 575ece2b7ae143cd83dc4a9b |
+
+### Request Headers <a name="sendReport-headers"></a>
+
+| Name | Required | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| Authorization | Y | The token for authenticating the request, prepended with Bearer | |
+
+### Request Body <a name="sendReport-body"></a>
+
+The body of the request should be serialized JSON that validates against
+the [Dashboard Send Report](schemas.md#dashboard-send-report) schema. For example, the following would be a
+valid body for this request:
+
+```json
+{
+  "toEmail": [
+    "test@email.com"
+  ],
+  "subject": "Dashboard Report",
+  "message": "Lookit",
+  "time": 1551887386704,
+  "theme": "dark"
+}
+```
+
+### Curl Example <a name="sendReport-curl-example"></a>
+
+```bash
+curl -H 'Content-Type: application/json' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer YOUR_API_ACCESS_TOKEN' \
+    -X POST \
+    -d '{"toEmail":["test@email.com"],"subject":"Dashboard Report","message":"Lookit","time":1551887386704,"theme":"dark"}' \
+    https://api.losant.com/dashboards/DASHBOARD_ID
+```
+
+### Successful Responses <a name="sendReport-successful-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 200 | [Success](schemas.md#success) | Send dashboard report |
+
+### Error Responses <a name="sendReport-error-responses"></a>
+
+| Code | Type | Description |
+| ---- | ---- | ----------- |
+| 400 | [Error](schemas.md#error) | Error if malformed request |
+| 404 | [Error](schemas.md#error) | Error if dashboard was not found |
+
 ## Validate Context
 
 Validates a context object against the dashboard&#x27;s context configuration
@@ -221,11 +289,11 @@ curl -H 'Content-Type: application/json' \
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 200 | [Success](schemas.md#success) | If context is valid |
+| 200 | [Validate Context Success](schemas.md#validate-context-success) | If context is valid |
 
 ### Error Responses <a name="validateContext-error-responses"></a>
 
 | Code | Type | Description |
 | ---- | ---- | ----------- |
-| 400 | [Error](schemas.md#error) | Error if context is invalid |
+| 400 | [Validate Context Error](schemas.md#validate-context-error) | Error if context is invalid |
 | 404 | [Error](schemas.md#error) | Error if dashboard or application was not found |
