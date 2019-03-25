@@ -20,7 +20,7 @@ Configuration includes the following fields...
 * **Baud Rate:** (Required) the baud rate, speed of communication over a data channel, which by default is `9600`. The following are the accepted baud rates: `110`, `300`, `600`, `1200`, `2400`, `4800`, `9600`, `14400`, `19200`, `38400`, `57600`, `115200`, `128000`, `256000`.
 * **Write Template:** (Required) A string template that will be written to the specified serial port.
 * **Write Encoding:** (Required) The character encoding of the write template. The following are valid character encoding options: `ASCII`, `UTF8`, `UTF16LE`, `Base64`, `Binary`, `Hex`.
-* **Result Path:** A path on the payload to store the result of the serial write.
+* **Result Path:** A path on the payload to store the result of the serial write. The result will either be true when successfully. Otherwise, if unsuccessful, an object will be placed at the result path with the key "error" such that the value is the error message.
 
 The following is an example of a successful write if you set your result path to `serialResult`:
 
