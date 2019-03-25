@@ -5,6 +5,7 @@ theme:
   custom_dir: losant
   include_search_page: true
 markdown_extensions:
+    - admonition
     - toc:
         permalink: "#"
 nav:
@@ -145,6 +146,8 @@ nav:
     - Logic:
         - Array: workflows/logic/array.md
         - Conditional: workflows/logic/conditional.md
+        - "CSV: Decode": workflows/logic/csv-decode.md
+        - "CSV: Encode": workflows/logic/csv-encode.md
         - Delay: workflows/logic/delay.md
         - Function: workflows/logic/function.md
         - Generate ID: workflows/logic/generate-id.md
