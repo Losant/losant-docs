@@ -83,7 +83,8 @@ all.Organization, all.Organization.read, all.User, all.User.read, org.*, or org.
 
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
-| summaryExclude | N | List of summary fields to exclude from org summary |  | summaryExclude&#x3D;payloadCount |
+| summaryExclude | N | Comma seperated list of summary fields to exclude from org summary |  | summaryExclude&#x3D;payloadCount |
+| summaryInclude | N | Comma seperated list of summary fields to include in org summary |  | summaryInclude&#x3D;payloadCount |
 
 ### Request Headers <a name="get-headers"></a>
 

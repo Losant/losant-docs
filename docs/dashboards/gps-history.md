@@ -66,14 +66,21 @@ By default, other state attributes available in the [advanced pin style](#advanc
 
 Losant allows for customization of the pins for points on the map as well as the popups that appear when clicking on a map pin.
 
+![Point Display Configuration](/images/dashboards/gps-history-point-display-configuration.png "Point Display Configuration")
+
 #### Line Decorators
 
-By default, Losant draws lines between data points on the map. You can remove these lines so that only the raw data points will be displayed.
-![Point Display Configuration](/images/dashboards/gps-history-point-display-configuration.png "Point Display Configuration")
+By default, Losant draws lines between data points on the map if you are you are looking at a duration of data other than `Last Received Data Point`. You can remove these lines so that only individual data points will be displayed.
 
 #### Arrow Decorators
 
-Optionally, if line decorators are enabled, you can enable arrow decorators to show which direction your connected device was moving along the line.
+Optionally, if line decorators are enabled and you are looking at a duration of data other than `Last Received Data Point`, you can enable arrow decorators to show which direction your connected device was moving along the line.
+
+#### Cluster Points
+
+Optionally, if you are using the duration of `Last Received Data Point` (and so only one data point appears on the map per device), you can enable point clustering. This will cluster points together into groups depending on your zoom level, and you can click on a cluster to zoom into that cluster.
+
+![ClusteringExample](/images/dashboards/gps-history-cluster-example.png "Clustering Example")
 
 #### Simple Pin Style Configuration
 

@@ -12,9 +12,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ***
 
+## 1.7.0 - 2019-03-26
+
+### Added <a name="1.7.0-added"></a>
+
+- Data / [Serial Write](/workflows/data/serial-write/)
+
+### Fixed <a name="1.7.0-fixed"></a>
+
+- Fixed issue with OPCUA nodes not correctly reusing the same session across workflow runs.
+- Fixed issue where workflows allowed invalid program and tag names for the Allen-Bradley nodes.
+
+***
+
 ## 1.6.1 - 2019-02-28
 
-### Fixed <a name="1.6.1-fixed"></a>
+### Fixed <a name="1.6.1-fix1d"></a>
 
 - Fixed a permissions issue with the Docker image which caused filesystem permission errors with the OPCUA nodes.
 

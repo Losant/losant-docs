@@ -444,7 +444,8 @@ all.SolutionUser, all.SolutionUser.read, all.User, all.User.read, me.*, or me.ge
 | Name | Required | Description | Default | Example |
 | ---- | -------- | ----------- | ------- | ------- |
 | includeRecent | N | Should the user include recent app/dashboard info |  | includeRecent&#x3D;true |
-| summaryExclude | N | List of summary fields to exclude from user summary |  | summaryExclude&#x3D;payloadCount |
+| summaryExclude | N | Comma seperated list of summary fields to exclude from user summary |  | summaryExclude&#x3D;payloadCount |
+| summaryInclude | N | Comma seperated list of summary fields to include in user summary |  | summaryInclude&#x3D;payloadCount |
 
 ### Request Headers <a name="get-headers"></a>
 
