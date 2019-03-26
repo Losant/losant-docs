@@ -34,7 +34,8 @@ all.User, all.User.read, orgs.*, or orgs.get.
 | perPage | N | How many items to return per page | 1000 | perPage&#x3D;10 |
 | filterField | N | Field to filter the results by. Blank or not provided means no filtering. Accepted values are: name |  | filterField&#x3D;name |
 | filter | N | Filter to apply against the filtered field. Supports globbing. Blank or not provided means no filtering. |  | filter&#x3D;my*org |
-| summaryExclude | N | List of summary fields to exclude from org summaries |  | summaryExclude&#x3D;payloadCount |
+| summaryExclude | N | Comma seperated list of summary fields to exclude from org summaries |  | summaryExclude&#x3D;payloadCount |
+| summaryInclude | N | Comma seperated list of summary fields to include in org summary |  | summaryInclude&#x3D;payloadCount |
 
 ### Request Headers <a name="get-headers"></a>
 
