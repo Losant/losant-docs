@@ -7,29 +7,45 @@ description: 'Learn more about the Losant Device: Get Node.'
 
 # Device: Get Node
 
-The get device node allows a workflow to retrieve one or more [devices](/devices/overview/) from the current application and add them to the current workflow payload.
+The Device: Get Node allows a workflow to retrieve one or more [devices](/devices/overview/) from the current application and add them to the current workflow payload.
 
 ![Get Device Node](/images/workflows/data/get-device-node.png "Get Device Node")
 
-## Configuration
+## Node Properties
 
-There are three ways to query for devices using this node - by device ID, device name, or by tags. Any and all fields are [templatable](/workflows/accessing-payload-data/#string-templates) and can be pulled off of the current workflow payload.
+The configuration for the Device: Get Node requires a query method and parameters to find a device connected to Losant.
 
-- When querying by device ID, the configuration expects a single device ID.
-- When querying by device name, only a full and exact match on the device name will yield a single result.
-- When querying by device tags, the configuration expects one or more tag key/value pairs, and **all** of the pairs have to match the device in order for the device to be returned by the query. The same rules apply here that apply to tag queries in the rest of Losant - if a key is provided but no value, any device with that tag key will match (and value will not matter), and if a value is provided but no key, any device with that tag value will match (and key will not matter).
+### Query Method
 
-When querying by device ID or device name, there will at most be a single device that matches, so the return will never be an array.
+The first step is selecting the a query method to use to find a device or group of devices. The Device: Get Node has three query options:
 
-When querying by tags, you have the option of just returning the first device match (if you know that there should only be a single device), but can also return an array of devices that match. You can further specify which devices to return by manipulating the results per page and sort options.
+- Device ID: You can input a specific device's ID to retrieve it or use a value on the payload. The ID can be hardcoded in the workflow editor or derived from a property on the current payload.
 
-![Get Device Node Configuration](/images/workflows/data/get-device-node-config.png "Get Device Node Configuration")
+- Device Name:You can input a specific device's name to retrieve it or use a value on the payload. The name can be hardcoded in the workflow editor or derived from a property on the current payload.
 
-The query result will be stored at the [payload path](/workflows/accessing-payload-data/#payload-paths) provided in the `Result Path` field. If the query is configured to potentially return multiple results, this will always be an array, even if no results are found. If the query is only returning a single result, this will either be the device object or will be `null`. You also have the option of changing the form of the tags on the device result. By default it is the standard array of key/value pairs (the same as the Losant API returns) - but you can instead ask for the tags to be in the form of an object map, where the tags property will be an object. In that case, each tag key will be a property on the object, and the value of that property will be an array of all the tag values for that key on the device. This is often an easier form to work with inside of workflows. In addition, you can ask for a composite of the last known state of each attribute of the device to be included as well, which will be added to the device under the `compositeState` field.
+- Tag Query: You can set specific tag key/value pairs to retrieve one or more devices. Any device(s) returned will match all tags in the query. If a key is set without a value, any device that has that key set regardless of the value will be returned. (And vice-versa for values set without keys.) Tags can be hardcoded or derived from a property on the current payload.
 
-![Get Device Node Result](/images/workflows/data/get-device-node-config-result.png "Get Device Node Result")
+### Configuration
 
-In the example above, the workflow will retrieve the device that has the `sigfox_id` tag matching the value at `data.body.device` on the payload. It is only expecting a single device to be returned, and will place the resulting device at `data.losantDevice` with the tags in object form and the most recent composite state. For example, the payload after the Get Device node runs might look like the following:
+Depending on the query method selected, you will be able to input the specific Device ID, Device Name, or the tag key/value pairs to find a device or group of devices.
+
+### Result Path
+
+Specify where on the payload path you want the device or group of devices to be stored.
+
+For the Device ID and Device Name queries, the result will either be the device object or null if no device is found.
+
+For the Tag Query, the result will either be an array of device objects or an empty array.
+
+You also have the option of changing the form of the tags on the device result. By default it is the standard array of key/value pairs (the same as the Losant API returns) - but you can instead ask for the tags to be in the form of an object map, where the tags property will be an object. In that case, each tag key will be a property on the object, and the value of that property will be an array of all the tag values for that key on the device. This is often an easier form to work with inside of workflows.
+
+In addition, you can ask for a composite of the last known state of each attribute of the device to be included as well, which will be added to the device under the `compositeState` field.
+
+## Node Throttling and Limits
+
+_TODO: I'm not sure what the throttling and limits of this node are._
+
+## Node Example
 
 ```json
 {
@@ -70,3 +86,13 @@ In the example above, the workflow will retrieve the device that has the `sigfox
   ...
 }
 ```
+
+## Node Errors
+
+_TODO: I'm not sure what to put here. We return a null value if it doesn't find a device and keeps going with the workflow._
+
+## Related Nodes
+
+- [Device: Create](http://127.0.0.1:8000/workflows/data/create-device/)
+- [Device: Update](http://127.0.0.1:8000/workflows/data/update-device/)
+- [Device: Delete](http://127.0.0.1:8000/workflows/data/delete-device/)
