@@ -89,7 +89,9 @@ _TODO: I'm not sure what the throttling and limits of this node are._
 
 ## Node Errors
 
-_TODO: I'm not sure what to put here. We return a null value if it doesn't find a device and keeps going with the workflow._
+For the Device ID and Device Name queries, the result will either be the device object or null if no device is found.
+
+For the Tag Query, the result will either be an array of device objects or an empty array.
 
 ## Related Nodes
 
